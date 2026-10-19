@@ -259,3 +259,16 @@ Active/scoped. Current user authorizes applying previous real-robot joint restri
 ## DEC-WEB-014 - 2026-10-19 Detailed beginner website operations guide
 
 Active/scoped; expands DEC-WEB-007 documentation coverage, does not supersede simulation, training or evaluation contracts. User requests a detailed beginner-friendly website manual covering scene generation, inclusion in training datasets, model training, progress and structure, and scene/task evaluation selection. Delivered docs/site/USER_GUIDE_ZH.md with explicit webpage versus maintainer steps, current registered-state Pick/Place scope, protected diagnostic exclusions, and source-backed field instructions. No new collection, training, evaluation or website deployment requested or executed. Local documentation verification: runs/site_user_guide_20261019/verification.json. Source user thread: 01a153b2-cf0f-77f2-89b9-9a679bd928f2; original message retained by explicit project interaction export.
+
+
+## DEC-PPT-002 - 2026-10-19 Current-state presentation optimization
+
+Active/scoped. User: “按照现在的情况优化PPT”. Extends DEC-PPT-001, retaining English language and user real-video provenance. Update deck using latest actual website/evaluation/runtime evidence, improve narrative and layout, and preserve previous delivery versions. No authorization inferred for new training, simulation runs, control-policy changes or physical robot operation. Updated27-slide v3 includes existing measured wall-time runtime clips as presentation media. Evidence runs/presentation_20261019_v3/DELIVERY.md; current thread01a15289-7b2e-73b0-923c-efd74f0c3341.
+
+## DEC-WEB-014 - 2026-10-19 Refresh resets preview
+User explicitly asks reload restore original robot state; replace automatic latest-run selection with initial preview and explicit history selection. Reset preview is UI-only, no cancellation of healthy simulator jobs or deletion of evidence. Start remains new independent initial-state simulation. Also authorizes live duration validation repair.
+
+
+## DEC-WEB-015 - 2026-10-19 English guide in Help
+
+Active/scoped; extends DEC-WEB-014. User explicitly requests an English version inside Help. Translate the full workflow and integrate readable chapters, search and downloads into the existing website, preserving its audience and existing training/evaluation contracts. Workstation Help deployed in a new immutable release with identity-checked replacement of the owned web/bridge supervisor only. No collection, gradient training or model evaluation submitted. English source: docs/site/USER_GUIDE_EN.md; deployment/verification evidence: runs/site_help_english_20261019.

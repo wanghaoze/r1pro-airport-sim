@@ -3735,14 +3735,15 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
   "apps/scene-agent/app/AutoEvaluations.tsx": "415df5b6e7e7a860d6d4470d548b8af7f0bd52609af4cd0d5a6a9aaaa0c0ef9e",
   "apps/scene-agent/app/BatchCatalog.tsx": "7e0567bb31b6f3a8a8c156080a6a1240070756faef7d5495bba349a8cda557ae",
   "apps/scene-agent/app/chatgpt-auth.ts": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
-  "apps/scene-agent/app/Help.tsx": "a23422d6a20ff27c206b9f83e5a082c3ce78b89551482ed725d33e949bcef8e5",
+  "apps/scene-agent/app/EnglishGuide.tsx": "ad9df6f81a20c0ac6d421a38fedb292ce2c15327c756b313014a9861ae80ab54",
+  "apps/scene-agent/app/Help.tsx": "779cd9c1509347d405e317bb4b20d57aceaf78183547ee4f0a3f17fa8a05ef9f",
   "apps/scene-agent/app/layout.tsx": "1280fe8a82de2bd771a10d5c12912a97b11b6f2aec0529486b3209b2c1e9e65a",
   "apps/scene-agent/app/LiveDownloads.tsx": "92252c54365fba033e36f27786740a491ce48396f287e58b23c3737023a49152",
   "apps/scene-agent/app/ModelConfig.tsx": "57f8da1befd71c18c98142523cde07c4edd4cc30cda5f14c61ff2c2180131fdc",
   "apps/scene-agent/app/MseFigures.tsx": "b542d2af6e25e161e78a37767bfe98fb98500bbb7ce3ae4d606ad80a244cca34",
   "apps/scene-agent/app/page.tsx": "b3adc2ea28e31f9cd3f45d345000aea2b61fd1d29f5099aa38becc9e545917c5",
   "apps/scene-agent/app/PanelBoundary.tsx": "d5e95b98b8b88ac9b2551ec0c6facecd0a3dd7cb4e3220f979987fdf1818a6db",
-  "apps/scene-agent/app/PolicyEvaluation.tsx": "d0fb9042d9af7b44b9d20c3d28044f76074d23218a6b9dff506e62597ee58565",
+  "apps/scene-agent/app/PolicyEvaluation.tsx": "48f24793223162e187043b050b566064def4c7f796836e322eae8e1ac10047c6",
   "apps/scene-agent/app/SceneViewport.tsx": "2e489db2198aa29f9609a79c16d0a31e0a3d3a7b183d32d6942b157c613f4e5f",
   "apps/scene-agent/app/TrainingPanel.tsx": "f58d0e344b5d857597e41f56f781268ee1de0c92771bf73f3eb35855b6824184",
   "apps/scene-agent/db/index.ts": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
@@ -3768,15 +3769,16 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
   "apps/scene-agent/lib/connectors.ts": "1c93d747e384c8e17e3e3dd5361b24412babf5eba2a11d2ae7a75f4e0924112c",
   "apps/scene-agent/lib/core.ts": "c8b25142645e42b80b6453242b367ce339f034ae2ba44d94f00c113890fca9a9",
   "apps/scene-agent/lib/display.ts": "3069ac05405484423032642a1aa709e98e86f873ad1180f79f13e86d43c8138e",
+  "apps/scene-agent/lib/english-guide.json": "80526cdf79ff75017ed8aa2d2285774c2e913869cdcc00719342d56ab71da644",
   "apps/scene-agent/lib/help-content.json": "32df14084423cfa2b46bb4a330fab1299adab1d547d9421893e86c5796cfa8e7",
   "apps/scene-agent/lib/initial-snapshot.json": "aaea74731abbb2c0476cc22b9d7dab7bf1bfdb3ced8cbca1e63eaf595a4b6f8a",
   "apps/scene-agent/lib/request-id.ts": "0e1698cfcf93daa19ac11c9b97cc4219a6980b8b3374f6d8820cea1852e5701c",
   "apps/scene-agent/lib/reset.ts": "7e585aa4dace15fb2144d4bafb75441c7089c7a48040873cba4cb4964213e8ce",
   "apps/scene-agent/lib/server.ts": "3e5bf9722462696800ec8683553525751b3d942e243922bb8394cf4f845d3243",
-  "apps/scene-agent/lib/training.ts": "456529e13c03095d621a4b775cc3a227663bb7a7bfc7ed5fe7957cc47cb981cf",
+  "apps/scene-agent/lib/training.ts": "4fc0ffd94770961072f1fd8fbb28254873bae2445b15c76c89d559823fdf3b5f",
   "apps/scene-agent/lib/utils.ts": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
   "apps/scene-agent/tests/core.test.ts": "b0a8b47cc4c5bdeef6a8ea9e124a7ceb92d1bcb6d0cab6e17d4a57b3ed1cf82b",
-  "apps/scene-agent/tests/training.test.ts": "e84370f23b50921038293810f826cd360b984ae89c24591307de895547817150",
+  "apps/scene-agent/tests/training.test.ts": "6056e3f0f4d68bf0e9950c00156b204bfe479354450483276b9708ea64db56b9",
   "apps/scene-agent/tests/ui-regression.tsx": "ed2312646e1a6ad8809134064156ea6f637d6da1bd80699b4a8cddca6178f69e",
   "configs/airport_ablation_alternate.json": "39764323b8716d39eb30778d7c6100333ea1ee3ccf958fb8a4e771fde57ca732",
   "configs/airport_ablation_baseline.json": "e621cdaa98e2273ad93391e7ed737e0b774be583e72745c06d68faa5aa641957",
@@ -4381,3 +4383,6 @@ NativeRuntime新增默认关闭interpolate_commands；新快视频显式开启�
 2026-10-16 固定底盘首批预检与只读监控（1.162）：登记的−5度/偏移−1cm/升14cm候选在固定[0.3,0,0]站位通过；+5度/偏移+1cm/升20cm候选右臂路径预检失败，保留private_precheck_001.json和原config.json，不称任务不可达。替代预检候选采用已验证中心盘位/升18cm，同站位通过，另存config_v2.json与private_precheck_002.json；不改旧失败、不移动站位迁就初态。v1后台只执行这两个已预检候选，每对Pick→Place真实续接、分目录冻结，先验证完整数据出口；当前不是200段或VLA采集完成。watch_isaac_fixed_pickplace.ps1只读核身份/阶段/闭合对数与两动作片段数，将实际视频路径一行一个存TXT。
 
 2026-10-16 直接可达生产出口：fixed_base_from_initialization要求initial_base_station.json与冻结站位身份一致、全准备过程raw_action底盘恒定及原5cm真实漂移门。allow_partial_native_batch允许报告partial_complete并保留已闭合成功对，不伪造失败通过；原连续3个物理失败停止诊断规则保留。CPU预检显式使用场景兼容的非base MuJoCo3.3环境，脚本异常不能记录为几何不可达。
+
+### 2026-10-19 Live frame-budget validation correction
+Live evaluation validates whole simulation seconds (1..120) before other action-budget checks, derives framesPerAction = maxSimulationSeconds * 20 on the API server, and ignores redundant legacy client frame budgets. G0.5 policy horizon1 is independent of total episode frames; existing physical duration, limits, model contracts and missing-gripper rejection are unchanged. UI blocks invalid durations with a field-specific message.

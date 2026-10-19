@@ -1,5 +1,9 @@
 # 文档导航
 
+- [英文网站完整操作手册](site/USER_GUIDE_EN.md)：已接入 Help，15章、章节导航、搜索、英文下载；中文原稿仍保留。
+
+- [Updated English technical PPT v3 (27 slides)](../output/r1pro_work_presentation_20261019_v3/R1Pro_Real2Sim_VLA_Technical_Report_v3.pptx) · [Complete ZIP](../output/R1Pro_English_Presentation_Package_20261019_v3.zip) · [Evidence and verification](../runs/presentation_20261019_v3/DELIVERY.md). Current recommended deck, including completed automatic evaluation and measured runtime comparison.
+
 - [Scene Studio 零基础完整操作手册](site/USER_GUIDE_ZH.md)：从场景草稿、服务器采集验收与数据登记，到训练、进度、数据结构、单房间/批量评估和 MSE 下载；明确网页按钮与维护者步骤的分界。
 
 - [单策略实时网页评测](site/POLICY_EVALUATION.md)：任意登记room/检查点、仿真时长、实测3D/相机与逐次视频下载。

@@ -1,5 +1,7 @@
 # R1 Pro Scene Studio — 网站使用 README
 
+**English:** [Complete English user guide](USER_GUIDE_EN.md), also available inside **Help → Complete English user guide**, with chapter navigation, search and a Markdown download. Covers scenes, dataset qualification/registration, training, progress, model evaluation and troubleshooting.
+
 **第一次使用请先读 [从场景到训练和评估的完整操作手册](USER_GUIDE_ZH.md)**：逐步说明场景编辑、草稿如何转成合格训练数据、数据结构、训练配比与进度、单房间/批量评估、MSE 和下载。新手手册包含较新工作站版的 Robot limits 默认设置；本文后续部分保留历史界面说明。
 
 网站：[打开 R1 Pro Scene Studio](https://r1pro-scene-agent-haoze.exactmyna128.chatgpt.site/)

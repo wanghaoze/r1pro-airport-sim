@@ -117,5 +117,6 @@
     "updates": 10000,
     "exact_checkpoint_hash_verified": false,
     "matched_to_mse_series": false
-  }
+  },
+  "revision3_note": "Original three-model values remain frozen. Latest separate paired evaluation is in latest_paired_mse.csv/latest_results.json; do not substitute its baseline into archived comparisons."
 }

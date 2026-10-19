@@ -1,3 +1,18 @@
+2026-10-19 verification addendum: offlinev13 deployed. Browser G0.5 submission7eae1d05 accepted with1s/20frames; then service initialization rejected occupied G0.5 port (not frame budget), zero nativeframes. Separate blocker remains. Reset preview visibly restores original room / Ready to start and clears selected history. Evidence runs/web_frame_budget_fix_20261019/verification.json and service_failure.json.
+
+
+## 2026-10-19 Live frame budget and refresh behavior
+
+User reported Invalid action frame budget for G0.5 and requested fix; then requested page refresh restore original robot pose instead of showing historical checkpoint034s state. The message originates in web validation before model execution; exact rejected user payload unavailable. Live API now validates1..120 whole simulation seconds first and derives frames=seconds*20, independent of G0.5 horizon1 or legacy client frames. UI shows inline duration validation and frame count. Five Node tests including G0.5 horizon1, stale/missing client budget, 1/10/120-second cases passed. Removed automatic latest-run selection. Reload and Reset preview clear historical snapshot and show original room preview / Ready to start; prior runs remain explicitly selectable. Preview reset does not cancel/reset an active native job; Start creates independent native initial state. G0.5 missing-gripper limitations unchanged. Offline releasev13 prepared; deployment/browser evidence under runs/web_frame_budget_fix_20261019.
+
+## 2026-10-19 18:29 SGT evidence incorporated into English PPT v3
+
+scope=DEC-PPT-002. User requested optimization for current state. [27-slide English PPT](../output/r1pro_work_presentation_20261019_v3/R1Pro_Real2Sim_VLA_Technical_Report_v3.pptx) supersedes v2 as recommended presentation; older outputs remain. Added workstation/ROS2/single-policy workflow, actual automatic VLA/MSE outcomes, strict joint-limit failures, runtime benchmark and third English-captioned video. [Delivery and limitations](../runs/presentation_20261019_v3/DELIVERY.md).
+
+Read-only workstation API at18:29:52SGT confirms automatic final50/50 model strict VLA0/32 with32 model failures and0 infrastructure failures (left joint4:29,right joint4:3). Latest paired MSE50/50 vs fresh real-only:+6.77% arm/-12.11% gripper; frozen earlier3-model charts remain separate because baseline values differ slightly. Runtime3.34499x speedup stillRTF0.42153x in one protected40-frame pair, not pure-model success. These supersede only earlier queued/unverified snapshots for the named final automatic jobs. No new GPU run or hardware operation. [Snapshot](../runs/presentation_20261019_v3/workstation_bootstrap.json),[content checks](../runs/presentation_20261019_v3/content_verification.json).
+
+All27 slides reviewed; package/layout/media checks and ZIP CRC pass. Native PowerPoint playback remains untested.
+
 
 ## 2026-10-19 Workstation runtime optimization and protected model output
 
@@ -7,6 +22,12 @@ Actual paired benchmark Room000 / cp_d0c1ec449340c22c344ee87c /40frames/2simseco
 
 Evidence: runs/web_realtime_optimization_20261019/comparison.json, audit.json, check_v10.json. Server videos at runs/web_runtime_comparison_20261019_v1/{baseline,realtime}; website artifacts referenced by JSON. Wall-time videos retain inference waits; normal native videos use20Hz simulated timeline. Offline releasev11 adds comparison/video panel and Help; physics measured on identical backendv10. Cloud workerbridgev7 uses same backendv10 after oldv5 dispatcher unexpectedly grabbed first baseline with obsoletev4 code; failed85467e04 run preserved and excluded. Hosted Site frontend not republished this turn. Six CPU contract tests and offline build passed; spec1.181 sync current. Remaining: 1x real-time unachieved; GPU dynamics slower for this single-room case; G0.5 missing gripper and GR00T weights remain separate unresolved scopes.
 
+
+## 2026-10-19 英文手册接入 Help
+
+scope=DEC-WEB-015。用户要求英文版并放进 Help。已完成 [英文完整手册](../docs/site/USER_GUIDE_EN.md)，15章约6387词，Help 默认展示英文内容，含章节导航、全文章节搜索、全部展开、前后章和下载；原部署/策略/演示资料保留于资源折叠区。独立工作站release `scene_studio_help_english_20261019_v1` 已替换核实身份的web监督器，旧web/bridge实际exit0，现有SQLite保留，未提交采集/训练/评估作业。
+
+实际浏览器确认工作站 Help 英文内容、GPU connected；下载SHA与本机源稿一致。TypeScript、离线和云端构建通过。证据：[核验](../runs/site_help_english_20261019/verification.json)、[切换](../runs/site_help_english_20261019/workstation_switch.json)、[画面](../runs/site_help_english_20261019/help_live.png)。云端 Sites v12 已于 2026-10-19 18:50 SGT 发布成功，commit b37865c1308db6795a81e2ce8474310f0122667d，保留 public 受众；收据 [cloud_deployment.json](../runs/site_help_english_20261019/cloud_deployment.json)。
 
 ## 2026-10-19 网站完整新手操作手册
 
