@@ -1,5 +1,13 @@
 # 文档导航
 
+- [单策略实时网页评测](site/POLICY_EVALUATION.md)：任意登记room/检查点、仿真时长、实测3D/相机与逐次视频下载。
+
+- [实际相机→模型服务→Isaac运行与视频](site/LIVE_INFERENCE.md)：启动命令、持续服务、ROS2、真实墙钟性能及失败边界。
+
+- [Scene Studio 网站使用 README](site/README.md)：中文操作说明，保留英文按钮名称；先读 MSE 查看/下载入口，再查场景编辑、训练配置、自动评测和排障。
+
+- [English project PPT (22 slides, v2)](../output/r1pro_work_presentation_20261019/R1Pro_Real2Sim_VLA_Technical_Report_v2.pptx) · [PPT/video/data ZIP](../output/R1Pro_English_Presentation_Package_20261019.zip) · [Verification and measured MSE](../runs/presentation_20261019_v1/DELIVERY.md). Includes latest website navigation; results retain initialization and recipe limitations.
+
 - [Scene Studio 网页](https://r1pro-scene-agent-haoze.exactmyna128.chatgpt.site) · [项目说明](../apps/scene-agent/PROJECT.md) · [英文与自动评测发布](../runs/web_english_autoeval_20261019_v1/auto_deployment.json)：2026-10-19全英文/最新最终检查点自动VLA和MSE/结果回显；保留平台当前受众，GPT接口仍未配置。评测启动、完成和模型成功分别见实测报告。
 
 - [网页场景 Agent：prompt 与执行代码](../exports/web_scene_agent_v1/README.md)：2026-10-17，用户选择Isaac32房间Pick/Place；草稿/数据选择/计划已实现，网页和原生训练接入另行实施。

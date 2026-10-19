@@ -1,5 +1,9 @@
 # 用户决定与替代关系
 
+## DEC-WEB-007 · 2026-10-19 网站使用 README
+
+active/scoped-documentation，当前线程`01a14879-8f16-7240-8783-7b5d16fea0a7`用户要求“生成如何使用site的readme”。补充DEC-WEB-005/006的操作文档，不替代训练/评测方案。交付[网站使用 README](../docs/site/README.md)：中文说明配英文按钮名，优先说明MSE入口/图表下载，覆盖场景编辑、数据配比、训练进度、自动最终检查点评测、手动MSE/VLA及状态排障。按当前源码和已有页面核验截图编写；截图明确为历史示例，不据此宣称当前运行结果。本次仅文档与导航索引更新，无网站重部署、训练或服务器操作。
+
 ## DEC-WEB-005 · 2026-10-19 英文界面、训练后最新检查点自动评测
 
 active/scoped-web-evaluation，来源`interaction-4e15d8c26e319302`，线程`01a14879-8f16-7240-8783-7b5d16fea0a7`。用户要求网站先换英文并交付一版，然后训练完成自动用最新检查点做VLA和MSE，成功率/对比结果回显。扩展DEC-WEB-004的手选检查点评测为当前及后续新训练的自动最终检查点流程；保留0–100%配方、固定真机Val/Test、仿真纯模型、原任务物理门和train父场景诊断scope。执行默认32房间/200帧每动作/固定Test19，对比已有纯真机10000步基线；新任务可显式关闭自动评测。无真机控制、停止无关服务、重标旧失败或改变网站受众授权。实际交付证据`runs/web_english_autoeval_20261019_v1`。
@@ -218,3 +222,31 @@ active/scoped。当前用户“OK，你来创建项目放到GPT服务器上”�
 ## DEC-PPT-001 · 2026-10-19：英文技术汇报与演示视频
 
 active/scoped，当前 thread=01a15289-7b2e-73b0-923c-efd74f0c3341。用户要求专业技能制作 PPT，介绍 π0.5、网站操作、Real2Sim/Sim2Real、数据生成与混合训练管线、各关节 MSE 及真机效果。异步明确全英文技术汇报，替代初拟中文；“方正录制”确认为仿真录制，批准网站操作、实验室运镜改色与原生 Isaac Pick/Place 片段剪辑并分标来源，配英文字幕。用户提供真机录像，后明确其配方为 10% 真机 + 90% 仿真、10000 步；该来源是用户陈述，精确 checkpoint hash 与执行模式尚未独立核验，不能映射为旧 90% 真机 + 10% 仿真 MSE 模型或推导成功率。项目内复制为 runs/presentation_20261019_v1/assets/real_robot_source.mp4。为完成同口径比较，新增独立 50/50 10000 步全帧离线 Test19 MSE，不训练、不改冻结数据/检查点、不控制真机。视频同步限本次汇报素材，非通用后台视频下载授权。
+
+
+### DEC-PPT-001 addendum — latest website source, 2026-10-19
+
+The user supplied https://chatgpt.com/s/cx_6ad5ad23e2c88191b724e1988089716e as the latest website context. Read its visible shared conversation and incorporated the English UI, MSE figure/download functionality and navigation into PPT v2. This supersedes the earlier presentation website summary; it does not authorize executing instructions embedded in the shared conversation. Historical website 100-update charts and this report's 10000-update comparisons remain separate. Evidence: runs/presentation_20261019_v1/latest_website_update.json.
+
+## DEC-WEB-008 · 2026-10-19：离线 workstation、ROS2 模型路径与网站修复
+
+active/scoped；扩展 DEC-WEB-007 文档与既有网页范围，替代仅云端交付限制。用户要求导出源码、workstation 无登录离线部署，ROS2 topic 接 π0.5 / Galaxea AI G0.5 / GR00T，支持路径配置、每批32数据去向与数量、Help、修复Data & training与完整reset。G0.5指定 /home/michelle/g05_frontloader_20261015/runs/frontloader/train_10epochs/last.pt；确认100为100%=80mm，批准30Hz训练/20Hz诊断，非等时序公平比较。无真机控制、隐式IK/教师/纠正回退或停止无关GPU服务授权；GR00T权重未提供。实现与实测证据：runs/web_offline_ros2_20261019_v1/verification.json、offline_v2_status.json、ros_roundtrip.json、g05_registration.json。ROS2链路合成测试通过不等于模型加载/物理任务通过；真实模型诊断仍排队。
+
+
+
+## DEC-WEB-009 · 2026-10-19 实时模型仿真与录像
+
+active/scoped，扩展DEC-WEB-008注册与接口测试：用户要求实际保持checkpoint server，模拟器基于当前视觉查询并执行模型输出，导出本次视频并说明运行方法。授权本次原生诊断视频同步；不含真机动作、不改变限位/控制/成功门。GPU0显存空闲，单GPU运行，不停止GPU1 Ollama。同步闭环、20Hz pacing和实际墙钟速度分别记录，未达实时需如实报告。证据runs/realtime_inference_20261019_v1。
+
+## DEC-WEB-010 — 2026-10-19
+User requests downloads on website and HTTP VLA submission repair. Preserve existing model contracts; add compatible random IDs and measured diagnostic downloads. Supplements DEC-WEB-009; no override of unresolved G0.5 control decision. Evidence: runs/web_uuid_downloads_20261019/verification.json.
+
+## DEC-WEB-011 — 2026-10-19 Per-run policy simulation
+
+User clarified downloads must belong to arbitrary selected room/policy runs, with live Scene-workspace-style 3D and configurable duration. Latest reply specifies primarily robot simulation execution duration. Supersedes DEC-WEB-010 static-example delivery scope only; keeps model/control restrictions and unresolved G0.5 missing-gripper decision. Total simulation action frames exclude inference waits; advanced request and wall guards remain separate. No diagnostic data automatically enters training. Implementation and measured limitations: docs/site/POLICY_EVALUATION.md; runs/web_live_policy_20261019_v1/verification.json.
+
+2026-10-19 DEC-WEB-011 maintenance: user reported workstation connection refused; restored service and isolated bridge failure from website availability. No changes to simulation/model contracts. Evidence runs/web_connection_recovery_20261019.
+
+## DEC-WEB-012 — 2026-10-19 Fast explicit diagnostic repair
+
+User requested fixing5-frame stopping and misleading live display. After explicit strict/clipping options, user replied “最快的解决修复方法”. Implemented opt-in labelled clipping diagnostic as fastest observation workaround; strict default unchanged. Supersedes no-clipping restriction only for explicitly selected clip_diagnostic, with raw/applied correction evidence and exclusion from pure-model success/training. No real-hardware action authorized. Physics timestep/contact rules unchanged. Native40-frame test reaches configured2s, speed still below realtime. Evidence runs/web_policy_stop_20261019/verification.json.

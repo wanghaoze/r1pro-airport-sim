@@ -1,0 +1,121 @@
+{
+  "scope": "offline_real_test_prediction",
+  "episodes": 19,
+  "pick_episodes": 11,
+  "place_episodes": 8,
+  "frames": 3653,
+  "horizon": 20,
+  "valid_window_timesteps": 69450,
+  "fps": 20,
+  "seed": "42000 + global frame index",
+  "padding_excluded": true,
+  "base_excluded": true,
+  "overlapping_windows": true,
+  "source_job_id": "a66d9401-410c-4d2e-a609-457c07fe9e23",
+  "fresh_checkpoint": "cp_8788068a6984a796aed42ef1",
+  "fresh_contract": {
+    "protocol": "real_all_frames_h20_noise42000_v1",
+    "split": "test",
+    "manifestSha256": "cd2e935be3dcb01bbfba09c886da0fa93d85ecf125f35c49ba84ee0ff452120c",
+    "sampleKeysSha256": "946ccef27afeb9f754f566cdec3f87fe6ae784dd98432b5465b1ab7db726f874",
+    "horizon": 20,
+    "stride": 1,
+    "noise": "float32 standard_normal(20,32), seed=42000+global_cache_frame_index",
+    "paddingExcluded": true,
+    "baseChannelsExcluded": true,
+    "frames": 3653,
+    "scope": "offline_real_prediction_not_robot_execution"
+  },
+  "valid_mask_sha256": "fa94cebd196fd4d06945db0ef9d43820486eab0bf56c3716774b418db85dc137",
+  "truth_sha256": "5f811405039f7dcf2269e2a22b2474c0327a5076f3f2436fd4c64cfb091f5b2a",
+  "summary": [
+    {
+      "model": "Real 100%",
+      "arm_mse_rad2": 0.0067694845045005265,
+      "gripper_mse_mm2": 406.36878144081703,
+      "arm_reduction_pct": 0.0,
+      "gripper_reduction_pct": 0.0,
+      "improved_arm_joints": 0
+    },
+    {
+      "model": "Real 90% / Sim 10%",
+      "arm_mse_rad2": 0.006495824412443592,
+      "gripper_mse_mm2": 374.4438908640646,
+      "arm_reduction_pct": 4.04255437581692,
+      "gripper_reduction_pct": 7.856137586051726,
+      "improved_arm_joints": 9
+    },
+    {
+      "model": "Real 50% / Sim 50%",
+      "arm_mse_rad2": 0.007229873102764685,
+      "gripper_mse_mm2": 356.79581982087905,
+      "arm_reduction_pct": -6.800940277772716,
+      "gripper_reduction_pct": 12.199008359887442,
+      "improved_arm_joints": 5
+    }
+  ],
+  "causal_ablation": false,
+  "caveat": "Initialization, simulation sources and recipes differ. Archived 90/10 and real-only results are paired; new 50/50 uses a separate run of the same evaluation protocol. Real-robot video is user-reported 10% real / 90% simulation at 10000 updates and is not one of these three measured checkpoints.",
+  "archived_checkpoint_identities": {
+    "real_only": {
+      "checkpoint": "/home/michelle/haoze/r1pro-airport-sim/runs/real_only_pi05_20261012_v1/pi05/checkpoints/pi05_real_only_pickplace/training/9999",
+      "checkpoint_metadata_sha256": "1d3a8efd220ab426d974366ec7c3acaa1b88889c9cd8a615c41a6b7685242f44",
+      "normalization_files": {
+        "/home/michelle/haoze/r1pro-airport-sim/runs/real_only_pi05_20261012_v1/pi05/checkpoints/pi05_real_only_pickplace/training/9999/assets/airport/real_only_pickplace_20261012/norm_stats.json": "20db647d92a5d924054012d3d4d22918ed9ea83769aeaa816e070f291617d855"
+      },
+      "test_manifest_sha256": "cd2e935be3dcb01bbfba09c886da0fa93d85ecf125f35c49ba84ee0ff452120c",
+      "updates": 10000,
+      "protocol": "all 20Hz test frames; H20; first-step traces; no clipping; valid horizon only",
+      "seed": "42000 + global_cache_frame_index; identical noise per model",
+      "scope": "offline_real_test_prediction_not_robot_execution",
+      "project_training_source": "real_world/user_provided"
+    },
+    "mixed": {
+      "checkpoint": "/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_v3/pi05/checkpoints/pi05_real_sim_pickplace/training/9999",
+      "checkpoint_metadata_sha256": "e5cf9f5bfc08f7988ef010bba1f7a00015b221ff66a624e78d0b06676ad0621e",
+      "normalization_files": {
+        "/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_v3/pi05/checkpoints/pi05_real_sim_pickplace/training/9999/assets/airport/real_sim_pickplace_v1/norm_stats.json": "6afc427d1e570c1ab32dd0b1594335191f319619c876466236532080c81680eb"
+      },
+      "test_manifest_sha256": "cd2e935be3dcb01bbfba09c886da0fa93d85ecf125f35c49ba84ee0ff452120c",
+      "updates": 10000,
+      "protocol": "all 20Hz test frames; H20; first-step traces; no clipping; valid horizon only",
+      "seed": "42000 + global_cache_frame_index; identical noise per model",
+      "scope": "offline_real_test_prediction_not_robot_execution",
+      "project_training_source": "real_world_plus_simulation"
+    }
+  },
+  "fresh_exit_evidence": {
+    "mse_0.exit.json": {
+      "returncode": 0,
+      "actual_child_wait": true,
+      "pid": 3439880,
+      "startedAt": 1792386604.923709,
+      "endedAt": 1792388240.1207912
+    }
+  },
+  "target_identity_check": {
+    "matched_prior_reports": [
+      [
+        "cp_63d312b8dbe290d49eed856c",
+        "5f811405039f7dcf2269e2a22b2474c0327a5076f3f2436fd4c64cfb091f5b2a",
+        "fa94cebd196fd4d06945db0ef9d43820486eab0bf56c3716774b418db85dc137"
+      ],
+      [
+        "cp_d7adb17f33462f648d898d8d",
+        "5f811405039f7dcf2269e2a22b2474c0327a5076f3f2436fd4c64cfb091f5b2a",
+        "fa94cebd196fd4d06945db0ef9d43820486eab0bf56c3716774b418db85dc137"
+      ]
+    ],
+    "new_truth_sha256": "5f811405039f7dcf2269e2a22b2474c0327a5076f3f2436fd4c64cfb091f5b2a",
+    "new_valid_mask_sha256": "fa94cebd196fd4d06945db0ef9d43820486eab0bf56c3716774b418db85dc137",
+    "same_targets_and_mask": true
+  },
+  "real_robot_video": {
+    "source": "user_provided_video_and_user_reported_recipe",
+    "real_sampling_pct": 10,
+    "sim_sampling_pct": 90,
+    "updates": 10000,
+    "exact_checkpoint_hash_verified": false,
+    "matched_to_mse_series": false
+  }
+}

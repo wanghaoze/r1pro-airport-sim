@@ -1,3 +1,7 @@
+## 2026-10-19 批次来源统计澄清
+
+只读每批已闭合manifest：batch000–009共313合格Pick/Place来源对，冻结isaac300_20261017/dataset_v1仅300对/600动作片段，split=train；batch009合格30、训练17、溢出13未入训练。计划每批32不等于每批32通过。网页批次表提供来源目录和冻结manifest。证据[offline_v2_status](../../runs/web_offline_ros2_20261019_v1/offline_v2_status.json)。未修改任何冻结数据。
+
 ## 2026-10-19 MSE图表派生数据
 
 参考本机test_last仅图型，旧G05数值未并入本项目。派生bundle `runs/web_mse_figures_20261019_v1/<jobId>` 从现有episode NPZ计算，无新增推理/训练数据。首次实测24 PNG=5汇总+Test19曲线，另CSV/provenance/ZIP；源是旧100步新300混合与real-only10000的配对评测，不是新10000结果。manifest与原report SHA绑定，图表可传Sites，原NPZ/视频留GPU。证据`runs/web_english_autoeval_20261019_v1/figure_render_status.json`。

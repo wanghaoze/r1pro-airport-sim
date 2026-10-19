@@ -1,0 +1,10 @@
+{
+  "export_live_inference_video.py": "6a1cdafaf32638a172bfd844aef06f80ceccdbdf432768815647a1c59f4e0249",
+  "pi05_camera_model_simulator_wallclock.mp4": "71ec65ada5c6d2b4c8daa2d0620cc05ca4db11cd3426044c6cf01a90c45a2e3f",
+  "pi05_preview.png": "7d01fda67b34757a408473e020440a65414590324c5c459d16e87c5b4e5c49ea",
+  "pi05_video_receipt.json": "ffeea4be18dff8a39c9dde4f18b9bd7feba1546ca2f2e05f76e1e0c3497411c0",
+  "README.md": "fcaf92e3e1f5c7651cb572674a0f6169afb13cfd3a99b5c3a19e5eba3e245b42",
+  "reports.json": "ecb28c546d7dec185b36c9da568cba54be5887bcf307acba5dd81b95d9de1260",
+  "servers.json": "cf743df6e5260cc0704290a45d0be1a0f704ee0068e302b97192f31c07f1dfa2",
+  "studio_live_inference.py": "d7a4b7d0c4c0d6fcf61b777e743bc87b5cf12b84aef3a74cf716a570c2cf65f1"
+}

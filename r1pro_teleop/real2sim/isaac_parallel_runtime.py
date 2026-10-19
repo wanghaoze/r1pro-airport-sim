@@ -140,6 +140,11 @@ class ParallelRoomRuntime:
             self.shadow.qpos[adr:adr+7]=obs['tray_pose'][index]
         self.mj.mj_forward(self.model,self.shadow)
 
+    def refresh_joint_feedback(self,state,sampled_at):
+        self.exchange.assert_owner()
+        with self.exchange.condition:
+            self._actual={**self._actual,'state':np.asarray(state).copy(),'measured_wall_time':sampled_at}
+
     def pending_command(self):return self.exchange.pending()
     def take_request(self):
         """Non-destructive poll; command stays pending until complete_tick."""

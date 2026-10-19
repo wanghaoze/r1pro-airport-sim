@@ -1,4 +1,24 @@
+## 2026-10-19 实际相机→模型→Isaac 诊断与录像
+
+scope=DEC-WEB-009。新release studio_live_inference_20261019_v3，GPU0独立执行，未停止GPU1 Ollama。π0.5最新50/50 10000检查点在live_pi05_20261019_v2实际收5次原生相机观测、执行20帧(1.00s仿真)，墙钟12.5738s，后续left_arm_joint4输出越机械限位停止，PickPlace0/1；非持续20Hz实时。首推理4.002s，后续约0.439s；无裁剪/IK/教师。原生overview+3输入相机导出16.60s墙钟版视频(含4s结果页)，等待未隐藏，SHA在video receipt。视频本次用户明确授权同步本地。
+
+G0.5 last.pt真实加载并根据Isaac相机推理约9.88s，AR输出缺左右夹爪，严格完整动作拒绝，0执行帧/1基础设施失败；不能报0%模型成功率。已异步询问是否允许明确的arms-only measured-gripper-hold，尚待答复，未启用隐式补齐。注册中unconfirmed状态按本轮及既有100%=80mm明确授权重新登记percent80，旧registry保存在失败v1目录。
+
+π0.5持久服务runs/live_pi05_server_20261019_v1，G0.5持久服务runs/live_g05_20261019_v2，本轮实核心跳/进程身份存[servers.json](../../runs/realtime_inference_20261019_v1/servers.json)，PID不当永久存活保证。前者HTTP /health通过；后者v2无GET health，真实权重加载/推理日志与进程证据保留。GR00T缺兼容权重。启动/服务/导出说明[指南](../site/LIVE_INFERENCE.md)，交付[ZIP](../../output/live_inference_20261019.zip)。30项回归通过，旧v1检查点绑定缺失启动失败保留，新v2补冻结后实测。
+
+## 2026-10-19 ROS2诊断状态
+
+π0.5和G0.5独立单房间200帧/action诊断已登记，当前waiting_gpu；另一个Ollama GPU服务占用约36GB，未停止。G0.5 last.pt解析step51810，100%=80mm，30Hz训练/20Hz诊断用户批准。ROS2 domain86图像/19通道/动作H1回环合成测试通过（实际退出0），不包含权重推理或物理成功；GR00T权重待配置。证据[verification](../../runs/web_offline_ros2_20261019_v1/verification.json)。
+
 ## 2026-10-19 13:32 SGT 英文网站、自动最终检查点评测与MSE图表
+
+## 2026-10-19 English PPT and full-frame MSE delivery
+
+scope=DEC-PPT-001. Delivered 22-slide English PPT v2 with two embedded English-captioned videos, three editable MSE charts, five tables and a portable ZIP. Incorporated the user-shared latest website record, including MSE/RMSE, 4x4 episode traces, downloads and precise navigation. [Delivery evidence](../../runs/presentation_20261019_v1/DELIVERY.md) and [manifest](../../runs/presentation_20261019_v1/delivery_manifest.json).
+
+Fresh Real50/Sim50 10000-update full Test19 MSE completed 13:37:20 SGT, actual child wait exit 0: 3653 frames / 69450 valid horizon targets, truth/mask identities matched baseline. Arms 0.0072298731 rad² (+6.80% vs real-only); grippers 356.79582 mm² (-12.20%). Archived Real90/Sim10 improves arms 4.04% and grippers 7.86%. Different initializations/data recipes prevent causal attribution to ratio alone; offline MSE is not task success. This supersedes only the earlier snapshot saying presentation job a66d9401 was still running, not other automatic queued jobs. [Full result](../../runs/presentation_20261019_v1/full_mse_progress.json).
+
+User real-video recipe remains Real10/Sim90, 10000 updates, with exact hash/execution mode unverified. No physical robot control or additional training. PPT package/layout/media checks and ZIP CRC pass; native PowerPoint playback untested. Current website/GPU status is limited to timestamped evidence.
 
 scope=DEC-WEB-005/006，替代下方10月17日训练仍运行/未评测的当前状态，旧记录保留。英文首版Sites v5已交付，自动评测v6已启用，含图表与下载的v7于13:26:40发布成功，commit `d35f8d2f42fd7c2023cc248b5d7c4e0afed8421b`；站点public受众保持，GPU提交与图表文件读取限owner。
 
@@ -429,3 +449,23 @@ Estimated collection4-5h from prior batches, not current measured ETA; monitor r
 Monitor: powershell -ExecutionPolicy Bypass -File .\scripts\watch_pickplace300_mix.ps1
 
 实际部署证据：runs/real_isaac300_timeweighted_reference_20261017/{deployment_receipt,pipeline_status}.json；服务器CPUsmoke real_isaac300_timeweighted_adapter_smoke_20261017_v2。旧smoke父status/metadata兼容失败保留，新v3已修，不能把CPU验证称梯度已开始。
+
+## 2026-10-19 HTTP UUID fix and website downloads
+
+User requested website downloads and reported Create VLA evaluation crypto.randomUUID error. Both client submit paths now use UUID v4 with getRandomValues fallback for HTTP. Native/fallback/1000 uniqueness/error tests passed. Offline release scene_studio_offline_20261019_v3 deployed after supervisor identity verification; Sites v9 deployed. Browser submitted room 0 / 20 frames latest pi05 job 98f3e9bd-0a27-40be-92ee-f1063c280663 successfully; waiting_gpu, not completed evaluation. Help and Data & training include MP4, ZIP, launch guide. Workstation HTTP files matched SHA; hosted ZIP downloaded through browser and matched SHA (direct Python hosted fetch returned 403). Evidence: [verification](../../runs/web_uuid_downloads_20261019/verification.json), [deployment](../../runs/web_uuid_downloads_20261019/switch_receipt.json). No model policy change; G0.5 missing-gripper approval still pending.
+
+## 2026-10-19 Single-policy live evaluation
+
+PolicyEvaluation.tsx, api/live, gpu/live_publication.py and studio_live_view.py connect native body poses/cameras to per-run website monitoring and video artifacts. Guide: [Policy evaluation](../site/POLICY_EVALUATION.md). Evidence: [measured runs](../../runs/web_live_policy_20261019_v1/verification.json). Room001 pi05 executed 15 frames then mechanical-limit failure (0/1); room000 zero frames; G0.5 adapter HTTP500. No policy success claimed. CPU duration-budget tests passed. Workstation release scene_studio_live_policy_20261019_v5 active at deployment receipt time.
+
+## 2026-10-19 17:52 SGT Workstation connection restored
+
+User reported 100.104.0.108:9080 refused connection. SSH remained reachable. Previous v5 bridge received HTTP413 three times; supervisor recorded child_exited:bridge and stopped web (actual exit evidence retained in runs/web_connection_recovery_20261019/before.json). Deployed new immutable release scene_studio_live_policy_20261019_v6: authenticated worker JSON limit 4MiB (other routes stay250000 characters); bridge failure no longer closes healthy web. No unrelated/model services stopped. Verification actual payload194894 bytes HTTP200, 300KB payload200, >4MiB413, invalid token403; fresh bridge heartbeat no error, bootstrap live=true/32 rooms; browser Policy evaluation displays GPU connected. Evidence runs/web_connection_recovery_20261019/verification.json and restored.png. This supersedes v5 website process status only, not model success results. Source package from prior turn remains v5; deployed recovery is v6.
+
+## 2026-10-19 18:05 SGT Policy stop diagnosis and explicit clipping diagnostic
+
+User reported runs 997b6e1d and 0dcd95a4 stopping at5 frames. Actual reports show right_arm_joint4 model target -1.764047265 rad below source XML lower -1.7453 rad; not wall timeout. Source units radians, right channel11 maps joint4 directly. No mapping bug established. Native timing baseline5frames: physics/contact1.28s, first inference~4s,next~0.44s. Evidence runs/web_policy_stop_20261019/before.json,detail.json,limits.json.
+
+After offered strict vs explicit clipping diagnostic, user answered “最快的解决修复方法”; implemented opt-in clip_diagnostic, strict remains default. Raw and applied chunks plus each correction retained; no gripper completion/IK/teacher, existing model mechanical bounds unchanged; diagnostic successRate=null and pureModelSuccessEligible=false. Source spec1.180 and sync checks current. Four CPU tests including nonfinite rejection and float32 boundary roundoff passed. Offline release scene_studio_live_policy_20261019_v8 deployed; hosted Site not updated this turn.
+
+UI displays Running/Initializing/Ended and stop reason above3D, terminal model reply labelled historical, no growing pose age for finished runs. Local publisher0.1s/browser0.25s, duplicate pre-physics policy render removed without changing25substeps/frame or contacts/cameras. Native run4201ad6f-da32-43ed-8684-7296a1cb9525 same room0/real90sim10 checkpoint executed40frames/2s and stopped at configured budget. Not task success. Total native rollout19.262s incl planning7.190s,physics step9.049s,contacts0.744s,postrender0.941s; overall45.544s incl init/media. Smooth20Hz wall-time remains unachieved: underlying physics step and synchronous inference are bottlenecks; no claim performance fixed. Four videos/report produced; actual UI verified ended/time limit/diagnostic label. Evidence verification.json,profile.txt,ended_diagnostic.png under runs/web_policy_stop_20261019.

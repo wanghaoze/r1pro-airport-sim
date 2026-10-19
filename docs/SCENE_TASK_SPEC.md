@@ -1,6 +1,46 @@
 # 场景生成与托盘整理统一规范
 
-规范版本：1.176；人工核对日期：2026-10-19；历史控制基线：primitives3_v50_20260923；当前实验流程见9.1节；新增控制候选须经独立服务器完整物理回归。
+规范版本：1.181；人工核对日期：2026-10-19；历史控制基线：primitives3_v50_20260923；当前实验流程见9.1节；新增控制候选须经独立服务器完整物理回归。
+
+### 2026-10-19 真实步进与异步推理优化（1.181）
+
+用户要求优化物理和同步推理、复用真机限制并同room/checkpoint对照。新增runtimeProfile baseline/realtime：两者均可绑定robot_limits（原真机配置max_step0.1rad、max_velocity1.5rad/s、tracking_error0.25rad、feedback_age0.5s、gripper0..80mm；机械限位取同源XML），权重不变；模型服务保留raw/bounded，执行前逐帧速度/步长限制，跟踪和陈旧反馈仍拒绝。该protected诊断排除纯模型成功，不进训练。等待推理时主线程每0.1秒只读真实关节，刷新反馈时间，不推进/重置物理。
+
+realtime单房间使用CPU PhysX避免GPU逐子步同步/与模型竞争，渲染与模型仍GPU；使用官方Fabric状态同步，保留PhysX dt0.002及25子步、碰撞和全部接触采样；不改solver或接触门。后台最多一个在途推理，与当前chunk剩余预测执行重叠；消费时按观测帧对齐跳过已过期预测，超过20帧有效期不得重放。Pick/Place切换清空跨任务缓冲。初始化预热不执行动作，单列预热/初始化耗时，两种profile同样预热。同room/checkpoint/时长/限制对照，分别报告纯步进、接触、等待、渲染与总墙钟，保留原生影片及wall timeline，不能拿仿真时间视频冒充实时。
+
+### 2026-10-19 停止原因与性能计时（1.180）
+
+用户在明确两种方案后选择“最快的解决修复方法”，本轮采用可选且显式标注clip_diagnostic；默认strict不变。诊断将有限19维完整动作的双臂/夹爪按已有机械范围限幅（夹爪总开口对应两指范围交集×2），保持底盘mask，不补缺失夹爪、不IK、不改限位/接触/成功门。记录原始chunk、应用chunk及每项修正。诊断报告pureModelSuccessEligible=false、successRate=null、passedPairs=0，另列diagnosticPassedPairs；不进入训练，不覆盖严格旧结果。
+
+单策略网页终态显式显示Ended、停止原因和最终姿态，不将completed或历史reply_received当正在执行/任务成功。严格模式关节越限保留拒绝，新增chunk步号、目标及上下限数值证据，不裁剪或修改旧标签。离线发布周期0.1秒、浏览器拉取0.25秒；不插值或增加虚构帧。原生policy模式复用初始化/上一物理步后已渲染的同一状态，去除物理步前重复render；每步后仍render、保存全部原生相机/接触/25子步物理。新增physics_step、contact_read、post_render、live_publish分项耗时，用实测判断瓶颈，不宣称实时达标。
+
+### 2026-10-19 单策略网页实时评测（1.179）
+
+用户纠正：不是示例下载，而是任意登记room/检查点的独立策略评测。主要限制机器人执行的仿真时长（1–120秒，20Hz，即总执行帧数），模型等待不扣仿真时间；高级设置单请求超时1–300秒、整次墙钟保护10–3600秒，初始化计墙钟，媒体闭合另计。保留Pick→Place和固定底盘、真实物理门；达到预算报告simulation_time_budget_reached，不当成功。物理/模型失败可提前结束。原批量评测合同不改。
+
+新增evaluation.live作业：单room不可变request、登记checkpoint绑定、新run、共同GPU任务锁、GPU0资源检查；可复用身份/检查点/心跳核实的既有模型服务，只停止本作业自有ROS网关和原生进程。ROS命名空间使用/r1pro_sim/job_<id>保证数字开头UUID也符合topic规则；ROS请求保留original_room_id，按run隔离有状态模型上下文。无隐式夹爪/IK/教师补救；G0.5缺夹爪仍停。
+
+原生每帧只读RigidPrim实测body位姿与相机，原子发布frame/time/state/pose/image；3D以网站源几何绑定实测位姿，不声称几何与USD完全等同，原生相机是渲染证据。等待推理期间冻结，显示采样年龄，不插值制造动作。媒体按run在实际编码器闭合后校验ffprobe、SHA并发布，视频明确仿真时间轴；无执行帧则无动作视频，保留失败。发布失败不改变物理结果或标签。诊断不进训练、不改已有数据/checkpoint。
+
+### 2026-10-19 实际模型服务与仿真闭环录像（1.178）
+
+用户新增要求实际运行检查点服务，仿真以机器人当前相机/状态查询模型，返回动作立即在模拟器执行，导出本次视频及启动说明。授权本次仿真视频同步，不扩大为真机控制或改变训练/验收。单房间新run、checkpoint身份冻结，ROS2 domain86，GPU0选定复用已有空闲资源，不停止GPU1无关服务。原模型关节/夹爪/物理门不变；不裁剪、不教师、不IK补救。
+
+新增显式externalService模式供自有监督器维持检查点服务；服务先加载并发布就绪，仿真完成可保持服务在线，实际退出/身份/心跳独立记录。实时pacing仅防止快于20Hz，不跳物理帧、不通过追赶加速隐藏等待；同步推理时仿真等待回包。记录每次真实推理延迟、相机SHA、状态、动作SHA及每原生帧墙钟/仿真时间。必须报告是否达到20Hz墙钟速度；原20Hz视频是仿真时间轴，墙钟版保留等待，不拿视频播放帧率冒充实际实时性能。
+
+失败初始化保留v1现场，新v2修正检查点contentBindings冻结；模型越机械限位仍拒绝执行并报告真实失败，不能将服务就绪视为动作执行/完整PickPlace成功。证据runs/realtime_inference_20261019_v1，结果以服务器报告为准。
+
+### 2026-10-19 离线工作站、ROS 2模型适配与来源可视化（1.177）
+
+用户要求源码导出、workstation离线免登录、ROS 2 topic模拟模型运行、π0.5/Galaxea AI G0.5/GR00T适配、路径配置、每批32房间数据归属、网站Help、Data & training故障修复及完整reset。离线Node24/SQLite服务使用本地身份，云站原身份边界保持；不新增真机执行。无凭据/数据/检查点/原视频进入源码包；已有模型资源由绝对路径登记。
+
+ROS 2仿真隔离domain86、localhost发现、/r1pro_sim/<job>/room_<original_id>命名空间；Image RGB8三相机、JointState mobile19、String请求/动作JSON。header.frame_id=requestId，须同时匹配roomId/checkpointId；使用真实发布时ROS时钟，不伪造仿真时间。DDS订阅就绪才发首观测；不匹配/重复忽略、超时/非有限/shape异常失败，不自动教师回退。Python模型与ROS ABI分进程；原生物理执行、固定底盘mask、接触/放手/支撑/边界门不变。π0.5 H20每5帧重推理；外部适配按登记1–40步horizon检查，每次最多执行min(5,H)步，完整保留raw/submitted。G0.5单步WebSocket回复不复制成H20。
+
+用户指定G0.5 last.pt路径并授权路径可配置；邻近Hydra/归一化/tokenizer/processor和关节7+1+7+1元信息校验，run冻结登记项。用户确认100=100%=80mm全开，percent80映射观测m×1250、动作÷1250；rad关节不变。用户批准该模型30Hz训练/20Hz诊断明确标注，不能当等时序公平比较；无重训或隐式重采样。GR00T必须提供joint_absolute检查点和显式模态/单位/horizon配置，预训练EEF输出不做隐式IK，不冒充已验证。外部模型不自动纳入现有固定π0.5离线MSE协议。
+
+批次表只读原progress_manifest与frozen_simulation来源键，分列请求房间/合格来源/冻结训练/动作片段/合格溢出，映射dataset版本与split；不把32请求房间等同32合格数据，不改变冻结300对、旧标签或父split，诊断不自动入训练。Reset selected/all从每个房间自身基线恢复双对象位姿/颜色及视图，保留undo，显式Save新版本；颜色恢复仍仅改色。VLA失败reason对象转可读文本，保留原始报告；局部错误边界避免整个站点崩溃。
+
+新增失败：model_action_layout_mismatch、invalid_ros2_action_chunk、stale_policy_action、ROS2 action timeout、checkpoint metadata/units missing、checkpoint changed since registration、external model EEF rejected。状态分注册/加载/ROS就绪/实际推理/实际物理/流程结束与模型成功，接口测试或路径存在不替代实测。原生媒体仍留服务器。本轮变更证据目录runs/web_offline_ros2_20261019_v1，结果以实际回执为准。
 
 ### 2026-10-19 MSE科学图表与网站导出（1.176）
 
@@ -1760,7 +1800,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `base_command_changed_including_preparation` | `scripts/export_isaac_parallel_pickplace.py:47` → `输入/实验拒绝；不自动重试` |
 | `base_command_moved_during_actions` | `scripts/collect_isaac_fixed_pickplace.py:24` → `输入/实验拒绝；不自动重试` |
 | `base_tracking_error` | `r1pro_teleop/airport_fsm/runtime.py:1858` → `True` |
-| `baseline_config_missing` | `apps/scene-agent/gpu/worker.py:108` → `输入/实验拒绝；不自动重试` |
+| `baseline_config_missing` | `apps/scene-agent/gpu/worker.py:118` → `输入/实验拒绝；不自动重试` |
 | `batch_cancelled` | `r1pro_teleop/airport_fsm/batch.py:192` → `False` |
 | `batch_lock_requires_posix` | `r1pro_teleop/airport_fsm/__main__.py:24` → `False` |
 | `bc_requires_fresh_forward_axis_plan` | `r1pro_teleop/vla/data_three_table_single_tray.py:349` → `输入/实验拒绝；不自动重试` |
@@ -1842,7 +1882,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `certified_source_split_changed` | `r1pro_teleop/vla/three_table_single_tray_pipeline.py:19` → `输入/实验拒绝；不自动重试` |
 | `changed_training_admission_requires_recorded_evidence` | `r1pro_teleop/vla/three_table_recovery.py:120` → `输入/实验拒绝；不自动重试` |
 | `checkpoint10_is_reused_not_retrained` | `r1pro_teleop/vla/three_table_training_resume.py:27` → `输入/实验拒绝；不自动重试` |
-| `checkpoint_assets_or_optimizer_not_closed` | `apps/scene-agent/gpu/studio_backend.py:137` → `输入/实验拒绝；不自动重试` |
+| `checkpoint_assets_or_optimizer_not_closed` | `apps/scene-agent/gpu/studio_backend.py:148` → `输入/实验拒绝；不自动重试` |
 | `checkpoint_cannot_be_full_episode` | `r1pro_teleop/experiments/worker.py:66` → `输入/实验拒绝；不自动重试` |
 | `checkpoint_completion_speed_clock_invalid` | `r1pro_teleop/experiments/checkpoint_tree.py:71` → `输入/实验拒绝；不自动重试` |
 | `checkpoint_completion_strict_flag_invalid` | `r1pro_teleop/experiments/checkpoint_tree.py:73` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/experiments/checkpoint_tree.py:78` → `输入/实验拒绝；不自动重试` |
@@ -1852,7 +1892,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `checkpoint_identity_mismatch` | `r1pro_teleop/experiments/checkpoint_tree.py:173` → `输入/实验拒绝；不自动重试` |
 | `checkpoint_inside_physical_preview` | `r1pro_teleop/experiments/checkpoint_tree.py:128` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/experiments/checkpoint_tree.py:205` → `输入/实验拒绝；不自动重试` |
 | `checkpoint_inside_primitive` | `r1pro_teleop/experiments/checkpoint_tree.py:139` → `输入/实验拒绝；不自动重试` |
-| `checkpoint_not_closed_or_registered` | `apps/scene-agent/gpu/studio_backend.py:122` → `输入/实验拒绝；不自动重试` |
+| `checkpoint_not_closed_or_registered` | `apps/scene-agent/gpu/studio_backend.py:123` → `输入/实验拒绝；不自动重试` |
 | `checkpoint_not_settled` | `r1pro_teleop/experiments/checkpoint_tree.py:141` → `输入/实验拒绝；不自动重试` |
 | `checkpoint_outside_development_group` | `r1pro_teleop/experiments/campaign.py:117` → `输入/实验拒绝；不自动重试` |
 | `checkpoint_parent_missing` | `r1pro_teleop/experiments/checkpoint_tree.py:124` → `输入/实验拒绝；不自动重试` |
@@ -2017,7 +2057,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `duplicate_qualification` | `r1pro_teleop/vla/data.py:171` → `输入/实验拒绝；不自动重试` |
 | `duplicate_real_episode` | `scripts/run_real_sim_pickplace.py:36` → `输入/实验拒绝；不自动重试` |
 | `duplicate_retained_native_reference` | `r1pro_teleop/vla/native_reference_router.py:20` → `输入/实验拒绝；不自动重试` |
-| `duplicate_room_initial_poses` | `scripts/run_isaac_parallel_pickplace.py:204` → `输入/实验拒绝；不自动重试` |
+| `duplicate_room_initial_poses` | `scripts/run_isaac_parallel_pickplace.py:207` → `输入/实验拒绝；不自动重试` |
 | `duplicate_scene_action` | `scripts/supervise_three_action_expansion.py:247` → `输入/实验拒绝；不自动重试` |
 | `duplicate_scene_selection` | `scripts/render_task_complete_sources.py:28` → `输入/实验拒绝；不自动重试` |
 | `duplicate_single_tray_scene_source` | `r1pro_teleop/vla/data_single_tray.py:128` → `输入/实验拒绝；不自动重试` |
@@ -2163,7 +2203,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `fixed_scene_verified_initial_action_span_required` | `scripts/run_vla_fixed_scene.py:89` → `输入/实验拒绝；不自动重试` |
 | `fixed_scene_xml_identity_mismatch` | `scripts/run_vla_fixed_scene.py:205` → `输入/实验拒绝；不自动重试` |
 | `fixed_station_identity_mismatch` | `scripts/export_isaac_parallel_pickplace.py:53` → `输入/实验拒绝；不自动重试` |
-| `fixed_station_mismatch` | `scripts/run_isaac_parallel_pickplace.py:209` → `输入/实验拒绝；不自动重试` |
+| `fixed_station_mismatch` | `scripts/run_isaac_parallel_pickplace.py:212` → `输入/实验拒绝；不自动重试` |
 | `fixed_three_tasks_changed` | `r1pro_teleop/vla/data_single_tray.py:206` → `输入/实验拒绝；不自动重试` |
 | `forbidden_experiment_parameter` | `r1pro_teleop/experiments/common.py:48` → `输入/实验拒绝；不自动重试` |
 | `forbidden_real_mix_teacher_inverse_fallback` | `scripts/run_real_sim_pickplace.py:183` → `输入/实验拒绝；不自动重试` |
@@ -2314,7 +2354,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `initial_tray_has_no_support` | `r1pro_teleop/airport_fsm/batch.py:130` → `False` |
 | `initialization_cannot_overwrite_previous_optimizer` | `r1pro_teleop/vla/training_accelerated.py:79` → `输入/实验拒绝；不自动重试` |
 | `initialization_only_before_first_step` | `exports/web_scene_agent_v1/isaac_adapter.py:63` → `输入/实验拒绝；不自动重试` |
-| `initialized_station_must_match_fixed_action_station` | `r1pro_teleop/real2sim/isaac_parallel_runtime.py:239` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaacsim_fast_pickplace.py:66` → `输入/实验拒绝；不自动重试` |
+| `initialized_station_must_match_fixed_action_station` | `r1pro_teleop/real2sim/isaac_parallel_runtime.py:244` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaacsim_fast_pickplace.py:66` → `输入/实验拒绝；不自动重试` |
 | `initializer_model_semantics_changed` | `r1pro_teleop/vla/training_accelerated.py:106` → `输入/实验拒绝；不自动重试` |
 | `initializer_params_do_not_match_verified_parent` | `r1pro_teleop/vla/training_accelerated.py:105` → `输入/实验拒绝；不自动重试` |
 | `injected_geometry_spec_identity_mismatch` | `r1pro_teleop/airport_fsm/runtime.py:35` → `False` |
@@ -2323,21 +2363,22 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `insufficient_space_for_new_cache_and_checkpoint` | `scripts/studio_prepare_training.py:40` → `输入/实验拒绝；不自动重试` |
 | `interrupted` | `r1pro_teleop/airport_fsm/machine.py:1300` → `False` |
 | `invalid_action_interval` | `scripts/export_isaac_parallel_pickplace.py:37` → `输入/实验拒绝；不自动重试` |
+| `invalid_action_safety_mode` | `apps/scene-agent/gpu/studio_backend.py:134` → `输入/实验拒绝；不自动重试` |
 | `invalid_action_target` | `r1pro_teleop/airport_fsm/runtime.py:1271` → `False` |
 | `invalid_actual_action_halfopen_interval` | `r1pro_teleop/vla/data_single_tray.py:82` → `输入/实验拒绝；不自动重试` |
 | `invalid_actual_update_duration` | `r1pro_teleop/vla/training_accelerated.py:58` → `输入/实验拒绝；不自动重试` |
 | `invalid_aligned_mse_arrays` | `r1pro_teleop/vla/real_sim_data.py:131` → `输入/实验拒绝；不自动重试` |
 | `invalid_assessment_outcome` | `r1pro_teleop/experiments/assessment.py:13` → `输入/实验拒绝；不自动重试` |
-| `invalid_automatic_evaluation_contract` | `apps/scene-agent/gpu/studio_backend.py:107` → `输入/实验拒绝；不自动重试` |
-| `invalid_automatic_evaluation_option` | `apps/scene-agent/gpu/studio_backend.py:112` → `输入/实验拒绝；不自动重试` |
-| `invalid_automatic_training_id` | `apps/scene-agent/gpu/studio_backend.py:109` → `输入/实验拒绝；不自动重试` |
+| `invalid_automatic_evaluation_contract` | `apps/scene-agent/gpu/studio_backend.py:108` → `输入/实验拒绝；不自动重试` |
+| `invalid_automatic_evaluation_option` | `apps/scene-agent/gpu/studio_backend.py:113` → `输入/实验拒绝；不自动重试` |
+| `invalid_automatic_training_id` | `apps/scene-agent/gpu/studio_backend.py:110` → `输入/实验拒绝；不自动重试` |
 | `invalid_background_command` | `r1pro_teleop/experiments/__main__.py:57` → `输入/实验拒绝；不自动重试` |
 | `invalid_balanced_dagger_mixture` | `r1pro_teleop/vla/skill_sampling.py:40` → `输入/实验拒绝；不自动重试` |
 | `invalid_batched_mobile19` | `r1pro_teleop/real2sim/isaac_parallel_collection.py:30` → `输入/实验拒绝；不自动重试` |
 | `invalid_belt_rotation` | `r1pro_teleop/airport_fsm/geometry.py:184` → `False` |
 | `invalid_bounded_native_worker_cap` | `scripts/render_task_complete_sources.py:14` → `输入/实验拒绝；不自动重试` |
 | `invalid_brightness_prediction` | `scripts/run_pi05_real_only.py:252` → `输入/实验拒绝；不自动重试` |
-| `invalid_color` | `apps/scene-agent/gpu/worker.py:98` → `输入/实验拒绝；不自动重试` |
+| `invalid_color` | `apps/scene-agent/gpu/worker.py:108` → `输入/实验拒绝；不自动重试` |
 | `invalid_completed_updates` | `r1pro_teleop/vla/training_accelerated.py:12` → `输入/实验拒绝；不自动重试` |
 | `invalid_concat_path` | `r1pro_teleop/vla/data_skill_merge.py:252` → `输入/实验拒绝；不自动重试` |
 | `invalid_control_journal` | `r1pro_teleop/single_tray_lab/replay.py:78` → `输入/实验拒绝；不自动重试` |
@@ -2352,7 +2393,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `invalid_explicit_place_recipe_budget` | `r1pro_teleop/single_tray_lab/placement_recipe.py:32` → `输入/实验拒绝；不自动重试` |
 | `invalid_explicit_place_recipe_geometry_or_rate` | `r1pro_teleop/single_tray_lab/placement_recipe.py:30` → `输入/实验拒绝；不自动重试` |
 | `invalid_explicit_source_scene_subset` | `r1pro_teleop/vla/data_skill_merge.py:301` → `输入/实验拒绝；不自动重试` |
-| `invalid_finite_vector` | `apps/scene-agent/gpu/worker.py:95` → `输入/实验拒绝；不自动重试` |
+| `invalid_finite_vector` | `apps/scene-agent/gpu/worker.py:105` → `输入/实验拒绝；不自动重试` |
 | `invalid_fixed_base_19_arrays` | `r1pro_teleop/vla/data_single_tray.py:197` → `输入/实验拒绝；不自动重试` |
 | `invalid_fixed_base_pose` | `r1pro_teleop/real2sim/isaac_fast_pickplace.py:106` → `输入/实验拒绝；不自动重试` |
 | `invalid_free_run_terminal_error_must_be_unavailable` | `r1pro_teleop/single_tray_3table/free_run_native.py:139` → `输入/实验拒绝；不自动重试` |
@@ -2364,20 +2405,22 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `invalid_initial_base_world` | `r1pro_teleop/real2sim/isaac_three_tray_runtime.py:128` → `输入/实验拒绝；不自动重试` |
 | `invalid_initial_room_command` | `r1pro_teleop/real2sim/isaac_parallel_runtime.py:97` → `输入/实验拒绝；不自动重试` |
 | `invalid_interval_statistics` | `r1pro_teleop/vla/data_task_lerobot.py:162` → `输入/实验拒绝；不自动重试` |
-| `invalid_job_id` | `apps/scene-agent/gpu/studio_backend.py:103` → `输入/实验拒绝；不自动重试` |
+| `invalid_job_id` | `apps/scene-agent/gpu/studio_backend.py:104` → `输入/实验拒绝；不自动重试` |
 | `invalid_linux_exit_status` | `r1pro_teleop/vla/native_reference_router.py:38` → `输入/实验拒绝；不自动重试` |
 | `invalid_local_qualification` | `r1pro_teleop/vla/data.py:248` → `输入/实验拒绝；不自动重试` |
 | `invalid_max_scenes` | `r1pro_teleop/vla/data_lerobot.py:169` → `输入/实验拒绝；不自动重试` |
 | `invalid_milestone_budget` | `r1pro_teleop/vla/training_accelerated.py:81` → `输入/实验拒绝；不自动重试` |
 | `invalid_mixture_schedule` | `r1pro_teleop/vla/parallel_pickplace_training.py:151` → `输入/实验拒绝；不自动重试` |
 | `invalid_mobile_19_arrays` | `r1pro_teleop/vla/data_three_table_lerobot.py:112` → `输入/实验拒绝；不自动重试` |
-| `invalid_model_output` | `scripts/compare_pi05_real_mixed_plots.py:64` → `输入/实验拒绝；不自动重试`<br>`scripts/studio_mse.py:74` → `输入/实验拒绝；不自动重试` |
+| `invalid_model_output` | `scripts/compare_pi05_real_mixed_plots.py:64` → `输入/实验拒绝；不自动重试`<br>`scripts/studio_model_http.py:89` → `输入/实验拒绝；不自动重试`<br>`scripts/studio_mse.py:74` → `输入/实验拒绝；不自动重试` |
 | `invalid_model_prediction` | `scripts/run_pi05_real_only.py:223` → `输入/实验拒绝；不自动重试` |
 | `invalid_model_service_startup_contract` | `r1pro_teleop/single_tray_3table/evaluation_batch.py:204` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/single_tray_lab/evaluation_batch.py:154` → `输入/实验拒绝；不自动重试` |
 | `invalid_native_body_quaternion` | `scripts/isaacsim_kinematic_audit.py:12` → `输入/实验拒绝；不自动重试` |
 | `invalid_native_command_interpolation_shape` | `r1pro_teleop/real2sim/isaac_command_timing.py:9` → `输入/实验拒绝；不自动重试` |
-| `invalid_native_model_chunk` | `scripts/studio_vla_evaluate.py:29` → `输入/实验拒绝；不自动重试` |
-| `invalid_native_policy_contract` | `apps/scene-agent/gpu/studio_backend.py:127` → `输入/实验拒绝；不自动重试` |
+| `invalid_native_model_chunk` | `scripts/studio_vla_evaluate.py:33` → `输入/实验拒绝；不自动重试` |
+| `invalid_native_policy_contract` | `apps/scene-agent/gpu/studio_backend.py:131` → `输入/实验拒绝；不自动重试` |
+| `invalid_observation_fields` | `scripts/studio_model_http.py:79` → `输入/实验拒绝；不自动重试` |
+| `invalid_observation_size` | `scripts/studio_model_http.py:76` → `输入/实验拒绝；不自动重试` |
 | `invalid_or_duplicate_shard_repo_id` | `r1pro_teleop/airport_fsm/loading.py:27` → `False` |
 | `invalid_or_nonfinite_model_chunk` | `r1pro_teleop/single_tray_3table/free_run.py:75` → `输入/实验拒绝；不自动重试` |
 | `invalid_parallel_execution_mode` | `scripts/run_isaac_parallel_pickplace.py:31` → `输入/实验拒绝；不自动重试` |
@@ -2385,9 +2428,10 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `invalid_payload_physics_evidence` | `r1pro_teleop/vla/data_single_tray.py:70` → `输入/实验拒绝；不自动重试` |
 | `invalid_pipeline_tag` | `r1pro_teleop/vla/data_native_pipeline.py:24` → `输入/实验拒绝；不自动重试` |
 | `invalid_plot_artifact_path` | `apps/scene-agent/gpu/mse_artifacts.py:20` → `输入/实验拒绝；不自动重试` |
-| `invalid_policy_action_chunk` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:56` → `输入/实验拒绝；不自动重试` |
-| `invalid_policy_input_fields` | `scripts/studio_vla_evaluate.py:27` → `输入/实验拒绝；不自动重试` |
+| `invalid_policy_action_chunk` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:58` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/real2sim/isaac_policy_pickplace.py:69` → `输入/实验拒绝；不自动重试` |
+| `invalid_policy_input_fields` | `scripts/studio_vla_evaluate.py:31` → `输入/实验拒绝；不自动重试` |
 | `invalid_policy_room_count` | `scripts/run_isaac_parallel_pickplace.py:28` → `输入/实验拒绝；不自动重试` |
+| `invalid_policy_transport` | `apps/scene-agent/gpu/studio_backend.py:127` → `输入/实验拒绝；不自动重试` |
 | `invalid_private_escape_bounds` | `r1pro_teleop/vla/contact_escape.py:84` → `输入/实验拒绝；不自动重试` |
 | `invalid_private_escape_evidence` | `r1pro_teleop/vla/contact_escape.py:79` → `输入/实验拒绝；不自动重试` |
 | `invalid_private_escape_geometry` | `r1pro_teleop/vla/contact_escape.py:39` → `输入/实验拒绝；不自动重试` |
@@ -2395,14 +2439,17 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `invalid_real_cache` | `scripts/run_pi05_real_only.py:93` → `输入/实验拒绝；不自动重试` |
 | `invalid_real_fraction` | `scripts/train_pi05_parallel_real_mix.py:42` → `输入/实验拒绝；不自动重试` |
 | `invalid_real_timestamps` | `r1pro_teleop/vla/real_sim_data.py:34` → `输入/实验拒绝；不自动重试` |
+| `invalid_registered_policy_horizon` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:123` → `输入/实验拒绝；不自动重试` |
 | `invalid_registered_room_grid` | `r1pro_teleop/real2sim/isaac_parallel_collection.py:21` → `输入/实验拒绝；不自动重试` |
-| `invalid_registered_scene_selection` | `apps/scene-agent/gpu/studio_backend.py:126` → `输入/实验拒绝；不自动重试` |
-| `invalid_request_id` | `apps/scene-agent/gpu/worker.py:154` → `输入/实验拒绝；不自动重试` |
+| `invalid_registered_scene_selection` | `apps/scene-agent/gpu/studio_backend.py:130` → `输入/实验拒绝；不自动重试` |
+| `invalid_request_id` | `apps/scene-agent/gpu/worker.py:164` → `输入/实验拒绝；不自动重试` |
 | `invalid_retained_push_contact` | `r1pro_teleop/airport_fsm/machine.py:776` → `False` |
-| `invalid_room_selection` | `apps/scene-agent/gpu/worker.py:90` → `输入/实验拒绝；不自动重试` |
+| `invalid_room_selection` | `apps/scene-agent/gpu/worker.py:100` → `输入/实验拒绝；不自动重试` |
+| `invalid_ros2_action_chunk` | `scripts/studio_ros2_transport.py:43` → `输入/实验拒绝；不自动重试` |
+| `invalid_runtime_profile` | `apps/scene-agent/gpu/studio_backend.py:133` → `输入/实验拒绝；不自动重试` |
 | `invalid_sampler_shape_or_steps` | `r1pro_teleop/vla/flowdagger_single_tray.py:47` → `输入/实验拒绝；不自动重试` |
 | `invalid_sampling_weights` | `r1pro_teleop/vla/parallel_pickplace_training.py:162` → `输入/实验拒绝；不自动重试` |
-| `invalid_scene_profile` | `apps/scene-agent/gpu/worker.py:105` → `输入/实验拒绝；不自动重试` |
+| `invalid_scene_profile` | `apps/scene-agent/gpu/worker.py:115` → `输入/实验拒绝；不自动重试` |
 | `invalid_scene_split` | `r1pro_teleop/vla/data.py:177` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/vla/data.py:426` → `输入/实验拒绝；不自动重试` |
 | `invalid_schedule_budget` | `r1pro_teleop/vla/training_cache.py:45` → `输入/实验拒绝；不自动重试` |
 | `invalid_search_budget` | `r1pro_teleop/experiments/parameter_search.py:26` → `输入/实验拒绝；不自动重试` |
@@ -2417,7 +2464,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `invalid_substep_targets` | `r1pro_teleop/airport_fsm/runtime.py:522` → `False` |
 | `invalid_task_dataset_max_scenes` | `r1pro_teleop/vla/data_task_lerobot.py:227` → `输入/实验拒绝；不自动重试` |
 | `invalid_task_dataset_split` | `r1pro_teleop/vla/data_task_lerobot.py:216` → `输入/实验拒绝；不自动重试` |
-| `invalid_training_config` | `apps/scene-agent/gpu/studio_backend.py:116` → `输入/实验拒绝；不自动重试` |
+| `invalid_training_config` | `apps/scene-agent/gpu/studio_backend.py:117` → `输入/实验拒绝；不自动重试` |
 | `invalid_vla_prompt` | `r1pro_teleop/vla/prompts.py:39` → `输入/实验拒绝；不自动重试` |
 | `invalid_whole_action_source_interval` | `r1pro_teleop/vla/data_task_lerobot.py:48` → `输入/实验拒绝；不自动重试` |
 | `invalid_whole_action_vocabulary` | `r1pro_teleop/vla/data_task_lerobot.py:35` → `输入/实验拒绝；不自动重试` |
@@ -2477,7 +2524,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `isaac_unsupported_base_actuator_translation` | `scripts/isaacsim_base_drives.py:15` → `输入/实验拒绝；不自动重试` |
 | `isaac_whole_native_task_qualification_required` | `r1pro_teleop/vla/isaac_dataset.py:117` → `输入/实验拒绝；不自动重试` |
 | `isaac_world_d6_position_drives_missing` | `r1pro_teleop/real2sim/isaac_mobile.py:79` → `输入/实验拒绝；不自动重试`<br>`scripts/isaac_mobile.py:79` → `输入/实验拒绝；不自动重试` |
-| `job_request_conflict` | `apps/scene-agent/gpu/studio_backend.py:141` → `输入/实验拒绝；不自动重试` |
+| `job_request_conflict` | `apps/scene-agent/gpu/studio_backend.py:152` → `输入/实验拒绝；不自动重试` |
 | `joining_arm_path_unavailable` | `r1pro_teleop/airport_fsm/machine.py:287` → `False` |
 | `joint_or_gripper_limit` | `r1pro_teleop/airport_fsm/runtime.py:1276` → `False` |
 | `joint_path_collision_or_wrist` | `r1pro_teleop/airport_fsm/runtime.py:1288` → `True` |
@@ -2501,6 +2548,8 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `lift_requires_approach_checkpoint` | `r1pro_teleop/experiments/worker.py:33` → `输入/实验拒绝；不自动重试` |
 | `live_process_identity_could_not_be_verified` | `r1pro_teleop/vla/training_pipeline.py:77` → `输入/实验拒绝；不自动重试` |
 | `live_raw2_trace_required` | `r1pro_teleop/single_tray_3table/observer.py:44` → `输入/实验拒绝；不自动重试` |
+| `live_single_room_ros2_required` | `apps/scene-agent/gpu/studio_backend.py:135` → `输入/实验拒绝；不自动重试` |
+| `live_view_requires_one_room` | `r1pro_teleop/real2sim/studio_live_view.py:15` → `输入/实验拒绝；不自动重试` |
 | `loaded_push_payload_or_final_guard_invalid` | `r1pro_teleop/vla/data_single_tray.py:88` → `输入/实验拒绝；不自动重试` |
 | `loader_action_shape` | `r1pro_teleop/airport_fsm/exporter.py:278` → `False` |
 | `loader_native_resolution` | `r1pro_teleop/airport_fsm/exporter.py:281` → `False` |
@@ -2576,15 +2625,15 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `native_full_source_has_extra_frames` | `r1pro_teleop/vla/data_task_lerobot.py:414` → `输入/实验拒绝；不自动重试` |
 | `native_metadata_reuse_video_bytes_changed` | `r1pro_teleop/vla/data_task_lerobot.py:515` → `输入/实验拒绝；不自动重试` |
 | `native_override_source_trace_mismatch` | `r1pro_teleop/vla/data_task_lerobot.py:247` → `输入/实验拒绝；不自动重试` |
-| `native_policy_actual_substeps` | `scripts/studio_vla_evaluate.py:44` → `输入/实验拒绝；不自动重试` |
-| `native_policy_physics_gate` | `scripts/studio_vla_evaluate.py:45` → `输入/实验拒绝；不自动重试` |
-| `native_policy_trace_shape` | `scripts/studio_vla_evaluate.py:43` → `输入/实验拒绝；不自动重试` |
+| `native_policy_actual_substeps` | `scripts/studio_vla_evaluate.py:48` → `输入/实验拒绝；不自动重试` |
+| `native_policy_physics_gate` | `scripts/studio_vla_evaluate.py:49` → `输入/实验拒绝；不自动重试` |
+| `native_policy_trace_shape` | `scripts/studio_vla_evaluate.py:47` → `输入/实验拒绝；不自动重试` |
 | `native_producer_not_closed_and_verified` | `r1pro_teleop/vla/training_pipeline.py:42` → `输入/实验拒绝；不自动重试` |
 | `native_publication_is_not_full_source` | `r1pro_teleop/vla/data_task_lerobot.py:494` → `输入/实验拒绝；不自动重试` |
 | `native_reference_coverage_mismatch` | `r1pro_teleop/vla/data_native_pipeline.py:56` → `输入/实验拒绝；不自动重试` |
 | `native_reference_list_not_complete` | `r1pro_teleop/vla/training_pipeline.py:46` → `输入/实验拒绝；不自动重试` |
 | `native_replay_state_errors` | `r1pro_teleop/vla/data_task_lerobot.py:503` → `输入/实验拒绝；不自动重试` |
-| `native_report_missing` | `apps/scene-agent/gpu/studio_job_runner.py:67` → `输入/实验拒绝；不自动重试` |
+| `native_report_missing` | `apps/scene-agent/gpu/studio_job_runner.py:69` → `输入/实验拒绝；不自动重试` |
 | `native_rgb_frame_invalid` | `r1pro_teleop/vla/data_task_lerobot.py:137` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/vla/data_task_lerobot.py:416` → `输入/实验拒绝；不自动重试` |
 | `native_robot_visuals_not_found` | `r1pro_teleop/real2sim/isaac_lab_visuals.py:89` → `输入/实验拒绝；不自动重试` |
 | `native_shared_clock_time_invalid` | `scripts/export_isaac_parallel_pickplace.py:32` → `输入/实验拒绝；不自动重试` |
@@ -2709,7 +2758,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `old_or_hidden_goal_scope_rejected` | `r1pro_teleop/single_tray_3table/evaluation_batch.py:43` → `输入/实验拒绝；不自动重试` |
 | `old_or_loaded_scope_cannot_be_new_evaluation` | `r1pro_teleop/single_tray_lab/evaluation_batch.py:37` → `输入/实验拒绝；不自动重试` |
 | `one_complete_place_withdrawal_endpoint_required` | `r1pro_teleop/vla/single_tray_pipeline.py:64` → `输入/实验拒绝；不自动重试` |
-| `one_registered_case_per_room_required` | `scripts/run_isaac_parallel_pickplace.py:201` → `输入/实验拒绝；不自动重试` |
+| `one_registered_case_per_room_required` | `scripts/run_isaac_parallel_pickplace.py:204` → `输入/实验拒绝；不自动重试` |
 | `one_registered_train_asset_candidate_required` | `scripts/supervise_isaacsim_three_tray_assets.py:61` → `输入/实验拒绝；不自动重试` |
 | `one_reserved_gpu_required` | `scripts/run_pi05_real_only.py:175` → `输入/实验拒绝；不自动重试` |
 | `online_push_brake_timeout` | `r1pro_teleop/airport_fsm/online_push.py:116` → `False` |
@@ -2765,18 +2814,18 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `owned_gpu_context_not_released` | `r1pro_teleop/single_tray_3table/evaluation_batch.py:297` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/single_tray_lab/evaluation_batch.py:223` → `输入/实验拒绝；不自动重试` |
 | `owned_process_identity_changed_no_signal_or_duplicate` | `r1pro_teleop/single_tray_3table/workflow.py:131` → `输入/实验拒绝；不自动重试` |
 | `pair_source_identity_mismatch` | `r1pro_teleop/vla/parallel_pickplace_training.py:26` → `输入/实验拒绝；不自动重试` |
-| `parallel_actor_count_mismatch` | `scripts/probe_isaac_parallel_collection.py:155` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaac_parallel_pickplace.py:194` → `输入/实验拒绝；不自动重试` |
+| `parallel_actor_count_mismatch` | `scripts/probe_isaac_parallel_collection.py:155` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaac_parallel_pickplace.py:197` → `输入/实验拒绝；不自动重试` |
 | `parallel_cache_binding_invalid` | `scripts/train_pi05_parallel_real_mix.py:46` → `输入/实验拒绝；不自动重试` |
 | `parallel_camera_frame_mismatch` | `r1pro_teleop/real2sim/isaac_parallel_collection.py:131` → `输入/实验拒绝；不自动重试` |
 | `parallel_contact_sensor_identity` | `r1pro_teleop/real2sim/isaac_parallel_contacts.py:21` → `输入/实验拒绝；不自动重试` |
-| `parallel_fixed_base_command_changed` | `scripts/run_isaac_parallel_pickplace.py:310` → `输入/实验拒绝；不自动重试` |
+| `parallel_fixed_base_command_changed` | `scripts/run_isaac_parallel_pickplace.py:323` → `输入/实验拒绝；不自动重试` |
 | `parallel_native_four_camera_contract_required` | `r1pro_teleop/vla/data_task_lerobot.py:454` → `输入/实验拒绝；不自动重试` |
 | `parallel_native_output_paths_overlap` | `r1pro_teleop/vla/data_task_lerobot.py:456` → `输入/实验拒绝；不自动重试` |
 | `parallel_nonfinite_contact` | `r1pro_teleop/real2sim/isaac_parallel_contacts.py:57` → `输入/实验拒绝；不自动重试` |
 | `parallel_nonfinite_physics` | `scripts/probe_isaac_parallel_collection.py:237` → `输入/实验拒绝；不自动重试` |
 | `parallel_parent_split_leakage` | `r1pro_teleop/real2sim/isaac_parallel_collection.py:44` → `输入/实验拒绝；不自动重试` |
-| `parallel_requires_one_actual_physics_scene` | `scripts/probe_isaac_parallel_collection.py:152` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaac_parallel_pickplace.py:188` → `输入/实验拒绝；不自动重试` |
-| `parallel_room_real_substeps_must_equal_25` | `r1pro_teleop/real2sim/isaac_parallel_runtime.py:152` → `输入/实验拒绝；不自动重试` |
+| `parallel_requires_one_actual_physics_scene` | `scripts/probe_isaac_parallel_collection.py:152` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaac_parallel_pickplace.py:191` → `输入/实验拒绝；不自动重试` |
+| `parallel_room_real_substeps_must_equal_25` | `r1pro_teleop/real2sim/isaac_parallel_runtime.py:157` → `输入/实验拒绝；不自动重试` |
 | `parallel_source_identity_changed` | `scripts/probe_isaac_parallel_collection.py:66` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaac_parallel_pickplace.py:70` → `输入/实验拒绝；不自动重试` |
 | `parallel_source_stage_open_failed` | `scripts/probe_isaac_parallel_collection.py:69` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaac_parallel_pickplace.py:73` → `输入/实验拒绝；不自动重试` |
 | `parallel_table_filters_missing` | `r1pro_teleop/real2sim/isaac_parallel_contacts.py:31` → `输入/实验拒绝；不自动重试` |
@@ -2846,8 +2895,8 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `plot_source_hash_mismatch` | `scripts/studio_mse_plots.py:43` → `输入/实验拒绝；不自动重试` |
 | `plot_upload_not_confirmed` | `apps/scene-agent/gpu/mse_artifacts.py:28` → `输入/实验拒绝；不自动重试` |
 | `policy_checkpoint_identity_mismatch` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:19` → `输入/实验拒绝；不自动重试` |
-| `policy_initial_station_not_table_front` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:73` → `输入/实验拒绝；不自动重试` |
-| `policy_release_above_authorized_2cm` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:48` → `输入/实验拒绝；不自动重试` |
+| `policy_initial_station_not_table_front` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:130` → `输入/实验拒绝；不自动重试` |
+| `policy_release_above_authorized_2cm` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:50` → `输入/实验拒绝；不自动重试` |
 | `positive_explicit_new_task_evaluation_budget_required` | `r1pro_teleop/vla/single_tray_pipeline.py:84` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/vla/three_table_single_tray_pipeline.py:51` → `输入/实验拒绝；不自动重试` |
 | `positive_explicit_training_vram_admission_required` | `r1pro_teleop/vla/three_table_recovery.py:117` → `输入/实验拒绝；不自动重试` |
 | `positive_motor_gain_and_lift_required` | `r1pro_teleop/single_tray_lab/scene.py:58` → `输入/实验拒绝；不自动重试` |
@@ -2999,7 +3048,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `real2sim_unexpected_missing_arm_joint` | `r1pro_teleop/real2sim/model.py:128` → `输入/实验拒绝；不自动重试` |
 | `real2sim_unscaled_source_finger_required` | `scripts/build_real2sim_finger_collision.py:43` → `输入/实验拒绝；不自动重试` |
 | `real_arm_gripper_order_not_7_1_7_1` | `r1pro_teleop/vla/real_sim_data.py:46` → `输入/实验拒绝；不自动重试` |
-| `real_data_required` | `apps/scene-agent/gpu/studio_backend.py:117` → `输入/实验拒绝；不自动重试` |
+| `real_data_required` | `apps/scene-agent/gpu/studio_backend.py:118` → `输入/实验拒绝；不自动重试` |
 | `real_episode_count_changed` | `scripts/run_real_sim_pickplace.py:31` → `输入/实验拒绝；不自动重试` |
 | `real_episode_split_leak` | `scripts/train_pi05_parallel_real_mix.py:53` → `输入/实验拒绝；不自动重试` |
 | `real_gripper_command_outside_documented_mm_range` | `r1pro_teleop/vla/real_sim_data.py:51` → `输入/实验拒绝；不自动重试` |
@@ -3064,7 +3113,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `replay_scene_hash_mismatch` | `r1pro_teleop/airport_fsm/exporter.py:111` → `False` |
 | `replay_source_identity_changed` | `r1pro_teleop/single_tray_3table/evaluation_batch.py:113` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/single_tray_lab/evaluation_batch.py:81` → `输入/实验拒绝；不自动重试` |
 | `replay_time_mismatch` | `r1pro_teleop/airport_fsm/exporter.py:130` → `False` |
-| `request_id_conflict` | `apps/scene-agent/gpu/worker.py:161` → `输入/实验拒绝；不自动重试` |
+| `request_id_conflict` | `apps/scene-agent/gpu/worker.py:171` → `输入/实验拒绝；不自动重试` |
 | `required_continuous_contact_projection_not_closed_yet` | `r1pro_teleop/vla/data_three_table_lerobot.py:90` → `输入/实验拒绝；不自动重试` |
 | `restored_completed_checkpoint_not_fully_saved` | `r1pro_teleop/vla/training_accelerated.py:134` → `输入/实验拒绝；不自动重试` |
 | `result_raw_guarded_substep_count_mismatch` | `r1pro_teleop/single_tray_lab/contact_summary.py:41` → `输入/实验拒绝；不自动重试` |
@@ -3088,6 +3137,8 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `reviewed_training_budget_or_model_changed` | `r1pro_teleop/vla/training_pipeline.py:214` → `输入/实验拒绝；不自动重试` |
 | `reward_method_not_implemented_or_approved` | `scripts/train_pi05_parallel_real_mix.py:40` → `输入/实验拒绝；不自动重试` |
 | `right_release_command_absent` | `scripts/audit_isaacsim_three_tray_demo.py:39` → `输入/实验拒绝；不自动重试` |
+| `robot_filter_stale_feedback` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:106` → `输入/实验拒绝；不自动重试` |
+| `robot_filter_tracking_error` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:108` → `输入/实验拒绝；不自动重试` |
 | `robot_initial_collision` | `r1pro_teleop/airport_scenes.py:185` → `生成器捕获ValueError时重采样` |
 | `robot_partition_face_union_mismatch` | `r1pro_teleop/real2sim/isaac_lab_visuals.py:82` → `输入/实验拒绝；不自动重试` |
 | `runtime_core_not_verified` | `r1pro_teleop/vla/training_pipeline.py:63` → `输入/实验拒绝；不自动重试` |
@@ -3124,10 +3175,11 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `settled_stage_requires_fresh_origin` | `r1pro_teleop/experiments/worker.py:17` → `输入/实验拒绝；不自动重试` |
 | `shared_engine_actual_wait_zero_required` | `scripts/export_isaac_parallel_pickplace.py:179` → `输入/实验拒绝；不自动重试` |
 | `short_or_ambiguous_rim_contact` | `r1pro_teleop/vla/data_three_table_single_tray.py:79` → `输入/实验拒绝；不自动重试` |
-| `simulation_data_required` | `apps/scene-agent/gpu/studio_backend.py:118` → `输入/实验拒绝；不自动重试` |
+| `simulation_data_required` | `apps/scene-agent/gpu/studio_backend.py:119` → `输入/实验拒绝；不自动重试` |
 | `simulation_holdout_leak` | `scripts/train_pi05_parallel_real_mix.py:55` → `输入/实验拒绝；不自动重试` |
 | `simulation_parent_split_conflict` | `scripts/studio_prepare_training.py:36` → `输入/实验拒绝；不自动重试` |
 | `simulation_source_not_verified_ready` | `scripts/run_real_sim_pickplace.py:44` → `输入/实验拒绝；不自动重试` |
+| `simulation_time_budget_reached` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:139` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/real2sim/isaac_policy_pickplace.py:166` → `输入/实验拒绝；不自动重试` |
 | `simulation_time_grid_mismatch` | `r1pro_teleop/airport_fsm/exporter.py:69` → `False` |
 | `single_arm_release_path_unavailable` | `r1pro_teleop/airport_fsm/machine.py:691` → `False` |
 | `single_tray_blender_assets_missing` | `r1pro_teleop/single_tray_lab/scene.py:150` → `输入/实验拒绝；不自动重试` |
@@ -3256,6 +3308,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `stage_duration_must_be_whole_20hz_frames` | `r1pro_teleop/single_tray_3table/free_run.py:14` → `输入/实验拒绝；不自动重试` |
 | `stage_output_not_closed` | `scripts/run_pi05_real_only.py:285` → `输入/实验拒绝；不自动重试` |
 | `stale_handoff_tray` | `r1pro_teleop/airport_fsm/machine.py:273` → `False` |
+| `stale_policy_action` | `scripts/studio_ros2_transport.py:40` → `输入/实验拒绝；不自动重试` |
 | `state_projection_scene_xml_hash_mismatch` | `r1pro_teleop/vla/data.py:390` → `输入/实验拒绝；不自动重试` |
 | `strict_zero_margin_footprint_not_actual_corners` | `r1pro_teleop/vla/data_three_table_single_tray.py:149` → `输入/实验拒绝；不自动重试` |
 | `submitted_command_changed_from_raw_model_action` | `r1pro_teleop/single_tray_3table/free_run.py:46` → `输入/实验拒绝；不自动重试` |
@@ -3332,7 +3385,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `two_device_dp_mesh_required` | `r1pro_teleop/vla/training_accelerated.py:95` → `输入/实验拒绝；不自动重试` |
 | `two_source_pad_collision_centers_required` | `r1pro_teleop/real2sim/isaac_fast_pickplace.py:73` → `输入/实验拒绝；不自动重试` |
 | `two_visible_training_devices_required` | `scripts/train_pi05_isaac_three_tray.py:91` → `输入/实验拒绝；不自动重试`<br>`scripts/train_pi05_parallel_real_mix.py:131` → `输入/实验拒绝；不自动重试` |
-| `unapproved_training_recipe` | `apps/scene-agent/gpu/worker.py:134` → `输入/实验拒绝；不自动重试` |
+| `unapproved_training_recipe` | `apps/scene-agent/gpu/worker.py:144` → `输入/实验拒绝；不自动重试` |
 | `unchanged_explicit_workflow_recovery_required` | `r1pro_teleop/single_tray_3table/workflow.py:265` → `输入/实验拒绝；不自动重试` |
 | `unchanged_guardian_recovery_options_required` | `r1pro_teleop/single_tray_3table/guardian.py:133` → `输入/实验拒绝；不自动重试` |
 | `undeclared_checkpoint_stage` | `r1pro_teleop/experiments/checkpoint_tree.py:120` → `输入/实验拒绝；不自动重试` |
@@ -3365,9 +3418,9 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `unrecognized_environment_journal` | `r1pro_teleop/single_tray_3table/replay.py:24` → `False` |
 | `unrecognized_native_replay_schema` | `r1pro_teleop/vla/data_task_lerobot.py:507` → `输入/实验拒绝；不自动重试` |
 | `unrecognized_source_payload_identity` | `r1pro_teleop/single_tray_lab/replay.py:44` → `输入/实验拒绝；不自动重试` |
-| `unregistered_dataset` | `apps/scene-agent/gpu/studio_backend.py:114` → `输入/实验拒绝；不自动重试` |
+| `unregistered_dataset` | `apps/scene-agent/gpu/studio_backend.py:115` → `输入/实验拒绝；不自动重试` |
 | `unregistered_integration_staircase` | `scripts/supervise_isaac_parallel_probe.py:45` → `输入/实验拒绝；不自动重试` |
-| `unregistered_job_directory` | `apps/scene-agent/gpu/studio_job_runner.py:73` → `输入/实验拒绝；不自动重试` |
+| `unregistered_job_directory` | `apps/scene-agent/gpu/studio_job_runner.py:75` → `输入/实验拒绝；不自动重试` |
 | `unregistered_operation_table` | `r1pro_teleop/single_tray_3table/observer.py:69` → `输入/实验拒绝；不自动重试` |
 | `unregistered_scene_requested` | `r1pro_teleop/airport_fsm/__main__.py:72` → `False`<br>`r1pro_teleop/airport_fsm/registry.py:106` → `False` |
 | `unsafe_or_duplicate_scene_id` | `r1pro_teleop/airport_fsm/registry.py:32` → `False` |
@@ -3380,10 +3433,11 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `unsupported_environment_mutation` | `r1pro_teleop/single_tray_lab/replay.py:40` → `输入/实验拒绝；不自动重试` |
 | `unsupported_environment_source` | `r1pro_teleop/vla/data.py:201` → `输入/实验拒绝；不自动重试` |
 | `unsupported_evaluation_mode` | `r1pro_teleop/vla/training_pipeline.py:56` → `输入/实验拒绝；不自动重试` |
-| `unsupported_job_kind` | `apps/scene-agent/gpu/studio_backend.py:129` → `输入/实验拒绝；不自动重试` |
+| `unsupported_job_kind` | `apps/scene-agent/gpu/studio_backend.py:139` → `输入/实验拒绝；不自动重试` |
 | `unsupported_manifest_schema` | `r1pro_teleop/vla/data.py:431` → `输入/实验拒绝；不自动重试` |
+| `unsupported_model_family` | `scripts/studio_model_http.py:23` → `输入/实验拒绝；不自动重试` |
 | `unsupported_nonunit_joint_transmission` | `r1pro_teleop/airport_fsm/runtime.py:200` → `False` |
-| `unsupported_operation` | `apps/scene-agent/gpu/worker.py:174` → `输入/实验拒绝；不自动重试` |
+| `unsupported_operation` | `apps/scene-agent/gpu/worker.py:184` → `输入/实验拒绝；不自动重试` |
 | `unsupported_original_raw_schema` | `r1pro_teleop/vla/data_task_native.py:103` → `输入/实验拒绝；不自动重试` |
 | `unsupported_raw_schema` | `scripts/plan_complete_task_actions.py:59` → `输入/实验拒绝；不自动重试` |
 | `unsupported_separation_path` | `r1pro_teleop/airport_fsm/machine.py:731` → `True` |
@@ -3446,7 +3500,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `whole_task_unaccounted_original_frames` | `r1pro_teleop/vla/data_task_lerobot.py:204` → `输入/实验拒绝；不自动重试` |
 | `whole_task_unaccounted_original_tail` | `r1pro_teleop/vla/data_task_lerobot.py:206` → `输入/实验拒绝；不自动重试` |
 | `withdraw_planning_state_changed` | `r1pro_teleop/airport_fsm/withdraw_merge.py:41` → `False` |
-| `worker_config_permissions` | `apps/scene-agent/gpu/worker.py:201` → `输入/实验拒绝；不自动重试` |
+| `worker_config_permissions` | `apps/scene-agent/gpu/worker.py:211` → `输入/实验拒绝；不自动重试` |
 | `worker_resource_cap_required` | `r1pro_teleop/single_tray_3table/campaign_recovery.py:12` → `输入/实验拒绝；不自动重试` |
 | `workflow_paths_required` | `r1pro_teleop/single_tray_3table/workflow.py:159` → `输入/实验拒绝；不自动重试` |
 | `wrist_camera_front_guard` | `r1pro_teleop/airport_fsm/runtime.py:467` → `False` |
@@ -3671,43 +3725,59 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 
 ```json
 {
-  "apps/scene-agent/app/api/artifacts/route.ts": "0d5b3111a094e0e969e42583905e1ddfff9fd976d2cfc19cb29d60cb9fc1634a",
-  "apps/scene-agent/app/api/bootstrap/route.ts": "6d6c79af0860e8e4d7ed5f72de4e45458b6c9b5392c1cedd8fb21f55ef63dd5c",
+  "apps/scene-agent/app/api/artifacts/route.ts": "1b0f2219049682479418ddb8c01ddff90469fe0cea853219338e98a22d1b6900",
+  "apps/scene-agent/app/api/bootstrap/route.ts": "ea4f132622856b51ec686135327516ee07bc3233ae1862054b7cdc0190a2bccb",
   "apps/scene-agent/app/api/chat/route.ts": "42bc8ef7187e3d9425f2f12313faa04b119a4fa735875f0abd1be6b18e33be05",
-  "apps/scene-agent/app/api/jobs/route.ts": "97750d8e4d5dcee33d883b106285d0e9c835d52b4cdb56e1de20d92fe2f5085f",
+  "apps/scene-agent/app/api/jobs/route.ts": "739934c9a421dd1e7f21a5cac0af6bbb8fcbbdc52bf5fddec92fbf4a395e0a71",
+  "apps/scene-agent/app/api/live/route.ts": "f8eba4ede73a98ed5b21868330a751aa75fb123e9fb9275103f87fa4c00ae03f",
   "apps/scene-agent/app/api/scene/route.ts": "2df7a6fdf4030557b0e648b3326e1c532461ed41104b18c44bf477d135296512",
-  "apps/scene-agent/app/api/worker/route.ts": "dc05716b1e03db287c9e46fa3e21b1eb14a6fd4dacb1dcd3d049e9bfea7b4e61",
-  "apps/scene-agent/app/AutoEvaluations.tsx": "922da9672b05ab55b838716daffd95094ac61e8a1384e033806c7ff38e391eff",
+  "apps/scene-agent/app/api/worker/route.ts": "f57f6e9e83c52ab5498652b82ae54646613301eebe0a589346b2fdc3a4772c52",
+  "apps/scene-agent/app/AutoEvaluations.tsx": "415df5b6e7e7a860d6d4470d548b8af7f0bd52609af4cd0d5a6a9aaaa0c0ef9e",
+  "apps/scene-agent/app/BatchCatalog.tsx": "7e0567bb31b6f3a8a8c156080a6a1240070756faef7d5495bba349a8cda557ae",
   "apps/scene-agent/app/chatgpt-auth.ts": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
+  "apps/scene-agent/app/Help.tsx": "a23422d6a20ff27c206b9f83e5a082c3ce78b89551482ed725d33e949bcef8e5",
   "apps/scene-agent/app/layout.tsx": "1280fe8a82de2bd771a10d5c12912a97b11b6f2aec0529486b3209b2c1e9e65a",
+  "apps/scene-agent/app/LiveDownloads.tsx": "92252c54365fba033e36f27786740a491ce48396f287e58b23c3737023a49152",
+  "apps/scene-agent/app/ModelConfig.tsx": "57f8da1befd71c18c98142523cde07c4edd4cc30cda5f14c61ff2c2180131fdc",
   "apps/scene-agent/app/MseFigures.tsx": "b542d2af6e25e161e78a37767bfe98fb98500bbb7ce3ae4d606ad80a244cca34",
-  "apps/scene-agent/app/page.tsx": "3887a1d3cebe39225a1142d053378744149439f4f7cff5d0593c403c717cb81b",
-  "apps/scene-agent/app/SceneViewport.tsx": "1100fb617dad66af856076397e0c5d758cbe835f169112e0d08a9c25af1defd8",
-  "apps/scene-agent/app/TrainingPanel.tsx": "3184c4011e284a64a9e7c4e2fcb2a588b3880a00d8868546a7541e5bc1951a5f",
+  "apps/scene-agent/app/page.tsx": "b3adc2ea28e31f9cd3f45d345000aea2b61fd1d29f5099aa38becc9e545917c5",
+  "apps/scene-agent/app/PanelBoundary.tsx": "d5e95b98b8b88ac9b2551ec0c6facecd0a3dd7cb4e3220f979987fdf1818a6db",
+  "apps/scene-agent/app/PolicyEvaluation.tsx": "80c5fcfad657a1d1db856ce5d3f18449360c074a1f009a412d7ff73d97a6b65d",
+  "apps/scene-agent/app/SceneViewport.tsx": "2e489db2198aa29f9609a79c16d0a31e0a3d3a7b183d32d6942b157c613f4e5f",
+  "apps/scene-agent/app/TrainingPanel.tsx": "f58d0e344b5d857597e41f56f781268ee1de0c92771bf73f3eb35855b6824184",
   "apps/scene-agent/db/index.ts": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
   "apps/scene-agent/db/schema.ts": "529abd7f605e1597de66f333186fe37489eca30053d156e22a060cc23e49b027",
   "apps/scene-agent/drizzle/0000_fresh_miss_america.sql": "b6b4f57cfa6c635e479d7d72bbc9920f96256ae2e48eac3a518a1d02e87466d3",
   "apps/scene-agent/drizzle/meta/0000_snapshot.json": "3dc74a56d226aa353b96ac1dd3162d093ed97dc23cf4e71af388fe16aca73546",
   "apps/scene-agent/drizzle/meta/_journal.json": "9afd1551bcc56110db8f1f3443018599c34f4c02c973547bfa6ae0d464b0e799",
   "apps/scene-agent/gpu/auto_evaluation.py": "a8f6e1edeaf2bb05b280832da37a425777d095fc8ed035e3105685d07015f85e",
+  "apps/scene-agent/gpu/batch_catalog.py": "904640aa595e8327bf44002cda987b4bff3cb90c830ee16ca9a91b3a4f8fa765",
   "apps/scene-agent/gpu/dataset_registry.json": "e879813eb7392b76df6538993984c02ff93d00bec962135f024922f3067d6fff",
-  "apps/scene-agent/gpu/mse_artifacts.py": "c9b89c7a4db3cf1a558bfa5ec148ba57ca319d2b585ea51311ac87e5d2af638f",
+  "apps/scene-agent/gpu/live_publication.py": "5e97797a515abd474cb2388a1f83021d51c57c5f29cbc1c1eaefac10c2928c32",
+  "apps/scene-agent/gpu/model_registry.py": "235fae7b906e279bda9ea8c40199c07c4cc7746fd7cbf46790367d1beccde1fa",
+  "apps/scene-agent/gpu/mse_artifacts.py": "9df5d701fc5c8d7029ed4d959d991263b49fdb3f7f185fccd2ffcf0d21235471",
   "apps/scene-agent/gpu/plot_runner.py": "f0f87f25a52545d924b62272bb06cbfc660c022481445ca588d884b07935bc23",
-  "apps/scene-agent/gpu/studio_backend.py": "ab615c4b2cd9182f14009603d60cf8cde53bbf4cc7652cd2e602b3154b4c9bde",
-  "apps/scene-agent/gpu/studio_job_runner.py": "4971e85132a950f63609c70fdb6dcfedeeed9e3588bc96324d6490591d120023",
+  "apps/scene-agent/gpu/robot_action_limits.json": "49bac9524fb2747f26b6f5b478ccbed153096efca3ebe3bfbce8985d0d8157c1",
+  "apps/scene-agent/gpu/ros2_models.json": "a7a2858c51353954de68ec7ad7060242dbbb2aeec4d301bc201739bfc4047465",
+  "apps/scene-agent/gpu/studio_backend.py": "4197a034ecffabf941b7780bd2b54c5b2062e7028df13e0f70a6aeee6c5a5d1a",
+  "apps/scene-agent/gpu/studio_job_runner.py": "e22917e30662dd0b54762d6aa770eb8630c025f3854a465acd4bddebf1524381",
   "apps/scene-agent/gpu/test_worker.py": "c079ffda7e2ab59f1e2f008ceb0d4744ae101ba8a2f9c87d45d05b4b56a46d8b",
-  "apps/scene-agent/gpu/worker.py": "b265c507c03811049ee7db563416cc071fb60b3916c456dbcce6c9c4eb7bac17",
+  "apps/scene-agent/gpu/worker.py": "071f987ad9d75bac787c06503d6fc6681cd62f65465ff99c24a1d691f7e543b3",
   "apps/scene-agent/lib/connector-context.ts": "bbddff68689cb0f6926fecd4b8b96f12f2054277c296e97b0df07d4ad5ece24e",
   "apps/scene-agent/lib/connector-preview.d.ts": "abd69a94f7f61f1359063bb557574faae35e8ff5a028cc4c04b9ee248ef52642",
   "apps/scene-agent/lib/connectors.ts": "1c93d747e384c8e17e3e3dd5361b24412babf5eba2a11d2ae7a75f4e0924112c",
   "apps/scene-agent/lib/core.ts": "c8b25142645e42b80b6453242b367ce339f034ae2ba44d94f00c113890fca9a9",
-  "apps/scene-agent/lib/display.ts": "4ecdff7eda748fdfffabb7f8486419b01ed88e8b36c977ad6dee97785e88fb58",
+  "apps/scene-agent/lib/display.ts": "3069ac05405484423032642a1aa709e98e86f873ad1180f79f13e86d43c8138e",
+  "apps/scene-agent/lib/help-content.json": "32df14084423cfa2b46bb4a330fab1299adab1d547d9421893e86c5796cfa8e7",
   "apps/scene-agent/lib/initial-snapshot.json": "aaea74731abbb2c0476cc22b9d7dab7bf1bfdb3ced8cbca1e63eaf595a4b6f8a",
-  "apps/scene-agent/lib/server.ts": "5b96a0755697be50b497ea0e02963234d9a3477c78bf304e4a3b8a1958c62e6f",
-  "apps/scene-agent/lib/training.ts": "10decd04129ef5d916b54e770f095ab4d9cb2bbd1c1e63aa5b9712830a0c4cf5",
+  "apps/scene-agent/lib/request-id.ts": "0e1698cfcf93daa19ac11c9b97cc4219a6980b8b3374f6d8820cea1852e5701c",
+  "apps/scene-agent/lib/reset.ts": "7e585aa4dace15fb2144d4bafb75441c7089c7a48040873cba4cb4964213e8ce",
+  "apps/scene-agent/lib/server.ts": "3e5bf9722462696800ec8683553525751b3d942e243922bb8394cf4f845d3243",
+  "apps/scene-agent/lib/training.ts": "456529e13c03095d621a4b775cc3a227663bb7a7bfc7ed5fe7957cc47cb981cf",
   "apps/scene-agent/lib/utils.ts": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
   "apps/scene-agent/tests/core.test.ts": "b0a8b47cc4c5bdeef6a8ea9e124a7ceb92d1bcb6d0cab6e17d4a57b3ed1cf82b",
-  "apps/scene-agent/tests/training.test.ts": "d2687b16f8ab504e7419fdbc1fe1e115642111066f3fc4d0271cc5e026caa99c",
+  "apps/scene-agent/tests/training.test.ts": "e84370f23b50921038293810f826cd360b984ae89c24591307de895547817150",
+  "apps/scene-agent/tests/ui-regression.tsx": "ed2312646e1a6ad8809134064156ea6f637d6da1bd80699b4a8cddca6178f69e",
   "configs/airport_ablation_alternate.json": "39764323b8716d39eb30778d7c6100333ea1ee3ccf958fb8a4e771fde57ca732",
   "configs/airport_ablation_baseline.json": "e621cdaa98e2273ad93391e7ed737e0b774be583e72745c06d68faa5aa641957",
   "configs/airport_ablation_payload.json": "404f16d08fc62c9723352db8e685978114a109bbbcf92d1cfa2aa0fe8deaf821",
@@ -3933,9 +4003,9 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
   "r1pro_teleop/real2sim/isaac_mobile.py": "3f7aeb4dd469494f66c57723e8ac3644ddc9ed2eb4898e28bfb029be24ce3e36",
   "r1pro_teleop/real2sim/isaac_parallel_collection.py": "b1749f4e51c9bd14c04bb9d087b985f41ba5151fedc15635394ee43fc77f01f3",
   "r1pro_teleop/real2sim/isaac_parallel_contacts.py": "5c52efc20321ec17486038a7a40fd78cb8396ad962d57d373f1d78429907a97d",
-  "r1pro_teleop/real2sim/isaac_parallel_runtime.py": "4f127ee195f03288bd50aca1a42e299fa99bc9d9684f7625f0e842852a4accd8",
+  "r1pro_teleop/real2sim/isaac_parallel_runtime.py": "1be977dd4426b4a49bfe1037cb8dcbe4152e799804a61cef774aade3b1bb3d53",
   "r1pro_teleop/real2sim/isaac_path_stability.py": "83680c8295d405235cacdb1426c38f33cf8f52b3ab9a931d19066cfa9815ebb3",
-  "r1pro_teleop/real2sim/isaac_policy_pickplace.py": "7f61814b14c750300c7d6b43bd349827b5a89a1aff680af2c106ed139c90e63f",
+  "r1pro_teleop/real2sim/isaac_policy_pickplace.py": "d05daabeca6cdeeb2008450c72c3aebc3a78b6be50a00d1cd278155a46f655dd",
   "r1pro_teleop/real2sim/isaac_rubber_contacts.py": "b04da45a3b97b97fb6d6dc8237ff983b79f0cc69f95347a67811e8cdcc419cdf",
   "r1pro_teleop/real2sim/isaac_three_tray_observer.py": "1830b3ec76cb5fd1530c7bbc77655ef826ceaeabf4475b00978e17dd43458839",
   "r1pro_teleop/real2sim/isaac_three_tray_runtime.py": "378d88400f8d859608bae78bec32a5cfb9ed1290236905a90bd3fb700948e9b5",
@@ -3945,6 +4015,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
   "r1pro_teleop/real2sim/mujoco_registration.py": "7e0509d11a815e4868e3a22ca869a898d1c234528713fb91c9e9be036c8b46d9",
   "r1pro_teleop/real2sim/registration.py": "5a7c2ebe8451d55f0dbd52a0f3438a9e5c505610412bc766baa1947fd75e931c",
   "r1pro_teleop/real2sim/runner.py": "1e5d021fcf5456aa3f4ef53a91bd21243d1ba7258d31271114380ecb5af3afc7",
+  "r1pro_teleop/real2sim/studio_live_view.py": "6b62ec9eeaaafedd85ff3168e0c07b324f1fd4ae157173a469fb4bd71e8591ae",
   "r1pro_teleop/real2sim/three_tray_migration.py": "09759c5ce9a5fdb2ee70eda2cb0a83f044c2b2b52121d2e1cdaf8e2f78a10f3a",
   "r1pro_teleop/real2sim/trajectory.py": "f596f94c149e89f11235fa66f6e520145de61cc7f4867d52aa051c5682da6858",
   "r1pro_teleop/real_calibration.py": "b617e6a6b1d9962b5845986c5f994325d54fb8bcdf04e3bd798edfcb972f6de0",
@@ -4134,7 +4205,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
   "scripts/resume_afford_pi05_comparison.py": "0cf90bab3e2b08cb511cc3ccfc59d1129fe6f24e15b2f6d8e0b691a975cad9cd",
   "scripts/resume_isaacsim_bc_after_video.py": "a49f637599384e79c1ef09bf3265205273ae420b2e35134a3d01c5b2db3e47d4",
   "scripts/run_galaxea_client_record_compat.py": "430b90986a9402368c1a49bfbfbbe30610ecdd0e58362610da879aa11a68670c",
-  "scripts/run_isaac_parallel_pickplace.py": "a5500ec369e58df9051efad07ce36248198deb0a21f074323438635076dfa196",
+  "scripts/run_isaac_parallel_pickplace.py": "1e5bf8b4e80b4b416329aa12879a257ef1452960721612ebe6a18cb3303d1659",
   "scripts/run_isaacsim_fast_pickplace.py": "6e1145d1b29650e23de33a88d64293e8e3ca5ed276f7eab8f06f1de3701622a6",
   "scripts/run_isaacsim_three_tray_task.py": "345c970c1868927fa508d65e1f4532908785d59ed4ebaee2aa988751457e6d5a",
   "scripts/run_pi05_real_only.py": "263783d59fb72b937a4f875c7a144c398e40d486ff09dc8d1d59b501d27588b2",
@@ -4150,10 +4221,16 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
   "scripts/serve_pi05_airport.py": "4df101549c845476b085ed38e99d12f466f8e88f7ed8b3e65e0c7c24c9737fe8",
   "scripts/serve_pi05_diagnostic.py": "f00f5d19635529fbb7edaebf0496c0f52ada0e5545be13359d01981d07837935",
   "scripts/serve_pi05_galaxea_robot.py": "307e4e43a3888c52fc70d4381e57a61b871e610aaa8ae3f888898895c86ab4f9",
+  "scripts/studio_configure_model.py": "5ee3887468538cd2491b42d7392e0c071d4b9c26b457a1c8981965757f52df2b",
+  "scripts/studio_live_inference.py": "d7a4b7d0c4c0d6fcf61b777e743bc87b5cf12b84aef3a74cf716a570c2cf65f1",
+  "scripts/studio_model_http.py": "783dca352249f4cc401f23046d01abb748343e6181f519dd2ca983c15ee5eb66",
   "scripts/studio_mse.py": "8a34a39863757d6e29330a8de9add55782a9f17dbf03ebd136fb496d51530c13",
   "scripts/studio_mse_plots.py": "e929c758730ec5c1bc23a296c77bf57c8b349d5fde2f68ebcff947eb8345f891",
   "scripts/studio_prepare_training.py": "e46fd64ee9fd0fc0c8e1154c79129c0e7d201de83d69120eea2c78a19a674aa2",
-  "scripts/studio_vla_evaluate.py": "dde9b681a65efb23482a2d511ff04add148ede63c1d1cb34480f67a24c7d874f",
+  "scripts/studio_reuse_service.py": "76809842062440b8a442411200c52a2893a1370755c947af78588f895d85af84",
+  "scripts/studio_ros2_service.py": "8a2ada29ea87dff9ba8525194f146d1acb9335efe49ce78c9f70e0cc806d0920",
+  "scripts/studio_ros2_transport.py": "a6fae655b0e53dcf7b6d45dd79b1bff5c57c5ee09745756c7e8be5e34599cfaa",
+  "scripts/studio_vla_evaluate.py": "282e60f6d643e5ce498b3ff8ee929298609b0e712f5ca4be6e8ee0cfd9947f70",
   "scripts/summarize_single_tray_contact.py": "4c7de1409c03354e1f7beb24a76ba93c5c1cfcd34b2a6b0579894ef757b5ee87",
   "scripts/supervise_action8_training.py": "d22dd67e549f43ae31c7753977ce342292e2bf4c144b18ba7908f5a5b6b171fb",
   "scripts/supervise_isaac_parallel_pickplace.py": "996f014e8845f02aa1106016b9277ebe0e7961335a66ff9e241c1a91ab29b059",

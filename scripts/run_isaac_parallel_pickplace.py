@@ -58,7 +58,7 @@ def main():
         from r1pro_teleop.real2sim.isaac_rubber_contacts import restore_soft_finger_contacts
         from r1pro_teleop.real2sim.isaac_mobile import d6_targets, mobile_targets
         def cpu(x): return x.detach().cpu().numpy() if hasattr(x, 'detach') else np.asarray(x)
-        device = 'cuda:0'
+        device = 'cpu' if policy_mode and cfg.get('runtime_profile')=='realtime' else 'cuda:0'
         def gpu(x, index=False):
             return torch.as_tensor(x, dtype=torch.int64 if index else torch.float32, device=device)
         root = Path(cfg['scene_root'])
@@ -164,7 +164,10 @@ def main():
         world = World(stage_units_in_meters=1., physics_dt=.002, rendering_dt=.05,
                       backend='torch', device=device)
         SimulationManager.set_device(device)
-        world.get_physics_context().enable_gpu_dynamics(True)
+        world.get_physics_context().enable_gpu_dynamics(device!='cpu')
+        if policy_mode and cfg.get('runtime_profile')=='realtime':world.get_physics_context().enable_fabric(True)
+        import carb
+        write_json(out/'physics_runtime_settings.json',dict(physics_device=device,profile=cfg.get('runtime_profile','baseline'),fabric=SimulationManager.is_fabric_enabled(),updateToUsd=carb.settings.get_settings().get('/physics/updateToUsd'),physics_dt=.002,substeps=25))
         physics_scene = world.get_physics_context().prim_path
         cloner.filter_collisions(physics_scene, '/World/collision_groups', paths, [])
         robots = Articulation(prim_paths_expr=robot_paths, name='parallel_robots', reset_xform_properties=False)
@@ -277,7 +280,7 @@ def main():
             from r1pro_teleop.real2sim.isaac_parallel_runtime import run_room_controller as controller_target
         for i,c in enumerate(cases):
             d=out/'rooms'/f'room_{i:03d}'
-            obs=readers[i].observation(states[i],commands[i],base_poses[i],poses[i,2]);obs['joint_position']=joints[i]
+            obs=readers[i].observation(states[i],commands[i],base_poses[i],poses[i,2]);obs['joint_position']=joints[i];obs['measured_wall_time']=time.time()
             if policy_mode:obs['policy_images']=policy_images(i)
             runtime=ParallelRoomRuntime(i,d,root/'asset/import_only.xml',parent,size[None],base_origins[i],source_base_q,obs,commands[i],boundary_footprints={'tray_0':np.asarray(footprint_report['body_local_vertices_m'])},initial_time=float(world.current_time))
             runtimes.append(runtime)
@@ -287,11 +290,17 @@ def main():
             runtime.write('visual_translation.json',visual_report)
             runtime.write('native_mapping.json',dict(sensor_paths=list(contact_views[i].prim_paths),filter_paths=[relocated(i,p) for p in filter_original],filter_owner=filter_owners,scene_sha256=receipt['scene_sha256'],task_tables=tables,room_origin=origins[i].tolist(),coordinate_frame='room_local',source_planner='private_mj_kinematics_no_mj_step',live_pose_resets_after_initialization=False))
         write_json(out/'identity.json',dict(source_scene=str(source),source_sha256=receipt['scene_sha256'],rooms=n,origins=origins.tolist(),robot_paths=robot_paths,tray_paths=tray_paths,requested_render_gpus=1 if policy_mode else 2,physics_gpu=0,physics_dt=.002,record_hz=20,global_substeps_per_frame=25,physics_scenes=physics_scenes,initial_simulation_time=float(world.current_time),source_type='learned_policy_native_physx' if policy_mode else 'independent_feedback_expert_native_physx',model_executed=False,model_execution_requested=policy_mode,room_cases=cases,training_eligible=False))
+        live_started=time.monotonic()
+        def publish_live(frame):
+            if cfg.get('live_evaluation'):
+                from r1pro_teleop.real2sim.studio_live_view import publish
+                publish(out,cases,contact_views,readers,origins,cameras,presentation,states,frame,live_started,cpu)
+        publish_live(0)
         for runtime,c in zip(runtimes,cases):
             thread=threading.Thread(target=controller_target,args=(runtime,c),daemon=True)
             threads.append(thread);thread.start()
-        previous=commands.copy();frame=0;start=time.monotonic();last_report=0.
-        timings=dict(planning_wait=0.,render=0.,readback_encode=0.,physics_contacts=0.)
+        previous=commands.copy();frame=0;start=time.monotonic();last_report=0.;last_joint_feedback=0.
+        timings=dict(planning_wait=0.,render=0.,readback_encode=0.,physics_contacts=0.,physics_step=0.,contact_read=0.,post_render=0.,live_publish=0.)
         report('running_independent_feedback_shared_clock',frames=0,active_rooms=n)
         while True:
             wait_start=time.monotonic()
@@ -299,6 +308,10 @@ def main():
                 pending=[r.pending_command() for r in runtimes]
                 active=[i for i,r in enumerate(runtimes) if not r.exchange.done]
                 if all(pending[i] is not None for i in active):break
+                if policy_mode and time.monotonic()-last_joint_feedback>.1:
+                    fresh_states,_,_=read_states()
+                    for i in active:runtimes[i].refresh_joint_feedback(fresh_states[i],time.time())
+                    last_joint_feedback=time.monotonic()
                 if time.monotonic()-last_report>10:
                     report('planning_shared_clock_barrier',frames=frame,active_rooms=len(active),ready_rooms=sum(p is not None for p in pending),elapsed_seconds=time.monotonic()-start,timings=timings)
                     last_report=time.monotonic()
@@ -310,7 +323,10 @@ def main():
                 if not np.array_equal(commands[i,16:],fixed_base[i]):raise ValueError('parallel_fixed_base_command_changed')
                 with (runtimes[i].output/'native_contacts.jsonl').open('a') as f:
                     f.write(json.dumps(dict(frame=runtimes[i].frames,global_frame=frame,sim_time=float(world.current_time),contacts=readers[i].contact_rows))+'\n')
-            t=time.monotonic();world.render();timings['render']+=time.monotonic()-t
+            t=time.monotonic()
+            # Policy mode already rendered this state after the previous physics tick.
+            if not policy_mode:world.render()
+            timings['render']+=time.monotonic()-t
             t=time.monotonic()
             for i,name,camera in cameras:
                 if i in active:writers[i,name].put(np.asarray(camera.get_rgba())[:,:,:3].astype(np.uint8))
@@ -318,25 +334,36 @@ def main():
             for i,camera in enumerate(presentation):
                 row,col=divmod(i,columns);grid[row*180:(row+1)*180,col*320:(col+1)*320]=np.asarray(camera.get_rgba())[:,:,:3].astype(np.uint8)
             overview.put(grid);timings['readback_encode']+=time.monotonic()-t
+            if policy_mode:
+                with (out/'wall_clock_frames.jsonl').open('a') as clock_log:clock_log.write(json.dumps(dict(frame=frame,unix=time.time(),wall_seconds=time.monotonic()-start,simulation_seconds=frame/20))+chr(10))
             t=time.monotonic();records={i:dict(completed_real_substeps=25,submitted_control=[],finger_contact_force=[],table_force=[],payload_rigid_support=[],penetration=[]) for i in active}
             for sub in range(1,26):
                 batch=previous+(commands-previous)*(sub/25.)
                 target=batched_joint_targets(batch)
                 robots.set_joint_position_targets(gpu(target),joint_indices=indices)
-                world.step(render=False)
+                step_started=time.monotonic();world.step(render=False);timings['physics_step']+=time.monotonic()-step_started
+                contact_started=time.monotonic()
                 for i in active:
                     fingers,table,support,depth=readers[i].contact()
                     rec=records[i];rec['submitted_control'].append(np.r_[target[i],base_targets[i]])
                     rec['finger_contact_force'].append(fingers);rec['table_force'].append(table)
                     rec['payload_rigid_support'].append(support);rec['penetration'].append(depth)
+                            
+                timings['contact_read']+=time.monotonic()-contact_started
             timings['physics_contacts']+=time.monotonic()-t
             states,joints,base_poses=read_states()
+            post_started=time.monotonic()
             if policy_mode:world.render()
+            timings['post_render']+=time.monotonic()-post_started
             for i in active:
-                obs=readers[i].observation(states[i],commands[i],base_poses[i],poses[i,2]);obs['joint_position']=joints[i]
+                obs=readers[i].observation(states[i],commands[i],base_poses[i],poses[i,2]);obs['joint_position']=joints[i];obs['measured_wall_time']=time.time()
                 if policy_mode:obs['policy_images']=policy_images(i)
                 runtimes[i].complete_tick(obs,float(world.current_time),records[i])
             previous=commands.copy();frame+=1
+            live_tick=time.monotonic();publish_live(frame);timings['live_publish']+=time.monotonic()-live_tick
+            if cfg.get('realtime_pacing'):
+                # Never accelerate physics to catch up after inference/render delays.
+                time.sleep(max(0.,.05-(time.monotonic()-wait_start)))
             if frame%10==0:
                 report('running_independent_feedback_shared_clock',frames=frame,active_rooms=len(active),global_real_substeps=frame*25,simulation_seconds=frame/20,elapsed_seconds=time.monotonic()-start,timings=timings)
                 last_report=time.monotonic()

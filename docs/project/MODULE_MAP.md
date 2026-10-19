@@ -1,3 +1,11 @@
+## 2026-10-19 离线与 ROS2
+
+`apps/scene-agent/offline/` 提供Node24/SQLite/本地artifact无登录服务与单实例监督器；`app/Help.tsx`、`BatchCatalog.tsx`、`ModelConfig.tsx`、`lib/reset.ts` 为界面入口。`scripts/studio_{configure_model,model_http,ros2_service,ros2_transport}.py` 提供路径登记、显式单位/时序适配与隔离ROS2图像/状态/动作通信；GR00T未提供权重不标实测。说明[WORKSTATION](../site/WORKSTATION.md)。
+
+## 2026-10-19 网站使用入口
+
+[Scene Studio使用 README](../site/README.md)按英文界面说明MSE图表与下载入口、场景编辑、训练配比、自动最终检查点评测、手动MSE/VLA和常见状态。维护时对照`apps/scene-agent/app/{page,TrainingPanel,AutoEvaluations,MseFigures}.tsx`及`lib/{core,training}.ts`，不要将历史截图当作当前运行状态。
+
 ## 2026-10-19 MSE科学图表
 
 `scripts/studio_mse_plots.py`只读推理NPZ/报告，验证SHA/逐channel统计后输出5类汇总与每episode 4×4曲线；`gpu/plot_runner.py`保留actual wait，`gpu/mse_artifacts.py`独立CPU派生与有界R2发布。`app/MseFigures.tsx`切图/PNG/CSV/ZIP，`api/artifacts`校验worker写/owner读和SHA不可变对象。源推理与自动VLA/MSE队列不修改。
@@ -86,3 +94,7 @@ DEC-050/规范1.163。新模块`real2sim/isaac_parallel_collection.py`：独立�
 2026-10-16 方案C反馈采集：scripts/run_isaac_parallel_pickplace.py（唯一World/PhysicsScene及32房间主线程物理）、real2sim/isaac_parallel_runtime.py（房间私有运动学与命令/反馈同步）、isaac_parallel_contacts.py（真实房间局部接触）、scripts/supervise_isaac_parallel_pickplace.py（4房间验证→32房间→实际exit/导出）、export_isaac_parallel_pickplace.py（冻结合格pair）。旧probe保持非训练scope。
 
 2026-10-17：`supervise_isaac_pickplace300.py`/`prepare_isaac_parallel_candidates.py`新增300完整固定底盘Pick/Place对的有界生产；`vla/parallel_pickplace_training.py`冻结原生对与Cache适配/源级耗时采样，`train_pi05_parallel_real_mix.py`双卡耗时加权BC，`supervise_parallel_real_mix.py`完整300门后接cache/BC/真机test MSE；`watch_pickplace300_mix.py`只读进度。暂不做RL，纯Isaac模型闭环仍待接通。
+
+## 2026-10-19 Single-policy live evaluation
+
+PolicyEvaluation.tsx, api/live, gpu/live_publication.py and studio_live_view.py connect native body poses/cameras to per-run website monitoring and video artifacts. Guide: [Policy evaluation](../site/POLICY_EVALUATION.md). Evidence: [measured runs](../../runs/web_live_policy_20261019_v1/verification.json). Room001 pi05 executed 15 frames then mechanical-limit failure (0/1); room000 zero frames; G0.5 adapter HTTP500. No policy success claimed. CPU duration-budget tests passed. Workstation release scene_studio_live_policy_20261019_v5 active at deployment receipt time.

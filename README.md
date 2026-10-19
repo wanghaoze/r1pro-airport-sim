@@ -10,6 +10,8 @@
 
 ## 快速导航
 
+**网页使用：** [Scene Studio 使用 README](docs/site/README.md) — MSE 图表入口、场景编辑、训练配比、自动 VLA/MSE、下载与常见问题。
+
 | 要做的事 | 阅读入口 |
 |---|---|
 | 在新机器安装、连接 GPU 服务器 | [交接手册第2节](docs/handoff/README.md#2-机器路径网络和环境) |
