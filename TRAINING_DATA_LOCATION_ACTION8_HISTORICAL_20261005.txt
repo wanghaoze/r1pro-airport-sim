@@ -1,0 +1,37 @@
+Server: michelle@100.104.0.108
+Current request (2026-10-05): complete-task action8 dataset + accelerated dual-GPU pi05 training + 10^n checkpoint evaluations.
+Verified 2026-10-05 18:14 Singapore: all193 native sources complete (772 references, producer exit0); train149/val22/test22 final datasets are all ready and verified. Startup issue is repaired, V7 server core and two real GPU routes passed. Recovered pipeline PID1974863 is building full train cache with owned child1974872; model updates have not started yet and will start automatically after cache audit. See VLA_TRAINING_PROGRESS.txt for newer snapshots.
+New source / native full-video root: /home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/task_complete_actions_v1
+New verified boundary plan: /home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/task_complete_actions_v1/plans/all193_v4.jsonl
+Unique complete source tasks: 193; original split train149 / val22 / test22; planned action windows3425; language profile task_complete_action8_v1.
+Current incremental export containers (parallel v2 launched; generation and final assembly in progress):
+  train: /home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/task_complete_actions_v1/action8_export_train_parallel_v2
+  val: /home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/task_complete_actions_v1/action8_export_val_parallel_v2
+  test: /home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/task_complete_actions_v1/action8_export_test_parallel_v2
+Final model training data path (published only when ready): /home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/task_complete_actions_v1/action8_export_train_parallel_v2/dataset
+Final model training repo_id: airport/task_complete_action8_train_v2
+Verified official training split: 2654 action episodes / 505060 supervised frames / 7962 model videos, 20 Hz; val390 episodes / 74207 frames, test381 episodes / 73047 frames. Combined3425 action episodes derive from193 complete tasks; overlapping whole-place/push windows are explicit, not193 whole episodes in the model dataset.
+Old serial-v1 CPU exporters were stopped; complete cases were hash/numeric/official-loader reverified for v2 reuse. Partial old cases remain preserved as evidence.
+Each exporter status.json reports actual completed cases and dataset_ready; dataset/airport_training_manifest.json is published only after full split assembly/audit.
+New training/evaluation root: /home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/action8_accelerated_v1
+Durable pipeline options: pipeline_options_v3.json; status: pipeline_status.json; recovery receipt: pipeline_v3_start_receipt.json. Frozen training release vla_action8_training_v3_20261005 / evaluator runtime vla_action8_runtime_v7_20261005; old V2 failure remains preserved.
+Training cache (built after full readiness): data_cache; uint8 RGB, FP32 state/actions, pretokenized text, ordered prefetch. Mixed precision BF16 frozen parameters / FP32 trainable LoRA and heads; frozen visual encoder.
+New training budget: 100000 joint dual-GPU updates, global batch8; first stage BC LoRA, not yet DAgger. Evaluations: fixed original test50, separately teacher-success subset22; dual static25/25 at all milestones.
+Evaluation intended layout: evaluations/step_000010, step_000100, step_001000, step_010000, step_100000; each contains fixed-test reports, model trajectories and native videos. No new model evaluation results exist yet.
+New instruction list: TRAINING_TEXT.txt (8 fixed action prompts; window counts are audited plans, not encoded-video completion).
+Raw source evidence remains original precision; cache/training precision changes do not modify old source data.
+
+Historical stopped run / original native32 dataset (retained below for provenance; NOT the new193 dataset):
+Dataset: /home/michelle/haoze/r1pro-airport-sim/runs/vla_20261001/lerobot/airport/pi05_native32_v4_skillmerged
+State/actions: /home/michelle/haoze/r1pro-airport-sim/runs/vla_20261001/lerobot/airport/pi05_native32_v4_skillmerged/data/chunk-000
+Training videos: /home/michelle/haoze/r1pro-airport-sim/runs/vla_20261001/lerobot/airport/pi05_native32_v4_skillmerged/videos/chunk-000
+Metadata: /home/michelle/haoze/r1pro-airport-sim/runs/vla_20261001/lerobot/airport/pi05_native32_v4_skillmerged/meta
+Language labels: /home/michelle/haoze/r1pro-airport-sim/runs/vla_20261001/lerobot/airport/pi05_native32_v4_skillmerged/meta/tasks.jsonl
+Episode language mapping: /home/michelle/haoze/r1pro-airport-sim/runs/vla_20261001/lerobot/airport/pi05_native32_v4_skillmerged/meta/episodes.jsonl
+Historical instruction list: runs/vla_deploy_20261005/training_text_snapshot/TRAINING_TEXT_skill_only6_20261005.txt.
+Original 55 instructions are preserved in runs/vla_deploy_20261005/training_text_snapshot/tasks.jsonl.
+Local episode/text/video mapping: TRAINING_TEXT_SEGMENTS.tsv (682 episodes).
+Source manifest: /home/michelle/haoze/r1pro-airport-sim/runs/vla_20261001/native32_v4_skillmerged/segments_native32_v4_skillmerged.jsonl
+Verified server meta/info.json on 2026-10-05: 682 episodes, 95914 frames, 2046 videos, 20 Hz.
+Model views: head_left, left_wrist, right_wrist. Data source: simulation/program_generated.
+All success/failure native video locations: SCENE_VIDEO_INDEX.txt in this project (each path is a server path).

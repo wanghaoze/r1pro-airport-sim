@@ -1,0 +1,20 @@
+{
+  "source_release": "robust_v19_20260929",
+  "run": "ablation/alternate_align",
+  "scene": "airport_0310_20271226",
+  "attempt": "a000",
+  "start_frame": 706,
+  "diagnostic_only": true,
+  "restoration_qpos_error": 0,
+  "original_action_qpos_qvel_errors": [0, 0, 0],
+  "original_failure": "measured_joint_overspeed",
+  "original_failure_elapsed_seconds": 4.402,
+  "measured_joint_rad_s": 1.781772404099159,
+  "unchanged_cap_rad_s": 1.7600000000000002,
+  "candidate_reference_scale": 0.5,
+  "first_retreat_motion_unchanged_seconds": 2.7,
+  "candidate_final_tuck_minimum_seconds": 6.401831604013539,
+  "candidate_complete_retreat_seconds": 9.9,
+  "candidate_failure": null,
+  "qualification": "Only physically unloaded direct tuck slowed. Prior cartesian clearance unchanged. Retreat is outside primitive timing but counts in full Episode. Local retreat, not full scene success."
+}

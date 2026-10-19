@@ -1,0 +1,499 @@
+[
+  {
+    "frame": 78,
+    "event": "operation_selected",
+    "operation": {
+      "tray": 2,
+      "slot": 0,
+      "destination": [
+        0.8500000000000001,
+        0.38,
+        0.8
+      ],
+      "yaw": 0.0,
+      "temporary": false
+    },
+    "operation_index": 1
+  },
+  {
+    "frame": 78,
+    "event": "reachability_screen",
+    "target_tray": 2,
+    "examined": 24,
+    "rejected": [
+      {
+        "candidate": 0,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 1,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 2,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 3,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 4,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 5,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 6,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 7,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 8,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 9,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 10,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 11,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 12,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.095,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_1__tray_contact_004"
+            ],
+            "distance_m": -2.7323129439337276e-05
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.012398442529252027,
+              "wrist_upright_dot": 0.9850864245645619,
+              "optical_forward_dot": -0.08887904933258245,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.01188438527046531,
+              "wrist_upright_dot": 0.9863625867366128,
+              "optical_forward_dot": -0.07953046198562222,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 13,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 14,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.04876073559363475,
+          "rotation_error_rad": 0.02226923623741308
+        }
+      },
+      {
+        "candidate": 15,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 16,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.095,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_1__tray_contact_004"
+            ],
+            "distance_m": -0.00028890823803309784
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.0123653083234756,
+              "wrist_upright_dot": 0.9856464426026738,
+              "optical_forward_dot": -0.08860319856442564,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.011880667485911989,
+              "wrist_upright_dot": 0.9858382780955842,
+              "optical_forward_dot": -0.07974141698307217,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 17,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 18,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 19,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 20,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 21,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 22,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 23,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      }
+    ],
+    "qualified": [],
+    "planning_wall_seconds": 2.3673587740631774,
+    "probe_budget": 24,
+    "qualified_budget": 2,
+    "live_candidate_budget": 12,
+    "alternate_rim_enabled": false,
+    "alternate_rim_allowed": true,
+    "exhausted": false,
+    "qualification": "shadow_only_live_replanning_required"
+  },
+  {
+    "frame": 256,
+    "event": "reachability_screen",
+    "target_tray": 2,
+    "examined": 24,
+    "rejected": [
+      {
+        "candidate": 0,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 1,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 2,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 3,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 4,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 5,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 6,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 7,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 8,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 9,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 10,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 11,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 12,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.095,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_1__tray_contact_004"
+            ],
+            "distance_m": -2.7299618328084126e-05
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.012398414989313534,
+              "wrist_upright_dot": 0.9850864136763907,
+              "optical_forward_dot": -0.08887865686551424,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.011884366793928758,
+              "wrist_upright_dot": 0.9863625868042188,
+              "optical_forward_dot": -0.07953020259868591,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 13,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 14,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.04876081596237916,
+          "rotation_error_rad": 0.022268137364557714
+        }
+      },
+      {
+        "candidate": 15,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 16,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.095,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_1__tray_contact_004"
+            ],
+            "distance_m": -0.0002888993078501521
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.01236529572930989,
+              "wrist_upright_dot": 0.9856464387532153,
+              "optical_forward_dot": -0.08860301929334889,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.011880640046747715,
+              "wrist_upright_dot": 0.9858382777998085,
+              "optical_forward_dot": -0.07974103115915644,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 17,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 18,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 19,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 20,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 21,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 22,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      },
+      {
+        "candidate": 23,
+        "code": "reachability_contact_configuration_collision_or_wrist",
+        "detail": null
+      }
+    ],
+    "qualified": [],
+    "planning_wall_seconds": 2.307210264960304,
+    "probe_budget": 24,
+    "qualified_budget": 2,
+    "live_candidate_budget": 12,
+    "alternate_rim_enabled": false,
+    "alternate_rim_allowed": false,
+    "exhausted": false,
+    "qualification": "shadow_only_live_replanning_required"
+  },
+  {
+    "frame": 425,
+    "event": "primitive_start",
+    "primitive": "push",
+    "limit_s": 3.0,
+    "parameters": {
+      "destination": [
+        -1.4238563503043153,
+        0.5641899573290143,
+        0.7999934032195579
+      ],
+      "yaw": 0.005944767528214067,
+      "separation": true
+    }
+  },
+  {
+    "frame": 425,
+    "event": "primitive_push_feedforward",
+    "distance_m": 0.012,
+    "nominal_destination": [
+      -1.4238563503043153,
+      0.5641899573290143,
+      0.7999934032195579
+    ],
+    "command_position": [
+      -1.4238562721818155,
+      0.57618995732876,
+      0.799993439242291
+    ]
+  },
+  {
+    "frame": 425,
+    "event": "primitive_reference",
+    "duration_s": 2.45,
+    "controller": "BlendedJointPath",
+    "knot_stop_fallback": false,
+    "reference_bounds": {
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.03125438715494809,
+        0.16111271380347297,
+        0.0307862771424141,
+        0.10759685113294508,
+        0.01889629694557176,
+        0.045066052635367795,
+        0.23949657837323954,
+        0.0
+      ],
+      "acceleration": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0400993573167895,
+        0.2067075014798463,
+        0.03949877249127019,
+        0.13804668632122918,
+        0.024243936040981625,
+        0.057819714669937426,
+        0.30727394604557445,
+        0.0
+      ],
+      "jerk": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.17363513692370863,
+        0.895068842102938,
+        0.17103453094417878,
+        0.5977590885531424,
+        0.10497921751685883,
+        0.25036645835220966,
+        1.3305338854488964,
+        0.0
+      ]
+    }
+  },
+  {
+    "frame": 456,
+    "event": "primitive_failed",
+    "primitive": "push",
+    "reason": "retained_contact_lost",
+    "detail": {
+      "tray": 2,
+      "side": "right",
+      "table_contact": 0,
+      "force_n": 10.820471531030835,
+      "command_opening_m": 0.0
+    },
+    "duration_s": 1.5
+  }
+]

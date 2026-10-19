@@ -1,0 +1,60 @@
+{
+  "qualification": "private_local_operation_not_complete_episode",
+  "unchanged_normal_band_m": [
+    0.8890273298374998,
+    0.8940273298374997
+  ],
+  "push_motion_s": 2.9,
+  "push_verification_s": 0.1,
+  "common_first_3s_support_fraction": 0.798,
+  "common_first_3s_table_force_peak_n": 62.557105064164425,
+  "common_first_3s_longest_missing_s": 0.01,
+  "candidates": [
+    {
+      "endpoint_lift_um": 0,
+      "accepted": false,
+      "first_rejected_fraction": 0.4,
+      "first_lower_band_violation_um": 6.899105428170849,
+      "failure": {
+        "code": "push_accuracy_not_met",
+        "detail": null
+      },
+      "elapsed_s": 16.150000000077114,
+      "position_error_m": 0.009246470596737123,
+      "yaw_rad": 0.04403993428237317,
+      "force_csv_identical_to_original": true,
+      "wall_s": 22.472036523045972
+    },
+    {
+      "endpoint_lift_um": 50,
+      "accepted": false,
+      "first_rejected_fraction": 0.405,
+      "first_lower_band_violation_um": 1.2524390436974286,
+      "failure": {
+        "code": "push_accuracy_not_met",
+        "detail": null
+      },
+      "elapsed_s": 16.150000000077114,
+      "position_error_m": 0.009246470596737123,
+      "yaw_rad": 0.04403993428237317,
+      "force_csv_identical_to_original": true,
+      "wall_s": 20.872619632049464
+    },
+    {
+      "endpoint_lift_um": 100,
+      "accepted": false,
+      "first_rejected_fraction": 0.41500000000000004,
+      "first_lower_band_violation_um": 2.8967878046293194,
+      "failure": {
+        "code": "push_accuracy_not_met",
+        "detail": null
+      },
+      "elapsed_s": 16.150000000077114,
+      "position_error_m": 0.009246470596737123,
+      "yaw_rad": 0.04403993428237317,
+      "force_csv_identical_to_original": true,
+      "wall_s": 18.913743405020796
+    }
+  ],
+  "conclusion": "All three candidates rejected; original suffix executed; direction stopped. First rejected samples are not global excursion maxima."
+}

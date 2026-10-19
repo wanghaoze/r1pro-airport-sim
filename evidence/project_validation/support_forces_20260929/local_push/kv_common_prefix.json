@@ -1,0 +1,26 @@
+[
+  {
+    "name": "local_push_case4_third_original",
+    "same_prefix_s": 1.3,
+    "samples": 650,
+    "support_fraction": 0.9184615384615384,
+    "max_missing_s": 0.008,
+    "peak_n": 47.605813898086
+  },
+  {
+    "name": "local_push_case4_third_kv1p5",
+    "same_prefix_s": 1.3,
+    "samples": 650,
+    "support_fraction": 0.9123076923076923,
+    "max_missing_s": 0.006,
+    "peak_n": 47.886510272568955
+  },
+  {
+    "name": "local_push_case4_third_kv2",
+    "same_prefix_s": 1.3,
+    "samples": 650,
+    "support_fraction": 0.9276923076923077,
+    "max_missing_s": 0.004,
+    "peak_n": 46.75473293301796
+  }
+]

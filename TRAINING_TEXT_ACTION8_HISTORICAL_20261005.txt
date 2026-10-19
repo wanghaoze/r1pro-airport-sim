@@ -1,0 +1,18 @@
+八类动作语言（task_complete_action8_v1；完整数据已核验发布，新训练已授权）
+来源：193条整体任务完成轨迹，train149/val22/test22，simulation/program_generated。
+2026-10-05 18:00已核最终train/val/test数据，共3425个动作episode（2654/390/381），各split dataset_ready=True；以下为对应原动作边界计数。505060/74207/73047监督帧包含显式重叠窗口，不能当完整raw独立帧总数。
+position 1/2/3 = 原履带slot_0/slot_1/slot_2；缓冲搬运保留完整任务，不加入carry动作训练。
+旧六类文本保存在runs/vla_deploy_20261005/training_text_snapshot/TRAINING_TEXT_skill_only6_20261005.txt。
+旧TRAINING_TEXT_SEGMENTS.tsv属于原682片段，不是本轮3425个窗口的索引。
+
+action_label	all_split_action_windows	text
+initialize_posture	193	Move both arms to the initial tucked posture.
+navigate_to_tray	806	Navigate to the selected tray.
+push_adjust_tray	554	Push and align the selected tray.
+grasp_lift_tray	647	Grasp and lift the selected tray.
+carry_to_position_1	193	Carry the tray to position 1.
+carry_to_position_2	193	Carry the tray to position 2.
+carry_to_position_3	192	Carry the tray to position 3.
+place_release_tray	647	Place the tray and release the grippers.
+
+官方task_index以本轮各split dataset/meta/tasks.jsonl为准；本文件不重新定义其顺序。

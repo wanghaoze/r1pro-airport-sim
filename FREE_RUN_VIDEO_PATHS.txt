@@ -1,0 +1,4 @@
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/free_run_diagnostic_20261007_v2/full_native_00/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/free_run_diagnostic_20261007_v2/full_native_00/head_right.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/free_run_diagnostic_20261007_v2/full_native_00/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/free_run_diagnostic_20261007_v2/full_native_00/right_wrist.mp4

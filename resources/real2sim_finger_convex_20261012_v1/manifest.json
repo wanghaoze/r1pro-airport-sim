@@ -1,0 +1,1375 @@
+{
+  "schema": "real2sim_finger_collision/1",
+  "urdf_sha256": "ca7d160f5ef3c596c41d0052405cfcf1764e6d99a063872fdcff0d9fd800bf47",
+  "method": "CoACD_convex_parts_from_URDF_collision_mesh_not_single_convex_hull",
+  "package_version": "1.0.9",
+  "params": {
+    "threshold": 0.001,
+    "real_metric": true,
+    "preprocess_mode": "auto",
+    "seed": 0,
+    "mcts_iterations": 100
+  },
+  "links": {
+    "left_gripper_finger_link1": {
+      "source_mesh": "/home/michelle/haoze/r1pro-airport-sim/resources/real2sim_20261012_finger_mesh_v1/left_gripper_finger_link1.obj",
+      "source_mesh_sha256": "fd374bc0d08ed62484233858c88606daf2f9df93dd0bf97b01189f19cfb96931",
+      "origin_xyz": "0 0 0",
+      "origin_rpy": "0 0 0",
+      "parts": [
+        {
+          "file": "left_gripper_finger_link1_000.obj",
+          "sha256": "595094827f4b5f9ac8a2eb307145669a920c44e3f122b08a272ccd0b4c761d27"
+        },
+        {
+          "file": "left_gripper_finger_link1_001.obj",
+          "sha256": "c9a479f36db6199f91d30e3c936081c5640fdf5c87b6a45053c5491dd90444a2"
+        },
+        {
+          "file": "left_gripper_finger_link1_002.obj",
+          "sha256": "5e4eded0ac0ec68ae61bf5ce6f397738c08d3dd540ea27a3670394ee6bc9b670"
+        },
+        {
+          "file": "left_gripper_finger_link1_003.obj",
+          "sha256": "b3c6d50290818359671e55772eadc2d8de14ba6483efb9e558943a97aa964180"
+        },
+        {
+          "file": "left_gripper_finger_link1_004.obj",
+          "sha256": "795102a86151e6ca9e4692244e82c6d98b33787e18191d2acdbe391ef1868b5a"
+        },
+        {
+          "file": "left_gripper_finger_link1_005.obj",
+          "sha256": "72426e23739e9c151d8971796ca22b2481d4c2528ffd4ee91775b110a9b70a9e"
+        },
+        {
+          "file": "left_gripper_finger_link1_006.obj",
+          "sha256": "7df5b6d339b4c9721065e27dd318b9ceff1605a187455e2c323363eff57cfbe8"
+        },
+        {
+          "file": "left_gripper_finger_link1_007.obj",
+          "sha256": "3d240873a594c35e63a74ce61fcc8098c31599dc4de4eb0d279f109dc717ae5f"
+        },
+        {
+          "file": "left_gripper_finger_link1_008.obj",
+          "sha256": "a1b20f239e145ca46df30415ab310954a2f94e897fd8a6d9794947de0aa90680"
+        },
+        {
+          "file": "left_gripper_finger_link1_009.obj",
+          "sha256": "ce748facb21adf4263ecc0ce0440e6a9cb2eaa932d3d8ccd29384c3805a039d0"
+        },
+        {
+          "file": "left_gripper_finger_link1_010.obj",
+          "sha256": "1808b56c5b2b73da50065dc8eb712baa3f6af7a9635fbff4b5c1e519ddbaf9bb"
+        },
+        {
+          "file": "left_gripper_finger_link1_011.obj",
+          "sha256": "e2794c9ac75e80aff232e520f07aa02d1b6063ae5bd844256f241f93d1624f4b"
+        },
+        {
+          "file": "left_gripper_finger_link1_012.obj",
+          "sha256": "4b61b9bc379e927fc45ea4a32073e0cfae49e20dfa163f45af620921c6dfb6fb"
+        },
+        {
+          "file": "left_gripper_finger_link1_013.obj",
+          "sha256": "5d0f9d57e5a8ee8f4c4296413d2b539ef1c294f0811108902db93cf0a17c44dc"
+        },
+        {
+          "file": "left_gripper_finger_link1_014.obj",
+          "sha256": "c1a7cbde1a917c68a09ecae3e80e6d122adf0e2c7460fde09f414c72bbb3aaec"
+        },
+        {
+          "file": "left_gripper_finger_link1_015.obj",
+          "sha256": "f016301dc79bea8bec8b3fffa297c0b6a3952f1c0acfbd97a6cf946c48c0f94f"
+        },
+        {
+          "file": "left_gripper_finger_link1_016.obj",
+          "sha256": "0f08dfd0676e73bf13fafbdcf9ab34b05673ec90ea643c783062354f175eee8c"
+        },
+        {
+          "file": "left_gripper_finger_link1_017.obj",
+          "sha256": "da842eb1afcee8ccb1df1bddfe6550d374a23812b641e56313d91a873b793a56"
+        },
+        {
+          "file": "left_gripper_finger_link1_018.obj",
+          "sha256": "6ee971131f4829c28d4876b2c7e53b9027d178dcac36bb8fdd3f5e873239c7fd"
+        },
+        {
+          "file": "left_gripper_finger_link1_019.obj",
+          "sha256": "05deafb50a111c78920e4d585b90956d4c8b3b8188c1b8109e627efa3268b9d1"
+        },
+        {
+          "file": "left_gripper_finger_link1_020.obj",
+          "sha256": "e4f5d228321b88de242fbe0a19e178d1d2cd764bd8574cb6ac80c770686e0e6b"
+        },
+        {
+          "file": "left_gripper_finger_link1_021.obj",
+          "sha256": "84a14935e2f655cac9d5e52a22f1ee768357f755e66caf5b587082adaeab59a4"
+        },
+        {
+          "file": "left_gripper_finger_link1_022.obj",
+          "sha256": "416e827144b26e6dcba49c89d8ebcdaa61bfc8cf47b7700acff8b756b6269402"
+        },
+        {
+          "file": "left_gripper_finger_link1_023.obj",
+          "sha256": "559d89aed70da2ca4dbeeb194aa960d8cf1171137ea8a100c74a0ae1dd82eadb"
+        },
+        {
+          "file": "left_gripper_finger_link1_024.obj",
+          "sha256": "cf5b7d7e6bc5175af05b91f36ab76c5a7698e54cafdc0ebf3e27637fcd79c48e"
+        },
+        {
+          "file": "left_gripper_finger_link1_025.obj",
+          "sha256": "2015d16acebc2ee31deaf569eea7178fe7126664fdb6ec73918d6a99df22bd52"
+        },
+        {
+          "file": "left_gripper_finger_link1_026.obj",
+          "sha256": "cdaec91b291bf42011e007cd879259e1c56f69a457eded5bcbb64ada83986089"
+        },
+        {
+          "file": "left_gripper_finger_link1_027.obj",
+          "sha256": "60b16bfde44133e04d43c3abd695e3e14a4d5c2340f5ab2f98e3c9871984bc22"
+        },
+        {
+          "file": "left_gripper_finger_link1_028.obj",
+          "sha256": "9b9930c68a7c4ad69794f3d868282a0c774cfa4e1a18bcbe5d3d3b896de377a8"
+        },
+        {
+          "file": "left_gripper_finger_link1_029.obj",
+          "sha256": "e97b78934c6fc1af1bb0e1370b6c6b490ef318b4ff17a7ccbdf12bb23ab554c3"
+        },
+        {
+          "file": "left_gripper_finger_link1_030.obj",
+          "sha256": "5637cd74f269fb0230f70eb9a78374c8605be1f14134e93296a919912effb036"
+        },
+        {
+          "file": "left_gripper_finger_link1_031.obj",
+          "sha256": "ba6dcb88a95d53551564969390d9e57b89d46810f6b7e846141dd1b019cda518"
+        },
+        {
+          "file": "left_gripper_finger_link1_032.obj",
+          "sha256": "b638e73d34eaacc2e212572345619036bd7367440fa123c085e0f8c9d715684f"
+        },
+        {
+          "file": "left_gripper_finger_link1_033.obj",
+          "sha256": "48085df62a3c29eea29960c555820c3cb208497b70a4962047a002ea9bfb3f21"
+        },
+        {
+          "file": "left_gripper_finger_link1_034.obj",
+          "sha256": "abdb6bc003164594bf13c7250400f37aeb13f7ae76d2d1721a079cfd2f63e0db"
+        },
+        {
+          "file": "left_gripper_finger_link1_035.obj",
+          "sha256": "c521f7e038da44c6cb9c0d41342189046f994327ff30b9b233f616ecd3654c61"
+        },
+        {
+          "file": "left_gripper_finger_link1_036.obj",
+          "sha256": "199934882657d5c923c3a3883041ab5da0dc6a21e31c28148971a1034cc99b14"
+        },
+        {
+          "file": "left_gripper_finger_link1_037.obj",
+          "sha256": "34ac5933772bb86e5a6d1dae6dc93e21112f1f415b4cd25b55d05217c83c143c"
+        },
+        {
+          "file": "left_gripper_finger_link1_038.obj",
+          "sha256": "335cb455e51466142143207fe926e944471deb2a96a53746dd906ef05913f624"
+        },
+        {
+          "file": "left_gripper_finger_link1_039.obj",
+          "sha256": "0ea14a24c15f925d59df10b8a9080ba98c706a702f619262be3c2bb13fe55c44"
+        },
+        {
+          "file": "left_gripper_finger_link1_040.obj",
+          "sha256": "ad3666ad7919cee5185ca6abd76706a6b875aac7131801f5e0dea6bfc7645845"
+        },
+        {
+          "file": "left_gripper_finger_link1_041.obj",
+          "sha256": "65a5af4516acc1efcbdcfbe70baefdbf86e15536e68ede74279b8c9627244cb1"
+        },
+        {
+          "file": "left_gripper_finger_link1_042.obj",
+          "sha256": "aa7b5d60c3ed6409686ffdb3e4763f170fa8b470493a9b0497c4546c8868c933"
+        },
+        {
+          "file": "left_gripper_finger_link1_043.obj",
+          "sha256": "4f2351e441fea02fcbaaaecf020d6d3aa25e6fc5bc58d11178f91dc487ea1bae"
+        },
+        {
+          "file": "left_gripper_finger_link1_044.obj",
+          "sha256": "ef1a4c1c8b40d9bf0451641bd138eee5aacfaf2489183d3604eee08bab6edae5"
+        },
+        {
+          "file": "left_gripper_finger_link1_045.obj",
+          "sha256": "2a1254434f57a02ea755e7e693c05df7379252f81d0b9224848951ffbe0e6679"
+        },
+        {
+          "file": "left_gripper_finger_link1_046.obj",
+          "sha256": "c0fb18ccb5a6d068568eb685dffb88af4a4e237a814425edd7ea88cb60e68446"
+        },
+        {
+          "file": "left_gripper_finger_link1_047.obj",
+          "sha256": "f305ed11ccebc2eabdc68ca62e51c3414543dee97d5e7ffab58677f90b98c5df"
+        },
+        {
+          "file": "left_gripper_finger_link1_048.obj",
+          "sha256": "a4325d2d100decfa4f870de791b12b53a78919f7d2d842f95ba941c5050bab3f"
+        },
+        {
+          "file": "left_gripper_finger_link1_049.obj",
+          "sha256": "51d45d02b88bfc0e0ecb394f83dc1df72783b3b0ef049bbf8f7c6b7245871131"
+        },
+        {
+          "file": "left_gripper_finger_link1_050.obj",
+          "sha256": "cd52decd9ae99eece3d35ded759d0c99031bed617622c5436553db1a390b23b5"
+        },
+        {
+          "file": "left_gripper_finger_link1_051.obj",
+          "sha256": "4cbc537535bef3d20a472444a1e5e3c8c2e939395e0ff353d5d0dabc0748bbb5"
+        },
+        {
+          "file": "left_gripper_finger_link1_052.obj",
+          "sha256": "99b1c9f24604817fa400a4e9c3e8e4cbb3b839c45ebbf234571018a513167979"
+        },
+        {
+          "file": "left_gripper_finger_link1_053.obj",
+          "sha256": "bcbb716c03359a9204026b8a57417952d199ca80bd66e9585968e60f6d4aa338"
+        },
+        {
+          "file": "left_gripper_finger_link1_054.obj",
+          "sha256": "154fadd2600e4f9b2c968a97ee3e027addc50d0150a2b260545cdf6ac6a36c55"
+        },
+        {
+          "file": "left_gripper_finger_link1_055.obj",
+          "sha256": "39507e0bd820ba07b7435cdcb4a39063384071e930970dbd0874b2e2fe1c8d73"
+        },
+        {
+          "file": "left_gripper_finger_link1_056.obj",
+          "sha256": "09449f6156f17c4441b88d33b4cde517fb1630522e7691442ed96f7f4a42702c"
+        },
+        {
+          "file": "left_gripper_finger_link1_057.obj",
+          "sha256": "6c111d76f82971240b1e7f57f8377e31724fb928cc1b5ed78db6cf729fabbaa1"
+        },
+        {
+          "file": "left_gripper_finger_link1_058.obj",
+          "sha256": "fb58d860a4e11705ce0881f50f9d20f018f9dfb13acff792cf97ea3b60ad1f49"
+        },
+        {
+          "file": "left_gripper_finger_link1_059.obj",
+          "sha256": "0d7069576898bf38110b8ddc3dc7623a7b4bedf3e5c2a1a0ff472ada7a97b604"
+        },
+        {
+          "file": "left_gripper_finger_link1_060.obj",
+          "sha256": "2854fef9559dae18579d602879b9a02a98ede5246a28b93c7b3f949fa6a4f2a4"
+        },
+        {
+          "file": "left_gripper_finger_link1_061.obj",
+          "sha256": "e335449b91c63dbc202866756125453102a7ff9679428534964ba3c9952a5665"
+        },
+        {
+          "file": "left_gripper_finger_link1_062.obj",
+          "sha256": "4b62312928d87ea4bf70180e4212b444d2cc8799ff319125d5c10fbdcbc8a8f5"
+        },
+        {
+          "file": "left_gripper_finger_link1_063.obj",
+          "sha256": "207cbce204edeb3228d1f65346cd28e92608afda0afe9901c0db0c13c29ccd83"
+        },
+        {
+          "file": "left_gripper_finger_link1_064.obj",
+          "sha256": "4b1f6ef52ebfa9f71cdfb08e9fc0d6a7c3a4479d4613c9f5fbae40146f28c0d3"
+        },
+        {
+          "file": "left_gripper_finger_link1_065.obj",
+          "sha256": "fd8bd9df4884f5cab7d22aa754f8c447f303e67f162997ebf70a451ab3ff4dbd"
+        },
+        {
+          "file": "left_gripper_finger_link1_066.obj",
+          "sha256": "30baa30f04fecd8794ac4b563112055b620ae97c9718ef11c31df9f42fbde97a"
+        },
+        {
+          "file": "left_gripper_finger_link1_067.obj",
+          "sha256": "3ad09ede55ee9dc028e6171a4f2d7e9f87ba0288b4d5c9b0c55558ff056c102d"
+        },
+        {
+          "file": "left_gripper_finger_link1_068.obj",
+          "sha256": "7a6853f65bbe42695767ef2f7cd4d511f0398147db329a2394d4e5e995ac3dba"
+        },
+        {
+          "file": "left_gripper_finger_link1_069.obj",
+          "sha256": "0fd6d2e58d32eb5ab705206e93ce1e648635c11b35da3236687c4b766e425f79"
+        },
+        {
+          "file": "left_gripper_finger_link1_070.obj",
+          "sha256": "6d2acf928a613520695d24036f1db63147b1e35795470e1a6988498170f249aa"
+        },
+        {
+          "file": "left_gripper_finger_link1_071.obj",
+          "sha256": "3511873a77c7f65a1cf45fbe418e0066a56f3b1660042d9dd00e0f1988a3bb49"
+        },
+        {
+          "file": "left_gripper_finger_link1_072.obj",
+          "sha256": "30efa1e3731aab4ed730032c674ddc3f68a34c3101ab4e4a9236ff074e6c8fc1"
+        },
+        {
+          "file": "left_gripper_finger_link1_073.obj",
+          "sha256": "1dc7c5909d6c0f01f27a1f9ad987f48eb92581588302a6fdbf8c5ed18a4c849f"
+        },
+        {
+          "file": "left_gripper_finger_link1_074.obj",
+          "sha256": "c377221ee20a5cc9c53081486cfb1b57f419773cbe1df6fb7925feb6eb295e90"
+        },
+        {
+          "file": "left_gripper_finger_link1_075.obj",
+          "sha256": "d4e64dd156a1fb7313c087d8f8791d87b9348a1834a0a019f280cbec09de86d1"
+        },
+        {
+          "file": "left_gripper_finger_link1_076.obj",
+          "sha256": "f5ba3ba2f6331553c121f24efa95e01166ba87691f21abc9a6d24fc7d6bca5bd"
+        },
+        {
+          "file": "left_gripper_finger_link1_077.obj",
+          "sha256": "b19cdbd43236c032a2bf3bb50fcedfbbdb178379e733024beecc4fac85479383"
+        },
+        {
+          "file": "left_gripper_finger_link1_078.obj",
+          "sha256": "adeb32b2578eb2f194b049603f4f6a513884946d6630c4ec7d17588685b4c822"
+        },
+        {
+          "file": "left_gripper_finger_link1_079.obj",
+          "sha256": "221f8e7da68a31bd41780be544b90986ee173d5a98f15646d1911f99bc9b78bb"
+        }
+      ]
+    },
+    "left_gripper_finger_link2": {
+      "source_mesh": "/home/michelle/haoze/r1pro-airport-sim/resources/real2sim_20261012_finger_mesh_v1/left_gripper_finger_link2.obj",
+      "source_mesh_sha256": "0810e76e5383d60ecd83ce230a28dacf4e7a368fcdfee74bd5d858ecc73262d1",
+      "origin_xyz": "0 0 0",
+      "origin_rpy": "0 0 0",
+      "parts": [
+        {
+          "file": "left_gripper_finger_link2_000.obj",
+          "sha256": "7b26aa45a05d8e512e4acd1e09faef701cde43b6d893eb47bdaf7de22825886a"
+        },
+        {
+          "file": "left_gripper_finger_link2_001.obj",
+          "sha256": "80d55e945d701f2caadb6b49f005716519cdd3a7e054ce91f23aaa18c37a934e"
+        },
+        {
+          "file": "left_gripper_finger_link2_002.obj",
+          "sha256": "6e81cba2107e0b22f49758b747f05eca89b2168178522a8aab5e835fd95df051"
+        },
+        {
+          "file": "left_gripper_finger_link2_003.obj",
+          "sha256": "e382bccaea3d7e17aa569fb0bc4ee9356d22b6b456ed8bbfd6b19a9e93ea09f5"
+        },
+        {
+          "file": "left_gripper_finger_link2_004.obj",
+          "sha256": "fbdd87eeec50491fd1889666e57248b1bf9183a3acefde54f36e3096f82d5708"
+        },
+        {
+          "file": "left_gripper_finger_link2_005.obj",
+          "sha256": "fbe40ec28a7d3e8725cb9a0eb37390079be249c6b5b16921ecc32561bf705d30"
+        },
+        {
+          "file": "left_gripper_finger_link2_006.obj",
+          "sha256": "a723571850494616ce05813567a289816531131f2509d40d8dd0ff28efe24d33"
+        },
+        {
+          "file": "left_gripper_finger_link2_007.obj",
+          "sha256": "7db925d123404afb4895d3f31903a930d5c9c5f806d76d9b96ac8a155d312744"
+        },
+        {
+          "file": "left_gripper_finger_link2_008.obj",
+          "sha256": "bf41090cdea1d9ff4e1c83a4f4a34a3a7281fddd650ef8b6c2464cba17fcebc2"
+        },
+        {
+          "file": "left_gripper_finger_link2_009.obj",
+          "sha256": "574b4afaf10a195a6a1fc2e7ca83ef6fcdd081a121a53679201a6db6a495ad01"
+        },
+        {
+          "file": "left_gripper_finger_link2_010.obj",
+          "sha256": "9189ee2133aa7ca101e6764eb4bc82e9842c08f3c45da73b981e681c98696a22"
+        },
+        {
+          "file": "left_gripper_finger_link2_011.obj",
+          "sha256": "c690761b84c84974916c14be437814d05cb3eeac7eedd25c2fa41b55fbe048eb"
+        },
+        {
+          "file": "left_gripper_finger_link2_012.obj",
+          "sha256": "e4f57dceafdc5b84587da84c6f81448738c0d929f92c84564fe0c07d45c389cb"
+        },
+        {
+          "file": "left_gripper_finger_link2_013.obj",
+          "sha256": "08ff72eabd2c80ff28e48a2c1c53875d9745da0795f3af2e12e67040cbcf947e"
+        },
+        {
+          "file": "left_gripper_finger_link2_014.obj",
+          "sha256": "c47102761cbc7c239c7d15aeb249b27bd5ff656fb421b4a16b52e168a0274f24"
+        },
+        {
+          "file": "left_gripper_finger_link2_015.obj",
+          "sha256": "f83ca84115375172d28bbe35bfcee3eaf8b8559f86ce376c40a25f82f5fa2b44"
+        },
+        {
+          "file": "left_gripper_finger_link2_016.obj",
+          "sha256": "d2db3db9b119c59f42c3cfff4fdbae3fe1c6df18392b43bd65361e176571382d"
+        },
+        {
+          "file": "left_gripper_finger_link2_017.obj",
+          "sha256": "8c7d607f67247a570425731e56ea629849fc3224039c6aad93312c57092ca8ed"
+        },
+        {
+          "file": "left_gripper_finger_link2_018.obj",
+          "sha256": "fc6bc0d7bde03cd81c01230c34e555505465df6e43d0d68601cedf99a2617c9e"
+        },
+        {
+          "file": "left_gripper_finger_link2_019.obj",
+          "sha256": "707f4cfff62e3a3a7f19ebd930ab13ff4838657df1dd968e0c4f84d3aaaf7590"
+        },
+        {
+          "file": "left_gripper_finger_link2_020.obj",
+          "sha256": "f2cc4a698f476cbffb25b5d03c3351bc0a23d6bcc73f431353bdd9fa028c7fd8"
+        },
+        {
+          "file": "left_gripper_finger_link2_021.obj",
+          "sha256": "c2219bef4ede69cf83635a107c96b3a42f4f5688198ad6fdda75c5725a09bf18"
+        },
+        {
+          "file": "left_gripper_finger_link2_022.obj",
+          "sha256": "5f0359c4ffec36dedf5d2f7077df288c5eebd5953be9bbfd2953b4d37fc20e83"
+        },
+        {
+          "file": "left_gripper_finger_link2_023.obj",
+          "sha256": "d5739e603aaccd95daadaa341d1fc2d2c676f805fa1235deaf36d34508143a85"
+        },
+        {
+          "file": "left_gripper_finger_link2_024.obj",
+          "sha256": "10aecaf98acaa06030594a1e2c6e73697c59bcb650b2def45385a2c060c4987c"
+        },
+        {
+          "file": "left_gripper_finger_link2_025.obj",
+          "sha256": "113046104a0b9115f80b7b2dc5eee0c9b971910e4f04701e3203fd572d160d22"
+        },
+        {
+          "file": "left_gripper_finger_link2_026.obj",
+          "sha256": "ee6e622455de3b442b02adc371e04108868ac63aaed3df69f388d027e91b8075"
+        },
+        {
+          "file": "left_gripper_finger_link2_027.obj",
+          "sha256": "0abb49752ccd6c4625ce981ff35f9aab4b62970b3fcf8853d39b323b2e3ce215"
+        },
+        {
+          "file": "left_gripper_finger_link2_028.obj",
+          "sha256": "9de35c56b7ea603668d373ba8e09bf6aca69adadce32c84e307f290db31abed1"
+        },
+        {
+          "file": "left_gripper_finger_link2_029.obj",
+          "sha256": "7ca9cc16998189ebbf81c89152441e2f1e1e82a738ade6c457209f93d4afbae5"
+        },
+        {
+          "file": "left_gripper_finger_link2_030.obj",
+          "sha256": "8d1eee6877671a1548a3e240c8037ed44fcd55997eec523ddd0b8e141edc0185"
+        },
+        {
+          "file": "left_gripper_finger_link2_031.obj",
+          "sha256": "a9019c61eeba7cb2e4c1b434431da22f048113f55272f167c30259a3f362cdf4"
+        },
+        {
+          "file": "left_gripper_finger_link2_032.obj",
+          "sha256": "782d9d56fd5d7442e6629ed14d726360a8701ee39d3ec4da18db3ee2beffe857"
+        },
+        {
+          "file": "left_gripper_finger_link2_033.obj",
+          "sha256": "0fc724a176f547cc4c8ba2c58b399ace0d143de47073d3282dc92d221021dc68"
+        },
+        {
+          "file": "left_gripper_finger_link2_034.obj",
+          "sha256": "c226d360d62ce8760694f097e0ea9c518b337dcd9f6bff2f59ce9ad7bb60a033"
+        },
+        {
+          "file": "left_gripper_finger_link2_035.obj",
+          "sha256": "0b6bc4078fe94b0da888ba34db09e8b269aeac6ce77193bed69b9ced5ae4fbe5"
+        },
+        {
+          "file": "left_gripper_finger_link2_036.obj",
+          "sha256": "bb4e44ffd0e92c002b4aafd2cf01c8c490432bee0f81660bfd832095b4b8d250"
+        },
+        {
+          "file": "left_gripper_finger_link2_037.obj",
+          "sha256": "f25840111888b759ae9d64a4cd6081a0353a4b0af659d8ee679c68422a659ae7"
+        },
+        {
+          "file": "left_gripper_finger_link2_038.obj",
+          "sha256": "a564ee88bde4052593698c5bc9cbb29f504ab25bbc534edc65e1ae0a3ba86038"
+        },
+        {
+          "file": "left_gripper_finger_link2_039.obj",
+          "sha256": "cb3a4e8e85dd7ab4b70aeba474f19458a77718f2f062c40beab914c6bfef8feb"
+        },
+        {
+          "file": "left_gripper_finger_link2_040.obj",
+          "sha256": "a8cd2e4c1d11382013c12cdecf5086d58a4549d132dccb76fd729b26b03174a2"
+        },
+        {
+          "file": "left_gripper_finger_link2_041.obj",
+          "sha256": "8a92f8ff3ec0b4b5ff99de04a3b4f65e67b91dd5477ebc58ba4249d299ae95ad"
+        },
+        {
+          "file": "left_gripper_finger_link2_042.obj",
+          "sha256": "2c9343ddc4bc96a8690a776c2bff921e74c63580041e9a88f0edf7e8ab1e9984"
+        },
+        {
+          "file": "left_gripper_finger_link2_043.obj",
+          "sha256": "2f9562c9221cbda2a47bb768736bf40fd5a5b603d71aad585c5781aa30ee1121"
+        },
+        {
+          "file": "left_gripper_finger_link2_044.obj",
+          "sha256": "d09b0ece4b03eb1f6c858e1769f50d1abd69083e4c106c65591d0c1bd523d00f"
+        },
+        {
+          "file": "left_gripper_finger_link2_045.obj",
+          "sha256": "c7f233cb0129a711934c8f0c999df5863ddbc9d9ecdd1cac2950004e61c1ac15"
+        },
+        {
+          "file": "left_gripper_finger_link2_046.obj",
+          "sha256": "0dfd7ec3a149e21027bfb9d22cca13756daaddd43b9157033ca309c4c6ed87c2"
+        },
+        {
+          "file": "left_gripper_finger_link2_047.obj",
+          "sha256": "a0112ceb71ecd1601ca95d64c58419773a65497a58356aa63e14ac3f0bcf4b60"
+        },
+        {
+          "file": "left_gripper_finger_link2_048.obj",
+          "sha256": "3da0010873c1a96b48dec40bd928f98d968ad57814c53f27d00f316a52656892"
+        },
+        {
+          "file": "left_gripper_finger_link2_049.obj",
+          "sha256": "b88adab8c5713845313f69e15fc990ee3117728638a02a14dae2aec258de82ea"
+        },
+        {
+          "file": "left_gripper_finger_link2_050.obj",
+          "sha256": "b7b79783107af47c5b570241eab15d37e1dd5a3b46abfa3fe7df0b3c5c29f308"
+        },
+        {
+          "file": "left_gripper_finger_link2_051.obj",
+          "sha256": "59d07a885a31674ec7d3ce13e74e97da877e9025d60c24010b067b76bf9bae09"
+        },
+        {
+          "file": "left_gripper_finger_link2_052.obj",
+          "sha256": "9421b908a5d480c4a6e0182e4580878da056440c43cf60dbadefccf7ee853b5a"
+        },
+        {
+          "file": "left_gripper_finger_link2_053.obj",
+          "sha256": "e86b41a0428ed2e67fbfd4e5cedc3394cd2301acf2e37da32dc591a021eb0348"
+        },
+        {
+          "file": "left_gripper_finger_link2_054.obj",
+          "sha256": "515e71302fe2ffd04657c9141ac37e68e5520bb5b564b77442a4c429e6e957fe"
+        },
+        {
+          "file": "left_gripper_finger_link2_055.obj",
+          "sha256": "681dbd3d3c83e9f899341b09ec8bd5322178b9f68bc49a439ba6b7cf47abc208"
+        },
+        {
+          "file": "left_gripper_finger_link2_056.obj",
+          "sha256": "541f38767cdb4a6a78270a3b92948e888617294bcddcc7ed49f62f67c04038ca"
+        },
+        {
+          "file": "left_gripper_finger_link2_057.obj",
+          "sha256": "f1aa83ee60342ca9c67731a77c30ca98831c654ed47bf80eb4ffe56ac97d2fb9"
+        },
+        {
+          "file": "left_gripper_finger_link2_058.obj",
+          "sha256": "8fa8f0e73b9966a59f0600347784dfd1ddf9454e893f211445122048028b1f6a"
+        },
+        {
+          "file": "left_gripper_finger_link2_059.obj",
+          "sha256": "d062cf3d84ab3f309110ba751cd898de6b17c3c779554ea769e14a01ac3c4795"
+        },
+        {
+          "file": "left_gripper_finger_link2_060.obj",
+          "sha256": "b49f601ed74d8e2888f481dcd27eaf4b743e2f1d4589fc0401f0ff0c5bec8ef1"
+        },
+        {
+          "file": "left_gripper_finger_link2_061.obj",
+          "sha256": "68939846760920335af1d2ee6f7b7245155de6eef807e9115656be1a4be361d6"
+        },
+        {
+          "file": "left_gripper_finger_link2_062.obj",
+          "sha256": "5810ea75e2368b98c01cdc9aa8c303da3cb779d18ef70edf4f7f481ff094ae4f"
+        },
+        {
+          "file": "left_gripper_finger_link2_063.obj",
+          "sha256": "a98469ed4c4c90f466457ae674042b472bdb9e4c2030631d02867e4dabba5e6d"
+        },
+        {
+          "file": "left_gripper_finger_link2_064.obj",
+          "sha256": "1be264671932689d432f55b8f96a93a6676c1f03bf40f2ac7b4d9656a8ca577a"
+        },
+        {
+          "file": "left_gripper_finger_link2_065.obj",
+          "sha256": "fbfbfa96654d1975c0dda47ef707cb177030c14f77b86574dc20c90abb8550d0"
+        },
+        {
+          "file": "left_gripper_finger_link2_066.obj",
+          "sha256": "071c27c7d7f44eca57d7da0d2cea7436f911487f0e21bed9793e783441b0639d"
+        },
+        {
+          "file": "left_gripper_finger_link2_067.obj",
+          "sha256": "e583fc610ab659a695f531f1adab7b86c4e53ece3be204ac6cf136a8c66aa52f"
+        },
+        {
+          "file": "left_gripper_finger_link2_068.obj",
+          "sha256": "5fd7134b6822f6778d788a70ea55c34168ff7ee5d4c03ec0681f15360a6e9449"
+        },
+        {
+          "file": "left_gripper_finger_link2_069.obj",
+          "sha256": "a566b7d9ed1665fdb15eab43f2404abb010b6e6651fe1805e9c1608f22b3a750"
+        },
+        {
+          "file": "left_gripper_finger_link2_070.obj",
+          "sha256": "3e697aa34ffed83a36fbaabe59f32c83461f2cfa56c900573885e275631ecdf3"
+        },
+        {
+          "file": "left_gripper_finger_link2_071.obj",
+          "sha256": "233d783280539ab9967b0c553f521f86ff1371d0de3493dc9a11570936246868"
+        },
+        {
+          "file": "left_gripper_finger_link2_072.obj",
+          "sha256": "f02f419e2bc39f0f51f502e9671fb9abb604b9354f1a9fdce31c544a619b0160"
+        },
+        {
+          "file": "left_gripper_finger_link2_073.obj",
+          "sha256": "4c21203bca86279e4db8f32d8976187fc20084de04bd532ea057c1921c91cff8"
+        },
+        {
+          "file": "left_gripper_finger_link2_074.obj",
+          "sha256": "ae7398f75306c83cd010e262b8e05296760650b3d8a5120a4533da26a6e6f973"
+        },
+        {
+          "file": "left_gripper_finger_link2_075.obj",
+          "sha256": "848eb0bfc9e75f44a2495ac0d8397c5ff2fef440fa77571cc71893d6342bcdc6"
+        },
+        {
+          "file": "left_gripper_finger_link2_076.obj",
+          "sha256": "c4ea32d93926be1722c3093fffec000494fcc48c44eb1effc1fffd43ef124af8"
+        },
+        {
+          "file": "left_gripper_finger_link2_077.obj",
+          "sha256": "9f4dfb1b680d28fa8b8fe14291953e22f9d46bdf48c6f28cdd9a03e261fd3e76"
+        },
+        {
+          "file": "left_gripper_finger_link2_078.obj",
+          "sha256": "6e6b71b8cde5a961ae5f897cb0ddcbc9be3d55b64a5117c5e2f96a215adb5f49"
+        },
+        {
+          "file": "left_gripper_finger_link2_079.obj",
+          "sha256": "658bdfaba92f7b40d23f77d39bb30db32e508f02f76856b7250aada019c3d99c"
+        },
+        {
+          "file": "left_gripper_finger_link2_080.obj",
+          "sha256": "ee6e63e7f442b45c69459a430ea32bd8c837bb1601370bf2a9a09b22446cc5ca"
+        },
+        {
+          "file": "left_gripper_finger_link2_081.obj",
+          "sha256": "33a828e3efffaddc932b46de4d36ad0fe55d7cec1764717448e89b9b2c74a2f2"
+        },
+        {
+          "file": "left_gripper_finger_link2_082.obj",
+          "sha256": "e396ad365a92857ccd08b531b827acda2ee7dc2b0d16ccc088c6e2ecd2b283c0"
+        },
+        {
+          "file": "left_gripper_finger_link2_083.obj",
+          "sha256": "7db3d7b1a88eee8b1e72ee611d1a95df6e0e09562095d08bb3e74bd824f76a38"
+        },
+        {
+          "file": "left_gripper_finger_link2_084.obj",
+          "sha256": "3f6ac3e0242e16106193fd869359bb6baf7389a3e30eb985a840076ea2e912a8"
+        },
+        {
+          "file": "left_gripper_finger_link2_085.obj",
+          "sha256": "d6494796cdf718968e26fed9c7ff5ee30ad7a945965c0af50515ce5a91566896"
+        }
+      ]
+    },
+    "right_gripper_finger_link1": {
+      "source_mesh": "/home/michelle/haoze/r1pro-airport-sim/resources/real2sim_20261012_finger_mesh_v1/right_gripper_finger_link1.obj",
+      "source_mesh_sha256": "176accc44e8d5af78e9fa8970261496447b327756f159765d872640c2e36cde3",
+      "origin_xyz": "0 0 0",
+      "origin_rpy": "0 0 0",
+      "parts": [
+        {
+          "file": "right_gripper_finger_link1_000.obj",
+          "sha256": "595094827f4b5f9ac8a2eb307145669a920c44e3f122b08a272ccd0b4c761d27"
+        },
+        {
+          "file": "right_gripper_finger_link1_001.obj",
+          "sha256": "c9a479f36db6199f91d30e3c936081c5640fdf5c87b6a45053c5491dd90444a2"
+        },
+        {
+          "file": "right_gripper_finger_link1_002.obj",
+          "sha256": "5e4eded0ac0ec68ae61bf5ce6f397738c08d3dd540ea27a3670394ee6bc9b670"
+        },
+        {
+          "file": "right_gripper_finger_link1_003.obj",
+          "sha256": "b3c6d50290818359671e55772eadc2d8de14ba6483efb9e558943a97aa964180"
+        },
+        {
+          "file": "right_gripper_finger_link1_004.obj",
+          "sha256": "795102a86151e6ca9e4692244e82c6d98b33787e18191d2acdbe391ef1868b5a"
+        },
+        {
+          "file": "right_gripper_finger_link1_005.obj",
+          "sha256": "72426e23739e9c151d8971796ca22b2481d4c2528ffd4ee91775b110a9b70a9e"
+        },
+        {
+          "file": "right_gripper_finger_link1_006.obj",
+          "sha256": "7df5b6d339b4c9721065e27dd318b9ceff1605a187455e2c323363eff57cfbe8"
+        },
+        {
+          "file": "right_gripper_finger_link1_007.obj",
+          "sha256": "3d240873a594c35e63a74ce61fcc8098c31599dc4de4eb0d279f109dc717ae5f"
+        },
+        {
+          "file": "right_gripper_finger_link1_008.obj",
+          "sha256": "a1b20f239e145ca46df30415ab310954a2f94e897fd8a6d9794947de0aa90680"
+        },
+        {
+          "file": "right_gripper_finger_link1_009.obj",
+          "sha256": "ce748facb21adf4263ecc0ce0440e6a9cb2eaa932d3d8ccd29384c3805a039d0"
+        },
+        {
+          "file": "right_gripper_finger_link1_010.obj",
+          "sha256": "1808b56c5b2b73da50065dc8eb712baa3f6af7a9635fbff4b5c1e519ddbaf9bb"
+        },
+        {
+          "file": "right_gripper_finger_link1_011.obj",
+          "sha256": "e2794c9ac75e80aff232e520f07aa02d1b6063ae5bd844256f241f93d1624f4b"
+        },
+        {
+          "file": "right_gripper_finger_link1_012.obj",
+          "sha256": "4b61b9bc379e927fc45ea4a32073e0cfae49e20dfa163f45af620921c6dfb6fb"
+        },
+        {
+          "file": "right_gripper_finger_link1_013.obj",
+          "sha256": "5d0f9d57e5a8ee8f4c4296413d2b539ef1c294f0811108902db93cf0a17c44dc"
+        },
+        {
+          "file": "right_gripper_finger_link1_014.obj",
+          "sha256": "c1a7cbde1a917c68a09ecae3e80e6d122adf0e2c7460fde09f414c72bbb3aaec"
+        },
+        {
+          "file": "right_gripper_finger_link1_015.obj",
+          "sha256": "f016301dc79bea8bec8b3fffa297c0b6a3952f1c0acfbd97a6cf946c48c0f94f"
+        },
+        {
+          "file": "right_gripper_finger_link1_016.obj",
+          "sha256": "0f08dfd0676e73bf13fafbdcf9ab34b05673ec90ea643c783062354f175eee8c"
+        },
+        {
+          "file": "right_gripper_finger_link1_017.obj",
+          "sha256": "da842eb1afcee8ccb1df1bddfe6550d374a23812b641e56313d91a873b793a56"
+        },
+        {
+          "file": "right_gripper_finger_link1_018.obj",
+          "sha256": "6ee971131f4829c28d4876b2c7e53b9027d178dcac36bb8fdd3f5e873239c7fd"
+        },
+        {
+          "file": "right_gripper_finger_link1_019.obj",
+          "sha256": "05deafb50a111c78920e4d585b90956d4c8b3b8188c1b8109e627efa3268b9d1"
+        },
+        {
+          "file": "right_gripper_finger_link1_020.obj",
+          "sha256": "e4f5d228321b88de242fbe0a19e178d1d2cd764bd8574cb6ac80c770686e0e6b"
+        },
+        {
+          "file": "right_gripper_finger_link1_021.obj",
+          "sha256": "84a14935e2f655cac9d5e52a22f1ee768357f755e66caf5b587082adaeab59a4"
+        },
+        {
+          "file": "right_gripper_finger_link1_022.obj",
+          "sha256": "416e827144b26e6dcba49c89d8ebcdaa61bfc8cf47b7700acff8b756b6269402"
+        },
+        {
+          "file": "right_gripper_finger_link1_023.obj",
+          "sha256": "559d89aed70da2ca4dbeeb194aa960d8cf1171137ea8a100c74a0ae1dd82eadb"
+        },
+        {
+          "file": "right_gripper_finger_link1_024.obj",
+          "sha256": "cf5b7d7e6bc5175af05b91f36ab76c5a7698e54cafdc0ebf3e27637fcd79c48e"
+        },
+        {
+          "file": "right_gripper_finger_link1_025.obj",
+          "sha256": "2015d16acebc2ee31deaf569eea7178fe7126664fdb6ec73918d6a99df22bd52"
+        },
+        {
+          "file": "right_gripper_finger_link1_026.obj",
+          "sha256": "cdaec91b291bf42011e007cd879259e1c56f69a457eded5bcbb64ada83986089"
+        },
+        {
+          "file": "right_gripper_finger_link1_027.obj",
+          "sha256": "60b16bfde44133e04d43c3abd695e3e14a4d5c2340f5ab2f98e3c9871984bc22"
+        },
+        {
+          "file": "right_gripper_finger_link1_028.obj",
+          "sha256": "9b9930c68a7c4ad69794f3d868282a0c774cfa4e1a18bcbe5d3d3b896de377a8"
+        },
+        {
+          "file": "right_gripper_finger_link1_029.obj",
+          "sha256": "e97b78934c6fc1af1bb0e1370b6c6b490ef318b4ff17a7ccbdf12bb23ab554c3"
+        },
+        {
+          "file": "right_gripper_finger_link1_030.obj",
+          "sha256": "5637cd74f269fb0230f70eb9a78374c8605be1f14134e93296a919912effb036"
+        },
+        {
+          "file": "right_gripper_finger_link1_031.obj",
+          "sha256": "ba6dcb88a95d53551564969390d9e57b89d46810f6b7e846141dd1b019cda518"
+        },
+        {
+          "file": "right_gripper_finger_link1_032.obj",
+          "sha256": "b638e73d34eaacc2e212572345619036bd7367440fa123c085e0f8c9d715684f"
+        },
+        {
+          "file": "right_gripper_finger_link1_033.obj",
+          "sha256": "48085df62a3c29eea29960c555820c3cb208497b70a4962047a002ea9bfb3f21"
+        },
+        {
+          "file": "right_gripper_finger_link1_034.obj",
+          "sha256": "abdb6bc003164594bf13c7250400f37aeb13f7ae76d2d1721a079cfd2f63e0db"
+        },
+        {
+          "file": "right_gripper_finger_link1_035.obj",
+          "sha256": "c521f7e038da44c6cb9c0d41342189046f994327ff30b9b233f616ecd3654c61"
+        },
+        {
+          "file": "right_gripper_finger_link1_036.obj",
+          "sha256": "199934882657d5c923c3a3883041ab5da0dc6a21e31c28148971a1034cc99b14"
+        },
+        {
+          "file": "right_gripper_finger_link1_037.obj",
+          "sha256": "34ac5933772bb86e5a6d1dae6dc93e21112f1f415b4cd25b55d05217c83c143c"
+        },
+        {
+          "file": "right_gripper_finger_link1_038.obj",
+          "sha256": "335cb455e51466142143207fe926e944471deb2a96a53746dd906ef05913f624"
+        },
+        {
+          "file": "right_gripper_finger_link1_039.obj",
+          "sha256": "0ea14a24c15f925d59df10b8a9080ba98c706a702f619262be3c2bb13fe55c44"
+        },
+        {
+          "file": "right_gripper_finger_link1_040.obj",
+          "sha256": "ad3666ad7919cee5185ca6abd76706a6b875aac7131801f5e0dea6bfc7645845"
+        },
+        {
+          "file": "right_gripper_finger_link1_041.obj",
+          "sha256": "65a5af4516acc1efcbdcfbe70baefdbf86e15536e68ede74279b8c9627244cb1"
+        },
+        {
+          "file": "right_gripper_finger_link1_042.obj",
+          "sha256": "aa7b5d60c3ed6409686ffdb3e4763f170fa8b470493a9b0497c4546c8868c933"
+        },
+        {
+          "file": "right_gripper_finger_link1_043.obj",
+          "sha256": "4f2351e441fea02fcbaaaecf020d6d3aa25e6fc5bc58d11178f91dc487ea1bae"
+        },
+        {
+          "file": "right_gripper_finger_link1_044.obj",
+          "sha256": "ef1a4c1c8b40d9bf0451641bd138eee5aacfaf2489183d3604eee08bab6edae5"
+        },
+        {
+          "file": "right_gripper_finger_link1_045.obj",
+          "sha256": "2a1254434f57a02ea755e7e693c05df7379252f81d0b9224848951ffbe0e6679"
+        },
+        {
+          "file": "right_gripper_finger_link1_046.obj",
+          "sha256": "c0fb18ccb5a6d068568eb685dffb88af4a4e237a814425edd7ea88cb60e68446"
+        },
+        {
+          "file": "right_gripper_finger_link1_047.obj",
+          "sha256": "f305ed11ccebc2eabdc68ca62e51c3414543dee97d5e7ffab58677f90b98c5df"
+        },
+        {
+          "file": "right_gripper_finger_link1_048.obj",
+          "sha256": "a4325d2d100decfa4f870de791b12b53a78919f7d2d842f95ba941c5050bab3f"
+        },
+        {
+          "file": "right_gripper_finger_link1_049.obj",
+          "sha256": "51d45d02b88bfc0e0ecb394f83dc1df72783b3b0ef049bbf8f7c6b7245871131"
+        },
+        {
+          "file": "right_gripper_finger_link1_050.obj",
+          "sha256": "cd52decd9ae99eece3d35ded759d0c99031bed617622c5436553db1a390b23b5"
+        },
+        {
+          "file": "right_gripper_finger_link1_051.obj",
+          "sha256": "4cbc537535bef3d20a472444a1e5e3c8c2e939395e0ff353d5d0dabc0748bbb5"
+        },
+        {
+          "file": "right_gripper_finger_link1_052.obj",
+          "sha256": "99b1c9f24604817fa400a4e9c3e8e4cbb3b839c45ebbf234571018a513167979"
+        },
+        {
+          "file": "right_gripper_finger_link1_053.obj",
+          "sha256": "bcbb716c03359a9204026b8a57417952d199ca80bd66e9585968e60f6d4aa338"
+        },
+        {
+          "file": "right_gripper_finger_link1_054.obj",
+          "sha256": "154fadd2600e4f9b2c968a97ee3e027addc50d0150a2b260545cdf6ac6a36c55"
+        },
+        {
+          "file": "right_gripper_finger_link1_055.obj",
+          "sha256": "39507e0bd820ba07b7435cdcb4a39063384071e930970dbd0874b2e2fe1c8d73"
+        },
+        {
+          "file": "right_gripper_finger_link1_056.obj",
+          "sha256": "09449f6156f17c4441b88d33b4cde517fb1630522e7691442ed96f7f4a42702c"
+        },
+        {
+          "file": "right_gripper_finger_link1_057.obj",
+          "sha256": "6c111d76f82971240b1e7f57f8377e31724fb928cc1b5ed78db6cf729fabbaa1"
+        },
+        {
+          "file": "right_gripper_finger_link1_058.obj",
+          "sha256": "fb58d860a4e11705ce0881f50f9d20f018f9dfb13acff792cf97ea3b60ad1f49"
+        },
+        {
+          "file": "right_gripper_finger_link1_059.obj",
+          "sha256": "0d7069576898bf38110b8ddc3dc7623a7b4bedf3e5c2a1a0ff472ada7a97b604"
+        },
+        {
+          "file": "right_gripper_finger_link1_060.obj",
+          "sha256": "2854fef9559dae18579d602879b9a02a98ede5246a28b93c7b3f949fa6a4f2a4"
+        },
+        {
+          "file": "right_gripper_finger_link1_061.obj",
+          "sha256": "e335449b91c63dbc202866756125453102a7ff9679428534964ba3c9952a5665"
+        },
+        {
+          "file": "right_gripper_finger_link1_062.obj",
+          "sha256": "4b62312928d87ea4bf70180e4212b444d2cc8799ff319125d5c10fbdcbc8a8f5"
+        },
+        {
+          "file": "right_gripper_finger_link1_063.obj",
+          "sha256": "207cbce204edeb3228d1f65346cd28e92608afda0afe9901c0db0c13c29ccd83"
+        },
+        {
+          "file": "right_gripper_finger_link1_064.obj",
+          "sha256": "4b1f6ef52ebfa9f71cdfb08e9fc0d6a7c3a4479d4613c9f5fbae40146f28c0d3"
+        },
+        {
+          "file": "right_gripper_finger_link1_065.obj",
+          "sha256": "fd8bd9df4884f5cab7d22aa754f8c447f303e67f162997ebf70a451ab3ff4dbd"
+        },
+        {
+          "file": "right_gripper_finger_link1_066.obj",
+          "sha256": "30baa30f04fecd8794ac4b563112055b620ae97c9718ef11c31df9f42fbde97a"
+        },
+        {
+          "file": "right_gripper_finger_link1_067.obj",
+          "sha256": "3ad09ede55ee9dc028e6171a4f2d7e9f87ba0288b4d5c9b0c55558ff056c102d"
+        },
+        {
+          "file": "right_gripper_finger_link1_068.obj",
+          "sha256": "7a6853f65bbe42695767ef2f7cd4d511f0398147db329a2394d4e5e995ac3dba"
+        },
+        {
+          "file": "right_gripper_finger_link1_069.obj",
+          "sha256": "0fd6d2e58d32eb5ab705206e93ce1e648635c11b35da3236687c4b766e425f79"
+        },
+        {
+          "file": "right_gripper_finger_link1_070.obj",
+          "sha256": "6d2acf928a613520695d24036f1db63147b1e35795470e1a6988498170f249aa"
+        },
+        {
+          "file": "right_gripper_finger_link1_071.obj",
+          "sha256": "3511873a77c7f65a1cf45fbe418e0066a56f3b1660042d9dd00e0f1988a3bb49"
+        },
+        {
+          "file": "right_gripper_finger_link1_072.obj",
+          "sha256": "30efa1e3731aab4ed730032c674ddc3f68a34c3101ab4e4a9236ff074e6c8fc1"
+        },
+        {
+          "file": "right_gripper_finger_link1_073.obj",
+          "sha256": "1dc7c5909d6c0f01f27a1f9ad987f48eb92581588302a6fdbf8c5ed18a4c849f"
+        },
+        {
+          "file": "right_gripper_finger_link1_074.obj",
+          "sha256": "c377221ee20a5cc9c53081486cfb1b57f419773cbe1df6fb7925feb6eb295e90"
+        },
+        {
+          "file": "right_gripper_finger_link1_075.obj",
+          "sha256": "d4e64dd156a1fb7313c087d8f8791d87b9348a1834a0a019f280cbec09de86d1"
+        },
+        {
+          "file": "right_gripper_finger_link1_076.obj",
+          "sha256": "f5ba3ba2f6331553c121f24efa95e01166ba87691f21abc9a6d24fc7d6bca5bd"
+        },
+        {
+          "file": "right_gripper_finger_link1_077.obj",
+          "sha256": "b19cdbd43236c032a2bf3bb50fcedfbbdb178379e733024beecc4fac85479383"
+        },
+        {
+          "file": "right_gripper_finger_link1_078.obj",
+          "sha256": "adeb32b2578eb2f194b049603f4f6a513884946d6630c4ec7d17588685b4c822"
+        },
+        {
+          "file": "right_gripper_finger_link1_079.obj",
+          "sha256": "221f8e7da68a31bd41780be544b90986ee173d5a98f15646d1911f99bc9b78bb"
+        }
+      ]
+    },
+    "right_gripper_finger_link2": {
+      "source_mesh": "/home/michelle/haoze/r1pro-airport-sim/resources/real2sim_20261012_finger_mesh_v1/right_gripper_finger_link2.obj",
+      "source_mesh_sha256": "ef6fda4c694c3863fa84240881997a49a4990e4e128a55505443593913bc6186",
+      "origin_xyz": "0 0 0",
+      "origin_rpy": "0 0 0",
+      "parts": [
+        {
+          "file": "right_gripper_finger_link2_000.obj",
+          "sha256": "7b26aa45a05d8e512e4acd1e09faef701cde43b6d893eb47bdaf7de22825886a"
+        },
+        {
+          "file": "right_gripper_finger_link2_001.obj",
+          "sha256": "80d55e945d701f2caadb6b49f005716519cdd3a7e054ce91f23aaa18c37a934e"
+        },
+        {
+          "file": "right_gripper_finger_link2_002.obj",
+          "sha256": "6e81cba2107e0b22f49758b747f05eca89b2168178522a8aab5e835fd95df051"
+        },
+        {
+          "file": "right_gripper_finger_link2_003.obj",
+          "sha256": "e382bccaea3d7e17aa569fb0bc4ee9356d22b6b456ed8bbfd6b19a9e93ea09f5"
+        },
+        {
+          "file": "right_gripper_finger_link2_004.obj",
+          "sha256": "fbdd87eeec50491fd1889666e57248b1bf9183a3acefde54f36e3096f82d5708"
+        },
+        {
+          "file": "right_gripper_finger_link2_005.obj",
+          "sha256": "fbe40ec28a7d3e8725cb9a0eb37390079be249c6b5b16921ecc32561bf705d30"
+        },
+        {
+          "file": "right_gripper_finger_link2_006.obj",
+          "sha256": "a723571850494616ce05813567a289816531131f2509d40d8dd0ff28efe24d33"
+        },
+        {
+          "file": "right_gripper_finger_link2_007.obj",
+          "sha256": "7db925d123404afb4895d3f31903a930d5c9c5f806d76d9b96ac8a155d312744"
+        },
+        {
+          "file": "right_gripper_finger_link2_008.obj",
+          "sha256": "bf41090cdea1d9ff4e1c83a4f4a34a3a7281fddd650ef8b6c2464cba17fcebc2"
+        },
+        {
+          "file": "right_gripper_finger_link2_009.obj",
+          "sha256": "574b4afaf10a195a6a1fc2e7ca83ef6fcdd081a121a53679201a6db6a495ad01"
+        },
+        {
+          "file": "right_gripper_finger_link2_010.obj",
+          "sha256": "9189ee2133aa7ca101e6764eb4bc82e9842c08f3c45da73b981e681c98696a22"
+        },
+        {
+          "file": "right_gripper_finger_link2_011.obj",
+          "sha256": "c690761b84c84974916c14be437814d05cb3eeac7eedd25c2fa41b55fbe048eb"
+        },
+        {
+          "file": "right_gripper_finger_link2_012.obj",
+          "sha256": "e4f57dceafdc5b84587da84c6f81448738c0d929f92c84564fe0c07d45c389cb"
+        },
+        {
+          "file": "right_gripper_finger_link2_013.obj",
+          "sha256": "08ff72eabd2c80ff28e48a2c1c53875d9745da0795f3af2e12e67040cbcf947e"
+        },
+        {
+          "file": "right_gripper_finger_link2_014.obj",
+          "sha256": "c47102761cbc7c239c7d15aeb249b27bd5ff656fb421b4a16b52e168a0274f24"
+        },
+        {
+          "file": "right_gripper_finger_link2_015.obj",
+          "sha256": "f83ca84115375172d28bbe35bfcee3eaf8b8559f86ce376c40a25f82f5fa2b44"
+        },
+        {
+          "file": "right_gripper_finger_link2_016.obj",
+          "sha256": "d2db3db9b119c59f42c3cfff4fdbae3fe1c6df18392b43bd65361e176571382d"
+        },
+        {
+          "file": "right_gripper_finger_link2_017.obj",
+          "sha256": "8c7d607f67247a570425731e56ea629849fc3224039c6aad93312c57092ca8ed"
+        },
+        {
+          "file": "right_gripper_finger_link2_018.obj",
+          "sha256": "fc6bc0d7bde03cd81c01230c34e555505465df6e43d0d68601cedf99a2617c9e"
+        },
+        {
+          "file": "right_gripper_finger_link2_019.obj",
+          "sha256": "707f4cfff62e3a3a7f19ebd930ab13ff4838657df1dd968e0c4f84d3aaaf7590"
+        },
+        {
+          "file": "right_gripper_finger_link2_020.obj",
+          "sha256": "f2cc4a698f476cbffb25b5d03c3351bc0a23d6bcc73f431353bdd9fa028c7fd8"
+        },
+        {
+          "file": "right_gripper_finger_link2_021.obj",
+          "sha256": "c2219bef4ede69cf83635a107c96b3a42f4f5688198ad6fdda75c5725a09bf18"
+        },
+        {
+          "file": "right_gripper_finger_link2_022.obj",
+          "sha256": "5f0359c4ffec36dedf5d2f7077df288c5eebd5953be9bbfd2953b4d37fc20e83"
+        },
+        {
+          "file": "right_gripper_finger_link2_023.obj",
+          "sha256": "d5739e603aaccd95daadaa341d1fc2d2c676f805fa1235deaf36d34508143a85"
+        },
+        {
+          "file": "right_gripper_finger_link2_024.obj",
+          "sha256": "10aecaf98acaa06030594a1e2c6e73697c59bcb650b2def45385a2c060c4987c"
+        },
+        {
+          "file": "right_gripper_finger_link2_025.obj",
+          "sha256": "113046104a0b9115f80b7b2dc5eee0c9b971910e4f04701e3203fd572d160d22"
+        },
+        {
+          "file": "right_gripper_finger_link2_026.obj",
+          "sha256": "ee6e622455de3b442b02adc371e04108868ac63aaed3df69f388d027e91b8075"
+        },
+        {
+          "file": "right_gripper_finger_link2_027.obj",
+          "sha256": "0abb49752ccd6c4625ce981ff35f9aab4b62970b3fcf8853d39b323b2e3ce215"
+        },
+        {
+          "file": "right_gripper_finger_link2_028.obj",
+          "sha256": "9de35c56b7ea603668d373ba8e09bf6aca69adadce32c84e307f290db31abed1"
+        },
+        {
+          "file": "right_gripper_finger_link2_029.obj",
+          "sha256": "7ca9cc16998189ebbf81c89152441e2f1e1e82a738ade6c457209f93d4afbae5"
+        },
+        {
+          "file": "right_gripper_finger_link2_030.obj",
+          "sha256": "8d1eee6877671a1548a3e240c8037ed44fcd55997eec523ddd0b8e141edc0185"
+        },
+        {
+          "file": "right_gripper_finger_link2_031.obj",
+          "sha256": "a9019c61eeba7cb2e4c1b434431da22f048113f55272f167c30259a3f362cdf4"
+        },
+        {
+          "file": "right_gripper_finger_link2_032.obj",
+          "sha256": "782d9d56fd5d7442e6629ed14d726360a8701ee39d3ec4da18db3ee2beffe857"
+        },
+        {
+          "file": "right_gripper_finger_link2_033.obj",
+          "sha256": "0fc724a176f547cc4c8ba2c58b399ace0d143de47073d3282dc92d221021dc68"
+        },
+        {
+          "file": "right_gripper_finger_link2_034.obj",
+          "sha256": "c226d360d62ce8760694f097e0ea9c518b337dcd9f6bff2f59ce9ad7bb60a033"
+        },
+        {
+          "file": "right_gripper_finger_link2_035.obj",
+          "sha256": "0b6bc4078fe94b0da888ba34db09e8b269aeac6ce77193bed69b9ced5ae4fbe5"
+        },
+        {
+          "file": "right_gripper_finger_link2_036.obj",
+          "sha256": "bb4e44ffd0e92c002b4aafd2cf01c8c490432bee0f81660bfd832095b4b8d250"
+        },
+        {
+          "file": "right_gripper_finger_link2_037.obj",
+          "sha256": "f25840111888b759ae9d64a4cd6081a0353a4b0af659d8ee679c68422a659ae7"
+        },
+        {
+          "file": "right_gripper_finger_link2_038.obj",
+          "sha256": "a564ee88bde4052593698c5bc9cbb29f504ab25bbc534edc65e1ae0a3ba86038"
+        },
+        {
+          "file": "right_gripper_finger_link2_039.obj",
+          "sha256": "cb3a4e8e85dd7ab4b70aeba474f19458a77718f2f062c40beab914c6bfef8feb"
+        },
+        {
+          "file": "right_gripper_finger_link2_040.obj",
+          "sha256": "a8cd2e4c1d11382013c12cdecf5086d58a4549d132dccb76fd729b26b03174a2"
+        },
+        {
+          "file": "right_gripper_finger_link2_041.obj",
+          "sha256": "8a92f8ff3ec0b4b5ff99de04a3b4f65e67b91dd5477ebc58ba4249d299ae95ad"
+        },
+        {
+          "file": "right_gripper_finger_link2_042.obj",
+          "sha256": "2c9343ddc4bc96a8690a776c2bff921e74c63580041e9a88f0edf7e8ab1e9984"
+        },
+        {
+          "file": "right_gripper_finger_link2_043.obj",
+          "sha256": "2f9562c9221cbda2a47bb768736bf40fd5a5b603d71aad585c5781aa30ee1121"
+        },
+        {
+          "file": "right_gripper_finger_link2_044.obj",
+          "sha256": "d09b0ece4b03eb1f6c858e1769f50d1abd69083e4c106c65591d0c1bd523d00f"
+        },
+        {
+          "file": "right_gripper_finger_link2_045.obj",
+          "sha256": "c7f233cb0129a711934c8f0c999df5863ddbc9d9ecdd1cac2950004e61c1ac15"
+        },
+        {
+          "file": "right_gripper_finger_link2_046.obj",
+          "sha256": "0dfd7ec3a149e21027bfb9d22cca13756daaddd43b9157033ca309c4c6ed87c2"
+        },
+        {
+          "file": "right_gripper_finger_link2_047.obj",
+          "sha256": "a0112ceb71ecd1601ca95d64c58419773a65497a58356aa63e14ac3f0bcf4b60"
+        },
+        {
+          "file": "right_gripper_finger_link2_048.obj",
+          "sha256": "3da0010873c1a96b48dec40bd928f98d968ad57814c53f27d00f316a52656892"
+        },
+        {
+          "file": "right_gripper_finger_link2_049.obj",
+          "sha256": "b88adab8c5713845313f69e15fc990ee3117728638a02a14dae2aec258de82ea"
+        },
+        {
+          "file": "right_gripper_finger_link2_050.obj",
+          "sha256": "b7b79783107af47c5b570241eab15d37e1dd5a3b46abfa3fe7df0b3c5c29f308"
+        },
+        {
+          "file": "right_gripper_finger_link2_051.obj",
+          "sha256": "59d07a885a31674ec7d3ce13e74e97da877e9025d60c24010b067b76bf9bae09"
+        },
+        {
+          "file": "right_gripper_finger_link2_052.obj",
+          "sha256": "9421b908a5d480c4a6e0182e4580878da056440c43cf60dbadefccf7ee853b5a"
+        },
+        {
+          "file": "right_gripper_finger_link2_053.obj",
+          "sha256": "e86b41a0428ed2e67fbfd4e5cedc3394cd2301acf2e37da32dc591a021eb0348"
+        },
+        {
+          "file": "right_gripper_finger_link2_054.obj",
+          "sha256": "515e71302fe2ffd04657c9141ac37e68e5520bb5b564b77442a4c429e6e957fe"
+        },
+        {
+          "file": "right_gripper_finger_link2_055.obj",
+          "sha256": "681dbd3d3c83e9f899341b09ec8bd5322178b9f68bc49a439ba6b7cf47abc208"
+        },
+        {
+          "file": "right_gripper_finger_link2_056.obj",
+          "sha256": "541f38767cdb4a6a78270a3b92948e888617294bcddcc7ed49f62f67c04038ca"
+        },
+        {
+          "file": "right_gripper_finger_link2_057.obj",
+          "sha256": "f1aa83ee60342ca9c67731a77c30ca98831c654ed47bf80eb4ffe56ac97d2fb9"
+        },
+        {
+          "file": "right_gripper_finger_link2_058.obj",
+          "sha256": "8fa8f0e73b9966a59f0600347784dfd1ddf9454e893f211445122048028b1f6a"
+        },
+        {
+          "file": "right_gripper_finger_link2_059.obj",
+          "sha256": "d062cf3d84ab3f309110ba751cd898de6b17c3c779554ea769e14a01ac3c4795"
+        },
+        {
+          "file": "right_gripper_finger_link2_060.obj",
+          "sha256": "b49f601ed74d8e2888f481dcd27eaf4b743e2f1d4589fc0401f0ff0c5bec8ef1"
+        },
+        {
+          "file": "right_gripper_finger_link2_061.obj",
+          "sha256": "68939846760920335af1d2ee6f7b7245155de6eef807e9115656be1a4be361d6"
+        },
+        {
+          "file": "right_gripper_finger_link2_062.obj",
+          "sha256": "5810ea75e2368b98c01cdc9aa8c303da3cb779d18ef70edf4f7f481ff094ae4f"
+        },
+        {
+          "file": "right_gripper_finger_link2_063.obj",
+          "sha256": "a98469ed4c4c90f466457ae674042b472bdb9e4c2030631d02867e4dabba5e6d"
+        },
+        {
+          "file": "right_gripper_finger_link2_064.obj",
+          "sha256": "1be264671932689d432f55b8f96a93a6676c1f03bf40f2ac7b4d9656a8ca577a"
+        },
+        {
+          "file": "right_gripper_finger_link2_065.obj",
+          "sha256": "fbfbfa96654d1975c0dda47ef707cb177030c14f77b86574dc20c90abb8550d0"
+        },
+        {
+          "file": "right_gripper_finger_link2_066.obj",
+          "sha256": "071c27c7d7f44eca57d7da0d2cea7436f911487f0e21bed9793e783441b0639d"
+        },
+        {
+          "file": "right_gripper_finger_link2_067.obj",
+          "sha256": "e583fc610ab659a695f531f1adab7b86c4e53ece3be204ac6cf136a8c66aa52f"
+        },
+        {
+          "file": "right_gripper_finger_link2_068.obj",
+          "sha256": "5fd7134b6822f6778d788a70ea55c34168ff7ee5d4c03ec0681f15360a6e9449"
+        },
+        {
+          "file": "right_gripper_finger_link2_069.obj",
+          "sha256": "a566b7d9ed1665fdb15eab43f2404abb010b6e6651fe1805e9c1608f22b3a750"
+        },
+        {
+          "file": "right_gripper_finger_link2_070.obj",
+          "sha256": "3e697aa34ffed83a36fbaabe59f32c83461f2cfa56c900573885e275631ecdf3"
+        },
+        {
+          "file": "right_gripper_finger_link2_071.obj",
+          "sha256": "233d783280539ab9967b0c553f521f86ff1371d0de3493dc9a11570936246868"
+        },
+        {
+          "file": "right_gripper_finger_link2_072.obj",
+          "sha256": "f02f419e2bc39f0f51f502e9671fb9abb604b9354f1a9fdce31c544a619b0160"
+        },
+        {
+          "file": "right_gripper_finger_link2_073.obj",
+          "sha256": "4c21203bca86279e4db8f32d8976187fc20084de04bd532ea057c1921c91cff8"
+        },
+        {
+          "file": "right_gripper_finger_link2_074.obj",
+          "sha256": "ae7398f75306c83cd010e262b8e05296760650b3d8a5120a4533da26a6e6f973"
+        },
+        {
+          "file": "right_gripper_finger_link2_075.obj",
+          "sha256": "848eb0bfc9e75f44a2495ac0d8397c5ff2fef440fa77571cc71893d6342bcdc6"
+        },
+        {
+          "file": "right_gripper_finger_link2_076.obj",
+          "sha256": "c4ea32d93926be1722c3093fffec000494fcc48c44eb1effc1fffd43ef124af8"
+        },
+        {
+          "file": "right_gripper_finger_link2_077.obj",
+          "sha256": "9f4dfb1b680d28fa8b8fe14291953e22f9d46bdf48c6f28cdd9a03e261fd3e76"
+        },
+        {
+          "file": "right_gripper_finger_link2_078.obj",
+          "sha256": "6e6b71b8cde5a961ae5f897cb0ddcbc9be3d55b64a5117c5e2f96a215adb5f49"
+        },
+        {
+          "file": "right_gripper_finger_link2_079.obj",
+          "sha256": "658bdfaba92f7b40d23f77d39bb30db32e508f02f76856b7250aada019c3d99c"
+        },
+        {
+          "file": "right_gripper_finger_link2_080.obj",
+          "sha256": "ee6e63e7f442b45c69459a430ea32bd8c837bb1601370bf2a9a09b22446cc5ca"
+        },
+        {
+          "file": "right_gripper_finger_link2_081.obj",
+          "sha256": "33a828e3efffaddc932b46de4d36ad0fe55d7cec1764717448e89b9b2c74a2f2"
+        },
+        {
+          "file": "right_gripper_finger_link2_082.obj",
+          "sha256": "e396ad365a92857ccd08b531b827acda2ee7dc2b0d16ccc088c6e2ecd2b283c0"
+        },
+        {
+          "file": "right_gripper_finger_link2_083.obj",
+          "sha256": "7db3d7b1a88eee8b1e72ee611d1a95df6e0e09562095d08bb3e74bd824f76a38"
+        },
+        {
+          "file": "right_gripper_finger_link2_084.obj",
+          "sha256": "3f6ac3e0242e16106193fd869359bb6baf7389a3e30eb985a840076ea2e912a8"
+        },
+        {
+          "file": "right_gripper_finger_link2_085.obj",
+          "sha256": "d6494796cdf718968e26fed9c7ff5ee30ad7a945965c0af50515ce5a91566896"
+        }
+      ]
+    }
+  }
+}

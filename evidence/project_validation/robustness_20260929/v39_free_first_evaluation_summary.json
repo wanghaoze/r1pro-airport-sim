@@ -1,0 +1,2922 @@
+{
+  "task_completed_scenes": 0,
+  "task_completed_attempts": 0,
+  "strict_clean_successful_scenes": 0,
+  "completed_with_recovery_scenes": 0,
+  "acceptance_profiles": [
+    "completion_first"
+  ],
+  "first_attempt_task_completed_scenes": 0,
+  "first_attempt_strict_clean_scenes": 0,
+  "maximum_attempts_observed_per_scene": 3,
+  "source_scene_count": 400,
+  "attempted_scenes": 8,
+  "selected_scene_count": 8,
+  "selected_budget_closed": true,
+  "selected_task_completed_scenes": 0,
+  "selected_task_completion_rate": 0.0,
+  "selected_rate_is_final": true,
+  "selected_rate_qualification": "Selected development subset only; not the full-source success rate.",
+  "stopping_budget_closed": false,
+  "selected_stopping_budget_closed": true,
+  "total_simulation_seconds": 1153.8500000000004,
+  "total_physical_elapsed_seconds": 1154.511999999898,
+  "total_attempt_wall_seconds": 1605.701925476431,
+  "cost_records_missing_wall_seconds": 0,
+  "cost_records_missing_simulation_seconds": 0,
+  "budget_closed": false,
+  "budget_closed_scenes": 8,
+  "per_scene_attempts": {
+    "airport_0000_20270916": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0001_20270917": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0002_20270918": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0003_20270919": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0004_20270920": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0005_20270921": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0006_20270922": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0007_20270923": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0008_20270924": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0009_20270925": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0010_20270926": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0011_20270927": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0012_20270928": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0013_20270929": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0014_20270930": {
+      "attempts": [
+        0,
+        1,
+        2
+      ],
+      "task_completed": false,
+      "budget_closed": true,
+      "closure_reason": "attempt_budget_exhausted",
+      "stopping_budget_closed": true
+    },
+    "airport_0015_20270931": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0016_20270932": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0017_20270933": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0018_20270934": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0019_20270935": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0020_20270936": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0021_20270937": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0022_20270938": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0023_20270939": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0024_20270940": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0025_20270941": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0026_20270942": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0027_20270943": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0028_20270944": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0029_20270945": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0030_20270946": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0031_20270947": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0032_20270948": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0033_20270949": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0034_20270950": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0035_20270951": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0036_20270952": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0037_20270953": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0038_20270954": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0039_20270955": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0040_20270956": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0041_20270957": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0042_20270958": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0043_20270959": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0044_20270960": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0045_20270961": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0046_20270962": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0047_20270963": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0048_20270964": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0049_20270965": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0050_20270966": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0051_20270967": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0052_20270968": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0053_20270969": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0054_20270970": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0055_20270971": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0056_20270972": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0057_20270973": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0058_20270974": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0059_20270975": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0060_20270976": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0061_20270977": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0062_20270978": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0063_20270979": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0064_20270980": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0065_20270981": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0066_20270982": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0067_20270983": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0068_20270984": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0069_20270985": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0070_20270986": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0071_20270987": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0072_20270988": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0073_20270989": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0074_20270990": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0075_20270991": {
+      "attempts": [
+        0,
+        1,
+        2
+      ],
+      "task_completed": false,
+      "budget_closed": true,
+      "closure_reason": "attempt_budget_exhausted",
+      "stopping_budget_closed": true
+    },
+    "airport_0076_20270992": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0077_20270993": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0078_20270994": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0079_20270995": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0080_20270996": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0081_20270997": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0082_20270998": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0083_20270999": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0084_20271000": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0085_20271001": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0086_20271002": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0087_20271003": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0088_20271004": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0089_20271005": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0090_20271006": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0091_20271007": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0092_20271008": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0093_20271009": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0094_20271010": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0095_20271011": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0096_20271012": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0097_20271013": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0098_20271014": {
+      "attempts": [
+        0,
+        1,
+        2
+      ],
+      "task_completed": false,
+      "budget_closed": true,
+      "closure_reason": "attempt_budget_exhausted",
+      "stopping_budget_closed": true
+    },
+    "airport_0099_20271015": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0100_20271016": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0101_20271017": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0102_20271018": {
+      "attempts": [
+        0,
+        1,
+        2
+      ],
+      "task_completed": false,
+      "budget_closed": true,
+      "closure_reason": "attempt_budget_exhausted",
+      "stopping_budget_closed": true
+    },
+    "airport_0103_20271019": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0104_20271020": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0105_20271021": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0106_20271022": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0107_20271023": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0108_20271024": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0109_20271025": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0110_20271026": {
+      "attempts": [
+        0,
+        1,
+        2
+      ],
+      "task_completed": false,
+      "budget_closed": true,
+      "closure_reason": "attempt_budget_exhausted",
+      "stopping_budget_closed": true
+    },
+    "airport_0111_20271027": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0112_20271028": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0113_20271029": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0114_20271030": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0115_20271031": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0116_20271032": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0117_20271033": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0118_20271034": {
+      "attempts": [
+        0,
+        1,
+        2
+      ],
+      "task_completed": false,
+      "budget_closed": true,
+      "closure_reason": "attempt_budget_exhausted",
+      "stopping_budget_closed": true
+    },
+    "airport_0119_20271035": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0120_20271036": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0121_20271037": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0122_20271038": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0123_20271039": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0124_20271040": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0125_20271041": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0126_20271042": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0127_20271043": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0128_20271044": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0129_20271045": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0130_20271046": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0131_20271047": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0132_20271048": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0133_20271049": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0134_20271050": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0135_20271051": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0136_20271052": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0137_20271053": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0138_20271054": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0139_20271055": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0140_20271056": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0141_20271057": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0142_20271058": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0143_20271059": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0144_20271060": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0145_20271061": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0146_20271062": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0147_20271063": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0148_20271064": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0149_20271065": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0150_20271066": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0151_20271067": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0152_20271068": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0153_20271069": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0154_20271070": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0155_20271071": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0156_20271072": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0157_20271073": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0158_20271074": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0159_20271075": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0160_20271076": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0161_20271077": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0162_20271078": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0163_20271079": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0164_20271080": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0165_20271081": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0166_20271082": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0167_20271083": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0168_20271084": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0169_20271085": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0170_20271086": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0171_20271087": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0172_20271088": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0173_20271089": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0174_20271090": {
+      "attempts": [
+        0,
+        1,
+        2
+      ],
+      "task_completed": false,
+      "budget_closed": true,
+      "closure_reason": "attempt_budget_exhausted",
+      "stopping_budget_closed": true
+    },
+    "airport_0175_20271091": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0176_20271092": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0177_20271093": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0178_20271094": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0179_20271095": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0180_20271096": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0181_20271097": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0182_20271098": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0183_20271099": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0184_20271100": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0185_20271101": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0186_20271102": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0187_20271103": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0188_20271104": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0189_20271105": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0190_20271106": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0191_20271107": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0192_20271108": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0193_20271109": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0194_20271110": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0195_20271111": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0196_20271112": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0197_20271113": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0198_20271114": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0199_20271115": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0200_20271116": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0201_20271117": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0202_20271118": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0203_20271119": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0204_20271120": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0205_20271121": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0206_20271122": {
+      "attempts": [
+        0,
+        1,
+        2
+      ],
+      "task_completed": false,
+      "budget_closed": true,
+      "closure_reason": "attempt_budget_exhausted",
+      "stopping_budget_closed": true
+    },
+    "airport_0207_20271123": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0208_20271124": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0209_20271125": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0210_20271126": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0211_20271127": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0212_20271128": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0213_20271129": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0214_20271130": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0215_20271131": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0216_20271132": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0217_20271133": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0218_20271134": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0219_20271135": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0220_20271136": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0221_20271137": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0222_20271138": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0223_20271139": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0224_20271140": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0225_20271141": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0226_20271142": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0227_20271143": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0228_20271144": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0229_20271145": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0230_20271146": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0231_20271147": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0232_20271148": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0233_20271149": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0234_20271150": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0235_20271151": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0236_20271152": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0237_20271153": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0238_20271154": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0239_20271155": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0240_20271156": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0241_20271157": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0242_20271158": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0243_20271159": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0244_20271160": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0245_20271161": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0246_20271162": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0247_20271163": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0248_20271164": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0249_20271165": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0250_20271166": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0251_20271167": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0252_20271168": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0253_20271169": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0254_20271170": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0255_20271171": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0256_20271172": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0257_20271173": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0258_20271174": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0259_20271175": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0260_20271176": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0261_20271177": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0262_20271178": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0263_20271179": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0264_20271180": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0265_20271181": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0266_20271182": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0267_20271183": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0268_20271184": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0269_20271185": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0270_20271186": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0271_20271187": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0272_20271188": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0273_20271189": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0274_20271190": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0275_20271191": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0276_20271192": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0277_20271193": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0278_20271194": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0279_20271195": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0280_20271196": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0281_20271197": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0282_20271198": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0283_20271199": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0284_20271200": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0285_20271201": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0286_20271202": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0287_20271203": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0288_20271204": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0289_20271205": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0290_20271206": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0291_20271207": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0292_20271208": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0293_20271209": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0294_20271210": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0295_20271211": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0296_20271212": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0297_20271213": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0298_20271214": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0299_20271215": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0300_20271216": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0301_20271217": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0302_20271218": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0303_20271219": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0304_20271220": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0305_20271221": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0306_20271222": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0307_20271223": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0308_20271224": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0309_20271225": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0310_20271226": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0311_20271227": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0312_20271228": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0313_20271229": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0314_20271230": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0315_20271231": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0316_20271232": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0317_20271233": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0318_20271234": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0319_20271235": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0320_20271236": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0321_20271237": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0322_20271238": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0323_20271239": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0324_20271240": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0325_20271241": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0326_20271242": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0327_20271243": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0328_20271244": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0329_20271245": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0330_20271246": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0331_20271247": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0332_20271248": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0333_20271249": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0334_20271250": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0335_20271251": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0336_20271252": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0337_20271253": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0338_20271254": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0339_20271255": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0340_20271256": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0341_20271257": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0342_20271258": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0343_20271259": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0344_20271260": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0345_20271261": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0346_20271262": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0347_20271263": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0348_20271264": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0349_20271265": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0350_20271266": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0351_20271267": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0352_20271268": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0353_20271269": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0354_20271270": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0355_20271271": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0356_20271272": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0357_20271273": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0358_20271274": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0359_20271275": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0360_20271276": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0361_20271277": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0362_20271278": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0363_20271279": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0364_20271280": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0365_20271281": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0366_20271282": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0367_20271283": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0368_20271284": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0369_20271285": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0370_20271286": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0371_20271287": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0372_20271288": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0373_20271289": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0374_20271290": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0375_20271291": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0376_20271292": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0377_20271293": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0378_20271294": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0379_20271295": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0380_20271296": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0381_20271297": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0382_20271298": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0383_20271299": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0384_20271300": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0385_20271301": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0386_20271302": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0387_20271303": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0388_20271304": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0389_20271305": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0390_20271306": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0391_20271307": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0392_20271308": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0393_20271309": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0394_20271310": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0395_20271311": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0396_20271312": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0397_20271313": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0398_20271314": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    },
+    "airport_0399_20271315": {
+      "attempts": [],
+      "task_completed": false,
+      "budget_closed": false,
+      "closure_reason": "pending",
+      "stopping_budget_closed": false
+    }
+  },
+  "first_attempt_task_completion_rate": 0.0,
+  "first_attempt_rate_is_final": false,
+  "budget_task_completion_rate": null,
+  "task_completion_rate_is_final": false,
+  "completed_attempts": 24,
+  "clean_complete_attempts": 0,
+  "clean_complete_successes": 0,
+  "full_source_success_rate": 0.0,
+  "attempted_scene_success_rate": 0.0,
+  "all_400_attempted": false,
+  "target_70_percent_reached": false,
+  "task_completion_rate": 0.0,
+  "strict_clean_success_rate": 0.0,
+  "task_completion_target_70_percent_reached": false,
+  "strict_target_70_percent_reached": false,
+  "attempt_budget": 3,
+  "simulation_only": true,
+  "qualification": "Task completion uses the recorded acceptance profile and includes physical recovery; strict clean success excludes deviations and recovery. Legacy clean counters use the recorded profile. Partial-source rate is coverage, not an estimated full-source result.",
+  "primitive_budget_exclusions": [
+    "initial_grasp",
+    "navigation",
+    "push_release_retreat",
+    "final_stability",
+    "cpu_planning"
+  ],
+  "episode_time_includes_all_physical_motion": true,
+  "primitive_budget_seconds": 5.0,
+  "preflight_coverage": {
+    "registered": 400,
+    "selected": 8,
+    "selected_scene_ids": [
+      "airport_0014_20270930",
+      "airport_0075_20270991",
+      "airport_0098_20271014",
+      "airport_0102_20271018",
+      "airport_0110_20271026",
+      "airport_0118_20271034",
+      "airport_0174_20271090",
+      "airport_0206_20271122"
+    ],
+    "checked": 8,
+    "verified": 8,
+    "missing": 392,
+    "selected_checked": 8,
+    "selected_verified": 8,
+    "all_registered_verified": false,
+    "qualification": "Initial physics preflight only; no complete task or rendering validation"
+  },
+  "runner_complete": true,
+  "selected_scene_ids": [
+    "airport_0014_20270930",
+    "airport_0075_20270991",
+    "airport_0098_20271014",
+    "airport_0102_20271018",
+    "airport_0110_20271026",
+    "airport_0118_20271034",
+    "airport_0174_20271090",
+    "airport_0206_20271122"
+  ]
+}

@@ -1,0 +1,20 @@
+﻿Snapshot: 2026-10-16T04:56:05.095339+00:00
+Scope: native three-tray expert/controller validation; not model execution.
+Stage: deferred_by_user_for_stable_demo
+Training status: initialization_deferred
+BC resume stage: prepare
+BC resume directory: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/bc_resume_after_stable_20261016_v1
+Actual verified training updates: 0
+Demo/control case: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/demo_candidate_12
+Current coordinator directory: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/pipeline_v15
+Pipeline state: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/pipeline_v15/pipeline_status.json
+Guardian state: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/pipeline_v15/guardian_status.json
+Demo media/trace validation present: True
+Active collection output: 
+Active collection frame: 
+Data manifest present: True
+Current process identities: [{"role":"demo_identity","pid":1416208,"identity_alive":false},{"role":"pipeline_identity","pid":1623767,"identity_alive":false},{"role":"guardian_identity","pid":1623768,"identity_alive":false}]
+Viewer: http://100.104.0.108:8776/demo12_v15.html
+Live snapshot: runs/isaacsim_three_tray_workflow_20261015_v1_reference/monitor_latest.json
+Actual video paths: THREE_TRAY_ISAAC_VIDEO_PATHS.txt
+Missing training status or manifest means not yet verified; never means trained.

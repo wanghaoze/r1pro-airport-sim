@@ -1,0 +1,31 @@
+{
+  "release": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v28_20260929",
+  "archive_sha256": "44ec0e8cef27bb62cbfab38dbafb79d9262bf95e0afb4dd3a0b7c823cb164416",
+  "conda": "/home/michelle/miniconda3/envs/r1pro-tray",
+  "server_core_tests": {
+    "passed": 606,
+    "xfailed": 1
+  },
+  "local_targeted_joint_tests_passed": 35,
+  "local_broad_suite": {
+    "passed": 605,
+    "skipped": 1,
+    "xfailed": 1,
+    "seconds": 205.9,
+    "skip_reason": "optional ruckig absent locally; corresponding test passed on server"
+  },
+  "development_pid": 2584304,
+  "verification_queue_pid": 2584305,
+  "max_control_workers": 32,
+  "variants": [
+    "float_baseline",
+    "step_baseline",
+    "step_shortcut",
+    "step_preview"
+  ],
+  "development_cases_per_variant": 28,
+  "status": "development_running",
+  "full400_target_reached": false,
+  "simulation_only": true,
+  "qualification": "Default-off numerical clock correction; original20Hz sampling and150ms inclusive bound preserved. Clock baseline and control improvements reported separately."
+}

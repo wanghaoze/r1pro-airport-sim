@@ -1,0 +1,10 @@
+{
+  "release": "robust_v32_20260929",
+  "archive_sha256": "bcecbdb95708ae9694eed15c4e4fee04fb5964db10f92fae49373b07306223db",
+  "server_pid": 2751229,
+  "server_core_tests": "709 passed, 1 xfailed",
+  "local_targeted_tests": "42 passed on frozen archive",
+  "simulation_only": true,
+  "target_reached": false,
+  "experiment": "8 development scenes, 5 second primitive, 3 attempts, ik22 versus ik40, 16 workers after previous full400 completes"
+}

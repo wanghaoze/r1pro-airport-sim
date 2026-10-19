@@ -1,0 +1,55 @@
+{
+  "release": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v24b_20260929",
+  "archive_sha256": "087da0fd94958ae329a348c09631b96f046d92b36455736cf2f2dd29bdd7ed7c",
+  "conda": "/home/michelle/miniconda3/envs/r1pro-tray",
+  "local_tests_passed": 297,
+  "server_tests_passed": 297,
+  "pid": 2259976,
+  "indices": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    16,
+    218,
+    310
+  ],
+  "variants": [
+    "baseline",
+    "geometry",
+    "guarded_reference",
+    "additive",
+    "combined"
+  ],
+  "attempt_budget": 1,
+  "simulation_only": true,
+  "status": "development_and_fresh_verification_complete",
+  "full400_target_reached": false,
+  "prior_v24": "No experiments launched: spec check rejected concurrently added future module; v24b removes only that module and its test from immutable archive.",
+  "successes": {
+    "baseline": 1,
+    "geometry": 1,
+    "guarded_reference": 1,
+    "additive": 3,
+    "combined": 2
+  },
+  "cases_per_variant": 8,
+  "selected": "additive",
+  "fresh_verification_cases_per_variant": 62,
+  "fresh_verification": {
+    "baseline": {
+      "success": 6,
+      "total": 62
+    },
+    "additive": {
+      "success": 17,
+      "total": 62
+    }
+  },
+  "regressed_indices": [
+    176,
+    300
+  ],
+  "promotion": "rejected_regressions"
+}

@@ -1,0 +1,1236 @@
+{
+  "root": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v29_20260929/runs/completion_smoke",
+  "actual_completed_results": 8,
+  "cases": [
+    {
+      "scene_id": "airport_0004_20270920",
+      "result_path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v29_20260929/runs/completion_smoke/attempts/airport_0004_20270920/a000/result.json",
+      "result": {
+        "physics_success": true,
+        "task_completed": true,
+        "strict_success": false,
+        "acceptance_profile": "completion_first",
+        "recovery_used": false,
+        "failure_code": null,
+        "error": null,
+        "frames": 3043,
+        "simulation_seconds": 152.15,
+        "physical_elapsed_seconds": 152.14999999999839,
+        "acceptance_deviations": {
+          "count": 1,
+          "by_code": {
+            "retained_contact_lost": 1
+          },
+          "maxima": {
+            "retained_contact_lost": {
+              "tray": 1.0,
+              "table_contact": 0.0,
+              "force_n": 10.225026396259901,
+              "command_opening_m": 0.0,
+              "measured_bottom_gap_m": 4.5833036000142435e-05,
+              "missing_physics_steps": 100.0,
+              "missing_seconds": 0.2,
+              "strict_grace_seconds": 0.15,
+              "completion_grace_seconds": 0.3
+            }
+          }
+        }
+      },
+      "actual_deviation_event_count": 1,
+      "runtime_deviation_count": 1,
+      "runtime_episodes": [
+        {
+          "code": "retained_contact_lost",
+          "tray": 1,
+          "side": "right",
+          "origin_step": 49175,
+          "first_warning_step": 49275,
+          "last_warning_step": 49275,
+          "samples": 1,
+          "peak_speed_ratio": 0.0,
+          "max_sampled_missing_seconds": 0.2,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 4.5833036000142435e-05,
+          "table_observations": [
+            0
+          ]
+        }
+      ],
+      "last_failures": [],
+      "exact_150ms_boundary_events": 0,
+      "deviation_code_counts": {
+        "retained_contact_lost": 1
+      },
+      "limitation": "Support absence durations are 20Hz observations. No inference of continuous 500Hz separation or aliasing without substep contact evidence."
+    },
+    {
+      "scene_id": "airport_0005_20270921",
+      "result_path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v29_20260929/runs/completion_smoke/attempts/airport_0005_20270921/a000/result.json",
+      "result": {
+        "physics_success": false,
+        "task_completed": false,
+        "strict_success": false,
+        "acceptance_profile": "completion_first",
+        "recovery_used": false,
+        "failure_code": "push_accuracy_not_met",
+        "error": "push_accuracy_not_met",
+        "frames": 3466,
+        "simulation_seconds": 173.3,
+        "physical_elapsed_seconds": 173.30000000009937,
+        "acceptance_deviations": {
+          "count": 0,
+          "by_code": {},
+          "maxima": {}
+        }
+      },
+      "actual_deviation_event_count": 0,
+      "runtime_deviation_count": 0,
+      "runtime_episodes": [],
+      "last_failures": [
+        {
+          "frame": 3466,
+          "event": "operation_failed",
+          "retry": 0,
+          "reason": "push_accuracy_not_met",
+          "detail": null,
+          "recoverable": false
+        }
+      ],
+      "exact_150ms_boundary_events": 0,
+      "deviation_code_counts": {},
+      "limitation": "Support absence durations are 20Hz observations. No inference of continuous 500Hz separation or aliasing without substep contact evidence."
+    },
+    {
+      "scene_id": "airport_0006_20270922",
+      "result_path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v29_20260929/runs/completion_smoke/attempts/airport_0006_20270922/a000/result.json",
+      "result": {
+        "physics_success": false,
+        "task_completed": false,
+        "strict_success": false,
+        "acceptance_profile": "completion_first",
+        "recovery_used": false,
+        "failure_code": "placement_needs_correction",
+        "error": "placement_needs_correction",
+        "frames": 1659,
+        "simulation_seconds": 82.95,
+        "physical_elapsed_seconds": 82.94999999998808,
+        "acceptance_deviations": {
+          "count": 23,
+          "by_code": {
+            "primitive_push_outside_strict_contract": 2,
+            "operation_outside_strict_contract": 21
+          },
+          "maxima": {
+            "primitive_push_outside_strict_contract": {
+              "tray": 0.0,
+              "pose": 0.9990230341168989,
+              "destination": 0.8500000000000001,
+              "yaw_target_rad": 0.0
+            },
+            "operation_outside_strict_contract": {
+              "tray": 0.0,
+              "slot": 1.0,
+              "position_error_m": 0.009869454314318536,
+              "yaw_error_deg": 5.0660968597736336
+            }
+          }
+        }
+      },
+      "actual_deviation_event_count": 23,
+      "runtime_deviation_count": 0,
+      "runtime_episodes": [],
+      "last_failures": [
+        {
+          "frame": 1304,
+          "event": "primitive_failed",
+          "primitive": "place",
+          "reason": "coupled_ik_unreachable",
+          "detail": {
+            "tcp_errors": {
+              "left": {
+                "position_m": 0.028718108402761205,
+                "rotation_rad": 0.03300482856931899
+              },
+              "right": {
+                "position_m": 0.034947849968424094,
+                "rotation_rad": 0.03540696697881137
+              }
+            },
+            "rigid_grasp_error": {
+              "position_m": 0.003883497949627121,
+              "rotation_rad": 0.012564363756083332
+            },
+            "max_branch_rad": 0.24604240025139404
+          },
+          "duration_s": 0.0
+        },
+        {
+          "frame": 1659,
+          "event": "operation_failed",
+          "retry": 0,
+          "reason": "placement_needs_correction",
+          "detail": null,
+          "recoverable": false
+        }
+      ],
+      "exact_150ms_boundary_events": 0,
+      "deviation_code_counts": {
+        "primitive_push_outside_strict_contract": 2,
+        "operation_outside_strict_contract": 21
+      },
+      "limitation": "Support absence durations are 20Hz observations. No inference of continuous 500Hz separation or aliasing without substep contact evidence."
+    },
+    {
+      "scene_id": "airport_0007_20270923",
+      "result_path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v29_20260929/runs/completion_smoke/attempts/airport_0007_20270923/a000/result.json",
+      "result": {
+        "physics_success": false,
+        "task_completed": false,
+        "strict_success": false,
+        "acceptance_profile": "completion_first",
+        "recovery_used": false,
+        "failure_code": "push_accuracy_not_met",
+        "error": "push_accuracy_not_met",
+        "frames": 3954,
+        "simulation_seconds": 197.7,
+        "physical_elapsed_seconds": 197.70000000021588,
+        "acceptance_deviations": {
+          "count": 1,
+          "by_code": {
+            "retained_contact_lost": 1
+          },
+          "maxima": {
+            "retained_contact_lost": {
+              "tray": 1.0,
+              "table_contact": 0.0,
+              "force_n": 11.67687862958722,
+              "command_opening_m": 0.0,
+              "measured_bottom_gap_m": 1.3141124474813637e-05,
+              "missing_physics_steps": 100.0,
+              "missing_seconds": 0.2,
+              "strict_grace_seconds": 0.15,
+              "completion_grace_seconds": 0.3
+            }
+          }
+        }
+      },
+      "actual_deviation_event_count": 1,
+      "runtime_deviation_count": 1,
+      "runtime_episodes": [
+        {
+          "code": "retained_contact_lost",
+          "tray": 1,
+          "side": "right",
+          "origin_step": 91800,
+          "first_warning_step": 91900,
+          "last_warning_step": 91900,
+          "samples": 1,
+          "peak_speed_ratio": 0.0,
+          "max_sampled_missing_seconds": 0.2,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 1.3141124474813637e-05,
+          "table_observations": [
+            0
+          ]
+        }
+      ],
+      "last_failures": [
+        {
+          "frame": 1502,
+          "event": "primitive_failed",
+          "primitive": "place",
+          "reason": "primitive_path_infeasible",
+          "detail": {
+            "available_s": 2.0,
+            "candidates": [
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.45
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 4.2
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.05
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.25
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.1
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.35
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.55
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.3
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 3.15
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.35
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.4
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.25
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.05
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.25
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.2
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.3
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.35
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.3
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.05
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.05
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.1
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.2
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.2
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.3
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.15
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.05
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.05
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.05
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.2
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.1
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.05
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.15
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.05
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.2
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.1
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.05
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.05
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.05
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.15
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.05
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.15
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.15
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.2
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.15
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 2.1
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 2.15
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "collision_or_grasp_or_camera",
+                "progress": 0.2265625,
+                "collision": null,
+                "wrist_camera_front": false,
+                "rigid_grasp_error": {
+                  "position_m": 0.01621907991909505,
+                  "rotation_rad": 0.00763139578829236
+                }
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "collision_or_grasp_or_camera",
+                "progress": 0.2421875,
+                "collision": null,
+                "wrist_camera_front": false,
+                "rigid_grasp_error": {
+                  "position_m": 0.015169051303602502,
+                  "rotation_rad": 0.007114055107425046
+                }
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "collision_or_grasp_or_camera",
+                "progress": 0.25,
+                "collision": null,
+                "wrist_camera_front": false,
+                "rigid_grasp_error": {
+                  "position_m": 0.015137814242849556,
+                  "rotation_rad": 0.007185136421448623
+                }
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "collision_or_grasp_or_camera",
+                "progress": 0.2421875,
+                "collision": null,
+                "wrist_camera_front": false,
+                "rigid_grasp_error": {
+                  "position_m": 0.015169094963190945,
+                  "rotation_rad": 0.0070670427620472525
+                }
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "collision_or_grasp_or_camera",
+                "progress": 0.2421875,
+                "collision": null,
+                "wrist_camera_front": false,
+                "rigid_grasp_error": {
+                  "position_m": 0.015067344809476921,
+                  "rotation_rad": 0.006994559859664978
+                }
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "collision_or_grasp_or_camera",
+                "progress": 0.25,
+                "collision": null,
+                "wrist_camera_front": false,
+                "rigid_grasp_error": {
+                  "position_m": 0.015978515686726178,
+                  "rotation_rad": 0.007370120472717034
+                }
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "collision_or_grasp_or_camera",
+                "progress": 0.25,
+                "collision": null,
+                "wrist_camera_front": false,
+                "rigid_grasp_error": {
+                  "position_m": 0.01563872392453105,
+                  "rotation_rad": 0.00720567225830065
+                }
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "collision_or_grasp_or_camera",
+                "progress": 0.1953125,
+                "collision": null,
+                "wrist_camera_front": false,
+                "rigid_grasp_error": {
+                  "position_m": 0.015356200857439287,
+                  "rotation_rad": 0.007376715040867918
+                }
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "collision_or_grasp_or_camera",
+                "progress": 0.25,
+                "collision": null,
+                "wrist_camera_front": false,
+                "rigid_grasp_error": {
+                  "position_m": 0.015582359053972157,
+                  "rotation_rad": 0.007519573170248575
+                }
+              },
+              {
+                "mode": "CruiseJointPath",
+                "reason": "collision_or_grasp_or_camera",
+                "progress": 0.296875,
+                "collision": null,
+                "wrist_camera_front": false,
+                "rigid_grasp_error": {
+                  "position_m": 0.015148182651171571,
+                  "rotation_rad": 0.007379887913050325
+                }
+              }
+            ]
+          },
+          "duration_s": 0.0
+        },
+        {
+          "frame": 3954,
+          "event": "operation_failed",
+          "retry": 0,
+          "reason": "push_accuracy_not_met",
+          "detail": null,
+          "recoverable": false
+        }
+      ],
+      "exact_150ms_boundary_events": 2,
+      "deviation_code_counts": {
+        "retained_contact_lost": 1
+      },
+      "limitation": "Support absence durations are 20Hz observations. No inference of continuous 500Hz separation or aliasing without substep contact evidence."
+    },
+    {
+      "scene_id": "airport_0008_20270924",
+      "result_path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v29_20260929/runs/completion_smoke/attempts/airport_0008_20270924/a000/result.json",
+      "result": {
+        "physics_success": true,
+        "task_completed": true,
+        "strict_success": true,
+        "acceptance_profile": "completion_first",
+        "recovery_used": false,
+        "failure_code": null,
+        "error": null,
+        "frames": 3264,
+        "simulation_seconds": 163.2,
+        "physical_elapsed_seconds": 163.20000000005115,
+        "acceptance_deviations": {
+          "count": 0,
+          "by_code": {},
+          "maxima": {}
+        }
+      },
+      "actual_deviation_event_count": 0,
+      "runtime_deviation_count": 0,
+      "runtime_episodes": [],
+      "last_failures": [
+        {
+          "frame": 584,
+          "event": "primitive_failed",
+          "primitive": "place",
+          "reason": "coupled_ik_unreachable",
+          "detail": {
+            "tcp_errors": {
+              "left": {
+                "position_m": 0.02697604672211712,
+                "rotation_rad": 0.012920243993347695
+              },
+              "right": {
+                "position_m": 0.02699552008630245,
+                "rotation_rad": 0.01625251696428281
+              }
+            },
+            "rigid_grasp_error": {
+              "position_m": 0.002999546951757256,
+              "rotation_rad": 0.007024965597322104
+            },
+            "max_branch_rad": 0.37520696051472513
+          },
+          "duration_s": 0.0
+        }
+      ],
+      "exact_150ms_boundary_events": 2,
+      "deviation_code_counts": {},
+      "limitation": "Support absence durations are 20Hz observations. No inference of continuous 500Hz separation or aliasing without substep contact evidence."
+    },
+    {
+      "scene_id": "airport_0016_20270932",
+      "result_path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v29_20260929/runs/completion_smoke/attempts/airport_0016_20270932/a000/result.json",
+      "result": {
+        "physics_success": true,
+        "task_completed": true,
+        "strict_success": false,
+        "acceptance_profile": "completion_first",
+        "recovery_used": false,
+        "failure_code": null,
+        "error": null,
+        "frames": 2990,
+        "simulation_seconds": 149.5,
+        "physical_elapsed_seconds": 149.49999999998573,
+        "acceptance_deviations": {
+          "count": 2,
+          "by_code": {
+            "retained_contact_lost": 2
+          },
+          "maxima": {
+            "retained_contact_lost": {
+              "tray": 1.0,
+              "table_contact": 0.0,
+              "force_n": 11.294928167890971,
+              "command_opening_m": 0.0,
+              "measured_bottom_gap_m": 6.284205833229084e-05,
+              "missing_physics_steps": 100.0,
+              "missing_seconds": 0.2,
+              "strict_grace_seconds": 0.15,
+              "completion_grace_seconds": 0.3
+            }
+          }
+        }
+      },
+      "actual_deviation_event_count": 2,
+      "runtime_deviation_count": 2,
+      "runtime_episodes": [
+        {
+          "code": "retained_contact_lost",
+          "tray": 1,
+          "side": "right",
+          "origin_step": 47800,
+          "first_warning_step": 47900,
+          "last_warning_step": 47900,
+          "samples": 1,
+          "peak_speed_ratio": 0.0,
+          "max_sampled_missing_seconds": 0.2,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 6.284205833229084e-05,
+          "table_observations": [
+            0
+          ]
+        },
+        {
+          "code": "retained_contact_lost",
+          "tray": 0,
+          "side": "right",
+          "origin_step": 67875,
+          "first_warning_step": 67975,
+          "last_warning_step": 67975,
+          "samples": 1,
+          "peak_speed_ratio": 0.0,
+          "max_sampled_missing_seconds": 0.2,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 1.9462543159431966e-05,
+          "table_observations": [
+            0
+          ]
+        }
+      ],
+      "last_failures": [],
+      "exact_150ms_boundary_events": 4,
+      "deviation_code_counts": {
+        "retained_contact_lost": 2
+      },
+      "limitation": "Support absence durations are 20Hz observations. No inference of continuous 500Hz separation or aliasing without substep contact evidence."
+    },
+    {
+      "scene_id": "airport_0218_20271134",
+      "result_path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v29_20260929/runs/completion_smoke/attempts/airport_0218_20271134/a000/result.json",
+      "result": {
+        "physics_success": false,
+        "task_completed": false,
+        "strict_success": false,
+        "acceptance_profile": "completion_first",
+        "recovery_used": true,
+        "failure_code": "illegal_collision",
+        "error": "illegal_collision: {'geoms': ['robot_geom_45', 'tray_0__tray_contact_012'], 'distance_m': -0.0002054316666822123}",
+        "frames": 3408,
+        "simulation_seconds": 170.35,
+        "physical_elapsed_seconds": 170.35800000008533,
+        "acceptance_deviations": {
+          "count": 6,
+          "by_code": {
+            "measured_joint_overspeed": 6
+          },
+          "maxima": {
+            "measured_joint_overspeed": {
+              "measured_rad_s": 1.8017699958464484,
+              "cap_rad_s": 1.7600000000000002,
+              "ratio": 1.0237329521854819,
+              "physics_time_s": 124.65199999989089,
+              "strict_ratio_max": 1.01,
+              "completion_ratio_max": 1.05,
+              "excursion_physics_steps": 0.0,
+              "excursion_seconds": 0.0,
+              "completion_excursion_seconds": 0.2
+            }
+          }
+        }
+      },
+      "actual_deviation_event_count": 6,
+      "runtime_deviation_count": 6,
+      "runtime_episodes": [
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 62201,
+          "first_warning_step": 62201,
+          "last_warning_step": 62201,
+          "samples": 1,
+          "peak_speed_ratio": 1.0147720798024493,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 62226,
+          "first_warning_step": 62226,
+          "last_warning_step": 62226,
+          "samples": 1,
+          "peak_speed_ratio": 1.0192231262965088,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 62251,
+          "first_warning_step": 62251,
+          "last_warning_step": 62251,
+          "samples": 1,
+          "peak_speed_ratio": 1.0222841017928046,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 62276,
+          "first_warning_step": 62276,
+          "last_warning_step": 62276,
+          "samples": 1,
+          "peak_speed_ratio": 1.0237329521854819,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 62301,
+          "first_warning_step": 62301,
+          "last_warning_step": 62301,
+          "samples": 1,
+          "peak_speed_ratio": 1.0234304496504047,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 62326,
+          "first_warning_step": 62326,
+          "last_warning_step": 62326,
+          "samples": 1,
+          "peak_speed_ratio": 1.0212958381424637,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        }
+      ],
+      "last_failures": [
+        {
+          "frame": 2976,
+          "event": "operation_failed",
+          "retry": 0,
+          "reason": "joint_path_collision_or_wrist",
+          "detail": {
+            "path_fraction": 0.25,
+            "collision": {
+              "geoms": [
+                "tray_0__tray_contact_012",
+                "tray_1__tray_contact_011"
+              ],
+              "distance_m": -4.673752956668891e-06
+            },
+            "wrist_camera_front": false,
+            "camera_metrics": {
+              "left": {
+                "camera_ahead_m": 0.005042956025338725,
+                "wrist_upright_dot": 0.9835432245029188,
+                "optical_forward_dot": 0.016164992084109164,
+                "self_view_geoms": []
+              },
+              "right": {
+                "camera_ahead_m": 0.004709947735509577,
+                "wrist_upright_dot": 0.9882865335900166,
+                "optical_forward_dot": 0.02216204330260595,
+                "self_view_geoms": []
+              }
+            },
+            "rigid_grasp_error": null
+          },
+          "recoverable": true
+        },
+        {
+          "frame": 3408,
+          "event": "operation_failed",
+          "retry": 1,
+          "reason": "illegal_collision",
+          "detail": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.0002054316666822123
+          },
+          "recoverable": false
+        }
+      ],
+      "exact_150ms_boundary_events": 0,
+      "deviation_code_counts": {
+        "measured_joint_overspeed": 6
+      },
+      "limitation": "Support absence durations are 20Hz observations. No inference of continuous 500Hz separation or aliasing without substep contact evidence."
+    },
+    {
+      "scene_id": "airport_0310_20271226",
+      "result_path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v29_20260929/runs/completion_smoke/attempts/airport_0310_20271226/a000/result.json",
+      "result": {
+        "physics_success": false,
+        "task_completed": false,
+        "strict_success": false,
+        "acceptance_profile": "completion_first",
+        "recovery_used": false,
+        "failure_code": "push_accuracy_not_met",
+        "error": "push_accuracy_not_met",
+        "frames": 3294,
+        "simulation_seconds": 164.7,
+        "physical_elapsed_seconds": 164.7000000000583,
+        "acceptance_deviations": {
+          "count": 20,
+          "by_code": {
+            "measured_joint_overspeed": 17,
+            "retained_contact_lost": 3
+          },
+          "maxima": {
+            "measured_joint_overspeed": {
+              "measured_rad_s": 1.8036483231830216,
+              "cap_rad_s": 1.7600000000000002,
+              "ratio": 1.0248001836267167,
+              "physics_time_s": 35.30199999999718,
+              "strict_ratio_max": 1.01,
+              "completion_ratio_max": 1.05,
+              "excursion_physics_steps": 0.0,
+              "excursion_seconds": 0.0,
+              "completion_excursion_seconds": 0.2
+            },
+            "retained_contact_lost": {
+              "tray": 1.0,
+              "table_contact": 0.0,
+              "force_n": 10.893496287157372,
+              "command_opening_m": 0.0,
+              "measured_bottom_gap_m": 2.8060391061179857e-05,
+              "missing_physics_steps": 150.0,
+              "missing_seconds": 0.3,
+              "strict_grace_seconds": 0.15,
+              "completion_grace_seconds": 0.3
+            }
+          }
+        }
+      },
+      "actual_deviation_event_count": 20,
+      "runtime_deviation_count": 20,
+      "runtime_episodes": [
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 4626,
+          "first_warning_step": 4626,
+          "last_warning_step": 4626,
+          "samples": 1,
+          "peak_speed_ratio": 1.0130919657407458,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 4651,
+          "first_warning_step": 4651,
+          "last_warning_step": 4651,
+          "samples": 1,
+          "peak_speed_ratio": 1.0155382970442768,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 4676,
+          "first_warning_step": 4676,
+          "last_warning_step": 4676,
+          "samples": 1,
+          "peak_speed_ratio": 1.0185830218676597,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 4701,
+          "first_warning_step": 4701,
+          "last_warning_step": 4701,
+          "samples": 1,
+          "peak_speed_ratio": 1.021448180658069,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 4726,
+          "first_warning_step": 4726,
+          "last_warning_step": 4726,
+          "samples": 1,
+          "peak_speed_ratio": 1.023627363299624,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 4751,
+          "first_warning_step": 4751,
+          "last_warning_step": 4751,
+          "samples": 1,
+          "peak_speed_ratio": 1.0248001836267167,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 4776,
+          "first_warning_step": 4776,
+          "last_warning_step": 4776,
+          "samples": 1,
+          "peak_speed_ratio": 1.024768682954961,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 4801,
+          "first_warning_step": 4801,
+          "last_warning_step": 4801,
+          "samples": 1,
+          "peak_speed_ratio": 1.023415123943307,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 4826,
+          "first_warning_step": 4826,
+          "last_warning_step": 4826,
+          "samples": 1,
+          "peak_speed_ratio": 1.020674720388311,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 17476,
+          "first_warning_step": 17476,
+          "last_warning_step": 17476,
+          "samples": 1,
+          "peak_speed_ratio": 1.0122757483025364,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 17501,
+          "first_warning_step": 17501,
+          "last_warning_step": 17501,
+          "samples": 1,
+          "peak_speed_ratio": 1.015521279793318,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 17526,
+          "first_warning_step": 17526,
+          "last_warning_step": 17526,
+          "samples": 1,
+          "peak_speed_ratio": 1.0177392535271974,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 17551,
+          "first_warning_step": 17551,
+          "last_warning_step": 17551,
+          "samples": 1,
+          "peak_speed_ratio": 1.0188017273718075,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 17576,
+          "first_warning_step": 17576,
+          "last_warning_step": 17576,
+          "samples": 1,
+          "peak_speed_ratio": 1.018631389258083,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 17601,
+          "first_warning_step": 17601,
+          "last_warning_step": 17601,
+          "samples": 1,
+          "peak_speed_ratio": 1.0171842940770606,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 17626,
+          "first_warning_step": 17626,
+          "last_warning_step": 17626,
+          "samples": 1,
+          "peak_speed_ratio": 1.0144403276710232,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "measured_joint_overspeed",
+          "tray": null,
+          "side": null,
+          "origin_step": 17651,
+          "first_warning_step": 17651,
+          "last_warning_step": 17651,
+          "samples": 1,
+          "peak_speed_ratio": 1.0103963525237474,
+          "max_sampled_missing_seconds": 0.0,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 0.0,
+          "table_observations": []
+        },
+        {
+          "code": "retained_contact_lost",
+          "tray": 1,
+          "side": "right",
+          "origin_step": 77075,
+          "first_warning_step": 77175,
+          "last_warning_step": 77225,
+          "samples": 3,
+          "peak_speed_ratio": 0.0,
+          "max_sampled_missing_seconds": 0.3,
+          "max_speed_excursion_seconds": 0.0,
+          "max_abs_gap_m": 2.8060391061179857e-05,
+          "table_observations": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "last_failures": [
+        {
+          "frame": 3294,
+          "event": "operation_failed",
+          "retry": 0,
+          "reason": "push_accuracy_not_met",
+          "detail": null,
+          "recoverable": false
+        }
+      ],
+      "exact_150ms_boundary_events": 2,
+      "deviation_code_counts": {
+        "measured_joint_overspeed": 17,
+        "retained_contact_lost": 3
+      },
+      "limitation": "Support absence durations are 20Hz observations. No inference of continuous 500Hz separation or aliasing without substep contact evidence."
+    }
+  ]
+}

@@ -1,0 +1,1609 @@
+{
+  "root": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v39_20260930/runs/v39_development/stage_refit_free_first",
+  "attempts": [
+    {
+      "scene": "airport_0014_20270930",
+      "attempt": "a000",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 0, 'side': 'left', 'table_contact': 0, 'force_n': 10.673751297562571, 'command_opening_m': 0.0, 'clock': {'physics_step_count': 16450, 'physics_clock_origin_time': 0.0, 'physics_timestep_s': 0.002, 'missing_step': 16275, 'observed_physics_time_s': 32.89999999999424, 'missing_since_s': 32.549999999993815, 'elapsed_physics_steps': 175, 'elapsed_float_s': 0.35000000000042775, 'elapsed_exact_numerator': 7, 'elapsed_exact_denominator': 20, 'integer_time_allowed': False, 'legacy_float_time_allowed': False, 'boundary_only_difference': False}}}",
+      "frames": 658,
+      "operations": 1,
+      "candidate_accepted": 0,
+      "candidate_rejected": 1,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 1,
+      "last_primitive_failed": {
+        "frame": 658,
+        "event": "primitive_failed",
+        "primitive": "push",
+        "reason": "retained_contact_lost",
+        "detail": {
+          "tray": 0,
+          "side": "left",
+          "table_contact": 0,
+          "force_n": 10.673751297562571,
+          "command_opening_m": 0.0,
+          "clock": {
+            "physics_step_count": 16450,
+            "physics_clock_origin_time": 0.0,
+            "physics_timestep_s": 0.002,
+            "missing_step": 16275,
+            "observed_physics_time_s": 32.89999999999424,
+            "missing_since_s": 32.549999999993815,
+            "elapsed_physics_steps": 175,
+            "elapsed_float_s": 0.35000000000042775,
+            "elapsed_exact_numerator": 7,
+            "elapsed_exact_denominator": 20,
+            "integer_time_allowed": false,
+            "legacy_float_time_allowed": false,
+            "boundary_only_difference": false
+          }
+        },
+        "duration_s": 1.7,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 1.75,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": false
+      },
+      "last_operation_failed": {
+        "frame": 658,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "contact_handoff_aborted",
+        "detail": {
+          "reason": "retained_contact_lost",
+          "detail": {
+            "tray": 0,
+            "side": "left",
+            "table_contact": 0,
+            "force_n": 10.673751297562571,
+            "command_opening_m": 0.0,
+            "clock": {
+              "physics_step_count": 16450,
+              "physics_clock_origin_time": 0.0,
+              "physics_timestep_s": 0.002,
+              "missing_step": 16275,
+              "observed_physics_time_s": 32.89999999999424,
+              "missing_since_s": 32.549999999993815,
+              "elapsed_physics_steps": 175,
+              "elapsed_float_s": 0.35000000000042775,
+              "elapsed_exact_numerator": 7,
+              "elapsed_exact_denominator": 20,
+              "integer_time_allowed": false,
+              "legacy_float_time_allowed": false,
+              "boundary_only_difference": false
+            }
+          }
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0014_20270930",
+      "attempt": "a001",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 0, 'side': 'left', 'table_contact': 0, 'force_n': 10.673751297562571, 'command_opening_m': 0.0, 'clock': {'physics_step_count': 16450, 'physics_clock_origin_time': 0.0, 'physics_timestep_s': 0.002, 'missing_step': 16275, 'observed_physics_time_s': 32.89999999999424, 'missing_since_s': 32.549999999993815, 'elapsed_physics_steps': 175, 'elapsed_float_s': 0.35000000000042775, 'elapsed_exact_numerator': 7, 'elapsed_exact_denominator': 20, 'integer_time_allowed': False, 'legacy_float_time_allowed': False, 'boundary_only_difference': False}}}",
+      "frames": 658,
+      "operations": 1,
+      "candidate_accepted": 0,
+      "candidate_rejected": 1,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 1,
+      "last_primitive_failed": {
+        "frame": 658,
+        "event": "primitive_failed",
+        "primitive": "push",
+        "reason": "retained_contact_lost",
+        "detail": {
+          "tray": 0,
+          "side": "left",
+          "table_contact": 0,
+          "force_n": 10.673751297562571,
+          "command_opening_m": 0.0,
+          "clock": {
+            "physics_step_count": 16450,
+            "physics_clock_origin_time": 0.0,
+            "physics_timestep_s": 0.002,
+            "missing_step": 16275,
+            "observed_physics_time_s": 32.89999999999424,
+            "missing_since_s": 32.549999999993815,
+            "elapsed_physics_steps": 175,
+            "elapsed_float_s": 0.35000000000042775,
+            "elapsed_exact_numerator": 7,
+            "elapsed_exact_denominator": 20,
+            "integer_time_allowed": false,
+            "legacy_float_time_allowed": false,
+            "boundary_only_difference": false
+          }
+        },
+        "duration_s": 1.7,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 1.75,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": false
+      },
+      "last_operation_failed": {
+        "frame": 658,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "contact_handoff_aborted",
+        "detail": {
+          "reason": "retained_contact_lost",
+          "detail": {
+            "tray": 0,
+            "side": "left",
+            "table_contact": 0,
+            "force_n": 10.673751297562571,
+            "command_opening_m": 0.0,
+            "clock": {
+              "physics_step_count": 16450,
+              "physics_clock_origin_time": 0.0,
+              "physics_timestep_s": 0.002,
+              "missing_step": 16275,
+              "observed_physics_time_s": 32.89999999999424,
+              "missing_since_s": 32.549999999993815,
+              "elapsed_physics_steps": 175,
+              "elapsed_float_s": 0.35000000000042775,
+              "elapsed_exact_numerator": 7,
+              "elapsed_exact_denominator": 20,
+              "integer_time_allowed": false,
+              "legacy_float_time_allowed": false,
+              "boundary_only_difference": false
+            }
+          }
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0014_20270930",
+      "attempt": "a002",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 0, 'side': 'left', 'table_contact': 0, 'force_n': 10.673751297562571, 'command_opening_m': 0.0, 'clock': {'physics_step_count': 16450, 'physics_clock_origin_time': 0.0, 'physics_timestep_s': 0.002, 'missing_step': 16275, 'observed_physics_time_s': 32.89999999999424, 'missing_since_s': 32.549999999993815, 'elapsed_physics_steps': 175, 'elapsed_float_s': 0.35000000000042775, 'elapsed_exact_numerator': 7, 'elapsed_exact_denominator': 20, 'integer_time_allowed': False, 'legacy_float_time_allowed': False, 'boundary_only_difference': False}}}",
+      "frames": 658,
+      "operations": 1,
+      "candidate_accepted": 0,
+      "candidate_rejected": 1,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 1,
+      "last_primitive_failed": {
+        "frame": 658,
+        "event": "primitive_failed",
+        "primitive": "push",
+        "reason": "retained_contact_lost",
+        "detail": {
+          "tray": 0,
+          "side": "left",
+          "table_contact": 0,
+          "force_n": 10.673751297562571,
+          "command_opening_m": 0.0,
+          "clock": {
+            "physics_step_count": 16450,
+            "physics_clock_origin_time": 0.0,
+            "physics_timestep_s": 0.002,
+            "missing_step": 16275,
+            "observed_physics_time_s": 32.89999999999424,
+            "missing_since_s": 32.549999999993815,
+            "elapsed_physics_steps": 175,
+            "elapsed_float_s": 0.35000000000042775,
+            "elapsed_exact_numerator": 7,
+            "elapsed_exact_denominator": 20,
+            "integer_time_allowed": false,
+            "legacy_float_time_allowed": false,
+            "boundary_only_difference": false
+          }
+        },
+        "duration_s": 1.7,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 1.75,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": false
+      },
+      "last_operation_failed": {
+        "frame": 658,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "contact_handoff_aborted",
+        "detail": {
+          "reason": "retained_contact_lost",
+          "detail": {
+            "tray": 0,
+            "side": "left",
+            "table_contact": 0,
+            "force_n": 10.673751297562571,
+            "command_opening_m": 0.0,
+            "clock": {
+              "physics_step_count": 16450,
+              "physics_clock_origin_time": 0.0,
+              "physics_timestep_s": 0.002,
+              "missing_step": 16275,
+              "observed_physics_time_s": 32.89999999999424,
+              "missing_since_s": 32.549999999993815,
+              "elapsed_physics_steps": 175,
+              "elapsed_float_s": 0.35000000000042775,
+              "elapsed_exact_numerator": 7,
+              "elapsed_exact_denominator": 20,
+              "integer_time_allowed": false,
+              "legacy_float_time_allowed": false,
+              "boundary_only_difference": false
+            }
+          }
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0075_20270991",
+      "attempt": "a000",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "measured_joint_overspeed",
+      "error": "measured_joint_overspeed: {'joint': 'right_arm_joint5', 'measured_rad_s': 1.857693999966816, 'cap_rad_s': 1.7600000000000002, 'ratio': 1.0555079545266, 'physics_time_s': 71.10200000001569, 'strict_ratio_max': 1.01, 'completion_ratio_max': 1.05, 'excursion_physics_steps': 0, 'excursion_seconds': 0.0, 'completion_excursion_seconds': 0.2}",
+      "frames": 1423,
+      "operations": 2,
+      "candidate_accepted": 0,
+      "candidate_rejected": 0,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 0,
+      "last_primitive_failed": null,
+      "last_operation_failed": {
+        "frame": 1423,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "measured_joint_overspeed",
+        "detail": {
+          "joint": "right_arm_joint5",
+          "measured_rad_s": 1.857693999966816,
+          "cap_rad_s": 1.7600000000000002,
+          "ratio": 1.0555079545266,
+          "physics_time_s": 71.10200000001569,
+          "strict_ratio_max": 1.01,
+          "completion_ratio_max": 1.05,
+          "excursion_physics_steps": 0,
+          "excursion_seconds": 0.0,
+          "completion_excursion_seconds": 0.2
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0075_20270991",
+      "attempt": "a001",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "coupled_ik_unreachable",
+      "error": "coupled_ik_unreachable: {'tcp_errors': {'left': {'position_m': 0.03483253924265486, 'rotation_rad': 0.0546041402927121}, 'right': {'position_m': 0.018184023884170192, 'rotation_rad': 0.04138566920975817}}, 'rigid_grasp_error': {'position_m': 0.002020827412663755, 'rotation_rad': 0.013226674073887746}, 'max_branch_rad': 0.08474709529639313}",
+      "frames": 525,
+      "operations": 1,
+      "candidate_accepted": 0,
+      "candidate_rejected": 0,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 0,
+      "last_primitive_failed": {
+        "frame": 525,
+        "event": "primitive_failed",
+        "primitive": "transport_align",
+        "reason": "coupled_ik_unreachable",
+        "detail": {
+          "tcp_errors": {
+            "left": {
+              "position_m": 0.03483253924265486,
+              "rotation_rad": 0.0546041402927121
+            },
+            "right": {
+              "position_m": 0.018184023884170192,
+              "rotation_rad": 0.04138566920975817
+            }
+          },
+          "rigid_grasp_error": {
+            "position_m": 0.002020827412663755,
+            "rotation_rad": 0.013226674073887746
+          },
+          "max_branch_rad": 0.08474709529639313
+        },
+        "duration_s": 0.0,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 0.0,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": false
+      },
+      "last_operation_failed": {
+        "frame": 525,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "coupled_ik_unreachable",
+        "detail": {
+          "tcp_errors": {
+            "left": {
+              "position_m": 0.03483253924265486,
+              "rotation_rad": 0.0546041402927121
+            },
+            "right": {
+              "position_m": 0.018184023884170192,
+              "rotation_rad": 0.04138566920975817
+            }
+          },
+          "rigid_grasp_error": {
+            "position_m": 0.002020827412663755,
+            "rotation_rad": 0.013226674073887746
+          },
+          "max_branch_rad": 0.08474709529639313
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0075_20270991",
+      "attempt": "a002",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "coupled_ik_unreachable",
+      "error": "coupled_ik_unreachable: {'tcp_errors': {'left': {'position_m': 0.03483253924265486, 'rotation_rad': 0.0546041402927121}, 'right': {'position_m': 0.018184023884170192, 'rotation_rad': 0.04138566920975817}}, 'rigid_grasp_error': {'position_m': 0.002020827412663755, 'rotation_rad': 0.013226674073887746}, 'max_branch_rad': 0.08474709529639313}",
+      "frames": 525,
+      "operations": 1,
+      "candidate_accepted": 0,
+      "candidate_rejected": 0,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 0,
+      "last_primitive_failed": {
+        "frame": 525,
+        "event": "primitive_failed",
+        "primitive": "transport_align",
+        "reason": "coupled_ik_unreachable",
+        "detail": {
+          "tcp_errors": {
+            "left": {
+              "position_m": 0.03483253924265486,
+              "rotation_rad": 0.0546041402927121
+            },
+            "right": {
+              "position_m": 0.018184023884170192,
+              "rotation_rad": 0.04138566920975817
+            }
+          },
+          "rigid_grasp_error": {
+            "position_m": 0.002020827412663755,
+            "rotation_rad": 0.013226674073887746
+          },
+          "max_branch_rad": 0.08474709529639313
+        },
+        "duration_s": 0.0,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 0.0,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": false
+      },
+      "last_operation_failed": {
+        "frame": 525,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "coupled_ik_unreachable",
+        "detail": {
+          "tcp_errors": {
+            "left": {
+              "position_m": 0.03483253924265486,
+              "rotation_rad": 0.0546041402927121
+            },
+            "right": {
+              "position_m": 0.018184023884170192,
+              "rotation_rad": 0.04138566920975817
+            }
+          },
+          "rigid_grasp_error": {
+            "position_m": 0.002020827412663755,
+            "rotation_rad": 0.013226674073887746
+          },
+          "max_branch_rad": 0.08474709529639313
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0098_20271014",
+      "attempt": "a000",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "no_supported_airborne_recovery",
+      "error": "no_supported_airborne_recovery: no_collision_free_base_route",
+      "frames": 3099,
+      "operations": 4,
+      "candidate_accepted": 1,
+      "candidate_rejected": 0,
+      "fallback": 1,
+      "fallback_reasons": [
+        "whole_path:primitive_path_infeasible"
+      ],
+      "legacy_free_open": 1,
+      "last_primitive_failed": {
+        "frame": 3099,
+        "event": "primitive_failed",
+        "primitive": "transport_align",
+        "reason": "cartesian_collision_or_wrist",
+        "detail": {
+          "collision": {
+            "geoms": [
+              "tray_0__tray_contact_004",
+              "tray_1__tray_contact_000"
+            ],
+            "distance_m": -0.0016695309357123399
+          },
+          "wrist_camera_front": false,
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.014959520069994577,
+              "wrist_upright_dot": 0.9770214449337618,
+              "optical_forward_dot": -0.12390721262630812,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.013302457842043798,
+              "wrist_upright_dot": 0.9857202044933814,
+              "optical_forward_dot": -0.09860517271388268,
+              "self_view_geoms": []
+            }
+          },
+          "rigid_grasp_error": {
+            "position_m": 0.0008684563932375094,
+            "rotation_rad": 0.005351539000077814
+          }
+        },
+        "duration_s": 0.0,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 0.0,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": false
+      },
+      "last_operation_failed": {
+        "frame": 3099,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "no_collision_free_base_route",
+        "detail": null,
+        "recoverable": true
+      }
+    },
+    {
+      "scene": "airport_0098_20271014",
+      "attempt": "a001",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "no_supported_airborne_recovery",
+      "error": "no_supported_airborne_recovery: no_collision_free_base_route",
+      "frames": 3146,
+      "operations": 4,
+      "candidate_accepted": 1,
+      "candidate_rejected": 0,
+      "fallback": 1,
+      "fallback_reasons": [
+        "whole_path:primitive_path_infeasible"
+      ],
+      "legacy_free_open": 1,
+      "last_primitive_failed": {
+        "frame": 3146,
+        "event": "primitive_failed",
+        "primitive": "transport_align",
+        "reason": "cartesian_collision_or_wrist",
+        "detail": {
+          "collision": {
+            "geoms": [
+              "tray_0__tray_contact_004",
+              "tray_1__tray_contact_000"
+            ],
+            "distance_m": -0.0016374437036380494
+          },
+          "wrist_camera_front": false,
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.014957886659100453,
+              "wrist_upright_dot": 0.9770209219974757,
+              "optical_forward_dot": -0.1238840927356011,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.013300941290227644,
+              "wrist_upright_dot": 0.9857210127559041,
+              "optical_forward_dot": -0.0985842116499333,
+              "self_view_geoms": []
+            }
+          },
+          "rigid_grasp_error": {
+            "position_m": 0.0008688087917416535,
+            "rotation_rad": 0.005353880656167836
+          }
+        },
+        "duration_s": 0.0,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 0.0,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": false
+      },
+      "last_operation_failed": {
+        "frame": 3146,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "no_collision_free_base_route",
+        "detail": null,
+        "recoverable": true
+      }
+    },
+    {
+      "scene": "airport_0098_20271014",
+      "attempt": "a002",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'primitive_postcondition_failed', 'detail': {'stable_frames': 0, 'tray_pose': array([ 8.45575777e-01, -7.59963210e-02,  8.23539828e-01, -1.31492948e-02,\n        7.54401432e-04, -5.99799293e-02,  9.98112687e-01]), 'bottom_z': 0.7998679442431033, 'table_contact': 1, 'gripper_force': array([15.39019843, 18.21713033])}}",
+      "frames": 2226,
+      "operations": 3,
+      "candidate_accepted": 1,
+      "candidate_rejected": 1,
+      "fallback": 1,
+      "fallback_reasons": [
+        "whole_path:primitive_path_infeasible"
+      ],
+      "legacy_free_open": 2,
+      "last_primitive_failed": {
+        "frame": 2226,
+        "event": "primitive_failed",
+        "primitive": "push",
+        "reason": "primitive_postcondition_failed",
+        "detail": {
+          "stable_frames": 0,
+          "tray_pose": [
+            0.8455757768228235,
+            -0.07599632104293622,
+            0.8235398282330066,
+            -0.013149294805570548,
+            0.000754401432125032,
+            -0.05997992932956074,
+            0.9981126865250319
+          ],
+          "bottom_z": 0.7998679442431033,
+          "table_contact": 1,
+          "gripper_force": [
+            15.39019843399713,
+            18.217130330962227
+          ]
+        },
+        "duration_s": 2.55,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 2.55,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": false
+      },
+      "last_operation_failed": {
+        "frame": 2226,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "contact_handoff_aborted",
+        "detail": {
+          "reason": "primitive_postcondition_failed",
+          "detail": {
+            "stable_frames": 0,
+            "tray_pose": [
+              0.8455757768228235,
+              -0.07599632104293622,
+              0.8235398282330066,
+              -0.013149294805570548,
+              0.000754401432125032,
+              -0.05997992932956074,
+              0.9981126865250319
+            ],
+            "bottom_z": 0.7998679442431033,
+            "table_contact": 1,
+            "gripper_force": [
+              15.39019843399713,
+              18.217130330962227
+            ]
+          }
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0102_20271018",
+      "attempt": "a000",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "measured_joint_overspeed",
+      "error": "measured_joint_overspeed: {'joint': 'right_arm_joint5', 'measured_rad_s': 1.8573322040206424, 'cap_rad_s': 1.7600000000000002, 'ratio': 1.0553023886480921, 'physics_time_s': 38.95200000000164, 'strict_ratio_max': 1.01, 'completion_ratio_max': 1.05, 'excursion_physics_steps': 0, 'excursion_seconds': 0.0, 'completion_excursion_seconds': 0.2}",
+      "frames": 780,
+      "operations": 1,
+      "candidate_accepted": 0,
+      "candidate_rejected": 0,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 0,
+      "last_primitive_failed": null,
+      "last_operation_failed": {
+        "frame": 780,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "measured_joint_overspeed",
+        "detail": {
+          "joint": "right_arm_joint5",
+          "measured_rad_s": 1.8573322040206424,
+          "cap_rad_s": 1.7600000000000002,
+          "ratio": 1.0553023886480921,
+          "physics_time_s": 38.95200000000164,
+          "strict_ratio_max": 1.01,
+          "completion_ratio_max": 1.05,
+          "excursion_physics_steps": 0,
+          "excursion_seconds": 0.0,
+          "completion_excursion_seconds": 0.2
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0102_20271018",
+      "attempt": "a001",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 0, 'side': 'left', 'table_contact': 0, 'force_n': 10.963180095650888, 'command_opening_m': 0.0, 'clock': {'physics_step_count': 15375, 'physics_clock_origin_time': 0.0, 'physics_timestep_s': 0.002, 'missing_step': 15200, 'observed_physics_time_s': 30.749999999993836, 'missing_since_s': 30.39999999999403, 'elapsed_physics_steps': 175, 'elapsed_float_s': 0.349999999999806, 'elapsed_exact_numerator': 7, 'elapsed_exact_denominator': 20, 'integer_time_allowed': False, 'legacy_float_time_allowed': False, 'boundary_only_difference': False}}}",
+      "frames": 615,
+      "operations": 1,
+      "candidate_accepted": 0,
+      "candidate_rejected": 1,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 1,
+      "last_primitive_failed": {
+        "frame": 615,
+        "event": "primitive_failed",
+        "primitive": "push",
+        "reason": "retained_contact_lost",
+        "detail": {
+          "tray": 0,
+          "side": "left",
+          "table_contact": 0,
+          "force_n": 10.963180095650888,
+          "command_opening_m": 0.0,
+          "clock": {
+            "physics_step_count": 15375,
+            "physics_clock_origin_time": 0.0,
+            "physics_timestep_s": 0.002,
+            "missing_step": 15200,
+            "observed_physics_time_s": 30.749999999993836,
+            "missing_since_s": 30.39999999999403,
+            "elapsed_physics_steps": 175,
+            "elapsed_float_s": 0.349999999999806,
+            "elapsed_exact_numerator": 7,
+            "elapsed_exact_denominator": 20,
+            "integer_time_allowed": false,
+            "legacy_float_time_allowed": false,
+            "boundary_only_difference": false
+          }
+        },
+        "duration_s": 1.05,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 1.1,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": false
+      },
+      "last_operation_failed": {
+        "frame": 615,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "contact_handoff_aborted",
+        "detail": {
+          "reason": "retained_contact_lost",
+          "detail": {
+            "tray": 0,
+            "side": "left",
+            "table_contact": 0,
+            "force_n": 10.963180095650888,
+            "command_opening_m": 0.0,
+            "clock": {
+              "physics_step_count": 15375,
+              "physics_clock_origin_time": 0.0,
+              "physics_timestep_s": 0.002,
+              "missing_step": 15200,
+              "observed_physics_time_s": 30.749999999993836,
+              "missing_since_s": 30.39999999999403,
+              "elapsed_physics_steps": 175,
+              "elapsed_float_s": 0.349999999999806,
+              "elapsed_exact_numerator": 7,
+              "elapsed_exact_denominator": 20,
+              "integer_time_allowed": false,
+              "legacy_float_time_allowed": false,
+              "boundary_only_difference": false
+            }
+          }
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0102_20271018",
+      "attempt": "a002",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 0, 'side': 'left', 'table_contact': 0, 'force_n': 10.963180095650888, 'command_opening_m': 0.0, 'clock': {'physics_step_count': 15375, 'physics_clock_origin_time': 0.0, 'physics_timestep_s': 0.002, 'missing_step': 15200, 'observed_physics_time_s': 30.749999999993836, 'missing_since_s': 30.39999999999403, 'elapsed_physics_steps': 175, 'elapsed_float_s': 0.349999999999806, 'elapsed_exact_numerator': 7, 'elapsed_exact_denominator': 20, 'integer_time_allowed': False, 'legacy_float_time_allowed': False, 'boundary_only_difference': False}}}",
+      "frames": 615,
+      "operations": 1,
+      "candidate_accepted": 0,
+      "candidate_rejected": 1,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 1,
+      "last_primitive_failed": {
+        "frame": 615,
+        "event": "primitive_failed",
+        "primitive": "push",
+        "reason": "retained_contact_lost",
+        "detail": {
+          "tray": 0,
+          "side": "left",
+          "table_contact": 0,
+          "force_n": 10.963180095650888,
+          "command_opening_m": 0.0,
+          "clock": {
+            "physics_step_count": 15375,
+            "physics_clock_origin_time": 0.0,
+            "physics_timestep_s": 0.002,
+            "missing_step": 15200,
+            "observed_physics_time_s": 30.749999999993836,
+            "missing_since_s": 30.39999999999403,
+            "elapsed_physics_steps": 175,
+            "elapsed_float_s": 0.349999999999806,
+            "elapsed_exact_numerator": 7,
+            "elapsed_exact_denominator": 20,
+            "integer_time_allowed": false,
+            "legacy_float_time_allowed": false,
+            "boundary_only_difference": false
+          }
+        },
+        "duration_s": 1.05,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 1.1,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": false
+      },
+      "last_operation_failed": {
+        "frame": 615,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "contact_handoff_aborted",
+        "detail": {
+          "reason": "retained_contact_lost",
+          "detail": {
+            "tray": 0,
+            "side": "left",
+            "table_contact": 0,
+            "force_n": 10.963180095650888,
+            "command_opening_m": 0.0,
+            "clock": {
+              "physics_step_count": 15375,
+              "physics_clock_origin_time": 0.0,
+              "physics_timestep_s": 0.002,
+              "missing_step": 15200,
+              "observed_physics_time_s": 30.749999999993836,
+              "missing_since_s": 30.39999999999403,
+              "elapsed_physics_steps": 175,
+              "elapsed_float_s": 0.349999999999806,
+              "elapsed_exact_numerator": 7,
+              "elapsed_exact_denominator": 20,
+              "integer_time_allowed": false,
+              "legacy_float_time_allowed": false,
+              "boundary_only_difference": false
+            }
+          }
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0110_20271026",
+      "attempt": "a000",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 0, 'side': 'left', 'table_contact': 0, 'force_n': 10.493720082795361, 'command_opening_m': 0.0, 'clock': {'physics_step_count': 16000, 'physics_clock_origin_time': 0.0, 'physics_timestep_s': 0.002, 'missing_step': 15825, 'observed_physics_time_s': 31.999999999993143, 'missing_since_s': 31.649999999993337, 'elapsed_physics_steps': 175, 'elapsed_float_s': 0.349999999999806, 'elapsed_exact_numerator': 7, 'elapsed_exact_denominator': 20, 'integer_time_allowed': False, 'legacy_float_time_allowed': False, 'boundary_only_difference': False}}}",
+      "frames": 640,
+      "operations": 1,
+      "candidate_accepted": 0,
+      "candidate_rejected": 0,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 0,
+      "last_primitive_failed": {
+        "frame": 640,
+        "event": "primitive_failed",
+        "primitive": "push",
+        "reason": "retained_contact_lost",
+        "detail": {
+          "tray": 0,
+          "side": "left",
+          "table_contact": 0,
+          "force_n": 10.493720082795361,
+          "command_opening_m": 0.0,
+          "clock": {
+            "physics_step_count": 16000,
+            "physics_clock_origin_time": 0.0,
+            "physics_timestep_s": 0.002,
+            "missing_step": 15825,
+            "observed_physics_time_s": 31.999999999993143,
+            "missing_since_s": 31.649999999993337,
+            "elapsed_physics_steps": 175,
+            "elapsed_float_s": 0.349999999999806,
+            "elapsed_exact_numerator": 7,
+            "elapsed_exact_denominator": 20,
+            "integer_time_allowed": false,
+            "legacy_float_time_allowed": false,
+            "boundary_only_difference": false
+          }
+        },
+        "duration_s": 3.4,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 3.45,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": true
+      },
+      "last_operation_failed": {
+        "frame": 640,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "contact_handoff_aborted",
+        "detail": {
+          "reason": "retained_contact_lost",
+          "detail": {
+            "tray": 0,
+            "side": "left",
+            "table_contact": 0,
+            "force_n": 10.493720082795361,
+            "command_opening_m": 0.0,
+            "clock": {
+              "physics_step_count": 16000,
+              "physics_clock_origin_time": 0.0,
+              "physics_timestep_s": 0.002,
+              "missing_step": 15825,
+              "observed_physics_time_s": 31.999999999993143,
+              "missing_since_s": 31.649999999993337,
+              "elapsed_physics_steps": 175,
+              "elapsed_float_s": 0.349999999999806,
+              "elapsed_exact_numerator": 7,
+              "elapsed_exact_denominator": 20,
+              "integer_time_allowed": false,
+              "legacy_float_time_allowed": false,
+              "boundary_only_difference": false
+            }
+          }
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0110_20271026",
+      "attempt": "a001",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 0, 'side': 'left', 'table_contact': 0, 'force_n': 24.822856371902905, 'command_opening_m': 0.0, 'clock': {'physics_step_count': 16825, 'physics_clock_origin_time': 0.0, 'physics_timestep_s': 0.002, 'missing_step': 16650, 'observed_physics_time_s': 33.64999999999516, 'missing_since_s': 33.29999999999473, 'elapsed_physics_steps': 175, 'elapsed_float_s': 0.35000000000042775, 'elapsed_exact_numerator': 7, 'elapsed_exact_denominator': 20, 'integer_time_allowed': False, 'legacy_float_time_allowed': False, 'boundary_only_difference': False}}}",
+      "frames": 673,
+      "operations": 1,
+      "candidate_accepted": 1,
+      "candidate_rejected": 0,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 0,
+      "last_primitive_failed": {
+        "frame": 673,
+        "event": "primitive_failed",
+        "primitive": "push",
+        "reason": "retained_contact_lost",
+        "detail": {
+          "tray": 0,
+          "side": "left",
+          "table_contact": 0,
+          "force_n": 24.822856371902905,
+          "command_opening_m": 0.0,
+          "clock": {
+            "physics_step_count": 16825,
+            "physics_clock_origin_time": 0.0,
+            "physics_timestep_s": 0.002,
+            "missing_step": 16650,
+            "observed_physics_time_s": 33.64999999999516,
+            "missing_since_s": 33.29999999999473,
+            "elapsed_physics_steps": 175,
+            "elapsed_float_s": 0.35000000000042775,
+            "elapsed_exact_numerator": 7,
+            "elapsed_exact_denominator": 20,
+            "integer_time_allowed": false,
+            "legacy_float_time_allowed": false,
+            "boundary_only_difference": false
+          }
+        },
+        "duration_s": 1.1,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 1.15,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": false
+      },
+      "last_operation_failed": {
+        "frame": 673,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "contact_handoff_aborted",
+        "detail": {
+          "reason": "retained_contact_lost",
+          "detail": {
+            "tray": 0,
+            "side": "left",
+            "table_contact": 0,
+            "force_n": 24.822856371902905,
+            "command_opening_m": 0.0,
+            "clock": {
+              "physics_step_count": 16825,
+              "physics_clock_origin_time": 0.0,
+              "physics_timestep_s": 0.002,
+              "missing_step": 16650,
+              "observed_physics_time_s": 33.64999999999516,
+              "missing_since_s": 33.29999999999473,
+              "elapsed_physics_steps": 175,
+              "elapsed_float_s": 0.35000000000042775,
+              "elapsed_exact_numerator": 7,
+              "elapsed_exact_denominator": 20,
+              "integer_time_allowed": false,
+              "legacy_float_time_allowed": false,
+              "boundary_only_difference": false
+            }
+          }
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0110_20271026",
+      "attempt": "a002",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 0, 'side': 'left', 'table_contact': 0, 'force_n': 24.822856371902905, 'command_opening_m': 0.0, 'clock': {'physics_step_count': 16825, 'physics_clock_origin_time': 0.0, 'physics_timestep_s': 0.002, 'missing_step': 16650, 'observed_physics_time_s': 33.64999999999516, 'missing_since_s': 33.29999999999473, 'elapsed_physics_steps': 175, 'elapsed_float_s': 0.35000000000042775, 'elapsed_exact_numerator': 7, 'elapsed_exact_denominator': 20, 'integer_time_allowed': False, 'legacy_float_time_allowed': False, 'boundary_only_difference': False}}}",
+      "frames": 673,
+      "operations": 1,
+      "candidate_accepted": 1,
+      "candidate_rejected": 0,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 0,
+      "last_primitive_failed": {
+        "frame": 673,
+        "event": "primitive_failed",
+        "primitive": "push",
+        "reason": "retained_contact_lost",
+        "detail": {
+          "tray": 0,
+          "side": "left",
+          "table_contact": 0,
+          "force_n": 24.822856371902905,
+          "command_opening_m": 0.0,
+          "clock": {
+            "physics_step_count": 16825,
+            "physics_clock_origin_time": 0.0,
+            "physics_timestep_s": 0.002,
+            "missing_step": 16650,
+            "observed_physics_time_s": 33.64999999999516,
+            "missing_since_s": 33.29999999999473,
+            "elapsed_physics_steps": 175,
+            "elapsed_float_s": 0.35000000000042775,
+            "elapsed_exact_numerator": 7,
+            "elapsed_exact_denominator": 20,
+            "integer_time_allowed": false,
+            "legacy_float_time_allowed": false,
+            "boundary_only_difference": false
+          }
+        },
+        "duration_s": 1.1,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 1.15,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": false
+      },
+      "last_operation_failed": {
+        "frame": 673,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "contact_handoff_aborted",
+        "detail": {
+          "reason": "retained_contact_lost",
+          "detail": {
+            "tray": 0,
+            "side": "left",
+            "table_contact": 0,
+            "force_n": 24.822856371902905,
+            "command_opening_m": 0.0,
+            "clock": {
+              "physics_step_count": 16825,
+              "physics_clock_origin_time": 0.0,
+              "physics_timestep_s": 0.002,
+              "missing_step": 16650,
+              "observed_physics_time_s": 33.64999999999516,
+              "missing_since_s": 33.29999999999473,
+              "elapsed_physics_steps": 175,
+              "elapsed_float_s": 0.35000000000042775,
+              "elapsed_exact_numerator": 7,
+              "elapsed_exact_denominator": 20,
+              "integer_time_allowed": false,
+              "legacy_float_time_allowed": false,
+              "boundary_only_difference": false
+            }
+          }
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0118_20271034",
+      "attempt": "a000",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "measured_joint_overspeed",
+      "error": "measured_joint_overspeed: {'joint': 'right_arm_joint5', 'measured_rad_s': 1.857332991903799, 'cap_rad_s': 1.7600000000000002, 'ratio': 1.0553028363089767, 'physics_time_s': 43.10200000000671, 'strict_ratio_max': 1.01, 'completion_ratio_max': 1.05, 'excursion_physics_steps': 0, 'excursion_seconds': 0.0, 'completion_excursion_seconds': 0.2}",
+      "frames": 863,
+      "operations": 1,
+      "candidate_accepted": 0,
+      "candidate_rejected": 0,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 0,
+      "last_primitive_failed": null,
+      "last_operation_failed": {
+        "frame": 863,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "measured_joint_overspeed",
+        "detail": {
+          "joint": "right_arm_joint5",
+          "measured_rad_s": 1.857332991903799,
+          "cap_rad_s": 1.7600000000000002,
+          "ratio": 1.0553028363089767,
+          "physics_time_s": 43.10200000000671,
+          "strict_ratio_max": 1.01,
+          "completion_ratio_max": 1.05,
+          "excursion_physics_steps": 0,
+          "excursion_seconds": 0.0,
+          "completion_excursion_seconds": 0.2
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0118_20271034",
+      "attempt": "a001",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 0, 'side': 'left', 'table_contact': 0, 'force_n': 26.08902436158674, 'command_opening_m': 0.0, 'clock': {'physics_step_count': 14975, 'physics_clock_origin_time': 0.0, 'physics_timestep_s': 0.002, 'missing_step': 14800, 'observed_physics_time_s': 29.94999999999428, 'missing_since_s': 29.599999999994473, 'elapsed_physics_steps': 175, 'elapsed_float_s': 0.349999999999806, 'elapsed_exact_numerator': 7, 'elapsed_exact_denominator': 20, 'integer_time_allowed': False, 'legacy_float_time_allowed': False, 'boundary_only_difference': False}}}",
+      "frames": 599,
+      "operations": 1,
+      "candidate_accepted": 1,
+      "candidate_rejected": 0,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 0,
+      "last_primitive_failed": {
+        "frame": 599,
+        "event": "primitive_failed",
+        "primitive": "push",
+        "reason": "retained_contact_lost",
+        "detail": {
+          "tray": 0,
+          "side": "left",
+          "table_contact": 0,
+          "force_n": 26.08902436158674,
+          "command_opening_m": 0.0,
+          "clock": {
+            "physics_step_count": 14975,
+            "physics_clock_origin_time": 0.0,
+            "physics_timestep_s": 0.002,
+            "missing_step": 14800,
+            "observed_physics_time_s": 29.94999999999428,
+            "missing_since_s": 29.599999999994473,
+            "elapsed_physics_steps": 175,
+            "elapsed_float_s": 0.349999999999806,
+            "elapsed_exact_numerator": 7,
+            "elapsed_exact_denominator": 20,
+            "integer_time_allowed": false,
+            "legacy_float_time_allowed": false,
+            "boundary_only_difference": false
+          }
+        },
+        "duration_s": 1.05,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 1.1,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": false
+      },
+      "last_operation_failed": {
+        "frame": 599,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "contact_handoff_aborted",
+        "detail": {
+          "reason": "retained_contact_lost",
+          "detail": {
+            "tray": 0,
+            "side": "left",
+            "table_contact": 0,
+            "force_n": 26.08902436158674,
+            "command_opening_m": 0.0,
+            "clock": {
+              "physics_step_count": 14975,
+              "physics_clock_origin_time": 0.0,
+              "physics_timestep_s": 0.002,
+              "missing_step": 14800,
+              "observed_physics_time_s": 29.94999999999428,
+              "missing_since_s": 29.599999999994473,
+              "elapsed_physics_steps": 175,
+              "elapsed_float_s": 0.349999999999806,
+              "elapsed_exact_numerator": 7,
+              "elapsed_exact_denominator": 20,
+              "integer_time_allowed": false,
+              "legacy_float_time_allowed": false,
+              "boundary_only_difference": false
+            }
+          }
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0118_20271034",
+      "attempt": "a002",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 0, 'side': 'left', 'table_contact': 0, 'force_n': 26.08902436158674, 'command_opening_m': 0.0, 'clock': {'physics_step_count': 14975, 'physics_clock_origin_time': 0.0, 'physics_timestep_s': 0.002, 'missing_step': 14800, 'observed_physics_time_s': 29.94999999999428, 'missing_since_s': 29.599999999994473, 'elapsed_physics_steps': 175, 'elapsed_float_s': 0.349999999999806, 'elapsed_exact_numerator': 7, 'elapsed_exact_denominator': 20, 'integer_time_allowed': False, 'legacy_float_time_allowed': False, 'boundary_only_difference': False}}}",
+      "frames": 599,
+      "operations": 1,
+      "candidate_accepted": 1,
+      "candidate_rejected": 0,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 0,
+      "last_primitive_failed": {
+        "frame": 599,
+        "event": "primitive_failed",
+        "primitive": "push",
+        "reason": "retained_contact_lost",
+        "detail": {
+          "tray": 0,
+          "side": "left",
+          "table_contact": 0,
+          "force_n": 26.08902436158674,
+          "command_opening_m": 0.0,
+          "clock": {
+            "physics_step_count": 14975,
+            "physics_clock_origin_time": 0.0,
+            "physics_timestep_s": 0.002,
+            "missing_step": 14800,
+            "observed_physics_time_s": 29.94999999999428,
+            "missing_since_s": 29.599999999994473,
+            "elapsed_physics_steps": 175,
+            "elapsed_float_s": 0.349999999999806,
+            "elapsed_exact_numerator": 7,
+            "elapsed_exact_denominator": 20,
+            "integer_time_allowed": false,
+            "legacy_float_time_allowed": false,
+            "boundary_only_difference": false
+          }
+        },
+        "duration_s": 1.05,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 1.1,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": false
+      },
+      "last_operation_failed": {
+        "frame": 599,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "contact_handoff_aborted",
+        "detail": {
+          "reason": "retained_contact_lost",
+          "detail": {
+            "tray": 0,
+            "side": "left",
+            "table_contact": 0,
+            "force_n": 26.08902436158674,
+            "command_opening_m": 0.0,
+            "clock": {
+              "physics_step_count": 14975,
+              "physics_clock_origin_time": 0.0,
+              "physics_timestep_s": 0.002,
+              "missing_step": 14800,
+              "observed_physics_time_s": 29.94999999999428,
+              "missing_since_s": 29.599999999994473,
+              "elapsed_physics_steps": 175,
+              "elapsed_float_s": 0.349999999999806,
+              "elapsed_exact_numerator": 7,
+              "elapsed_exact_denominator": 20,
+              "integer_time_allowed": false,
+              "legacy_float_time_allowed": false,
+              "boundary_only_difference": false
+            }
+          }
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0174_20271090",
+      "attempt": "a000",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "measured_joint_overspeed",
+      "error": "measured_joint_overspeed: {'joint': 'right_arm_joint5', 'measured_rad_s': 1.8586564723238983, 'cap_rad_s': 1.7600000000000002, 'ratio': 1.0560548138203967, 'physics_time_s': 37.50199999999987, 'strict_ratio_max': 1.01, 'completion_ratio_max': 1.05, 'excursion_physics_steps': 0, 'excursion_seconds': 0.0, 'completion_excursion_seconds': 0.2}",
+      "frames": 751,
+      "operations": 1,
+      "candidate_accepted": 0,
+      "candidate_rejected": 0,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 0,
+      "last_primitive_failed": null,
+      "last_operation_failed": {
+        "frame": 751,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "measured_joint_overspeed",
+        "detail": {
+          "joint": "right_arm_joint5",
+          "measured_rad_s": 1.8586564723238983,
+          "cap_rad_s": 1.7600000000000002,
+          "ratio": 1.0560548138203967,
+          "physics_time_s": 37.50199999999987,
+          "strict_ratio_max": 1.01,
+          "completion_ratio_max": 1.05,
+          "excursion_physics_steps": 0,
+          "excursion_seconds": 0.0,
+          "completion_excursion_seconds": 0.2
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0174_20271090",
+      "attempt": "a001",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 0, 'side': 'left', 'table_contact': 0, 'force_n': 15.230162504566373, 'command_opening_m': 0.0, 'clock': {'physics_step_count': 15300, 'physics_clock_origin_time': 0.0, 'physics_timestep_s': 0.002, 'missing_step': 15125, 'observed_physics_time_s': 30.59999999999392, 'missing_since_s': 30.249999999994113, 'elapsed_physics_steps': 175, 'elapsed_float_s': 0.349999999999806, 'elapsed_exact_numerator': 7, 'elapsed_exact_denominator': 20, 'integer_time_allowed': False, 'legacy_float_time_allowed': False, 'boundary_only_difference': False}}}",
+      "frames": 612,
+      "operations": 1,
+      "candidate_accepted": 0,
+      "candidate_rejected": 1,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 1,
+      "last_primitive_failed": {
+        "frame": 612,
+        "event": "primitive_failed",
+        "primitive": "push",
+        "reason": "retained_contact_lost",
+        "detail": {
+          "tray": 0,
+          "side": "left",
+          "table_contact": 0,
+          "force_n": 15.230162504566373,
+          "command_opening_m": 0.0,
+          "clock": {
+            "physics_step_count": 15300,
+            "physics_clock_origin_time": 0.0,
+            "physics_timestep_s": 0.002,
+            "missing_step": 15125,
+            "observed_physics_time_s": 30.59999999999392,
+            "missing_since_s": 30.249999999994113,
+            "elapsed_physics_steps": 175,
+            "elapsed_float_s": 0.349999999999806,
+            "elapsed_exact_numerator": 7,
+            "elapsed_exact_denominator": 20,
+            "integer_time_allowed": false,
+            "legacy_float_time_allowed": false,
+            "boundary_only_difference": false
+          }
+        },
+        "duration_s": 1.45,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 1.5,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": false
+      },
+      "last_operation_failed": {
+        "frame": 612,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "contact_handoff_aborted",
+        "detail": {
+          "reason": "retained_contact_lost",
+          "detail": {
+            "tray": 0,
+            "side": "left",
+            "table_contact": 0,
+            "force_n": 15.230162504566373,
+            "command_opening_m": 0.0,
+            "clock": {
+              "physics_step_count": 15300,
+              "physics_clock_origin_time": 0.0,
+              "physics_timestep_s": 0.002,
+              "missing_step": 15125,
+              "observed_physics_time_s": 30.59999999999392,
+              "missing_since_s": 30.249999999994113,
+              "elapsed_physics_steps": 175,
+              "elapsed_float_s": 0.349999999999806,
+              "elapsed_exact_numerator": 7,
+              "elapsed_exact_denominator": 20,
+              "integer_time_allowed": false,
+              "legacy_float_time_allowed": false,
+              "boundary_only_difference": false
+            }
+          }
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0174_20271090",
+      "attempt": "a002",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 0, 'side': 'left', 'table_contact': 0, 'force_n': 15.407642182578964, 'command_opening_m': 0.0, 'clock': {'physics_step_count': 15575, 'physics_clock_origin_time': 0.0, 'physics_timestep_s': 0.002, 'missing_step': 15400, 'observed_physics_time_s': 31.149999999993614, 'missing_since_s': 30.79999999999381, 'elapsed_physics_steps': 175, 'elapsed_float_s': 0.349999999999806, 'elapsed_exact_numerator': 7, 'elapsed_exact_denominator': 20, 'integer_time_allowed': False, 'legacy_float_time_allowed': False, 'boundary_only_difference': False}}}",
+      "frames": 623,
+      "operations": 1,
+      "candidate_accepted": 0,
+      "candidate_rejected": 1,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 1,
+      "last_primitive_failed": {
+        "frame": 623,
+        "event": "primitive_failed",
+        "primitive": "push",
+        "reason": "retained_contact_lost",
+        "detail": {
+          "tray": 0,
+          "side": "left",
+          "table_contact": 0,
+          "force_n": 15.407642182578964,
+          "command_opening_m": 0.0,
+          "clock": {
+            "physics_step_count": 15575,
+            "physics_clock_origin_time": 0.0,
+            "physics_timestep_s": 0.002,
+            "missing_step": 15400,
+            "observed_physics_time_s": 31.149999999993614,
+            "missing_since_s": 30.79999999999381,
+            "elapsed_physics_steps": 175,
+            "elapsed_float_s": 0.349999999999806,
+            "elapsed_exact_numerator": 7,
+            "elapsed_exact_denominator": 20,
+            "integer_time_allowed": false,
+            "legacy_float_time_allowed": false,
+            "boundary_only_difference": false
+          }
+        },
+        "duration_s": 1.45,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 1.5,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": false
+      },
+      "last_operation_failed": {
+        "frame": 623,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "contact_handoff_aborted",
+        "detail": {
+          "reason": "retained_contact_lost",
+          "detail": {
+            "tray": 0,
+            "side": "left",
+            "table_contact": 0,
+            "force_n": 15.407642182578964,
+            "command_opening_m": 0.0,
+            "clock": {
+              "physics_step_count": 15575,
+              "physics_clock_origin_time": 0.0,
+              "physics_timestep_s": 0.002,
+              "missing_step": 15400,
+              "observed_physics_time_s": 31.149999999993614,
+              "missing_since_s": 30.79999999999381,
+              "elapsed_physics_steps": 175,
+              "elapsed_float_s": 0.349999999999806,
+              "elapsed_exact_numerator": 7,
+              "elapsed_exact_denominator": 20,
+              "integer_time_allowed": false,
+              "legacy_float_time_allowed": false,
+              "boundary_only_difference": false
+            }
+          }
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0206_20271122",
+      "attempt": "a000",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "measured_joint_overspeed",
+      "error": "measured_joint_overspeed: {'joint': 'right_arm_joint7', 'measured_rad_s': 1.8515265891609864, 'cap_rad_s': 1.7600000000000002, 'ratio': 1.0520037438414693, 'physics_time_s': 38.40200000000097, 'strict_ratio_max': 1.01, 'completion_ratio_max': 1.05, 'excursion_physics_steps': 0, 'excursion_seconds': 0.0, 'completion_excursion_seconds': 0.2}",
+      "frames": 769,
+      "operations": 1,
+      "candidate_accepted": 0,
+      "candidate_rejected": 0,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 0,
+      "last_primitive_failed": null,
+      "last_operation_failed": {
+        "frame": 769,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "measured_joint_overspeed",
+        "detail": {
+          "joint": "right_arm_joint7",
+          "measured_rad_s": 1.8515265891609864,
+          "cap_rad_s": 1.7600000000000002,
+          "ratio": 1.0520037438414693,
+          "physics_time_s": 38.40200000000097,
+          "strict_ratio_max": 1.01,
+          "completion_ratio_max": 1.05,
+          "excursion_physics_steps": 0,
+          "excursion_seconds": 0.0,
+          "completion_excursion_seconds": 0.2
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0206_20271122",
+      "attempt": "a001",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "measured_joint_overspeed",
+      "error": "measured_joint_overspeed: {'joint': 'right_arm_joint7', 'measured_rad_s': 1.8537335796291532, 'cap_rad_s': 1.7600000000000002, 'ratio': 1.0532577156983824, 'physics_time_s': 37.50199999999987, 'strict_ratio_max': 1.01, 'completion_ratio_max': 1.05, 'excursion_physics_steps': 0, 'excursion_seconds': 0.0, 'completion_excursion_seconds': 0.2}",
+      "frames": 751,
+      "operations": 1,
+      "candidate_accepted": 0,
+      "candidate_rejected": 0,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 0,
+      "last_primitive_failed": null,
+      "last_operation_failed": {
+        "frame": 751,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "measured_joint_overspeed",
+        "detail": {
+          "joint": "right_arm_joint7",
+          "measured_rad_s": 1.8537335796291532,
+          "cap_rad_s": 1.7600000000000002,
+          "ratio": 1.0532577156983824,
+          "physics_time_s": 37.50199999999987,
+          "strict_ratio_max": 1.01,
+          "completion_ratio_max": 1.05,
+          "excursion_physics_steps": 0,
+          "excursion_seconds": 0.0,
+          "completion_excursion_seconds": 0.2
+        },
+        "recoverable": false
+      }
+    },
+    {
+      "scene": "airport_0206_20271122",
+      "attempt": "a002",
+      "task_completed": false,
+      "physics_success": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 0, 'side': 'left', 'table_contact': 0, 'force_n': 11.387648296284462, 'command_opening_m': 0.0, 'clock': {'physics_step_count': 15375, 'physics_clock_origin_time': 0.0, 'physics_timestep_s': 0.002, 'missing_step': 15200, 'observed_physics_time_s': 30.749999999993836, 'missing_since_s': 30.39999999999403, 'elapsed_physics_steps': 175, 'elapsed_float_s': 0.349999999999806, 'elapsed_exact_numerator': 7, 'elapsed_exact_denominator': 20, 'integer_time_allowed': False, 'legacy_float_time_allowed': False, 'boundary_only_difference': False}}}",
+      "frames": 615,
+      "operations": 1,
+      "candidate_accepted": 0,
+      "candidate_rejected": 1,
+      "fallback": 0,
+      "fallback_reasons": [],
+      "legacy_free_open": 1,
+      "last_primitive_failed": {
+        "frame": 615,
+        "event": "primitive_failed",
+        "primitive": "push",
+        "reason": "retained_contact_lost",
+        "detail": {
+          "tray": 0,
+          "side": "left",
+          "table_contact": 0,
+          "force_n": 11.387648296284462,
+          "command_opening_m": 0.0,
+          "clock": {
+            "physics_step_count": 15375,
+            "physics_clock_origin_time": 0.0,
+            "physics_timestep_s": 0.002,
+            "missing_step": 15200,
+            "observed_physics_time_s": 30.749999999993836,
+            "missing_since_s": 30.39999999999403,
+            "elapsed_physics_steps": 175,
+            "elapsed_float_s": 0.349999999999806,
+            "elapsed_exact_numerator": 7,
+            "elapsed_exact_denominator": 20,
+            "integer_time_allowed": false,
+            "legacy_float_time_allowed": false,
+            "boundary_only_difference": false
+          }
+        },
+        "duration_s": 1.15,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 1.2,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": false
+      },
+      "last_operation_failed": {
+        "frame": 615,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "contact_handoff_aborted",
+        "detail": {
+          "reason": "retained_contact_lost",
+          "detail": {
+            "tray": 0,
+            "side": "left",
+            "table_contact": 0,
+            "force_n": 11.387648296284462,
+            "command_opening_m": 0.0,
+            "clock": {
+              "physics_step_count": 15375,
+              "physics_clock_origin_time": 0.0,
+              "physics_timestep_s": 0.002,
+              "missing_step": 15200,
+              "observed_physics_time_s": 30.749999999993836,
+              "missing_since_s": 30.39999999999403,
+              "elapsed_physics_steps": 175,
+              "elapsed_float_s": 0.349999999999806,
+              "elapsed_exact_numerator": 7,
+              "elapsed_exact_denominator": 20,
+              "integer_time_allowed": false,
+              "legacy_float_time_allowed": false,
+              "boundary_only_difference": false
+            }
+          }
+        },
+        "recoverable": false
+      }
+    }
+  ]
+}

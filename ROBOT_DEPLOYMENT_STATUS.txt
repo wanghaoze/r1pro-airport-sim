@@ -1,0 +1,27 @@
+2026-10-13 verified deployment; no real robot commands published.
+Mixed: ws://100.104.0.108:8093; PID2264413/start_ticks7589328
+Real-only: ws://100.104.0.108:8094; PID2264414/start_ticks7589328
+Server root: /home/michelle/haoze/r1pro-airport-sim/runs/galaxea_robot_deploy_20261013_v2
+Server logs: mixed/server.log; real_only/server.log
+Server status: mixed/server_status.json; real_only/server_status.json
+Actual command gate: operator_control.json; operator_heartbeat.json
+Verified identities: deployment_verified.json
+Robot root: /home/nvidia/GalaxeaVLA/experiments/r1pro
+Robot mixed config: config_pi05_mixed_estop_20261013.toml
+Robot real-only config: config_pi05_real_only_estop_20261013.toml
+Robot instruction: Pick up the tray
+Original run.py/scheduler/filter/config.toml hashes unchanged.
+E/SPACE stop; R explicit rearm; restart client; Q exit and stop. Command stop is not hardware emergency stop.
+Operator keyboard heartbeat loss >1sec rejects commands. Current control STOP latched.
+Waiting for robot live sensors; only ROS parameter_events/rosout visible. Client not started.
+
+2026-10-13 v3 gripper80 final update:
+Mixed endpoint ws://100.104.0.108:8095; PID2608368/start_ticks8503147
+Real-only endpoint ws://100.104.0.108:8096; PID2608369/start_ticks8503148
+Server root /home/michelle/haoze/r1pro-airport-sim/runs/galaxea_robot_deploy_20261013_v3
+Raw chunks: mixed/raw_chunk_*.npz; real_only/raw_chunk_*.npz
+Per-command raw and gripper_clipping: mixed/commands.jsonl; real_only/commands.jsonl
+Keyboard control remains runs/galaxea_robot_deploy_20261013_v2/operator_control.json
+Robot config_pi05_mixed_gripper80_20261013.toml / config_pi05_real_only_gripper80_20261013.toml
+Robot entry run_pi05_record_compat_20261013_v3.py --record
+New endpoint network handshake and original filter80 tests passed. No new physical rollout started.

@@ -1,0 +1,437 @@
+[
+  {
+    "frame": 2582,
+    "event": "primitive_command_compliance_reference",
+    "tcp_deflection_m": {
+      "left": 0.020024155666155105,
+      "right": 0.019280041937777593
+    },
+    "qualification": "command_reference_only_not_observed_rigid_attachment"
+  },
+  {
+    "frame": 2582,
+    "event": "transport_align_deferred",
+    "reason": "ik_unreachable",
+    "detail": {
+      "side": "left",
+      "position_error_m": 0.030156439115523757,
+      "rotation_error_rad": 0.03209581818537683
+    },
+    "qualification": "planning_rejection_before_any_alignment_motion"
+  },
+  {
+    "frame": 2582,
+    "event": "primitive_start",
+    "primitive": "place",
+    "limit_s": 3.0,
+    "parameters": {
+      "table_height_m": 0.8,
+      "staged": [
+        0.8500000000000001,
+        -0.6150000000000001,
+        0.8
+      ],
+      "retained_side": "right"
+    }
+  },
+  {
+    "event": "diagnostic_phase_snapshot",
+    "frame": 2582,
+    "phase": "descend",
+    "pose": [
+      0.9084246730265816,
+      -0.5603983905770286,
+      0.9664388391784207,
+      0.009702501473356061,
+      -0.028065913238776954,
+      0.008620117915015109,
+      0.9995218154429463
+    ],
+    "gripper_force": [
+      13.644371024500941,
+      13.478252619678106
+    ],
+    "table_contact": 0
+  },
+  {
+    "frame": 2582,
+    "event": "primitive_command_compliance_reference",
+    "tcp_deflection_m": {
+      "left": 0.020024155666155105,
+      "right": 0.019280041937777593
+    },
+    "qualification": "command_reference_only_not_observed_rigid_attachment"
+  },
+  {
+    "frame": 2582,
+    "event": "primitive_descent_geometry",
+    "combined_xy_descent": true,
+    "target_position": [
+      0.8500000000000001,
+      -0.6150000000000001,
+      0.797
+    ],
+    "target_yaw_rad": 3.141592653589793,
+    "target_tilt_rad": 0.0
+  },
+  {
+    "frame": 2582,
+    "event": "primitive_supported_release_preload",
+    "sides": [
+      "left"
+    ],
+    "qualification": "fingers_remain_clamped_until_measured_table_contact"
+  },
+  {
+    "frame": 2582,
+    "event": "primitive_release_plan",
+    "sides": [
+      "left"
+    ],
+    "measured_opening": [
+      0.01817152462899685,
+      0.01802995055913925
+    ],
+    "command_opening": [
+      0.1,
+      0.0
+    ],
+    "clearance_m": 0.02
+  },
+  {
+    "event": "diagnostic_phase_snapshot",
+    "frame": 2582,
+    "phase": "descend",
+    "pose": [
+      0.9084246730265816,
+      -0.5603983905770286,
+      0.9664388391784207,
+      0.009702501473356061,
+      -0.028065913238776954,
+      0.008620117915015109,
+      0.9995218154429463
+    ],
+    "gripper_force": [
+      13.644371024500941,
+      13.478252619678106
+    ],
+    "table_contact": 0
+  },
+  {
+    "frame": 2582,
+    "event": "primitive_reference",
+    "duration_s": 1.5,
+    "controller": "CruiseJointPath",
+    "knot_stop_fallback": false,
+    "reference_bounds": {
+      "velocity": [
+        0.2952304739190319,
+        7.5807511660161e-08,
+        0.26314303317008786,
+        0.4489442958623886,
+        0.6818099423605319,
+        0.49924581425431486,
+        0.6030665363591127,
+        0.015313428992916229,
+        0.22143653732826515,
+        0.09786320443765331,
+        0.2624736527488179,
+        0.5474763040276921,
+        0.2085815177820994,
+        0.520942410522082,
+        0.5906590499694756,
+        0.0
+      ],
+      "acceleration": [
+        0.9543323996671486,
+        3.6151443695797654e-07,
+        0.7067586512146148,
+        1.2826305077133338,
+        1.9199961600057602,
+        1.4431092469712123,
+        1.67716589900069,
+        0.03998817730513758,
+        0.7311324302103588,
+        0.34151534140691825,
+        0.6944717101525311,
+        1.5855367322485128,
+        0.5657916525596566,
+        1.4413847325600424,
+        1.571295253820751,
+        0.0
+      ],
+      "jerk": [
+        6.728923027923028,
+        2.628886019463237e-06,
+        4.884642895787393,
+        8.928109306413551,
+        13.342999030480101,
+        10.058177760220238,
+        11.638851381637899,
+        0.2754295912635422,
+        5.165677358230999,
+        2.42526196701787,
+        4.791065890717959,
+        11.053179531788514,
+        3.914976024293333,
+        9.99673564924545,
+        10.84726338290316,
+        0.0
+      ]
+    }
+  },
+  {
+    "event": "diagnostic_phase_snapshot",
+    "frame": 2612,
+    "phase": "support_contact",
+    "pose": [
+      0.8482327009628742,
+      -0.6138151144973859,
+      0.8007513406515986,
+      -0.001729206595649618,
+      -2.75122644344916e-06,
+      0.0019174746734250791,
+      0.9999966665583723
+    ],
+    "gripper_force": [
+      5.663249541006874,
+      13.312810680819563
+    ],
+    "table_contact": 2
+  },
+  {
+    "event": "diagnostic_phase_snapshot",
+    "frame": 2612,
+    "phase": "open",
+    "pose": [
+      0.8482327009628742,
+      -0.6138151144973859,
+      0.8007513406515986,
+      -0.001729206595649618,
+      -2.75122644344916e-06,
+      0.0019174746734250791,
+      0.9999966665583723
+    ],
+    "gripper_force": [
+      5.663249541006874,
+      13.312810680819563
+    ],
+    "table_contact": 2
+  },
+  {
+    "frame": 2612,
+    "event": "primitive_reference",
+    "duration_s": 1.4,
+    "controller": "CruiseJointPath",
+    "knot_stop_fallback": false,
+    "reference_bounds": {
+      "velocity": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.08909875187290005,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "acceleration": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.3199993600009602,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "jerk": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3.0647519596263333,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  {
+    "frame": 2640,
+    "event": "primitive_complete",
+    "primitive": "place",
+    "duration_s": 2.9,
+    "planning_and_execution_wall_s": 4.268967046053149
+  },
+  {
+    "frame": 2640,
+    "event": "push_reuses_existing_contact",
+    "target_tray": 0,
+    "retained_side": "right"
+  },
+  {
+    "event": "diagnostic_phase_snapshot",
+    "frame": 2640,
+    "phase": "adjust",
+    "pose": [
+      0.8482250206755352,
+      -0.6138318166390592,
+      0.7999981483787066,
+      -0.0017138356391828591,
+      -1.4257506973613088e-06,
+      5.312993832660693e-06,
+      0.9999985313674926
+    ],
+    "gripper_force": [
+      0.0,
+      13.315177547020237
+    ],
+    "table_contact": 8
+  },
+  {
+    "frame": 2640,
+    "event": "primitive_start",
+    "primitive": "push",
+    "limit_s": 3.0,
+    "parameters": {
+      "destination": [
+        0.8500000000000001,
+        -0.5100000000000001,
+        0.8
+      ],
+      "yaw": 0.0,
+      "separation": false
+    }
+  },
+  {
+    "frame": 2640,
+    "event": "primitive_push_compliance_reference",
+    "side": "right",
+    "tcp_deflection_m": 0.014938271849574329,
+    "qualification": "command_reference_only_not_observed_rigid_attachment"
+  },
+  {
+    "frame": 2640,
+    "event": "primitive_push_feedforward",
+    "distance_m": 0.02,
+    "nominal_destination": [
+      0.8500000000000001,
+      -0.5100000000000001,
+      0.8
+    ],
+    "command_position": [
+      0.8503418451274576,
+      -0.49000292166568254,
+      0.7954981483787067
+    ]
+  },
+  {
+    "frame": 2640,
+    "event": "primitive_reference",
+    "duration_s": 2.8,
+    "controller": "BlendedJointPath",
+    "knot_stop_fallback": false,
+    "reference_bounds": {
+      "velocity": [
+        0.3544098201527012,
+        3.5555824604439603e-09,
+        0.23357114858432396,
+        0.8639991360008642,
+        0.20538134841729863,
+        0.4677188232271858,
+        0.08187067872582217,
+        1.8518659448110798e-09,
+        0.08096545712705319,
+        0.2959880644187564,
+        0.036609372965721095,
+        0.28405736255703895,
+        0.02376252862367517,
+        0.1230376025876521,
+        0.21624019438710673,
+        0.0
+      ],
+      "acceleration": [
+        0.7233225219164601,
+        7.2566636363223895e-09,
+        0.4767003131237867,
+        1.7633541692397847,
+        0.4191671518238306,
+        0.9545772705133326,
+        0.16709160536651918,
+        3.779512415215306e-09,
+        0.3693913643287581,
+        1.2468527938857619,
+        0.18770175279925397,
+        1.295964234943924,
+        0.12284631884323734,
+        0.5613384954062648,
+        0.8995887995134926,
+        0.0
+      ],
+      "jerk": [
+        4.982324453907076,
+        4.9984697242530547e-08,
+        3.283563770375884,
+        12.146175920286165,
+        2.8872690778010286,
+        6.575232394839957,
+        1.150945209412886,
+        2.6033694469630944e-08,
+        5.687841444708404,
+        18.04423175398972,
+        3.258242618157745,
+        19.955093156468852,
+        2.1462800846230397,
+        8.64341905903651,
+        15.363418589845306,
+        0.0
+      ]
+    }
+  },
+  {
+    "frame": 2676,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 1.5880822847202936e-05
+  },
+  {
+    "frame": 2679,
+    "event": "primitive_failed",
+    "primitive": "push",
+    "reason": "retained_contact_lost",
+    "detail": {
+      "tray": 0,
+      "side": "right",
+      "table_contact": 0,
+      "force_n": 11.622139340538373,
+      "command_opening_m": 0.0
+    },
+    "duration_s": 1.95
+  }
+]

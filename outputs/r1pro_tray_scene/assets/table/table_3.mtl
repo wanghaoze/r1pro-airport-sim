@@ -1,0 +1,12 @@
+# Blender 5.2.1 LTS MTL File: 'Table_1200x600x800.blend'
+# www.blender.org
+
+newmtl Black_polymer_and_rubber
+Ns 122.500015
+Ka 1.000000 1.000000 1.000000
+Kd 0.015000 0.018000 0.020000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2

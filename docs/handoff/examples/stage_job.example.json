@@ -1,0 +1,8 @@
+{
+  "argv": ["/home/michelle/miniconda3/envs/env_isaaclab6/bin/python", "REPLACE_CODE/scripts/run_isaacsim_three_tray_task.py", "--scene-root", "REPLACE_NATIVE_SCENE_ROOT", "--output", "REPLACE_NEW_EPISODE", "--seed", "42", "--episode-id", "REPLACE_UNIQUE_EPISODE_ID"],
+  "cwd": "/home/michelle/haoze/r1pro-airport-sim",
+  "log": "REPLACE_NEW_RUN/logs/episode.log",
+  "launch": "REPLACE_NEW_RUN/logs/episode.launch.json",
+  "receipt": "REPLACE_NEW_EPISODE/process_exit.json",
+  "environment": {"AIRPORT_PROJECT": "/home/michelle/haoze/r1pro-airport-sim"}
+}

@@ -1,0 +1,4338 @@
+[
+  {
+    "group": "baseline",
+    "case": 4,
+    "status": "completed",
+    "result": {
+      "scene_id": "airport_0004_20270920",
+      "split": "train",
+      "attempt": 0,
+      "seed": 17811708687354027754,
+      "physics_success": true,
+      "recovery_used": false,
+      "training_candidate": true,
+      "failure_code": null,
+      "error": null,
+      "operations": 3,
+      "frames": 3165,
+      "simulation_seconds": 158.25,
+      "physical_elapsed_seconds": 158.2500000000275,
+      "simulation_seconds_semantics": "completed_20Hz_intervals; physical_elapsed_seconds also includes a failed substep prefix",
+      "wall_seconds": 203.15315486094914,
+      "acceptance": {
+        "reasons": [],
+        "stable_samples": 21,
+        "placement": {
+          "slot_to_tray": [
+            "tray_2",
+            "tray_1",
+            "tray_0"
+          ],
+          "max_position_error_m": 0.008417967662693069,
+          "max_yaw_error_deg": 2.3015958327848667,
+          "final_gaps_m": [
+            0.01210636451770375,
+            0.006677713743665131
+          ]
+        }
+      },
+      "peak_mechanical_abs_sum_power_w": 50.21428253072099,
+      "inverse_dynamics_calls": 412,
+      "inverse_dynamics_slowdowns": 0,
+      "limits": {
+        "mode": "model80",
+        "fraction": 0.8,
+        "arm_velocity_rad_s": [
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002
+        ],
+        "reference_arm_velocity_rad_s": [
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672
+        ],
+        "arm_effort_nm": [
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4,
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4
+        ],
+        "actuator_forcerange": [
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -240.0,
+            240.0
+          ]
+        ],
+        "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+        "urdf": null,
+        "hardware_profile": null,
+        "mechanical_power_abs_sum_cap_w": null,
+        "external_profile_declares_80_percent_mechanical_power": false,
+        "real_robot_driver": false,
+        "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+        "base_reference_caps": {
+          "translation_m_s": 0.48,
+          "yaw_rad_s": 0.7200000000000001
+        },
+        "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+      },
+      "controller_source": "program_generated",
+      "environment_source": "simulation",
+      "privileged_teacher": true,
+      "real_robot_validated": false,
+      "native_video_validation": "pending_replay_export"
+    },
+    "first_failure": null,
+    "last_transition": {
+      "frame": 3164,
+      "event": "state_transition",
+      "previous": [
+        "SEARCH_TARGET",
+        "unknown"
+      ],
+      "state": "TASK_COMPLETE",
+      "dag_node_id": "transition_000067",
+      "dag_predecessor": "transition_000066",
+      "phase": "verified",
+      "target_tray": 0,
+      "target_slot": 2,
+      "recovery": false,
+      "simulation_time": 158.20000000002727
+    },
+    "operation": {
+      "frame": 2259,
+      "event": "operation_selected",
+      "operation": {
+        "tray": 0,
+        "slot": 2,
+        "destination": [
+          0.8500000000000001,
+          -0.5100000000000001,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "operation_index": 3
+    },
+    "completed_primitives": [
+      {
+        "primitive": "push",
+        "duration_s": 2.55
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 2.5
+      },
+      {
+        "primitive": "transport_align",
+        "duration_s": 1.8
+      },
+      {
+        "primitive": "place",
+        "duration_s": 2.9
+      },
+      {
+        "primitive": "push",
+        "duration_s": 2.55
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 2.55
+      },
+      {
+        "primitive": "transport_align",
+        "duration_s": 1.15
+      },
+      {
+        "primitive": "place",
+        "duration_s": 2.7
+      },
+      {
+        "primitive": "push",
+        "duration_s": 2.55
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 1.45
+      },
+      {
+        "primitive": "place",
+        "duration_s": 2.3
+      },
+      {
+        "primitive": "push",
+        "duration_s": 2.9
+      }
+    ]
+  },
+  {
+    "group": "baseline",
+    "case": 5,
+    "status": "completed",
+    "result": {
+      "scene_id": "airport_0005_20270921",
+      "split": "train",
+      "attempt": 0,
+      "seed": 16370844115602614035,
+      "physics_success": false,
+      "recovery_used": false,
+      "training_candidate": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 1, 'side': 'right', 'table_contact': 0, 'force_n': 10.23106420066894, 'command_opening_m': 0.0}}",
+      "operations": 3,
+      "frames": 2517,
+      "simulation_seconds": 125.8,
+      "physical_elapsed_seconds": 125.8499999998881,
+      "simulation_seconds_semantics": "completed_20Hz_intervals; physical_elapsed_seconds also includes a failed substep prefix",
+      "wall_seconds": 175.0812069339445,
+      "acceptance": null,
+      "peak_mechanical_abs_sum_power_w": 68.54502765142159,
+      "inverse_dynamics_calls": 326,
+      "inverse_dynamics_slowdowns": 0,
+      "limits": {
+        "mode": "model80",
+        "fraction": 0.8,
+        "arm_velocity_rad_s": [
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002
+        ],
+        "reference_arm_velocity_rad_s": [
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672
+        ],
+        "arm_effort_nm": [
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4,
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4
+        ],
+        "actuator_forcerange": [
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -240.0,
+            240.0
+          ]
+        ],
+        "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+        "urdf": null,
+        "hardware_profile": null,
+        "mechanical_power_abs_sum_cap_w": null,
+        "external_profile_declares_80_percent_mechanical_power": false,
+        "real_robot_driver": false,
+        "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+        "base_reference_caps": {
+          "translation_m_s": 0.48,
+          "yaw_rad_s": 0.7200000000000001
+        },
+        "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+      },
+      "controller_source": "program_generated",
+      "environment_source": "simulation",
+      "privileged_teacher": true,
+      "real_robot_validated": false,
+      "native_video_validation": "pending_replay_export"
+    },
+    "first_failure": {
+      "frame": 2517,
+      "event": "primitive_failed",
+      "primitive": "push",
+      "reason": "retained_contact_lost",
+      "detail": {
+        "tray": 1,
+        "side": "right",
+        "table_contact": 0,
+        "force_n": 10.23106420066894,
+        "command_opening_m": 0.0
+      },
+      "duration_s": 2.65
+    },
+    "last_transition": {
+      "frame": 2463,
+      "event": "state_transition",
+      "previous": [
+        "PLACE_TRAY",
+        "open"
+      ],
+      "state": "ADJUST_TRAY",
+      "dag_node_id": "transition_000054",
+      "dag_predecessor": "transition_000053",
+      "phase": "adjust",
+      "target_tray": 1,
+      "target_slot": 1,
+      "recovery": false,
+      "simulation_time": 123.14999999989439
+    },
+    "operation": {
+      "frame": 1733,
+      "event": "operation_selected",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "operation_index": 3
+    },
+    "completed_primitives": [
+      {
+        "primitive": "push",
+        "duration_s": 2.55
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 2.4
+      },
+      {
+        "primitive": "transport_align",
+        "duration_s": 1.3
+      },
+      {
+        "primitive": "place",
+        "duration_s": 2.6
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 1.45
+      },
+      {
+        "primitive": "place",
+        "duration_s": 2.05
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 1.45
+      },
+      {
+        "primitive": "place",
+        "duration_s": 2.25
+      }
+    ]
+  },
+  {
+    "group": "baseline",
+    "case": 8,
+    "status": "completed",
+    "result": {
+      "scene_id": "airport_0008_20270924",
+      "split": "train",
+      "attempt": 0,
+      "seed": 16055249989788693300,
+      "physics_success": false,
+      "recovery_used": false,
+      "training_candidate": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 1, 'side': 'right', 'table_contact': 0, 'force_n': 10.270550620362409, 'command_opening_m': 0.0}}",
+      "operations": 2,
+      "frames": 1982,
+      "simulation_seconds": 99.05,
+      "physical_elapsed_seconds": 99.09999999995044,
+      "simulation_seconds_semantics": "completed_20Hz_intervals; physical_elapsed_seconds also includes a failed substep prefix",
+      "wall_seconds": 136.46434494399,
+      "acceptance": null,
+      "peak_mechanical_abs_sum_power_w": 68.99710093341692,
+      "inverse_dynamics_calls": 302,
+      "inverse_dynamics_slowdowns": 0,
+      "limits": {
+        "mode": "model80",
+        "fraction": 0.8,
+        "arm_velocity_rad_s": [
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002
+        ],
+        "reference_arm_velocity_rad_s": [
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672
+        ],
+        "arm_effort_nm": [
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4,
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4
+        ],
+        "actuator_forcerange": [
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -240.0,
+            240.0
+          ]
+        ],
+        "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+        "urdf": null,
+        "hardware_profile": null,
+        "mechanical_power_abs_sum_cap_w": null,
+        "external_profile_declares_80_percent_mechanical_power": false,
+        "real_robot_driver": false,
+        "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+        "base_reference_caps": {
+          "translation_m_s": 0.48,
+          "yaw_rad_s": 0.7200000000000001
+        },
+        "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+      },
+      "controller_source": "program_generated",
+      "environment_source": "simulation",
+      "privileged_teacher": true,
+      "real_robot_validated": false,
+      "native_video_validation": "pending_replay_export"
+    },
+    "first_failure": {
+      "frame": 1982,
+      "event": "primitive_failed",
+      "primitive": "push",
+      "reason": "retained_contact_lost",
+      "detail": {
+        "tray": 1,
+        "side": "right",
+        "table_contact": 0,
+        "force_n": 10.270550620362409,
+        "command_opening_m": 0.0
+      },
+      "duration_s": 1.8
+    },
+    "last_transition": {
+      "frame": 1945,
+      "event": "state_transition",
+      "previous": [
+        "PLACE_TRAY",
+        "open"
+      ],
+      "state": "ADJUST_TRAY",
+      "dag_node_id": "transition_000044",
+      "dag_predecessor": "transition_000043",
+      "phase": "adjust",
+      "target_tray": 1,
+      "target_slot": 1,
+      "recovery": false,
+      "simulation_time": 97.24999999995475
+    },
+    "operation": {
+      "frame": 1063,
+      "event": "operation_selected",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "operation_index": 2
+    },
+    "completed_primitives": [
+      {
+        "primitive": "push",
+        "duration_s": 2.55
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 2.5
+      },
+      {
+        "primitive": "transport_align",
+        "duration_s": 1.75
+      },
+      {
+        "primitive": "place",
+        "duration_s": 2.85
+      },
+      {
+        "primitive": "push",
+        "duration_s": 2.55
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 2.55
+      },
+      {
+        "primitive": "transport_align",
+        "duration_s": 1.15
+      },
+      {
+        "primitive": "place",
+        "duration_s": 2.7
+      }
+    ]
+  },
+  {
+    "group": "baseline",
+    "case": 16,
+    "status": "completed",
+    "result": {
+      "scene_id": "airport_0016_20270932",
+      "split": "train",
+      "attempt": 0,
+      "seed": 3469929297385638551,
+      "physics_success": false,
+      "recovery_used": false,
+      "training_candidate": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 1, 'side': 'right', 'table_contact': 0, 'force_n': 10.276376062857818, 'command_opening_m': 0.0}}",
+      "operations": 2,
+      "frames": 1990,
+      "simulation_seconds": 99.45,
+      "physical_elapsed_seconds": 99.49999999994951,
+      "simulation_seconds_semantics": "completed_20Hz_intervals; physical_elapsed_seconds also includes a failed substep prefix",
+      "wall_seconds": 133.8356495689368,
+      "acceptance": null,
+      "peak_mechanical_abs_sum_power_w": 66.52351389535829,
+      "inverse_dynamics_calls": 302,
+      "inverse_dynamics_slowdowns": 0,
+      "limits": {
+        "mode": "model80",
+        "fraction": 0.8,
+        "arm_velocity_rad_s": [
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002
+        ],
+        "reference_arm_velocity_rad_s": [
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672
+        ],
+        "arm_effort_nm": [
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4,
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4
+        ],
+        "actuator_forcerange": [
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -240.0,
+            240.0
+          ]
+        ],
+        "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+        "urdf": null,
+        "hardware_profile": null,
+        "mechanical_power_abs_sum_cap_w": null,
+        "external_profile_declares_80_percent_mechanical_power": false,
+        "real_robot_driver": false,
+        "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+        "base_reference_caps": {
+          "translation_m_s": 0.48,
+          "yaw_rad_s": 0.7200000000000001
+        },
+        "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+      },
+      "controller_source": "program_generated",
+      "environment_source": "simulation",
+      "privileged_teacher": true,
+      "real_robot_validated": false,
+      "native_video_validation": "pending_replay_export"
+    },
+    "first_failure": {
+      "frame": 1990,
+      "event": "primitive_failed",
+      "primitive": "push",
+      "reason": "retained_contact_lost",
+      "detail": {
+        "tray": 1,
+        "side": "right",
+        "table_contact": 0,
+        "force_n": 10.276376062857818,
+        "command_opening_m": 0.0
+      },
+      "duration_s": 1.8
+    },
+    "last_transition": {
+      "frame": 1953,
+      "event": "state_transition",
+      "previous": [
+        "PLACE_TRAY",
+        "open"
+      ],
+      "state": "ADJUST_TRAY",
+      "dag_node_id": "transition_000044",
+      "dag_predecessor": "transition_000043",
+      "phase": "adjust",
+      "target_tray": 1,
+      "target_slot": 1,
+      "recovery": false,
+      "simulation_time": 97.64999999995382
+    },
+    "operation": {
+      "frame": 1071,
+      "event": "operation_selected",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "operation_index": 2
+    },
+    "completed_primitives": [
+      {
+        "primitive": "push",
+        "duration_s": 2.55
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 2.5
+      },
+      {
+        "primitive": "transport_align",
+        "duration_s": 1.75
+      },
+      {
+        "primitive": "place",
+        "duration_s": 2.85
+      },
+      {
+        "primitive": "push",
+        "duration_s": 2.55
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 2.55
+      },
+      {
+        "primitive": "transport_align",
+        "duration_s": 1.15
+      },
+      {
+        "primitive": "place",
+        "duration_s": 2.7
+      }
+    ]
+  },
+  {
+    "group": "command",
+    "case": 4,
+    "status": "completed",
+    "result": {
+      "scene_id": "airport_0004_20270920",
+      "split": "train",
+      "attempt": 0,
+      "seed": 17811708687354027754,
+      "physics_success": false,
+      "recovery_used": false,
+      "training_candidate": false,
+      "failure_code": "primitive_path_infeasible",
+      "error": "primitive_path_infeasible: {'available_s': 1.95, 'candidates': [{'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.5}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 4.3}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.4}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.4}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.5}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.45}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 3.15}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.4}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.3}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.25}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.4}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.25}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.25}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.4}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.25}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.25}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.4}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.25}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.3}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.4}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.3}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.2734375, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015381666184858889, 'rotation_rad': 0.05781027536721777}}, {'mode': 'BlendedJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.28125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015292852357897641, 'rotation_rad': 0.057459591605127855}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.3125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.01544632900937039, 'rotation_rad': 0.05883413857383471}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.3125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015197654144840539, 'rotation_rad': 0.058843391755983514}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.3203125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015548028802851933, 'rotation_rad': 0.06134338446935325}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.3203125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015181237568356761, 'rotation_rad': 0.060997681223626}}, {'mode': 'BlendedJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.2421875, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015738604601050993, 'rotation_rad': 0.0549432102756965}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.328125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015251663673599274, 'rotation_rad': 0.06288625800398688}}, {'mode': 'BlendedJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.25, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015148329978517125, 'rotation_rad': 0.05949071295107727}}, {'mode': 'BlendedJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.2421875, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015620100394754956, 'rotation_rad': 0.061640118982935366}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.34375, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015421445383090553, 'rotation_rad': 0.066360160391595}}]}",
+      "operations": 1,
+      "frames": 920,
+      "simulation_seconds": 46.0,
+      "physical_elapsed_seconds": 46.00000000001025,
+      "simulation_seconds_semantics": "completed_20Hz_intervals; physical_elapsed_seconds also includes a failed substep prefix",
+      "wall_seconds": 63.90031605109107,
+      "acceptance": null,
+      "peak_mechanical_abs_sum_power_w": 47.140037134671836,
+      "inverse_dynamics_calls": 118,
+      "inverse_dynamics_slowdowns": 0,
+      "limits": {
+        "mode": "model80",
+        "fraction": 0.8,
+        "arm_velocity_rad_s": [
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002
+        ],
+        "reference_arm_velocity_rad_s": [
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672
+        ],
+        "arm_effort_nm": [
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4,
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4
+        ],
+        "actuator_forcerange": [
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -240.0,
+            240.0
+          ]
+        ],
+        "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+        "urdf": null,
+        "hardware_profile": null,
+        "mechanical_power_abs_sum_cap_w": null,
+        "external_profile_declares_80_percent_mechanical_power": false,
+        "real_robot_driver": false,
+        "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+        "base_reference_caps": {
+          "translation_m_s": 0.48,
+          "yaw_rad_s": 0.7200000000000001
+        },
+        "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+      },
+      "controller_source": "program_generated",
+      "environment_source": "simulation",
+      "privileged_teacher": true,
+      "real_robot_validated": false,
+      "native_video_validation": "pending_replay_export"
+    },
+    "first_failure": {
+      "frame": 920,
+      "event": "primitive_failed",
+      "primitive": "place",
+      "reason": "primitive_path_infeasible",
+      "detail": {
+        "available_s": 1.95,
+        "candidates": [
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.5
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 4.3
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.4
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.4
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.5
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.45
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 3.15
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.4
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.3
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.25
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.4
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.25
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.25
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.4
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.25
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.25
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.4
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.25
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.3
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.4
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.3
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.2734375,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015381666184858889,
+              "rotation_rad": 0.05781027536721777
+            }
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.28125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015292852357897641,
+              "rotation_rad": 0.057459591605127855
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.3125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.01544632900937039,
+              "rotation_rad": 0.05883413857383471
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.3125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015197654144840539,
+              "rotation_rad": 0.058843391755983514
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.3203125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015548028802851933,
+              "rotation_rad": 0.06134338446935325
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.3203125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015181237568356761,
+              "rotation_rad": 0.060997681223626
+            }
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.2421875,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015738604601050993,
+              "rotation_rad": 0.0549432102756965
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.328125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015251663673599274,
+              "rotation_rad": 0.06288625800398688
+            }
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.25,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015148329978517125,
+              "rotation_rad": 0.05949071295107727
+            }
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.2421875,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015620100394754956,
+              "rotation_rad": 0.061640118982935366
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.34375,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015421445383090553,
+              "rotation_rad": 0.066360160391595
+            }
+          }
+        ]
+      },
+      "duration_s": 0.0
+    },
+    "last_transition": {
+      "frame": 920,
+      "event": "state_transition",
+      "previous": [
+        "TRANSPORT_TRAY",
+        "preplace"
+      ],
+      "state": "PLACE_TRAY",
+      "dag_node_id": "transition_000018",
+      "dag_predecessor": "transition_000017",
+      "phase": "descend",
+      "target_tray": 2,
+      "target_slot": 0,
+      "recovery": false,
+      "simulation_time": 46.00000000001025
+    },
+    "operation": {
+      "frame": 78,
+      "event": "operation_selected",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "operation_index": 1
+    },
+    "completed_primitives": [
+      {
+        "primitive": "push",
+        "duration_s": 2.7
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 2.55
+      },
+      {
+        "primitive": "transport_align",
+        "duration_s": 1.8
+      }
+    ]
+  },
+  {
+    "group": "command",
+    "case": 5,
+    "status": "completed",
+    "result": {
+      "scene_id": "airport_0005_20270921",
+      "split": "train",
+      "attempt": 0,
+      "seed": 16370844115602614035,
+      "physics_success": false,
+      "recovery_used": false,
+      "training_candidate": false,
+      "failure_code": "push_accuracy_not_met",
+      "error": "push_accuracy_not_met",
+      "operations": 3,
+      "frames": 2786,
+      "simulation_seconds": 139.3,
+      "physical_elapsed_seconds": 139.29999999993703,
+      "simulation_seconds_semantics": "completed_20Hz_intervals; physical_elapsed_seconds also includes a failed substep prefix",
+      "wall_seconds": 186.49487761803903,
+      "acceptance": null,
+      "peak_mechanical_abs_sum_power_w": 68.54502763658093,
+      "inverse_dynamics_calls": 332,
+      "inverse_dynamics_slowdowns": 0,
+      "limits": {
+        "mode": "model80",
+        "fraction": 0.8,
+        "arm_velocity_rad_s": [
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002
+        ],
+        "reference_arm_velocity_rad_s": [
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672
+        ],
+        "arm_effort_nm": [
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4,
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4
+        ],
+        "actuator_forcerange": [
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -240.0,
+            240.0
+          ]
+        ],
+        "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+        "urdf": null,
+        "hardware_profile": null,
+        "mechanical_power_abs_sum_cap_w": null,
+        "external_profile_declares_80_percent_mechanical_power": false,
+        "real_robot_driver": false,
+        "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+        "base_reference_caps": {
+          "translation_m_s": 0.48,
+          "yaw_rad_s": 0.7200000000000001
+        },
+        "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+      },
+      "controller_source": "program_generated",
+      "environment_source": "simulation",
+      "privileged_teacher": true,
+      "real_robot_validated": false,
+      "native_video_validation": "pending_replay_export"
+    },
+    "first_failure": {
+      "frame": 2786,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "push_accuracy_not_met",
+      "detail": null,
+      "recoverable": false
+    },
+    "last_transition": {
+      "frame": 2746,
+      "event": "state_transition",
+      "previous": [
+        "PLACE_TRAY",
+        "retreat"
+      ],
+      "state": "VERIFY_PLACEMENT",
+      "dag_node_id": "transition_000057",
+      "dag_predecessor": "transition_000056",
+      "phase": "verified",
+      "target_tray": 1,
+      "target_slot": 1,
+      "recovery": false,
+      "simulation_time": 137.29999999992748
+    },
+    "operation": {
+      "frame": 1735,
+      "event": "operation_selected",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "operation_index": 3
+    },
+    "completed_primitives": [
+      {
+        "primitive": "push",
+        "duration_s": 2.65
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 2.45
+      },
+      {
+        "primitive": "transport_align",
+        "duration_s": 1.35
+      },
+      {
+        "primitive": "place",
+        "duration_s": 2.65
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 1.45
+      },
+      {
+        "primitive": "place",
+        "duration_s": 2.05
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 1.45
+      },
+      {
+        "primitive": "place",
+        "duration_s": 2.3
+      },
+      {
+        "primitive": "push",
+        "duration_s": 2.85
+      }
+    ]
+  },
+  {
+    "group": "command",
+    "case": 8,
+    "status": "completed",
+    "result": {
+      "scene_id": "airport_0008_20270924",
+      "split": "train",
+      "attempt": 0,
+      "seed": 16055249989788693300,
+      "physics_success": false,
+      "recovery_used": false,
+      "training_candidate": false,
+      "failure_code": "primitive_path_infeasible",
+      "error": "primitive_path_infeasible: {'available_s': 1.95, 'candidates': [{'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.45}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 4.25}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.4}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.4}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.5}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.45}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 3.15}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.4}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.25}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.4}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.4}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.35}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.25}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.35}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.25}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.28125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.01582598319658906, 'rotation_rad': 0.061095384037739724}}, {'mode': 'BlendedJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.2890625, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015712420482675002, 'rotation_rad': 0.06063119464988325}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.3203125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015627041858681027, 'rotation_rad': 0.06111035013283272}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.3203125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015365866442931494, 'rotation_rad': 0.06114748312836018}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.3203125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015074664308269937, 'rotation_rad': 0.06103876101732974}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.328125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015297057893222997, 'rotation_rad': 0.06330080111627298}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.3359375, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015329548818596706, 'rotation_rad': 0.06515850331171226}}, {'mode': 'BlendedJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.2421875, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015228931927744797, 'rotation_rad': 0.054785500774580616}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.3515625, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015443543958401477, 'rotation_rad': 0.06853946643707565}}, {'mode': 'BlendedJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.2578125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015246394569565478, 'rotation_rad': 0.06192654330716253}}, {'mode': 'BlendedJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.2421875, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015165214125519804, 'rotation_rad': 0.06149990811282726}}]}",
+      "operations": 1,
+      "frames": 860,
+      "simulation_seconds": 43.0,
+      "physical_elapsed_seconds": 43.00000000000659,
+      "simulation_seconds_semantics": "completed_20Hz_intervals; physical_elapsed_seconds also includes a failed substep prefix",
+      "wall_seconds": 60.20075041707605,
+      "acceptance": null,
+      "peak_mechanical_abs_sum_power_w": 68.99710093341692,
+      "inverse_dynamics_calls": 118,
+      "inverse_dynamics_slowdowns": 0,
+      "limits": {
+        "mode": "model80",
+        "fraction": 0.8,
+        "arm_velocity_rad_s": [
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002
+        ],
+        "reference_arm_velocity_rad_s": [
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672
+        ],
+        "arm_effort_nm": [
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4,
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4
+        ],
+        "actuator_forcerange": [
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -240.0,
+            240.0
+          ]
+        ],
+        "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+        "urdf": null,
+        "hardware_profile": null,
+        "mechanical_power_abs_sum_cap_w": null,
+        "external_profile_declares_80_percent_mechanical_power": false,
+        "real_robot_driver": false,
+        "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+        "base_reference_caps": {
+          "translation_m_s": 0.48,
+          "yaw_rad_s": 0.7200000000000001
+        },
+        "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+      },
+      "controller_source": "program_generated",
+      "environment_source": "simulation",
+      "privileged_teacher": true,
+      "real_robot_validated": false,
+      "native_video_validation": "pending_replay_export"
+    },
+    "first_failure": {
+      "frame": 860,
+      "event": "primitive_failed",
+      "primitive": "place",
+      "reason": "primitive_path_infeasible",
+      "detail": {
+        "available_s": 1.95,
+        "candidates": [
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.45
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 4.25
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.4
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.4
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.5
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.45
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 3.15
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.4
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.25
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.4
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.4
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.35
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.25
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.35
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.25
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.28125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.01582598319658906,
+              "rotation_rad": 0.061095384037739724
+            }
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.2890625,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015712420482675002,
+              "rotation_rad": 0.06063119464988325
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.3203125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015627041858681027,
+              "rotation_rad": 0.06111035013283272
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.3203125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015365866442931494,
+              "rotation_rad": 0.06114748312836018
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.3203125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015074664308269937,
+              "rotation_rad": 0.06103876101732974
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.328125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015297057893222997,
+              "rotation_rad": 0.06330080111627298
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.3359375,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015329548818596706,
+              "rotation_rad": 0.06515850331171226
+            }
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.2421875,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015228931927744797,
+              "rotation_rad": 0.054785500774580616
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.3515625,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015443543958401477,
+              "rotation_rad": 0.06853946643707565
+            }
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.2578125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015246394569565478,
+              "rotation_rad": 0.06192654330716253
+            }
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.2421875,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015165214125519804,
+              "rotation_rad": 0.06149990811282726
+            }
+          }
+        ]
+      },
+      "duration_s": 0.0
+    },
+    "last_transition": {
+      "frame": 860,
+      "event": "state_transition",
+      "previous": [
+        "TRANSPORT_TRAY",
+        "preplace"
+      ],
+      "state": "PLACE_TRAY",
+      "dag_node_id": "transition_000018",
+      "dag_predecessor": "transition_000017",
+      "phase": "descend",
+      "target_tray": 2,
+      "target_slot": 0,
+      "recovery": false,
+      "simulation_time": 43.00000000000659
+    },
+    "operation": {
+      "frame": 78,
+      "event": "operation_selected",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "operation_index": 1
+    },
+    "completed_primitives": [
+      {
+        "primitive": "push",
+        "duration_s": 2.75
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 2.55
+      },
+      {
+        "primitive": "transport_align",
+        "duration_s": 1.8
+      }
+    ]
+  },
+  {
+    "group": "command",
+    "case": 16,
+    "status": "completed",
+    "result": {
+      "scene_id": "airport_0016_20270932",
+      "split": "train",
+      "attempt": 0,
+      "seed": 3469929297385638551,
+      "physics_success": false,
+      "recovery_used": false,
+      "training_candidate": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 2, 'side': 'right', 'table_contact': 0, 'force_n': 10.507530027710464, 'command_opening_m': 0.0}}",
+      "operations": 1,
+      "frames": 475,
+      "simulation_seconds": 23.7,
+      "physical_elapsed_seconds": 23.749999999997716,
+      "simulation_seconds_semantics": "completed_20Hz_intervals; physical_elapsed_seconds also includes a failed substep prefix",
+      "wall_seconds": 27.503720849053934,
+      "acceptance": null,
+      "peak_mechanical_abs_sum_power_w": 66.52351389535829,
+      "inverse_dynamics_calls": 44,
+      "inverse_dynamics_slowdowns": 0,
+      "limits": {
+        "mode": "model80",
+        "fraction": 0.8,
+        "arm_velocity_rad_s": [
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002
+        ],
+        "reference_arm_velocity_rad_s": [
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672
+        ],
+        "arm_effort_nm": [
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4,
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4
+        ],
+        "actuator_forcerange": [
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -240.0,
+            240.0
+          ]
+        ],
+        "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+        "urdf": null,
+        "hardware_profile": null,
+        "mechanical_power_abs_sum_cap_w": null,
+        "external_profile_declares_80_percent_mechanical_power": false,
+        "real_robot_driver": false,
+        "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+        "base_reference_caps": {
+          "translation_m_s": 0.48,
+          "yaw_rad_s": 0.7200000000000001
+        },
+        "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+      },
+      "controller_source": "program_generated",
+      "environment_source": "simulation",
+      "privileged_teacher": true,
+      "real_robot_validated": false,
+      "native_video_validation": "pending_replay_export"
+    },
+    "first_failure": {
+      "frame": 475,
+      "event": "primitive_failed",
+      "primitive": "push",
+      "reason": "retained_contact_lost",
+      "detail": {
+        "tray": 2,
+        "side": "right",
+        "table_contact": 0,
+        "force_n": 10.507530027710464,
+        "command_opening_m": 0.0
+      },
+      "duration_s": 2.6
+    },
+    "last_transition": {
+      "frame": 422,
+      "event": "state_transition",
+      "previous": [
+        "ADJUST_TRAY",
+        "close"
+      ],
+      "state": "ADJUST_TRAY",
+      "dag_node_id": "transition_000009",
+      "dag_predecessor": "transition_000008",
+      "phase": "adjust",
+      "target_tray": 2,
+      "target_slot": -1,
+      "recovery": false,
+      "simulation_time": 21.099999999999184
+    },
+    "operation": {
+      "frame": 78,
+      "event": "operation_selected",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "operation_index": 1
+    },
+    "completed_primitives": []
+  },
+  {
+    "group": "command_substep",
+    "case": 4,
+    "status": "completed",
+    "result": {
+      "scene_id": "airport_0004_20270920",
+      "split": "train",
+      "attempt": 0,
+      "seed": 17811708687354027754,
+      "physics_success": false,
+      "recovery_used": false,
+      "training_candidate": false,
+      "failure_code": "primitive_path_infeasible",
+      "error": "primitive_path_infeasible: {'available_s': 1.95, 'candidates': [{'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.45}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 4.25}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.35}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.35}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.45}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.4}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 3.1}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.4}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.25}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.35}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.35}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.35}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.35}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.25}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.2734375, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.01507064510596035, 'rotation_rad': 0.05693938696325852}}, {'mode': 'BlendedJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.2890625, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.01582168483519054, 'rotation_rad': 0.0599332901172349}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.3125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015069064905438904, 'rotation_rad': 0.05777378353256569}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.3203125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015474578476819396, 'rotation_rad': 0.06041182014696511}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.3203125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015204939924972327, 'rotation_rad': 0.06029064904832387}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.328125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.01545570091679603, 'rotation_rad': 0.06250473456815542}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.3359375, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015523942614223534, 'rotation_rad': 0.06431405601363044}}, {'mode': 'BlendedJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.2421875, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015521392228969727, 'rotation_rad': 0.05408572354119533}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.34375, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.01523357769323424, 'rotation_rad': 0.06541272902547333}}, {'mode': 'BlendedJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.2734375, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015086388540843812, 'rotation_rad': 0.058500624149556306}}, {'mode': 'BlendedJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.2578125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015483016594660566, 'rotation_rad': 0.061173191401417276}}, {'mode': 'BlendedJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.2421875, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015319744537403817, 'rotation_rad': 0.06063391820356191}}]}",
+      "operations": 1,
+      "frames": 920,
+      "simulation_seconds": 46.0,
+      "physical_elapsed_seconds": 46.00000000001025,
+      "simulation_seconds_semantics": "completed_20Hz_intervals; physical_elapsed_seconds also includes a failed substep prefix",
+      "wall_seconds": 65.73529036401305,
+      "acceptance": null,
+      "peak_mechanical_abs_sum_power_w": 47.140037134671836,
+      "inverse_dynamics_calls": 118,
+      "inverse_dynamics_slowdowns": 0,
+      "limits": {
+        "mode": "model80",
+        "fraction": 0.8,
+        "arm_velocity_rad_s": [
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002
+        ],
+        "reference_arm_velocity_rad_s": [
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672
+        ],
+        "arm_effort_nm": [
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4,
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4
+        ],
+        "actuator_forcerange": [
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -240.0,
+            240.0
+          ]
+        ],
+        "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+        "urdf": null,
+        "hardware_profile": null,
+        "mechanical_power_abs_sum_cap_w": null,
+        "external_profile_declares_80_percent_mechanical_power": false,
+        "real_robot_driver": false,
+        "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+        "base_reference_caps": {
+          "translation_m_s": 0.48,
+          "yaw_rad_s": 0.7200000000000001
+        },
+        "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+      },
+      "controller_source": "program_generated",
+      "environment_source": "simulation",
+      "privileged_teacher": true,
+      "real_robot_validated": false,
+      "native_video_validation": "pending_replay_export"
+    },
+    "first_failure": {
+      "frame": 920,
+      "event": "primitive_failed",
+      "primitive": "place",
+      "reason": "primitive_path_infeasible",
+      "detail": {
+        "available_s": 1.95,
+        "candidates": [
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.45
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 4.25
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.35
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.35
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.45
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.4
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 3.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.4
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.25
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.35
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.35
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.35
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.35
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.25
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.2734375,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.01507064510596035,
+              "rotation_rad": 0.05693938696325852
+            }
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.2890625,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.01582168483519054,
+              "rotation_rad": 0.0599332901172349
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.3125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015069064905438904,
+              "rotation_rad": 0.05777378353256569
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.3203125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015474578476819396,
+              "rotation_rad": 0.06041182014696511
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.3203125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015204939924972327,
+              "rotation_rad": 0.06029064904832387
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.328125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.01545570091679603,
+              "rotation_rad": 0.06250473456815542
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.3359375,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015523942614223534,
+              "rotation_rad": 0.06431405601363044
+            }
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.2421875,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015521392228969727,
+              "rotation_rad": 0.05408572354119533
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.34375,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.01523357769323424,
+              "rotation_rad": 0.06541272902547333
+            }
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.2734375,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015086388540843812,
+              "rotation_rad": 0.058500624149556306
+            }
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.2578125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015483016594660566,
+              "rotation_rad": 0.061173191401417276
+            }
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.2421875,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015319744537403817,
+              "rotation_rad": 0.06063391820356191
+            }
+          }
+        ]
+      },
+      "duration_s": 0.0
+    },
+    "last_transition": {
+      "frame": 920,
+      "event": "state_transition",
+      "previous": [
+        "TRANSPORT_TRAY",
+        "preplace"
+      ],
+      "state": "PLACE_TRAY",
+      "dag_node_id": "transition_000018",
+      "dag_predecessor": "transition_000017",
+      "phase": "descend",
+      "target_tray": 2,
+      "target_slot": 0,
+      "recovery": false,
+      "simulation_time": 46.00000000001025
+    },
+    "operation": {
+      "frame": 78,
+      "event": "operation_selected",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "operation_index": 1
+    },
+    "completed_primitives": [
+      {
+        "primitive": "push",
+        "duration_s": 2.7
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 2.55
+      },
+      {
+        "primitive": "transport_align",
+        "duration_s": 1.8
+      }
+    ]
+  },
+  {
+    "group": "command_substep",
+    "case": 5,
+    "status": "completed",
+    "result": {
+      "scene_id": "airport_0005_20270921",
+      "split": "train",
+      "attempt": 0,
+      "seed": 16370844115602614035,
+      "physics_success": false,
+      "recovery_used": false,
+      "training_candidate": false,
+      "failure_code": "push_accuracy_not_met",
+      "error": "push_accuracy_not_met",
+      "operations": 3,
+      "frames": 2785,
+      "simulation_seconds": 139.25,
+      "physical_elapsed_seconds": 139.2499999999368,
+      "simulation_seconds_semantics": "completed_20Hz_intervals; physical_elapsed_seconds also includes a failed substep prefix",
+      "wall_seconds": 194.56418073293753,
+      "acceptance": null,
+      "peak_mechanical_abs_sum_power_w": 68.54502954261976,
+      "inverse_dynamics_calls": 332,
+      "inverse_dynamics_slowdowns": 0,
+      "limits": {
+        "mode": "model80",
+        "fraction": 0.8,
+        "arm_velocity_rad_s": [
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002
+        ],
+        "reference_arm_velocity_rad_s": [
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672
+        ],
+        "arm_effort_nm": [
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4,
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4
+        ],
+        "actuator_forcerange": [
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -240.0,
+            240.0
+          ]
+        ],
+        "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+        "urdf": null,
+        "hardware_profile": null,
+        "mechanical_power_abs_sum_cap_w": null,
+        "external_profile_declares_80_percent_mechanical_power": false,
+        "real_robot_driver": false,
+        "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+        "base_reference_caps": {
+          "translation_m_s": 0.48,
+          "yaw_rad_s": 0.7200000000000001
+        },
+        "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+      },
+      "controller_source": "program_generated",
+      "environment_source": "simulation",
+      "privileged_teacher": true,
+      "real_robot_validated": false,
+      "native_video_validation": "pending_replay_export"
+    },
+    "first_failure": {
+      "frame": 2785,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "push_accuracy_not_met",
+      "detail": null,
+      "recoverable": false
+    },
+    "last_transition": {
+      "frame": 2745,
+      "event": "state_transition",
+      "previous": [
+        "PLACE_TRAY",
+        "retreat"
+      ],
+      "state": "VERIFY_PLACEMENT",
+      "dag_node_id": "transition_000057",
+      "dag_predecessor": "transition_000056",
+      "phase": "verified",
+      "target_tray": 1,
+      "target_slot": 1,
+      "recovery": false,
+      "simulation_time": 137.24999999992724
+    },
+    "operation": {
+      "frame": 1734,
+      "event": "operation_selected",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "operation_index": 3
+    },
+    "completed_primitives": [
+      {
+        "primitive": "push",
+        "duration_s": 2.65
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 2.45
+      },
+      {
+        "primitive": "transport_align",
+        "duration_s": 1.35
+      },
+      {
+        "primitive": "place",
+        "duration_s": 2.65
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 1.45
+      },
+      {
+        "primitive": "place",
+        "duration_s": 2.05
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 1.45
+      },
+      {
+        "primitive": "place",
+        "duration_s": 2.3
+      },
+      {
+        "primitive": "push",
+        "duration_s": 2.85
+      }
+    ]
+  },
+  {
+    "group": "command_substep",
+    "case": 8,
+    "status": "completed",
+    "result": {
+      "scene_id": "airport_0008_20270924",
+      "split": "train",
+      "attempt": 0,
+      "seed": 16055249989788693300,
+      "physics_success": false,
+      "recovery_used": false,
+      "training_candidate": false,
+      "failure_code": "primitive_path_infeasible",
+      "error": "primitive_path_infeasible: {'available_s': 1.95, 'candidates': [{'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.4}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 4.25}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.35}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.35}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.45}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.4}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 3.1}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.35}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.35}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.35}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.35}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.35}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.15}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.05}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.0}, {'mode': 'CruiseJointPath', 'reason': 'duration', 'required_s': 2.2}, {'mode': 'BlendedJointPath', 'reason': 'duration', 'required_s': 2.1}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.28125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.01579208127957489, 'rotation_rad': 0.06038102348135507}}, {'mode': 'BlendedJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.2890625, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.01567865559060023, 'rotation_rad': 0.059922379631038566}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.3203125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015556738645398561, 'rotation_rad': 0.060316674526265913}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.3203125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015316047529235745, 'rotation_rad': 0.06035752500720476}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.3203125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015045556754977487, 'rotation_rad': 0.060249827111969564}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.328125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015291219138541185, 'rotation_rad': 0.06248240192932724}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.3359375, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015358651469615299, 'rotation_rad': 0.06431921982173207}}, {'mode': 'BlendedJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.2578125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015292283753473133, 'rotation_rad': 0.06116976582708331}}, {'mode': 'BlendedJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.2421875, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015314526591502878, 'rotation_rad': 0.0540812922363669}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.34375, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.01507849865711624, 'rotation_rad': 0.06546649175102774}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.40625, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015006870689362803, 'rotation_rad': 0.056957904439803024}}, {'mode': 'BlendedJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.28125, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015321999271276348, 'rotation_rad': 0.0601537783774858}}, {'mode': 'CruiseJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.4375, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.01516047115888051, 'rotation_rad': 0.060271563584964126}}, {'mode': 'BlendedJointPath', 'reason': 'collision_or_grasp_or_camera', 'progress': 0.2421875, 'collision': None, 'wrist_camera_front': False, 'rigid_grasp_error': {'position_m': 0.015172394180171713, 'rotation_rad': 0.06065822951194103}}]}",
+      "operations": 1,
+      "frames": 860,
+      "simulation_seconds": 43.0,
+      "physical_elapsed_seconds": 43.00000000000659,
+      "simulation_seconds_semantics": "completed_20Hz_intervals; physical_elapsed_seconds also includes a failed substep prefix",
+      "wall_seconds": 62.95072544994764,
+      "acceptance": null,
+      "peak_mechanical_abs_sum_power_w": 68.99710093341692,
+      "inverse_dynamics_calls": 118,
+      "inverse_dynamics_slowdowns": 0,
+      "limits": {
+        "mode": "model80",
+        "fraction": 0.8,
+        "arm_velocity_rad_s": [
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002
+        ],
+        "reference_arm_velocity_rad_s": [
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672
+        ],
+        "arm_effort_nm": [
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4,
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4
+        ],
+        "actuator_forcerange": [
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -240.0,
+            240.0
+          ]
+        ],
+        "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+        "urdf": null,
+        "hardware_profile": null,
+        "mechanical_power_abs_sum_cap_w": null,
+        "external_profile_declares_80_percent_mechanical_power": false,
+        "real_robot_driver": false,
+        "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+        "base_reference_caps": {
+          "translation_m_s": 0.48,
+          "yaw_rad_s": 0.7200000000000001
+        },
+        "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+      },
+      "controller_source": "program_generated",
+      "environment_source": "simulation",
+      "privileged_teacher": true,
+      "real_robot_validated": false,
+      "native_video_validation": "pending_replay_export"
+    },
+    "first_failure": {
+      "frame": 860,
+      "event": "primitive_failed",
+      "primitive": "place",
+      "reason": "primitive_path_infeasible",
+      "detail": {
+        "available_s": 1.95,
+        "candidates": [
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.4
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 4.25
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.35
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.35
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.45
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.4
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 3.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.35
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.35
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.35
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.35
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.35
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.15
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.05
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.0
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 2.2
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 2.1
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.28125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.01579208127957489,
+              "rotation_rad": 0.06038102348135507
+            }
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.2890625,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.01567865559060023,
+              "rotation_rad": 0.059922379631038566
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.3203125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015556738645398561,
+              "rotation_rad": 0.060316674526265913
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.3203125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015316047529235745,
+              "rotation_rad": 0.06035752500720476
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.3203125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015045556754977487,
+              "rotation_rad": 0.060249827111969564
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.328125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015291219138541185,
+              "rotation_rad": 0.06248240192932724
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.3359375,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015358651469615299,
+              "rotation_rad": 0.06431921982173207
+            }
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.2578125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015292283753473133,
+              "rotation_rad": 0.06116976582708331
+            }
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.2421875,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015314526591502878,
+              "rotation_rad": 0.0540812922363669
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.34375,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.01507849865711624,
+              "rotation_rad": 0.06546649175102774
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.40625,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015006870689362803,
+              "rotation_rad": 0.056957904439803024
+            }
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.28125,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015321999271276348,
+              "rotation_rad": 0.0601537783774858
+            }
+          },
+          {
+            "mode": "CruiseJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.4375,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.01516047115888051,
+              "rotation_rad": 0.060271563584964126
+            }
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "collision_or_grasp_or_camera",
+            "progress": 0.2421875,
+            "collision": null,
+            "wrist_camera_front": false,
+            "rigid_grasp_error": {
+              "position_m": 0.015172394180171713,
+              "rotation_rad": 0.06065822951194103
+            }
+          }
+        ]
+      },
+      "duration_s": 0.0
+    },
+    "last_transition": {
+      "frame": 860,
+      "event": "state_transition",
+      "previous": [
+        "TRANSPORT_TRAY",
+        "preplace"
+      ],
+      "state": "PLACE_TRAY",
+      "dag_node_id": "transition_000018",
+      "dag_predecessor": "transition_000017",
+      "phase": "descend",
+      "target_tray": 2,
+      "target_slot": 0,
+      "recovery": false,
+      "simulation_time": 43.00000000000659
+    },
+    "operation": {
+      "frame": 78,
+      "event": "operation_selected",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "operation_index": 1
+    },
+    "completed_primitives": [
+      {
+        "primitive": "push",
+        "duration_s": 2.75
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 2.55
+      },
+      {
+        "primitive": "transport_align",
+        "duration_s": 1.8
+      }
+    ]
+  },
+  {
+    "group": "command_substep",
+    "case": 16,
+    "status": "completed",
+    "result": {
+      "scene_id": "airport_0016_20270932",
+      "split": "train",
+      "attempt": 0,
+      "seed": 3469929297385638551,
+      "physics_success": false,
+      "recovery_used": false,
+      "training_candidate": false,
+      "failure_code": "primitive_release_not_verified",
+      "error": "primitive_release_not_verified: {'stable_frames': 0, 'force': array([0.        , 0.71983359]), 'table_contact': 4, 'pose': array([ 8.49338721e-01,  3.79753901e-01,  7.99995338e-01,  1.46378343e-03,\n        1.41255409e-07, -1.91218976e-07,  9.99998929e-01]), 'command_opening': array([0.0425905 , 0.03492296], dtype=float32), 'measured_opening': array([0.04252041, 0.03559267], dtype=float32)}",
+      "operations": 1,
+      "frames": 927,
+      "simulation_seconds": 46.35,
+      "physical_elapsed_seconds": 46.35000000001068,
+      "simulation_seconds_semantics": "completed_20Hz_intervals; physical_elapsed_seconds also includes a failed substep prefix",
+      "wall_seconds": 67.98162269603927,
+      "acceptance": null,
+      "peak_mechanical_abs_sum_power_w": 66.52351389535829,
+      "inverse_dynamics_calls": 139,
+      "inverse_dynamics_slowdowns": 0,
+      "limits": {
+        "mode": "model80",
+        "fraction": 0.8,
+        "arm_velocity_rad_s": [
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002
+        ],
+        "reference_arm_velocity_rad_s": [
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672
+        ],
+        "arm_effort_nm": [
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4,
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4
+        ],
+        "actuator_forcerange": [
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -240.0,
+            240.0
+          ]
+        ],
+        "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+        "urdf": null,
+        "hardware_profile": null,
+        "mechanical_power_abs_sum_cap_w": null,
+        "external_profile_declares_80_percent_mechanical_power": false,
+        "real_robot_driver": false,
+        "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+        "base_reference_caps": {
+          "translation_m_s": 0.48,
+          "yaw_rad_s": 0.7200000000000001
+        },
+        "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+      },
+      "controller_source": "program_generated",
+      "environment_source": "simulation",
+      "privileged_teacher": true,
+      "real_robot_validated": false,
+      "native_video_validation": "pending_replay_export"
+    },
+    "first_failure": {
+      "frame": 927,
+      "event": "primitive_failed",
+      "primitive": "place",
+      "reason": "primitive_release_not_verified",
+      "detail": {
+        "stable_frames": 0,
+        "force": [
+          0.0,
+          0.7198335855686823
+        ],
+        "table_contact": 4,
+        "pose": [
+          0.8493387205019379,
+          0.37975390138777654,
+          0.7999953380299473,
+          0.0014637834349114631,
+          1.4125540871081507e-07,
+          -1.9121897575668828e-07,
+          0.9999989286684263
+        ],
+        "command_opening": [
+          0.04259049519896507,
+          0.03492296487092972
+        ],
+        "measured_opening": [
+          0.04252041131258011,
+          0.03559267148375511
+        ]
+      },
+      "duration_s": 2.9
+    },
+    "last_transition": {
+      "frame": 908,
+      "event": "state_transition",
+      "previous": [
+        "PLACE_TRAY",
+        "support_contact"
+      ],
+      "state": "PLACE_TRAY",
+      "dag_node_id": "transition_000021",
+      "dag_predecessor": "transition_000020",
+      "phase": "open",
+      "target_tray": 2,
+      "target_slot": 0,
+      "recovery": false,
+      "simulation_time": 45.40000000000952
+    },
+    "operation": {
+      "frame": 78,
+      "event": "operation_selected",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "operation_index": 1
+    },
+    "completed_primitives": [
+      {
+        "primitive": "push",
+        "duration_s": 2.7
+      },
+      {
+        "primitive": "lift",
+        "duration_s": 2.55
+      },
+      {
+        "primitive": "transport_align",
+        "duration_s": 1.8
+      }
+    ]
+  }
+]

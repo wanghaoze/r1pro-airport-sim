@@ -1,0 +1,126 @@
+--- /home/michelle/haoze/r1pro-airport-sim/releases/coverage_v4_20260928/r1pro_teleop/airport_fsm/contracts.py
++++ /home/michelle/haoze/r1pro-airport-sim/releases/robust_v24b_20260929/r1pro_teleop/airport_fsm/contracts.py
+@@ -94,6 +94,33 @@
+     max_attempt_wall_seconds: float = 1800.
+     max_phase_seconds: float = 45.
+     max_candidate_count: int = 12
++    reachability_screen_enabled: bool = False
++    release_preflight_enabled: bool = False
++    push_use_full_budget: bool = False
++    transport_align_use_full_budget: bool = False
++    placement_preserve_command_grasp_enabled: bool = False
++    placement_alignment_xy_feedforward_enabled: bool = False
++    placement_alignment_xy_feedforward_scope: str = 'all'
++    retreat_joint_speed_scale: float = 1.
++    push_withdraw_preload_scale: float = 1.5
++    push_withdraw_path_search_enabled: bool = False
++    push_yaw_feedback_enabled: bool = False
++    push_yaw_feedback_additive_fallback_enabled: bool = False
++    push_yaw_feedback_scope: str = 'all'
++    push_yaw_feedback_seconds: float = 1.5
++    push_yaw_feedback_gain: float = 2.
++    push_yaw_feedback_max_deg: float = 1.5
++    substep_control_enabled: bool = False
++    alternate_rim_enabled: bool = False
++    carry_lateral_compensation_enabled: bool = False
++    loaded_command_reference_enabled: bool = False
++    loaded_command_reference_scope: str = 'all'
++    placement_screen_enabled: bool = False
++    placement_arrival_rescreen_enabled: bool = False
++    temporary_buffer_serviceability_enabled: bool = False
++    placement_max_probes: int = 18
++    reachability_max_probes: int = 24
++    reachability_max_qualified: int = 2
+     max_ik_iterations: int = 160
+     trajectory_mode: str = 'legacy'
+     adaptive_push_distance: bool = False
+@@ -179,6 +206,80 @@
+     criteria: Criteria = field(default_factory=Criteria)
+ 
+     def validate(self) -> "Config":
++        if not isinstance(self.reachability_screen_enabled, bool):
++            raise ValueError('reachability_screen_enabled must be boolean')
++        if not isinstance(self.release_preflight_enabled, bool):
++            raise ValueError('release_preflight_enabled must be boolean')
++        if not isinstance(self.push_use_full_budget, bool):
++            raise ValueError('push_use_full_budget must be boolean')
++        if not isinstance(self.transport_align_use_full_budget, bool):
++            raise ValueError('transport_align_use_full_budget must be boolean')
++        if not isinstance(self.placement_preserve_command_grasp_enabled, bool):
++            raise ValueError('placement_preserve_command_grasp_enabled must be boolean')
++        if not isinstance(self.placement_alignment_xy_feedforward_enabled, bool):
++            raise ValueError('placement_alignment_xy_feedforward_enabled must be boolean')
++        if self.placement_alignment_xy_feedforward_scope not in ('all', 'support_risk'):
++            raise ValueError('placement_alignment_xy_feedforward_scope must be all or support_risk')
++        if self.placement_alignment_xy_feedforward_enabled and not self.fixed_primitives:
++            raise ValueError('placement_alignment_xy_feedforward_enabled requires fixed_primitives')
++        if self.placement_preserve_command_grasp_enabled and not self.fixed_primitives:
++            raise ValueError('placement_preserve_command_grasp_enabled requires fixed_primitives')
++        if self.transport_align_use_full_budget and not self.fixed_primitives:
++            raise ValueError('Transport alignment retiming requires fixed primitives')
++        value=self.retreat_joint_speed_scale
++        if isinstance(value,bool) or not isinstance(value,(int,float)) or not math.isfinite(value) or not .25<=value<=1.:
++            raise ValueError('retreat_joint_speed_scale must be finite and in [0.25, 1]')
++        if not isinstance(self.push_yaw_feedback_enabled, bool):
++            raise ValueError('push_yaw_feedback_enabled must be boolean')
++        if not isinstance(self.push_yaw_feedback_additive_fallback_enabled, bool):
++            raise ValueError('push_yaw_feedback_additive_fallback_enabled must be boolean')
++        if self.push_yaw_feedback_scope not in ('all', 'placement'):
++            raise ValueError('push_yaw_feedback_scope must be all or placement')
++        if not isinstance(self.push_withdraw_path_search_enabled, bool):
++            raise ValueError('push_withdraw_path_search_enabled must be boolean')
++        if self.push_withdraw_path_search_enabled and not self.fixed_primitives:
++            raise ValueError('Withdraw path search requires fixed primitives')
++        if self.push_yaw_feedback_enabled and not self.fixed_primitives:
++            raise ValueError('Push yaw feedback requires fixed primitives')
++        for name,low,high in (('push_yaw_feedback_seconds',.05,2.5),
++                              ('push_yaw_feedback_gain',0.,2.),('push_yaw_feedback_max_deg',0.,1.5)):
++            value=getattr(self,name)
++            if isinstance(value,bool) or not isinstance(value,(int,float)) or not math.isfinite(value) or not low<=value<=high:
++                raise ValueError(f'{name} must be finite and in [{low}, {high}]')
++        scale = self.push_withdraw_preload_scale
++        if (isinstance(scale, bool) or not isinstance(scale, (int, float)) or
++                not math.isfinite(scale) or not 0. <= scale <= 1.5):
++            raise ValueError('push_withdraw_preload_scale must be finite and in [0, 1.5]')
++        if not isinstance(self.substep_control_enabled, bool):
++            raise ValueError('substep_control_enabled must be boolean')
++        if not isinstance(self.alternate_rim_enabled, bool):
++            raise ValueError('alternate_rim_enabled must be boolean')
++        if not isinstance(self.carry_lateral_compensation_enabled, bool):
++            raise ValueError('carry_lateral_compensation_enabled must be boolean')
++        if not isinstance(self.loaded_command_reference_enabled, bool):
++            raise ValueError('loaded_command_reference_enabled must be boolean')
++        if self.loaded_command_reference_scope not in ('all','push'):
++            raise ValueError('loaded_command_reference_scope must be all or push')
++        if not isinstance(self.temporary_buffer_serviceability_enabled, bool):
++            raise ValueError('temporary_buffer_serviceability_enabled must be boolean')
++        if self.temporary_buffer_serviceability_enabled and not (self.fixed_primitives and self.release_preflight_enabled):
++            raise ValueError('temporary buffer serviceability requires fixed primitives and release preflight')
++        if not isinstance(self.placement_screen_enabled, bool):
++            raise ValueError('placement_screen_enabled must be boolean')
++        if not isinstance(self.placement_arrival_rescreen_enabled, bool):
++            raise ValueError('placement_arrival_rescreen_enabled must be boolean')
++        if self.placement_arrival_rescreen_enabled and not self.fixed_primitives:
++            raise ValueError('Placement arrival rescreen requires fixed primitives')
++        if (isinstance(self.placement_max_probes, bool) or
++                not isinstance(self.placement_max_probes, int) or
++                not 1 <= self.placement_max_probes <= 18):
++            raise ValueError('placement_max_probes must be an integer in [1, 18]')
++        if self.placement_screen_enabled and not self.fixed_primitives:
++            raise ValueError('Placement screening requires fixed primitives')
++        for name in ('reachability_max_probes', 'reachability_max_qualified'):
++            value = getattr(self, name)
++            if isinstance(value, bool) or not isinstance(value, int) or value < 1:
++                raise ValueError(f'{name} must be a positive integer')
+         if not .02 <= self.reach_pull_distance_m <= .12:
+             raise ValueError('Reach pull distance must be 2-12 cm')
+         if not 0 < self.reach_pull_min_progress_m <= self.reach_pull_distance_m:
+@@ -221,7 +322,7 @@
+         if len(self.arm_velocity_fallback) != 7 or min(self.arm_velocity_fallback) <= 0:
+             raise ValueError("Seven positive arm velocity caps are required")
+         signed_finite = {"rim_pitch_deg"}
+-        nonnegative = {"gripper_close_m", "primitive_lift_compensation_m", "primitive_push_compensation_m"}
++        nonnegative = {"gripper_close_m", "primitive_lift_compensation_m", "primitive_push_compensation_m", "push_withdraw_preload_scale", "push_yaw_feedback_gain", "push_yaw_feedback_max_deg"}
+         for key, val in asdict(self).items():
+             if not isinstance(val, float):
+                 continue

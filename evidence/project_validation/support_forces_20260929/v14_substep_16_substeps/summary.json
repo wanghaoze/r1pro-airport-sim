@@ -1,0 +1,87 @@
+{
+  "qualification": "private_exact_recorded_controls_replay_diagnostic_only_no_label_changes",
+  "mujoco_version": "3.13.0",
+  "script_sha256": "3fde048d46face94573b9741052e560cc81440ed2389c6f46354dc129af2caaf",
+  "estimator_sha256": "6f3fe01697a93c528e1d8951aa091f486b1341c6a3e4dc583a4e13dfed282a7f",
+  "root": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v14_20260929/runs/ablation/substep",
+  "cases": [
+    {
+      "scene_id": "airport_0016_20270932",
+      "source_xml_sha256": "502c9a5159cce8d3436d6cda0b37268e708796b69ea14680c6cdc70a82f957ec",
+      "source_trace": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v14_20260929/runs/ablation/substep/attempts/airport_0016_20270932/a000/trace.h5",
+      "maximum_qpos_endpoint_error": 0.0,
+      "maximum_qvel_endpoint_error": 0.0,
+      "physics_timestep_s": 0.002,
+      "push_segments": [
+        {
+          "start_frame": 422,
+          "end_frame": 473,
+          "tray": 2,
+          "accepted_intervals": 51,
+          "skipped_incomplete_intervals": 0,
+          "skipped_no_endpoint_intervals": 0,
+          "sampled_substeps": 1275,
+          "supported_substeps": 1092,
+          "table_load_peak_n": 52.58108186321102,
+          "table_load_impulse_ns": 32.32357650659649,
+          "longest_missing_substeps": 4,
+          "recorded_endpoint_missing_intervals": 8,
+          "support_fraction": 0.8564705882352941,
+          "longest_physics_missing_s": 0.008,
+          "mean_table_load_n": 12.675912355528034
+        },
+        {
+          "start_frame": 1466,
+          "end_frame": 1517,
+          "tray": 1,
+          "accepted_intervals": 51,
+          "skipped_incomplete_intervals": 0,
+          "skipped_no_endpoint_intervals": 0,
+          "sampled_substeps": 1275,
+          "supported_substeps": 1125,
+          "table_load_peak_n": 56.009969206177104,
+          "table_load_impulse_ns": 33.177529469948304,
+          "longest_missing_substeps": 3,
+          "recorded_endpoint_missing_intervals": 6,
+          "support_fraction": 0.8823529411764706,
+          "longest_physics_missing_s": 0.006,
+          "mean_table_load_n": 13.01079587056796
+        },
+        {
+          "start_frame": 1953,
+          "end_frame": 2004,
+          "tray": 1,
+          "accepted_intervals": 51,
+          "skipped_incomplete_intervals": 0,
+          "skipped_no_endpoint_intervals": 0,
+          "sampled_substeps": 1275,
+          "supported_substeps": 1019,
+          "table_load_peak_n": 59.33843678638887,
+          "table_load_impulse_ns": 31.49468751185333,
+          "longest_missing_substeps": 4,
+          "recorded_endpoint_missing_intervals": 12,
+          "support_fraction": 0.7992156862745098,
+          "longest_physics_missing_s": 0.008,
+          "mean_table_load_n": 12.350857847785617
+        },
+        {
+          "start_frame": 2802,
+          "end_frame": 2854,
+          "tray": 0,
+          "accepted_intervals": 51,
+          "skipped_incomplete_intervals": 1,
+          "skipped_no_endpoint_intervals": 0,
+          "sampled_substeps": 1275,
+          "supported_substeps": 1047,
+          "table_load_peak_n": 50.2110489237882,
+          "table_load_impulse_ns": 32.54858423966615,
+          "longest_missing_substeps": 3,
+          "recorded_endpoint_missing_intervals": 8,
+          "support_fraction": 0.8211764705882353,
+          "longest_physics_missing_s": 0.006,
+          "mean_table_load_n": 12.764150682222018
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "qualification": "private_local_push_diagnostic_not_complete_episode",
+  "source": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v15b_20260929/runs/ablation/command",
+  "controller": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v15b_20260929",
+  "case": 5,
+  "frame": 2466,
+  "tray": 1,
+  "side": "right",
+  "incoming_target_source": "previous_recorded_action",
+  "modifications": {},
+  "cartesian_withdraw_middle": false,
+  "entry_rollpitchyaw_deg": [
+    -0.0005945784313186248,
+    -1.3076314700262297e-05,
+    0.13209104361362556
+  ],
+  "full_push_operation": true,
+  "final_slot_geometry_ready": true,
+  "yaw_compensation_deg": -1.5,
+  "operation_acceptance_yaw_unchanged": 0.0,
+  "final_all_poses": [
+    [
+      0.8463572745089071,
+      -1.5501042040887514,
+      0.7999952170405816,
+      0.9999993892934032,
+      -1.4842808320151167e-07,
+      8.548116780192944e-08,
+      -0.001105175458114177
+    ],
+    [
+      0.841357557160358,
+      -0.06892292745510199,
+      0.7999952170405823,
+      0.9998828695848139,
+      -1.4981086122353312e-07,
+      8.303392073121996e-08,
+      0.015305133478939874
+    ],
+    [
+      0.8477581058284411,
+      0.3792084339856297,
+      0.799995217040582,
+      0.0024184143015939224,
+      -8.567600991264912e-08,
+      -1.483157037242391e-07,
+      0.9999970756318417
+    ]
+  ],
+  "slot_mapping": [
+    2,
+    1,
+    0
+  ],
+  "final_position_error_m": 0.009491111680471074,
+  "final_yaw_rad": 0.030611462144944583,
+  "arm_kv_scale": null,
+  "arm_position_servos": [
+    {
+      "name": "left_arm_joint1_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint2_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint3_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint4_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint5_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint6_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint7_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint1_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint2_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint3_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint4_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint5_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint6_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint7_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    }
+  ],
+  "timestep_intervention": null,
+  "source_timestep_s": 0.002,
+  "timestep_s": 0.002,
+  "substeps_per_frame": 25,
+  "rollout_wall_s": 25.778553681913763,
+  "solver_settings": {
+    "integrator": "mjINT_IMPLICITFAST",
+    "solver": "mjSOL_NEWTON",
+    "iterations": 80,
+    "tolerance": 1e-08,
+    "geom_solref_unique": [
+      [
+        0.006,
+        1.0
+      ]
+    ],
+    "geom_solimp_unique": [
+      [
+        0.95,
+        0.99,
+        0.001,
+        0.5,
+        2.0
+      ]
+    ]
+  },
+  "restored_context": {
+    "retained_contact": null,
+    "holding": null,
+    "phase": "adjust",
+    "primitive_lift_xy_shift_m": 0.06,
+    "initial_bottom": [
+      0.801,
+      0.801,
+      0.801
+    ],
+    "support_timer": "reset only after confirming actual entry support",
+    "warnings": "fresh zero counters; source episode would have stopped at any prior warning",
+    "diagnostic_counters": "wall budget restarted; historical peak power and inverse-call tallies not restored"
+  },
+  "exact_original_trajectory_match": false,
+  "recorded_prefix_matches": false,
+  "maximum_qpos_error": 0.07106907612728758,
+  "maximum_qvel_error": 0.19392931147885395,
+  "maximum_action_error": 0.07118064165115356,
+  "endpoint_qpos_error": 0.008812797089915137,
+  "primitive_returned": true,
+  "failure": null,
+  "elapsed_s": 15.10000000003869,
+  "final_pose": [
+    0.841357557160358,
+    -0.06892292745510199,
+    0.7999952170405823,
+    0.9998828695848139,
+    -1.4981086122353312e-07,
+    8.303392073121996e-08,
+    0.015305133478939874
+  ],
+  "final_forces": [
+    0.0,
+    0.0
+  ],
+  "final_table_contacts": 4,
+  "physics_samples": 7550,
+  "longest_physics_missing_s": 0.006,
+  "table_force_peak_n": 51.33410686941802,
+  "support_fraction": 0.9633112582781457
+}

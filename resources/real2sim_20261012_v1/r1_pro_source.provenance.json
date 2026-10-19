@@ -1,0 +1,7 @@
+{
+  "source": "/home/michelle/GalaxeaManipSim/galaxea_sim/assets/r1_pro/meshes/r1_pro_with_gripper.urdf",
+  "sha256": "ca7d160f5ef3c596c41d0052405cfcf1764e6d99a063872fdcff0d9fd800bf47",
+  "copied_on": "2026-10-12",
+  "source_hardware_identity_verified": false,
+  "usage": "independent_real2sim_joint_model_reference_not_old_scene_replacement"
+}

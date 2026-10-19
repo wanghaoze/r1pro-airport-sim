@@ -1,0 +1,467 @@
+{
+  "aisle_gap_definition": "nearest front/rear tabletop edges, world X",
+  "aisle_gap_m": 1.0622100912864685,
+  "attempt": 58,
+  "belt_frame": {
+    "axes": "+X left to right; +Y into tabletop; +Z up",
+    "origin_world": [
+      0.55,
+      0.6,
+      0.8
+    ],
+    "rotation_world_from_belt": [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ]
+  },
+  "camera": {
+    "height": 720,
+    "width": 1280
+  },
+  "difficulty": "ordinary",
+  "front_count": 1,
+  "layout_kind": "separate",
+  "lighting": {
+    "azimuth": 1.737504720270687,
+    "elevation": 1.0744001530621263,
+    "intensity": 0.3185353798937749,
+    "mode": "night"
+  },
+  "rejections": [
+    {
+      "attempt": 0,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 1,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 2,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 3,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 4,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 5,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 6,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 7,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 8,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 9,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 10,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 11,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 12,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 13,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 14,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 15,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 16,
+      "reason": "com_outside_table"
+    },
+    {
+      "attempt": 17,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 18,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 19,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 20,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 21,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 22,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 23,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 24,
+      "reason": "com_outside_table"
+    },
+    {
+      "attempt": 25,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 26,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 27,
+      "reason": "com_outside_table"
+    },
+    {
+      "attempt": 28,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 29,
+      "reason": "com_outside_table"
+    },
+    {
+      "attempt": 30,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 31,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 32,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 33,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 34,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 35,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 36,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 37,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 38,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 39,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 40,
+      "reason": "com_outside_table"
+    },
+    {
+      "attempt": 41,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 42,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 43,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 44,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 45,
+      "reason": "com_outside_table"
+    },
+    {
+      "attempt": 46,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 47,
+      "reason": "com_outside_table"
+    },
+    {
+      "attempt": 48,
+      "reason": "com_outside_table"
+    },
+    {
+      "attempt": 49,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 50,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 51,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 52,
+      "reason": "com_outside_table"
+    },
+    {
+      "attempt": 53,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 54,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 55,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 56,
+      "reason": "ordinary_overlap"
+    },
+    {
+      "attempt": 57,
+      "reason": "ordinary_overlap"
+    }
+  ],
+  "resample_count": 58,
+  "robot": {
+    "base_control_available": false,
+    "base_position_world": [
+      0.032360909964861545,
+      -0.048679247810147014,
+      0
+    ],
+    "base_yaw_world": 0.48662770213830875,
+    "home_key": "teleop_home",
+    "wrist_profile": "direct_camera_front"
+  },
+  "runtime": {
+    "mujoco": "3.13.0",
+    "numpy": "2.2.6"
+  },
+  "scene_id": "airport_0145_20271061",
+  "schema_version": "airport_trays/1.0.0",
+  "seed": 20271061,
+  "slot_gap_m": 0.015,
+  "slots": [
+    {
+      "position_belt": [
+        0.22,
+        0.3,
+        0.0
+      ],
+      "slot_id": "slot_0",
+      "yaw_belt": 1.5707963267948966
+    },
+    {
+      "position_belt": [
+        0.665,
+        0.3,
+        0.0
+      ],
+      "slot_id": "slot_1",
+      "yaw_belt": 1.5707963267948966
+    },
+    {
+      "position_belt": [
+        1.11,
+        0.3,
+        0.0
+      ],
+      "slot_id": "slot_2",
+      "yaw_belt": 1.5707963267948966
+    }
+  ],
+  "source_sha256": "9c1065e9a5b406d27798133bf6d1d5e9e6aa6689b2532d6ccacaa8bc2122b24b",
+  "split": "train",
+  "tables": [
+    {
+      "center_world": [
+        0.85,
+        0,
+        0
+      ],
+      "dimensions_m": [
+        1.2,
+        0.6,
+        0.8
+      ],
+      "table_id": "front_left",
+      "yaw_world": 1.5707963267948966
+    },
+    {
+      "center_world": [
+        0.85,
+        -1.2,
+        0
+      ],
+      "dimensions_m": [
+        1.2,
+        0.6,
+        0.8
+      ],
+      "table_id": "front_right",
+      "yaw_world": 1.5707963267948966
+    },
+    {
+      "center_world": [
+        -0.8122100912864685,
+        0,
+        0
+      ],
+      "dimensions_m": [
+        1.2,
+        0.6,
+        0.8
+      ],
+      "table_id": "rear",
+      "yaw_world": 1.5707963267948966
+    }
+  ],
+  "trays": [
+    {
+      "pitch": 0.0,
+      "position_world": [
+        0.8585553058322737,
+        -0.5335294288843287,
+        0.801
+      ],
+      "roll": 0.0,
+      "support_parent": "front_left",
+      "support_table": "front_left",
+      "tray_id": "tray_0",
+      "yaw_world": -0.0030293830005230227
+    },
+    {
+      "pitch": 0.0,
+      "position_world": [
+        -0.7853143055509002,
+        -0.26246347812293835,
+        0.801
+      ],
+      "roll": 0.0,
+      "support_parent": "rear",
+      "support_table": "rear",
+      "tray_id": "tray_1",
+      "yaw_world": -3.078695915411622
+    },
+    {
+      "pitch": 0.0,
+      "position_world": [
+        -0.8405956418309238,
+        0.26686343691609277,
+        0.801
+      ],
+      "roll": 0.0,
+      "support_parent": "rear",
+      "support_table": "rear",
+      "tray_id": "tray_2",
+      "yaw_world": -0.3188114405611926
+    }
+  ],
+  "validation": {
+    "max_penetration_m": 0.00017340744286564798,
+    "max_tilt_deg": 0.0010415996495460396,
+    "passed": true,
+    "settle_seconds": 2,
+    "settled_trays": [
+      {
+        "com_world": [
+          0.8585553019397875,
+          -0.5335294204557238,
+          0.8276807206773206
+        ],
+        "position_world": [
+          0.8585553058023195,
+          -0.5335294288238578,
+          0.7999976138046075
+        ],
+        "tray_id": "tray_0"
+      },
+      {
+        "com_world": [
+          -0.785314537309447,
+          -0.2624636736761626,
+          0.8276771624451716
+        ],
+        "position_world": [
+          -0.7853143072867895,
+          -0.26246347600238523,
+          0.7999940555741186
+        ],
+        "tray_id": "tray_1"
+      },
+      {
+        "com_world": [
+          -0.8405956496799014,
+          0.2668634509745194,
+          0.8276783214517598
+        ],
+        "position_world": [
+          -0.8405956419001038,
+          0.26686343703642185,
+          0.7999952145790499
+        ],
+        "tray_id": "tray_2"
+      }
+    ]
+  },
+  "xml": "scene.xml",
+  "xml_sha256": "8fceacededd6b93b1b41616c99817ab462049a8a834abd245c0bce30bd8d3088",
+  "project_relocation": {
+    "source": "outputs/airport_trays_final_v1/formal/ordinary/airport_0145_20271061/scene.json",
+    "source_xml_sha256": "098da28d436e2fd944138310aecdbb43f8020f2e8d30d872f493232879a75735",
+    "not_server_v7_stable_scene": true
+  }
+}

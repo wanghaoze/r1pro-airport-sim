@@ -1,0 +1,20 @@
+{
+  "version": "web_scene_agent/1",
+  "request_id": "example_edit_room_v1",
+  "op": "scene.patch",
+  "args": {
+    "profile": "isaac32_fixed_base_pickplace",
+    "rooms": [
+      3
+    ],
+    "changes": {
+      "robot_base_pose": [
+        0.3,
+        0.1,
+        0.0
+      ],
+      "robot_color": "#F8FAFC",
+      "tray_color": "#2563EB"
+    }
+  }
+}

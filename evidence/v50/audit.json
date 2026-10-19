@@ -1,0 +1,674 @@
+{
+  "release": "/home/michelle/haoze/humanvideo/r1pro-tray-server/releases/primitives3_v50_20260923",
+  "actual_robot_tested": false,
+  "time_definition": "3-second simulation/control primitive, not CPU planning wall time; excludes base travel, initial grasp acquisition, post-push release/retreat, final 1s verification",
+  "attempts": [
+    {
+      "source": "/home/michelle/haoze/humanvideo/r1pro-tray-server/runs/debug/primitives3_v50_both_airport_0004_20270920",
+      "physics_success": true,
+      "training_candidate": true,
+      "simulation_seconds": 147.8,
+      "failure_code": null,
+      "measured_lift_heights_m": [
+        0.15425693757480696,
+        0.15688449510024127,
+        0.1604114286861058
+      ],
+      "actions": [
+        {
+          "primitive": "push",
+          "start_frame": 425,
+          "end_frame": 476,
+          "duration_s": 2.55,
+          "success": true,
+          "parameters": {
+            "destination": [
+              -1.087706741446057,
+              0.56297593551862,
+              0.7999933997667343
+            ],
+            "yaw": 0.00041851715530429945,
+            "separation": true
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 2.821972668985836
+        },
+        {
+          "primitive": "lift",
+          "start_frame": 589,
+          "end_frame": 639,
+          "duration_s": 2.5,
+          "success": true,
+          "parameters": {
+            "height_m": 0.18,
+            "accepted_height_m": [
+              0.15,
+              0.2
+            ]
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 5.852243344997987
+        },
+        {
+          "primitive": "transport_align",
+          "start_frame": 833,
+          "end_frame": 868,
+          "duration_s": 1.75,
+          "success": true,
+          "parameters": {
+            "destination_xy": [
+              0.8500000000000001,
+              0.38
+            ]
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 2.806530555986683
+        },
+        {
+          "primitive": "place",
+          "start_frame": 868,
+          "end_frame": 926,
+          "duration_s": 2.9,
+          "success": true,
+          "parameters": {
+            "table_height_m": 0.8,
+            "staged": [
+              0.8500000000000001,
+              0.38,
+              0.8
+            ],
+            "retained_side": null
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 4.081216473001405
+        },
+        {
+          "primitive": "push",
+          "start_frame": 1389,
+          "end_frame": 1440,
+          "duration_s": 2.55,
+          "success": true,
+          "parameters": {
+            "destination": [
+              -1.086335636352872,
+              0.11438345324270367,
+              0.799995217040582
+            ],
+            "yaw": 0.012146637260451175,
+            "separation": true
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 2.8890311190043576
+        },
+        {
+          "primitive": "lift",
+          "start_frame": 1553,
+          "end_frame": 1604,
+          "duration_s": 2.55,
+          "success": true,
+          "parameters": {
+            "height_m": 0.18,
+            "accepted_height_m": [
+              0.15,
+              0.2
+            ]
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 5.976258543989388
+        },
+        {
+          "primitive": "transport_align",
+          "start_frame": 1798,
+          "end_frame": 1821,
+          "duration_s": 1.15,
+          "success": true,
+          "parameters": {
+            "destination_xy": [
+              0.8500000000000001,
+              -0.17000000000000007
+            ]
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 1.4745447909954237
+        },
+        {
+          "primitive": "place",
+          "start_frame": 1821,
+          "end_frame": 1876,
+          "duration_s": 2.75,
+          "success": true,
+          "parameters": {
+            "table_height_m": 0.8,
+            "staged": [
+              0.8500000000000001,
+              -0.17000000000000007,
+              0.8
+            ],
+            "retained_side": "right"
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 4.048293083993485
+        },
+        {
+          "primitive": "push",
+          "start_frame": 1876,
+          "end_frame": 1927,
+          "duration_s": 2.55,
+          "success": true,
+          "parameters": {
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "separation": false
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 3.084861241004546
+        },
+        {
+          "primitive": "lift",
+          "start_frame": 2487,
+          "end_frame": 2516,
+          "duration_s": 1.45,
+          "success": true,
+          "parameters": {
+            "height_m": 0.18,
+            "accepted_height_m": [
+              0.15,
+              0.2
+            ]
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 3.235065016007866
+        },
+        {
+          "primitive": "place",
+          "start_frame": 2710,
+          "end_frame": 2768,
+          "duration_s": 2.9,
+          "success": true,
+          "parameters": {
+            "table_height_m": 0.8,
+            "staged": [
+              0.8500000000000001,
+              -0.6150000000000001,
+              0.8
+            ],
+            "retained_side": "right"
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 3.767077540003811
+        },
+        {
+          "primitive": "push",
+          "start_frame": 2768,
+          "end_frame": 2826,
+          "duration_s": 2.9,
+          "success": true,
+          "parameters": {
+            "destination": [
+              0.8500000000000001,
+              -0.5100000000000001,
+              0.8
+            ],
+            "yaw": 0.0,
+            "separation": false
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 3.5513183180009946
+        }
+      ],
+      "audit_problems": [],
+      "all_completed_actions_within_3s": true,
+      "all_started_actions_succeeded": true
+    },
+    {
+      "source": "/home/michelle/haoze/humanvideo/r1pro-tray-server/runs/debug/primitives3_v50_both_airport_0005_20270921",
+      "physics_success": false,
+      "training_candidate": false,
+      "simulation_seconds": 159.85,
+      "failure_code": "primitive_path_infeasible",
+      "measured_lift_heights_m": [
+        0.1591918970522177,
+        0.16035483300405884,
+        0.1603538022565697,
+        0.16035379180091547
+      ],
+      "actions": [
+        {
+          "primitive": "push",
+          "start_frame": 355,
+          "end_frame": 406,
+          "duration_s": 2.55,
+          "success": true,
+          "parameters": {
+            "destination": [
+              -1.1482719929264416,
+              0.3587569230398918,
+              0.7999952180110924
+            ],
+            "yaw": 0.08665260898935133,
+            "separation": true
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 2.928064791005454
+        },
+        {
+          "primitive": "lift",
+          "start_frame": 519,
+          "end_frame": 568,
+          "duration_s": 2.45,
+          "success": true,
+          "parameters": {
+            "height_m": 0.18,
+            "accepted_height_m": [
+              0.15,
+              0.2
+            ]
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 5.3053626229957445
+        },
+        {
+          "primitive": "transport_align",
+          "start_frame": 758,
+          "end_frame": 784,
+          "duration_s": 1.3,
+          "success": true,
+          "parameters": {
+            "destination_xy": [
+              0.8500000000000001,
+              0.38
+            ]
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 1.774247690991615
+        },
+        {
+          "primitive": "place",
+          "start_frame": 784,
+          "end_frame": 836,
+          "duration_s": 2.6,
+          "success": true,
+          "parameters": {
+            "table_height_m": 0.8,
+            "staged": [
+              0.8500000000000001,
+              0.38,
+              0.8
+            ],
+            "retained_side": null
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 3.925744537002174
+        },
+        {
+          "primitive": "lift",
+          "start_frame": 1264,
+          "end_frame": 1293,
+          "duration_s": 1.45,
+          "success": true,
+          "parameters": {
+            "height_m": 0.18,
+            "accepted_height_m": [
+              0.15,
+              0.2
+            ]
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 3.321618273999775
+        },
+        {
+          "primitive": "place",
+          "start_frame": 1556,
+          "end_frame": 1597,
+          "duration_s": 2.05,
+          "success": true,
+          "parameters": {
+            "table_height_m": 0.8,
+            "staged": [
+              0.8500000000000001,
+              -1.5499999999999998,
+              0.801
+            ],
+            "retained_side": null
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 2.65736916300375
+        },
+        {
+          "primitive": "lift",
+          "start_frame": 2052,
+          "end_frame": 2081,
+          "duration_s": 1.45,
+          "success": true,
+          "parameters": {
+            "height_m": 0.18,
+            "accepted_height_m": [
+              0.15,
+              0.2
+            ]
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 3.231309112001327
+        },
+        {
+          "primitive": "place",
+          "start_frame": 2430,
+          "end_frame": 2487,
+          "duration_s": 2.85,
+          "success": true,
+          "parameters": {
+            "table_height_m": 0.8,
+            "staged": [
+              0.8500000000000001,
+              -0.17000000000000007,
+              0.8
+            ],
+            "retained_side": "right"
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 3.7353028710058425
+        },
+        {
+          "primitive": "push",
+          "start_frame": 2487,
+          "end_frame": 2543,
+          "duration_s": 2.8,
+          "success": true,
+          "parameters": {
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "separation": false
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 3.4190339320048224
+        },
+        {
+          "primitive": "lift",
+          "start_frame": 3029,
+          "end_frame": 3058,
+          "duration_s": 1.45,
+          "success": true,
+          "parameters": {
+            "height_m": 0.18,
+            "accepted_height_m": [
+              0.15,
+              0.2
+            ]
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 3.2549330170004396
+        },
+        {
+          "primitive": "place",
+          "start_frame": 3197,
+          "end_frame": 3197,
+          "duration_s": 0.0,
+          "success": false,
+          "parameters": {
+            "table_height_m": 0.8,
+            "staged": [
+              0.8500000000000001,
+              -0.6150000000000001,
+              0.8
+            ],
+            "retained_side": "right"
+          },
+          "failure_reason": "primitive_path_infeasible",
+          "planning_and_execution_wall_s": null
+        }
+      ],
+      "audit_problems": [],
+      "all_completed_actions_within_3s": true,
+      "all_started_actions_succeeded": false
+    },
+    {
+      "source": "/home/michelle/haoze/humanvideo/r1pro-tray-server/runs/debug/primitives3_v50_both_airport_0132_20271048",
+      "physics_success": true,
+      "training_candidate": true,
+      "simulation_seconds": 144.8,
+      "failure_code": null,
+      "measured_lift_heights_m": [
+        0.15485186868888634,
+        0.1561477692290022,
+        0.16040677761416222
+      ],
+      "actions": [
+        {
+          "primitive": "push",
+          "start_frame": 366,
+          "end_frame": 417,
+          "duration_s": 2.55,
+          "success": true,
+          "parameters": {
+            "destination": [
+              -0.9953310242652201,
+              0.5645615041090254,
+              0.7999950994113015
+            ],
+            "yaw": 0.012433725462839166,
+            "separation": true
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 2.800178837002022
+        },
+        {
+          "primitive": "lift",
+          "start_frame": 530,
+          "end_frame": 580,
+          "duration_s": 2.5,
+          "success": true,
+          "parameters": {
+            "height_m": 0.18,
+            "accepted_height_m": [
+              0.15,
+              0.2
+            ]
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 5.787655666004866
+        },
+        {
+          "primitive": "transport_align",
+          "start_frame": 774,
+          "end_frame": 809,
+          "duration_s": 1.75,
+          "success": true,
+          "parameters": {
+            "destination_xy": [
+              0.8500000000000001,
+              0.38
+            ]
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 2.83405320699967
+        },
+        {
+          "primitive": "place",
+          "start_frame": 809,
+          "end_frame": 867,
+          "duration_s": 2.9,
+          "success": true,
+          "parameters": {
+            "table_height_m": 0.8,
+            "staged": [
+              0.8500000000000001,
+              0.38,
+              0.8
+            ],
+            "retained_side": null
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 4.080051872006152
+        },
+        {
+          "primitive": "push",
+          "start_frame": 1330,
+          "end_frame": 1381,
+          "duration_s": 2.55,
+          "success": true,
+          "parameters": {
+            "destination": [
+              -0.9924371932753498,
+              0.11449488548033303,
+              0.7999952170405826
+            ],
+            "yaw": -0.01304516178610643,
+            "separation": true
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 2.831055128001026
+        },
+        {
+          "primitive": "lift",
+          "start_frame": 1494,
+          "end_frame": 1545,
+          "duration_s": 2.55,
+          "success": true,
+          "parameters": {
+            "height_m": 0.18,
+            "accepted_height_m": [
+              0.15,
+              0.2
+            ]
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 6.092693536003935
+        },
+        {
+          "primitive": "transport_align",
+          "start_frame": 1739,
+          "end_frame": 1762,
+          "duration_s": 1.15,
+          "success": true,
+          "parameters": {
+            "destination_xy": [
+              0.8500000000000001,
+              -0.17000000000000007
+            ]
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 1.4501288710016524
+        },
+        {
+          "primitive": "place",
+          "start_frame": 1762,
+          "end_frame": 1816,
+          "duration_s": 2.7,
+          "success": true,
+          "parameters": {
+            "table_height_m": 0.8,
+            "staged": [
+              0.8500000000000001,
+              -0.17000000000000007,
+              0.8
+            ],
+            "retained_side": "right"
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 4.04215119399305
+        },
+        {
+          "primitive": "push",
+          "start_frame": 1816,
+          "end_frame": 1867,
+          "duration_s": 2.55,
+          "success": true,
+          "parameters": {
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "separation": false
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 3.0455311609985074
+        },
+        {
+          "primitive": "lift",
+          "start_frame": 2427,
+          "end_frame": 2456,
+          "duration_s": 1.45,
+          "success": true,
+          "parameters": {
+            "height_m": 0.18,
+            "accepted_height_m": [
+              0.15,
+              0.2
+            ]
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 3.2111343259894056
+        },
+        {
+          "primitive": "place",
+          "start_frame": 2650,
+          "end_frame": 2708,
+          "duration_s": 2.9,
+          "success": true,
+          "parameters": {
+            "table_height_m": 0.8,
+            "staged": [
+              0.8500000000000001,
+              -0.6150000000000001,
+              0.8
+            ],
+            "retained_side": "right"
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 3.7416314010042697
+        },
+        {
+          "primitive": "push",
+          "start_frame": 2708,
+          "end_frame": 2766,
+          "duration_s": 2.9,
+          "success": true,
+          "parameters": {
+            "destination": [
+              0.8500000000000001,
+              -0.5100000000000001,
+              0.8
+            ],
+            "yaw": 0.0,
+            "separation": false
+          },
+          "failure_reason": null,
+          "planning_and_execution_wall_s": 3.4912620300019626
+        }
+      ],
+      "audit_problems": [],
+      "all_completed_actions_within_3s": true,
+      "all_started_actions_succeeded": true
+    }
+  ],
+  "code_hashes": {
+    "airport_fsm/__init__.py": "72192a03385ce8ff1970c1f924c1a5e415f638ed76a79eb3ec8fa510ab4ae4ea",
+    "airport_fsm/__main__.py": "43dc0927b75422c0a2f90eca56d74c3985627b8115eda2f6d9186f4edc9dffa4",
+    "airport_fsm/batch.py": "2c52c2c9208d2655022cebe62b7c40073336677c5fe498593cd1fd7936bba407",
+    "airport_fsm/camera_guard.py": "987a37c93996f6650c7b68aafa1921b8fc15c96e6c76844ebce7a94ee65641f0",
+    "airport_fsm/contracts.py": "33e73959d838a51f7751b83459b796d04a0c4aa103cee6df519972f4f0a0c8cf",
+    "airport_fsm/exporter.py": "044418034ed137d08e32635b78e9b4cbadc2ac81b0a3687d3d2120a09a94e7bd",
+    "airport_fsm/geometry.py": "ae3b0bad1c2e56065ee71e8772d8afbf9bc2945eeb575514f6128ce2a0f81cd4",
+    "airport_fsm/loading.py": "8fe4851d2a2c2baa7cb202a237f716d9f55661fb59f6de7c927264473f95c5b1",
+    "airport_fsm/machine.py": "869dd988287078cc42b6af858ed8830549ad23c0d810273767be63199c97aa29",
+    "airport_fsm/online_push.py": "c9fef3c635d889f376ff929ef2591c5d0ed3af428474b3dcbf39247632ed0d43",
+    "airport_fsm/primitives.py": "5753130daad08c940fe06f2a3f9835d009743f93725428f9644186c67d1782c6",
+    "airport_fsm/registry.py": "ee85018a7d6cc6552a60d871a9c7596151c59e68aeb5c437c602fa29d9bfe81b",
+    "airport_fsm/runtime.py": "36a3a343bd6b4225c794d6bb4a1410841e2c02fc3995e58471f464c9a2f93caa",
+    "airport_fsm/trace.py": "ec5541ff5c048b140bbc924a6ab6bed22af5081753571f5191b6fba84d96c076",
+    "airport_fsm/trajectory.py": "2fe4747e031428d8becd37fac7137ac69ff1fff2aa886681c3045bf0ae892279",
+    "core.py": "80ffbda1521934b15f3fefe9e560c482a4e7f26445f4f4d6581d5e169ef79e73",
+    "airport_mobile.py": "1059024b0ffe940518261ec933b0190d10965856b0ef26fc7b500e513578b5cc",
+    "airport_recording.py": "520d76b855c0aa0787852d30e0ce4f9cd5c68bc92d161b1a2dc0068fd34038b6"
+  }
+}

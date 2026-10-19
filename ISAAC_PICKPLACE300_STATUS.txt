@@ -1,0 +1,13 @@
+Isaac新增300完整Pick/Place生产（2026-10-17启动快照）
+服务器根 /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_pickplace300_20261017_v1
+目标 新增300完整来源/600片段，旧59对不计入，全部train，不进行训练。
+Guard PID1996949 start_ticks43047257
+Supervisor PID1996950 start_ticks43047260
+日志 /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_pickplace300_20261017_v1/guard.log
+状态 /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_pickplace300_20261017_v1/production_status.json
+冻结清单（仅完成后生成） /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_pickplace300_20261017_v1/dataset_v1/manifest.json
+数据就绪收据（仅完成后生成） /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_pickplace300_20261017_v1/data_ready.json
+页面 http://100.104.0.108:8776/parallel_pickplace300_20261017_v1/index.html
+当前核验为CPU候选预检；完整物理来源0。未来PID状态以真实/proc和状态文件为准。
+视频索引待实际闭合；不列尚未生成的视频文件作为产物。
+更新：首批CPU32/32通过；实际native PID2006582/start_ticks43059320，2026-10-17 14:13 SGT 已进入32房间room_grid_cloned/原生初始化；未闭合完整来源，未训练。

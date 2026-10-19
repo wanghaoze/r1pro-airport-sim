@@ -1,0 +1,1555 @@
+{
+  "count": 32,
+  "inner_reasons": {
+    "measured_joint_overspeed": 1,
+    "ik_unreachable": 12,
+    "retained_contact_lost": 8,
+    "primitive_postcondition_failed": 9,
+    "primitive_release_not_verified": 1,
+    "joining_arm_path_unavailable": 1
+  },
+  "primitive_inner_reasons": [
+    {
+      "primitive": "place",
+      "reason": "primitive_release_not_verified",
+      "count": 1
+    },
+    {
+      "primitive": "push",
+      "reason": "ik_unreachable",
+      "count": 12
+    },
+    {
+      "primitive": "push",
+      "reason": "measured_joint_overspeed",
+      "count": 1
+    },
+    {
+      "primitive": "push",
+      "reason": "primitive_postcondition_failed",
+      "count": 9
+    },
+    {
+      "primitive": "push",
+      "reason": "retained_contact_lost",
+      "count": 8
+    },
+    {
+      "primitive": null,
+      "reason": "joining_arm_path_unavailable",
+      "count": 1
+    }
+  ],
+  "cases": [
+    {
+      "scene": "airport_0006_20270922",
+      "attempt": "a002",
+      "inner_reason": "measured_joint_overspeed",
+      "inner_detail": {
+        "joint": "left_arm_joint5",
+        "measured_rad_s": 1.859196773889682,
+        "cap_rad_s": 1.7600000000000002,
+        "ratio": 1.0563618033464102,
+        "physics_time_s": 119.40199999990313,
+        "strict_ratio_max": 1.01,
+        "completion_ratio_max": 1.05,
+        "excursion_physics_steps": 0,
+        "excursion_seconds": 0.0,
+        "completion_excursion_seconds": 0.2
+      },
+      "operation_failed_frame": 2389,
+      "primitive": "push",
+      "primitive_failed_reason": "measured_joint_overspeed",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 1,
+      "last_free_open_candidate": {
+        "frame": 591,
+        "event": "completion_push_free_open_candidate",
+        "retained_side": "left",
+        "free_side": "right",
+        "start_opening_m": 0.03963646665215492,
+        "target_opening_m": 0.1,
+        "waypoints": 7,
+        "primitive_deadline_step": 691,
+        "arm_waypoints_unchanged": true,
+        "retained_opening_unchanged": true,
+        "qualification": "unvalidated_reference_candidate_full_path_planning_and_actual_execution_required"
+      },
+      "free_open_candidate_before_failure": true,
+      "push_reference": {
+        "frame": 2368,
+        "event": "primitive_push_compliance_reference",
+        "side": "right",
+        "tcp_deflection_m": 0.013213397078196689,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0012_20270928",
+      "attempt": "a002",
+      "inner_reason": "ik_unreachable",
+      "inner_detail": {
+        "side": "right",
+        "position_error_m": 0.017020005745228883,
+        "rotation_error_rad": 0.013997326556882989,
+        "normal_error_m": 3.091088626239191e-05,
+        "normal_tolerance_m": 0.00025
+      },
+      "operation_failed_frame": 1898,
+      "primitive": "push",
+      "primitive_failed_reason": "ik_unreachable",
+      "primitive_start": {
+        "destination": [
+          -1.0150375397121996,
+          0.11353905671744564,
+          0.7999952170405822
+        ],
+        "yaw": 0.012489594386134813,
+        "separation": true
+      },
+      "free_open_candidates": 0,
+      "last_free_open_candidate": null,
+      "free_open_candidate_before_failure": false,
+      "push_reference": null
+    },
+    {
+      "scene": "airport_0014_20270930",
+      "attempt": "a002",
+      "inner_reason": "retained_contact_lost",
+      "inner_detail": {
+        "tray": 0,
+        "side": "left",
+        "table_contact": 0,
+        "force_n": 10.673751297562571,
+        "command_opening_m": 0.0,
+        "clock": {
+          "physics_step_count": 16450,
+          "physics_clock_origin_time": 0.0,
+          "physics_timestep_s": 0.002,
+          "missing_step": 16275,
+          "observed_physics_time_s": 32.89999999999424,
+          "missing_since_s": 32.549999999993815,
+          "elapsed_physics_steps": 175,
+          "elapsed_float_s": 0.35000000000042775,
+          "elapsed_exact_numerator": 7,
+          "elapsed_exact_denominator": 20,
+          "integer_time_allowed": false,
+          "legacy_float_time_allowed": false,
+          "boundary_only_difference": false
+        }
+      },
+      "operation_failed_frame": 658,
+      "primitive": "push",
+      "primitive_failed_reason": "retained_contact_lost",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 1,
+      "last_free_open_candidate": {
+        "frame": 623,
+        "event": "completion_push_free_open_candidate",
+        "retained_side": "left",
+        "free_side": "right",
+        "start_opening_m": 0.039437152445316315,
+        "target_opening_m": 0.1,
+        "waypoints": 7,
+        "primitive_deadline_step": 723,
+        "arm_waypoints_unchanged": true,
+        "retained_opening_unchanged": true,
+        "qualification": "unvalidated_reference_candidate_full_path_planning_and_actual_execution_required"
+      },
+      "free_open_candidate_before_failure": true,
+      "push_reference": {
+        "frame": 623,
+        "event": "primitive_push_compliance_reference",
+        "side": "left",
+        "tcp_deflection_m": 0.016304322009167545,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0058_20270974",
+      "attempt": "a002",
+      "inner_reason": "ik_unreachable",
+      "inner_detail": {
+        "side": "left",
+        "position_error_m": 0.014336545601021171,
+        "rotation_error_rad": 0.01101641309459767,
+        "normal_error_m": 2.5888175285593285e-05,
+        "normal_tolerance_m": 0.00025
+      },
+      "operation_failed_frame": 2038,
+      "primitive": "push",
+      "primitive_failed_reason": "ik_unreachable",
+      "primitive_start": {
+        "destination": [
+          0.8494925223680674,
+          -0.6393521439166451,
+          0.7999965835847344
+        ],
+        "yaw": -0.04047841578471526,
+        "separation": true
+      },
+      "free_open_candidates": 0,
+      "last_free_open_candidate": null,
+      "free_open_candidate_before_failure": false,
+      "push_reference": {
+        "frame": 619,
+        "event": "primitive_push_compliance_reference",
+        "side": "left",
+        "tcp_deflection_m": 0.01096919504032384,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0075_20270991",
+      "attempt": "a002",
+      "inner_reason": "retained_contact_lost",
+      "inner_detail": {
+        "tray": 1,
+        "side": "left",
+        "table_contact": 0,
+        "force_n": 11.646888439905197,
+        "command_opening_m": 0.0,
+        "clock": {
+          "physics_step_count": 34525,
+          "physics_clock_origin_time": 0.0,
+          "physics_timestep_s": 0.002,
+          "missing_step": 34350,
+          "observed_physics_time_s": 69.05000000002047,
+          "missing_since_s": 68.70000000002129,
+          "elapsed_physics_steps": 175,
+          "elapsed_float_s": 0.3499999999991843,
+          "elapsed_exact_numerator": 7,
+          "elapsed_exact_denominator": 20,
+          "integer_time_allowed": false,
+          "legacy_float_time_allowed": false,
+          "boundary_only_difference": false
+        }
+      },
+      "operation_failed_frame": 1381,
+      "primitive": "push",
+      "primitive_failed_reason": "retained_contact_lost",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.8293103448275861,
+          0.801
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 1,
+      "last_free_open_candidate": {
+        "frame": 1357,
+        "event": "completion_push_free_open_candidate",
+        "retained_side": "left",
+        "free_side": "right",
+        "start_opening_m": 0.03800567239522934,
+        "target_opening_m": 0.1,
+        "waypoints": 7,
+        "primitive_deadline_step": 1457,
+        "arm_waypoints_unchanged": true,
+        "retained_opening_unchanged": true,
+        "qualification": "unvalidated_reference_candidate_full_path_planning_and_actual_execution_required"
+      },
+      "free_open_candidate_before_failure": true,
+      "push_reference": {
+        "frame": 1357,
+        "event": "primitive_push_compliance_reference",
+        "side": "left",
+        "tcp_deflection_m": 0.01395485508666231,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0098_20271014",
+      "attempt": "a002",
+      "inner_reason": "primitive_postcondition_failed",
+      "inner_detail": {
+        "stable_frames": 0,
+        "tray_pose": [
+          0.8455757768228235,
+          -0.07599632104293622,
+          0.8235398282330066,
+          -0.013149294805570548,
+          0.000754401432125032,
+          -0.05997992932956074,
+          0.9981126865250319
+        ],
+        "bottom_z": 0.7998679442431033,
+        "table_contact": 1,
+        "gripper_force": [
+          15.39019843399713,
+          18.217130330962227
+        ]
+      },
+      "operation_failed_frame": 2226,
+      "primitive": "push",
+      "primitive_failed_reason": "primitive_postcondition_failed",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 2,
+      "last_free_open_candidate": {
+        "frame": 2175,
+        "event": "completion_push_free_open_candidate",
+        "retained_side": "right",
+        "free_side": "left",
+        "start_opening_m": 0.038347601890563965,
+        "target_opening_m": 0.1,
+        "waypoints": 7,
+        "primitive_deadline_step": 2275,
+        "arm_waypoints_unchanged": true,
+        "retained_opening_unchanged": true,
+        "qualification": "unvalidated_reference_candidate_full_path_planning_and_actual_execution_required"
+      },
+      "free_open_candidate_before_failure": true,
+      "push_reference": {
+        "frame": 2175,
+        "event": "primitive_push_compliance_reference",
+        "side": "right",
+        "tcp_deflection_m": 0.014310211623303683,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0102_20271018",
+      "attempt": "a002",
+      "inner_reason": "retained_contact_lost",
+      "inner_detail": {
+        "tray": 0,
+        "side": "left",
+        "table_contact": 0,
+        "force_n": 10.963180095650888,
+        "command_opening_m": 0.0,
+        "clock": {
+          "physics_step_count": 15375,
+          "physics_clock_origin_time": 0.0,
+          "physics_timestep_s": 0.002,
+          "missing_step": 15200,
+          "observed_physics_time_s": 30.749999999993836,
+          "missing_since_s": 30.39999999999403,
+          "elapsed_physics_steps": 175,
+          "elapsed_float_s": 0.349999999999806,
+          "elapsed_exact_numerator": 7,
+          "elapsed_exact_denominator": 20,
+          "integer_time_allowed": false,
+          "legacy_float_time_allowed": false,
+          "boundary_only_difference": false
+        }
+      },
+      "operation_failed_frame": 615,
+      "primitive": "push",
+      "primitive_failed_reason": "retained_contact_lost",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.5017241379310345,
+          0.801
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 1,
+      "last_free_open_candidate": {
+        "frame": 593,
+        "event": "completion_push_free_open_candidate",
+        "retained_side": "left",
+        "free_side": "right",
+        "start_opening_m": 0.037628162652254105,
+        "target_opening_m": 0.1,
+        "waypoints": 7,
+        "primitive_deadline_step": 693,
+        "arm_waypoints_unchanged": true,
+        "retained_opening_unchanged": true,
+        "qualification": "unvalidated_reference_candidate_full_path_planning_and_actual_execution_required"
+      },
+      "free_open_candidate_before_failure": true,
+      "push_reference": {
+        "frame": 593,
+        "event": "primitive_push_compliance_reference",
+        "side": "left",
+        "tcp_deflection_m": 0.014102049501382078,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0110_20271026",
+      "attempt": "a002",
+      "inner_reason": "primitive_postcondition_failed",
+      "inner_detail": {
+        "stable_frames": 0,
+        "tray_pose": [
+          0.8466963542011234,
+          -0.5545328235050468,
+          0.8217250874712158,
+          -0.020192797821397466,
+          -0.0011115659102867307,
+          -0.05507471425450069,
+          -0.9982774119387642
+        ],
+        "bottom_z": 0.7999947104646973,
+        "table_contact": 2,
+        "gripper_force": [
+          17.434083814970887,
+          14.166402261578288
+        ]
+      },
+      "operation_failed_frame": 701,
+      "primitive": "push",
+      "primitive_failed_reason": "primitive_postcondition_failed",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.5672413793103449,
+          0.801
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 1,
+      "last_free_open_candidate": {
+        "frame": 650,
+        "event": "completion_push_free_open_candidate",
+        "retained_side": "left",
+        "free_side": "right",
+        "start_opening_m": 0.03825468569993973,
+        "target_opening_m": 0.1,
+        "waypoints": 7,
+        "primitive_deadline_step": 750,
+        "arm_waypoints_unchanged": true,
+        "retained_opening_unchanged": true,
+        "qualification": "unvalidated_reference_candidate_full_path_planning_and_actual_execution_required"
+      },
+      "free_open_candidate_before_failure": true,
+      "push_reference": {
+        "frame": 650,
+        "event": "primitive_push_compliance_reference",
+        "side": "left",
+        "tcp_deflection_m": 0.013010463021012738,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0114_20271030",
+      "attempt": "a002",
+      "inner_reason": "ik_unreachable",
+      "inner_detail": {
+        "side": "right",
+        "position_error_m": 0.01580477017055196,
+        "rotation_error_rad": 0.005891261601725313,
+        "normal_error_m": 2.838534630866807e-05,
+        "normal_tolerance_m": 0.00025
+      },
+      "operation_failed_frame": 1972,
+      "primitive": "push",
+      "primitive_failed_reason": "ik_unreachable",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 0,
+      "last_free_open_candidate": null,
+      "free_open_candidate_before_failure": false,
+      "push_reference": {
+        "frame": 1972,
+        "event": "primitive_push_compliance_reference",
+        "side": "right",
+        "tcp_deflection_m": 0.016344330470215544,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0118_20271034",
+      "attempt": "a002",
+      "inner_reason": "primitive_postcondition_failed",
+      "inner_detail": {
+        "stable_frames": 0,
+        "tray_pose": [
+          0.8452311649478816,
+          -0.4860805556229229,
+          0.8173070512902573,
+          0.9988153920580846,
+          -0.043850558929871705,
+          0.0009221993024279336,
+          -0.021073457662147712
+        ],
+        "bottom_z": 0.7999948756802069,
+        "table_contact": 2,
+        "gripper_force": [
+          16.00346090054029,
+          12.75049596673577
+        ]
+      },
+      "operation_failed_frame": 628,
+      "primitive": "push",
+      "primitive_failed_reason": "primitive_postcondition_failed",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.5017241379310345,
+          0.801
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 1,
+      "last_free_open_candidate": {
+        "frame": 577,
+        "event": "completion_push_free_open_candidate",
+        "retained_side": "left",
+        "free_side": "right",
+        "start_opening_m": 0.03946228325366974,
+        "target_opening_m": 0.1,
+        "waypoints": 7,
+        "primitive_deadline_step": 677,
+        "arm_waypoints_unchanged": true,
+        "retained_opening_unchanged": true,
+        "qualification": "unvalidated_reference_candidate_full_path_planning_and_actual_execution_required"
+      },
+      "free_open_candidate_before_failure": true,
+      "push_reference": {
+        "frame": 577,
+        "event": "primitive_push_compliance_reference",
+        "side": "left",
+        "tcp_deflection_m": 0.013168901301195513,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0150_20271066",
+      "attempt": "a002",
+      "inner_reason": "ik_unreachable",
+      "inner_detail": {
+        "side": "right",
+        "position_error_m": 0.016338707190555548,
+        "rotation_error_rad": 0.008008276429855474,
+        "normal_error_m": 2.7966695071546255e-05,
+        "normal_tolerance_m": 0.00025
+      },
+      "operation_failed_frame": 2140,
+      "primitive": "push",
+      "primitive_failed_reason": "ik_unreachable",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 0,
+      "last_free_open_candidate": null,
+      "free_open_candidate_before_failure": false,
+      "push_reference": {
+        "frame": 2140,
+        "event": "primitive_push_compliance_reference",
+        "side": "right",
+        "tcp_deflection_m": 0.018481802079770043,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0174_20271090",
+      "attempt": "a002",
+      "inner_reason": "retained_contact_lost",
+      "inner_detail": {
+        "tray": 0,
+        "side": "left",
+        "table_contact": 0,
+        "force_n": 15.407642182578964,
+        "command_opening_m": 0.0,
+        "clock": {
+          "physics_step_count": 15575,
+          "physics_clock_origin_time": 0.0,
+          "physics_timestep_s": 0.002,
+          "missing_step": 15400,
+          "observed_physics_time_s": 31.149999999993614,
+          "missing_since_s": 30.79999999999381,
+          "elapsed_physics_steps": 175,
+          "elapsed_float_s": 0.349999999999806,
+          "elapsed_exact_numerator": 7,
+          "elapsed_exact_denominator": 20,
+          "integer_time_allowed": false,
+          "legacy_float_time_allowed": false,
+          "boundary_only_difference": false
+        }
+      },
+      "operation_failed_frame": 623,
+      "primitive": "push",
+      "primitive_failed_reason": "retained_contact_lost",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 1,
+      "last_free_open_candidate": {
+        "frame": 593,
+        "event": "completion_push_free_open_candidate",
+        "retained_side": "left",
+        "free_side": "right",
+        "start_opening_m": 0.03923807293176651,
+        "target_opening_m": 0.1,
+        "waypoints": 7,
+        "primitive_deadline_step": 693,
+        "arm_waypoints_unchanged": true,
+        "retained_opening_unchanged": true,
+        "qualification": "unvalidated_reference_candidate_full_path_planning_and_actual_execution_required"
+      },
+      "free_open_candidate_before_failure": true,
+      "push_reference": {
+        "frame": 593,
+        "event": "primitive_push_compliance_reference",
+        "side": "left",
+        "tcp_deflection_m": 0.014205792889381567,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0202_20271118",
+      "attempt": "a002",
+      "inner_reason": "ik_unreachable",
+      "inner_detail": {
+        "side": "right",
+        "position_error_m": 0.014501031846065634,
+        "rotation_error_rad": 0.007099948929617349,
+        "normal_error_m": 2.4963257560517427e-05,
+        "normal_tolerance_m": 0.00025
+      },
+      "operation_failed_frame": 2105,
+      "primitive": "push",
+      "primitive_failed_reason": "ik_unreachable",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 0,
+      "last_free_open_candidate": null,
+      "free_open_candidate_before_failure": false,
+      "push_reference": {
+        "frame": 2105,
+        "event": "primitive_push_compliance_reference",
+        "side": "right",
+        "tcp_deflection_m": 0.018169362277444197,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0206_20271122",
+      "attempt": "a002",
+      "inner_reason": "retained_contact_lost",
+      "inner_detail": {
+        "tray": 0,
+        "side": "left",
+        "table_contact": 0,
+        "force_n": 11.387648296284462,
+        "command_opening_m": 0.0,
+        "clock": {
+          "physics_step_count": 15375,
+          "physics_clock_origin_time": 0.0,
+          "physics_timestep_s": 0.002,
+          "missing_step": 15200,
+          "observed_physics_time_s": 30.749999999993836,
+          "missing_since_s": 30.39999999999403,
+          "elapsed_physics_steps": 175,
+          "elapsed_float_s": 0.349999999999806,
+          "elapsed_exact_numerator": 7,
+          "elapsed_exact_denominator": 20,
+          "integer_time_allowed": false,
+          "legacy_float_time_allowed": false,
+          "boundary_only_difference": false
+        }
+      },
+      "operation_failed_frame": 615,
+      "primitive": "push",
+      "primitive_failed_reason": "retained_contact_lost",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.6327586206896553,
+          0.801
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 1,
+      "last_free_open_candidate": {
+        "frame": 591,
+        "event": "completion_push_free_open_candidate",
+        "retained_side": "left",
+        "free_side": "right",
+        "start_opening_m": 0.037755805999040604,
+        "target_opening_m": 0.1,
+        "waypoints": 7,
+        "primitive_deadline_step": 691,
+        "arm_waypoints_unchanged": true,
+        "retained_opening_unchanged": true,
+        "qualification": "unvalidated_reference_candidate_full_path_planning_and_actual_execution_required"
+      },
+      "free_open_candidate_before_failure": true,
+      "push_reference": {
+        "frame": 591,
+        "event": "primitive_push_compliance_reference",
+        "side": "left",
+        "tcp_deflection_m": 0.014096324752322774,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0218_20271134",
+      "attempt": "a002",
+      "inner_reason": "primitive_release_not_verified",
+      "inner_detail": {
+        "stable_frames": 0,
+        "force": [
+          11.044859103829264,
+          3.946133897122758
+        ],
+        "table_contact": 8,
+        "pose": [
+          0.8620933095952115,
+          -0.5518336954105322,
+          0.799989571666533,
+          0.9993497051233831,
+          4.535060890459296e-06,
+          9.564251111284278e-06,
+          -0.03605782519459697
+        ],
+        "command_opening": [
+          0.0,
+          0.06926260888576508
+        ],
+        "measured_opening": [
+          0.015388383530080318,
+          0.07337457686662674
+        ]
+      },
+      "operation_failed_frame": 579,
+      "primitive": "place",
+      "primitive_failed_reason": "primitive_release_not_verified",
+      "primitive_start": {
+        "table_height_m": 0.8,
+        "staged": [
+          0.8500000000000001,
+          -0.5932758620689654,
+          0.801
+        ],
+        "retained_side": "left"
+      },
+      "free_open_candidates": 0,
+      "last_free_open_candidate": null,
+      "free_open_candidate_before_failure": false,
+      "push_reference": null
+    },
+    {
+      "scene": "airport_0225_20271141",
+      "attempt": "a002",
+      "inner_reason": "ik_unreachable",
+      "inner_detail": {
+        "side": "right",
+        "position_error_m": 0.014234943889949551,
+        "rotation_error_rad": 0.014053126281828091,
+        "normal_error_m": 2.485201797475245e-05,
+        "normal_tolerance_m": 0.00025
+      },
+      "operation_failed_frame": 917,
+      "primitive": "push",
+      "primitive_failed_reason": "ik_unreachable",
+      "primitive_start": {
+        "destination": [
+          -1.0442173567558684,
+          0.3532935034265449,
+          0.7999951625147712
+        ],
+        "yaw": 0.2346485690108768,
+        "separation": true
+      },
+      "free_open_candidates": 0,
+      "last_free_open_candidate": null,
+      "free_open_candidate_before_failure": false,
+      "push_reference": null
+    },
+    {
+      "scene": "airport_0229_20271145",
+      "attempt": "a002",
+      "inner_reason": "ik_unreachable",
+      "inner_detail": {
+        "side": "right",
+        "position_error_m": 0.01567297159112461,
+        "rotation_error_rad": 0.013252189250584712,
+        "normal_error_m": 2.8611441163506335e-05,
+        "normal_tolerance_m": 0.00025
+      },
+      "operation_failed_frame": 996,
+      "primitive": "push",
+      "primitive_failed_reason": "ik_unreachable",
+      "primitive_start": {
+        "destination": [
+          -0.9946806293089774,
+          0.3627570023288958,
+          0.7999932326005006
+        ],
+        "yaw": 0.13318962479710758,
+        "separation": true
+      },
+      "free_open_candidates": 0,
+      "last_free_open_candidate": null,
+      "free_open_candidate_before_failure": false,
+      "push_reference": null
+    },
+    {
+      "scene": "airport_0231_20271147",
+      "attempt": "a002",
+      "inner_reason": "primitive_postcondition_failed",
+      "inner_detail": {
+        "stable_frames": 0,
+        "tray_pose": [
+          0.8452258536086414,
+          -0.08181361319734314,
+          0.816040527188866,
+          0.9990108640704839,
+          0.040642076049564914,
+          0.0007077662638459829,
+          0.01802814994502839
+        ],
+        "bottom_z": 0.7999830966468916,
+        "table_contact": 1,
+        "gripper_force": [
+          16.67875849022833,
+          19.337428806805608
+        ]
+      },
+      "operation_failed_frame": 1665,
+      "primitive": "push",
+      "primitive_failed_reason": "primitive_postcondition_failed",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 1,
+      "last_free_open_candidate": {
+        "frame": 1614,
+        "event": "completion_push_free_open_candidate",
+        "retained_side": "right",
+        "free_side": "left",
+        "start_opening_m": 0.03799346089363098,
+        "target_opening_m": 0.1,
+        "waypoints": 7,
+        "primitive_deadline_step": 1714,
+        "arm_waypoints_unchanged": true,
+        "retained_opening_unchanged": true,
+        "qualification": "unvalidated_reference_candidate_full_path_planning_and_actual_execution_required"
+      },
+      "free_open_candidate_before_failure": true,
+      "push_reference": {
+        "frame": 1614,
+        "event": "primitive_push_compliance_reference",
+        "side": "right",
+        "tcp_deflection_m": 0.015500535712835457,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0234_20271150",
+      "attempt": "a002",
+      "inner_reason": "primitive_postcondition_failed",
+      "inner_detail": {
+        "stable_frames": 0,
+        "tray_pose": [
+          0.8496669838531334,
+          -0.8234977928441558,
+          0.8318972404236545,
+          0.02139286678457036,
+          0.0017381264093580626,
+          0.08099675546111536,
+          0.9964832410894306
+        ],
+        "bottom_z": 0.7999961515123022,
+        "table_contact": 2,
+        "gripper_force": [
+          19.607572883405837,
+          15.067751681189602
+        ]
+      },
+      "operation_failed_frame": 613,
+      "primitive": "push",
+      "primitive_failed_reason": "primitive_postcondition_failed",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.8293103448275861,
+          0.801
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 1,
+      "last_free_open_candidate": {
+        "frame": 562,
+        "event": "completion_push_free_open_candidate",
+        "retained_side": "left",
+        "free_side": "right",
+        "start_opening_m": 0.03766137361526489,
+        "target_opening_m": 0.1,
+        "waypoints": 7,
+        "primitive_deadline_step": 662,
+        "arm_waypoints_unchanged": true,
+        "retained_opening_unchanged": true,
+        "qualification": "unvalidated_reference_candidate_full_path_planning_and_actual_execution_required"
+      },
+      "free_open_candidate_before_failure": true,
+      "push_reference": {
+        "frame": 562,
+        "event": "primitive_push_compliance_reference",
+        "side": "left",
+        "tcp_deflection_m": 0.013685947180358605,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0238_20271154",
+      "attempt": "a002",
+      "inner_reason": "retained_contact_lost",
+      "inner_detail": {
+        "tray": 0,
+        "side": "left",
+        "table_contact": 0,
+        "force_n": 12.646384020227634,
+        "command_opening_m": 0.0,
+        "clock": {
+          "physics_step_count": 16150,
+          "physics_clock_origin_time": 0.0,
+          "physics_timestep_s": 0.002,
+          "missing_step": 15975,
+          "observed_physics_time_s": 32.29999999999351,
+          "missing_since_s": 31.94999999999317,
+          "elapsed_physics_steps": 175,
+          "elapsed_float_s": 0.35000000000033893,
+          "elapsed_exact_numerator": 7,
+          "elapsed_exact_denominator": 20,
+          "integer_time_allowed": false,
+          "legacy_float_time_allowed": false,
+          "boundary_only_difference": false
+        }
+      },
+      "operation_failed_frame": 646,
+      "primitive": "push",
+      "primitive_failed_reason": "retained_contact_lost",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 1,
+      "last_free_open_candidate": {
+        "frame": 620,
+        "event": "completion_push_free_open_candidate",
+        "retained_side": "left",
+        "free_side": "right",
+        "start_opening_m": 0.037898752838373184,
+        "target_opening_m": 0.1,
+        "waypoints": 7,
+        "primitive_deadline_step": 720,
+        "arm_waypoints_unchanged": true,
+        "retained_opening_unchanged": true,
+        "qualification": "unvalidated_reference_candidate_full_path_planning_and_actual_execution_required"
+      },
+      "free_open_candidate_before_failure": true,
+      "push_reference": {
+        "frame": 620,
+        "event": "primitive_push_compliance_reference",
+        "side": "left",
+        "tcp_deflection_m": 0.013896244854192436,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0254_20271170",
+      "attempt": "a002",
+      "inner_reason": "retained_contact_lost",
+      "inner_detail": {
+        "tray": 0,
+        "side": "left",
+        "table_contact": 0,
+        "force_n": 11.724626089661617,
+        "command_opening_m": 0.0,
+        "clock": {
+          "physics_step_count": 17400,
+          "physics_clock_origin_time": 0.0,
+          "physics_timestep_s": 0.002,
+          "missing_step": 17225,
+          "observed_physics_time_s": 34.799999999996565,
+          "missing_since_s": 34.44999999999614,
+          "elapsed_physics_steps": 175,
+          "elapsed_float_s": 0.35000000000042775,
+          "elapsed_exact_numerator": 7,
+          "elapsed_exact_denominator": 20,
+          "integer_time_allowed": false,
+          "legacy_float_time_allowed": false,
+          "boundary_only_difference": false
+        }
+      },
+      "operation_failed_frame": 696,
+      "primitive": "push",
+      "primitive_failed_reason": "retained_contact_lost",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 1,
+      "last_free_open_candidate": {
+        "frame": 670,
+        "event": "completion_push_free_open_candidate",
+        "retained_side": "left",
+        "free_side": "right",
+        "start_opening_m": 0.03803108260035515,
+        "target_opening_m": 0.1,
+        "waypoints": 7,
+        "primitive_deadline_step": 770,
+        "arm_waypoints_unchanged": true,
+        "retained_opening_unchanged": true,
+        "qualification": "unvalidated_reference_candidate_full_path_planning_and_actual_execution_required"
+      },
+      "free_open_candidate_before_failure": true,
+      "push_reference": {
+        "frame": 670,
+        "event": "primitive_push_compliance_reference",
+        "side": "left",
+        "tcp_deflection_m": 0.01312489988748635,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0264_20271180",
+      "attempt": "a002",
+      "inner_reason": "ik_unreachable",
+      "inner_detail": {
+        "side": "right",
+        "position_error_m": 0.012846523099431162,
+        "rotation_error_rad": 0.009546039362635591,
+        "normal_error_m": 2.1623099445977623e-05,
+        "normal_tolerance_m": 0.00025
+      },
+      "operation_failed_frame": 2160,
+      "primitive": "push",
+      "primitive_failed_reason": "ik_unreachable",
+      "primitive_start": {
+        "destination": [
+          -0.8319102569098157,
+          0.1161577606529269,
+          0.7999952170405826
+        ],
+        "yaw": -0.004805963203078297,
+        "separation": true
+      },
+      "free_open_candidates": 0,
+      "last_free_open_candidate": null,
+      "free_open_candidate_before_failure": false,
+      "push_reference": null
+    },
+    {
+      "scene": "airport_0269_20271185",
+      "attempt": "a002",
+      "inner_reason": "ik_unreachable",
+      "inner_detail": {
+        "side": "right",
+        "position_error_m": 0.012772184961186369,
+        "rotation_error_rad": 0.011392398303314703,
+        "normal_error_m": 2.2159999326198943e-05,
+        "normal_tolerance_m": 0.00025
+      },
+      "operation_failed_frame": 582,
+      "primitive": "push",
+      "primitive_failed_reason": "ik_unreachable",
+      "primitive_start": {
+        "destination": [
+          -1.529003664375836,
+          0.3501412791918638,
+          0.799992925515323
+        ],
+        "yaw": 0.2478157885860764,
+        "separation": true
+      },
+      "free_open_candidates": 0,
+      "last_free_open_candidate": null,
+      "free_open_candidate_before_failure": false,
+      "push_reference": null
+    },
+    {
+      "scene": "airport_0275_20271191",
+      "attempt": "a002",
+      "inner_reason": "primitive_postcondition_failed",
+      "inner_detail": {
+        "stable_frames": 0,
+        "tray_pose": [
+          0.8432942354206158,
+          -0.08168385585359443,
+          0.8192438746315142,
+          0.9985987370974279,
+          0.048767295880172215,
+          0.0010024836765740392,
+          0.020525792224367397
+        ],
+        "bottom_z": 0.7999966906524459,
+        "table_contact": 2,
+        "gripper_force": [
+          15.46689118860969,
+          18.800514168978335
+        ]
+      },
+      "operation_failed_frame": 1360,
+      "primitive": "push",
+      "primitive_failed_reason": "primitive_postcondition_failed",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 1,
+      "last_free_open_candidate": {
+        "frame": 1309,
+        "event": "completion_push_free_open_candidate",
+        "retained_side": "right",
+        "free_side": "left",
+        "start_opening_m": 0.040141284465789795,
+        "target_opening_m": 0.1,
+        "waypoints": 7,
+        "primitive_deadline_step": 1409,
+        "arm_waypoints_unchanged": true,
+        "retained_opening_unchanged": true,
+        "qualification": "unvalidated_reference_candidate_full_path_planning_and_actual_execution_required"
+      },
+      "free_open_candidate_before_failure": true,
+      "push_reference": {
+        "frame": 1309,
+        "event": "primitive_push_compliance_reference",
+        "side": "right",
+        "tcp_deflection_m": 0.016075650846159046,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0297_20271213",
+      "attempt": "a002",
+      "inner_reason": "ik_unreachable",
+      "inner_detail": {
+        "side": "right",
+        "position_error_m": 0.014395230625046412,
+        "rotation_error_rad": 0.01195501685369133,
+        "normal_error_m": 2.5258224887636516e-05,
+        "normal_tolerance_m": 0.00025
+      },
+      "operation_failed_frame": 630,
+      "primitive": "push",
+      "primitive_failed_reason": "ik_unreachable",
+      "primitive_start": {
+        "destination": [
+          -1.0309426628432408,
+          0.37444258010515774,
+          0.7999950354986671
+        ],
+        "yaw": 0.12265646283662646,
+        "separation": true
+      },
+      "free_open_candidates": 0,
+      "last_free_open_candidate": null,
+      "free_open_candidate_before_failure": false,
+      "push_reference": null
+    },
+    {
+      "scene": "airport_0298_20271214",
+      "attempt": "a002",
+      "inner_reason": "ik_unreachable",
+      "inner_detail": {
+        "side": "left",
+        "position_error_m": 0.012971161057766127,
+        "rotation_error_rad": 0.009359066972026134,
+        "normal_error_m": 2.1571828721755892e-05,
+        "normal_tolerance_m": 0.00025
+      },
+      "operation_failed_frame": 763,
+      "primitive": "push",
+      "primitive_failed_reason": "ik_unreachable",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.6327586206896553,
+          0.801
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 0,
+      "last_free_open_candidate": null,
+      "free_open_candidate_before_failure": false,
+      "push_reference": {
+        "frame": 763,
+        "event": "primitive_push_compliance_reference",
+        "side": "left",
+        "tcp_deflection_m": 0.014766639347679973,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0308_20271224",
+      "attempt": "a002",
+      "inner_reason": "joining_arm_path_unavailable",
+      "inner_detail": [
+        {
+          "height_offset_m": 0.014,
+          "rim_x_shift_m": 0.0,
+          "reason": "ik_unreachable"
+        },
+        {
+          "height_offset_m": 0.025,
+          "rim_x_shift_m": 0.0,
+          "reason": "ik_unreachable"
+        },
+        {
+          "height_offset_m": 0.0,
+          "rim_x_shift_m": 0.0,
+          "reason": "ik_unreachable"
+        },
+        {
+          "height_offset_m": 0.014,
+          "rim_x_shift_m": 0.025,
+          "reason": "ik_unreachable"
+        },
+        {
+          "height_offset_m": 0.014,
+          "rim_x_shift_m": -0.025,
+          "reason": "ik_unreachable"
+        },
+        {
+          "height_offset_m": 0.025,
+          "rim_x_shift_m": 0.025,
+          "reason": "ik_unreachable"
+        },
+        {
+          "height_offset_m": 0.025,
+          "rim_x_shift_m": -0.025,
+          "reason": "ik_unreachable"
+        }
+      ],
+      "operation_failed_frame": 606,
+      "primitive": null,
+      "primitive_failed_reason": null,
+      "primitive_start": {
+        "destination": [
+          -1.0613081534363598,
+          0.5631350748903483,
+          0.7999951065327089
+        ],
+        "yaw": 0.005106269553713183,
+        "separation": true
+      },
+      "free_open_candidates": 0,
+      "last_free_open_candidate": null,
+      "free_open_candidate_before_failure": false,
+      "push_reference": null
+    },
+    {
+      "scene": "airport_0313_20271229",
+      "attempt": "a002",
+      "inner_reason": "ik_unreachable",
+      "inner_detail": {
+        "side": "right",
+        "position_error_m": 0.013888314681297925,
+        "rotation_error_rad": 0.009742602798710337,
+        "normal_error_m": 2.4032047752586827e-05,
+        "normal_tolerance_m": 0.00025
+      },
+      "operation_failed_frame": 1093,
+      "primitive": "push",
+      "primitive_failed_reason": "ik_unreachable",
+      "primitive_start": {
+        "destination": [
+          -1.4642810031120135,
+          0.38273747040768963,
+          0.7999932316003066
+        ],
+        "yaw": -2.773874041092451,
+        "separation": true
+      },
+      "free_open_candidates": 0,
+      "last_free_open_candidate": null,
+      "free_open_candidate_before_failure": false,
+      "push_reference": null
+    },
+    {
+      "scene": "airport_0339_20271255",
+      "attempt": "a002",
+      "inner_reason": "primitive_postcondition_failed",
+      "inner_detail": {
+        "stable_frames": 0,
+        "tray_pose": [
+          0.8449614420596627,
+          -0.07572249236505994,
+          0.8239151189879445,
+          0.9980612915299086,
+          0.060647098507937626,
+          0.0008519158353018928,
+          0.013959299109552131
+        ],
+        "bottom_z": 0.7999958780294683,
+        "table_contact": 2,
+        "gripper_force": [
+          14.074455646759118,
+          18.625619817915876
+        ]
+      },
+      "operation_failed_frame": 1599,
+      "primitive": "push",
+      "primitive_failed_reason": "primitive_postcondition_failed",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 1,
+      "last_free_open_candidate": {
+        "frame": 1548,
+        "event": "completion_push_free_open_candidate",
+        "retained_side": "right",
+        "free_side": "left",
+        "start_opening_m": 0.03804720565676689,
+        "target_opening_m": 0.1,
+        "waypoints": 7,
+        "primitive_deadline_step": 1648,
+        "arm_waypoints_unchanged": true,
+        "retained_opening_unchanged": true,
+        "qualification": "unvalidated_reference_candidate_full_path_planning_and_actual_execution_required"
+      },
+      "free_open_candidate_before_failure": true,
+      "push_reference": {
+        "frame": 1548,
+        "event": "primitive_push_compliance_reference",
+        "side": "right",
+        "tcp_deflection_m": 0.014105147029245826,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0342_20271258",
+      "attempt": "a002",
+      "inner_reason": "primitive_postcondition_failed",
+      "inner_detail": {
+        "stable_frames": 0,
+        "tray_pose": [
+          0.8408409049662954,
+          -0.08102761527442187,
+          0.8174883006624024,
+          0.998807375608919,
+          0.04430526122194078,
+          0.0009065591872887868,
+          0.020495082525338312
+        ],
+        "bottom_z": 0.7999973780814239,
+        "table_contact": 2,
+        "gripper_force": [
+          15.966281734767936,
+          18.44179407470346
+        ]
+      },
+      "operation_failed_frame": 2061,
+      "primitive": "push",
+      "primitive_failed_reason": "primitive_postcondition_failed",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 1,
+      "last_free_open_candidate": {
+        "frame": 2010,
+        "event": "completion_push_free_open_candidate",
+        "retained_side": "right",
+        "free_side": "left",
+        "start_opening_m": 0.03830011934041977,
+        "target_opening_m": 0.1,
+        "waypoints": 7,
+        "primitive_deadline_step": 2110,
+        "arm_waypoints_unchanged": true,
+        "retained_opening_unchanged": true,
+        "qualification": "unvalidated_reference_candidate_full_path_planning_and_actual_execution_required"
+      },
+      "free_open_candidate_before_failure": true,
+      "push_reference": {
+        "frame": 2010,
+        "event": "primitive_push_compliance_reference",
+        "side": "right",
+        "tcp_deflection_m": 0.014755135687789116,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0362_20271278",
+      "attempt": "a002",
+      "inner_reason": "retained_contact_lost",
+      "inner_detail": {
+        "tray": 0,
+        "side": "left",
+        "table_contact": 0,
+        "force_n": 11.981712447172459,
+        "command_opening_m": 0.0,
+        "clock": {
+          "physics_step_count": 14475,
+          "physics_clock_origin_time": 0.0,
+          "physics_timestep_s": 0.002,
+          "missing_step": 14300,
+          "observed_physics_time_s": 28.949999999994834,
+          "missing_since_s": 28.599999999995028,
+          "elapsed_physics_steps": 175,
+          "elapsed_float_s": 0.349999999999806,
+          "elapsed_exact_numerator": 7,
+          "elapsed_exact_denominator": 20,
+          "integer_time_allowed": false,
+          "legacy_float_time_allowed": false,
+          "boundary_only_difference": false
+        }
+      },
+      "operation_failed_frame": 579,
+      "primitive": "push",
+      "primitive_failed_reason": "retained_contact_lost",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.6327586206896553,
+          0.801
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 1,
+      "last_free_open_candidate": {
+        "frame": 554,
+        "event": "completion_push_free_open_candidate",
+        "retained_side": "left",
+        "free_side": "right",
+        "start_opening_m": 0.038064129650592804,
+        "target_opening_m": 0.1,
+        "waypoints": 7,
+        "primitive_deadline_step": 654,
+        "arm_waypoints_unchanged": true,
+        "retained_opening_unchanged": true,
+        "qualification": "unvalidated_reference_candidate_full_path_planning_and_actual_execution_required"
+      },
+      "free_open_candidate_before_failure": true,
+      "push_reference": {
+        "frame": 554,
+        "event": "primitive_push_compliance_reference",
+        "side": "left",
+        "tcp_deflection_m": 0.014185764763818625,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    },
+    {
+      "scene": "airport_0394_20271310",
+      "attempt": "a002",
+      "inner_reason": "primitive_postcondition_failed",
+      "inner_detail": {
+        "stable_frames": 1,
+        "tray_pose": [
+          0.842834586250664,
+          -0.6855286361945019,
+          0.7999964159983243,
+          -0.022954998864794726,
+          6.222660432009741e-08,
+          7.290531731018487e-06,
+          -0.9997364992706638
+        ],
+        "bottom_z": 0.7999934859048923,
+        "table_contact": 7,
+        "gripper_force": [
+          11.224837938908932,
+          0.0
+        ]
+      },
+      "operation_failed_frame": 672,
+      "primitive": "push",
+      "primitive_failed_reason": "primitive_postcondition_failed",
+      "primitive_start": {
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "separation": false
+      },
+      "free_open_candidates": 0,
+      "last_free_open_candidate": null,
+      "free_open_candidate_before_failure": false,
+      "push_reference": {
+        "frame": 616,
+        "event": "primitive_push_compliance_reference",
+        "side": "left",
+        "tcp_deflection_m": 0.01167947537940723,
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      }
+    }
+  ]
+}

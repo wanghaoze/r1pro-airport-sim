@@ -1,0 +1,478 @@
+--- /home/michelle/haoze/r1pro-airport-sim/releases/coverage_v4_20260928/r1pro_teleop/airport_fsm/primitives.py
++++ /home/michelle/haoze/r1pro-airport-sim/releases/robust_v24b_20260929/r1pro_teleop/airport_fsm/primitives.py
+@@ -5,18 +5,22 @@
+ No state resets, object attachments, time scaling or successful timeout labels.
+ """
+ from contextlib import contextmanager
++from types import MappingProxyType
+ import math
+ import time
+ import numpy as np
+ from .contracts import Fault, ARM_COLUMNS, State, wrap_angle
+ from .geometry import quat_yaw_tilt, rz
+ from .trajectory import CruiseJointPath, BlendedJointPath, entry_limit_envelope
++from .placement_planner import touchdown_position, release_endpoint, descent_budget_frames
+ 
+ 
+ @contextmanager
+ # 统一控制时间预算；墙钟规划耗时单独记录，失败不能伪装为成功。
+ def action(machine, name, **parameters):
+     r=machine.r;start=r.steps;wall=time.monotonic()
++    physical_start = getattr(getattr(r, 'd', None), 'time', None)
++    if physical_start is not None: physical_start = float(physical_start)
+     if getattr(r,'primitive_deadline_step',None) is not None:
+         raise Fault('nested_primitive')
+     r.primitive_deadline_step=start+math.floor(machine.c.primitive_seconds*machine.c.fps)
+@@ -27,7 +31,15 @@
+         machine.log.event('primitive_failed',primitive=name,reason=exc.code,detail=exc.detail,
+                           duration_s=(r.steps-start)/machine.c.fps)
+         # Never follow a rejected fast action with an unlabelled slow retry.
+-        raise Fault(exc.code,exc.detail,recoverable=False) from exc
++        failure = Fault(exc.code,exc.detail,recoverable=False)
++        physical_end = getattr(getattr(r, 'd', None), 'time', None)
++        if physical_end is not None: physical_end = float(physical_end)
++        failure.primitive_execution = MappingProxyType({
++            'name': name, 'start_step': start, 'end_step': r.steps,
++            'elapsed_steps': r.steps-start, 'physical_start': physical_start,
++            'physical_end': physical_end,
++            'physical_elapsed_s': None if physical_start is None or physical_end is None else physical_end-physical_start})
++        raise failure from exc
+     else:
+         machine.log.event('primitive_complete',primitive=name,duration_s=(r.steps-start)/machine.c.fps,
+                           planning_and_execution_wall_s=time.monotonic()-wall)
+@@ -40,7 +52,7 @@
+ 
+ 
+ # 先验证整段路径再执行；禁止通过放宽限位或忽略刚性夹持误差换取速度。
+-def plan(r, points, *, available, minimum=.1, allow_shortcut=False):
++def plan(r, points, *, available, minimum=.1, allow_shortcut=False, extra_path_check=None):
+     """Select a whole C2 reference before motion; reject rather than speed-limit bypass."""
+     points=np.asarray(points,float)
+     low,high=r.m.jnt_range[r.jids].T
+@@ -74,6 +86,10 @@
+         reason=r._path_rejection(path,max(64,len(points)*16),lo,hi,True)
+         if reason is not None:
+             reasons.append({'mode':kind.__name__,**reason});continue
++        if extra_path_check is not None:
++            reason = extra_path_check(path)
++            if reason is not None:
++                reasons.append({'mode':kind.__name__,**reason});continue
+         try:
+             for u in np.linspace(0,1,21):
+                 q,v,a,_=path.evaluate(u,duration)
+@@ -84,6 +100,37 @@
+     raise Fault('primitive_path_infeasible',{'available_s':available,'candidates':reasons})
+ 
+ 
++def plan_withdraw_path(r,points,free_midpoint,held_endpoint,held_columns,*,available,extra_path_check=None):
++    """Preserve original feasible path; two bounded alternatives on duration only."""
++    options=dict(available=available,minimum=min(2.4,available-.05),allow_shortcut=False,
++                 extra_path_check=extra_path_check)
++    try:
++        return plan(r,points,**options)
++    except Fault as original:
++        if original.code!='primitive_path_infeasible' or not isinstance(original.detail,dict):raise
++        rejected=original.detail.get('candidates',[])
++        if not rejected or any(x.get('reason')!='duration' for x in rejected):raise
++        attempts=[]
++        for fraction in (.45,.60):
++            candidate=np.array(points,float,copy=True)
++            middle=np.array(free_midpoint,float,copy=True)
++            middle[held_columns]+=fraction*(held_endpoint[held_columns]-middle[held_columns])
++            candidate[1]=middle
++            try:
++                planned=plan(r,candidate,**options)
++            except Fault as exc:
++                if exc.code!='primitive_path_infeasible':raise
++                attempts.append({'fraction':fraction,'reason':exc.code,'detail':exc.detail})
++                continue
++            r.trace.event('push_withdraw_path_search',original_fraction=.3,selected_fraction=fraction,
++                rejected=attempts,maximum_alternatives=2,original_failure=original.detail,
++                qualification='zero_motion_planning_only_original_geometry_guards_and_budget')
++            return planned
++        r.trace.event('push_withdraw_path_search',original_fraction=.3,selected_fraction=None,
++            rejected=attempts,maximum_alternatives=2,original_failure=original.detail)
++        raise original
++
++
+ def execute(r, planned, predicate=None):
+     path,frames=planned
+     if frames>r.primitive_deadline_step-r.steps:raise Fault('primitive_insufficient_time')
+@@ -92,10 +139,35 @@
+                   knot_stop_fallback=False,reference_bounds=path.reference_bounds)
+     consecutive=0
+     for frame in range(1,frames+1):
+-        r.sim.target=path.evaluate(frame/frames,duration)[0]
+-        r.tick()
++        if r.cfg.substep_control_enabled:
++            from .substep_control import sample_path_targets
++            targets=sample_path_targets(path,frame-1,frames,r.sim.nstep,r.cfg.fps)
++            r.sim.target=targets[-1].copy()
++            r.tick(substep_targets=targets)
++        else:
++            r.sim.target=path.evaluate(frame/frames,duration)[0]
++            r.tick()
+         if predicate is not None:consecutive=consecutive+1 if predicate(r.observation()) else 0
+     return consecutive
++
++
++def retime_push_to_budget(r, planned, available, *, event_name='primitive_push_budget_retime'):
++    """Slow the already checked geometric path; never extend its time budget."""
++    path, frames = planned
++    target_frames = math.floor(available*r.cfg.fps + 1e-9)
++    if target_frames <= frames:
++        return planned
++    duration = target_frames/r.cfg.fps
++    # Retiming changes dynamics even when geometry is identical. Recheck the
++    # actual duration against inverse-dynamics/effort/reference limits.
++    for u in np.linspace(0., 1., 21):
++        q, v, a, _ = path.evaluate(u, duration)
++        r.audit_online_reference(q, v, a)
++    r.trace.event(event_name, original_frames=frames,
++                  execution_frames=target_frames, duration_s=duration,
++                  verification_reserve_s=r.cfg.primitive_settle_s,
++                  geometry_unchanged=True)
++    return path, target_frames
+ 
+ 
+ def settle(r, predicate, seconds, stable_frames=2):
+@@ -112,12 +184,84 @@
+                     'table_contact':int(x['table_contact'][t]),'gripper_force':x['gripper_contact_force'][t]})
+ 
+ 
++def supported_normal_path_rejection(r, path, side, start_z, end_z, *, samples=201):
++    """Reject unintended normal excursions between supported command endpoints.
++
++    This is an additional geometric check, never support-force evidence.
++    The existing 0.25 mm supported IK accuracy bounds this entire reference.
++    Existing explicit endpoint preload is retained; no new preload is added.
++    """
++    tolerance = .00025
++    low, high = min(start_z, end_z)-tolerance, max(start_z, end_z)+tolerance
++    for u in np.linspace(0., 1., samples):
++        q = path.evaluate(u)[0]
++        z = float(r._shadow(q).site(side+'_tcp').xpos[2])
++        if not low <= z <= high:
++            return {'reason': 'supported_normal_reference_excursion',
++                    'side': side, 'path_fraction': float(u), 'command_z_m': z,
++                    'allowed_z_m': [float(low), float(high)], 'tolerance_m': tolerance}
++    return None
++
++
++def finish_release_verification(r, predicate, consecutive, *, required=2):
++    """Hold the release endpoint inside the existing action deadline only.
++
++    The final reference sample can be the first force-free observation. Keep
++    the same target while accumulating the unchanged consecutive-frame gate;
++    every hold still runs Runtime.tick and all physics guards.
++    """
++    if r.primitive_deadline_step is None:
++        raise Fault('primitive_no_verification_budget')
++    if consecutive >= required:
++        return consecutive
++    start = r.steps
++    initial = consecutive
++    remaining_frames = max(0, r.primitive_deadline_step-start)
++    try:
++        while consecutive < required and r.steps < r.primitive_deadline_step:
++            r.tick()
++            consecutive = consecutive+1 if predicate(r.observation()) else 0
++    finally:
++        r.trace.event('primitive_release_verification_wait',
++                      initial_stable_frames=initial, final_stable_frames=consecutive,
++                      wait_frames=r.steps-start, remaining_frames=remaining_frames,
++                      required=required)
++    return consecutive
++
++
+ def object_points(r, position, yaw=None):
+     from .runtime import _homogeneous
+     b=r.d.body(r.g.ids[r.holding]);R=b.xmat.reshape(3,3).copy() if yaw is None else rz(yaw)
+     T=_homogeneous(position,R)
+     goals={s:((T@rel)[:3,3],(T@rel)[:3,:3]) for s,rel in r.grasp_rel.items()}
+-    return r.cartesian(goals,opening=r.cfg.gripper_close_m,wrist=True,preview_only=True)
++    return r.cartesian(goals,opening=r.cfg.gripper_close_m,wrist=True,preview_only=True,
++                       start_from_command=(r.cfg.loaded_command_reference_enabled and
++                                           r.cfg.loaded_command_reference_scope == 'all'))
++
++
++def valid_command_grasp(r,tray):
++    relation=getattr(r,'grasp_rel',None)
++    valid_relation=(getattr(r,'holding',None)==tray and isinstance(relation,dict) and
++        set(relation)=={'left','right'} and all(
++            np.shape(value)==(4,4) and np.isfinite(value).all() and
++            np.allclose(np.asarray(value)[3],[0.,0.,0.,1.],atol=1e-9,rtol=0) and
++            np.allclose(np.asarray(value)[:3,:3].T@np.asarray(value)[:3,:3],np.eye(3),atol=1e-6,rtol=0) and
++            np.linalg.det(np.asarray(value)[:3,:3])>0
++            for value in relation.values()))
++    return valid_relation
++
++
++def checked_command_tcp(r):
++    """Read commanded TCPs while preserving the original 5 cm compliance guard."""
++    from .runtime import _homogeneous
++    shadow=r._shadow(r.sim.target)
++    commanded={};errors={}
++    for side in ('left','right'):
++        site=shadow.site(side+'_tcp');p=site.xpos.copy();R=site.xmat.reshape(3,3).copy()
++        errors[side]=float(np.linalg.norm(p-r.sim.tcp(side)[0]))
++        if errors[side]>.05:raise Fault('primitive_excess_servo_deflection',errors)
++        commanded[side]=_homogeneous(p,R)
++    return commanded,errors
+ 
+ 
+ def continue_loaded_reference(r):
+@@ -128,13 +272,8 @@
+ """
+     from .runtime import _homogeneous
+     b=r.d.body(r.g.ids[r.holding]);T=_homogeneous(b.xpos,b.xmat.reshape(3,3))
+-    shadow=r._shadow(r.sim.target)
+-    rel={};errors={}
+-    for side in ('left','right'):
+-        site=shadow.site(side+'_tcp');p=site.xpos.copy();R=site.xmat.reshape(3,3).copy()
+-        errors[side]=float(np.linalg.norm(p-r.sim.tcp(side)[0]))
+-        if errors[side]>.05:raise Fault('primitive_excess_servo_deflection',errors)
+-        rel[side]=np.linalg.inv(T)@_homogeneous(p,R)
++    commanded,errors=checked_command_tcp(r)
++    rel={side:np.linalg.inv(T)@pose for side,pose in commanded.items()}
+     r.grasp_rel=rel
+     r.trace.event('primitive_command_compliance_reference',tcp_deflection_m=errors,
+                   qualification='command_reference_only_not_observed_rigid_attachment')
+@@ -189,6 +328,55 @@
+ 
+ 
+ # 桌面真实承重后才释放；衔接推动时保留一侧接触。
++def _plan_place_descent(machine, operation, staged, e, top, combined_descent, keep, release, alignment_completed):
++    r=machine.r;c=machine.c;tray=operation.tray
++    target=e['tray_pose'][tray,:3].copy()
++    yaw,_=quat_yaw_tilt(e['tray_pose'][tray,3:])
++    yaw=yaw+float(wrap_angle(operation.yaw-yaw,machine.g.period))
++    # Correct measured alignment residual as part of the fully planned
++    # descent, rather than preserving an off-centre table-edge arrival.
++    target[:2]=staged[:2]
++    # All descents command a level tray, including an already aligned
++    # arrival. Retaining the measured arrival tilt embeds servo sag in the
++    # target; later physical leveling would then lift its bottom off-table.
++    body_id=r.m.body(machine.g.ids[tray]).id
++    vertices=r.evidence.local_vertices[body_id]
++    target_rotation=rz(yaw)
++    target=touchdown_position(target,vertices,target_rotation,table_height=top,
++                              preload=c.primitive_touchdown_preload_m)
++    if c.placement_alignment_xy_feedforward_enabled:
++        from .alignment_feedforward import alignment_xy_target
++        target, correction_info = alignment_xy_target(machine.g, e['tray_pose'], tray,
++            staged, target, yaw, alignment_completed=alignment_completed,
++            scope=c.placement_alignment_xy_feedforward_scope)
++        machine.log.event('placement_alignment_xy_feedforward', target_tray=tray, **correction_info)
++    points=object_points(r,target,yaw)
++    machine.log.event('primitive_descent_geometry',combined_xy_descent=combined_descent,target_position=target,
++                      target_yaw_rad=yaw,target_tilt_rad=0.)
++    if combined_descent and keep:
++        for s in release:
++            col=7 if s=='left' else 15;start=float(points[0][col])
++            preload=max(c.gripper_close_m,float(r.sim.state()[col])-.005)
++            for i,point in enumerate(points):point[col]=start+(preload-start)*i/max(1,len(points)-1)
++        machine.log.event('primitive_supported_release_preload',sides=release,
++                          qualification='fingers_remain_clamped_until_measured_table_contact')
++    # Release only enough to clear measured fingers; the ordinary open
++    # limit remains unchanged. Full opening may follow during retreat.
++    release_start=np.array(points[-1],float)
++    release_end=release_endpoint(release_start,r.sim.state(),release,
++                                open_limit=c.gripper_open_m,clearance=c.primitive_release_clearance_m)
++    machine.log.event('primitive_release_plan',sides=release,measured_opening=r.sim.state()[[7,15]],
++                      command_opening=release_end[[7,15]],clearance_m=c.primitive_release_clearance_m)
++    release_plan=plan(r,[release_start,release_end],available=remaining(r)-.3)
++    try:
++        descent_frames=descent_budget_frames(remaining_frames=r.primitive_deadline_step-r.steps,
++                                            release_frames=release_plan[1],support_frames=math.ceil(.1*c.fps))
++    except ValueError as exc:
++        raise Fault('primitive_insufficient_time',str(exc)) from exc
++    descent=plan(r,points,available=descent_frames/c.fps,allow_shortcut=True)
++    return descent, release_plan
++
++
+ def place(machine,operation,staged):
+     """One local descent plus confirmed unloading/release; base travel is separate."""
+     r=machine.r;c=machine.c;tray=operation.tray;e=r.observation()
+@@ -204,51 +392,55 @@
+     # Explicit transport endpoint, not repeated corrections hidden in place.
+     # It has its own complete three-second budget and audit event.
+     combined_descent=getattr(r,'primitive_lift_xy_shift_m',0.)>.005
+-    if not combined_descent:
+-        with action(machine,'transport_align',destination_xy=staged[:2]):
++    alignment_plan=None
++    alignment_completed=False
++    if combined_descent:
++        # The pickup's lateral escape does not imply that the destination
++        # requires a combined move. Try a complete private loaded alignment
++        # first; a rejected proposal has executed no part of the trajectory.
++        try:
+             continue_loaded_reference(r)
+             current=r.observation()['tray_pose'][tray]
+             aligned=current[:3].copy();aligned[:2]=staged[:2]
+-            yaw,_=quat_yaw_tilt(current[3:]);goal_yaw=yaw+float(wrap_angle(operation.yaw-yaw,machine.g.period))
++            yaw,_=quat_yaw_tilt(current[3:])
++            goal_yaw=yaw+float(wrap_angle(operation.yaw-yaw,machine.g.period))
+             points=object_points(r,aligned,goal_yaw)
++            alignment_plan=plan(r,points,available=c.primitive_seconds-c.primitive_settle_s,allow_shortcut=True)
++        except Fault as exc:
++            machine.log.event('transport_align_deferred',reason=exc.code,detail=exc.detail,
++                              qualification='planning_rejection_before_any_alignment_motion')
++        else:
++            combined_descent=False
++            machine.log.event('transport_align_separated',qualification='complete_alignment_planned_before_execution')
++    if not combined_descent:
++        with action(machine,'transport_align',destination_xy=staged[:2]):
++            if alignment_plan is None:
++                continue_loaded_reference(r)
++                current=r.observation()['tray_pose'][tray]
++                aligned=current[:3].copy();aligned[:2]=staged[:2]
++                yaw,_=quat_yaw_tilt(current[3:]);goal_yaw=yaw+float(wrap_angle(operation.yaw-yaw,machine.g.period))
++                points=object_points(r,aligned,goal_yaw)
++                alignment_plan=plan(r,points,available=remaining(r)-c.primitive_settle_s,allow_shortcut=True)
+             machine.transition(State.TRANSPORT_TRAY,'preplace')
+-            execute(r,plan(r,points,available=remaining(r)-c.primitive_settle_s,allow_shortcut=True))
++            if c.transport_align_use_full_budget:
++                alignment_plan=retime_push_to_budget(r,alignment_plan,remaining(r)-c.primitive_settle_s,
++                    event_name='primitive_transport_align_budget_retime')
++            execute(r,alignment_plan)
+             settle(r,lambda x:np.linalg.norm(x['tray_pose'][tray,:2]-staged[:2])<=c.criteria.position_m,c.primitive_settle_s)
++        alignment_completed=True
+     e=r.observation()
+     with action(machine,'place',table_height_m=top,staged=staged,retained_side=keep):
+         machine.transition(State.PLACE_TRAY,'descend')
++        saved_alignment_relation = ({side:value.copy() for side,value in r.grasp_rel.items()}
++            if c.placement_preserve_command_grasp_enabled and alignment_completed and valid_command_grasp(r,tray) else None)
++        # The original measured reference always gets first refusal. Compliance
++        # validation remains outside the candidate planning catch.
+         continue_loaded_reference(r)
+-        offset=float(e['tray_pose'][tray,2]-e['min_z'][tray])
+-        target=e['tray_pose'][tray,:3].copy();target[2]=top+offset-c.primitive_touchdown_preload_m
+-        yaw,_=quat_yaw_tilt(e['tray_pose'][tray,3:])
+-        if combined_descent:
+-            target[:2]=staged[:2]
+-            yaw=yaw+float(wrap_angle(operation.yaw-yaw,machine.g.period))
+-            # Bottom height must correspond to the TARGET orientation. Using
+-            # the tilted arrival's corner offset after leveling leaves a
+-            # systematic 1-2 cm hover above the table.
+-            vertices=r.evidence.local_vertices[r.m.body(machine.g.ids[tray]).id]
+-            offset=-float((vertices@rz(yaw).T)[:,2].min())
+-            target[2]=top+offset-c.primitive_touchdown_preload_m
+-        points=object_points(r,target,yaw if combined_descent else None)
+-        machine.log.event('primitive_descent_geometry',combined_xy_descent=combined_descent,target_position=target)
+-        if combined_descent and keep:
+-            for s in release:
+-                col=7 if s=='left' else 15;start=float(points[0][col])
+-                preload=max(c.gripper_close_m,float(r.sim.state()[col])-.005)
+-                for i,point in enumerate(points):point[col]=start+(preload-start)*i/max(1,len(points)-1)
+-            machine.log.event('primitive_supported_release_preload',sides=release,
+-                              qualification='fingers_remain_clamped_until_measured_table_contact')
+-        # Release only enough to clear measured fingers; the ordinary open
+-        # limit remains unchanged. Full opening may follow during retreat.
+-        release_start=np.array(points[-1],float);release_end=release_start.copy()
+-        for s in release:
+-            col=7 if s=='left' else 15
+-            release_end[col]=min(c.gripper_open_m,float(r.sim.state()[col])+c.primitive_release_clearance_m)
+-            if combined_descent and keep:release_end[col]=c.gripper_open_m
+-        release_plan=plan(r,[release_start,release_end],available=remaining(r)-.3)
+-        release_s=release_plan[1]/c.fps
+-        descent=plan(r,points,available=remaining(r)-release_s-.1,allow_shortcut=True)
++        from .reference_candidates import plan_reference_candidate
++        descent, release_plan = plan_reference_candidate(r,
++            lambda: _plan_place_descent(machine, operation, staged, e, top, combined_descent,
++                keep, release, alignment_completed), saved_alignment_relation,
++            enabled=c.placement_preserve_command_grasp_enabled, check_command=checked_command_tcp)
+         machine.transition(State.PLACE_TRAY,'descend')
+         support_frames=execute(r,descent,lambda x:x['table_contact'][tray]>0)
+         machine.transition(State.PLACE_TRAY,'support_contact')
+@@ -268,6 +460,7 @@
+                 tilt<=np.deg2rad(c.criteria.tilt_deg))
+         machine.transition(State.PLACE_TRAY,'open')
+         release_frames=execute(r,release_plan,placed)
++        release_frames=finish_release_verification(r,placed,release_frames)
+         if release_frames<2:
+             x=r.observation()
+             raise Fault('primitive_release_not_verified',{'stable_frames':release_frames,
+@@ -281,6 +474,26 @@
+ 
+ 
+ # 保留接触手沿桌面推进，释放手避让；最终间隙在释放后的稳定阶段验收。
++def _execute_push_reference(machine, planned, operation, side, position, rotation,
++                            relation, free_goal, target_z, *, separation):
++    """Scope feedback using the explicit operation contract, never FSM phase."""
++    r = machine.r
++    c = machine.c
++    final_placement = (not separation and operation.slot >= 0 and not operation.temporary)
++    enabled = c.push_yaw_feedback_enabled and (c.push_yaw_feedback_scope == 'all' or final_placement)
++    if c.push_yaw_feedback_enabled:
++        machine.log.event('push_yaw_feedback_scope', scope=c.push_yaw_feedback_scope,
++            separation=bool(separation), temporary=bool(operation.temporary),
++            target_slot=operation.slot, final_placement=final_placement, enabled=enabled)
++    if enabled:
++        from .yaw_feedback import execute_feedback
++        start_z = float(r._shadow(r.sim.target).site(side+'_tcp').xpos[2])
++        normal_check = lambda path: supported_normal_path_rejection(r, path, side, start_z, target_z)
++        return execute_feedback(machine, planned, operation, side, position, rotation,
++                                relation, free_goal, normal_check)
++    return execute(r, planned)
++
++
+ def push(machine,operation,side,relation,*,separation=False,free_retreat=False):
+     from .runtime import _homogeneous
+     r=machine.r;c=machine.c;tray=operation.tray
+@@ -311,7 +524,7 @@
+         feedforward=.012 if separation else c.primitive_push_compensation_m
+         if withdraw_free:feedforward=min(feedforward,.020)
+         position[:2]+=feedforward*delta/max(float(np.linalg.norm(delta)),1e-9)
+-        if withdraw_free:position[2]-=1.5*c.primitive_touchdown_preload_m
++        if withdraw_free:position[2]-=c.push_withdraw_preload_scale*c.primitive_touchdown_preload_m
+         machine.log.event('primitive_push_feedforward',distance_m=feedforward,
+                           nominal_destination=operation.destination,command_position=position)
+         R=r.d.body(machine.g.ids[tray]).xmat.reshape(3,3).copy()
+@@ -321,7 +534,10 @@
+         if free_goal is not None:goals[free_goal[0]]=(free_goal[1],free_goal[2])
+         # Free-arm clearance and the held-arm push share ONE continuous path.
+         # Preserve the free gripper's open target; only the retained hand closes.
+-        points=r.cartesian(goals,wrist=True,preview_only=True)
++        command_reference = c.loaded_command_reference_enabled
++        normal_start_z = (float(r._shadow(r.sim.target).site(side+'_tcp').xpos[2])
++                          if command_reference else None)
++        points=r.cartesian(goals,wrist=True,preview_only=True,start_from_command=command_reference)
+         for point in points:point[7 if side=='left' else 15]=c.gripper_close_m
+         if withdraw_free:
+             col=7 if free=='left' else 15;start=float(points[0][col])
+@@ -329,7 +545,7 @@
+         available=remaining(r)-c.primitive_settle_s
+         if withdraw_free:
+             free_points=r.cartesian({free:(free_goal[1],free_goal[2])},opening=c.gripper_open_m,
+-                                    wrist=True,preview_only=True)
++                                    wrist=True,preview_only=True,start_from_command=command_reference)
+             # Give the released fingers clearance BEFORE the tray reaches
+             # them. Keep this intermediate knot in the single C2 reference.
+             from scipy.spatial.transform import Rotation,Slerp
+@@ -346,7 +562,24 @@
+             cols=np.arange(0,7) if side=='left' else np.arange(8,15)
+             middle[cols]+=.3*(held_points[-1][cols]-middle[cols])
+             points=np.stack([points[0],middle,held_points[len(held_points)//2],held_points[-1]])
+-        execute(r,plan(r,points,available=available,minimum=min(2.4,available-.05),allow_shortcut=not withdraw_free))
++        normal_check = None
++        if command_reference:
++            normal_check = lambda path: supported_normal_path_rejection(
++                r, path, side, normal_start_z, float(T[2,3]))
++            machine.log.event('supported_command_reference',side=side,
++                start_z_m=normal_start_z,end_z_m=float(T[2,3]),normal_tolerance_m=.00025,
++                validation_samples=201,shortcut_enabled=not withdraw_free,
++                qualification='command_geometry_only_original_physical_support_guards_required')
++        if withdraw_free and c.push_withdraw_path_search_enabled:
++            planned=plan_withdraw_path(r,points,free_points[-1],held_points[-1],cols,
++                                      available=available,extra_path_check=normal_check)
++        else:
++            planned=plan(r,points,available=available,minimum=min(2.4,available-.05),
++                         allow_shortcut=not withdraw_free,extra_path_check=normal_check)
++        if c.push_use_full_budget:
++            planned=retime_push_to_budget(r,planned,available)
++        _execute_push_reference(machine, planned, operation, side, position, R, relation,
++                                free_goal, float(T[2,3]), separation=separation)
+         def accepted(x):
+             pose=x['tray_pose'][tray];a,_=quat_yaw_tilt(pose[3:])
+             geometry=(not machine.g.blockers(x['tray_pose'],tray,pose[:3],a,.085)) if separation else (

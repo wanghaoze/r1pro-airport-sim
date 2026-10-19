@@ -1,0 +1,56 @@
+VERIFIED 2026-10-08T18:53:29.8929088+08:00: independent120-pickup comparison finished. pi05:50/50 task successes, strict endpoint0/50; Afford:0/50, all50 ran500frames/25simseconds/100modelcalls, no caught infrastructure errors. Both trained full budgets and evaluation child exit0. Same-parent pose holdout only; not whole3-action or broad unseen-scene generalization. Afford underlying learning/inference cause not yet established. Old failure evidence retained. Trace motion audit: runs/afford_pi05_pickup120_20261008_v2_reference/final_motion_audit.json
+
+HISTORICAL SNAPSHOTS BELOW
+
+VERIFIED 2026-10-08T16:45:34.4453643+08:00
+Comparison training BOTH COMPLETE:pi05 10000updates; Afford1000mask+10000actionBC; actual Afford training child exit0.
+Current stage pi05_evaluation: 11/50 completed,11 successful so far. Small partial same-parent pose holdout; not final overall success. Afford model evaluation queued next.
+Afford final checkpoint:/home/michelle/haoze/r1pro-airport-sim/runs/afford_pi05_pickup120_20261008_v2/affordvla/stage2_010000.pt
+First pi05 case actual success:True,frames:174,inference_calls:35,inverse_solver_calls:0. Actual3camera ffprobe frame counts verified and trace retained.
+Watch first model case:http://100.104.0.108:8767/afford_pi05_pickup120_20261008_v2/evaluations/pi05/case_000/viewer.html
+Server media/trajectory root:/home/michelle/haoze/r1pro-airport-sim/runs/afford_pi05_pickup120_20261008_v2/evaluations/
+
+HISTORICAL SNAPSHOTS BELOW
+VERIFIED 2026-10-08T14:04:11.5066343+08:00 via real SSH/process/GPU/status inspection.
+CURRENT PICKUP COMPARISON: /home/michelle/haoze/r1pro-airport-sim/runs/afford_pi05_pickup120_20261008_v2
+Same120 pickup training sources,50 episode/pose holdouts; not whole3-action task or unseen-parent generalization.
+Pi0.5 actual10000/10000 updates COMPLETE; old trained checkpoint reused read-only. No duplicate retraining.
+AffordVLA actual mask warmup 142/1000; action BC0/10000 at this snapshot. training_started=true; actual finite loss and gradients, CUDA synchronize after optimizer update.
+Current-stage ETA seconds:667.015044890914. ETA excludes future action stage and evaluation; live monitor recomputes from real measured update times.
+Independent supervisor PID2208608, actual trainer PID2208640 onGPU1, full birth/argv/cwd verified. GPU0 unrelated services retained.
+Original error: torch2.7.1+cu126 missing Blackwell kernels. NEW isolated nonbase Conda torch2.7.1+cu128 actualsm120 CUDA finite-gradient test passed. Old environment/run unchanged.
+Original pi05 evaluation50/50 KeyError(gripper_force) at first frame; not meaningful model0% success. New code reads actual gripper_contact_force[0]; actual3interval MuJoCo observation/endpoint-field smoke passed,0inverse calls. Both corrected fixed50 model evaluations queued after Afford training.
+Checks:4local+4server progress/core tests; unified spec1.119 write/check passed locally. CUDA real backwards and observed real gradient training passed.
+Checkpoints: new run/affordvla/stage1_001000.pt and stage2_*.pt once saved; Pi0.5 parent:/home/michelle/haoze/r1pro-airport-sim/runs/afford_pi05_pickup120_20261007_v1/pi05/checkpoints/pi05_pickup120/training/9999
+Logs/status:new run/pipeline_status.json; affordvla/training_status.json; logs/affordvla_training.log; logs/supervisor.log
+Future pure-model videos/trajectories/reports:new run/evaluations/{pi05,affordvla}/case_XXX; new run/comparison.json
+Windows local command from project directory:
+powershell -ExecutionPolicy Bypass -File .\scripts\watch_vla_comparison.ps1
+Server command:
+python3 /home/michelle/haoze/r1pro-airport-sim/scripts/watch_vla_comparison.py --run /home/michelle/haoze/r1pro-airport-sim/runs/afford_pi05_pickup120_20261008_v2 --watch 5
+One-time JSON: same server command replace --watch 5 with --json.
+Ctrl+C exits read-only monitor only; training remains running.
+
+HISTORICAL RECORD BELOW
+Server comparison run:
+/home/michelle/haoze/r1pro-airport-sim/runs/afford_pi05_pickup120_20261007_v1
+Detached supervisor PID3076413, PPID1/SID3076413.
+Same first120 pickup episodes from camera-shell-hidden dataset;50 episode/pose holdouts120..169.
+Same-parent scope; not unseen-scene test or whole3-action task.
+Only instruction: Pick up the tray
+Training dataset: run/data/airport/pickup120_no_camera_shell_v1
+BC budget: each model10000 action updates, global batch8, horizon20, fps20.
+AffordVLA additionally1000 mask pretraining updates; Qwen-text LoRA adaptation, sim target-tray silhouettes (not RAGNet).
+GPU1 reserved by convention; existing GPU0 services retained. Sequential Pi05 then AffordVLA, each followed by fixed50 live tests.
+Pipeline status: run/pipeline_status.json
+Pi05 training: run/pi05/training_status.json
+Afford setup: run/afford_setup_status.json
+Afford training: run/affordvla/training_status.json
+Final reports: run/comparison.json
+Videos+actual trajectories: run/evaluations/{pi05,affordvla}/case_XXX
+Main stdout: /home/michelle/haoze/r1pro-airport-sim/runs/afford_pi05_pickup120_20261007_v1_supervisor.log
+Initial observed state: preparation/caching45of120, not yet gradient training.
+
+Verified gradient training started: Pi05 child113667, at least95 real updates, loss0.0793/grad norm0.4532 at prior snapshot.
+Afford isolated environment/base weights ready; CPU framework+LoRA adapter preflight passed; CUDA forward not yet verified.
+Supervisor remains independent of SSH. Server receipt: run/background_start_verified.json

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/scene-agent" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/runs/afford_pi05_120_20261007/source/AffordVLA" vcs="Git" />
+  </component>
+</project>

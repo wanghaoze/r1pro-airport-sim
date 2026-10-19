@@ -1,0 +1,14 @@
+[
+  {
+    "frame": 418,
+    "measured_envelope_clear": true,
+    "live_qpos_unchanged": true,
+    "live_ctrl_unchanged": true
+  },
+  {
+    "frame": 489,
+    "measured_envelope_clear": false,
+    "live_qpos_unchanged": true,
+    "live_ctrl_unchanged": true
+  }
+]

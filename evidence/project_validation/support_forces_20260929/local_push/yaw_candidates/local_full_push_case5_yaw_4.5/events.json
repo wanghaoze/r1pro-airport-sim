@@ -1,0 +1,104 @@
+[
+  {
+    "frame": 2466,
+    "event": "push_reuses_existing_contact",
+    "target_tray": 1,
+    "retained_side": "right"
+  },
+  {
+    "event": "diagnostic_phase_snapshot",
+    "frame": 2466,
+    "phase": "adjust",
+    "pose": [
+      0.8474720929970493,
+      -0.16917391263313158,
+      0.7999969859235929,
+      0.9999993356143463,
+      -5.188540658040596e-06,
+      -1.2009334325746312e-07,
+      0.0011527115558424143
+    ],
+    "gripper_force": [
+      0.0,
+      13.149085768787394
+    ],
+    "table_contact": 4
+  },
+  {
+    "frame": 2466,
+    "event": "primitive_start",
+    "primitive": "push",
+    "limit_s": 3.0,
+    "parameters": {
+      "destination": [
+        0.8500000000000001,
+        -0.06500000000000006,
+        0.8
+      ],
+      "yaw": 0.0,
+      "separation": false
+    }
+  },
+  {
+    "frame": 2466,
+    "event": "primitive_push_compliance_reference",
+    "side": "right",
+    "tcp_deflection_m": 0.01590449286343411,
+    "qualification": "command_reference_only_not_observed_rigid_attachment"
+  },
+  {
+    "frame": 2466,
+    "event": "primitive_push_feedforward",
+    "distance_m": 0.02,
+    "nominal_destination": [
+      0.8500000000000001,
+      -0.06500000000000006,
+      0.8
+    ],
+    "command_position": [
+      0.8504851815563719,
+      -0.045005885894660036,
+      0.795496985923593
+    ]
+  },
+  {
+    "frame": 2466,
+    "event": "supported_command_reference",
+    "side": "right",
+    "start_z_m": 0.9032149546403252,
+    "end_z_m": 0.8987149546403252,
+    "normal_tolerance_m": 0.00025,
+    "validation_samples": 201,
+    "shortcut_enabled": false,
+    "qualification": "command_geometry_only_original_physical_support_guards_required"
+  },
+  {
+    "frame": 2466,
+    "event": "primitive_failed",
+    "primitive": "push",
+    "reason": "primitive_path_infeasible",
+    "detail": {
+      "available_s": 2.9,
+      "candidates": [
+        {
+          "mode": "CruiseJointPath",
+          "reason": "duration",
+          "required_s": 4.35
+        },
+        {
+          "mode": "BlendedJointPath",
+          "reason": "supported_normal_reference_excursion",
+          "side": "right",
+          "path_fraction": 0.885,
+          "command_z_m": 0.8984505606200213,
+          "allowed_z_m": [
+            0.8984649546403253,
+            0.9034649546403252
+          ],
+          "tolerance_m": 0.00025
+        }
+      ]
+    },
+    "duration_s": 0.0
+  }
+]

@@ -1,0 +1,182 @@
+{
+  "qualification": "private_local_push_diagnostic_not_complete_episode",
+  "source": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v11_20260929/runs/regression",
+  "controller": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v11_20260929",
+  "case": 4,
+  "frame": 2010,
+  "tray": 1,
+  "side": "right",
+  "incoming_target_source": "previous_recorded_action",
+  "modifications": {},
+  "cartesian_withdraw_middle": false,
+  "entry_rollpitchyaw_deg": [
+    -0.0002871521591633712,
+    -0.00015716492661717516,
+    179.75114530823308
+  ],
+  "arm_kv_scale": 1.5,
+  "arm_position_servos": [
+    {
+      "name": "left_arm_joint1_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 37.5
+    },
+    {
+      "name": "left_arm_joint2_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 37.5
+    },
+    {
+      "name": "left_arm_joint3_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 37.5
+    },
+    {
+      "name": "left_arm_joint4_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 37.5
+    },
+    {
+      "name": "left_arm_joint5_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 37.5
+    },
+    {
+      "name": "left_arm_joint6_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 37.5
+    },
+    {
+      "name": "left_arm_joint7_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 37.5
+    },
+    {
+      "name": "right_arm_joint1_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 37.5
+    },
+    {
+      "name": "right_arm_joint2_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 37.5
+    },
+    {
+      "name": "right_arm_joint3_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 37.5
+    },
+    {
+      "name": "right_arm_joint4_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 37.5
+    },
+    {
+      "name": "right_arm_joint5_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 37.5
+    },
+    {
+      "name": "right_arm_joint6_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 37.5
+    },
+    {
+      "name": "right_arm_joint7_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 37.5
+    }
+  ],
+  "timestep_intervention": null,
+  "source_timestep_s": 0.002,
+  "timestep_s": 0.002,
+  "substeps_per_frame": 25,
+  "rollout_wall_s": 2.0671502109616995,
+  "solver_settings": {
+    "integrator": "mjINT_IMPLICITFAST",
+    "solver": "mjSOL_NEWTON",
+    "iterations": 80,
+    "tolerance": 1e-08,
+    "geom_solref_unique": [
+      [
+        0.006,
+        1.0
+      ]
+    ],
+    "geom_solimp_unique": [
+      [
+        0.95,
+        0.99,
+        0.001,
+        0.5,
+        2.0
+      ]
+    ]
+  },
+  "restored_context": {
+    "retained_contact": [
+      1,
+      "right"
+    ],
+    "holding": null,
+    "phase": "adjust",
+    "primitive_lift_xy_shift_m": 0.0,
+    "initial_bottom": [
+      0.801,
+      0.801,
+      0.801
+    ],
+    "support_timer": "reset only after confirming actual entry support",
+    "warnings": "fresh zero counters; source episode would have stopped at any prior warning",
+    "diagnostic_counters": "wall budget restarted; historical peak power and inverse-call tallies not restored"
+  },
+  "exact_original_trajectory_match": false,
+  "maximum_qpos_error": 0.01762303438865165,
+  "maximum_qvel_error": 0.19398432831380746,
+  "maximum_action_error": 0.0,
+  "endpoint_qpos_error": 0.01806083278479853,
+  "primitive_returned": false,
+  "failure": {
+    "code": "retained_contact_lost",
+    "detail": {
+      "tray": 1,
+      "side": "right",
+      "table_contact": 0,
+      "force_n": 10.042666542869231,
+      "command_opening_m": 0.0
+    }
+  },
+  "elapsed_s": 1.2999999999969702,
+  "final_pose": [
+    0.8501148306546783,
+    -0.14843133614426116,
+    0.8000926693847281,
+    -0.0012283898544533912,
+    1.875578476534792e-05,
+    5.731045719475846e-05,
+    0.9999992437107624
+  ],
+  "final_forces": [
+    0.0,
+    10.042666542869231
+  ],
+  "final_table_contacts": 0,
+  "physics_samples": 650,
+  "longest_physics_missing_s": 0.006,
+  "table_force_peak_n": 47.886510272568955,
+  "support_fraction": 0.9123076923076923
+}

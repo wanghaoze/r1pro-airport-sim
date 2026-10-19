@@ -1,0 +1,22 @@
+{
+  "slot": 1,
+  "accepted_neighbor_pose": [
+    true,
+    true,
+    false
+  ],
+  "reserved_gaps_m": [
+    0.012708759239607903,
+    -0.001960014360169543
+  ],
+  "required_gap_m": [
+    0.001,
+    0.028999999999999998
+  ],
+  "footprint_supported": true,
+  "at_slot": true,
+  "future_overlap_slots": [
+    2
+  ],
+  "slot_geometry_ready": false
+}

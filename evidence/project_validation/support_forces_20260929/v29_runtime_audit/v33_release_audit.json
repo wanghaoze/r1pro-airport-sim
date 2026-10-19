@@ -1,0 +1,2320 @@
+[
+  {
+    "case": 6,
+    "attempt": 2,
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v33_20260929/runs/completion_candidates/ik80/attempts/airport_0006_20270922/a002",
+    "failure": {
+      "frame": 2450,
+      "event": "primitive_failed",
+      "primitive": "place",
+      "reason": "primitive_release_not_verified",
+      "detail": {
+        "stable_frames": 0,
+        "force": [
+          0.7865874308895704,
+          14.030122265090675
+        ],
+        "table_contact": 4,
+        "pose": [
+          0.848986351465815,
+          -0.1649611375017058,
+          0.7999957851760507,
+          0.9999625803224017,
+          3.7146936197547526e-07,
+          6.869225656143536e-07,
+          -0.008650893269187469
+        ],
+        "command_opening": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured_opening": [
+          0.03771711513400078,
+          0.018545495346188545
+        ]
+      },
+      "duration_s": 5.0,
+      "configured_budget_s": 5.0,
+      "strict_budget_s": 3.0,
+      "actual_duration_s": 5.0,
+      "duration_source": "executed_physics_steps",
+      "strict_duration_exceeded": true
+    },
+    "tilt_deg": 8.949160712974904e-05,
+    "operation": {
+      "frame": 1737,
+      "event": "operation_selected",
+      "operation": {
+        "tray": 0,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "operation_index": 3
+    },
+    "events": [
+      {
+        "frame": 2350,
+        "event": "grasp_transform_refreshed",
+        "stage": "before_preplace",
+        "gripper_contact_force_n": [
+          12.57628914847141,
+          12.975746560735795
+        ]
+      },
+      {
+        "frame": 2350,
+        "event": "primitive_command_compliance_reference",
+        "tcp_deflection_m": {
+          "left": 0.020594267365182415,
+          "right": 0.0173842591195465
+        },
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      },
+      {
+        "frame": 2350,
+        "event": "transport_align_deferred",
+        "reason": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.036951044286453245,
+          "rotation_error_rad": 0.05815745401435549
+        },
+        "qualification": "planning_rejection_before_any_alignment_motion"
+      },
+      {
+        "frame": 2350,
+        "event": "primitive_start",
+        "primitive": "place",
+        "limit_s": 5.0,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "parameters": {
+          "table_height_m": 0.8,
+          "staged": [
+            0.8500000000000001,
+            -0.17000000000000007,
+            0.8
+          ],
+          "retained_side": "right"
+        }
+      },
+      {
+        "frame": 2350,
+        "event": "state_transition",
+        "previous": [
+          "TRANSPORT_TRAY",
+          "transport"
+        ],
+        "state": "PLACE_TRAY",
+        "dag_node_id": "transition_000050",
+        "dag_predecessor": "transition_000049",
+        "phase": "descend",
+        "target_tray": 0,
+        "target_slot": 1,
+        "recovery": false,
+        "simulation_time": 117.49999999990756
+      },
+      {
+        "frame": 2350,
+        "event": "primitive_command_compliance_reference",
+        "tcp_deflection_m": {
+          "left": 0.020594267365182415,
+          "right": 0.0173842591195465
+        },
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      },
+      {
+        "frame": 2350,
+        "event": "placement_alignment_xy_feedforward",
+        "target_tray": 0,
+        "original_command": [
+          0.8500000000000001,
+          -0.17000000000000007,
+          0.797
+        ],
+        "measured_xy": [
+          0.8686037215000415,
+          -0.07973808798656261
+        ],
+        "alignment_residual_xy": [
+          -0.018603721500041415,
+          -0.09026191201343746
+        ],
+        "max_norm_m": 0.01,
+        "footprint_margin_m": 0.004,
+        "blocker_clearance_m": 0.065,
+        "acceptance_staged": [
+          0.8500000000000001,
+          -0.17000000000000007,
+          0.8
+        ],
+        "alignment_completed": false,
+        "applied": false,
+        "rejection": "no_completed_independent_alignment",
+        "scope": "support_risk",
+        "selected_command": [
+          0.8500000000000001,
+          -0.17000000000000007,
+          0.797
+        ],
+        "qualification": "bounded_command_feedforward_original_acceptance_and_physics_unchanged"
+      },
+      {
+        "frame": 2350,
+        "event": "primitive_descent_geometry",
+        "combined_xy_descent": true,
+        "target_position": [
+          0.8500000000000001,
+          -0.17000000000000007,
+          0.797
+        ],
+        "target_yaw_rad": 5.551115123125783e-17,
+        "target_tilt_rad": 0.0
+      },
+      {
+        "frame": 2350,
+        "event": "primitive_supported_release_preload",
+        "sides": [
+          "left"
+        ],
+        "qualification": "fingers_remain_clamped_until_measured_table_contact"
+      },
+      {
+        "frame": 2350,
+        "event": "primitive_release_plan",
+        "sides": [
+          "left"
+        ],
+        "measured_opening": [
+          0.017000706866383553,
+          0.01757514849305153
+        ],
+        "command_opening": [
+          0.037000706866383556,
+          0.0
+        ],
+        "clearance_m": 0.02
+      },
+      {
+        "frame": 2350,
+        "event": "state_transition",
+        "previous": [
+          "PLACE_TRAY",
+          "descend"
+        ],
+        "state": "PLACE_TRAY",
+        "dag_node_id": "transition_000051",
+        "dag_predecessor": "transition_000050",
+        "phase": "descend",
+        "target_tray": 0,
+        "target_slot": 1,
+        "recovery": false,
+        "simulation_time": 117.49999999990756
+      },
+      {
+        "frame": 2350,
+        "event": "primitive_reference",
+        "duration_s": 3.25,
+        "controller": "BlendedJointPath",
+        "knot_stop_fallback": false,
+        "reference_bounds": {
+          "velocity": [
+            0.24457929128224395,
+            0.22481929240652695,
+            0.30708740179703725,
+            0.2163533606466309,
+            0.6650829943828162,
+            0.19393576331196763,
+            0.5296527170338866,
+            0.006731460676813372,
+            0.24088901550834507,
+            0.322470811223915,
+            0.26290173469374706,
+            0.8527843377963118,
+            0.21067306224239507,
+            0.37406154020560806,
+            0.6649273871514713,
+            0.0
+          ],
+          "acceleration": [
+            0.6766364277391971,
+            0.614246296337075,
+            0.7339308053488766,
+            0.4995457638237907,
+            1.5392404690423236,
+            0.42682999301399444,
+            1.1452824586426085,
+            0.017652912129070577,
+            0.546234501937597,
+            0.9007630055503353,
+            0.6197422509302449,
+            1.9199961600057605,
+            0.4540938354008787,
+            0.8325513095226533,
+            1.730452719631022,
+            0.0
+          ],
+          "jerk": [
+            6.4048942762033105,
+            5.758394841647039,
+            6.2656312681728945,
+            3.9223439935581794,
+            12.10793419877174,
+            3.229212770994988,
+            8.547530224956555,
+            0.16034954978076021,
+            4.229128805273246,
+            8.5903379642338,
+            5.4635219727886986,
+            14.783196325997247,
+            3.3807150786023703,
+            6.353526028720476,
+            15.626570086466302,
+            0.0
+          ]
+        }
+      },
+      {
+        "frame": 2415,
+        "event": "state_transition",
+        "previous": [
+          "PLACE_TRAY",
+          "descend"
+        ],
+        "state": "PLACE_TRAY",
+        "dag_node_id": "transition_000052",
+        "dag_predecessor": "transition_000051",
+        "phase": "support_contact",
+        "target_tray": 0,
+        "target_slot": 1,
+        "recovery": false,
+        "simulation_time": 120.74999999989998
+      },
+      {
+        "frame": 2415,
+        "event": "state_transition",
+        "previous": [
+          "PLACE_TRAY",
+          "support_contact"
+        ],
+        "state": "PLACE_TRAY",
+        "dag_node_id": "transition_000053",
+        "dag_predecessor": "transition_000052",
+        "phase": "open",
+        "target_tray": 0,
+        "target_slot": 1,
+        "recovery": false,
+        "simulation_time": 120.74999999989998
+      },
+      {
+        "frame": 2415,
+        "event": "primitive_reference",
+        "duration_s": 0.8,
+        "controller": "CruiseJointPath",
+        "knot_stop_fallback": false,
+        "reference_bounds": {
+          "velocity": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.052913315485624515,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceleration": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.25198370601131065,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "jerk": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            3.1999904000192,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      {
+        "frame": 2450,
+        "event": "primitive_release_verification_wait",
+        "initial_stable_frames": 0,
+        "final_stable_frames": 0,
+        "wait_frames": 19,
+        "remaining_frames": 19,
+        "required": 2
+      },
+      {
+        "frame": 2450,
+        "event": "primitive_failed",
+        "primitive": "place",
+        "reason": "primitive_release_not_verified",
+        "detail": {
+          "stable_frames": 0,
+          "force": [
+            0.7865874308895704,
+            14.030122265090675
+          ],
+          "table_contact": 4,
+          "pose": [
+            0.848986351465815,
+            -0.1649611375017058,
+            0.7999957851760507,
+            0.9999625803224017,
+            3.7146936197547526e-07,
+            6.869225656143536e-07,
+            -0.008650893269187469
+          ],
+          "command_opening": [
+            0.037000708281993866,
+            0.0
+          ],
+          "measured_opening": [
+            0.03771711513400078,
+            0.018545495346188545
+          ]
+        },
+        "duration_s": 5.0,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 5.0,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": true
+      },
+      {
+        "frame": 2450,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "contact_handoff_aborted",
+        "detail": {
+          "reason": "primitive_release_not_verified",
+          "detail": {
+            "stable_frames": 0,
+            "force": [
+              0.7865874308895704,
+              14.030122265090675
+            ],
+            "table_contact": 4,
+            "pose": [
+              0.848986351465815,
+              -0.1649611375017058,
+              0.7999957851760507,
+              0.9999625803224017,
+              3.7146936197547526e-07,
+              6.869225656143536e-07,
+              -0.008650893269187469
+            ],
+            "command_opening": [
+              0.037000708281993866,
+              0.0
+            ],
+            "measured_opening": [
+              0.03771711513400078,
+              0.018545495346188545
+            ]
+          }
+        },
+        "recoverable": false
+      }
+    ],
+    "tail": [
+      {
+        "frame": 2409,
+        "time": 120.44999999990068,
+        "force": [
+          5.8932483902433015,
+          13.047694484267577
+        ],
+        "command": [
+          0.011854815296828747,
+          0.0
+        ],
+        "measured": [
+          0.017681511119008064,
+          0.017913708463311195
+        ],
+        "table": 0.0
+      },
+      {
+        "frame": 2410,
+        "time": 120.49999999990057,
+        "force": [
+          6.113531398692532,
+          12.783277468767881
+        ],
+        "command": [
+          0.01192164234817028,
+          0.0
+        ],
+        "measured": [
+          0.017781125381588936,
+          0.018031369894742966
+        ],
+        "table": 1.0
+      },
+      {
+        "frame": 2411,
+        "time": 120.54999999990045,
+        "force": [
+          5.76229057168889,
+          13.904806411988675
+        ],
+        "command": [
+          0.011965448036789894,
+          0.0
+        ],
+        "measured": [
+          0.0178157240152359,
+          0.017936959862709045
+        ],
+        "table": 3.0
+      },
+      {
+        "frame": 2412,
+        "time": 120.59999999990033,
+        "force": [
+          5.638683482242351,
+          13.957176350191547
+        ],
+        "command": [
+          0.01198967732489109,
+          0.0
+        ],
+        "measured": [
+          0.017680443823337555,
+          0.018065014854073524
+        ],
+        "table": 3.0
+      },
+      {
+        "frame": 2413,
+        "time": 120.64999999990022,
+        "force": [
+          5.477998391639259,
+          13.970403473162417
+        ],
+        "command": [
+          0.011999253183603287,
+          0.0
+        ],
+        "measured": [
+          0.01750493049621582,
+          0.01820007711648941
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2414,
+        "time": 120.6999999999001,
+        "force": [
+          5.362122603602215,
+          14.017862421092566
+        ],
+        "command": [
+          0.012000706978142262,
+          0.0
+        ],
+        "measured": [
+          0.01742050051689148,
+          0.018312890082597733
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2415,
+        "time": 120.74999999989998,
+        "force": [
+          5.320407763775114,
+          14.022172609589447
+        ],
+        "command": [
+          0.012059317901730537,
+          0.0
+        ],
+        "measured": [
+          0.01735674776136875,
+          0.018388204276561737
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2416,
+        "time": 120.79999999989987,
+        "force": [
+          5.250042512367209,
+          14.018234568678814
+        ],
+        "command": [
+          0.012429860420525074,
+          0.0
+        ],
+        "measured": [
+          0.017330408096313477,
+          0.018436575308442116
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2417,
+        "time": 120.84999999989975,
+        "force": [
+          4.958431935273384,
+          14.017462957574805
+        ],
+        "command": [
+          0.013314989395439625,
+          0.0
+        ],
+        "measured": [
+          0.017349641770124435,
+          0.01846664771437645
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2418,
+        "time": 120.89999999989963,
+        "force": [
+          4.40085806844341,
+          14.01936250261614
+        ],
+        "command": [
+          0.014798151329159737,
+          0.0
+        ],
+        "measured": [
+          0.017497651278972626,
+          0.018485628068447113
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2419,
+        "time": 120.94999999989952,
+        "force": [
+          4.3212443919389045,
+          14.022611532991226
+        ],
+        "command": [
+          0.016843583434820175,
+          0.0
+        ],
+        "measured": [
+          0.018389401957392693,
+          0.01849781535565853
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2420,
+        "time": 120.9999999998994,
+        "force": [
+          4.030795636231117,
+          14.026618229655892
+        ],
+        "command": [
+          0.0192963145673275,
+          0.0
+        ],
+        "measured": [
+          0.019948868080973625,
+          0.018505901098251343
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2421,
+        "time": 121.04999999989928,
+        "force": [
+          3.6904189425502043,
+          14.02930428985903
+        ],
+        "command": [
+          0.021896541118621826,
+          0.0
+        ],
+        "measured": [
+          0.021868914365768433,
+          0.018513325601816177
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2422,
+        "time": 121.09999999989917,
+        "force": [
+          3.3118156801383503,
+          14.031064320151108
+        ],
+        "command": [
+          0.024500707164406776,
+          0.0
+        ],
+        "measured": [
+          0.024039054289460182,
+          0.018520094454288483
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2423,
+        "time": 121.14999999989905,
+        "force": [
+          2.9036552291503783,
+          14.034327657377734
+        ],
+        "command": [
+          0.027104873210191727,
+          0.0
+        ],
+        "measured": [
+          0.02625550888478756,
+          0.018526138737797737
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2424,
+        "time": 121.19999999989894,
+        "force": [
+          2.5088683336677455,
+          14.037170376956638
+        ],
+        "command": [
+          0.029705097898840904,
+          0.0
+        ],
+        "measured": [
+          0.028501510620117188,
+          0.018531326204538345
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2425,
+        "time": 121.24999999989882,
+        "force": [
+          1.9242130039734693,
+          14.035974860228254
+        ],
+        "command": [
+          0.03215783089399338,
+          0.0
+        ],
+        "measured": [
+          0.030714932829141617,
+          0.018535815179347992
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2426,
+        "time": 121.2999999998987,
+        "force": [
+          1.8315644935689948,
+          14.03542757181049
+        ],
+        "command": [
+          0.03420326113700867,
+          0.0
+        ],
+        "measured": [
+          0.03281257301568985,
+          0.01853964477777481
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2427,
+        "time": 121.34999999989859,
+        "force": [
+          1.4600017870277715,
+          14.037385582100491
+        ],
+        "command": [
+          0.0356864258646965,
+          0.0
+        ],
+        "measured": [
+          0.0347723551094532,
+          0.018543515354394913
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2428,
+        "time": 121.39999999989847,
+        "force": [
+          1.3080655406545687,
+          14.040287640797231
+        ],
+        "command": [
+          0.03657155483961105,
+          0.0
+        ],
+        "measured": [
+          0.036204129457473755,
+          0.018546273931860924
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2429,
+        "time": 121.44999999989835,
+        "force": [
+          0.961400526802521,
+          14.044022038359575
+        ],
+        "command": [
+          0.036942094564437866,
+          0.0
+        ],
+        "measured": [
+          0.03706805035471916,
+          0.01854841224849224
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2430,
+        "time": 121.49999999989824,
+        "force": [
+          0.6672714217602991,
+          14.047620730489001
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.03754667565226555,
+          0.018549639731645584
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2431,
+        "time": 121.54999999989812,
+        "force": [
+          0.933521913325283,
+          14.049057582009414
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.03777613118290901,
+          0.018549660220742226
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2432,
+        "time": 121.599999999898,
+        "force": [
+          0.7891157897250136,
+          14.047376600923933
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.03775511682033539,
+          0.018549302592873573
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2433,
+        "time": 121.64999999989789,
+        "force": [
+          0.8240743425017542,
+          14.042328927333529
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.03774175047874451,
+          0.01854846626520157
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2434,
+        "time": 121.69999999989777,
+        "force": [
+          0.8058291431028135,
+          14.037547315447878
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.03773994743824005,
+          0.018547501415014267
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2435,
+        "time": 121.74999999989765,
+        "force": [
+          0.8002524359645193,
+          14.03478527166963
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.037730198353528976,
+          0.018546395003795624
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2436,
+        "time": 121.79999999989754,
+        "force": [
+          0.7964139432362032,
+          14.03368949600797
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.03772598132491112,
+          0.01854543574154377
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2437,
+        "time": 121.84999999989742,
+        "force": [
+          0.7933480388135339,
+          14.033033967763544
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.03772237151861191,
+          0.018544703722000122
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2438,
+        "time": 121.8999999998973,
+        "force": [
+          0.7920931455876866,
+          14.032712809016715
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.03772040456533432,
+          0.018544243648648262
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2439,
+        "time": 121.94999999989719,
+        "force": [
+          0.7914733555941529,
+          14.032585677538492
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.03771944344043732,
+          0.018544046208262444
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2440,
+        "time": 121.99999999989707,
+        "force": [
+          0.7913465695461865,
+          14.032543831596383
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.03771910071372986,
+          0.018544059246778488
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2441,
+        "time": 122.04999999989695,
+        "force": [
+          0.7913147633248073,
+          14.03250500144992
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.037719059735536575,
+          0.018544219434261322
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2442,
+        "time": 122.09999999989684,
+        "force": [
+          0.7911700347007861,
+          14.032419808284398
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.03771904110908508,
+          0.018544457852840424
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2443,
+        "time": 122.14999999989672,
+        "force": [
+          0.7907964207992068,
+          14.032266858146036
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.03771887719631195,
+          0.018544720485806465
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2444,
+        "time": 122.1999999998966,
+        "force": [
+          0.7907296507603132,
+          14.032032674911834
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.03771884739398956,
+          0.018544966354966164
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2445,
+        "time": 122.24999999989649,
+        "force": [
+          0.7902297118620247,
+          14.031737845996085
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.03771892189979553,
+          0.01854516752064228
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2446,
+        "time": 122.29999999989637,
+        "force": [
+          0.7894724823309361,
+          14.03140993114546
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.037718597799539566,
+          0.01854531653225422
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2447,
+        "time": 122.34999999989626,
+        "force": [
+          0.7887492402287113,
+          14.031073532963365
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.03771822154521942,
+          0.01854541338980198
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2448,
+        "time": 122.39999999989614,
+        "force": [
+          0.7879417510611819,
+          14.030740177497687
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.0377177968621254,
+          0.018545469269156456
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 2449,
+        "time": 122.44999999989602,
+        "force": [
+          0.7872396427443612,
+          14.030420428461174
+        ],
+        "command": [
+          0.037000708281993866,
+          0.0
+        ],
+        "measured": [
+          0.037717413157224655,
+          0.018545491620898247
+        ],
+        "table": 4.0
+      }
+    ]
+  },
+  {
+    "case": 9,
+    "attempt": 1,
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v33_20260929/runs/completion_candidates/ik80/attempts/airport_0009_20270925/a001",
+    "failure": {
+      "frame": 1804,
+      "event": "primitive_failed",
+      "primitive": "place",
+      "reason": "primitive_release_not_verified",
+      "detail": {
+        "stable_frames": 0,
+        "force": [
+          4.374112811047565,
+          0.0
+        ],
+        "table_contact": 4,
+        "pose": [
+          0.8840242744133123,
+          0.36487927455363195,
+          0.7999945567089616,
+          0.9995210363239989,
+          -4.3049140921404744e-06,
+          -5.73456947095233e-07,
+          0.030946694927545832
+        ],
+        "command_opening": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured_opening": [
+          0.04687407612800598,
+          0.03774799406528473
+        ]
+      },
+      "duration_s": 5.0,
+      "configured_budget_s": 5.0,
+      "strict_budget_s": 3.0,
+      "actual_duration_s": 5.0,
+      "duration_source": "executed_physics_steps",
+      "strict_duration_exceeded": true
+    },
+    "tilt_deg": 0.0004976643581380223,
+    "operation": {
+      "frame": 78,
+      "event": "operation_selected",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "operation_index": 1
+    },
+    "events": [
+      {
+        "frame": 1704,
+        "event": "grasp_transform_refreshed",
+        "stage": "before_preplace",
+        "gripper_contact_force_n": [
+          17.706608829890996,
+          13.282029839153854
+        ]
+      },
+      {
+        "frame": 1704,
+        "event": "primitive_command_compliance_reference",
+        "tcp_deflection_m": {
+          "left": 0.01802739531007799,
+          "right": 0.0216555579978877
+        },
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      },
+      {
+        "frame": 1704,
+        "event": "transport_align_deferred",
+        "reason": "coupled_ik_unreachable",
+        "detail": {
+          "tcp_errors": {
+            "left": {
+              "position_m": 0.022126269294731705,
+              "rotation_rad": 0.05244539871348309
+            },
+            "right": {
+              "position_m": 0.04718450206250341,
+              "rotation_rad": 0.05588477296742501
+            }
+          },
+          "rigid_grasp_error": {
+            "position_m": 0.0024593921336312644,
+            "rotation_rad": 0.018159054909692073
+          },
+          "max_branch_rad": 0.06099794043811824
+        },
+        "qualification": "planning_rejection_before_any_alignment_motion"
+      },
+      {
+        "frame": 1704,
+        "event": "primitive_start",
+        "primitive": "place",
+        "limit_s": 5.0,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "parameters": {
+          "table_height_m": 0.8,
+          "staged": [
+            0.8500000000000001,
+            0.38,
+            0.8
+          ],
+          "retained_side": null
+        }
+      },
+      {
+        "frame": 1704,
+        "event": "state_transition",
+        "previous": [
+          "TRANSPORT_TRAY",
+          "transport"
+        ],
+        "state": "PLACE_TRAY",
+        "dag_node_id": "transition_000035",
+        "dag_predecessor": "transition_000034",
+        "phase": "descend",
+        "target_tray": 2,
+        "target_slot": 0,
+        "recovery": false,
+        "simulation_time": 85.19999999998284
+      },
+      {
+        "frame": 1704,
+        "event": "primitive_command_compliance_reference",
+        "tcp_deflection_m": {
+          "left": 0.01802739531007799,
+          "right": 0.0216555579978877
+        },
+        "qualification": "command_reference_only_not_observed_rigid_attachment"
+      },
+      {
+        "frame": 1704,
+        "event": "placement_alignment_xy_feedforward",
+        "target_tray": 2,
+        "original_command": [
+          0.8500000000000001,
+          0.38,
+          0.797
+        ],
+        "measured_xy": [
+          0.9141629070651172,
+          0.3070962170013091
+        ],
+        "alignment_residual_xy": [
+          -0.06416290706511707,
+          0.07290378299869088
+        ],
+        "max_norm_m": 0.01,
+        "footprint_margin_m": 0.004,
+        "blocker_clearance_m": 0.065,
+        "acceptance_staged": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "alignment_completed": false,
+        "applied": false,
+        "rejection": "no_completed_independent_alignment",
+        "scope": "support_risk",
+        "selected_command": [
+          0.8500000000000001,
+          0.38,
+          0.797
+        ],
+        "qualification": "bounded_command_feedforward_original_acceptance_and_physics_unchanged"
+      },
+      {
+        "frame": 1704,
+        "event": "primitive_descent_geometry",
+        "combined_xy_descent": true,
+        "target_position": [
+          0.8500000000000001,
+          0.38,
+          0.797
+        ],
+        "target_yaw_rad": -2.7755575615628914e-17,
+        "target_tilt_rad": 0.0
+      },
+      {
+        "frame": 1704,
+        "event": "primitive_release_plan",
+        "sides": [
+          "left",
+          "right"
+        ],
+        "measured_opening": [
+          0.022289538756012917,
+          0.01774359494447708
+        ],
+        "command_opening": [
+          0.04228953875601292,
+          0.037743594944477085
+        ],
+        "clearance_m": 0.02
+      },
+      {
+        "frame": 1704,
+        "event": "state_transition",
+        "previous": [
+          "PLACE_TRAY",
+          "descend"
+        ],
+        "state": "PLACE_TRAY",
+        "dag_node_id": "transition_000036",
+        "dag_predecessor": "transition_000035",
+        "phase": "descend",
+        "target_tray": 2,
+        "target_slot": 0,
+        "recovery": false,
+        "simulation_time": 85.19999999998284
+      },
+      {
+        "frame": 1704,
+        "event": "primitive_reference",
+        "duration_s": 1.8,
+        "controller": "CruiseJointPath",
+        "knot_stop_fallback": false,
+        "reference_bounds": {
+          "velocity": [
+            0.1681420637367698,
+            0.26823455215052777,
+            0.4084615191768039,
+            0.663056080074365,
+            0.2939089616940154,
+            0.594961020570658,
+            0.8702587251354115,
+            0.0,
+            0.40488857771941117,
+            0.13573111672377186,
+            0.14639532873645875,
+            2.3100590804904064e-08,
+            0.19930922821629224,
+            0.4143931229183763,
+            0.3533087739484736,
+            0.0
+          ],
+          "acceleration": [
+            0.520189671415417,
+            0.780071247886533,
+            0.9503938660011981,
+            1.654163690004453,
+            0.6412968609118779,
+            1.3904908513154133,
+            1.9199961600057605,
+            0.0,
+            0.932550966243706,
+            0.2898419605669713,
+            0.33722576583064995,
+            7.740449352383752e-08,
+            0.4460037968567405,
+            0.9660272207729842,
+            0.774954439512252,
+            0.0
+          ],
+          "jerk": [
+            3.0181907087768307,
+            4.502596527046284,
+            5.36668250507119,
+            9.410504348081984,
+            3.594613599860945,
+            7.8556779862129,
+            10.77612540225123,
+            0.0,
+            5.259957793508791,
+            1.6204095089939512,
+            1.902114992521867,
+            4.519053938909376e-07,
+            2.5073796583562826,
+            5.456108447353952,
+            4.346499656063591,
+            0.0
+          ]
+        }
+      },
+      {
+        "frame": 1740,
+        "event": "state_transition",
+        "previous": [
+          "PLACE_TRAY",
+          "descend"
+        ],
+        "state": "PLACE_TRAY",
+        "dag_node_id": "transition_000037",
+        "dag_predecessor": "transition_000036",
+        "phase": "support_contact",
+        "target_tray": 2,
+        "target_slot": 0,
+        "recovery": false,
+        "simulation_time": 86.99999999997864
+      },
+      {
+        "frame": 1740,
+        "event": "state_transition",
+        "previous": [
+          "PLACE_TRAY",
+          "support_contact"
+        ],
+        "state": "PLACE_TRAY",
+        "dag_node_id": "transition_000038",
+        "dag_predecessor": "transition_000037",
+        "phase": "open",
+        "target_tray": 2,
+        "target_slot": 0,
+        "recovery": false,
+        "simulation_time": 86.99999999997864
+      },
+      {
+        "frame": 1740,
+        "event": "primitive_reference",
+        "duration_s": 0.95,
+        "controller": "CruiseJointPath",
+        "knot_stop_fallback": false,
+        "reference_bounds": {
+          "velocity": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.07512081100269183,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.06704564641256763
+          ],
+          "acceleration": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.30024107441995923,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.26796644825052107
+          ],
+          "jerk": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            3.199990400019201,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            2.8560051737941214
+          ]
+        }
+      },
+      {
+        "frame": 1804,
+        "event": "primitive_release_verification_wait",
+        "initial_stable_frames": 0,
+        "final_stable_frames": 0,
+        "wait_frames": 45,
+        "remaining_frames": 45,
+        "required": 2
+      },
+      {
+        "frame": 1804,
+        "event": "primitive_failed",
+        "primitive": "place",
+        "reason": "primitive_release_not_verified",
+        "detail": {
+          "stable_frames": 0,
+          "force": [
+            4.374112811047565,
+            0.0
+          ],
+          "table_contact": 4,
+          "pose": [
+            0.8840242744133123,
+            0.36487927455363195,
+            0.7999945567089616,
+            0.9995210363239989,
+            -4.3049140921404744e-06,
+            -5.73456947095233e-07,
+            0.030946694927545832
+          ],
+          "command_opening": [
+            0.04228954017162323,
+            0.037743594497442245
+          ],
+          "measured_opening": [
+            0.04687407612800598,
+            0.03774799406528473
+          ]
+        },
+        "duration_s": 5.0,
+        "configured_budget_s": 5.0,
+        "strict_budget_s": 3.0,
+        "actual_duration_s": 5.0,
+        "duration_source": "executed_physics_steps",
+        "strict_duration_exceeded": true
+      },
+      {
+        "frame": 1804,
+        "event": "operation_failed",
+        "retry": 2,
+        "reason": "primitive_release_not_verified",
+        "detail": {
+          "stable_frames": 0,
+          "force": [
+            4.374112811047565,
+            0.0
+          ],
+          "table_contact": 4,
+          "pose": [
+            0.8840242744133123,
+            0.36487927455363195,
+            0.7999945567089616,
+            0.9995210363239989,
+            -4.3049140921404744e-06,
+            -5.73456947095233e-07,
+            0.030946694927545832
+          ],
+          "command_opening": [
+            0.04228954017162323,
+            0.037743594497442245
+          ],
+          "measured_opening": [
+            0.04687407612800598,
+            0.03774799406528473
+          ]
+        },
+        "recoverable": false
+      }
+    ],
+    "tail": [
+      {
+        "frame": 1763,
+        "time": 88.14999999997596,
+        "force": [
+          4.3259153566100075,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04679963365197182,
+          0.03774797171354294
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1764,
+        "time": 88.19999999997584,
+        "force": [
+          4.324169446844505,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.046790238469839096,
+          0.03774799779057503
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1765,
+        "time": 88.24999999997573,
+        "force": [
+          4.325146367367562,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.046786125749349594,
+          0.037748001515865326
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1766,
+        "time": 88.29999999997561,
+        "force": [
+          4.328255654701766,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04678585007786751,
+          0.037748001515865326
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1767,
+        "time": 88.3499999999755,
+        "force": [
+          4.332715104028169,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04678810387849808,
+          0.037748001515865326
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1768,
+        "time": 88.39999999997538,
+        "force": [
+          4.337750391128175,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04679177328944206,
+          0.03774799779057503
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1769,
+        "time": 88.44999999997526,
+        "force": [
+          4.34272202351599,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04679599776864052,
+          0.03774799779057503
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1770,
+        "time": 88.49999999997515,
+        "force": [
+          4.347183836733644,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.046800170093774796,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1771,
+        "time": 88.54999999997503,
+        "force": [
+          4.35088949732601,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04680391401052475,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1772,
+        "time": 88.59999999997491,
+        "force": [
+          4.35376526783754,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.046807073056697845,
+          0.03774799033999443
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1773,
+        "time": 88.6499999999748,
+        "force": [
+          4.355865489857031,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04680962488055229,
+          0.03774799033999443
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1774,
+        "time": 88.69999999997468,
+        "force": [
+          4.357323753859099,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04681165888905525,
+          0.03774799033999443
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1775,
+        "time": 88.74999999997456,
+        "force": [
+          4.35830865358242,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.046813320368528366,
+          0.03774799033999443
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1776,
+        "time": 88.79999999997445,
+        "force": [
+          4.358989149973633,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04681476950645447,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1777,
+        "time": 88.84999999997433,
+        "force": [
+          4.359511370502525,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.0468161515891552,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1778,
+        "time": 88.89999999997421,
+        "force": [
+          4.359986352803851,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.046817585825920105,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1779,
+        "time": 88.9499999999741,
+        "force": [
+          4.360486816737742,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04681914299726486,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1780,
+        "time": 88.99999999997398,
+        "force": [
+          4.361050398737931,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04682087153196335,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1781,
+        "time": 89.04999999997386,
+        "force": [
+          4.361686724993806,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04682277515530586,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1782,
+        "time": 89.09999999997375,
+        "force": [
+          4.362386036637043,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04682484641671181,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1783,
+        "time": 89.14999999997363,
+        "force": [
+          4.363127627508362,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.0468270480632782,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1784,
+        "time": 89.19999999997351,
+        "force": [
+          4.363886964159219,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04682934656739235,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1785,
+        "time": 89.2499999999734,
+        "force": [
+          4.364640922153214,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.046831704676151276,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1786,
+        "time": 89.29999999997328,
+        "force": [
+          4.365371028083114,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04683409258723259,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1787,
+        "time": 89.34999999997316,
+        "force": [
+          4.366064915678121,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.046836480498313904,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1788,
+        "time": 89.39999999997305,
+        "force": [
+          4.366716387687232,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04683885723352432,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1789,
+        "time": 89.44999999997293,
+        "force": [
+          4.367324542066974,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04684120789170265,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1790,
+        "time": 89.49999999997281,
+        "force": [
+          4.367892400986421,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.046843528747558594,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1791,
+        "time": 89.5499999999727,
+        "force": [
+          4.3684254057765255,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.046845823526382446,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1792,
+        "time": 89.59999999997258,
+        "force": [
+          4.36893003918717,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04684808850288391,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1793,
+        "time": 89.64999999997247,
+        "force": [
+          4.369412731479492,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.046850334852933884,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1794,
+        "time": 89.69999999997235,
+        "force": [
+          4.369879114429598,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.046852562576532364,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1795,
+        "time": 89.74999999997223,
+        "force": [
+          4.370333616656907,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04685477539896965,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1796,
+        "time": 89.79999999997212,
+        "force": [
+          4.3707793471668355,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04685697332024574,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1797,
+        "time": 89.849999999972,
+        "force": [
+          4.3712181904650675,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04685916006565094,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1798,
+        "time": 89.89999999997188,
+        "force": [
+          4.371651031759448,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04686133563518524,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1799,
+        "time": 89.94999999997177,
+        "force": [
+          4.37207803893241,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04686349630355835,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1800,
+        "time": 89.99999999997165,
+        "force": [
+          4.372498944037295,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04686564579606056,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1801,
+        "time": 90.04999999997153,
+        "force": [
+          4.372913285751929,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04686778038740158,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1802,
+        "time": 90.09999999997142,
+        "force": [
+          4.373320592381282,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04686989635229111,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      },
+      {
+        "frame": 1803,
+        "time": 90.1499999999713,
+        "force": [
+          4.37372049997882,
+          0.0
+        ],
+        "command": [
+          0.04228954017162323,
+          0.037743594497442245
+        ],
+        "measured": [
+          0.04687199741601944,
+          0.03774799406528473
+        ],
+        "table": 4.0
+      }
+    ]
+  }
+]

@@ -1,0 +1,192 @@
+VERIFIED 2026-10-08T11:25:29.5586679+08:00 via SSH. Authorization renewed; live server identities checked.
+V4 dataset COMPLETE: train100 complete sources/300 whole clips; val10/30; test10/30. 120 qualified complete sources,360 clips total. Train action clips meet >=200 target. Gripper shells retained; only wrist camera housing visuals removed.
+New BC run: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_bc_20261008_v1
+Guardian PID175638/start_ticks137565448; supervisor PID175639/start_ticks137565454; both verified alive and SSH independent.
+Imported completed dataset verified with original outer exit0 and1440 data/media SHA. No regeneration or old rules mixed.
+Actual stage: CPU cache building; training_started=false. Cache written frames 48862/133990. No new gradient/checkpoint claimed yet.
+Current recipe: two GPUs, batch8, frozen vision, BF16 frozen weights/FP32 trainable+optimizer, LoRA PEFT. Verified parent1000 weights; NEW optimizer. No unrelated service stopped.
+Core checks actual Linux75passed; unified task spec sync/check passed.
+Automatic next stages: cache verification ->dual-GPU BC ->checkpoint/evaluation at10,100,1000,10000,100000 updates.
+Evaluation: actual pure VLA on10 held-out variants from2 canonical test parents; no hidden teacher/IK fallback. No new model result yet.
+Logs: new BC run/training_guardian.log; training_supervisor_00.log; prepare_cache.log; train_to_*.log; eval_*.log.
+Status: new BC run/training_guardian_status.json; pipeline_status.json; data_cache/status.json; training_status.json.
+Future checkpoints: new BC run/checkpoints/pi05_three_actions_v4_bc_20261008/training/
+Future model videos/trajectories/reports: new BC run/evaluations/step_*/
+Official data: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_gripper_preserved_20261007_v4/data_batch_v1/datasets/{train,val,test}
+By-action: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_gripper_preserved_20261007_v4/by_action/{pick_up_the_tray,place_the_tray,flush_tray_to_the_left}/{train,val,test}
+Viewer: http://100.104.0.108:8767/three_actions_gripper_preserved_20261007_v4/by_action/
+Videos and trajectories remain server; local metadata only.
+
+HISTORICAL SNAPSHOTS BELOW
+VERIFIED 2026-10-08T02:59:22.249677+00:00 via live server HTTP metadata. SSH temporary authorization expired; process/GPU state not inspected.
+V4 DATA COMPLETE:120 distinct complete physical sources;120/120 registered candidates succeeded. Reachability-qualified random subset, not unrestricted overall success claim.
+Train100 full sources /300whole action clips; val10/30; test10/30. Exact3prompt counts per split each100 /10 /10.
+All official numeric/encoding/RGB/full-source audits verified; parent split isolated; restored gripper-shell visual profile verified.
+Server official dataset root: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_gripper_preserved_20261007_v4/data_batch_v1/datasets/{train,val,test}
+Server by-action root: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_gripper_preserved_20261007_v4/by_action/{pick_up_the_tray,place_the_tray,flush_tray_to_the_left}/{train,val,test}
+1080 camera files correspond to360 action clips, not1080 independent samples.
+This pipeline actually ended data_only_exports_verified_no_training; training_started=false. No new training step or checkpoint claimed.
+SSH renewal requested once today2026-10-08 to inspect GPU and continue authorized fresh BC. Existing older checkpoint not reverified in this turn.
+
+HISTORICAL SNAPSHOTS BELOW
+
+VERIFIED 2026-10-07T11:07:11.525712+00:00
+Current run: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_gripper_preserved_20261007_v4
+Visual profile: wrist_camera_housing_removed_gripper_shell_preserved_v3; gripper body shells/fingers retained; only wrist camera housing visuals removed.
+Actual full demo verified:1381frames/69.05simulation seconds/exit0/complete native4 closure.
+Physical candidate progress: 37/120; qualified complete sources {"train": 37, "val": 0, "test": 0}; failures 0
+Potential three-action clips: 111; no expansion videos/export yet.
+Expansion target: >=67complete train sources =>201whole clips, val/test separate.
+Current stage collecting_physical_candidates;8CPU physical workers; campaign PID2824775; guardian2435476/supervisor2435541 healthy.
+Official train/val/test export pending; dataset_ready=false; training_started=false.
+Already exported current V4 demo preview:1complete source/3clips, excluded from expansion target, train only.
+Preview: http://100.104.0.108:8767/v4_demo_action_preview_20261007/
+Full demo: http://100.104.0.108:8767/three_actions_gripper_preserved_20261007_v4/demo_native/viewer.html
+
+HISTORICAL SNAPSHOTS BELOW
+
+CURRENT USER VISUAL CORRECTION — V4 — VERIFIED 2026-10-07
+Preserve complete gripper body shell visuals and fingers. Remove only two wrist camera housing pure visuals. Registered robot-payload contact fix retained; existing physics/control/collision caps unchanged.
+New visual profile: wrist_camera_housing_removed_gripper_shell_preserved_v3
+Server run: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_gripper_preserved_20261007_v4
+Actual restored wrist images: http://100.104.0.108:8767/three_actions_gripper_preserved_20261007_v4/visual_audit/
+Server143 core tests +100 real paired physics substeps zero delta +native segmentation shell present /camera housing absent verified.
+Actual guardian2435476/birth131423226, supervisor2435541/birth131423234, demo collector2435540/birth131423232. Stage waiting_for_existing_demo; no complete demo claim yet, no new dataset or training.
+Pipeline is independently running: new full demo gate ->preflight ->120 physical candidates ->native ->three action export /basic checks /by_action.
+New future data root: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_gripper_preserved_20261007_v4/data_batch_v1
+New future action folders: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_gripper_preserved_20261007_v4/by_action/{pick_up_the_tray,place_the_tray,flush_tray_to_the_left}
+Native publisher2437868 and preview wrapper2437869 actually detached and waiting correct demo/native closure. Future preview URL v4_demo_action_preview_20261007.
+Old V3 gripper-shell-removed data explicitly historical. Old auto-export owners1834138/1834203 stopped with exact identity+real signals documented; healthy actual physical collector2107318 retained. Old labels/collection unchanged. Do not count old visual sources toward current restored-visual quota or train on them implicitly.
+Logs/status: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_gripper_preserved_20261007_v4/{expansion_guardian.log,expansion_status.json,expansion_guardian_status.json}
+No formal paused training/evaluation automation resumed. Videos remain server.
+HISTORICAL SNAPSHOTS BELOW
+
+VERIFIED 2026-10-07T10:16:40.619366+00:00
+Server run: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_contact_allowed_20261007_v3
+Current stage: collecting_physical_candidates
+Closed physical candidates: 8/120
+Qualified complete sources by split: {"train": 8, "val": 0, "test": 0}
+Failed closed candidates: 0
+Potential action segments from complete sources: 24; NOT rendered/exported videos yet.
+Expansion dataset exported:0 segments; dataset_ready=false; training_started=false.
+Target: >=67 complete TRAIN sources =>201 independently counted action clips, val/test separate.
+Independent corrected demo preview:1 full source/3 exported action clips, excluded from expansion target.
+Preview: http://100.104.0.108:8767/v3_demo_action_preview_20261007/
+Healthy guardian1834138/supervisor1834203/campaign2107318;8 physical workers.
+
+HISTORICAL SNAPSHOTS BELOW
+
+CURRENT V3 VERIFIED: corrected complete demo AND three-action data preview are CLOSED.
+Preview: http://100.104.0.108:8767/v3_demo_action_preview_20261007/
+Full physical demo: http://100.104.0.108:8767/three_actions_contact_allowed_20261007_v3/demo_native/viewer.html
+Server preview root: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_contact_allowed_20261007_v3/demo_action_preview/
+Three dirs: pick_up_the_tray /place_the_tray /flush_tray_to_the_left; videos+Parquet+exact prompt+metadata+SHA.
+1 complete qualified teacher demo /3 whole clips(224/387/730frames) /9camera files /train only. Not a complete train-val-test batch; excluded from >=200 expansion count; no new training started.
+Actual left tray displacement 0.04158616537162487m after right release; previous failure preserved. Native4 1381frames/20Hz/original resolution/actualexit0/6errors0; official preview numeric/RGB/codec/full-source audits verified.
+Both camera housings and gripper body shells removed from visuals. Fingers, collisions, inertia, actuators and camera TF retained. New visual revision housing_plus_gripper_shell_removed_v2.
+Current background phase: collecting_physical_candidates. All120 private long-rim proposals qualified(100train/10val/10test); these are NOT complete sources.
+Actual detached guardian PID1834138/birth131284093; supervisor PID1834203/birth131284100; campaign PID2107318/birth131353143,8CPU physical workers. Latest snapshot0 campaign results closed; preview demo separate.
+Log/state root: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_contact_allowed_20261007_v3/{expansion_guardian.log,expansion_status.json,expansion_guardian_status.json,campaign/status.json}
+Future expansion dataset/by_action under this NEW run. Old V2 and historical batches unchanged. Videos remain server; local JSON/TXT only.
+HISTORICAL SNAPSHOTS BELOW
+
+CORRECTED FULL PHYSICAL DEMO VERIFIED — 2026-10-07 V3
+Actual exit0; task_completed/physics_success/training_eligible=true. Same seed202610073027 /same initial tray pose as old failed case0000; old failure preserved.
+1381 actual frames /69.05 simulation seconds /333.29 wall seconds.
+Pick[0,224), Place[224,611), passenger load[611,651) excluded, Flush[651,1381) including right push /left stable handover /right release /left push /release and settle.
+Actual registered robot-payload contact recorded:1283 guarded contact substeps /1935 contact point observations /penetration peak0.0014384703727517766m /normal force peak12.316615366002608N; no change to existing0.02m hard cap.
+Current stage: private long-rim preflight. Fresh random physical dataset not exported yet, no new training.
+New four-native demo renderer PID1840546/birth131317788 active. Full video not declared closed until ffprobe/SHA/six-errors + actual exit0.
+View: http://100.104.0.108:8767/three_actions_contact_allowed_20261007_v3/
+Before/after audit: http://100.104.0.108:8767/three_actions_contact_allowed_20261007_v3/visual_audit/
+Earlier records below are dated snapshots, not live state.
+
+CURRENT CORRECTION — VERIFIED 2026-10-07 — V3
+Server run: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_contact_allowed_20261007_v3
+Viewer: http://100.104.0.108:8767/three_actions_contact_allowed_20261007_v3/
+Visual audit: http://100.104.0.108:8767/three_actions_contact_allowed_20261007_v3/visual_audit/
+Contact itself with registered passenger payload is permitted; actual forces/penetrations remain logged and existing penetration caps/support/release remain.
+Visual revision wrist_camera_housing_plus_gripper_shell_removed_v2 removes only housing and gripper-shell visuals. Fingers, all collision/inertia/actuators/camera TF retained.
+Server143 core tests passed; server100 real paired physics substeps exact; native segmentation shell pixels0 both wrists.
+Guardian PID1834138/birth131284093; supervisor PID1834203/birth131284100; physical demo collector PID1834202/birth131284098; all actually started and detached.
+Stage at snapshot: waiting_for_existing_demo. Corrected full demo not yet complete; dataset_ready=false; training_started=false. Source initial pose exactly matches old failed case0000 seed202610073027.
+After complete demo success: fresh long-rim preflight ->120 physical candidates ->native media/three action export/checks ->by_action archive. No new training in this data-only expansion.
+Fresh by-action root (pending export): /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_contact_allowed_20261007_v3/by_action/
+Exact prompts: Pick up the tray | Place the tray | Flush tray to the left
+Historical catalog batch001/batch002 still use old wrist visuals and are explicitly historical, not corrected new data. Do not count camera channels or pending sources as new training clips.
+Logs/state: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_contact_allowed_20261007_v3/{expansion_guardian.log,expansion_status.json,expansion_guardian_status.json}
+Demo publisher PID1835644/birth131292745: waiting actual demo qualification; logs demo_native_publication.log; state demo_native_publication_status.json.
+Old V2 frozen release/collection/failures preserved.
+All media stays server; only JSON/TXT indexes synced locally.
+HISTORICAL SNAPSHOTS BELOW
+
+CURRENT ORGANIZED DATA CATALOG — VERIFIED 2026-10-07
+/home/michelle/haoze/r1pro-airport-sim/runs/three_actions_dataset_catalog_20261007_v1
+READY: 8 distinct complete sources /24 action segments /72 camera files. TRAIN:2 complete sources /6 segments; VAL:3/9; TEST:3/9.
+Only three prompts; camera channels are not independent training samples.
+Organization view only. Official training uses the original datasets/{train,val,test} roots.
+Ready historical batches still use historical wrist camera visuals. New housing-removed batch remains separate and pending.
+/home/michelle/haoze/r1pro-airport-sim/runs/three_actions_dataset_catalog_20261007_v1/pick_up_the_tray | Pick up the tray
+/home/michelle/haoze/r1pro-airport-sim/runs/three_actions_dataset_catalog_20261007_v1/place_the_tray | Place the tray
+/home/michelle/haoze/r1pro-airport-sim/runs/three_actions_dataset_catalog_20261007_v1/flush_tray_to_the_left | Flush tray to the left
+PENDING NEW DATA: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_reachable_20261007_v2/by_action
+Physical campaign snapshot: 10 candidates closed; 5 qualified complete sources, not yet exported.
+No new training started.
+
+Viewer: http://100.104.0.108:8767/three_actions_dataset_catalog_20261007_v1/
+
+HISTORICAL SNAPSHOTS BELOW
+
+CURRENT EXPANSION — VERIFIED 2026-10-07 — NEW RUN v2
+User decision: first produce >=200 whole training action clips from genuinely preflight-qualified random initial poses; broader single-arm yaw preparation is a separate later batch.
+Server run: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_reachable_20261007_v2
+Live viewer/status: http://100.104.0.108:8767/three_actions_reachable_20261007_v2/
+Guardian PID1558066/start_ticks130872476; supervisor PID1558196/start_ticks130872487; identity/argv/cwd verified. Both independent of Windows/SSH.
+Current stage at snapshot: campaign; actual8-worker physical collector coordinator PID1773702/start_ticks130939522. Fixed-code full physical demo complete1379frames/68.95simseconds, actualexit0.
+Actual private preflight has closed with exit0: 100train/10val/10test accepted proposals from1632train/320val/160test draws; all120 receipt/config/XML/scene/long-rim/no-live-mutation identities verified. Accepted selection frozen SHA1aca0296edb6a4903e26eec9cc3e9bb1fb48ab5d68faa87216c932a2f57f5d42. Private qualified candidates are not completed sources or training videos.
+Latest fixed-code demo native four videos now verified and published:1379frames/20Hz/original resolution, actualnativeexit0, six replay errors0, ffprobe/SHA verified. Viewer: http://100.104.0.108:8767/three_actions_reachable_20261007_v2/demo_native/viewer.html ; teacher demo, not VLA, excluded from expansion counts.
+Supervisor automatically wires: new-code full demo gate -> real long-rim private preflight -> frozen accepted selection -> physical campaign -> native4 replay -> whole 3-action clips/Parquet/RGB/official dataset checks -> by-action archive.
+Preflight: 32 CPU processes, original random seed/XY/yaw unchanged, no angular window; only actual opposed-long-rim/table-front/collision/pregrasp/descent/closure planning qualifies. Private ticks0 and live state unchanged are mandatory. Physical success remains a later independent requirement.
+Proposal limits: train10000 /val1000 /test1000; private accepted candidate targets100/10/10. Candidate counts are NOT complete sources or videos.
+Final target: >=67 complete successful TRAIN sources=201 independent whole action clips, >=67 each Pick/Place/Flush. Val/test separate and multicameras not extra samples.
+Actual new v2 training videos produced at snapshot:0; dataset_ready=false; training_started=false.
+New code tests: local117 passed; server157 passed; sync_task_spec write/check passed on both.
+Actual server private smoke on known source:2 candidates qualified/2 probes; live qpos/qvel/ctrl/time/base/arm target unchanged; no physics ticks; not training eligible by itself.
+Preflight options: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_reachable_20261007_v2/preflight_options.json
+Preflight status/index: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_reachable_20261007_v2/preflight/{status.json,proposal_index.json,qualified_initial_pose_index.json,accepted_selection.json}
+Log: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_reachable_20261007_v2/expansion_guardian.log
+Supervisor log: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_reachable_20261007_v2/expansion_supervisor_00.log
+State: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_reachable_20261007_v2/{expansion_status.json,expansion_guardian_status.json}
+Future official data (not ready yet): /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_reachable_20261007_v2/data_batch_v1/datasets/{train,val,test}
+Future action folders (not ready yet): /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_reachable_20261007_v2/by_action/{pick_up_the_tray,place_the_tray,flush_tray_to_the_left}/{train,val,test}/episode_*
+Exact texts: Pick up the tray | Place the tray | Flush tray to the left.
+Future per-video TXT: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_reachable_20261007_v2/by_action/VIDEO_PATHS.txt
+Latest visual XML removes only own wrist housing meshes; cameras, contacts, physical geometry retained.
+All videos/trajectories stay server. Only JSON/TXT snapshots synchronized to local runs/three_actions_reachable_20261007_v2_reference.
+Previous v1 preserved: /home/michelle/haoze/r1pro-airport-sim/runs/three_actions_expansion_20261007_v1 ; frozen120 random candidates. At latest read73closed=1physical success+72Pick failures. Do not use raw candidate or camera counts to inflate train clip count.
+Previous v1 complete demo is NOT a model execution and is excluded from expansion count. Verified1379frames/68.95simseconds, native four videos actualexit0, six replay errors0, ffprobe/SHA checked.
+Complete physical teacher demo viewer: http://100.104.0.108:8767/three_actions_expansion_20261007_v1/demo_native/viewer.html
+Previous source archive remains3complete sources/9segments; train only1source/3segments. qualified_source_v8 +official datasets certificate verified; original rawfalse flags preserved. Archive is a file view, not standalone LeRobot.
+No paused training/diagnostic automation resumed. No new BC/DAgger/trainer/checkpoint launched by this data-only expansion.
+HISTORICAL DATED RECORDS BELOW (not live status)
+
+READINESS CORRECTION + EXPANSION VERIFIED 2026-10-07
+The old raw recording flags remain false, but qualified_source_v8 certificates and all official first-batch manifests are verified: 3complete sources/9eligible segments; train alone=1source/3segments. The earlier interpretation that the entire first batch was unqualified was incorrect. Original raw files/labels are preserved. By-action archive is a file view, not standalone LeRobot.
+New target: >=67complete train sources /201whole action clips, 67 per exact prompt; no multi-camera count inflation.
+New expansion guardian1531970/supervisor1532034/campaign1533490 verified live; demo complete1379frames, actualexit0. First8random candidates failed in Pick; private/live grasp geometry mismatch confirmed; ordinary code fix in progress and coverage decision pending.
+No new ready dataset or new training yet. Details/live status and paths: THREE_ACTION_EXPANSION_STATUS.txt.
+Records below preserve previous dated snapshots; they are not live status.
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/three_actions_by_action_20261007_v1
+File organization complete; training_ready=false; source training_eligible=False
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/three_actions_by_action_20261007_v1/pick_up_the_tray | Pick up the tray
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/three_actions_by_action_20261007_v1/place_the_tray | Place the tray
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/three_actions_by_action_20261007_v1/flush_tray_to_the_left | Flush tray to the left
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/three_actions_by_action_20261007_v1/pick_up_the_tray/train/episode_000000
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/three_actions_by_action_20261007_v1/place_the_tray/train/episode_000001
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/three_actions_by_action_20261007_v1/flush_tray_to_the_left/train/episode_000002
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/three_actions_by_action_20261007_v1/pick_up_the_tray/val/episode_000000
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/three_actions_by_action_20261007_v1/place_the_tray/val/episode_000001
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/three_actions_by_action_20261007_v1/flush_tray_to_the_left/val/episode_000002
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/three_actions_by_action_20261007_v1/pick_up_the_tray/test/episode_000000
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/three_actions_by_action_20261007_v1/place_the_tray/test/episode_000001
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/three_actions_by_action_20261007_v1/flush_tray_to_the_left/test/episode_000002

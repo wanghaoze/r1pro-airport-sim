@@ -1,0 +1,30 @@
+5000-update mixed checkpoint preview
+checkpoint: /home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_v3/pi05/checkpoints/pi05_real_sim_pickplace/training/4999
+run: /home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1
+PID: 3000352; start_ticks: 148917491
+log: preview.log
+results: sim_evaluations/summary.json; progress: sim_evaluations/progress.json
+viewer: http://100.104.0.108:8767/real_sim_pickplace_20261009_step5000_preview_v1/index.html
+scope: 3 Pick + 2 Place independent action cases; no teacher/IK; training continues.
+first case: Pick false, 1000 frames, 200 inference calls, inverse_solver_calls=0; remaining running.
+Completed: 5/5; Pick 0/3; Place 0/2; infrastructure errors 0; no teacher/IK. 15 videos verified 1000 frames each at 20Hz. Main training last verified 6349/10000.
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086006_0/attempt/trace.h5
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086006_0/videos/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086006_0/videos/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086006_0/videos/right_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086006_1/attempt/trace.h5
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086006_1/videos/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086006_1/videos/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086006_1/videos/right_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086038_0/attempt/trace.h5
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086038_0/videos/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086038_0/videos/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086038_0/videos/right_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086038_1/attempt/trace.h5
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086038_1/videos/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086038_1/videos/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086038_1/videos/right_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086062_0/attempt/trace.h5
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086062_0/videos/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086062_0/videos/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_step5000_preview_v1/sim_evaluations/airport_0002_20270918__single3_202610086062_0/videos/right_wrist.mp4

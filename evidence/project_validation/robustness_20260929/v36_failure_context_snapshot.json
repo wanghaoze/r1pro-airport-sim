@@ -1,0 +1,3700 @@
+{
+  "groups": [
+    {
+      "failure": "coupled_ik_unreachable",
+      "kind": "final_or_unknown",
+      "primitive": "place",
+      "count": 73
+    },
+    {
+      "failure": "coupled_ik_unreachable",
+      "kind": "temporary",
+      "primitive": "place",
+      "count": 57
+    },
+    {
+      "failure": "contact_handoff_aborted",
+      "kind": "final_or_unknown",
+      "primitive": "push",
+      "count": 18
+    },
+    {
+      "failure": "multiple_trays_lifted",
+      "kind": "temporary",
+      "primitive": "lift",
+      "count": 13
+    },
+    {
+      "failure": "contact_handoff_aborted",
+      "kind": "temporary",
+      "primitive": "push",
+      "count": 13
+    },
+    {
+      "failure": "no_safe_release_precondition",
+      "kind": "final_or_unknown",
+      "primitive": "place",
+      "count": 8
+    },
+    {
+      "failure": "multiple_trays_lifted",
+      "kind": "final_or_unknown",
+      "primitive": "lift",
+      "count": 6
+    },
+    {
+      "failure": "placement_needs_correction",
+      "kind": "final_or_unknown",
+      "primitive": "place",
+      "count": 4
+    },
+    {
+      "failure": "primitive_lift_path_unavailable",
+      "kind": "final_or_unknown",
+      "primitive": "lift",
+      "count": 3
+    },
+    {
+      "failure": "primitive_postcondition_failed",
+      "kind": "temporary",
+      "primitive": "lift",
+      "count": 2
+    },
+    {
+      "failure": "primitive_postcondition_failed",
+      "kind": "final_or_unknown",
+      "primitive": "place",
+      "count": 2
+    },
+    {
+      "failure": "no_feasible_grasp_approach",
+      "kind": "final_or_unknown",
+      "primitive": null,
+      "count": 2
+    },
+    {
+      "failure": "measured_joint_overspeed",
+      "kind": "temporary",
+      "primitive": "push",
+      "count": 2
+    },
+    {
+      "failure": "illegal_collision",
+      "kind": "final_or_unknown",
+      "primitive": "place",
+      "count": 2
+    },
+    {
+      "failure": "carried_payload_support_contact",
+      "kind": "temporary",
+      "primitive": "lift",
+      "count": 1
+    },
+    {
+      "failure": "ik_unreachable",
+      "kind": "final_or_unknown",
+      "primitive": null,
+      "count": 1
+    },
+    {
+      "failure": "primitive_postcondition_failed",
+      "kind": "final_or_unknown",
+      "primitive": "lift",
+      "count": 1
+    },
+    {
+      "failure": "ik_unreachable",
+      "kind": "final_or_unknown",
+      "primitive": "push",
+      "count": 1
+    },
+    {
+      "failure": "joint_path_collision_or_wrist",
+      "kind": "final_or_unknown",
+      "primitive": null,
+      "count": 1
+    },
+    {
+      "failure": "illegal_collision",
+      "kind": "final_or_unknown",
+      "primitive": null,
+      "count": 1
+    },
+    {
+      "failure": "illegal_collision",
+      "kind": "final_or_unknown",
+      "primitive": "push",
+      "count": 1
+    },
+    {
+      "failure": "contact_handoff_aborted",
+      "kind": "temporary",
+      "primitive": "place",
+      "count": 1
+    },
+    {
+      "failure": "ik_unreachable",
+      "kind": "final_or_unknown",
+      "primitive": "place",
+      "count": 1
+    },
+    {
+      "failure": "ik_unreachable",
+      "kind": "temporary",
+      "primitive": "place",
+      "count": 1
+    },
+    {
+      "failure": "carried_tray_tilt",
+      "kind": "final_or_unknown",
+      "primitive": "lift",
+      "count": 1
+    },
+    {
+      "failure": "no_free_single_rim",
+      "kind": "final_or_unknown",
+      "primitive": "place",
+      "count": 1
+    },
+    {
+      "failure": "cartesian_collision_or_wrist",
+      "kind": "final_or_unknown",
+      "primitive": "place",
+      "count": 1
+    },
+    {
+      "failure": "wrist_camera_front_guard",
+      "kind": "final_or_unknown",
+      "primitive": "push",
+      "count": 1
+    },
+    {
+      "failure": "measured_joint_overspeed",
+      "kind": "final_or_unknown",
+      "primitive": "place",
+      "count": 1
+    }
+  ],
+  "cases": [
+    {
+      "scene_id": "airport_0000_20270916",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0001_20270917",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0002_20270918",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 1,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0003_20270919",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 1,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.8293103448275861,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0006_20270922",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0009_20270925",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0010_20270926",
+      "failure": "carried_payload_support_contact",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5672413793103449,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0012_20270928",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0013_20270929",
+      "failure": "ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": null
+    },
+    {
+      "scene_id": "airport_0014_20270930",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0015_20270931",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0018_20270934",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5672413793103449,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0023_20270939",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0027_20270943",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0029_20270945",
+      "failure": "placement_needs_correction",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0030_20270946",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6327586206896553,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0031_20270947",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0035_20270951",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0037_20270953",
+      "failure": "no_safe_release_precondition",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0038_20270954",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6327586206896553,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0039_20270955",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0042_20270958",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0043_20270959",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0046_20270962",
+      "failure": "primitive_postcondition_failed",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5672413793103449,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0047_20270963",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0050_20270966",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6327586206896553,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0051_20270967",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0054_20270970",
+      "failure": "primitive_postcondition_failed",
+      "operation": {
+        "tray": 0,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0055_20270971",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0057_20270973",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0058_20270974",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0059_20270975",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0061_20270977",
+      "failure": "no_feasible_grasp_approach",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": null
+    },
+    {
+      "scene_id": "airport_0062_20270978",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0063_20270979",
+      "failure": "primitive_postcondition_failed",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0070_20270986",
+      "failure": "ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0073_20270989",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0074_20270990",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5017241379310345,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0075_20270991",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 1,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.8293103448275861,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0078_20270994",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5672413793103449,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0079_20270995",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0081_20270997",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0084_20271000",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0085_20271001",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 2,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0086_20271002",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 1,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0087_20271003",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 1,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.8948275862068965,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0089_20271005",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0091_20271007",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0095_20271011",
+      "failure": "placement_needs_correction",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0098_20271014",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0099_20271015",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0101_20271017",
+      "failure": "joint_path_collision_or_wrist",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": null
+    },
+    {
+      "scene_id": "airport_0102_20271018",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5017241379310345,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0103_20271019",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0106_20271022",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5672413793103449,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0107_20271023",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0109_20271025",
+      "failure": "illegal_collision",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": null
+    },
+    {
+      "scene_id": "airport_0110_20271026",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5672413793103449,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0111_20271027",
+      "failure": "illegal_collision",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0114_20271030",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0115_20271031",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0118_20271034",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5017241379310345,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0119_20271035",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0122_20271038",
+      "failure": "measured_joint_overspeed",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5017241379310345,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0123_20271039",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0126_20271042",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0127_20271043",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0129_20271045",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0130_20271046",
+      "failure": "primitive_postcondition_failed",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5672413793103449,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0131_20271047",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.8293103448275861,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0137_20271053",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0138_20271054",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6327586206896553,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0139_20271055",
+      "failure": "placement_needs_correction",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0142_20271058",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0143_20271059",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0149_20271065",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0150_20271066",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0153_20271069",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0154_20271070",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0155_20271071",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.763793103448276,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0158_20271074",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0163_20271079",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0166_20271082",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5017241379310345,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0167_20271083",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0168_20271084",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0169_20271085",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 2,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0170_20271086",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 1,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0171_20271087",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 1,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.8293103448275861,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0174_20271090",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0177_20271093",
+      "failure": "no_safe_release_precondition",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0178_20271094",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.763793103448276,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0179_20271095",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0181_20271097",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0182_20271098",
+      "failure": "measured_joint_overspeed",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5672413793103449,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0183_20271099",
+      "failure": "primitive_lift_path_unavailable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0186_20271102",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5017241379310345,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0187_20271103",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0190_20271106",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0191_20271107",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0194_20271110",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5017241379310345,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0195_20271111",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0198_20271114",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6327586206896553,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0199_20271115",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0202_20271118",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0203_20271119",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0205_20271121",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0206_20271122",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6327586206896553,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0207_20271123",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0209_20271125",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0210_20271126",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0214_20271130",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6327586206896553,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0215_20271131",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": -1,
+        "destination": [
+          -0.8893700943191551,
+          0.0,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0218_20271134",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0219_20271135",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0222_20271138",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6327586206896553,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0225_20271141",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0226_20271142",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0227_20271143",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0229_20271145",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0230_20271146",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5017241379310345,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0231_20271147",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0233_20271149",
+      "failure": "no_safe_release_precondition",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0234_20271150",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.8293103448275861,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0237_20271153",
+      "failure": "no_feasible_grasp_approach",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": null
+    },
+    {
+      "scene_id": "airport_0238_20271154",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0239_20271155",
+      "failure": "primitive_lift_path_unavailable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0241_20271157",
+      "failure": "no_safe_release_precondition",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0242_20271158",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0243_20271159",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0246_20271162",
+      "failure": "ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0250_20271166",
+      "failure": "ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5017241379310345,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0251_20271167",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0252_20271168",
+      "failure": "illegal_collision",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0254_20271170",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0257_20271173",
+      "failure": "carried_tray_tilt",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0258_20271174",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0259_20271175",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0263_20271179",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0264_20271180",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0265_20271181",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0266_20271182",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0267_20271183",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0269_20271185",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0271_20271187",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0273_20271189",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0274_20271190",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.4362068965517242,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0275_20271191",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0279_20271195",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0280_20271196",
+      "failure": "primitive_lift_path_unavailable",
+      "operation": {
+        "tray": 0,
+        "slot": 2,
+        "destination": [
+          0.8500000000000001,
+          -0.5100000000000001,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0282_20271198",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0283_20271199",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0286_20271202",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.4362068965517242,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0287_20271203",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0290_20271206",
+      "failure": "no_free_single_rim",
+      "operation": {
+        "tray": 0,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0291_20271207",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0295_20271211",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0297_20271213",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0298_20271214",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6327586206896553,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0302_20271218",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5672413793103449,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0303_20271219",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0306_20271222",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5672413793103449,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0308_20271224",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0309_20271225",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0311_20271227",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0313_20271229",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0315_20271231",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0317_20271233",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0318_20271234",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0319_20271235",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0321_20271237",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0322_20271238",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6327586206896553,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0323_20271239",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0325_20271241",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0326_20271242",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6327586206896553,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0327_20271243",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0330_20271246",
+      "failure": "primitive_postcondition_failed",
+      "operation": {
+        "tray": 0,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0331_20271247",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0333_20271249",
+      "failure": "cartesian_collision_or_wrist",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0334_20271250",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0337_20271253",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0338_20271254",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5017241379310345,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0339_20271255",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0342_20271258",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0343_20271259",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0345_20271261",
+      "failure": "no_safe_release_precondition",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0346_20271262",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5017241379310345,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0349_20271265",
+      "failure": "no_safe_release_precondition",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0350_20271266",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0351_20271267",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0352_20271268",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0353_20271269",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 2,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0354_20271270",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 1,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0355_20271271",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 1,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.763793103448276,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0357_20271273",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0359_20271275",
+      "failure": "wrist_camera_front_guard",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0362_20271278",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6327586206896553,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0363_20271279",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0367_20271283",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0369_20271285",
+      "failure": "placement_needs_correction",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0370_20271286",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6327586206896553,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0372_20271288",
+      "failure": "illegal_collision",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0373_20271289",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0374_20271290",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5672413793103449,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0375_20271291",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0377_20271293",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0378_20271294",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0381_20271297",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0382_20271298",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.5017241379310345,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0383_20271299",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0385_20271301",
+      "failure": "no_safe_release_precondition",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0386_20271302",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0387_20271303",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0389_20271305",
+      "failure": "no_safe_release_precondition",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0390_20271306",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0393_20271309",
+      "failure": "coupled_ik_unreachable",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0394_20271310",
+      "failure": "contact_handoff_aborted",
+      "operation": {
+        "tray": 0,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.6982758620689654,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "push"
+    },
+    {
+      "scene_id": "airport_0396_20271312",
+      "failure": "measured_joint_overspeed",
+      "operation": {
+        "tray": 1,
+        "slot": 1,
+        "destination": [
+          0.8500000000000001,
+          -0.06500000000000006,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "place"
+    },
+    {
+      "scene_id": "airport_0397_20271313",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 2,
+        "slot": 0,
+        "destination": [
+          0.8500000000000001,
+          0.38,
+          0.8
+        ],
+        "yaw": 0.0,
+        "temporary": false
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0398_20271314",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 1,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -1.5499999999999998,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "lift"
+    },
+    {
+      "scene_id": "airport_0399_20271315",
+      "failure": "multiple_trays_lifted",
+      "operation": {
+        "tray": 1,
+        "slot": -1,
+        "destination": [
+          0.8500000000000001,
+          -0.8293103448275861,
+          0.801
+        ],
+        "yaw": 0.0,
+        "temporary": true
+      },
+      "primitive": "lift"
+    }
+  ]
+}

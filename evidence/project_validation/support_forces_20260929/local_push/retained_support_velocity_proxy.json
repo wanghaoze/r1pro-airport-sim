@@ -1,0 +1,22 @@
+[
+  {
+    "source": "local_push_case4_third_original",
+    "qualification": "backward_difference_minimum_vertex_height_not_com_qvel",
+    "peak_samples": 19,
+    "peak_preceding_descent_fraction": 0.9473684210526315,
+    "peak_median_height_rate_m_s": -0.0601261953080412,
+    "nonpeak_median_height_rate_m_s": 8.027881859273833e-06,
+    "height_rate_min_m_s": -0.07956540504061582,
+    "height_rate_max_m_s": 0.06536265384859963
+  },
+  {
+    "source": "force_feedback/local_full_push_v11case5_force_baseline",
+    "qualification": "backward_difference_minimum_vertex_height_not_com_qvel",
+    "peak_samples": 19,
+    "peak_preceding_descent_fraction": 0.8421052631578947,
+    "peak_median_height_rate_m_s": -0.032386023936403774,
+    "nonpeak_median_height_rate_m_s": 3.27952318079916e-06,
+    "height_rate_min_m_s": -0.08228589376074735,
+    "height_rate_max_m_s": 0.05830730059813716
+  }
+]

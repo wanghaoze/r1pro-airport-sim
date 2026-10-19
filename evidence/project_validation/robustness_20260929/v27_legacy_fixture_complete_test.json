@@ -1,0 +1,8 @@
+{
+  "returncode": 0,
+  "stdout": ".                                                                        [100%]\n1 passed in 0.74s\n",
+  "stderr": "",
+  "fixture_archive_sha256": "8e15be307331fe887173a3548c1e9c99492865c1169dcd357ffa44d6f86ee092",
+  "frozen_release_modified": false,
+  "qualification": "Same frozen test/code, complete original local legacy fixture XML and all referenced assets, independent test working directory."
+}

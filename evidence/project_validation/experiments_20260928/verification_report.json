@@ -1,0 +1,1113 @@
+{
+  "candidate": {
+    "name": "frozen_search_winner",
+    "strategy": "baseline",
+    "params": {}
+  },
+  "rows": {
+    "baseline": [
+      {
+        "scene_id": "airport_0218_20271134",
+        "split": "train",
+        "attempt": 0,
+        "seed": 7614934074552396102,
+        "physics_success": false,
+        "recovery_used": true,
+        "training_candidate": false,
+        "failure_code": "no_feasible_grasp_approach",
+        "error": "no_feasible_grasp_approach: [{'candidate': 0, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.049737784631433135, 'rotation_error_rad': 0.04212923736015941}}, {'candidate': 1, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.05822083517141562, 'rotation_error_rad': 0.046079388873028745}}, {'candidate': 2, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.06191166590424075, 'rotation_error_rad': 0.05487234916438597}}, {'candidate': 3, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.056531686101676776, 'rotation_error_rad': 0.05014916664304804}}, {'candidate': 4, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.056929229473347, 'rotation_error_rad': 0.0578769521073158}}, {'candidate': 5, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.04043842491442098, 'rotation_error_rad': 0.03604913556548852}}, {'candidate': 6, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.04234998743292129, 'rotation_error_rad': 0.03196881779123737}}, {'candidate': 7, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.05755822297199852, 'rotation_error_rad': 0.05756362806588232}}, {'candidate': 8, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.04465903931421572, 'rotation_error_rad': 0.032903502225981256}}, {'candidate': 9, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.06358154337354759, 'rotation_error_rad': 0.05920329709792424}}, {'candidate': 10, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.05111950502756039, 'rotation_error_rad': 0.04738284736358172}}, {'candidate': 11, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.060377871521397425, 'rotation_error_rad': 0.04891257455464106}}]",
+        "operations": 1,
+        "frames": 3032,
+        "simulation_seconds": 151.6,
+        "wall_seconds": 163.147466822993,
+        "acceptance": null,
+        "peak_mechanical_abs_sum_power_w": 62.274587394984664,
+        "inverse_dynamics_calls": 207,
+        "inverse_dynamics_slowdowns": 0,
+        "limits": {
+          "mode": "model80",
+          "fraction": 0.8,
+          "arm_velocity_rad_s": [
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.7600000000000002,
+            1.7600000000000002,
+            1.7600000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.7600000000000002,
+            1.7600000000000002,
+            1.7600000000000002
+          ],
+          "reference_arm_velocity_rad_s": [
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            1.2672,
+            1.2672,
+            1.2672,
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            1.2672,
+            1.2672,
+            1.2672
+          ],
+          "arm_effort_nm": [
+            44.0,
+            44.0,
+            20.0,
+            20.0,
+            14.4,
+            14.4,
+            14.4,
+            44.0,
+            44.0,
+            20.0,
+            20.0,
+            14.4,
+            14.4,
+            14.4
+          ],
+          "actuator_forcerange": [
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -32.0,
+              32.0
+            ],
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -32.0,
+              32.0
+            ],
+            [
+              -480.0,
+              480.0
+            ],
+            [
+              -480.0,
+              480.0
+            ],
+            [
+              -240.0,
+              240.0
+            ]
+          ],
+          "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+          "urdf": null,
+          "hardware_profile": null,
+          "mechanical_power_abs_sum_cap_w": null,
+          "external_profile_declares_80_percent_mechanical_power": false,
+          "real_robot_driver": false,
+          "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+          "base_reference_caps": {
+            "translation_m_s": 0.48,
+            "yaw_rad_s": 0.7200000000000001
+          },
+          "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+        },
+        "controller_source": "program_generated",
+        "environment_source": "simulation",
+        "privileged_teacher": true,
+        "real_robot_validated": false,
+        "native_video_validation": "pending_replay_export",
+        "experiment": {
+          "name": "baseline",
+          "strategy": "baseline",
+          "params": {}
+        },
+        "origin": "fresh",
+        "diagnostic_only": true,
+        "complete_episode_verified": false,
+        "result_path": "runs/smoke_001/experiments/verification/baseline/airport_0218_20271134/a000/result.json"
+      },
+      {
+        "scene_id": "airport_0007_20270923",
+        "split": "train",
+        "attempt": 0,
+        "seed": 2815019028414438708,
+        "physics_success": false,
+        "recovery_used": true,
+        "training_candidate": false,
+        "failure_code": "ik_unreachable",
+        "error": "ik_unreachable: {'side': 'right', 'position_error_m': 0.04164040050571237, 'rotation_error_rad': 0.03444582052667402}",
+        "operations": 2,
+        "frames": 3139,
+        "simulation_seconds": 156.95,
+        "wall_seconds": 169.15275200200267,
+        "acceptance": null,
+        "peak_mechanical_abs_sum_power_w": 54.31812175842339,
+        "inverse_dynamics_calls": 269,
+        "inverse_dynamics_slowdowns": 0,
+        "limits": {
+          "mode": "model80",
+          "fraction": 0.8,
+          "arm_velocity_rad_s": [
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.7600000000000002,
+            1.7600000000000002,
+            1.7600000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.7600000000000002,
+            1.7600000000000002,
+            1.7600000000000002
+          ],
+          "reference_arm_velocity_rad_s": [
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            1.2672,
+            1.2672,
+            1.2672,
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            1.2672,
+            1.2672,
+            1.2672
+          ],
+          "arm_effort_nm": [
+            44.0,
+            44.0,
+            20.0,
+            20.0,
+            14.4,
+            14.4,
+            14.4,
+            44.0,
+            44.0,
+            20.0,
+            20.0,
+            14.4,
+            14.4,
+            14.4
+          ],
+          "actuator_forcerange": [
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -32.0,
+              32.0
+            ],
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -32.0,
+              32.0
+            ],
+            [
+              -480.0,
+              480.0
+            ],
+            [
+              -480.0,
+              480.0
+            ],
+            [
+              -240.0,
+              240.0
+            ]
+          ],
+          "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+          "urdf": null,
+          "hardware_profile": null,
+          "mechanical_power_abs_sum_cap_w": null,
+          "external_profile_declares_80_percent_mechanical_power": false,
+          "real_robot_driver": false,
+          "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+          "base_reference_caps": {
+            "translation_m_s": 0.48,
+            "yaw_rad_s": 0.7200000000000001
+          },
+          "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+        },
+        "controller_source": "program_generated",
+        "environment_source": "simulation",
+        "privileged_teacher": true,
+        "real_robot_validated": false,
+        "native_video_validation": "pending_replay_export",
+        "experiment": {
+          "name": "baseline",
+          "strategy": "baseline",
+          "params": {}
+        },
+        "origin": "fresh",
+        "diagnostic_only": true,
+        "complete_episode_verified": false,
+        "result_path": "runs/smoke_001/experiments/verification/baseline/airport_0007_20270923/a000/result.json"
+      },
+      {
+        "scene_id": "airport_0016_20270932",
+        "split": "train",
+        "attempt": 0,
+        "seed": 3469929297385638551,
+        "physics_success": true,
+        "recovery_used": false,
+        "training_candidate": false,
+        "failure_code": null,
+        "error": null,
+        "operations": 3,
+        "frames": 3021,
+        "simulation_seconds": 151.05,
+        "wall_seconds": 190.03200144902803,
+        "acceptance": {
+          "reasons": [],
+          "stable_samples": 21,
+          "placement": {
+            "slot_to_tray": [
+              "tray_2",
+              "tray_1",
+              "tray_0"
+            ],
+            "max_position_error_m": 0.008608902032899872,
+            "max_yaw_error_deg": 2.3072300081192156,
+            "final_gaps_m": [
+              0.007604700180625035,
+              0.0076880016998256695
+            ]
+          }
+        },
+        "peak_mechanical_abs_sum_power_w": 66.52351389535829,
+        "inverse_dynamics_calls": 418,
+        "inverse_dynamics_slowdowns": 0,
+        "limits": {
+          "mode": "model80",
+          "fraction": 0.8,
+          "arm_velocity_rad_s": [
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.7600000000000002,
+            1.7600000000000002,
+            1.7600000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.7600000000000002,
+            1.7600000000000002,
+            1.7600000000000002
+          ],
+          "reference_arm_velocity_rad_s": [
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            1.2672,
+            1.2672,
+            1.2672,
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            1.2672,
+            1.2672,
+            1.2672
+          ],
+          "arm_effort_nm": [
+            44.0,
+            44.0,
+            20.0,
+            20.0,
+            14.4,
+            14.4,
+            14.4,
+            44.0,
+            44.0,
+            20.0,
+            20.0,
+            14.4,
+            14.4,
+            14.4
+          ],
+          "actuator_forcerange": [
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -32.0,
+              32.0
+            ],
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -32.0,
+              32.0
+            ],
+            [
+              -480.0,
+              480.0
+            ],
+            [
+              -480.0,
+              480.0
+            ],
+            [
+              -240.0,
+              240.0
+            ]
+          ],
+          "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+          "urdf": null,
+          "hardware_profile": null,
+          "mechanical_power_abs_sum_cap_w": null,
+          "external_profile_declares_80_percent_mechanical_power": false,
+          "real_robot_driver": false,
+          "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+          "base_reference_caps": {
+            "translation_m_s": 0.48,
+            "yaw_rad_s": 0.7200000000000001
+          },
+          "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+        },
+        "controller_source": "program_generated",
+        "environment_source": "simulation",
+        "privileged_teacher": true,
+        "real_robot_validated": false,
+        "native_video_validation": "pending_replay_export",
+        "experiment": {
+          "name": "baseline",
+          "strategy": "baseline",
+          "params": {}
+        },
+        "origin": "fresh",
+        "diagnostic_only": true,
+        "complete_episode_verified": true,
+        "result_path": "runs/smoke_001/experiments/verification/baseline/airport_0016_20270932/a000/result.json"
+      }
+    ],
+    "frozen_search_winner": [
+      {
+        "scene_id": "airport_0016_20270932",
+        "split": "train",
+        "attempt": 0,
+        "seed": 3469929297385638551,
+        "physics_success": true,
+        "recovery_used": false,
+        "training_candidate": false,
+        "failure_code": null,
+        "error": null,
+        "operations": 3,
+        "frames": 3021,
+        "simulation_seconds": 151.05,
+        "wall_seconds": 190.98499794199597,
+        "acceptance": {
+          "reasons": [],
+          "stable_samples": 21,
+          "placement": {
+            "slot_to_tray": [
+              "tray_2",
+              "tray_1",
+              "tray_0"
+            ],
+            "max_position_error_m": 0.008608902032899872,
+            "max_yaw_error_deg": 2.3072300081192156,
+            "final_gaps_m": [
+              0.007604700180625035,
+              0.0076880016998256695
+            ]
+          }
+        },
+        "peak_mechanical_abs_sum_power_w": 66.52351389535829,
+        "inverse_dynamics_calls": 418,
+        "inverse_dynamics_slowdowns": 0,
+        "limits": {
+          "mode": "model80",
+          "fraction": 0.8,
+          "arm_velocity_rad_s": [
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.7600000000000002,
+            1.7600000000000002,
+            1.7600000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.7600000000000002,
+            1.7600000000000002,
+            1.7600000000000002
+          ],
+          "reference_arm_velocity_rad_s": [
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            1.2672,
+            1.2672,
+            1.2672,
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            1.2672,
+            1.2672,
+            1.2672
+          ],
+          "arm_effort_nm": [
+            44.0,
+            44.0,
+            20.0,
+            20.0,
+            14.4,
+            14.4,
+            14.4,
+            44.0,
+            44.0,
+            20.0,
+            20.0,
+            14.4,
+            14.4,
+            14.4
+          ],
+          "actuator_forcerange": [
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -32.0,
+              32.0
+            ],
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -32.0,
+              32.0
+            ],
+            [
+              -480.0,
+              480.0
+            ],
+            [
+              -480.0,
+              480.0
+            ],
+            [
+              -240.0,
+              240.0
+            ]
+          ],
+          "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+          "urdf": null,
+          "hardware_profile": null,
+          "mechanical_power_abs_sum_cap_w": null,
+          "external_profile_declares_80_percent_mechanical_power": false,
+          "real_robot_driver": false,
+          "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+          "base_reference_caps": {
+            "translation_m_s": 0.48,
+            "yaw_rad_s": 0.7200000000000001
+          },
+          "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+        },
+        "controller_source": "program_generated",
+        "environment_source": "simulation",
+        "privileged_teacher": true,
+        "real_robot_validated": false,
+        "native_video_validation": "pending_replay_export",
+        "experiment": {
+          "name": "frozen_search_winner",
+          "strategy": "baseline",
+          "params": {}
+        },
+        "origin": "fresh",
+        "diagnostic_only": true,
+        "complete_episode_verified": true,
+        "result_path": "runs/smoke_001/experiments/verification/frozen_search_winner/airport_0016_20270932/a000/result.json"
+      },
+      {
+        "scene_id": "airport_0218_20271134",
+        "split": "train",
+        "attempt": 0,
+        "seed": 7614934074552396102,
+        "physics_success": false,
+        "recovery_used": true,
+        "training_candidate": false,
+        "failure_code": "no_feasible_grasp_approach",
+        "error": "no_feasible_grasp_approach: [{'candidate': 0, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.049737784631433135, 'rotation_error_rad': 0.04212923736015941}}, {'candidate': 1, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.05822083517141562, 'rotation_error_rad': 0.046079388873028745}}, {'candidate': 2, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.06191166590424075, 'rotation_error_rad': 0.05487234916438597}}, {'candidate': 3, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.056531686101676776, 'rotation_error_rad': 0.05014916664304804}}, {'candidate': 4, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.056929229473347, 'rotation_error_rad': 0.0578769521073158}}, {'candidate': 5, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.04043842491442098, 'rotation_error_rad': 0.03604913556548852}}, {'candidate': 6, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.04234998743292129, 'rotation_error_rad': 0.03196881779123737}}, {'candidate': 7, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.05755822297199852, 'rotation_error_rad': 0.05756362806588232}}, {'candidate': 8, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.04465903931421572, 'rotation_error_rad': 0.032903502225981256}}, {'candidate': 9, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.06358154337354759, 'rotation_error_rad': 0.05920329709792424}}, {'candidate': 10, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.05111950502756039, 'rotation_error_rad': 0.04738284736358172}}, {'candidate': 11, 'code': 'ik_unreachable', 'detail': {'side': 'left', 'position_error_m': 0.060377871521397425, 'rotation_error_rad': 0.04891257455464106}}]",
+        "operations": 1,
+        "frames": 3032,
+        "simulation_seconds": 151.6,
+        "wall_seconds": 161.20697830594145,
+        "acceptance": null,
+        "peak_mechanical_abs_sum_power_w": 62.274587394984664,
+        "inverse_dynamics_calls": 207,
+        "inverse_dynamics_slowdowns": 0,
+        "limits": {
+          "mode": "model80",
+          "fraction": 0.8,
+          "arm_velocity_rad_s": [
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.7600000000000002,
+            1.7600000000000002,
+            1.7600000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.7600000000000002,
+            1.7600000000000002,
+            1.7600000000000002
+          ],
+          "reference_arm_velocity_rad_s": [
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            1.2672,
+            1.2672,
+            1.2672,
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            1.2672,
+            1.2672,
+            1.2672
+          ],
+          "arm_effort_nm": [
+            44.0,
+            44.0,
+            20.0,
+            20.0,
+            14.4,
+            14.4,
+            14.4,
+            44.0,
+            44.0,
+            20.0,
+            20.0,
+            14.4,
+            14.4,
+            14.4
+          ],
+          "actuator_forcerange": [
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -32.0,
+              32.0
+            ],
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -32.0,
+              32.0
+            ],
+            [
+              -480.0,
+              480.0
+            ],
+            [
+              -480.0,
+              480.0
+            ],
+            [
+              -240.0,
+              240.0
+            ]
+          ],
+          "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+          "urdf": null,
+          "hardware_profile": null,
+          "mechanical_power_abs_sum_cap_w": null,
+          "external_profile_declares_80_percent_mechanical_power": false,
+          "real_robot_driver": false,
+          "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+          "base_reference_caps": {
+            "translation_m_s": 0.48,
+            "yaw_rad_s": 0.7200000000000001
+          },
+          "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+        },
+        "controller_source": "program_generated",
+        "environment_source": "simulation",
+        "privileged_teacher": true,
+        "real_robot_validated": false,
+        "native_video_validation": "pending_replay_export",
+        "experiment": {
+          "name": "frozen_search_winner",
+          "strategy": "baseline",
+          "params": {}
+        },
+        "origin": "fresh",
+        "diagnostic_only": true,
+        "complete_episode_verified": false,
+        "result_path": "runs/smoke_001/experiments/verification/frozen_search_winner/airport_0218_20271134/a000/result.json"
+      },
+      {
+        "scene_id": "airport_0007_20270923",
+        "split": "train",
+        "attempt": 0,
+        "seed": 2815019028414438708,
+        "physics_success": false,
+        "recovery_used": true,
+        "training_candidate": false,
+        "failure_code": "ik_unreachable",
+        "error": "ik_unreachable: {'side': 'right', 'position_error_m': 0.04164040050571237, 'rotation_error_rad': 0.03444582052667402}",
+        "operations": 2,
+        "frames": 3139,
+        "simulation_seconds": 156.95,
+        "wall_seconds": 168.85509907500818,
+        "acceptance": null,
+        "peak_mechanical_abs_sum_power_w": 54.31812175842339,
+        "inverse_dynamics_calls": 269,
+        "inverse_dynamics_slowdowns": 0,
+        "limits": {
+          "mode": "model80",
+          "fraction": 0.8,
+          "arm_velocity_rad_s": [
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.7600000000000002,
+            1.7600000000000002,
+            1.7600000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.2000000000000002,
+            1.7600000000000002,
+            1.7600000000000002,
+            1.7600000000000002
+          ],
+          "reference_arm_velocity_rad_s": [
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            1.2672,
+            1.2672,
+            1.2672,
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            0.8640000000000001,
+            1.2672,
+            1.2672,
+            1.2672
+          ],
+          "arm_effort_nm": [
+            44.0,
+            44.0,
+            20.0,
+            20.0,
+            14.4,
+            14.4,
+            14.4,
+            44.0,
+            44.0,
+            20.0,
+            20.0,
+            14.4,
+            14.4,
+            14.4
+          ],
+          "actuator_forcerange": [
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -32.0,
+              32.0
+            ],
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -44.0,
+              44.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -20.0,
+              20.0
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -14.4,
+              14.4
+            ],
+            [
+              -32.0,
+              32.0
+            ],
+            [
+              -480.0,
+              480.0
+            ],
+            [
+              -480.0,
+              480.0
+            ],
+            [
+              -240.0,
+              240.0
+            ]
+          ],
+          "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+          "urdf": null,
+          "hardware_profile": null,
+          "mechanical_power_abs_sum_cap_w": null,
+          "external_profile_declares_80_percent_mechanical_power": false,
+          "real_robot_driver": false,
+          "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+          "base_reference_caps": {
+            "translation_m_s": 0.48,
+            "yaw_rad_s": 0.7200000000000001
+          },
+          "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+        },
+        "controller_source": "program_generated",
+        "environment_source": "simulation",
+        "privileged_teacher": true,
+        "real_robot_validated": false,
+        "native_video_validation": "pending_replay_export",
+        "experiment": {
+          "name": "frozen_search_winner",
+          "strategy": "baseline",
+          "params": {}
+        },
+        "origin": "fresh",
+        "diagnostic_only": true,
+        "complete_episode_verified": false,
+        "result_path": "runs/smoke_001/experiments/verification/frozen_search_winner/airport_0007_20270923/a000/result.json"
+      }
+    ]
+  },
+  "regressions": [],
+  "passed": false,
+  "baseline_successes": 1,
+  "candidate_successes": 1,
+  "training_export_enabled": false,
+  "origin": "fresh",
+  "timing": {
+    "primitive_seconds": 3.0,
+    "excluded": [
+      "initial_grasp",
+      "base_navigation",
+      "push_release_retreat",
+      "final_stability_check",
+      "CPU_planning_wall_time"
+    ],
+    "separate_budget": "ordinary endpoint alignment",
+    "all_scenes_feasible_within_budget": false
+  }
+}

@@ -1,0 +1,3 @@
+# Install only with the interpreter of a non-base Conda environment.
+cma==4.4.0
+pytest>=8,<9

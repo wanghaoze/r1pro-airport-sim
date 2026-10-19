@@ -1,0 +1,72 @@
+{
+  "schema": "real2sim_registration/1",
+  "status": "estimated_not_measured",
+  "units": "metres_radians",
+  "quaternion_order": "wxyz",
+  "frame": "scene_world",
+  "source_parquet_sha256": "fce035b477cc61b806478ff9b347f726f9ccfd693f1c6f9b0c0cae884c1a0112",
+  "prompt": "Pick up the tray",
+  "method": "first_recorded_gripper_closure_long_side_alignment_with_table_support",
+  "anchor_frame": 110,
+  "anchor_time_s": 3.6666667461395264,
+  "initial_state": "resting_on_table",
+  "base_pose": {
+    "xyz": [
+      0.35,
+      -0.008144919372941872,
+      0.0
+    ],
+    "quaternion_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "tray_pose": {
+    "xyz": [
+      0.85,
+      0.0,
+      0.801
+    ],
+    "quaternion_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "tray_in_base_xyz": [
+    0.5,
+    0.008144919372941872,
+    0.801
+  ],
+  "tray_yaw_rad": 0.0,
+  "geometry_prior": {
+    "table_size_xyz_m": [
+      1.2,
+      0.6,
+      0.8
+    ],
+    "tray_size_xyz_m": [
+      0.56,
+      0.43,
+      0.105
+    ],
+    "dimensions_measured": false,
+    "source": "existing_project_assets_unchanged"
+  },
+  "uncertainty": {
+    "translation_m": 0.03,
+    "yaw_rad": 0.1745329252,
+    "interpretation": "heuristic_range_not_confidence_interval"
+  },
+  "assumptions": [
+    "base_static_as_recorded",
+    "tray_long_axis_parallel_to_base_forward",
+    "Pick_fore_aft_centre_0.50m_prior",
+    "Place_pad_to_tray_bottom_0.09m_prior",
+    "no_gain_friction_or_geometry_fitting"
+  ],
+  "scene_registration_verified": false
+}

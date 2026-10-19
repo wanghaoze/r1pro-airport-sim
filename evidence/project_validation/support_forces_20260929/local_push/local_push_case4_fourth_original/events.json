@@ -1,0 +1,165 @@
+[
+  {
+    "frame": 2861,
+    "event": "primitive_start",
+    "primitive": "push",
+    "limit_s": 3.0,
+    "parameters": {
+      "destination": [
+        0.8500000000000001,
+        -0.5100000000000001,
+        0.8
+      ],
+      "yaw": 0.0,
+      "separation": false
+    }
+  },
+  {
+    "frame": 2861,
+    "event": "primitive_push_compliance_reference",
+    "side": "right",
+    "tcp_deflection_m": 0.015431172406958281,
+    "qualification": "command_reference_only_not_observed_rigid_attachment"
+  },
+  {
+    "frame": 2861,
+    "event": "primitive_push_feedforward",
+    "distance_m": 0.02,
+    "nominal_destination": [
+      0.8500000000000001,
+      -0.5100000000000001,
+      0.8
+    ],
+    "command_position": [
+      0.8502633622672061,
+      -0.49000173406726955,
+      0.7954994507149885
+    ]
+  },
+  {
+    "frame": 2861,
+    "event": "primitive_reference",
+    "duration_s": 2.8,
+    "controller": "BlendedJointPath",
+    "knot_stop_fallback": false,
+    "reference_bounds": {
+      "velocity": [
+        0.3541047842591359,
+        3.537796717705895e-09,
+        0.2354752578454573,
+        0.8639991360008642,
+        0.20680966657491065,
+        0.46887901102310314,
+        0.08078967048928584,
+        0.07644849611234511,
+        0.07862368178829694,
+        0.2952976893833025,
+        0.03754710076696345,
+        0.27884073150246147,
+        0.02462109941489716,
+        0.12193746115270625,
+        0.21693228211780316,
+        0.0
+      ],
+      "acceleration": [
+        0.7190848346467956,
+        7.1842461205936216e-09,
+        0.47818243180611186,
+        1.7545334134528194,
+        0.4199708716263769,
+        0.9521582342252792,
+        0.16406055333735178,
+        0.1552448784360748,
+        0.359311666068067,
+        1.2470760439736839,
+        0.19185295061390711,
+        1.274307251007984,
+        0.12678810280002187,
+        0.5572564312220118,
+        0.8975153467837493,
+        0.0
+      ],
+      "jerk": [
+        4.928357934192848,
+        4.923832934785812e-08,
+        3.277296458269538,
+        12.024963192616822,
+        2.878334624212134,
+        6.525762138421576,
+        1.1244141035533741,
+        1.0639945268196884,
+        5.541955524363204,
+        18.089466827311615,
+        3.3193179332795397,
+        19.654675248208864,
+        2.2069880897586893,
+        8.595018334064108,
+        15.265892443091243,
+        0.0
+      ]
+    }
+  },
+  {
+    "frame": 2889,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 6.611581045201653e-06
+  },
+  {
+    "frame": 2893,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 5.542383096368564e-05
+  },
+  {
+    "frame": 2895,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 2.1291900403008768e-05
+  },
+  {
+    "frame": 2899,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 3.582501440257957e-05
+  },
+  {
+    "frame": 2902,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 1.4014097913017665e-05
+  },
+  {
+    "frame": 2907,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 2.046445285264209e-05
+  },
+  {
+    "frame": 2911,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 9.048855083770846e-05
+  },
+  {
+    "frame": 2914,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 2.6574146753777228e-05
+  },
+  {
+    "frame": 2919,
+    "event": "primitive_complete",
+    "primitive": "push",
+    "duration_s": 2.9,
+    "planning_and_execution_wall_s": 5.537089593010023
+  }
+]

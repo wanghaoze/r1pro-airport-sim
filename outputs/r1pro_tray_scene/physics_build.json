@@ -1,0 +1,19 @@
+{
+  "nq": 25,
+  "nv": 24,
+  "nu": 16,
+  "ncam": 5,
+  "collision_parts": {
+    "tray_runtime": 17,
+    "tray_detailed_asset": 64,
+    "table": 204
+  },
+  "tray_mass_kg": 1.2,
+  "mass_and_friction": "simulation assumptions; unmeasured",
+  "scene_sha256": "16a96d50d111460208831106469fe9e86c3c0f186b9586aae45cd24f0b633c98",
+  "robot_base_position_m": [
+    0.5,
+    0,
+    0
+  ]
+}

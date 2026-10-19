@@ -1,0 +1,12 @@
+{
+  "params": {
+    "threshold": 0.001,
+    "real_metric": true,
+    "preprocess_mode": "auto",
+    "seed": 0,
+    "mcts_iterations": 100
+  },
+  "pid": 226719,
+  "started_unix": 1791800979.836274,
+  "note": "1mm mesh approximation parameter; not task acceptance tolerance"
+}

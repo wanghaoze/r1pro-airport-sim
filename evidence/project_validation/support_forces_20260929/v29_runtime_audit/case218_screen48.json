@@ -1,0 +1,1161 @@
+{
+  "source": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v29_20260929",
+  "config_sha256": "431eda8fb671e69fcaace361696ea4b514ad292d6dfebe37cdf27275ddf404ab",
+  "state_sha256": "0986df2c7c0d29ae14e2a7f86500c09921a34500970f854b4860877c912dfe7b",
+  "qpos_restore_error": 0.0,
+  "candidate0_base_error": 0.0,
+  "rng_calls": [
+    {
+      "frame": 78,
+      "draw_groups": 2
+    },
+    {
+      "frame": 890,
+      "draw_groups": 2
+    },
+    {
+      "frame": 1650,
+      "draw_groups": 2
+    },
+    {
+      "frame": 2376,
+      "draw_groups": 2
+    },
+    {
+      "frame": 3130,
+      "draw_groups": 12
+    }
+  ],
+  "physics_time": 161.90000000004494,
+  "diagnostic_only": true,
+  "original24": {
+    "rejected": [
+      {
+        "candidate": 0,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08800000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.00044171429987364995
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.012924618100665686,
+              "wrist_upright_dot": 0.9877379024942307,
+              "optical_forward_dot": -0.09754576495636448,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.01297076245283584,
+              "wrist_upright_dot": 0.9806197017501538,
+              "optical_forward_dot": -0.09693389102554509,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 1,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.11584069268307678,
+          "rotation_error_rad": 0.06908922680108136
+        }
+      },
+      {
+        "candidate": 2,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08800000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.00014027683453979333
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013346030160004511,
+              "wrist_upright_dot": 0.9848077571968924,
+              "optical_forward_dot": -0.10231669724377633,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.012769663932388486,
+              "wrist_upright_dot": 0.9848077619380653,
+              "optical_forward_dot": -0.09236821142151212,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 3,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.1291923526646345,
+          "rotation_error_rad": 0.15744668950974636
+        }
+      },
+      {
+        "candidate": 4,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.07800000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.0001320864678682813
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.01247620051530099,
+              "wrist_upright_dot": 0.9853666568367325,
+              "optical_forward_dot": -0.09001462595612628,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.011947962671078591,
+              "wrist_upright_dot": 0.9859853206846749,
+              "optical_forward_dot": -0.08049462557794734,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 5,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.15731765122942992,
+          "rotation_error_rad": 0.19038975842918263
+        }
+      },
+      {
+        "candidate": 6,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08800000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.00014031114930993112
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013346035405693651,
+              "wrist_upright_dot": 0.9848077531862667,
+              "optical_forward_dot": -0.1023167714142323,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.012769667078209626,
+              "wrist_upright_dot": 0.9848077555281398,
+              "optical_forward_dot": -0.09236825729536861,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 7,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.10847363442822648,
+          "rotation_error_rad": 0.13281227776264123
+        }
+      },
+      {
+        "candidate": 8,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.061682870147114856,
+          "rotation_error_rad": 0.02728848266483593
+        }
+      },
+      {
+        "candidate": 9,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.1859792183465041,
+          "rotation_error_rad": 0.22331274063041048
+        }
+      },
+      {
+        "candidate": 10,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08800000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.0001402945515596763
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013346031386819397,
+              "wrist_upright_dot": 0.9848077578322064,
+              "optical_forward_dot": -0.10231671473456015,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.012769663335204916,
+              "wrist_upright_dot": 0.9848077602172916,
+              "optical_forward_dot": -0.09236820326209268,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 11,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.21162735309583355,
+          "rotation_error_rad": 0.2349127933279481
+        }
+      },
+      {
+        "candidate": 12,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.081,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.00040877213316359014
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.012484248974304975,
+              "wrist_upright_dot": 0.9856889656806797,
+              "optical_forward_dot": -0.09016507184785437,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.011936761973085542,
+              "wrist_upright_dot": 0.985677468598212,
+              "optical_forward_dot": -0.08038387969351461,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 13,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.24195035519759103,
+          "rotation_error_rad": 0.2662297727002131
+        }
+      },
+      {
+        "candidate": 14,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08800000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.00014031173600122931
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013346035383620924,
+              "wrist_upright_dot": 0.9848077531809549,
+              "optical_forward_dot": -0.10231677108273451,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.012769667061339298,
+              "wrist_upright_dot": 0.9848077551225699,
+              "optical_forward_dot": -0.09236825714338877,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 15,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.18917299540992596,
+          "rotation_error_rad": 0.21123662412701044
+        }
+      },
+      {
+        "candidate": 16,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.06065283641760043,
+          "rotation_error_rad": 0.028221508984968877
+        }
+      },
+      {
+        "candidate": 17,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.2726943911378503,
+          "rotation_error_rad": 0.2971725496582046
+        }
+      },
+      {
+        "candidate": 18,
+        "code": "ik_branch_jump",
+        "detail": {
+          "side": "left",
+          "max_rad": 0.816610321816224
+        }
+      },
+      {
+        "candidate": 19,
+        "code": "reachability_base_configuration_collision",
+        "detail": null
+      },
+      {
+        "candidate": 20,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.068,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.0003015033035076487
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.012397507365279935,
+              "wrist_upright_dot": 0.9846059421815669,
+              "optical_forward_dot": -0.08881341665806727,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.011889110247148197,
+              "wrist_upright_dot": 0.9866649303034956,
+              "optical_forward_dot": -0.07954899803766949,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 21,
+        "code": "reachability_base_configuration_collision",
+        "detail": null
+      },
+      {
+        "candidate": 22,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08800000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.0001403047825874467
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013346035272821652,
+              "wrist_upright_dot": 0.9848077542207393,
+              "optical_forward_dot": -0.10231676974418571,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.012769667274538236,
+              "wrist_upright_dot": 0.9848077570413276,
+              "optical_forward_dot": -0.09236825970093772,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 23,
+        "code": "reachability_base_configuration_collision",
+        "detail": null
+      }
+    ],
+    "qualified": 0,
+    "seconds": 7.81276624603197,
+    "code_match": true
+  },
+  "expanded48": {
+    "rejected": [
+      {
+        "candidate": 0,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08800000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.00044171429987364995
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.012924618100665686,
+              "wrist_upright_dot": 0.9877379024942307,
+              "optical_forward_dot": -0.09754576495636448,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.01297076245283584,
+              "wrist_upright_dot": 0.9806197017501538,
+              "optical_forward_dot": -0.09693389102554509,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 1,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.11584069268307678,
+          "rotation_error_rad": 0.06908922680108136
+        }
+      },
+      {
+        "candidate": 2,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08800000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.00014027683453979333
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013346030160004511,
+              "wrist_upright_dot": 0.9848077571968924,
+              "optical_forward_dot": -0.10231669724377633,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.012769663932388486,
+              "wrist_upright_dot": 0.9848077619380653,
+              "optical_forward_dot": -0.09236821142151212,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 3,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.1291923526646345,
+          "rotation_error_rad": 0.15744668950974636
+        }
+      },
+      {
+        "candidate": 4,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.07800000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.0001320864678682813
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.01247620051530099,
+              "wrist_upright_dot": 0.9853666568367325,
+              "optical_forward_dot": -0.09001462595612628,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.011947962671078591,
+              "wrist_upright_dot": 0.9859853206846749,
+              "optical_forward_dot": -0.08049462557794734,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 5,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.15731765122942992,
+          "rotation_error_rad": 0.19038975842918263
+        }
+      },
+      {
+        "candidate": 6,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08800000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.00014031114930993112
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013346035405693651,
+              "wrist_upright_dot": 0.9848077531862667,
+              "optical_forward_dot": -0.1023167714142323,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.012769667078209626,
+              "wrist_upright_dot": 0.9848077555281398,
+              "optical_forward_dot": -0.09236825729536861,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 7,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.10847363442822648,
+          "rotation_error_rad": 0.13281227776264123
+        }
+      },
+      {
+        "candidate": 8,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.061682870147114856,
+          "rotation_error_rad": 0.02728848266483593
+        }
+      },
+      {
+        "candidate": 9,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.1859792183465041,
+          "rotation_error_rad": 0.22331274063041048
+        }
+      },
+      {
+        "candidate": 10,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08800000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.0001402945515596763
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013346031386819397,
+              "wrist_upright_dot": 0.9848077578322064,
+              "optical_forward_dot": -0.10231671473456015,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.012769663335204916,
+              "wrist_upright_dot": 0.9848077602172916,
+              "optical_forward_dot": -0.09236820326209268,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 11,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.21162735309583355,
+          "rotation_error_rad": 0.2349127933279481
+        }
+      },
+      {
+        "candidate": 12,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.081,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.00040877213316359014
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.012484248974304975,
+              "wrist_upright_dot": 0.9856889656806797,
+              "optical_forward_dot": -0.09016507184785437,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.011936761973085542,
+              "wrist_upright_dot": 0.985677468598212,
+              "optical_forward_dot": -0.08038387969351461,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 13,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.24195035519759103,
+          "rotation_error_rad": 0.2662297727002131
+        }
+      },
+      {
+        "candidate": 14,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08800000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.00014031173600122931
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013346035383620924,
+              "wrist_upright_dot": 0.9848077531809549,
+              "optical_forward_dot": -0.10231677108273451,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.012769667061339298,
+              "wrist_upright_dot": 0.9848077551225699,
+              "optical_forward_dot": -0.09236825714338877,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 15,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.18917299540992596,
+          "rotation_error_rad": 0.21123662412701044
+        }
+      },
+      {
+        "candidate": 16,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.06065283641760043,
+          "rotation_error_rad": 0.028221508984968877
+        }
+      },
+      {
+        "candidate": 17,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.2726943911378503,
+          "rotation_error_rad": 0.2971725496582046
+        }
+      },
+      {
+        "candidate": 18,
+        "code": "ik_branch_jump",
+        "detail": {
+          "side": "left",
+          "max_rad": 0.816610321816224
+        }
+      },
+      {
+        "candidate": 19,
+        "code": "reachability_base_configuration_collision",
+        "detail": null
+      },
+      {
+        "candidate": 20,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.068,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.0003015033035076487
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.012397507365279935,
+              "wrist_upright_dot": 0.9846059421815669,
+              "optical_forward_dot": -0.08881341665806727,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.011889110247148197,
+              "wrist_upright_dot": 0.9866649303034956,
+              "optical_forward_dot": -0.07954899803766949,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 21,
+        "code": "reachability_base_configuration_collision",
+        "detail": null
+      },
+      {
+        "candidate": 22,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08800000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.0001403047825874467
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013346035272821652,
+              "wrist_upright_dot": 0.9848077542207393,
+              "optical_forward_dot": -0.10231676974418571,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.012769667274538236,
+              "wrist_upright_dot": 0.9848077570413276,
+              "optical_forward_dot": -0.09236825970093772,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 23,
+        "code": "reachability_base_configuration_collision",
+        "detail": null
+      },
+      {
+        "candidate": 24,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.066375670541326,
+          "rotation_error_rad": 0.02781471922133931
+        }
+      },
+      {
+        "candidate": 25,
+        "code": "reachability_base_configuration_collision",
+        "detail": null
+      },
+      {
+        "candidate": 26,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08800000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.00014026413134899827
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013346013708558424,
+              "wrist_upright_dot": 0.9848077863733145,
+              "optical_forward_dot": -0.10231646638179975,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.012756368714187769,
+              "wrist_upright_dot": 0.9848184216539156,
+              "optical_forward_dot": -0.09217733775414287,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 27,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.12279040535981094,
+          "rotation_error_rad": 0.1474186219363293
+        }
+      },
+      {
+        "candidate": 28,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.084,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -6.487291300730527e-05
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.012416043623914217,
+              "wrist_upright_dot": 0.9860096660451599,
+              "optical_forward_dot": -0.08923268027768695,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.011855872428590684,
+              "wrist_upright_dot": 0.985482733645742,
+              "optical_forward_dot": -0.07926420304156061,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 29,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.15135505927279874,
+          "rotation_error_rad": 0.1804496341849178
+        }
+      },
+      {
+        "candidate": 30,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08800000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.00014031292849197042
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013346035399047934,
+              "wrist_upright_dot": 0.9848077533532478,
+              "optical_forward_dot": -0.1023167713124931,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.012769667383781283,
+              "wrist_upright_dot": 0.9848077556618108,
+              "optical_forward_dot": -0.09236826155453212,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 31,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.10172258045076282,
+          "rotation_error_rad": 0.12268783885963576
+        }
+      },
+      {
+        "candidate": 32,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.06234577583206616,
+          "rotation_error_rad": 0.030169339773077317
+        }
+      },
+      {
+        "candidate": 33,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.18042815110978416,
+          "rotation_error_rad": 0.21342211436418998
+        }
+      },
+      {
+        "candidate": 34,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.000331280752655449
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.012834044829075866,
+              "wrist_upright_dot": 0.9851633495483451,
+              "optical_forward_dot": -0.09507670517324694,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.012303635346002668,
+              "wrist_upright_dot": 0.9855029604905545,
+              "optical_forward_dot": -0.08562930704414691,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 35,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.13949833994121386,
+          "rotation_error_rad": 0.171964280584831
+        }
+      },
+      {
+        "candidate": 36,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.04959028597912851,
+          "rotation_error_rad": 0.021642307019317963
+        }
+      },
+      {
+        "candidate": 37,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.16705324003199049,
+          "rotation_error_rad": 0.20453350032551051
+        }
+      },
+      {
+        "candidate": 38,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08600000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.00034579129166689975
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013346033873385375,
+              "wrist_upright_dot": 0.9848077544258418,
+              "optical_forward_dot": -0.10231674975465803,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.01276966565163003,
+              "wrist_upright_dot": 0.9848077582648622,
+              "optical_forward_dot": -0.09236823652496821,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 39,
+        "code": "reachability_base_configuration_collision",
+        "detail": null
+      },
+      {
+        "candidate": 40,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.0818151212820113,
+          "rotation_error_rad": 0.0370465388402545
+        }
+      },
+      {
+        "candidate": 41,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.195179468849819,
+          "rotation_error_rad": 0.2371389300744933
+        }
+      },
+      {
+        "candidate": 42,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08900000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.0004063590378146251
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013346035307841148,
+              "wrist_upright_dot": 0.9848077532751167,
+              "optical_forward_dot": -0.10231677003384106,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.012769666978409826,
+              "wrist_upright_dot": 0.9848077557732519,
+              "optical_forward_dot": -0.09236825582883065,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 43,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.12700339225302232,
+          "rotation_error_rad": 0.15385300015716444
+        }
+      },
+      {
+        "candidate": 44,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08600000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.00012774144601261796
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.01305808925801709,
+              "wrist_upright_dot": 0.9850053338365945,
+              "optical_forward_dot": -0.09824398709009098,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.012528892039125036,
+              "wrist_upright_dot": 0.9851886679938222,
+              "optical_forward_dot": -0.08888307620880763,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 45,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.15534703302553207,
+          "rotation_error_rad": 0.18687067675624897
+        }
+      },
+      {
+        "candidate": 46,
+        "code": "direct_grasp_closure_blocked",
+        "detail": {
+          "opening_m": 0.08900000000000001,
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_012"
+            ],
+            "distance_m": -0.00040636128073697695
+          },
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013346035532590403,
+              "wrist_upright_dot": 0.9848077530350229,
+              "optical_forward_dot": -0.10231677320307477,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.012769667340547705,
+              "wrist_upright_dot": 0.984807754924406,
+              "optical_forward_dot": -0.09236826114824631,
+              "self_view_geoms": []
+            }
+          }
+        }
+      },
+      {
+        "candidate": 47,
+        "code": "ik_unreachable",
+        "detail": {
+          "side": "left",
+          "position_error_m": 0.10611100627490226,
+          "rotation_error_rad": 0.1291455490155952
+        }
+      }
+    ],
+    "qualified": [],
+    "examined": 48,
+    "seconds": 12.776110037928447
+  },
+  "live_integration_unchanged": true,
+  "physics_time_after": 161.90000000004494,
+  "source_hashes": {
+    "r1pro_teleop/airport_fsm/runtime.py": "7158cb5317b2fc8ed2fe182980563e366ceef3e61ed80e31402eb62fd1568d22",
+    "r1pro_teleop/airport_fsm/reachability_planner.py": "5187e3db48c67cf447164f8be78512c166fc739270e688750d044901e016a2e4",
+    "r1pro_teleop/airport_fsm/rim_affordances.py": "8b8bfefb8469b8b66b4c76609ad16f6926aea1bca5ea8b42e079bb0c13dd8bf8",
+    "r1pro_teleop/airport_fsm/machine.py": "4d6b43043fa778c3234e4fb73f7ad127c308bcd729a3deaa5c9e40d64dee0531"
+  }
+}

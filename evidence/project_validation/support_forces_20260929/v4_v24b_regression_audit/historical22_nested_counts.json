@@ -1,0 +1,12 @@
+{
+  "baseline": {
+    "success": 5,
+    "retained_contact_lost / table0": 15,
+    "push_accuracy_not_met": 1,
+    "primitive_postcondition_failed": 1
+  },
+  "additive": {
+    "success": 10,
+    "retained_contact_lost / table0": 12
+  }
+}

@@ -1,0 +1,4 @@
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_full_experiment_20261015_demo01/native_episode_01/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_full_experiment_20261015_demo01/native_episode_01/head_right.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_full_experiment_20261015_demo01/native_episode_01/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_full_experiment_20261015_demo01/native_episode_01/right_wrist.mp4

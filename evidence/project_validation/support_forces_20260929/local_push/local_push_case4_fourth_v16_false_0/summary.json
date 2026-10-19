@@ -1,0 +1,58 @@
+{
+  "qualification": "private_local_push_diagnostic_not_complete_episode",
+  "source": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v11_20260929/runs/regression",
+  "controller": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v16_20260929",
+  "case": 4,
+  "frame": 2861,
+  "tray": 0,
+  "side": "right",
+  "incoming_target_source": "previous_recorded_action",
+  "modifications": {
+    "loaded_command_reference_enabled": false,
+    "loaded_command_reference_scope": "push",
+    "push_withdraw_preload_scale": 0.0
+  },
+  "restored_context": {
+    "retained_contact": [
+      0,
+      "right"
+    ],
+    "holding": null,
+    "phase": "adjust",
+    "primitive_lift_xy_shift_m": 0.06,
+    "initial_bottom": [
+      0.801,
+      0.801,
+      0.801
+    ],
+    "support_timer": "reset only after confirming actual entry support",
+    "warnings": "fresh zero counters; source episode would have stopped at any prior warning",
+    "diagnostic_counters": "wall budget restarted; historical peak power and inverse-call tallies not restored"
+  },
+  "exact_original_trajectory_match": false,
+  "maximum_qpos_error": 0.06831120893290776,
+  "maximum_qvel_error": 0.21570708820667642,
+  "maximum_action_error": 0.0691480040550232,
+  "endpoint_qpos_error": 0.06881651067321937,
+  "primitive_returned": true,
+  "failure": null,
+  "elapsed_s": 2.900000000013847,
+  "final_pose": [
+    0.8425063228524952,
+    -0.51177709662992,
+    0.7999952034588008,
+    -0.02374187548619307,
+    -4.850157119962553e-06,
+    1.719769061564424e-05,
+    0.9997181217868933
+  ],
+  "final_forces": [
+    0.0,
+    10.633493444310306
+  ],
+  "final_table_contacts": 8,
+  "physics_samples": 1450,
+  "longest_physics_missing_s": 0.008,
+  "table_force_peak_n": 51.201901454991,
+  "support_fraction": 0.7772413793103449
+}

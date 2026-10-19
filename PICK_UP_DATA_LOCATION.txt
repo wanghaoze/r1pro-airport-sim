@@ -1,0 +1,22 @@
+Actual first-batch three-action dataset bound to1000updates checkpoint. Train Pick=1 segment,224frames,11.2s; val/test Pick1 each, excluded from gradient updates.
+train | Pick up the tray
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_hardened_v29_v1/training_batch_v1/datasets/train/data/chunk-000/episode_000000.parquet
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_hardened_v29_v1/training_batch_v1/datasets/train/videos/chunk-000/observation.images.head_left/episode_000000.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_hardened_v29_v1/training_batch_v1/datasets/train/videos/chunk-000/observation.images.left_wrist/episode_000000.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_hardened_v29_v1/training_batch_v1/datasets/train/videos/chunk-000/observation.images.right_wrist/episode_000000.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_hardened_v29_v1/training_batch_v1/datasets/train/meta/tasks.jsonl
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_20261006_v1/campaign_v1/case_0000/observed_source/attempt/trace.h5
+val | Pick up the tray
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_hardened_v29_v1/training_batch_v1/datasets/val/data/chunk-000/episode_000000.parquet
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_hardened_v29_v1/training_batch_v1/datasets/val/videos/chunk-000/observation.images.head_left/episode_000000.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_hardened_v29_v1/training_batch_v1/datasets/val/videos/chunk-000/observation.images.left_wrist/episode_000000.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_hardened_v29_v1/training_batch_v1/datasets/val/videos/chunk-000/observation.images.right_wrist/episode_000000.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_hardened_v29_v1/training_batch_v1/datasets/val/meta/tasks.jsonl
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_20261006_v1/campaign_v1/case_0001/observed_source/attempt/trace.h5
+test | Pick up the tray
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_hardened_v29_v1/training_batch_v1/datasets/test/data/chunk-000/episode_000000.parquet
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_hardened_v29_v1/training_batch_v1/datasets/test/videos/chunk-000/observation.images.head_left/episode_000000.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_hardened_v29_v1/training_batch_v1/datasets/test/videos/chunk-000/observation.images.left_wrist/episode_000000.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_hardened_v29_v1/training_batch_v1/datasets/test/videos/chunk-000/observation.images.right_wrist/episode_000000.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_hardened_v29_v1/training_batch_v1/datasets/test/meta/tasks.jsonl
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_20261006_v1/campaign_v1/case_0002/observed_source/attempt/trace.h5

@@ -1,0 +1,8 @@
+{
+  "stage": "completed",
+  "verification_passed": false,
+  "baseline_successes": 1,
+  "candidate_successes": 1,
+  "regressions": [],
+  "production_promoted": false
+}

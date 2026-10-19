@@ -1,0 +1,468 @@
+{
+  "schema": "airport_fsm_lerobot_shard/1",
+  "complete": true,
+  "path": "datasets/mobile19/train/shard_dc937a3932cababf",
+  "repo_id": "local/r1pro-airport-train-dc937a3932cababf",
+  "split": "train",
+  "scene_ids": [
+    "airport_0004_20270920"
+  ],
+  "sources": [
+    {
+      "scene_id": "airport_0004_20270920",
+      "split": "train",
+      "attempt": "a000",
+      "trace": "/home/michelle/haoze/humanvideo/r1pro-tray-server/runs/airport_primitives3_v50_smoke_20260923/attempts/airport_0004_20270920/a000/trace.h5",
+      "trace_sha256": "1be1a17b101e7725f14f6b1e13086528ca1fa052bbac5fe82186b98e8bf16d87",
+      "result": "/home/michelle/haoze/humanvideo/r1pro-tray-server/runs/airport_primitives3_v50_smoke_20260923/attempts/airport_0004_20270920/a000/result.json",
+      "result_sha256": "4d2c083981fd2ed9b881959c95d2d2941b439ca005f554a234c5b762bbeee77c",
+      "episode_index": 0,
+      "dataset_start_frame": 0,
+      "dataset_end_frame": 2956,
+      "frames": 2956,
+      "replay_max_qpos_error": 0.0,
+      "cameras": {
+        "head_left": {
+          "frames": 2956,
+          "shape": [
+            1536,
+            1920,
+            3
+          ],
+          "blank_frames": 0
+        },
+        "head_right": {
+          "frames": 2956,
+          "shape": [
+            1536,
+            1920,
+            3
+          ],
+          "blank_frames": 0
+        },
+        "left_wrist": {
+          "frames": 2956,
+          "shape": [
+            720,
+            1280,
+            3
+          ],
+          "blank_frames": 0
+        },
+        "right_wrist": {
+          "frames": 2956,
+          "shape": [
+            720,
+            1280,
+            3
+          ],
+          "blank_frames": 0
+        }
+      }
+    }
+  ],
+  "frames": 2956,
+  "episodes": 1,
+  "controller_source": "program_generated",
+  "environment_source": "simulation",
+  "human_demonstration": false,
+  "lerobot_version": "0.4.4",
+  "dataset_format": "v3",
+  "loader_every_episode_first_last": true,
+  "action_layout": "mobile19",
+  "action_dimension": 19,
+  "raw_arm_action_dimension": 16,
+  "base_action_semantics": "simulated planar joint absolute targets: world dx/dy from initial origin, yaw offset from initial heading; NOT real chassis cmd_vel",
+  "base_action_consumed_by_default_16d_policy": null,
+  "real_base_driver_available": false,
+  "privileged_state_as_observation": false,
+  "native_camera_contract": {
+    "streams": {
+      "head_left": {
+        "width": 1920,
+        "height": 1536
+      },
+      "head_right": {
+        "width": 1920,
+        "height": 1536
+      },
+      "left_wrist": {
+        "width": 1280,
+        "height": 720
+      },
+      "right_wrist": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    "fps": 20,
+    "codec": "h264",
+    "crf": 18,
+    "crop": false,
+    "resize": false,
+    "speedup": false,
+    "overlay": false
+  },
+  "camera_calibration": {
+    "profile": "r1pro_fourcam_capture_20260922_pinhole_v1",
+    "calibration_status": "measured_intrinsics_published_tf_unverified_optical_mapping",
+    "deployment_calibration_validated": false,
+    "projection": "pinhole_K_no_distortion",
+    "distortion_status": "not_applied_head_8_coeff_semantics_unconfirmed",
+    "training_domain": "ideal_pinhole_not_raw_distorted_sensor",
+    "source_capture_hz": 30,
+    "fps": 20,
+    "width": 1280,
+    "height": 720,
+    "crop": false,
+    "resize": false,
+    "streams": {
+      "head_left": {
+        "width": 1920,
+        "height": 1536,
+        "K": [
+          1012.2157359892154,
+          0.0,
+          963.3488301078507,
+          0.0,
+          1011.799585083002,
+          768.6021100142606,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "D": [
+          -0.5579529822541125,
+          -0.6903050298071337,
+          2.1001877019863112e-05,
+          -0.00032368492541970243,
+          -0.038964230149534373,
+          -0.16388389992466643,
+          -1.008346581511784,
+          -0.20880452901287969
+        ],
+        "R": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "P": [
+          1012.2157359892154,
+          0.0,
+          963.3488301078507,
+          0.0,
+          0.0,
+          1011.799585083002,
+          768.6021100142606,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "reported_distortion_model": "plumb_bob",
+        "distortion_applied": false,
+        "parent": "torso_link4",
+        "published_frame": "camera_head_left",
+        "position_m": [
+          0.064,
+          0.06,
+          0.477
+        ],
+        "quaternion_xyzw": [
+          -0.5841728078411668,
+          0.5787405215534903,
+          -0.3981494730683842,
+          0.40654463025150067
+        ],
+        "optical_frame_mapping": "assumed_published_frame_is_optical_NEEDS_REVIEW",
+        "intrinsics_source_sha256": "cada1f62453de0fe5901f2e38a6b63c5d5650d48d2c4494bbf72eaf396283191"
+      },
+      "head_right": {
+        "width": 1920,
+        "height": 1536,
+        "K": [
+          1014.9335380480551,
+          0.0,
+          961.5783245023572,
+          0.0,
+          1014.4181653733547,
+          768.0401199093222,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "D": [
+          -0.24827939473671215,
+          -0.3830967897231506,
+          -9.271547563095913e-05,
+          -0.000283456087210927,
+          -0.015030440275462806,
+          0.14590807703625502,
+          -0.5759230630804809,
+          -0.1005485923433225
+        ],
+        "R": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "P": [
+          1014.9335380480551,
+          0.0,
+          961.5783245023572,
+          0.0,
+          0.0,
+          1014.4181653733547,
+          768.0401199093222,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "reported_distortion_model": "plumb_bob",
+        "distortion_applied": false,
+        "parent": "torso_link4",
+        "published_frame": "camera_head_right",
+        "position_m": [
+          0.064,
+          -0.06,
+          0.477
+        ],
+        "quaternion_xyzw": [
+          -0.5832546696816745,
+          0.5789273888832009,
+          -0.39948781817381374,
+          0.4062838316080587
+        ],
+        "optical_frame_mapping": "assumed_published_frame_is_optical_NEEDS_REVIEW",
+        "intrinsics_source_sha256": "e07e3e559aa6adecab52eb26db3436b7d996cab1ee5b5f1119c99c0aa4cfff26"
+      },
+      "left_wrist": {
+        "width": 1280,
+        "height": 720,
+        "K": [
+          652.2298583984375,
+          0.0,
+          637.885986328125,
+          0.0,
+          651.4490356445312,
+          366.4038391113281,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "D": [
+          -0.05069444328546524,
+          0.05630522593855858,
+          0.0016022863565012813,
+          0.0003874148824252188,
+          -0.017663510516285896
+        ],
+        "R": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "P": [
+          652.2298583984375,
+          0.0,
+          637.885986328125,
+          0.0,
+          0.0,
+          651.4490356445312,
+          366.4038391113281,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "reported_distortion_model": "plumb_bob",
+        "distortion_applied": false,
+        "parent": "left_gripper_link",
+        "published_frame": "arm_left",
+        "position_m": [
+          0.07561222370319383,
+          -8.989828998573128e-06,
+          0.03274121884789884
+        ],
+        "quaternion_xyzw": [
+          0.665871550376349,
+          -0.6609513157956648,
+          -0.245748997317266,
+          0.2436511171017591
+        ],
+        "optical_frame_mapping": "assumed_published_frame_is_optical_NEEDS_REVIEW",
+        "intrinsics_source_sha256": "30aab934ba0cbb72947beac95f7e12a1dfaf40a42b5ed90fd32a21ccb7470805"
+      },
+      "right_wrist": {
+        "width": 1280,
+        "height": 720,
+        "K": [
+          653.6876220703125,
+          0.0,
+          632.9224243164062,
+          0.0,
+          653.048828125,
+          367.9019470214844,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "D": [
+          -0.0502031072974205,
+          0.05562106519937515,
+          0.0007528919959440827,
+          0.0004108887806069106,
+          -0.01728924736380577
+        ],
+        "R": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "P": [
+          653.6876220703125,
+          0.0,
+          632.9224243164062,
+          0.0,
+          0.0,
+          653.048828125,
+          367.9019470214844,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "reported_distortion_model": "plumb_bob",
+        "distortion_applied": false,
+        "parent": "right_gripper_link",
+        "published_frame": "arm_right",
+        "position_m": [
+          0.08298856217858822,
+          0.024870108525869315,
+          0.02561625331421194
+        ],
+        "quaternion_xyzw": [
+          0.6712783344041658,
+          -0.6578425173799907,
+          -0.24249978296268115,
+          0.24046304362578907
+        ],
+        "optical_frame_mapping": "assumed_published_frame_is_optical_NEEDS_REVIEW",
+        "intrinsics_source_sha256": "ebdc8fa7fb87b4ada9aaa99eb39b9aeae58006083314d3b3f9f538523a643ce0"
+      }
+    },
+    "audit_sha256": "c3c3a2c92125463d8b301df4fc5bd627076e057dec5d5ba71e936274b3612e53"
+  },
+  "videos": [
+    {
+      "file": "videos/observation.images.head_left/chunk-000/file-000.mp4",
+      "camera": "head_left",
+      "width": 1920,
+      "height": 1536,
+      "fps": 20.0,
+      "frames": 2956,
+      "codec": "h264"
+    },
+    {
+      "file": "videos/observation.images.head_right/chunk-000/file-000.mp4",
+      "camera": "head_right",
+      "width": 1920,
+      "height": 1536,
+      "fps": 20.0,
+      "frames": 2956,
+      "codec": "h264"
+    },
+    {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-000.mp4",
+      "camera": "left_wrist",
+      "width": 1280,
+      "height": 720,
+      "fps": 20.0,
+      "frames": 2956,
+      "codec": "h264"
+    },
+    {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-000.mp4",
+      "camera": "right_wrist",
+      "width": 1280,
+      "height": 720,
+      "fps": 20.0,
+      "frames": 2956,
+      "codec": "h264"
+    }
+  ],
+  "normalization": "Compute from train shards only; validation/test remain separate",
+  "recovery_episodes_in_ordinary_bc": false,
+  "physics_engine": {
+    "mujoco": "3.13.0",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3"
+  },
+  "files": {
+    "data/chunk-000/file-000.parquet": {
+      "sha256": "292f2e8eb9099bf2c8410916473bb1c3624daff52f9c386cf51c63028c4c6e8d",
+      "bytes": 464130
+    },
+    "meta/episodes/chunk-000/file-000.parquet": {
+      "sha256": "6e1992ce13d688829002c58360b665b5d20978f47bc4c66f738384da3cb05a71",
+      "bytes": 72883
+    },
+    "meta/info.json": {
+      "sha256": "0b3bbd3f7782ecbddfe37d02e026ae9ab24c5a5a1567669ff649d09c27d1f8ea",
+      "bytes": 5421
+    },
+    "meta/stats.json": {
+      "sha256": "cac0d1a625bf605aec517064881a7f972c6d472de9d65a6b41897d6b880734d9",
+      "bytes": 25996
+    },
+    "meta/tasks.parquet": {
+      "sha256": "2fae5625a6024a3eaef0bbab6cd3e7934d78a045d9bac5aaeb04948bd0b15f59",
+      "bytes": 2476
+    },
+    "videos/observation.images.head_left/chunk-000/file-000.mp4": {
+      "sha256": "d217a6f5d822dec689aca88ff7f6c03fee2db8369a16137e59155f7001ff5e4b",
+      "bytes": 114694594
+    },
+    "videos/observation.images.head_right/chunk-000/file-000.mp4": {
+      "sha256": "2d2262d99800b1a1d3e210836be73a1cd6fb928011a208296d8a3c99744d5127",
+      "bytes": 116305179
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-000.mp4": {
+      "sha256": "343fbe9f8df3d80741fff85e46814b8dc9f33d8216337b304e85237a46f753dd",
+      "bytes": 45082610
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-000.mp4": {
+      "sha256": "fcba4ca17eac4502f17ccb28ced6a2e6347dcc74163a583eb543199dc6d4025e",
+      "bytes": 44425827
+    }
+  }
+}

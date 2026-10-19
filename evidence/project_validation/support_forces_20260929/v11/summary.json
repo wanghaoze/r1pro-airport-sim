@@ -1,0 +1,300 @@
+{
+  "qualification": "read_only_mj_forward_force_reconstruction_not_new_labels_or_accepted_episodes",
+  "root": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v11_20260929/runs/regression",
+  "mujoco_version": "3.13.0",
+  "script_sha256": "b429f013a5df5690071985e44772a10694792061b84ed76b7cb8af9095216f6d",
+  "estimator_sha256": "6f3fe01697a93c528e1d8951aa091f486b1341c6a3e4dc583a4e13dfed282a7f",
+  "missing_time_semantics": "20 Hz sample durations; terminal rejected substep is not a complete recorded interval; full-trace missing time includes carrying",
+  "cases": [
+    {
+      "scene_id": "airport_0004_20270920",
+      "attempt": "a000",
+      "source_trace": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v11_20260929/runs/regression/attempts/airport_0004_20270920/a000/trace.h5",
+      "source_xml_sha256": "c2fc68ba6d062823e6ee101ac31edf00b35e99483a81388256f887fbc3b3cf6c",
+      "frames": 3165,
+      "fps": 20.0,
+      "csv": "airport_0004_20270920_a000.csv",
+      "physics_success": true,
+      "failure_code": null,
+      "simulation_seconds": 158.25,
+      "whole_trace_longest_missing_s_by_tray": [
+        12.250000000000039,
+        14.600000000000072,
+        15.500000000000085
+      ],
+      "whole_trace_table_load_peak_n_by_tray": [
+        37.14354297497019,
+        38.865401734882326,
+        49.813241581731525
+      ],
+      "push_segments": [
+        {
+          "start_frame": 473,
+          "target_tray": 2,
+          "frames": 51,
+          "table_normal_peak_n": 49.813241581731525,
+          "gripper_fz_min_n": -14.572257496178414,
+          "gripper_fz_max_n": 8.08058820418838,
+          "missing_frames": 8,
+          "longest_missing_s": 0.15000000000000002,
+          "min_z_max_m": 0.8000150444638613
+        },
+        {
+          "start_frame": 1524,
+          "target_tray": 1,
+          "frames": 51,
+          "table_normal_peak_n": 38.865401734882326,
+          "gripper_fz_min_n": -19.467799219453774,
+          "gripper_fz_max_n": 7.941292884272325,
+          "missing_frames": 9,
+          "longest_missing_s": 0.1,
+          "min_z_max_m": 0.8000314517514256
+        },
+        {
+          "start_frame": 2010,
+          "target_tray": 1,
+          "frames": 51,
+          "table_normal_peak_n": 22.788217690451727,
+          "gripper_fz_min_n": -9.46318771158327,
+          "gripper_fz_max_n": 4.4885137723747555,
+          "missing_frames": 10,
+          "longest_missing_s": 0.2,
+          "min_z_max_m": 0.8000831273500693
+        },
+        {
+          "start_frame": 2861,
+          "target_tray": 0,
+          "frames": 58,
+          "table_normal_peak_n": 37.14354297497019,
+          "gripper_fz_min_n": -8.246193614100461,
+          "gripper_fz_max_n": 5.444548260922178,
+          "missing_frames": 13,
+          "longest_missing_s": 0.1,
+          "min_z_max_m": 0.8000904885508378
+        }
+      ],
+      "maximum_restored_body_position_error_m": 0.0
+    },
+    {
+      "scene_id": "airport_0005_20270921",
+      "attempt": "a000",
+      "source_trace": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v11_20260929/runs/regression/attempts/airport_0005_20270921/a000/trace.h5",
+      "source_xml_sha256": "e9d79e48d96d5d52912721a58a9f91594e6e4bf9c2e47d49d54b6b8967c5791b",
+      "frames": 2517,
+      "fps": 20.0,
+      "csv": "airport_0005_20270921_a000.csv",
+      "physics_success": false,
+      "failure_code": "contact_handoff_aborted",
+      "simulation_seconds": 125.8,
+      "whole_trace_longest_missing_s_by_tray": [
+        15.450000000000085,
+        20.00000000000015,
+        14.350000000000069
+      ],
+      "whole_trace_table_load_peak_n_by_tray": [
+        13.185951766157398,
+        36.46539536934391,
+        37.81882504462122
+      ],
+      "push_segments": [
+        {
+          "start_frame": 403,
+          "target_tray": 2,
+          "frames": 51,
+          "table_normal_peak_n": 37.81882504462122,
+          "gripper_fz_min_n": -15.719351472834042,
+          "gripper_fz_max_n": 4.321493673807992,
+          "missing_frames": 4,
+          "longest_missing_s": 0.1,
+          "min_z_max_m": 0.8000299293140789
+        },
+        {
+          "start_frame": 2463,
+          "target_tray": 1,
+          "frames": 54,
+          "table_normal_peak_n": 36.46539536934391,
+          "gripper_fz_min_n": -10.063047393357035,
+          "gripper_fz_max_n": 5.731388782887569,
+          "missing_frames": 10,
+          "longest_missing_s": 0.2,
+          "min_z_max_m": 0.8000535983656714
+        }
+      ],
+      "maximum_restored_body_position_error_m": 0.0
+    },
+    {
+      "scene_id": "airport_0008_20270924",
+      "attempt": "a000",
+      "source_trace": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v11_20260929/runs/regression/attempts/airport_0008_20270924/a000/trace.h5",
+      "source_xml_sha256": "504685fad7909416ea42bb569fb7bcf574cc8b9851233465596687916644bdba",
+      "frames": 1982,
+      "fps": 20.0,
+      "csv": "airport_0008_20270924_a000.csv",
+      "physics_success": false,
+      "failure_code": "contact_handoff_aborted",
+      "simulation_seconds": 99.05,
+      "whole_trace_longest_missing_s_by_tray": [
+        0.05,
+        14.650000000000073,
+        15.400000000000084
+      ],
+      "whole_trace_table_load_peak_n_by_tray": [
+        11.772000000415947,
+        45.434436851190554,
+        32.69781407724175
+      ],
+      "push_segments": [
+        {
+          "start_frame": 412,
+          "target_tray": 2,
+          "frames": 51,
+          "table_normal_peak_n": 32.69781407724175,
+          "gripper_fz_min_n": -6.448985677456487,
+          "gripper_fz_max_n": 4.574229234291691,
+          "missing_frames": 4,
+          "longest_missing_s": 0.05,
+          "min_z_max_m": 0.8000085893428981
+        },
+        {
+          "start_frame": 1459,
+          "target_tray": 1,
+          "frames": 51,
+          "table_normal_peak_n": 45.434436851190554,
+          "gripper_fz_min_n": -17.469342699533858,
+          "gripper_fz_max_n": 7.862646078106279,
+          "missing_frames": 7,
+          "longest_missing_s": 0.1,
+          "min_z_max_m": 0.8000300593300061
+        },
+        {
+          "start_frame": 1945,
+          "target_tray": 1,
+          "frames": 37,
+          "table_normal_peak_n": 21.504989540610055,
+          "gripper_fz_min_n": -7.146485525630959,
+          "gripper_fz_max_n": 5.754832878593202,
+          "missing_frames": 10,
+          "longest_missing_s": 0.2,
+          "min_z_max_m": 0.8000661614342318
+        }
+      ],
+      "maximum_restored_body_position_error_m": 0.0
+    },
+    {
+      "scene_id": "airport_0016_20270932",
+      "attempt": "a000",
+      "source_trace": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v11_20260929/runs/regression/attempts/airport_0016_20270932/a000/trace.h5",
+      "source_xml_sha256": "4bbbd10deb579c364d1b14b023de2c0c9946daa7d1a5df5c5bb9018fd9c3c875",
+      "frames": 1990,
+      "fps": 20.0,
+      "csv": "airport_0016_20270932_a000.csv",
+      "physics_success": false,
+      "failure_code": "contact_handoff_aborted",
+      "simulation_seconds": 99.45,
+      "whole_trace_longest_missing_s_by_tray": [
+        0.05,
+        14.550000000000072,
+        15.450000000000085
+      ],
+      "whole_trace_table_load_peak_n_by_tray": [
+        12.00271327968373,
+        56.83186921069206,
+        42.16371413209785
+      ],
+      "push_segments": [
+        {
+          "start_frame": 422,
+          "target_tray": 2,
+          "frames": 51,
+          "table_normal_peak_n": 42.16371413209785,
+          "gripper_fz_min_n": -11.133466856779338,
+          "gripper_fz_max_n": 4.30410891232876,
+          "missing_frames": 5,
+          "longest_missing_s": 0.1,
+          "min_z_max_m": 0.8000156295557347
+        },
+        {
+          "start_frame": 1467,
+          "target_tray": 1,
+          "frames": 51,
+          "table_normal_peak_n": 56.83186921069206,
+          "gripper_fz_min_n": -18.62366953150902,
+          "gripper_fz_max_n": 6.786410214540087,
+          "missing_frames": 6,
+          "longest_missing_s": 0.1,
+          "min_z_max_m": 0.8000260260994619
+        },
+        {
+          "start_frame": 1953,
+          "target_tray": 1,
+          "frames": 37,
+          "table_normal_peak_n": 37.92989110752285,
+          "gripper_fz_min_n": -9.684117633464476,
+          "gripper_fz_max_n": 5.531079166244311,
+          "missing_frames": 11,
+          "longest_missing_s": 0.2,
+          "min_z_max_m": 0.8000630179605914
+        }
+      ],
+      "maximum_restored_body_position_error_m": 0.0
+    }
+  ],
+  "comparison": [
+    {
+      "scene_id": "airport_0004_20270920",
+      "same_scene_xml": true,
+      "before_failure": "contact_handoff_aborted",
+      "after_failure": null,
+      "before_physics_success": false,
+      "after_physics_success": true,
+      "before_simulation_seconds": 95.45,
+      "after_simulation_seconds": 158.25,
+      "before_push_table_peak_n": 52.37723029143281,
+      "after_push_table_peak_n": 49.813241581731525,
+      "before_push_longest_missing_s": 0.2,
+      "after_push_longest_missing_s": 0.2
+    },
+    {
+      "scene_id": "airport_0005_20270921",
+      "same_scene_xml": true,
+      "before_failure": "contact_handoff_aborted",
+      "after_failure": "contact_handoff_aborted",
+      "before_physics_success": false,
+      "after_physics_success": false,
+      "before_simulation_seconds": 117.8,
+      "after_simulation_seconds": 125.8,
+      "before_push_table_peak_n": 40.071996285897065,
+      "after_push_table_peak_n": 37.81882504462122,
+      "before_push_longest_missing_s": 0.2,
+      "after_push_longest_missing_s": 0.2
+    },
+    {
+      "scene_id": "airport_0008_20270924",
+      "same_scene_xml": true,
+      "before_failure": "contact_handoff_aborted",
+      "after_failure": "contact_handoff_aborted",
+      "before_physics_success": false,
+      "after_physics_success": false,
+      "before_simulation_seconds": 92.3,
+      "after_simulation_seconds": 99.05,
+      "before_push_table_peak_n": 45.94812892276729,
+      "after_push_table_peak_n": 45.434436851190554,
+      "before_push_longest_missing_s": 0.2,
+      "after_push_longest_missing_s": 0.2
+    },
+    {
+      "scene_id": "airport_0016_20270932",
+      "same_scene_xml": true,
+      "before_failure": "contact_handoff_aborted",
+      "after_failure": "contact_handoff_aborted",
+      "before_physics_success": false,
+      "after_physics_success": false,
+      "before_simulation_seconds": 132.8,
+      "after_simulation_seconds": 99.45,
+      "before_push_table_peak_n": 46.25627842724814,
+      "after_push_table_peak_n": 56.83186921069206,
+      "before_push_longest_missing_s": 0.15000000000000002,
+      "after_push_longest_missing_s": 0.2
+    }
+  ]
+}

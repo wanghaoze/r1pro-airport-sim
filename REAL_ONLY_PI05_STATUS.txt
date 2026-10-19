@@ -1,0 +1,33 @@
+Verified 2026-10-12 approximately 00:40 Asia/Singapore; snapshot, not live status.
+Scope: real-only pi0.5 BC, offline held-out real action evaluation. No real robot control; no AffordVLA.
+Actual state: gradient training 179/10000; evaluation pending; no new saved checkpoint yet.
+Supervisor PID=4030115 start_ticks=168239999 PPID=1
+Train PID=4030264 start_ticks=168242009
+GPU1; non-base environment /home/michelle/miniconda3/envs/r1pro-vla
+Train=102 (Pick60/Place42), val=13 (Pick8/Place5), test=19 (Pick11/Place8).
+Train frames=18853; val=2461; test=3653. Simulation training/normalization samples=0.
+Official pi05_base initialization; new optimizer. No project sim or mixed finetuned parent.
+ROOT=/home/michelle/haoze/r1pro-airport-sim/runs/real_only_pi05_20261012_v1
+Data: ROOT/cache/train, ROOT/cache/val, ROOT/cache/test
+Frozen selection: ROOT/frozen_data_selection.json
+Normalization: ROOT/cache/norm.json
+Data audit: ROOT/data_audit.json
+Prior model audit: ROOT/historical_comparison_audit.json
+Status: ROOT/pipeline_status.json and ROOT/pi05/training_status.json
+Logs: ROOT/logs/supervisor.log and ROOT/logs/train_0_1791736646.log
+Planned checkpoint root: ROOT/pi05/checkpoints/pi05_real_only_pickplace/training
+Planned final checkpoint: ROOT/pi05/checkpoints/pi05_real_only_pickplace/training/9999
+Automatic post-training evaluation: ROOT/evaluation/test_summary.json and ROOT/evaluation/val_summary.json
+Per-episode predictions/targets: ROOT/evaluation/{val,test}/episode_*/predictions.npz
+Paired validation brightness sensitivity: ROOT/evaluation/brightness_sensitivity.json
+Demonstration video index (not model-execution videos): ROOT/REAL_DEMONSTRATION_VIDEO_PATHS.txt
+Local source-video index: runs/real_only_pi05_20261012_v1_reference/REAL_DEMONSTRATION_VIDEO_PATHS.txt
+Monitor from project root: powershell -ExecutionPolicy Bypass -File .\scripts\watch_pi05_real_only.ps1
+Monitor uses SSH -T and existing EC2 tunnel. Ctrl+C stops monitor only.
+Training ETA at snapshot ~120 minutes, excludes evaluation; first-step compilation skews early estimates.
+Tests: 7 passed locally and 7 on server; task-spec --write and --check passed.
+Failure analysis: docs/project/REAL_ONLY_PI05_20261012.md
+
+LATEST VERIFIED: 2026-10-12 00:56:33 +08:00, healthy gradient training 1447/10000 (14.47%); remaining training ETA 106 minutes. Checkpoint 1000 saved: ROOT/pi05/checkpoints/pi05_real_only_pickplace/training/999. Offline evaluation pending. Latest snapshot: runs/real_only_pi05_20261012_v1_reference/latest_status.json
+
+FINAL VERIFIED: completed 2026-10-12 02:45:23 +08:00. 10000 updates, train/evaluate exit0; final training/9999 params/train_state/assets verified. Offline val13/test19 complete, 32 finite prediction NPZ files, 498/739 calls. Test Pick arm RMSE5.22deg/grip14.67mm; Place2.37deg/28.43mm. No real-robot success rate. See latest_status.json and final_closure.json in local reference directory.

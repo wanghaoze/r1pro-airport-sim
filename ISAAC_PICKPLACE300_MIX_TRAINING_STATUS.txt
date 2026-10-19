@@ -1,0 +1,19 @@
+2026-10-17 14:18 SGT verified snapshot (not a permanent local monitor).
+Scope: 300 NEW complete fixed-base Pick/Place pairs, 600 action segments, previous59 excluded.
+Collection guard1996949/start43047257; supervisor1996950/start43047260; native2006582/start43059320.
+Current first batch:32 rooms,20 actual shared frames/500 native substeps; complete new pairs0/300.
+Production root: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_pickplace300_20261017_v1
+Final data manifest (only after ready): dataset_v1/manifest.json
+Production logs: guard.log, supervisor_attempt_0.log, batch_000/native.log; status production_status.json.
+Training root: /home/michelle/haoze/r1pro-airport-sim/runs/real_isaac300_timeweighted_pi05_20261017_v1
+Training guard2020466/start43087432; supervisor2020468/start43087434; stage waiting_for_data, verified gradient updates0.
+Training release: real_isaac300_timeweighted_training_20261017_v3.
+Automatic sequence:300 qualified frozen pairs -> verified cache -> official input conversion -> two GPU BC10/100/1000/10000 -> original real test19 offline MSE.
+Method: duration-weighted sampling BC; NOT RL/DAgger. Per batch real4/sim4; each domain Pick2/Place2.
+Within domain/action source weight clip(median duration / source duration,0.5,2); source-first then uniform frame sampling. Full source frames retained.
+Sim state base relative to original measured episode origin; action zero hold. Arm radians and gripper meters unchanged. Real split102/13/19 preserved; sim train only, no synthetic holdout.
+Expected checkpoint root: pi05/checkpoints/pi05_parallel_pickplace_real50/training/ (none saved for this run yet).
+CPU smoke2 complete sources/4 segments/240 frames and official Observation conversion passed; no GPU gradient smoke yet.
+Native pure VLA rollout and faster/stabler execution are pending and not established by offline MSE.
+Estimated collection4-5h from prior batches, not current measured ETA; monitor reports stage-specific actual throughput/ETA.
+Monitor: powershell -ExecutionPolicy Bypass -File .\scripts\watch_pickplace300_mix.ps1

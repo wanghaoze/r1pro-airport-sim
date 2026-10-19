@@ -1,0 +1,23 @@
+{
+  "baseline": {
+    "common_window_s": 2.5,
+    "samples": 1250,
+    "support_fraction": 0.8168,
+    "mean_table_n": 12.227818575585534,
+    "peak_table_n": 45.41489494485778,
+    "longest_missing_s": 0.006,
+    "minimum_bottom_m": 0.7998432380629217,
+    "maximum_bottom_m": 0.8000990358288291
+  },
+  "candidate": {
+    "common_window_s": 2.5,
+    "samples": 1250,
+    "support_fraction": 0.8256,
+    "mean_table_n": 12.39968907478622,
+    "peak_table_n": 49.20629908273467,
+    "longest_missing_s": 0.008,
+    "minimum_bottom_m": 0.7998134580574664,
+    "maximum_bottom_m": 0.8000947261426004
+  },
+  "prefix_1p5s_force_records_identical": true
+}

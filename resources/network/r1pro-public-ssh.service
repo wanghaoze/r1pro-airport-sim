@@ -1,0 +1,15 @@
+[Unit]
+Description=Project-owned EC2 reverse SSH tunnel
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/michelle/haoze/r1pro-airport-sim
+ExecStart=/home/michelle/miniconda3/envs/r1pro-tray/bin/python /home/michelle/haoze/r1pro-airport-sim/scripts/public_ssh_supervisor.py --run /home/michelle/haoze/r1pro-airport-sim/runs/public_ssh_ec2_20261009_v1
+Restart=no
+TimeoutStopSec=15
+StandardOutput=append:/home/michelle/haoze/r1pro-airport-sim/runs/public_ssh_ec2_20261009_v1/supervisor.log
+StandardError=append:/home/michelle/haoze/r1pro-airport-sim/runs/public_ssh_ec2_20261009_v1/supervisor.log
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,234 @@
+{
+  "aisle_gap_definition": "nearest front/rear tabletop edges, world X",
+  "aisle_gap_m": 1.7055857882499914,
+  "attempt": 0,
+  "belt_frame": {
+    "axes": "+X left to right; +Y into tabletop; +Z up",
+    "origin_world": [
+      0.55,
+      0.6,
+      0.8
+    ],
+    "rotation_world_from_belt": [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ]
+  },
+  "camera": {
+    "height": 720,
+    "width": 1280
+  },
+  "difficulty": "ordinary",
+  "front_count": 0,
+  "layout_kind": "separate",
+  "lighting": {
+    "azimuth": -0.6345703955786242,
+    "elevation": 0.6092162957413829,
+    "intensity": 0.743951603185833,
+    "mode": "day"
+  },
+  "rejections": [],
+  "resample_count": 0,
+  "robot": {
+    "base_control_available": false,
+    "base_position_world": [
+      -0.32612219531855235,
+      -0.11669305482165027,
+      0
+    ],
+    "base_yaw_world": 0.12219776548006855,
+    "home_key": "teleop_home",
+    "wrist_profile": "direct_camera_front"
+  },
+  "runtime": {
+    "mujoco": "3.13.0",
+    "numpy": "2.2.6"
+  },
+  "scene_id": "airport_0232_20271148",
+  "schema_version": "airport_trays/1.0.0",
+  "seed": 20271148,
+  "slot_gap_m": 0.015,
+  "slots": [
+    {
+      "position_belt": [
+        0.22,
+        0.3,
+        0.0
+      ],
+      "slot_id": "slot_0",
+      "yaw_belt": 1.5707963267948966
+    },
+    {
+      "position_belt": [
+        0.665,
+        0.3,
+        0.0
+      ],
+      "slot_id": "slot_1",
+      "yaw_belt": 1.5707963267948966
+    },
+    {
+      "position_belt": [
+        1.11,
+        0.3,
+        0.0
+      ],
+      "slot_id": "slot_2",
+      "yaw_belt": 1.5707963267948966
+    }
+  ],
+  "source_sha256": "9c1065e9a5b406d27798133bf6d1d5e9e6aa6689b2532d6ccacaa8bc2122b24b",
+  "split": "validation",
+  "tables": [
+    {
+      "center_world": [
+        0.85,
+        0,
+        0
+      ],
+      "dimensions_m": [
+        1.2,
+        0.6,
+        0.8
+      ],
+      "table_id": "front_left",
+      "yaw_world": 1.5707963267948966
+    },
+    {
+      "center_world": [
+        0.85,
+        -1.2,
+        0
+      ],
+      "dimensions_m": [
+        1.2,
+        0.6,
+        0.8
+      ],
+      "table_id": "front_right",
+      "yaw_world": 1.5707963267948966
+    },
+    {
+      "center_world": [
+        -1.4555857882499914,
+        0,
+        0
+      ],
+      "dimensions_m": [
+        1.2,
+        0.6,
+        0.8
+      ],
+      "table_id": "rear",
+      "yaw_world": 1.5707963267948966
+    }
+  ],
+  "trays": [
+    {
+      "pitch": 0.0,
+      "position_world": [
+        -1.458621625691128,
+        -0.44655177657171014,
+        0.801
+      ],
+      "roll": 0.0,
+      "support_parent": "rear",
+      "support_table": "rear",
+      "tray_id": "tray_0",
+      "yaw_world": 0.004352813359904745
+    },
+    {
+      "pitch": 0.0,
+      "position_world": [
+        -1.4543663198711052,
+        -0.0016992406023686392,
+        0.801
+      ],
+      "roll": 0.0,
+      "support_parent": "rear",
+      "support_table": "rear",
+      "tray_id": "tray_1",
+      "yaw_world": 0.012667672786303433
+    },
+    {
+      "pitch": 0.0,
+      "position_world": [
+        -1.4589240982502512,
+        0.4481147443153872,
+        0.801
+      ],
+      "roll": 0.0,
+      "support_parent": "rear",
+      "support_table": "rear",
+      "tray_id": "tray_2",
+      "yaw_world": -0.009629920426392045
+    }
+  ],
+  "validation": {
+    "max_penetration_m": 0.00017964274810466983,
+    "max_tilt_deg": 0.03170027122811453,
+    "passed": true,
+    "settle_seconds": 2,
+    "settled_trays": [
+      {
+        "com_world": [
+          -1.4586190338369989,
+          -0.44655674489343183,
+          0.8276721891390613
+        ],
+        "position_world": [
+          -1.4586217500327245,
+          -0.44655176214133196,
+          0.7999890828480289
+        ],
+        "tray_id": "tray_0"
+      },
+      {
+        "com_world": [
+          -1.4543663152042166,
+          -0.0016992322479868975,
+          0.8276783239132955
+        ],
+        "position_world": [
+          -1.454366319829852,
+          -0.001699240531286324,
+          0.7999952170405826
+        ],
+        "tray_id": "tray_1"
+      },
+      {
+        "com_world": [
+          -1.4589241050593031,
+          0.4481148678758954,
+          0.8276782136194015
+        ],
+        "position_world": [
+          -1.4589240983152474,
+          0.44811474538931945,
+          0.7999951067469588
+        ],
+        "tray_id": "tray_2"
+      }
+    ]
+  },
+  "xml": "scene.xml",
+  "xml_sha256": "946a6e455a32468c887e76d54214a89a6740c3bc4e0f2052f9d0e43284547874",
+  "project_relocation": {
+    "source": "outputs/airport_trays_final_v1/formal/ordinary/airport_0232_20271148/scene.json",
+    "source_xml_sha256": "5f1f7a4dd8317ec6717cca3f9616f2acf9e1295bba562e136f0b4a95877a87e5",
+    "not_server_v7_stable_scene": true
+  }
+}

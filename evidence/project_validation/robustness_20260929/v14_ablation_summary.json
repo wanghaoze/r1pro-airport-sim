@@ -1,0 +1,235 @@
+{
+  "root": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v14_20260929/runs/ablation",
+  "variants": {
+    "baseline": {
+      "preflight_count": 400,
+      "completed": 5,
+      "clean_complete_successes": 1,
+      "failures": {
+        "no_feasible_grasp_approach": 2,
+        "contact_handoff_aborted": 1,
+        "primitive_path_infeasible": 1
+      },
+      "episodes": [
+        {
+          "scene_id": "airport_0004_20270920",
+          "physics_success": true,
+          "recovery_used": false,
+          "failure_code": null,
+          "simulation_seconds": 158.25,
+          "physical_elapsed_seconds": 158.2500000000275
+        },
+        {
+          "scene_id": "airport_0006_20270922",
+          "physics_success": false,
+          "recovery_used": true,
+          "failure_code": "no_feasible_grasp_approach",
+          "simulation_seconds": 176.9,
+          "physical_elapsed_seconds": 176.90000000011656
+        },
+        {
+          "scene_id": "airport_0007_20270923",
+          "physics_success": false,
+          "recovery_used": true,
+          "failure_code": "no_feasible_grasp_approach",
+          "simulation_seconds": 195.95,
+          "physical_elapsed_seconds": 195.95000000020752
+        },
+        {
+          "scene_id": "airport_0016_20270932",
+          "physics_success": false,
+          "recovery_used": false,
+          "failure_code": "contact_handoff_aborted",
+          "simulation_seconds": 99.45,
+          "physical_elapsed_seconds": 99.49999999994951
+        },
+        {
+          "scene_id": "airport_0218_20271134",
+          "physics_success": false,
+          "recovery_used": false,
+          "failure_code": "primitive_path_infeasible",
+          "simulation_seconds": 28.15,
+          "physical_elapsed_seconds": 28.149999999995277
+        }
+      ],
+      "config_changes_from_baseline": {}
+    },
+    "substep": {
+      "preflight_count": 400,
+      "completed": 5,
+      "clean_complete_successes": 1,
+      "failures": {
+        "no_feasible_grasp_approach": 2,
+        "contact_handoff_aborted": 1,
+        "primitive_path_infeasible": 1
+      },
+      "episodes": [
+        {
+          "scene_id": "airport_0004_20270920",
+          "physics_success": true,
+          "recovery_used": false,
+          "failure_code": null,
+          "simulation_seconds": 157.95,
+          "physical_elapsed_seconds": 157.95000000002608
+        },
+        {
+          "scene_id": "airport_0006_20270922",
+          "physics_success": false,
+          "recovery_used": true,
+          "failure_code": "no_feasible_grasp_approach",
+          "simulation_seconds": 176.85,
+          "physical_elapsed_seconds": 176.85000000011632
+        },
+        {
+          "scene_id": "airport_0007_20270923",
+          "physics_success": false,
+          "recovery_used": true,
+          "failure_code": "no_feasible_grasp_approach",
+          "simulation_seconds": 195.9,
+          "physical_elapsed_seconds": 195.90000000020729
+        },
+        {
+          "scene_id": "airport_0016_20270932",
+          "physics_success": false,
+          "recovery_used": false,
+          "failure_code": "contact_handoff_aborted",
+          "simulation_seconds": 142.65,
+          "physical_elapsed_seconds": 142.69999999995326
+        },
+        {
+          "scene_id": "airport_0218_20271134",
+          "physics_success": false,
+          "recovery_used": false,
+          "failure_code": "primitive_path_infeasible",
+          "simulation_seconds": 28.15,
+          "physical_elapsed_seconds": 28.149999999995277
+        }
+      ],
+      "config_changes_from_baseline": {
+        "substep_control_enabled": {
+          "baseline": false,
+          "variant": true
+        }
+      }
+    },
+    "payload": {
+      "preflight_count": 400,
+      "completed": 5,
+      "clean_complete_successes": 0,
+      "failures": {
+        "primitive_path_infeasible": 2,
+        "coupled_ik_unreachable": 1,
+        "no_feasible_grasp_approach": 1,
+        "ik_unreachable": 1
+      },
+      "episodes": [
+        {
+          "scene_id": "airport_0004_20270920",
+          "physics_success": false,
+          "recovery_used": false,
+          "failure_code": "primitive_path_infeasible",
+          "simulation_seconds": 45.3,
+          "physical_elapsed_seconds": 45.3000000000094
+        },
+        {
+          "scene_id": "airport_0006_20270922",
+          "physics_success": false,
+          "recovery_used": false,
+          "failure_code": "coupled_ik_unreachable",
+          "simulation_seconds": 28.35,
+          "physical_elapsed_seconds": 28.349999999995166
+        },
+        {
+          "scene_id": "airport_0007_20270923",
+          "physics_success": false,
+          "recovery_used": true,
+          "failure_code": "no_feasible_grasp_approach",
+          "simulation_seconds": 196.0,
+          "physical_elapsed_seconds": 196.00000000020776
+        },
+        {
+          "scene_id": "airport_0016_20270932",
+          "physics_success": false,
+          "recovery_used": false,
+          "failure_code": "primitive_path_infeasible",
+          "simulation_seconds": 42.7,
+          "physical_elapsed_seconds": 42.70000000000622
+        },
+        {
+          "scene_id": "airport_0218_20271134",
+          "physics_success": false,
+          "recovery_used": false,
+          "failure_code": "ik_unreachable",
+          "simulation_seconds": 28.9,
+          "physical_elapsed_seconds": 28.89999999999486
+        }
+      ],
+      "config_changes_from_baseline": {
+        "carry_lateral_compensation_enabled": {
+          "baseline": false,
+          "variant": true
+        }
+      }
+    },
+    "alternate": {
+      "preflight_count": 400,
+      "completed": 5,
+      "clean_complete_successes": 0,
+      "failures": {
+        "contact_handoff_aborted": 2,
+        "coupled_ik_unreachable": 1,
+        "primitive_postcondition_failed": 1,
+        "primitive_path_infeasible": 1
+      },
+      "episodes": [
+        {
+          "scene_id": "airport_0004_20270920",
+          "physics_success": false,
+          "recovery_used": false,
+          "failure_code": "contact_handoff_aborted",
+          "simulation_seconds": 145.25,
+          "physical_elapsed_seconds": 145.29999999996568
+        },
+        {
+          "scene_id": "airport_0006_20270922",
+          "physics_success": false,
+          "recovery_used": false,
+          "failure_code": "coupled_ik_unreachable",
+          "simulation_seconds": 70.35,
+          "physical_elapsed_seconds": 70.35000000001745
+        },
+        {
+          "scene_id": "airport_0007_20270923",
+          "physics_success": false,
+          "recovery_used": false,
+          "failure_code": "primitive_postcondition_failed",
+          "simulation_seconds": 21.5,
+          "physical_elapsed_seconds": 21.499999999998963
+        },
+        {
+          "scene_id": "airport_0016_20270932",
+          "physics_success": false,
+          "recovery_used": false,
+          "failure_code": "contact_handoff_aborted",
+          "simulation_seconds": 99.45,
+          "physical_elapsed_seconds": 99.49999999994951
+        },
+        {
+          "scene_id": "airport_0218_20271134",
+          "physics_success": false,
+          "recovery_used": false,
+          "failure_code": "primitive_path_infeasible",
+          "simulation_seconds": 28.15,
+          "physical_elapsed_seconds": 28.149999999995277
+        }
+      ],
+      "config_changes_from_baseline": {
+        "alternate_rim_enabled": {
+          "baseline": false,
+          "variant": true
+        }
+      }
+    }
+  },
+  "qualification": "Partial selected-case results are not a 400-scene success rate."
+}

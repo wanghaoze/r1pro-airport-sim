@@ -1,0 +1,9 @@
+Snapshot: 2026-10-16T05:22:51.647859+00:00
+Scope: fixed-base Pick/Place expert data, not full three-tray task or VLA results.
+Stage: native_pick_then_place
+Closed source pairs: 1; Pick: 1; Place: 1
+Guardian: True; supervisor: True; native: True
+Current frame: 80; action: 
+Server root: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fixed_pickplace_20261016_v1
+Viewer: http://100.104.0.108:8776/fixed_pickplace_20261016_v1/dataset_viewer.html
+Media and trajectories remain on server; no new training is implied.

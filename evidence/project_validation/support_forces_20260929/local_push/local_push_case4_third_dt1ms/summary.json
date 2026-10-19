@@ -1,0 +1,80 @@
+{
+  "qualification": "private_local_push_diagnostic_not_complete_episode",
+  "source": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v11_20260929/runs/regression",
+  "controller": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v11_20260929",
+  "case": 4,
+  "frame": 2010,
+  "tray": 1,
+  "side": "right",
+  "incoming_target_source": "previous_recorded_action",
+  "modifications": {},
+  "timestep_intervention": 0.001,
+  "source_timestep_s": 0.002,
+  "timestep_s": 0.001,
+  "substeps_per_frame": 50,
+  "rollout_wall_s": 7.962319019017741,
+  "solver_settings": {
+    "integrator": "mjINT_IMPLICITFAST",
+    "solver": "mjSOL_NEWTON",
+    "iterations": 80,
+    "tolerance": 1e-08,
+    "geom_solref_unique": [
+      [
+        0.006,
+        1.0
+      ]
+    ],
+    "geom_solimp_unique": [
+      [
+        0.95,
+        0.99,
+        0.001,
+        0.5,
+        2.0
+      ]
+    ]
+  },
+  "restored_context": {
+    "retained_contact": [
+      1,
+      "right"
+    ],
+    "holding": null,
+    "phase": "adjust",
+    "primitive_lift_xy_shift_m": 0.0,
+    "initial_bottom": [
+      0.801,
+      0.801,
+      0.801
+    ],
+    "support_timer": "reset only after confirming actual entry support",
+    "warnings": "fresh zero counters; source episode would have stopped at any prior warning",
+    "diagnostic_counters": "wall budget restarted; historical peak power and inverse-call tallies not restored"
+  },
+  "exact_original_trajectory_match": false,
+  "maximum_qpos_error": 0.0004454599153625675,
+  "maximum_qvel_error": 0.20327918718737364,
+  "maximum_action_error": 0.0,
+  "endpoint_qpos_error": 0.0002769082221469876,
+  "primitive_returned": true,
+  "failure": null,
+  "elapsed_s": 2.550000000012176,
+  "final_pose": [
+    0.8478931480421772,
+    -0.06686868940578333,
+    0.7999977091596594,
+    -0.0023237580382527915,
+    -2.566979302767494e-06,
+    6.361943844082884e-06,
+    0.9999973000471132
+  ],
+  "final_forces": [
+    0.0,
+    10.387975173868732
+  ],
+  "final_table_contacts": 4,
+  "physics_samples": 2550,
+  "longest_physics_missing_s": 0.006,
+  "table_force_peak_n": 56.546554726815145,
+  "support_fraction": 0.816078431372549
+}

@@ -1,0 +1,601 @@
+--- 
++++ 
+@@ -1,302 +1,302 @@
+ <mujoco model="R1Pro_Tray_Quest_Simulation">
+   <compiler angle="radian" />
+   <asset>
+-    <mesh name="base_link" content_type="model/obj" file="../../../../resources/assets/fc9ad103045fca83_base_link.obj" />
+-    <mesh name="base_link_collision" content_type="model/stl" file="../../../../resources/assets/ad4a7b53b87fa108_base_link_collision.STL" />
+-    <mesh name="steer_motor_link1" content_type="model/obj" file="../../../../resources/assets/d129e80d996a92c3_steer_motor_link1.obj" />
+-    <mesh name="steer_motor_link1_collision" content_type="model/stl" file="../../../../resources/assets/e1236c66e9aeb7c8_steer_motor_link1_collision.STL" />
+-    <mesh name="wheel_motor_link1" content_type="model/obj" file="../../../../resources/assets/eef711f9b5566c80_wheel_motor_link1.obj" />
+-    <mesh name="wheel_motor_link1_collision" content_type="model/stl" file="../../../../resources/assets/08a58ce9eb51a0db_wheel_motor_link1_collision.STL" />
+-    <mesh name="steer_motor_link2" content_type="model/obj" file="../../../../resources/assets/99d047d713ffc104_steer_motor_link2.obj" />
+-    <mesh name="steer_motor_link2_collision" content_type="model/stl" file="../../../../resources/assets/9cd1d3b8ef8c538d_steer_motor_link2_collision.STL" />
+-    <mesh name="wheel_motor_link2" content_type="model/obj" file="../../../../resources/assets/59110686ce695883_wheel_motor_link2.obj" />
+-    <mesh name="wheel_motor_link2_collision" content_type="model/stl" file="../../../../resources/assets/9d84d7ee0ea2c607_wheel_motor_link2_collision.STL" />
+-    <mesh name="steer_motor_link3" content_type="model/obj" file="../../../../resources/assets/831f29f90dce3ac2_steer_motor_link3.obj" />
+-    <mesh name="steer_motor_link3_collision" content_type="model/stl" file="../../../../resources/assets/efcd649a071cbcce_steer_motor_link3_collision.STL" />
+-    <mesh name="wheel_motor_link3" content_type="model/obj" file="../../../../resources/assets/ebb81fdc472820fc_wheel_motor_link3.obj" />
+-    <mesh name="wheel_motor_link3_collision" content_type="model/stl" file="../../../../resources/assets/05028c294cd6f6d9_wheel_motor_link3_collision.STL" />
+-    <mesh name="torso_link1" content_type="model/obj" file="../../../../resources/assets/256664d53b696a46_torso_link1.obj" />
+-    <mesh name="torso_link1_collision" content_type="model/stl" file="../../../../resources/assets/a39bfd443f37dc0c_torso_link1_collision.STL" />
+-    <mesh name="torso_link2" content_type="model/obj" file="../../../../resources/assets/00b0244dbd788e03_torso_link2.obj" />
+-    <mesh name="torso_link2_collision" content_type="model/stl" file="../../../../resources/assets/c42deaccfd43743b_torso_link2_collision.STL" />
+-    <mesh name="torso_link3" content_type="model/obj" file="../../../../resources/assets/3238da5be681bb81_torso_link3.obj" />
+-    <mesh name="torso_link3_collision" content_type="model/stl" file="../../../../resources/assets/422005c87a1acc81_torso_link3_collision.STL" />
+-    <mesh name="torso_link4" content_type="model/obj" file="../../../../resources/assets/6b61f7b72c706c4f_torso_link4.obj" />
+-    <mesh name="torso_link4_collision" content_type="model/stl" file="../../../../resources/assets/129b39117f65872f_torso_link4_collision.STL" />
+-    <mesh name="zed_link" content_type="model/obj" file="../../../../resources/assets/3c0e435bc0203ffe_zed_link.obj" />
+-    <mesh name="zed_link_collision" content_type="model/stl" file="../../../../resources/assets/73fa3ed1124f22a5_zed_link_collision.STL" />
+-    <mesh name="left_arm_base_link" content_type="model/obj" file="../../../../resources/assets/739c993f51f71298_left_arm_base_link.obj" />
+-    <mesh name="left_arm_base_link_collision" content_type="model/stl" file="../../../../resources/assets/926e0f0dfa95fe53_left_arm_base_link_collision.STL" />
+-    <mesh name="left_arm_link1" content_type="model/obj" file="../../../../resources/assets/8bfb3b0889cbee56_left_arm_link1.obj" />
+-    <mesh name="left_arm_link1_collision" content_type="model/stl" file="../../../../resources/assets/1f8e0f4c3a14d46a_left_arm_link1_collision.STL" />
+-    <mesh name="left_arm_link2" content_type="model/obj" file="../../../../resources/assets/6306333168268b06_left_arm_link2.obj" />
+-    <mesh name="left_arm_link2_collision" content_type="model/stl" file="../../../../resources/assets/7fbf799fa425ed14_left_arm_link2_collision.STL" />
+-    <mesh name="left_arm_link3" content_type="model/obj" file="../../../../resources/assets/b5413a49b8cb0dce_left_arm_link3.obj" />
+-    <mesh name="left_arm_link3_collision" content_type="model/stl" file="../../../../resources/assets/5c96c4d99bec5c3a_left_arm_link3_collision.STL" />
+-    <mesh name="left_arm_link4" content_type="model/obj" file="../../../../resources/assets/925da7f12b69e1f7_left_arm_link4.obj" />
+-    <mesh name="left_arm_link4_collision" content_type="model/stl" file="../../../../resources/assets/e1d6d06bd04baf4b_left_arm_link4_collision.STL" />
+-    <mesh name="left_arm_link5" content_type="model/obj" file="../../../../resources/assets/70faa087318b239b_left_arm_link5.obj" />
+-    <mesh name="left_arm_link5_collision" content_type="model/stl" file="../../../../resources/assets/23a1ecb107455678_left_arm_link5_collision.STL" />
+-    <mesh name="left_arm_link6" content_type="model/obj" file="../../../../resources/assets/4d1939e8624861bf_left_arm_link6.obj" />
+-    <mesh name="left_arm_link6_collision" content_type="model/stl" file="../../../../resources/assets/fc12f7563fe450cd_left_arm_link6_collision.STL" />
+-    <mesh name="left_arm_link7" content_type="model/obj" file="../../../../resources/assets/735c4c476ea69cd8_left_arm_link7.obj" />
+-    <mesh name="left_arm_link7_collision" content_type="model/stl" file="../../../../resources/assets/eab3aa7ff0eae77f_left_arm_link7_collision.STL" />
+-    <mesh name="left_gripper_link" content_type="model/obj" file="../../../../resources/assets/d99c6d995239c376_left_gripper_link.obj" />
+-    <mesh name="left_gripper_link_collision" content_type="model/stl" file="../../../../resources/assets/87a16ffa4cf2785b_left_gripper_link_collision.STL" />
+-    <mesh name="left_realsense_link" content_type="model/obj" file="../../../../resources/assets/154014fe780c9414_left_realsense_link.obj" />
+-    <mesh name="left_realsense_link_collision" content_type="model/stl" file="../../../../resources/assets/8d3b9650f5994de2_left_realsense_link_collision.STL" />
+-    <mesh name="left_gripper_finger_link1" content_type="model/obj" file="../../../../resources/assets/ddf9e2e7d3096886_left_gripper_finger_link1.obj" />
+-    <mesh name="left_gripper_finger_link2" content_type="model/obj" file="../../../../resources/assets/c36a15d2d158b95e_left_gripper_finger_link2.obj" />
+-    <mesh name="right_arm_base_link" content_type="model/obj" file="../../../../resources/assets/60aef6fce4cd99fd_right_arm_base_link.obj" />
+-    <mesh name="right_arm_base_link_collision" content_type="model/stl" file="../../../../resources/assets/c82cfc1ded0858f0_right_arm_base_link_collision.STL" />
+-    <mesh name="right_arm_link1" content_type="model/obj" file="../../../../resources/assets/67c26a7794548268_right_arm_link1.obj" />
+-    <mesh name="right_arm_link1_collision" content_type="model/stl" file="../../../../resources/assets/09529c797decea4f_right_arm_link1_collision.STL" />
+-    <mesh name="right_arm_link2" content_type="model/obj" file="../../../../resources/assets/ed4ba6a9ea43c7f0_right_arm_link2.obj" />
+-    <mesh name="right_arm_link2_collision" content_type="model/stl" file="../../../../resources/assets/c66971fbbc65a4d1_right_arm_link2_collision.STL" />
+-    <mesh name="right_arm_link3" content_type="model/obj" file="../../../../resources/assets/882f4d24432bb2fb_right_arm_link3.obj" />
+-    <mesh name="right_arm_link3_collision" content_type="model/stl" file="../../../../resources/assets/46eee2bbe5e2ea15_right_arm_link3_collision.STL" />
+-    <mesh name="right_arm_link4" content_type="model/obj" file="../../../../resources/assets/75aa528be6cde481_right_arm_link4.obj" />
+-    <mesh name="right_arm_link4_collision" content_type="model/stl" file="../../../../resources/assets/7d80eccc97609adb_right_arm_link4_collision.STL" />
+-    <mesh name="right_arm_link5" content_type="model/obj" file="../../../../resources/assets/4a5b2846756b4ad2_right_arm_link5.obj" />
+-    <mesh name="right_arm_link5_collision" content_type="model/stl" file="../../../../resources/assets/f33485e396a2611e_right_arm_link5_collision.STL" />
+-    <mesh name="right_arm_link6" content_type="model/obj" file="../../../../resources/assets/07afd7aac595027f_right_arm_link6.obj" />
+-    <mesh name="right_arm_link6_collision" content_type="model/stl" file="../../../../resources/assets/2cfaddc3876995ce_right_arm_link6_collision.STL" />
+-    <mesh name="right_arm_link7" content_type="model/obj" file="../../../../resources/assets/43b163d9bb0f9932_right_arm_link7.obj" />
+-    <mesh name="right_arm_link7_collision" content_type="model/stl" file="../../../../resources/assets/cc564ec5f518c2e4_right_arm_link7_collision.STL" />
+-    <mesh name="right_gripper_link" content_type="model/obj" file="../../../../resources/assets/a91b54ab69054ebc_right_gripper_link.obj" />
+-    <mesh name="right_gripper_link_collision" content_type="model/stl" file="../../../../resources/assets/87a16ffa4cf2785b_right_gripper_link_collision.STL" />
+-    <mesh name="right_realsense_link" content_type="model/obj" file="../../../../resources/assets/2af3f416d7a4270b_right_realsense_link.obj" />
+-    <mesh name="right_realsense_link_collision" content_type="model/stl" file="../../../../resources/assets/8d3b9650f5994de2_right_realsense_link_collision.STL" />
+-    <mesh name="right_gripper_finger_link1" content_type="model/obj" file="../../../../resources/assets/e5433ac273e71a31_right_gripper_finger_link1.obj" />
+-    <mesh name="right_gripper_finger_link2" content_type="model/obj" file="../../../../resources/assets/ee559bd1a3012250_right_gripper_finger_link2.obj" />
+-    <mesh name="table_0" file="../../../../resources/assets/f3684670db2c8b12_table_0.obj" />
+-    <mesh name="table_1" file="../../../../resources/assets/15170dbc448c8605_table_1.obj" />
+-    <mesh name="table_2" file="../../../../resources/assets/2b158e8687fe7bb1_table_2.obj" />
+-    <mesh name="table_3" file="../../../../resources/assets/9ac50eef51a3a2aa_table_3.obj" />
+-    <mesh name="table_4" file="../../../../resources/assets/671fe9bb8cfe6848_table_4.obj" />
+-    <mesh name="tray_0" file="../../../../resources/assets/ac0f9be6dd6904a1_tray_0.obj" />
+-    <mesh name="tray_1" file="../../../../resources/assets/bcec568e608141bf_tray_1.obj" />
+-    <mesh name="table_collision_v2_000" file="../../../../resources/assets/9433503d98127b5a_table_collision_v2_000.obj" />
+-    <mesh name="table_collision_v2_001" file="../../../../resources/assets/b80223e5fa4a75c2_table_collision_v2_001.obj" />
+-    <mesh name="table_collision_v2_002" file="../../../../resources/assets/defc051e633104dd_table_collision_v2_002.obj" />
+-    <mesh name="table_collision_v2_003" file="../../../../resources/assets/cc8fc9ca45fb9f2d_table_collision_v2_003.obj" />
+-    <mesh name="table_collision_v2_004" file="../../../../resources/assets/b1fcee02fdda381a_table_collision_v2_004.obj" />
+-    <mesh name="table_collision_v2_005" file="../../../../resources/assets/c096985808242414_table_collision_v2_005.obj" />
+-    <mesh name="table_collision_v2_006" file="../../../../resources/assets/4787b8d71ba7f5bf_table_collision_v2_006.obj" />
+-    <mesh name="table_collision_v2_007" file="../../../../resources/assets/2dd5efc415e056ec_table_collision_v2_007.obj" />
+-    <mesh name="table_collision_v2_008" file="../../../../resources/assets/678d904b15aaab2f_table_collision_v2_008.obj" />
+-    <mesh name="table_collision_v2_009" file="../../../../resources/assets/19459305219fe142_table_collision_v2_009.obj" />
+-    <mesh name="table_collision_v2_010" file="../../../../resources/assets/af7cf44cdbaf35ae_table_collision_v2_010.obj" />
+-    <mesh name="table_collision_v2_011" file="../../../../resources/assets/c3468bba57a78112_table_collision_v2_011.obj" />
+-    <mesh name="table_collision_v2_012" file="../../../../resources/assets/f0946285c5939c83_table_collision_v2_012.obj" />
+-    <mesh name="table_collision_v2_013" file="../../../../resources/assets/e54e4f60d95db8c3_table_collision_v2_013.obj" />
+-    <mesh name="table_collision_v2_014" file="../../../../resources/assets/a38a4264dce8c7a0_table_collision_v2_014.obj" />
+-    <mesh name="table_collision_v2_015" file="../../../../resources/assets/9b4e31125645f306_table_collision_v2_015.obj" />
+-    <mesh name="table_collision_v2_016" file="../../../../resources/assets/3536e0ca0da9f968_table_collision_v2_016.obj" />
+-    <mesh name="table_collision_v2_017" file="../../../../resources/assets/46b8b29fbca0d173_table_collision_v2_017.obj" />
+-    <mesh name="table_collision_v2_018" file="../../../../resources/assets/b411abd1332e195e_table_collision_v2_018.obj" />
+-    <mesh name="table_collision_v2_019" file="../../../../resources/assets/17f88a10cf46ba97_table_collision_v2_019.obj" />
+-    <mesh name="table_collision_v2_020" file="../../../../resources/assets/c9586101b061e547_table_collision_v2_020.obj" />
+-    <mesh name="table_collision_v2_021" file="../../../../resources/assets/3b6ef9ffbbdf5325_table_collision_v2_021.obj" />
+-    <mesh name="table_collision_v2_022" file="../../../../resources/assets/3ff5463860e987f2_table_collision_v2_022.obj" />
+-    <mesh name="table_collision_v2_023" file="../../../../resources/assets/066edef09393df36_table_collision_v2_023.obj" />
+-    <mesh name="table_collision_v2_024" file="../../../../resources/assets/0c0123ab26070752_table_collision_v2_024.obj" />
+-    <mesh name="table_collision_v2_025" file="../../../../resources/assets/eb41c1027c26b583_table_collision_v2_025.obj" />
+-    <mesh name="table_collision_v2_026" file="../../../../resources/assets/061db8d353fc474f_table_collision_v2_026.obj" />
+-    <mesh name="table_collision_v2_027" file="../../../../resources/assets/33b028b8853dcb22_table_collision_v2_027.obj" />
+-    <mesh name="table_collision_v2_028" file="../../../../resources/assets/42e6859f49f8255f_table_collision_v2_028.obj" />
+-    <mesh name="table_collision_v2_029" file="../../../../resources/assets/739aa5323b843aa1_table_collision_v2_029.obj" />
+-    <mesh name="table_collision_v2_030" file="../../../../resources/assets/db71693af32a98fe_table_collision_v2_030.obj" />
+-    <mesh name="table_collision_v2_031" file="../../../../resources/assets/4fa4af878c21f1c0_table_collision_v2_031.obj" />
+-    <mesh name="table_collision_v2_032" file="../../../../resources/assets/76121b7ad2023def_table_collision_v2_032.obj" />
+-    <mesh name="table_collision_v2_033" file="../../../../resources/assets/bea716d8f0a090c2_table_collision_v2_033.obj" />
+-    <mesh name="table_collision_v2_034" file="../../../../resources/assets/240a2b80d31cec50_table_collision_v2_034.obj" />
+-    <mesh name="table_collision_v2_035" file="../../../../resources/assets/8e552da4f29f97be_table_collision_v2_035.obj" />
+-    <mesh name="table_collision_v2_036" file="../../../../resources/assets/f533d893576cbbe2_table_collision_v2_036.obj" />
+-    <mesh name="table_collision_v2_037" file="../../../../resources/assets/a568883eaf0643db_table_collision_v2_037.obj" />
+-    <mesh name="table_collision_v2_038" file="../../../../resources/assets/be394ef192a9aea6_table_collision_v2_038.obj" />
+-    <mesh name="table_collision_v2_039" file="../../../../resources/assets/d964841be55dfc71_table_collision_v2_039.obj" />
+-    <mesh name="table_collision_v2_040" file="../../../../resources/assets/b6a40d114e8aa12b_table_collision_v2_040.obj" />
+-    <mesh name="table_collision_v2_041" file="../../../../resources/assets/c848ede87db77475_table_collision_v2_041.obj" />
+-    <mesh name="table_collision_v2_042" file="../../../../resources/assets/c9a4d88d4271050d_table_collision_v2_042.obj" />
+-    <mesh name="table_collision_v2_043" file="../../../../resources/assets/2cae7dc55fadb859_table_collision_v2_043.obj" />
+-    <mesh name="table_collision_v2_044" file="../../../../resources/assets/a261e0bf6c325307_table_collision_v2_044.obj" />
+-    <mesh name="table_collision_v2_045" file="../../../../resources/assets/992cb9d4d68220ff_table_collision_v2_045.obj" />
+-    <mesh name="table_collision_v2_046" file="../../../../resources/assets/0c3cccb31ad8147c_table_collision_v2_046.obj" />
+-    <mesh name="table_collision_v2_047" file="../../../../resources/assets/06372a5d705426e4_table_collision_v2_047.obj" />
+-    <mesh name="table_collision_v2_048" file="../../../../resources/assets/9dab6f0c300540e5_table_collision_v2_048.obj" />
+-    <mesh name="table_collision_v2_049" file="../../../../resources/assets/7ea8532ecb91471d_table_collision_v2_049.obj" />
+-    <mesh name="table_collision_v2_050" file="../../../../resources/assets/7857e39a48121320_table_collision_v2_050.obj" />
+-    <mesh name="table_collision_v2_051" file="../../../../resources/assets/27f2b167b8a7053f_table_collision_v2_051.obj" />
+-    <mesh name="table_collision_v2_052" file="../../../../resources/assets/903feb6ba63a68db_table_collision_v2_052.obj" />
+-    <mesh name="table_collision_v2_053" file="../../../../resources/assets/3f290a9862a42c99_table_collision_v2_053.obj" />
+-    <mesh name="table_collision_v2_054" file="../../../../resources/assets/d34228a41a2f9be4_table_collision_v2_054.obj" />
+-    <mesh name="table_collision_v2_055" file="../../../../resources/assets/90e13d4bbf1a1bec_table_collision_v2_055.obj" />
+-    <mesh name="table_collision_v2_056" file="../../../../resources/assets/e126a14363c60480_table_collision_v2_056.obj" />
+-    <mesh name="table_collision_v2_057" file="../../../../resources/assets/8b37773f9e04a8f9_table_collision_v2_057.obj" />
+-    <mesh name="table_collision_v2_058" file="../../../../resources/assets/dc39bcb65113e983_table_collision_v2_058.obj" />
+-    <mesh name="table_collision_v2_059" file="../../../../resources/assets/72bec318eb11fb0f_table_collision_v2_059.obj" />
+-    <mesh name="table_collision_v2_060" file="../../../../resources/assets/81e632402489f996_table_collision_v2_060.obj" />
+-    <mesh name="table_collision_v2_061" file="../../../../resources/assets/add4be30bcab7831_table_collision_v2_061.obj" />
+-    <mesh name="table_collision_v2_062" file="../../../../resources/assets/023d94d616324144_table_collision_v2_062.obj" />
+-    <mesh name="table_collision_v2_063" file="../../../../resources/assets/80ba645566b432ca_table_collision_v2_063.obj" />
+-    <mesh name="table_collision_v2_064" file="../../../../resources/assets/d1decc9f8fe50aee_table_collision_v2_064.obj" />
+-    <mesh name="table_collision_v2_065" file="../../../../resources/assets/d1098b6d0f05bfdc_table_collision_v2_065.obj" />
+-    <mesh name="table_collision_v2_066" file="../../../../resources/assets/b06cd3a2dfcb078e_table_collision_v2_066.obj" />
+-    <mesh name="table_collision_v2_067" file="../../../../resources/assets/330518b5c03d0033_table_collision_v2_067.obj" />
+-    <mesh name="table_collision_v2_068" file="../../../../resources/assets/c9410305df0c8e09_table_collision_v2_068.obj" />
+-    <mesh name="table_collision_v2_069" file="../../../../resources/assets/eb53c86c752c4f05_table_collision_v2_069.obj" />
+-    <mesh name="table_collision_v2_070" file="../../../../resources/assets/2c9faaa0efdc0969_table_collision_v2_070.obj" />
+-    <mesh name="table_collision_v2_071" file="../../../../resources/assets/cbe7f6e41d4c755c_table_collision_v2_071.obj" />
+-    <mesh name="table_collision_v2_072" file="../../../../resources/assets/840900bf34ce0654_table_collision_v2_072.obj" />
+-    <mesh name="table_collision_v2_073" file="../../../../resources/assets/279a59c6a8ba4864_table_collision_v2_073.obj" />
+-    <mesh name="table_collision_v2_074" file="../../../../resources/assets/5ad89c21b1e681fb_table_collision_v2_074.obj" />
+-    <mesh name="table_collision_v2_075" file="../../../../resources/assets/6cec7a5086454f02_table_collision_v2_075.obj" />
+-    <mesh name="table_collision_v2_076" file="../../../../resources/assets/1ca57a6909b04c46_table_collision_v2_076.obj" />
+-    <mesh name="table_collision_v2_077" file="../../../../resources/assets/8e09d3abcd729b7c_table_collision_v2_077.obj" />
+-    <mesh name="table_collision_v2_078" file="../../../../resources/assets/43949ee73c87c4e7_table_collision_v2_078.obj" />
+-    <mesh name="table_collision_v2_079" file="../../../../resources/assets/ddcdda9bf2917461_table_collision_v2_079.obj" />
+-    <mesh name="table_collision_v2_080" file="../../../../resources/assets/1677194cdea7798c_table_collision_v2_080.obj" />
+-    <mesh name="table_collision_v2_081" file="../../../../resources/assets/b912369f57314de4_table_collision_v2_081.obj" />
+-    <mesh name="table_collision_v2_082" file="../../../../resources/assets/8a7e8d743c7d4f32_table_collision_v2_082.obj" />
+-    <mesh name="table_collision_v2_083" file="../../../../resources/assets/321595ac63c00987_table_collision_v2_083.obj" />
+-    <mesh name="table_collision_v2_084" file="../../../../resources/assets/a9e4fb8983821d81_table_collision_v2_084.obj" />
+-    <mesh name="table_collision_v2_085" file="../../../../resources/assets/266315071b819f8a_table_collision_v2_085.obj" />
+-    <mesh name="table_collision_v2_086" file="../../../../resources/assets/c8d271af8532ad6f_table_collision_v2_086.obj" />
+-    <mesh name="table_collision_v2_087" file="../../../../resources/assets/563bb64188d75557_table_collision_v2_087.obj" />
+-    <mesh name="table_collision_v2_088" file="../../../../resources/assets/98a2ba0138e1b4dd_table_collision_v2_088.obj" />
+-    <mesh name="table_collision_v2_089" file="../../../../resources/assets/c150aa8c9d283e3b_table_collision_v2_089.obj" />
+-    <mesh name="table_collision_v2_090" file="../../../../resources/assets/016d3d44d8322ad6_table_collision_v2_090.obj" />
+-    <mesh name="table_collision_v2_091" file="../../../../resources/assets/5ba5e57d3c814af3_table_collision_v2_091.obj" />
+-    <mesh name="table_collision_v2_092" file="../../../../resources/assets/6ea7bd51a27f0fd9_table_collision_v2_092.obj" />
+-    <mesh name="table_collision_v2_093" file="../../../../resources/assets/869c4bb69ae61d33_table_collision_v2_093.obj" />
+-    <mesh name="table_collision_v2_094" file="../../../../resources/assets/1162a58f90b33640_table_collision_v2_094.obj" />
+-    <mesh name="table_collision_v2_095" file="../../../../resources/assets/2ac3072dc29f4391_table_collision_v2_095.obj" />
+-    <mesh name="table_collision_v2_096" file="../../../../resources/assets/74ec7c4f5ae6e18f_table_collision_v2_096.obj" />
+-    <mesh name="table_collision_v2_097" file="../../../../resources/assets/6667ee654d76305a_table_collision_v2_097.obj" />
+-    <mesh name="table_collision_v2_098" file="../../../../resources/assets/a96ea3c41c7534be_table_collision_v2_098.obj" />
+-    <mesh name="table_collision_v2_099" file="../../../../resources/assets/4083c6faa35c0fc0_table_collision_v2_099.obj" />
+-    <mesh name="table_collision_v2_100" file="../../../../resources/assets/0859a000fca7089e_table_collision_v2_100.obj" />
+-    <mesh name="table_collision_v2_101" file="../../../../resources/assets/d12210aba46a6d63_table_collision_v2_101.obj" />
+-    <mesh name="table_collision_v2_102" file="../../../../resources/assets/c303e9c65c6c77f1_table_collision_v2_102.obj" />
+-    <mesh name="table_collision_v2_103" file="../../../../resources/assets/1dead6744c3418e7_table_collision_v2_103.obj" />
+-    <mesh name="table_collision_v2_104" file="../../../../resources/assets/766eabfa5283ce57_table_collision_v2_104.obj" />
+-    <mesh name="table_collision_v2_105" file="../../../../resources/assets/58753af369f610a4_table_collision_v2_105.obj" />
+-    <mesh name="table_collision_v2_106" file="../../../../resources/assets/d05523455a12cd00_table_collision_v2_106.obj" />
+-    <mesh name="table_collision_v2_107" file="../../../../resources/assets/fb59dfc51c71afb8_table_collision_v2_107.obj" />
+-    <mesh name="table_collision_v2_108" file="../../../../resources/assets/347ca30f545a9849_table_collision_v2_108.obj" />
+-    <mesh name="table_collision_v2_109" file="../../../../resources/assets/a1d8c6c2e28d3a06_table_collision_v2_109.obj" />
+-    <mesh name="table_collision_v2_110" file="../../../../resources/assets/a255b37259e0a639_table_collision_v2_110.obj" />
+-    <mesh name="table_collision_v2_111" file="../../../../resources/assets/6dfff321c5b5f909_table_collision_v2_111.obj" />
+-    <mesh name="table_collision_v2_112" file="../../../../resources/assets/97c397c1260b0daf_table_collision_v2_112.obj" />
+-    <mesh name="table_collision_v2_113" file="../../../../resources/assets/bf6df6e587079f6b_table_collision_v2_113.obj" />
+-    <mesh name="table_collision_v2_114" file="../../../../resources/assets/40c9f486ae0510a2_table_collision_v2_114.obj" />
+-    <mesh name="table_collision_v2_115" file="../../../../resources/assets/3caac166688cbb66_table_collision_v2_115.obj" />
+-    <mesh name="table_collision_v2_116" file="../../../../resources/assets/659a8cc37d88b25c_table_collision_v2_116.obj" />
+-    <mesh name="table_collision_v2_117" file="../../../../resources/assets/7b0d39f3e527649b_table_collision_v2_117.obj" />
+-    <mesh name="table_collision_v2_118" file="../../../../resources/assets/4ee129ed23b0af21_table_collision_v2_118.obj" />
+-    <mesh name="table_collision_v2_119" file="../../../../resources/assets/308551f9055a6fc5_table_collision_v2_119.obj" />
+-    <mesh name="table_collision_v2_120" file="../../../../resources/assets/2fe0b7aea13c5604_table_collision_v2_120.obj" />
+-    <mesh name="table_collision_v2_121" file="../../../../resources/assets/cbc435aefec72218_table_collision_v2_121.obj" />
+-    <mesh name="table_collision_v2_122" file="../../../../resources/assets/caeb27b59ff99064_table_collision_v2_122.obj" />
+-    <mesh name="table_collision_v2_123" file="../../../../resources/assets/bfeaab47e251e9f0_table_collision_v2_123.obj" />
+-    <mesh name="table_collision_v2_124" file="../../../../resources/assets/52f00e4a13c8faae_table_collision_v2_124.obj" />
+-    <mesh name="table_collision_v2_125" file="../../../../resources/assets/2ba89def5809adab_table_collision_v2_125.obj" />
+-    <mesh name="table_collision_v2_126" file="../../../../resources/assets/7054b64dc84e4b62_table_collision_v2_126.obj" />
+-    <mesh name="table_collision_v2_127" file="../../../../resources/assets/2898de8836a48ec1_table_collision_v2_127.obj" />
+-    <mesh name="table_collision_v2_128" file="../../../../resources/assets/0eca37f3a3b42eeb_table_collision_v2_128.obj" />
+-    <mesh name="table_collision_v2_129" file="../../../../resources/assets/41d13fdcd4b81984_table_collision_v2_129.obj" />
+-    <mesh name="table_collision_v2_130" file="../../../../resources/assets/63b24f1cfe8fa81f_table_collision_v2_130.obj" />
+-    <mesh name="table_collision_v2_131" file="../../../../resources/assets/85ed21e18b588819_table_collision_v2_131.obj" />
+-    <mesh name="table_collision_v2_132" file="../../../../resources/assets/c7ed5985cd4384d0_table_collision_v2_132.obj" />
+-    <mesh name="table_collision_v2_133" file="../../../../resources/assets/e022669db419d301_table_collision_v2_133.obj" />
+-    <mesh name="table_collision_v2_134" file="../../../../resources/assets/b19d0b85288a2be6_table_collision_v2_134.obj" />
+-    <mesh name="table_collision_v2_135" file="../../../../resources/assets/48d398b836c7cdab_table_collision_v2_135.obj" />
+-    <mesh name="table_collision_v2_136" file="../../../../resources/assets/e8fd59b88422604f_table_collision_v2_136.obj" />
+-    <mesh name="table_collision_v2_137" file="../../../../resources/assets/d711bee0fe8f07f0_table_collision_v2_137.obj" />
+-    <mesh name="table_collision_v2_138" file="../../../../resources/assets/6ce5698e75750a3b_table_collision_v2_138.obj" />
+-    <mesh name="table_collision_v2_139" file="../../../../resources/assets/b9656d441fd23e24_table_collision_v2_139.obj" />
+-    <mesh name="table_collision_v2_140" file="../../../../resources/assets/f856f9e953522c02_table_collision_v2_140.obj" />
+-    <mesh name="table_collision_v2_141" file="../../../../resources/assets/ede62f2b3d798b70_table_collision_v2_141.obj" />
+-    <mesh name="table_collision_v2_142" file="../../../../resources/assets/fa9618d4dd9e2045_table_collision_v2_142.obj" />
+-    <mesh name="table_collision_v2_143" file="../../../../resources/assets/594969937ff66e2e_table_collision_v2_143.obj" />
+-    <mesh name="table_collision_v2_144" file="../../../../resources/assets/d1c987a9666586d4_table_collision_v2_144.obj" />
+-    <mesh name="table_collision_v2_145" file="../../../../resources/assets/0afbbc762a69e0ac_table_collision_v2_145.obj" />
+-    <mesh name="table_collision_v2_146" file="../../../../resources/assets/81a76eb663aab3f0_table_collision_v2_146.obj" />
+-    <mesh name="table_collision_v2_147" file="../../../../resources/assets/9a3acfc20a0ff91b_table_collision_v2_147.obj" />
+-    <mesh name="table_collision_v2_148" file="../../../../resources/assets/302739a11c931d1d_table_collision_v2_148.obj" />
+-    <mesh name="table_collision_v2_149" file="../../../../resources/assets/ee1b0df7dd737d50_table_collision_v2_149.obj" />
+-    <mesh name="table_collision_v2_150" file="../../../../resources/assets/4a67a582b3fd9e15_table_collision_v2_150.obj" />
+-    <mesh name="table_collision_v2_151" file="../../../../resources/assets/1313e2d7fca55bc5_table_collision_v2_151.obj" />
+-    <mesh name="table_collision_v2_152" file="../../../../resources/assets/ed171224b1b9e42b_table_collision_v2_152.obj" />
+-    <mesh name="table_collision_v2_153" file="../../../../resources/assets/d3ee4195f2e6877d_table_collision_v2_153.obj" />
+-    <mesh name="table_collision_v2_154" file="../../../../resources/assets/8f727840485b7a6e_table_collision_v2_154.obj" />
+-    <mesh name="table_collision_v2_155" file="../../../../resources/assets/a9b8116ce74a0fa0_table_collision_v2_155.obj" />
+-    <mesh name="table_collision_v2_156" file="../../../../resources/assets/78a8f00489c5d157_table_collision_v2_156.obj" />
+-    <mesh name="table_collision_v2_157" file="../../../../resources/assets/306e05308f9b1c8f_table_collision_v2_157.obj" />
+-    <mesh name="table_collision_v2_158" file="../../../../resources/assets/a759f0f6d7428be1_table_collision_v2_158.obj" />
+-    <mesh name="table_collision_v2_159" file="../../../../resources/assets/4c0fd33c589027c5_table_collision_v2_159.obj" />
+-    <mesh name="table_collision_v2_160" file="../../../../resources/assets/3bd40ffaccad35a1_table_collision_v2_160.obj" />
+-    <mesh name="table_collision_v2_161" file="../../../../resources/assets/310efd6915805089_table_collision_v2_161.obj" />
+-    <mesh name="table_collision_v2_162" file="../../../../resources/assets/c637f2592f60538a_table_collision_v2_162.obj" />
+-    <mesh name="table_collision_v2_163" file="../../../../resources/assets/c8909a50a4d77ce1_table_collision_v2_163.obj" />
+-    <mesh name="table_collision_v2_164" file="../../../../resources/assets/f0d429b101102384_table_collision_v2_164.obj" />
+-    <mesh name="table_collision_v2_165" file="../../../../resources/assets/ef2447ead74790db_table_collision_v2_165.obj" />
+-    <mesh name="table_collision_v2_166" file="../../../../resources/assets/90b21389c3cc0c38_table_collision_v2_166.obj" />
+-    <mesh name="table_collision_v2_167" file="../../../../resources/assets/e26cd34bfc19ce80_table_collision_v2_167.obj" />
+-    <mesh name="table_collision_v2_168" file="../../../../resources/assets/f25e3a8c7ccdf82d_table_collision_v2_168.obj" />
+-    <mesh name="table_collision_v2_169" file="../../../../resources/assets/7f155af2a96de629_table_collision_v2_169.obj" />
+-    <mesh name="table_collision_v2_170" file="../../../../resources/assets/20eba20850d30fd0_table_collision_v2_170.obj" />
+-    <mesh name="table_collision_v2_171" file="../../../../resources/assets/1453ff472991aa3e_table_collision_v2_171.obj" />
+-    <mesh name="table_collision_v2_172" file="../../../../resources/assets/09f03b6901dc17cd_table_collision_v2_172.obj" />
+-    <mesh name="table_collision_v2_173" file="../../../../resources/assets/6ec0686b3ca96094_table_collision_v2_173.obj" />
+-    <mesh name="table_collision_v2_174" file="../../../../resources/assets/6dfea8ae89d18e88_table_collision_v2_174.obj" />
+-    <mesh name="table_collision_v2_175" file="../../../../resources/assets/5d1035ef0b8719fb_table_collision_v2_175.obj" />
+-    <mesh name="table_collision_v2_176" file="../../../../resources/assets/7a2c5a075c1b6a87_table_collision_v2_176.obj" />
+-    <mesh name="table_collision_v2_177" file="../../../../resources/assets/2b228bab256eb2cc_table_collision_v2_177.obj" />
+-    <mesh name="table_collision_v2_178" file="../../../../resources/assets/2e51a990b87c6975_table_collision_v2_178.obj" />
+-    <mesh name="table_collision_v2_179" file="../../../../resources/assets/4035f4854f7970d2_table_collision_v2_179.obj" />
+-    <mesh name="table_collision_v2_180" file="../../../../resources/assets/bac338156e5c5cda_table_collision_v2_180.obj" />
+-    <mesh name="table_collision_v2_181" file="../../../../resources/assets/266dfea499f3bd65_table_collision_v2_181.obj" />
+-    <mesh name="table_collision_v2_182" file="../../../../resources/assets/63ac9ca9b12dad00_table_collision_v2_182.obj" />
+-    <mesh name="table_collision_v2_183" file="../../../../resources/assets/299477fa4c2df0df_table_collision_v2_183.obj" />
+-    <mesh name="table_collision_v2_184" file="../../../../resources/assets/43b491e0132414d8_table_collision_v2_184.obj" />
+-    <mesh name="table_collision_v2_185" file="../../../../resources/assets/7912201e86973e4b_table_collision_v2_185.obj" />
+-    <mesh name="table_collision_v2_186" file="../../../../resources/assets/5af4d21cd1c5745c_table_collision_v2_186.obj" />
+-    <mesh name="table_collision_v2_187" file="../../../../resources/assets/0c9a97b118456337_table_collision_v2_187.obj" />
+-    <mesh name="table_collision_v2_188" file="../../../../resources/assets/c9613f0f828188b3_table_collision_v2_188.obj" />
+-    <mesh name="table_collision_v2_189" file="../../../../resources/assets/6f930f9cc90d5457_table_collision_v2_189.obj" />
+-    <mesh name="table_collision_v2_190" file="../../../../resources/assets/da4d523d0fbd74be_table_collision_v2_190.obj" />
+-    <mesh name="table_collision_v2_191" file="../../../../resources/assets/82f0f76cbe96ab47_table_collision_v2_191.obj" />
+-    <mesh name="table_collision_v2_192" file="../../../../resources/assets/199f997610217bf2_table_collision_v2_192.obj" />
+-    <mesh name="table_collision_v2_193" file="../../../../resources/assets/5c95e24180a65e28_table_collision_v2_193.obj" />
+-    <mesh name="table_collision_v2_194" file="../../../../resources/assets/789a5eea435bdc44_table_collision_v2_194.obj" />
+-    <mesh name="table_collision_v2_195" file="../../../../resources/assets/53380ce72f23b506_table_collision_v2_195.obj" />
+-    <mesh name="table_collision_v2_196" file="../../../../resources/assets/a7dac0503cc912a2_table_collision_v2_196.obj" />
+-    <mesh name="table_collision_v2_197" file="../../../../resources/assets/40d199e8f75170e5_table_collision_v2_197.obj" />
+-    <mesh name="table_collision_v2_198" file="../../../../resources/assets/fca807fd2de65d13_table_collision_v2_198.obj" />
+-    <mesh name="table_collision_v2_199" file="../../../../resources/assets/60d9fa27bd5995ba_table_collision_v2_199.obj" />
+-    <mesh name="table_collision_v2_200" file="../../../../resources/assets/c5f95be8a8068d21_table_collision_v2_200.obj" />
+-    <mesh name="table_collision_v2_201" file="../../../../resources/assets/61894c9723ee9ee2_table_collision_v2_201.obj" />
+-    <mesh name="table_collision_v2_202" file="../../../../resources/assets/b0f8cfe461998928_table_collision_v2_202.obj" />
+-    <mesh name="table_collision_v2_203" file="../../../../resources/assets/12b35beb8919f6be_table_collision_v2_203.obj" />
+-    <mesh name="tray_contact_000" file="../../../../resources/assets/9320105a5dc43084_tray_contact_000.obj" />
+-    <mesh name="tray_contact_001" file="../../../../resources/assets/42a01b4b8f9536a3_tray_contact_001.obj" />
+-    <mesh name="tray_contact_002" file="../../../../resources/assets/84cee9900ce93fba_tray_contact_002.obj" />
+-    <mesh name="tray_contact_003" file="../../../../resources/assets/6243ee754f4b8aac_tray_contact_003.obj" />
+-    <mesh name="tray_contact_004" file="../../../../resources/assets/ba59b34ff989cfba_tray_contact_004.obj" />
+-    <mesh name="tray_contact_005" file="../../../../resources/assets/c77ed48e7def044a_tray_contact_005.obj" />
+-    <mesh name="tray_contact_006" file="../../../../resources/assets/95dc58b8958b2d3c_tray_contact_006.obj" />
+-    <mesh name="tray_contact_007" file="../../../../resources/assets/ac4cffb799f7d5b3_tray_contact_007.obj" />
+-    <mesh name="tray_contact_008" file="../../../../resources/assets/285c62fc7eddda24_tray_contact_008.obj" />
+-    <mesh name="tray_contact_009" file="../../../../resources/assets/90c2bcaa29441069_tray_contact_009.obj" />
+-    <mesh name="tray_contact_010" file="../../../../resources/assets/b0f4ad126e95f977_tray_contact_010.obj" />
+-    <mesh name="tray_contact_011" file="../../../../resources/assets/1fd2a97bd1e2ec24_tray_contact_011.obj" />
+-    <mesh name="tray_contact_012" file="../../../../resources/assets/69abdead976bc703_tray_contact_012.obj" />
+-    <mesh name="tray_contact_013" file="../../../../resources/assets/ffef09db912ed6d6_tray_contact_013.obj" />
+-    <mesh name="tray_contact_014" file="../../../../resources/assets/7e9d63453e83e3a3_tray_contact_014.obj" />
+-    <mesh name="tray_contact_015" file="../../../../resources/assets/0e95a3a02b843819_tray_contact_015.obj" />
+-    <mesh name="tray_contact_016" file="../../../../resources/assets/63effeb0327ba8e2_tray_contact_016.obj" />
++    <mesh name="base_link" content_type="model/obj" file="../../../../../resources/assets/fc9ad103045fca83_base_link.obj" />
++    <mesh name="base_link_collision" content_type="model/stl" file="../../../../../resources/assets/ad4a7b53b87fa108_base_link_collision.STL" />
++    <mesh name="steer_motor_link1" content_type="model/obj" file="../../../../../resources/assets/d129e80d996a92c3_steer_motor_link1.obj" />
++    <mesh name="steer_motor_link1_collision" content_type="model/stl" file="../../../../../resources/assets/e1236c66e9aeb7c8_steer_motor_link1_collision.STL" />
++    <mesh name="wheel_motor_link1" content_type="model/obj" file="../../../../../resources/assets/eef711f9b5566c80_wheel_motor_link1.obj" />
++    <mesh name="wheel_motor_link1_collision" content_type="model/stl" file="../../../../../resources/assets/08a58ce9eb51a0db_wheel_motor_link1_collision.STL" />
++    <mesh name="steer_motor_link2" content_type="model/obj" file="../../../../../resources/assets/99d047d713ffc104_steer_motor_link2.obj" />
++    <mesh name="steer_motor_link2_collision" content_type="model/stl" file="../../../../../resources/assets/9cd1d3b8ef8c538d_steer_motor_link2_collision.STL" />
++    <mesh name="wheel_motor_link2" content_type="model/obj" file="../../../../../resources/assets/59110686ce695883_wheel_motor_link2.obj" />
++    <mesh name="wheel_motor_link2_collision" content_type="model/stl" file="../../../../../resources/assets/9d84d7ee0ea2c607_wheel_motor_link2_collision.STL" />
++    <mesh name="steer_motor_link3" content_type="model/obj" file="../../../../../resources/assets/831f29f90dce3ac2_steer_motor_link3.obj" />
++    <mesh name="steer_motor_link3_collision" content_type="model/stl" file="../../../../../resources/assets/efcd649a071cbcce_steer_motor_link3_collision.STL" />
++    <mesh name="wheel_motor_link3" content_type="model/obj" file="../../../../../resources/assets/ebb81fdc472820fc_wheel_motor_link3.obj" />
++    <mesh name="wheel_motor_link3_collision" content_type="model/stl" file="../../../../../resources/assets/05028c294cd6f6d9_wheel_motor_link3_collision.STL" />
++    <mesh name="torso_link1" content_type="model/obj" file="../../../../../resources/assets/256664d53b696a46_torso_link1.obj" />
++    <mesh name="torso_link1_collision" content_type="model/stl" file="../../../../../resources/assets/a39bfd443f37dc0c_torso_link1_collision.STL" />
++    <mesh name="torso_link2" content_type="model/obj" file="../../../../../resources/assets/00b0244dbd788e03_torso_link2.obj" />
++    <mesh name="torso_link2_collision" content_type="model/stl" file="../../../../../resources/assets/c42deaccfd43743b_torso_link2_collision.STL" />
++    <mesh name="torso_link3" content_type="model/obj" file="../../../../../resources/assets/3238da5be681bb81_torso_link3.obj" />
++    <mesh name="torso_link3_collision" content_type="model/stl" file="../../../../../resources/assets/422005c87a1acc81_torso_link3_collision.STL" />
++    <mesh name="torso_link4" content_type="model/obj" file="../../../../../resources/assets/6b61f7b72c706c4f_torso_link4.obj" />
++    <mesh name="torso_link4_collision" content_type="model/stl" file="../../../../../resources/assets/129b39117f65872f_torso_link4_collision.STL" />
++    <mesh name="zed_link" content_type="model/obj" file="../../../../../resources/assets/3c0e435bc0203ffe_zed_link.obj" />
++    <mesh name="zed_link_collision" content_type="model/stl" file="../../../../../resources/assets/73fa3ed1124f22a5_zed_link_collision.STL" />
++    <mesh name="left_arm_base_link" content_type="model/obj" file="../../../../../resources/assets/739c993f51f71298_left_arm_base_link.obj" />
++    <mesh name="left_arm_base_link_collision" content_type="model/stl" file="../../../../../resources/assets/926e0f0dfa95fe53_left_arm_base_link_collision.STL" />
++    <mesh name="left_arm_link1" content_type="model/obj" file="../../../../../resources/assets/8bfb3b0889cbee56_left_arm_link1.obj" />
++    <mesh name="left_arm_link1_collision" content_type="model/stl" file="../../../../../resources/assets/1f8e0f4c3a14d46a_left_arm_link1_collision.STL" />
++    <mesh name="left_arm_link2" content_type="model/obj" file="../../../../../resources/assets/6306333168268b06_left_arm_link2.obj" />
++    <mesh name="left_arm_link2_collision" content_type="model/stl" file="../../../../../resources/assets/7fbf799fa425ed14_left_arm_link2_collision.STL" />
++    <mesh name="left_arm_link3" content_type="model/obj" file="../../../../../resources/assets/b5413a49b8cb0dce_left_arm_link3.obj" />
++    <mesh name="left_arm_link3_collision" content_type="model/stl" file="../../../../../resources/assets/5c96c4d99bec5c3a_left_arm_link3_collision.STL" />
++    <mesh name="left_arm_link4" content_type="model/obj" file="../../../../../resources/assets/925da7f12b69e1f7_left_arm_link4.obj" />
++    <mesh name="left_arm_link4_collision" content_type="model/stl" file="../../../../../resources/assets/e1d6d06bd04baf4b_left_arm_link4_collision.STL" />
++    <mesh name="left_arm_link5" content_type="model/obj" file="../../../../../resources/assets/70faa087318b239b_left_arm_link5.obj" />
++    <mesh name="left_arm_link5_collision" content_type="model/stl" file="../../../../../resources/assets/23a1ecb107455678_left_arm_link5_collision.STL" />
++    <mesh name="left_arm_link6" content_type="model/obj" file="../../../../../resources/assets/4d1939e8624861bf_left_arm_link6.obj" />
++    <mesh name="left_arm_link6_collision" content_type="model/stl" file="../../../../../resources/assets/fc12f7563fe450cd_left_arm_link6_collision.STL" />
++    <mesh name="left_arm_link7" content_type="model/obj" file="../../../../../resources/assets/735c4c476ea69cd8_left_arm_link7.obj" />
++    <mesh name="left_arm_link7_collision" content_type="model/stl" file="../../../../../resources/assets/eab3aa7ff0eae77f_left_arm_link7_collision.STL" />
++    <mesh name="left_gripper_link" content_type="model/obj" file="../../../../../resources/assets/d99c6d995239c376_left_gripper_link.obj" />
++    <mesh name="left_gripper_link_collision" content_type="model/stl" file="../../../../../resources/assets/87a16ffa4cf2785b_left_gripper_link_collision.STL" />
++    <mesh name="left_realsense_link" content_type="model/obj" file="../../../../../resources/assets/154014fe780c9414_left_realsense_link.obj" />
++    <mesh name="left_realsense_link_collision" content_type="model/stl" file="../../../../../resources/assets/8d3b9650f5994de2_left_realsense_link_collision.STL" />
++    <mesh name="left_gripper_finger_link1" content_type="model/obj" file="../../../../../resources/assets/ddf9e2e7d3096886_left_gripper_finger_link1.obj" />
++    <mesh name="left_gripper_finger_link2" content_type="model/obj" file="../../../../../resources/assets/c36a15d2d158b95e_left_gripper_finger_link2.obj" />
++    <mesh name="right_arm_base_link" content_type="model/obj" file="../../../../../resources/assets/60aef6fce4cd99fd_right_arm_base_link.obj" />
++    <mesh name="right_arm_base_link_collision" content_type="model/stl" file="../../../../../resources/assets/c82cfc1ded0858f0_right_arm_base_link_collision.STL" />
++    <mesh name="right_arm_link1" content_type="model/obj" file="../../../../../resources/assets/67c26a7794548268_right_arm_link1.obj" />
++    <mesh name="right_arm_link1_collision" content_type="model/stl" file="../../../../../resources/assets/09529c797decea4f_right_arm_link1_collision.STL" />
++    <mesh name="right_arm_link2" content_type="model/obj" file="../../../../../resources/assets/ed4ba6a9ea43c7f0_right_arm_link2.obj" />
++    <mesh name="right_arm_link2_collision" content_type="model/stl" file="../../../../../resources/assets/c66971fbbc65a4d1_right_arm_link2_collision.STL" />
++    <mesh name="right_arm_link3" content_type="model/obj" file="../../../../../resources/assets/882f4d24432bb2fb_right_arm_link3.obj" />
++    <mesh name="right_arm_link3_collision" content_type="model/stl" file="../../../../../resources/assets/46eee2bbe5e2ea15_right_arm_link3_collision.STL" />
++    <mesh name="right_arm_link4" content_type="model/obj" file="../../../../../resources/assets/75aa528be6cde481_right_arm_link4.obj" />
++    <mesh name="right_arm_link4_collision" content_type="model/stl" file="../../../../../resources/assets/7d80eccc97609adb_right_arm_link4_collision.STL" />
++    <mesh name="right_arm_link5" content_type="model/obj" file="../../../../../resources/assets/4a5b2846756b4ad2_right_arm_link5.obj" />
++    <mesh name="right_arm_link5_collision" content_type="model/stl" file="../../../../../resources/assets/f33485e396a2611e_right_arm_link5_collision.STL" />
++    <mesh name="right_arm_link6" content_type="model/obj" file="../../../../../resources/assets/07afd7aac595027f_right_arm_link6.obj" />
++    <mesh name="right_arm_link6_collision" content_type="model/stl" file="../../../../../resources/assets/2cfaddc3876995ce_right_arm_link6_collision.STL" />
++    <mesh name="right_arm_link7" content_type="model/obj" file="../../../../../resources/assets/43b163d9bb0f9932_right_arm_link7.obj" />
++    <mesh name="right_arm_link7_collision" content_type="model/stl" file="../../../../../resources/assets/cc564ec5f518c2e4_right_arm_link7_collision.STL" />
++    <mesh name="right_gripper_link" content_type="model/obj" file="../../../../../resources/assets/a91b54ab69054ebc_right_gripper_link.obj" />
++    <mesh name="right_gripper_link_collision" content_type="model/stl" file="../../../../../resources/assets/87a16ffa4cf2785b_right_gripper_link_collision.STL" />
++    <mesh name="right_realsense_link" content_type="model/obj" file="../../../../../resources/assets/2af3f416d7a4270b_right_realsense_link.obj" />
++    <mesh name="right_realsense_link_collision" content_type="model/stl" file="../../../../../resources/assets/8d3b9650f5994de2_right_realsense_link_collision.STL" />
++    <mesh name="right_gripper_finger_link1" content_type="model/obj" file="../../../../../resources/assets/e5433ac273e71a31_right_gripper_finger_link1.obj" />
++    <mesh name="right_gripper_finger_link2" content_type="model/obj" file="../../../../../resources/assets/ee559bd1a3012250_right_gripper_finger_link2.obj" />
++    <mesh name="table_0" file="../../../../../resources/assets/f3684670db2c8b12_table_0.obj" />
++    <mesh name="table_1" file="../../../../../resources/assets/15170dbc448c8605_table_1.obj" />
++    <mesh name="table_2" file="../../../../../resources/assets/2b158e8687fe7bb1_table_2.obj" />
++    <mesh name="table_3" file="../../../../../resources/assets/9ac50eef51a3a2aa_table_3.obj" />
++    <mesh name="table_4" file="../../../../../resources/assets/671fe9bb8cfe6848_table_4.obj" />
++    <mesh name="tray_0" file="../../../../../resources/assets/ac0f9be6dd6904a1_tray_0.obj" />
++    <mesh name="tray_1" file="../../../../../resources/assets/bcec568e608141bf_tray_1.obj" />
++    <mesh name="table_collision_v2_000" file="../../../../../resources/assets/9433503d98127b5a_table_collision_v2_000.obj" />
++    <mesh name="table_collision_v2_001" file="../../../../../resources/assets/b80223e5fa4a75c2_table_collision_v2_001.obj" />
++    <mesh name="table_collision_v2_002" file="../../../../../resources/assets/defc051e633104dd_table_collision_v2_002.obj" />
++    <mesh name="table_collision_v2_003" file="../../../../../resources/assets/cc8fc9ca45fb9f2d_table_collision_v2_003.obj" />
++    <mesh name="table_collision_v2_004" file="../../../../../resources/assets/b1fcee02fdda381a_table_collision_v2_004.obj" />
++    <mesh name="table_collision_v2_005" file="../../../../../resources/assets/c096985808242414_table_collision_v2_005.obj" />
++    <mesh name="table_collision_v2_006" file="../../../../../resources/assets/4787b8d71ba7f5bf_table_collision_v2_006.obj" />
++    <mesh name="table_collision_v2_007" file="../../../../../resources/assets/2dd5efc415e056ec_table_collision_v2_007.obj" />
++    <mesh name="table_collision_v2_008" file="../../../../../resources/assets/678d904b15aaab2f_table_collision_v2_008.obj" />
++    <mesh name="table_collision_v2_009" file="../../../../../resources/assets/19459305219fe142_table_collision_v2_009.obj" />
++    <mesh name="table_collision_v2_010" file="../../../../../resources/assets/af7cf44cdbaf35ae_table_collision_v2_010.obj" />
++    <mesh name="table_collision_v2_011" file="../../../../../resources/assets/c3468bba57a78112_table_collision_v2_011.obj" />
++    <mesh name="table_collision_v2_012" file="../../../../../resources/assets/f0946285c5939c83_table_collision_v2_012.obj" />
++    <mesh name="table_collision_v2_013" file="../../../../../resources/assets/e54e4f60d95db8c3_table_collision_v2_013.obj" />
++    <mesh name="table_collision_v2_014" file="../../../../../resources/assets/a38a4264dce8c7a0_table_collision_v2_014.obj" />
++    <mesh name="table_collision_v2_015" file="../../../../../resources/assets/9b4e31125645f306_table_collision_v2_015.obj" />
++    <mesh name="table_collision_v2_016" file="../../../../../resources/assets/3536e0ca0da9f968_table_collision_v2_016.obj" />
++    <mesh name="table_collision_v2_017" file="../../../../../resources/assets/46b8b29fbca0d173_table_collision_v2_017.obj" />
++    <mesh name="table_collision_v2_018" file="../../../../../resources/assets/b411abd1332e195e_table_collision_v2_018.obj" />
++    <mesh name="table_collision_v2_019" file="../../../../../resources/assets/17f88a10cf46ba97_table_collision_v2_019.obj" />
++    <mesh name="table_collision_v2_020" file="../../../../../resources/assets/c9586101b061e547_table_collision_v2_020.obj" />
++    <mesh name="table_collision_v2_021" file="../../../../../resources/assets/3b6ef9ffbbdf5325_table_collision_v2_021.obj" />
++    <mesh name="table_collision_v2_022" file="../../../../../resources/assets/3ff5463860e987f2_table_collision_v2_022.obj" />
++    <mesh name="table_collision_v2_023" file="../../../../../resources/assets/066edef09393df36_table_collision_v2_023.obj" />
++    <mesh name="table_collision_v2_024" file="../../../../../resources/assets/0c0123ab26070752_table_collision_v2_024.obj" />
++    <mesh name="table_collision_v2_025" file="../../../../../resources/assets/eb41c1027c26b583_table_collision_v2_025.obj" />
++    <mesh name="table_collision_v2_026" file="../../../../../resources/assets/061db8d353fc474f_table_collision_v2_026.obj" />
++    <mesh name="table_collision_v2_027" file="../../../../../resources/assets/33b028b8853dcb22_table_collision_v2_027.obj" />
++    <mesh name="table_collision_v2_028" file="../../../../../resources/assets/42e6859f49f8255f_table_collision_v2_028.obj" />
++    <mesh name="table_collision_v2_029" file="../../../../../resources/assets/739aa5323b843aa1_table_collision_v2_029.obj" />
++    <mesh name="table_collision_v2_030" file="../../../../../resources/assets/db71693af32a98fe_table_collision_v2_030.obj" />
++    <mesh name="table_collision_v2_031" file="../../../../../resources/assets/4fa4af878c21f1c0_table_collision_v2_031.obj" />
++    <mesh name="table_collision_v2_032" file="../../../../../resources/assets/76121b7ad2023def_table_collision_v2_032.obj" />
++    <mesh name="table_collision_v2_033" file="../../../../../resources/assets/bea716d8f0a090c2_table_collision_v2_033.obj" />
++    <mesh name="table_collision_v2_034" file="../../../../../resources/assets/240a2b80d31cec50_table_collision_v2_034.obj" />
++    <mesh name="table_collision_v2_035" file="../../../../../resources/assets/8e552da4f29f97be_table_collision_v2_035.obj" />
++    <mesh name="table_collision_v2_036" file="../../../../../resources/assets/f533d893576cbbe2_table_collision_v2_036.obj" />
++    <mesh name="table_collision_v2_037" file="../../../../../resources/assets/a568883eaf0643db_table_collision_v2_037.obj" />
++    <mesh name="table_collision_v2_038" file="../../../../../resources/assets/be394ef192a9aea6_table_collision_v2_038.obj" />
++    <mesh name="table_collision_v2_039" file="../../../../../resources/assets/d964841be55dfc71_table_collision_v2_039.obj" />
++    <mesh name="table_collision_v2_040" file="../../../../../resources/assets/b6a40d114e8aa12b_table_collision_v2_040.obj" />
++    <mesh name="table_collision_v2_041" file="../../../../../resources/assets/c848ede87db77475_table_collision_v2_041.obj" />
++    <mesh name="table_collision_v2_042" file="../../../../../resources/assets/c9a4d88d4271050d_table_collision_v2_042.obj" />
++    <mesh name="table_collision_v2_043" file="../../../../../resources/assets/2cae7dc55fadb859_table_collision_v2_043.obj" />
++    <mesh name="table_collision_v2_044" file="../../../../../resources/assets/a261e0bf6c325307_table_collision_v2_044.obj" />
++    <mesh name="table_collision_v2_045" file="../../../../../resources/assets/992cb9d4d68220ff_table_collision_v2_045.obj" />
++    <mesh name="table_collision_v2_046" file="../../../../../resources/assets/0c3cccb31ad8147c_table_collision_v2_046.obj" />
++    <mesh name="table_collision_v2_047" file="../../../../../resources/assets/06372a5d705426e4_table_collision_v2_047.obj" />
++    <mesh name="table_collision_v2_048" file="../../../../../resources/assets/9dab6f0c300540e5_table_collision_v2_048.obj" />
++    <mesh name="table_collision_v2_049" file="../../../../../resources/assets/7ea8532ecb91471d_table_collision_v2_049.obj" />
++    <mesh name="table_collision_v2_050" file="../../../../../resources/assets/7857e39a48121320_table_collision_v2_050.obj" />
++    <mesh name="table_collision_v2_051" file="../../../../../resources/assets/27f2b167b8a7053f_table_collision_v2_051.obj" />
++    <mesh name="table_collision_v2_052" file="../../../../../resources/assets/903feb6ba63a68db_table_collision_v2_052.obj" />
++    <mesh name="table_collision_v2_053" file="../../../../../resources/assets/3f290a9862a42c99_table_collision_v2_053.obj" />
++    <mesh name="table_collision_v2_054" file="../../../../../resources/assets/d34228a41a2f9be4_table_collision_v2_054.obj" />
++    <mesh name="table_collision_v2_055" file="../../../../../resources/assets/90e13d4bbf1a1bec_table_collision_v2_055.obj" />
++    <mesh name="table_collision_v2_056" file="../../../../../resources/assets/e126a14363c60480_table_collision_v2_056.obj" />
++    <mesh name="table_collision_v2_057" file="../../../../../resources/assets/8b37773f9e04a8f9_table_collision_v2_057.obj" />
++    <mesh name="table_collision_v2_058" file="../../../../../resources/assets/dc39bcb65113e983_table_collision_v2_058.obj" />
++    <mesh name="table_collision_v2_059" file="../../../../../resources/assets/72bec318eb11fb0f_table_collision_v2_059.obj" />
++    <mesh name="table_collision_v2_060" file="../../../../../resources/assets/81e632402489f996_table_collision_v2_060.obj" />
++    <mesh name="table_collision_v2_061" file="../../../../../resources/assets/add4be30bcab7831_table_collision_v2_061.obj" />
++    <mesh name="table_collision_v2_062" file="../../../../../resources/assets/023d94d616324144_table_collision_v2_062.obj" />
++    <mesh name="table_collision_v2_063" file="../../../../../resources/assets/80ba645566b432ca_table_collision_v2_063.obj" />
++    <mesh name="table_collision_v2_064" file="../../../../../resources/assets/d1decc9f8fe50aee_table_collision_v2_064.obj" />
++    <mesh name="table_collision_v2_065" file="../../../../../resources/assets/d1098b6d0f05bfdc_table_collision_v2_065.obj" />
++    <mesh name="table_collision_v2_066" file="../../../../../resources/assets/b06cd3a2dfcb078e_table_collision_v2_066.obj" />
++    <mesh name="table_collision_v2_067" file="../../../../../resources/assets/330518b5c03d0033_table_collision_v2_067.obj" />
++    <mesh name="table_collision_v2_068" file="../../../../../resources/assets/c9410305df0c8e09_table_collision_v2_068.obj" />
++    <mesh name="table_collision_v2_069" file="../../../../../resources/assets/eb53c86c752c4f05_table_collision_v2_069.obj" />
++    <mesh name="table_collision_v2_070" file="../../../../../resources/assets/2c9faaa0efdc0969_table_collision_v2_070.obj" />
++    <mesh name="table_collision_v2_071" file="../../../../../resources/assets/cbe7f6e41d4c755c_table_collision_v2_071.obj" />
++    <mesh name="table_collision_v2_072" file="../../../../../resources/assets/840900bf34ce0654_table_collision_v2_072.obj" />
++    <mesh name="table_collision_v2_073" file="../../../../../resources/assets/279a59c6a8ba4864_table_collision_v2_073.obj" />
++    <mesh name="table_collision_v2_074" file="../../../../../resources/assets/5ad89c21b1e681fb_table_collision_v2_074.obj" />
++    <mesh name="table_collision_v2_075" file="../../../../../resources/assets/6cec7a5086454f02_table_collision_v2_075.obj" />
++    <mesh name="table_collision_v2_076" file="../../../../../resources/assets/1ca57a6909b04c46_table_collision_v2_076.obj" />
++    <mesh name="table_collision_v2_077" file="../../../../../resources/assets/8e09d3abcd729b7c_table_collision_v2_077.obj" />
++    <mesh name="table_collision_v2_078" file="../../../../../resources/assets/43949ee73c87c4e7_table_collision_v2_078.obj" />
++    <mesh name="table_collision_v2_079" file="../../../../../resources/assets/ddcdda9bf2917461_table_collision_v2_079.obj" />
++    <mesh name="table_collision_v2_080" file="../../../../../resources/assets/1677194cdea7798c_table_collision_v2_080.obj" />
++    <mesh name="table_collision_v2_081" file="../../../../../resources/assets/b912369f57314de4_table_collision_v2_081.obj" />
++    <mesh name="table_collision_v2_082" file="../../../../../resources/assets/8a7e8d743c7d4f32_table_collision_v2_082.obj" />
++    <mesh name="table_collision_v2_083" file="../../../../../resources/assets/321595ac63c00987_table_collision_v2_083.obj" />
++    <mesh name="table_collision_v2_084" file="../../../../../resources/assets/a9e4fb8983821d81_table_collision_v2_084.obj" />
++    <mesh name="table_collision_v2_085" file="../../../../../resources/assets/266315071b819f8a_table_collision_v2_085.obj" />
++    <mesh name="table_collision_v2_086" file="../../../../../resources/assets/c8d271af8532ad6f_table_collision_v2_086.obj" />
++    <mesh name="table_collision_v2_087" file="../../../../../resources/assets/563bb64188d75557_table_collision_v2_087.obj" />
++    <mesh name="table_collision_v2_088" file="../../../../../resources/assets/98a2ba0138e1b4dd_table_collision_v2_088.obj" />
++    <mesh name="table_collision_v2_089" file="../../../../../resources/assets/c150aa8c9d283e3b_table_collision_v2_089.obj" />
++    <mesh name="table_collision_v2_090" file="../../../../../resources/assets/016d3d44d8322ad6_table_collision_v2_090.obj" />
++    <mesh name="table_collision_v2_091" file="../../../../../resources/assets/5ba5e57d3c814af3_table_collision_v2_091.obj" />
++    <mesh name="table_collision_v2_092" file="../../../../../resources/assets/6ea7bd51a27f0fd9_table_collision_v2_092.obj" />
++    <mesh name="table_collision_v2_093" file="../../../../../resources/assets/869c4bb69ae61d33_table_collision_v2_093.obj" />
++    <mesh name="table_collision_v2_094" file="../../../../../resources/assets/1162a58f90b33640_table_collision_v2_094.obj" />
++    <mesh name="table_collision_v2_095" file="../../../../../resources/assets/2ac3072dc29f4391_table_collision_v2_095.obj" />
++    <mesh name="table_collision_v2_096" file="../../../../../resources/assets/74ec7c4f5ae6e18f_table_collision_v2_096.obj" />
++    <mesh name="table_collision_v2_097" file="../../../../../resources/assets/6667ee654d76305a_table_collision_v2_097.obj" />
++    <mesh name="table_collision_v2_098" file="../../../../../resources/assets/a96ea3c41c7534be_table_collision_v2_098.obj" />
++    <mesh name="table_collision_v2_099" file="../../../../../resources/assets/4083c6faa35c0fc0_table_collision_v2_099.obj" />
++    <mesh name="table_collision_v2_100" file="../../../../../resources/assets/0859a000fca7089e_table_collision_v2_100.obj" />
++    <mesh name="table_collision_v2_101" file="../../../../../resources/assets/d12210aba46a6d63_table_collision_v2_101.obj" />
++    <mesh name="table_collision_v2_102" file="../../../../../resources/assets/c303e9c65c6c77f1_table_collision_v2_102.obj" />
++    <mesh name="table_collision_v2_103" file="../../../../../resources/assets/1dead6744c3418e7_table_collision_v2_103.obj" />
++    <mesh name="table_collision_v2_104" file="../../../../../resources/assets/766eabfa5283ce57_table_collision_v2_104.obj" />
++    <mesh name="table_collision_v2_105" file="../../../../../resources/assets/58753af369f610a4_table_collision_v2_105.obj" />
++    <mesh name="table_collision_v2_106" file="../../../../../resources/assets/d05523455a12cd00_table_collision_v2_106.obj" />
++    <mesh name="table_collision_v2_107" file="../../../../../resources/assets/fb59dfc51c71afb8_table_collision_v2_107.obj" />
++    <mesh name="table_collision_v2_108" file="../../../../../resources/assets/347ca30f545a9849_table_collision_v2_108.obj" />
++    <mesh name="table_collision_v2_109" file="../../../../../resources/assets/a1d8c6c2e28d3a06_table_collision_v2_109.obj" />
++    <mesh name="table_collision_v2_110" file="../../../../../resources/assets/a255b37259e0a639_table_collision_v2_110.obj" />
++    <mesh name="table_collision_v2_111" file="../../../../../resources/assets/6dfff321c5b5f909_table_collision_v2_111.obj" />
++    <mesh name="table_collision_v2_112" file="../../../../../resources/assets/97c397c1260b0daf_table_collision_v2_112.obj" />
++    <mesh name="table_collision_v2_113" file="../../../../../resources/assets/bf6df6e587079f6b_table_collision_v2_113.obj" />
++    <mesh name="table_collision_v2_114" file="../../../../../resources/assets/40c9f486ae0510a2_table_collision_v2_114.obj" />
++    <mesh name="table_collision_v2_115" file="../../../../../resources/assets/3caac166688cbb66_table_collision_v2_115.obj" />
++    <mesh name="table_collision_v2_116" file="../../../../../resources/assets/659a8cc37d88b25c_table_collision_v2_116.obj" />
++    <mesh name="table_collision_v2_117" file="../../../../../resources/assets/7b0d39f3e527649b_table_collision_v2_117.obj" />
++    <mesh name="table_collision_v2_118" file="../../../../../resources/assets/4ee129ed23b0af21_table_collision_v2_118.obj" />
++    <mesh name="table_collision_v2_119" file="../../../../../resources/assets/308551f9055a6fc5_table_collision_v2_119.obj" />
++    <mesh name="table_collision_v2_120" file="../../../../../resources/assets/2fe0b7aea13c5604_table_collision_v2_120.obj" />
++    <mesh name="table_collision_v2_121" file="../../../../../resources/assets/cbc435aefec72218_table_collision_v2_121.obj" />
++    <mesh name="table_collision_v2_122" file="../../../../../resources/assets/caeb27b59ff99064_table_collision_v2_122.obj" />
++    <mesh name="table_collision_v2_123" file="../../../../../resources/assets/bfeaab47e251e9f0_table_collision_v2_123.obj" />
++    <mesh name="table_collision_v2_124" file="../../../../../resources/assets/52f00e4a13c8faae_table_collision_v2_124.obj" />
++    <mesh name="table_collision_v2_125" file="../../../../../resources/assets/2ba89def5809adab_table_collision_v2_125.obj" />
++    <mesh name="table_collision_v2_126" file="../../../../../resources/assets/7054b64dc84e4b62_table_collision_v2_126.obj" />
++    <mesh name="table_collision_v2_127" file="../../../../../resources/assets/2898de8836a48ec1_table_collision_v2_127.obj" />
++    <mesh name="table_collision_v2_128" file="../../../../../resources/assets/0eca37f3a3b42eeb_table_collision_v2_128.obj" />
++    <mesh name="table_collision_v2_129" file="../../../../../resources/assets/41d13fdcd4b81984_table_collision_v2_129.obj" />
++    <mesh name="table_collision_v2_130" file="../../../../../resources/assets/63b24f1cfe8fa81f_table_collision_v2_130.obj" />
++    <mesh name="table_collision_v2_131" file="../../../../../resources/assets/85ed21e18b588819_table_collision_v2_131.obj" />
++    <mesh name="table_collision_v2_132" file="../../../../../resources/assets/c7ed5985cd4384d0_table_collision_v2_132.obj" />
++    <mesh name="table_collision_v2_133" file="../../../../../resources/assets/e022669db419d301_table_collision_v2_133.obj" />
++    <mesh name="table_collision_v2_134" file="../../../../../resources/assets/b19d0b85288a2be6_table_collision_v2_134.obj" />
++    <mesh name="table_collision_v2_135" file="../../../../../resources/assets/48d398b836c7cdab_table_collision_v2_135.obj" />
++    <mesh name="table_collision_v2_136" file="../../../../../resources/assets/e8fd59b88422604f_table_collision_v2_136.obj" />
++    <mesh name="table_collision_v2_137" file="../../../../../resources/assets/d711bee0fe8f07f0_table_collision_v2_137.obj" />
++    <mesh name="table_collision_v2_138" file="../../../../../resources/assets/6ce5698e75750a3b_table_collision_v2_138.obj" />
++    <mesh name="table_collision_v2_139" file="../../../../../resources/assets/b9656d441fd23e24_table_collision_v2_139.obj" />
++    <mesh name="table_collision_v2_140" file="../../../../../resources/assets/f856f9e953522c02_table_collision_v2_140.obj" />
++    <mesh name="table_collision_v2_141" file="../../../../../resources/assets/ede62f2b3d798b70_table_collision_v2_141.obj" />
++    <mesh name="table_collision_v2_142" file="../../../../../resources/assets/fa9618d4dd9e2045_table_collision_v2_142.obj" />
++    <mesh name="table_collision_v2_143" file="../../../../../resources/assets/594969937ff66e2e_table_collision_v2_143.obj" />
++    <mesh name="table_collision_v2_144" file="../../../../../resources/assets/d1c987a9666586d4_table_collision_v2_144.obj" />
++    <mesh name="table_collision_v2_145" file="../../../../../resources/assets/0afbbc762a69e0ac_table_collision_v2_145.obj" />
++    <mesh name="table_collision_v2_146" file="../../../../../resources/assets/81a76eb663aab3f0_table_collision_v2_146.obj" />
++    <mesh name="table_collision_v2_147" file="../../../../../resources/assets/9a3acfc20a0ff91b_table_collision_v2_147.obj" />
++    <mesh name="table_collision_v2_148" file="../../../../../resources/assets/302739a11c931d1d_table_collision_v2_148.obj" />
++    <mesh name="table_collision_v2_149" file="../../../../../resources/assets/ee1b0df7dd737d50_table_collision_v2_149.obj" />
++    <mesh name="table_collision_v2_150" file="../../../../../resources/assets/4a67a582b3fd9e15_table_collision_v2_150.obj" />
++    <mesh name="table_collision_v2_151" file="../../../../../resources/assets/1313e2d7fca55bc5_table_collision_v2_151.obj" />
++    <mesh name="table_collision_v2_152" file="../../../../../resources/assets/ed171224b1b9e42b_table_collision_v2_152.obj" />
++    <mesh name="table_collision_v2_153" file="../../../../../resources/assets/d3ee4195f2e6877d_table_collision_v2_153.obj" />
++    <mesh name="table_collision_v2_154" file="../../../../../resources/assets/8f727840485b7a6e_table_collision_v2_154.obj" />
++    <mesh name="table_collision_v2_155" file="../../../../../resources/assets/a9b8116ce74a0fa0_table_collision_v2_155.obj" />
++    <mesh name="table_collision_v2_156" file="../../../../../resources/assets/78a8f00489c5d157_table_collision_v2_156.obj" />
++    <mesh name="table_collision_v2_157" file="../../../../../resources/assets/306e05308f9b1c8f_table_collision_v2_157.obj" />
++    <mesh name="table_collision_v2_158" file="../../../../../resources/assets/a759f0f6d7428be1_table_collision_v2_158.obj" />
++    <mesh name="table_collision_v2_159" file="../../../../../resources/assets/4c0fd33c589027c5_table_collision_v2_159.obj" />
++    <mesh name="table_collision_v2_160" file="../../../../../resources/assets/3bd40ffaccad35a1_table_collision_v2_160.obj" />
++    <mesh name="table_collision_v2_161" file="../../../../../resources/assets/310efd6915805089_table_collision_v2_161.obj" />
++    <mesh name="table_collision_v2_162" file="../../../../../resources/assets/c637f2592f60538a_table_collision_v2_162.obj" />
++    <mesh name="table_collision_v2_163" file="../../../../../resources/assets/c8909a50a4d77ce1_table_collision_v2_163.obj" />
++    <mesh name="table_collision_v2_164" file="../../../../../resources/assets/f0d429b101102384_table_collision_v2_164.obj" />
++    <mesh name="table_collision_v2_165" file="../../../../../resources/assets/ef2447ead74790db_table_collision_v2_165.obj" />
++    <mesh name="table_collision_v2_166" file="../../../../../resources/assets/90b21389c3cc0c38_table_collision_v2_166.obj" />
++    <mesh name="table_collision_v2_167" file="../../../../../resources/assets/e26cd34bfc19ce80_table_collision_v2_167.obj" />
++    <mesh name="table_collision_v2_168" file="../../../../../resources/assets/f25e3a8c7ccdf82d_table_collision_v2_168.obj" />
++    <mesh name="table_collision_v2_169" file="../../../../../resources/assets/7f155af2a96de629_table_collision_v2_169.obj" />
++    <mesh name="table_collision_v2_170" file="../../../../../resources/assets/20eba20850d30fd0_table_collision_v2_170.obj" />
++    <mesh name="table_collision_v2_171" file="../../../../../resources/assets/1453ff472991aa3e_table_collision_v2_171.obj" />
++    <mesh name="table_collision_v2_172" file="../../../../../resources/assets/09f03b6901dc17cd_table_collision_v2_172.obj" />
++    <mesh name="table_collision_v2_173" file="../../../../../resources/assets/6ec0686b3ca96094_table_collision_v2_173.obj" />
++    <mesh name="table_collision_v2_174" file="../../../../../resources/assets/6dfea8ae89d18e88_table_collision_v2_174.obj" />
++    <mesh name="table_collision_v2_175" file="../../../../../resources/assets/5d1035ef0b8719fb_table_collision_v2_175.obj" />
++    <mesh name="table_collision_v2_176" file="../../../../../resources/assets/7a2c5a075c1b6a87_table_collision_v2_176.obj" />
++    <mesh name="table_collision_v2_177" file="../../../../../resources/assets/2b228bab256eb2cc_table_collision_v2_177.obj" />
++    <mesh name="table_collision_v2_178" file="../../../../../resources/assets/2e51a990b87c6975_table_collision_v2_178.obj" />
++    <mesh name="table_collision_v2_179" file="../../../../../resources/assets/4035f4854f7970d2_table_collision_v2_179.obj" />
++    <mesh name="table_collision_v2_180" file="../../../../../resources/assets/bac338156e5c5cda_table_collision_v2_180.obj" />
++    <mesh name="table_collision_v2_181" file="../../../../../resources/assets/266dfea499f3bd65_table_collision_v2_181.obj" />
++    <mesh name="table_collision_v2_182" file="../../../../../resources/assets/63ac9ca9b12dad00_table_collision_v2_182.obj" />
++    <mesh name="table_collision_v2_183" file="../../../../../resources/assets/299477fa4c2df0df_table_collision_v2_183.obj" />
++    <mesh name="table_collision_v2_184" file="../../../../../resources/assets/43b491e0132414d8_table_collision_v2_184.obj" />
++    <mesh name="table_collision_v2_185" file="../../../../../resources/assets/7912201e86973e4b_table_collision_v2_185.obj" />
++    <mesh name="table_collision_v2_186" file="../../../../../resources/assets/5af4d21cd1c5745c_table_collision_v2_186.obj" />
++    <mesh name="table_collision_v2_187" file="../../../../../resources/assets/0c9a97b118456337_table_collision_v2_187.obj" />
++    <mesh name="table_collision_v2_188" file="../../../../../resources/assets/c9613f0f828188b3_table_collision_v2_188.obj" />
++    <mesh name="table_collision_v2_189" file="../../../../../resources/assets/6f930f9cc90d5457_table_collision_v2_189.obj" />
++    <mesh name="table_collision_v2_190" file="../../../../../resources/assets/da4d523d0fbd74be_table_collision_v2_190.obj" />
++    <mesh name="table_collision_v2_191" file="../../../../../resources/assets/82f0f76cbe96ab47_table_collision_v2_191.obj" />
++    <mesh name="table_collision_v2_192" file="../../../../../resources/assets/199f997610217bf2_table_collision_v2_192.obj" />
++    <mesh name="table_collision_v2_193" file="../../../../../resources/assets/5c95e24180a65e28_table_collision_v2_193.obj" />
++    <mesh name="table_collision_v2_194" file="../../../../../resources/assets/789a5eea435bdc44_table_collision_v2_194.obj" />
++    <mesh name="table_collision_v2_195" file="../../../../../resources/assets/53380ce72f23b506_table_collision_v2_195.obj" />
++    <mesh name="table_collision_v2_196" file="../../../../../resources/assets/a7dac0503cc912a2_table_collision_v2_196.obj" />
++    <mesh name="table_collision_v2_197" file="../../../../../resources/assets/40d199e8f75170e5_table_collision_v2_197.obj" />
++    <mesh name="table_collision_v2_198" file="../../../../../resources/assets/fca807fd2de65d13_table_collision_v2_198.obj" />
++    <mesh name="table_collision_v2_199" file="../../../../../resources/assets/60d9fa27bd5995ba_table_collision_v2_199.obj" />
++    <mesh name="table_collision_v2_200" file="../../../../../resources/assets/c5f95be8a8068d21_table_collision_v2_200.obj" />
++    <mesh name="table_collision_v2_201" file="../../../../../resources/assets/61894c9723ee9ee2_table_collision_v2_201.obj" />
++    <mesh name="table_collision_v2_202" file="../../../../../resources/assets/b0f8cfe461998928_table_collision_v2_202.obj" />
++    <mesh name="table_collision_v2_203" file="../../../../../resources/assets/12b35beb8919f6be_table_collision_v2_203.obj" />
++    <mesh name="tray_contact_000" file="../../../../../resources/assets/9320105a5dc43084_tray_contact_000.obj" />
++    <mesh name="tray_contact_001" file="../../../../../resources/assets/42a01b4b8f9536a3_tray_contact_001.obj" />
++    <mesh name="tray_contact_002" file="../../../../../resources/assets/84cee9900ce93fba_tray_contact_002.obj" />
++    <mesh name="tray_contact_003" file="../../../../../resources/assets/6243ee754f4b8aac_tray_contact_003.obj" />
++    <mesh name="tray_contact_004" file="../../../../../resources/assets/ba59b34ff989cfba_tray_contact_004.obj" />
++    <mesh name="tray_contact_005" file="../../../../../resources/assets/c77ed48e7def044a_tray_contact_005.obj" />
++    <mesh name="tray_contact_006" file="../../../../../resources/assets/95dc58b8958b2d3c_tray_contact_006.obj" />
++    <mesh name="tray_contact_007" file="../../../../../resources/assets/ac4cffb799f7d5b3_tray_contact_007.obj" />
++    <mesh name="tray_contact_008" file="../../../../../resources/assets/285c62fc7eddda24_tray_contact_008.obj" />
++    <mesh name="tray_contact_009" file="../../../../../resources/assets/90c2bcaa29441069_tray_contact_009.obj" />
++    <mesh name="tray_contact_010" file="../../../../../resources/assets/b0f4ad126e95f977_tray_contact_010.obj" />
++    <mesh name="tray_contact_011" file="../../../../../resources/assets/1fd2a97bd1e2ec24_tray_contact_011.obj" />
++    <mesh name="tray_contact_012" file="../../../../../resources/assets/69abdead976bc703_tray_contact_012.obj" />
++    <mesh name="tray_contact_013" file="../../../../../resources/assets/ffef09db912ed6d6_tray_contact_013.obj" />
++    <mesh name="tray_contact_014" file="../../../../../resources/assets/7e9d63453e83e3a3_tray_contact_014.obj" />
++    <mesh name="tray_contact_015" file="../../../../../resources/assets/0e95a3a02b843819_tray_contact_015.obj" />
++    <mesh name="tray_contact_016" file="../../../../../resources/assets/63effeb0327ba8e2_tray_contact_016.obj" />
+     <material name="airport_table_finish" rgba="0.8433891712 0.8266570506 0.7673756655 1" specular=".05" shininess=".1" />
+   </asset>
+   <worldbody>

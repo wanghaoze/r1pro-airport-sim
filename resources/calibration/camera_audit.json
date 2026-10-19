@@ -1,0 +1,781 @@
+{
+  "status": "audit_only_not_calibration_validated",
+  "source": "C:\\Users\\HAOZEW\\Documents\\code\\r1pro_camera_audit_20260922_173651",
+  "intrinsics": {
+    "_calib_arm_left_camera_info": {
+      "header": {
+        "stamp": {
+          "sec": 0,
+          "nanosec": 0
+        },
+        "frame_id": ""
+      },
+      "height": 720,
+      "width": 1280,
+      "distortion_model": "plumb_bob",
+      "d": [
+        -0.05069444328546524,
+        0.05630522593855858,
+        0.0016022863565012813,
+        0.0003874148824252188,
+        -0.017663510516285896
+      ],
+      "k": [
+        652.2298583984375,
+        0.0,
+        637.885986328125,
+        0.0,
+        651.4490356445312,
+        366.4038391113281,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "r": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "p": [
+        652.2298583984375,
+        0.0,
+        637.885986328125,
+        0.0,
+        0.0,
+        651.4490356445312,
+        366.4038391113281,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "binning_x": 0,
+      "binning_y": 0,
+      "roi": {
+        "x_offset": 0,
+        "y_offset": 0,
+        "height": 0,
+        "width": 0,
+        "do_rectify": false
+      },
+      "pinhole_fov_deg_not_distorted_fov": [
+        88.91521397002269,
+        57.84773686224668
+      ],
+      "source_sha256": "8e71cbc7204b8da9c4f087213d5fbbf7ce063c740e06fab6962c0e9e04d7fe39"
+    },
+    "_calib_arm_right_camera_info": {
+      "header": {
+        "stamp": {
+          "sec": 0,
+          "nanosec": 0
+        },
+        "frame_id": ""
+      },
+      "height": 720,
+      "width": 1280,
+      "distortion_model": "plumb_bob",
+      "d": [
+        -0.0502031072974205,
+        0.05562106519937515,
+        0.0007528919959440827,
+        0.0004108887806069106,
+        -0.01728924736380577
+      ],
+      "k": [
+        653.6876220703125,
+        0.0,
+        632.9224243164062,
+        0.0,
+        653.048828125,
+        367.9019470214844,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "r": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "p": [
+        653.6876220703125,
+        0.0,
+        632.9224243164062,
+        0.0,
+        0.0,
+        653.048828125,
+        367.9019470214844,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "binning_x": 0,
+      "binning_y": 0,
+      "roi": {
+        "x_offset": 0,
+        "y_offset": 0,
+        "height": 0,
+        "width": 0,
+        "do_rectify": false
+      },
+      "pinhole_fov_deg_not_distorted_fov": [
+        88.78420189244385,
+        57.726982008158906
+      ],
+      "source_sha256": "25ef3736573b2351366e9b07e790e951270964b8ed11cfff592a509731fcc244"
+    },
+    "_calib_head_left_camera_info": {
+      "header": {
+        "stamp": {
+          "sec": 0,
+          "nanosec": 0
+        },
+        "frame_id": ""
+      },
+      "height": 1536,
+      "width": 1920,
+      "distortion_model": "plumb_bob",
+      "d": [
+        -0.5579529822541125,
+        -0.6903050298071337,
+        2.1001877019863112e-05,
+        -0.00032368492541970243,
+        -0.038964230149534373,
+        -0.16388389992466643,
+        -1.008346581511784,
+        -0.20880452901287969
+      ],
+      "k": [
+        1012.2157359892154,
+        0.0,
+        963.3488301078507,
+        0.0,
+        1011.799585083002,
+        768.6021100142606,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "r": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "p": [
+        1012.2157359892154,
+        0.0,
+        963.3488301078507,
+        0.0,
+        0.0,
+        1011.799585083002,
+        768.6021100142606,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "binning_x": 0,
+      "binning_y": 0,
+      "roi": {
+        "x_offset": 0,
+        "y_offset": 0,
+        "height": 0,
+        "width": 0,
+        "do_rectify": false
+      },
+      "pinhole_fov_deg_not_distorted_fov": [
+        86.96649040750698,
+        74.40015390351321
+      ],
+      "source_sha256": "cada1f62453de0fe5901f2e38a6b63c5d5650d48d2c4494bbf72eaf396283191"
+    },
+    "_calib_head_right_camera_info": {
+      "header": {
+        "stamp": {
+          "sec": 0,
+          "nanosec": 0
+        },
+        "frame_id": ""
+      },
+      "height": 1536,
+      "width": 1920,
+      "distortion_model": "plumb_bob",
+      "d": [
+        -0.24827939473671215,
+        -0.3830967897231506,
+        -9.271547563095913e-05,
+        -0.000283456087210927,
+        -0.015030440275462806,
+        0.14590807703625502,
+        -0.5759230630804809,
+        -0.1005485923433225
+      ],
+      "k": [
+        1014.9335380480551,
+        0.0,
+        961.5783245023572,
+        0.0,
+        1014.4181653733547,
+        768.0401199093222,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "r": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "p": [
+        1014.9335380480551,
+        0.0,
+        961.5783245023572,
+        0.0,
+        0.0,
+        1014.4181653733547,
+        768.0401199093222,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "binning_x": 0,
+      "binning_y": 0,
+      "roi": {
+        "x_offset": 0,
+        "y_offset": 0,
+        "height": 0,
+        "width": 0,
+        "do_rectify": false
+      },
+      "pinhole_fov_deg_not_distorted_fov": [
+        86.81334021856104,
+        74.25757882335321
+      ],
+      "source_sha256": "e07e3e559aa6adecab52eb26db3436b7d996cab1ee5b5f1119c99c0aa4cfff26"
+    },
+    "_hdas_camera_wrist_left_color_camera_info": {
+      "header": {
+        "stamp": {
+          "sec": 1790069824,
+          "nanosec": 954958008
+        },
+        "frame_id": "camera_wrist_left_color_optical_frame"
+      },
+      "height": 720,
+      "width": 1280,
+      "distortion_model": "plumb_bob",
+      "d": [
+        -0.05069444328546524,
+        0.05630522593855858,
+        0.0016022863565012813,
+        0.0003874148824252188,
+        -0.017663510516285896
+      ],
+      "k": [
+        652.2298583984375,
+        0.0,
+        637.885986328125,
+        0.0,
+        651.4490356445312,
+        366.4038391113281,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "r": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "p": [
+        652.2298583984375,
+        0.0,
+        637.885986328125,
+        0.0,
+        0.0,
+        651.4490356445312,
+        366.4038391113281,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "binning_x": 0,
+      "binning_y": 0,
+      "roi": {
+        "x_offset": 0,
+        "y_offset": 0,
+        "height": 0,
+        "width": 0,
+        "do_rectify": false
+      },
+      "pinhole_fov_deg_not_distorted_fov": [
+        88.91521397002269,
+        57.84773686224668
+      ],
+      "source_sha256": "30aab934ba0cbb72947beac95f7e12a1dfaf40a42b5ed90fd32a21ccb7470805"
+    },
+    "_hdas_camera_wrist_right_color_camera_info": {
+      "header": {
+        "stamp": {
+          "sec": 1790069827,
+          "nanosec": 473217773
+        },
+        "frame_id": "camera_wrist_right_color_optical_frame"
+      },
+      "height": 720,
+      "width": 1280,
+      "distortion_model": "plumb_bob",
+      "d": [
+        -0.0502031072974205,
+        0.05562106519937515,
+        0.0007528919959440827,
+        0.0004108887806069106,
+        -0.01728924736380577
+      ],
+      "k": [
+        653.6876220703125,
+        0.0,
+        632.9224243164062,
+        0.0,
+        653.048828125,
+        367.9019470214844,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "r": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "p": [
+        653.6876220703125,
+        0.0,
+        632.9224243164062,
+        0.0,
+        0.0,
+        653.048828125,
+        367.9019470214844,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "binning_x": 0,
+      "binning_y": 0,
+      "roi": {
+        "x_offset": 0,
+        "y_offset": 0,
+        "height": 0,
+        "width": 0,
+        "do_rectify": false
+      },
+      "pinhole_fov_deg_not_distorted_fov": [
+        88.78420189244385,
+        57.726982008158906
+      ],
+      "source_sha256": "ebdc8fa7fb87b4ada9aaa99eb39b9aeae58006083314d3b3f9f538523a643ce0"
+    }
+  },
+  "topics": {
+    "/calib/arm_left/camera_info": {
+      "count": 45
+    },
+    "/calib/arm_right/camera_info": {
+      "count": 59
+    },
+    "/hdas/camera_head/left_raw/image_raw_color/compressed": {
+      "count": 847,
+      "frame_ids": [
+        ""
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "image": {
+        "width": 1920,
+        "height": 1536,
+        "sample": "C:\\Users\\HAOZEW\\Documents\\code\\humanvideo\\validation\\camera-audit-20260922\\camera_head_left.png"
+      },
+      "header_period_ms_p50": 33.339912999999996,
+      "header_nonincreasing": 0,
+      "bag_minus_header_ms_p50": 21.076344
+    },
+    "/calib/head_right/camera_info": {
+      "count": 47
+    },
+    "/calib/head_left/camera_info": {
+      "count": 39
+    },
+    "/hdas/camera_head/right_raw/image_raw_color/compressed": {
+      "count": 846,
+      "frame_ids": [
+        ""
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "image": {
+        "width": 1920,
+        "height": 1536,
+        "sample": "C:\\Users\\HAOZEW\\Documents\\code\\humanvideo\\validation\\camera-audit-20260922\\camera_head_right.png"
+      },
+      "header_period_ms_p50": 33.333513,
+      "header_nonincreasing": 0,
+      "bag_minus_header_ms_p50": 17.241659
+    },
+    "/hdas/camera_wrist_right/color/image_raw/compressed": {
+      "count": 839,
+      "frame_ids": [
+        "camera_wrist_right_color_optical_frame"
+      ],
+      "formats": [
+        "bgr8; jpeg compressed bgr8"
+      ],
+      "image": {
+        "width": 1280,
+        "height": 720,
+        "sample": "C:\\Users\\HAOZEW\\Documents\\code\\humanvideo\\validation\\camera-audit-20260922\\camera_wrist_right.png"
+      },
+      "header_period_ms_p50": 33.335449,
+      "header_nonincreasing": 0,
+      "bag_minus_header_ms_p50": 26.7602
+    },
+    "/hdas/camera_wrist_left/color/camera_info": {
+      "count": 837
+    },
+    "/hdas/camera_wrist_left/color/image_raw/compressed": {
+      "count": 837,
+      "frame_ids": [
+        "camera_wrist_left_color_optical_frame"
+      ],
+      "formats": [
+        "bgr8; jpeg compressed bgr8"
+      ],
+      "image": {
+        "width": 1280,
+        "height": 720,
+        "sample": "C:\\Users\\HAOZEW\\Documents\\code\\humanvideo\\validation\\camera-audit-20260922\\camera_wrist_left.png"
+      },
+      "header_period_ms_p50": 33.335205,
+      "header_nonincreasing": 0,
+      "bag_minus_header_ms_p50": 26.605919
+    },
+    "/hdas/camera_wrist_right/color/camera_info": {
+      "count": 838
+    },
+    "/tf_static": {
+      "count": 32
+    },
+    "/joint_states": {
+      "count": 281
+    },
+    "/tf": {
+      "count": 843
+    }
+  },
+  "tf_edges": [
+    {
+      "parent": "camera_wrist_left_link",
+      "child": "camera_wrist_right_link",
+      "xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "quat_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "topic": "/tf_static",
+      "count": 1,
+      "max_translation_change_m": 0.0
+    },
+    {
+      "parent": "camera_wrist_left_link",
+      "child": "camera_wrist_left_color_frame",
+      "xyz": [
+        -0.0002109306660713628,
+        -7.756578270345926e-05,
+        3.840261706500314e-05
+      ],
+      "quat_xyzw": [
+        0.0009207033435814077,
+        0.0008134136442095041,
+        0.007574309129267931,
+        0.999970555305481
+      ],
+      "topic": "/tf_static",
+      "count": 1,
+      "max_translation_change_m": 0.0
+    },
+    {
+      "parent": "camera_wrist_left_color_frame",
+      "child": "camera_wrist_left_color_optical_frame",
+      "xyz": [
+        0.0,
+        -0.0,
+        -0.0
+      ],
+      "quat_xyzw": [
+        -0.5,
+        0.4999999999999999,
+        -0.5,
+        0.5000000000000001
+      ],
+      "topic": "/tf_static",
+      "count": 1,
+      "max_translation_change_m": 0.0
+    },
+    {
+      "parent": "camera_wrist_right_link",
+      "child": "camera_wrist_right_color_frame",
+      "xyz": [
+        -0.00021768246369902045,
+        -2.707898420339916e-05,
+        4.629423710866831e-05
+      ],
+      "quat_xyzw": [
+        -0.001258956268429756,
+        0.0006222989759407938,
+        -0.0016817768337205052,
+        0.999997615814209
+      ],
+      "topic": "/tf_static",
+      "count": 1,
+      "max_translation_change_m": 0.0
+    },
+    {
+      "parent": "camera_wrist_right_color_frame",
+      "child": "camera_wrist_right_color_optical_frame",
+      "xyz": [
+        0.0,
+        -0.0,
+        -0.0
+      ],
+      "quat_xyzw": [
+        -0.5,
+        0.4999999999999999,
+        -0.5,
+        0.5000000000000001
+      ],
+      "topic": "/tf_static",
+      "count": 1,
+      "max_translation_change_m": 0.0
+    },
+    {
+      "parent": "torso_link4",
+      "child": "camera_head_left",
+      "xyz": [
+        0.064,
+        0.06,
+        0.477
+      ],
+      "quat_xyzw": [
+        -0.5841728078411668,
+        0.5787405215534903,
+        -0.3981494730683842,
+        0.40654463025150067
+      ],
+      "topic": "/tf_static",
+      "count": 29,
+      "max_translation_change_m": 0.0
+    },
+    {
+      "parent": "torso_link4",
+      "child": "camera_head_right",
+      "xyz": [
+        0.064,
+        -0.06,
+        0.477
+      ],
+      "quat_xyzw": [
+        -0.5832546696816745,
+        0.5789273888832009,
+        -0.39948781817381374,
+        0.4062838316080587
+      ],
+      "topic": "/tf_static",
+      "count": 29,
+      "max_translation_change_m": 0.0
+    },
+    {
+      "parent": "left_gripper_link",
+      "child": "arm_left",
+      "xyz": [
+        0.07561222370319383,
+        -8.989828998573128e-06,
+        0.03274121884789884
+      ],
+      "quat_xyzw": [
+        0.665871550376349,
+        -0.6609513157956648,
+        -0.245748997317266,
+        0.2436511171017591
+      ],
+      "topic": "/tf_static",
+      "count": 29,
+      "max_translation_change_m": 0.0
+    },
+    {
+      "parent": "right_gripper_link",
+      "child": "arm_right",
+      "xyz": [
+        0.08298856217858822,
+        0.024870108525869315,
+        0.02561625331421194
+      ],
+      "quat_xyzw": [
+        0.6712783344041658,
+        -0.6578425173799907,
+        -0.24249978296268115,
+        0.24046304362578907
+      ],
+      "topic": "/tf_static",
+      "count": 29,
+      "max_translation_change_m": 0.0
+    },
+    {
+      "parent": "base_link",
+      "child": "camera_chassis_left",
+      "xyz": [
+        0.21157,
+        0.1327,
+        0.25265
+      ],
+      "quat_xyzw": [
+        -0.5000000059609636,
+        0.5000000059609636,
+        -0.5000000059609636,
+        0.4999999821171087
+      ],
+      "topic": "/tf_static",
+      "count": 29,
+      "max_translation_change_m": 0.0
+    },
+    {
+      "parent": "base_link",
+      "child": "camera_chassis_right",
+      "xyz": [
+        0.21157,
+        -0.1327,
+        0.25265
+      ],
+      "quat_xyzw": [
+        -0.5000000059609636,
+        0.5000000059609636,
+        -0.5000000059609636,
+        0.4999999821171087
+      ],
+      "topic": "/tf_static",
+      "count": 29,
+      "max_translation_change_m": 0.0
+    },
+    {
+      "parent": "base_link",
+      "child": "left_gripper_link",
+      "xyz": [
+        0.31330660329089033,
+        0.25237559960164324,
+        0.9589779413106898
+      ],
+      "quat_xyzw": [
+        0.0003826065732983891,
+        -0.5644237618699484,
+        0.0002368801161835585,
+        0.8254850783246154
+      ],
+      "topic": "/tf",
+      "count": 281,
+      "max_translation_change_m": 0.00010845429265117605
+    },
+    {
+      "parent": "base_link",
+      "child": "right_gripper_link",
+      "xyz": [
+        0.3142526865447658,
+        -0.2514380983738256,
+        0.9592558134927527
+      ],
+      "quat_xyzw": [
+        0.0005512083630882013,
+        -0.565213713647131,
+        -3.460589125748223e-05,
+        0.8249443331989084
+      ],
+      "topic": "/tf",
+      "count": 281,
+      "max_translation_change_m": 0.0
+    },
+    {
+      "parent": "base_link",
+      "child": "torso_link4",
+      "xyz": [
+        -0.07382206474978974,
+        3.500000000000085e-07,
+        1.1169532028839406
+      ],
+      "quat_xyzw": [
+        9.308063936887873e-05,
+        0.20684585485522108,
+        0.0004402680705535577,
+        0.9783734408850403
+      ],
+      "topic": "/tf",
+      "count": 281,
+      "max_translation_change_m": 0.0
+    }
+  ],
+  "warnings": [
+    "_calib_head_left_camera_info: plumb_bob with non-five coefficient count; confirm driver semantics",
+    "_calib_head_right_camera_info: plumb_bob with non-five coefficient count; confirm driver semantics"
+  ]
+}

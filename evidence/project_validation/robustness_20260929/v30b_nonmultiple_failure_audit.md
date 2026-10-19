@@ -1,0 +1,17 @@
+# v30b non-multiple-tray failure audit
+
+Read-only snapshot:35 finalized full400 attempts. This is an early arrival-order sample, not the final400 denominator or success estimate. One first-by-scene actual representative per requested terminal code. No production edit, replay, parameter scan or physics execution.
+
+|Case|Failure|Actual stage|Classification|
+|---|---|---|---|
+|2|primitive_lift_path_unavailable|op1 tray1 temporary relocation; lift planning at15.25s|Seven current inward candidates fail IK before motion. Six single-arm left errors23.12–30.17mm; coupled candidate left22.295/right9.725mm, rigid relation1.081mm. No duration rejection. Workspace/IK convergence under current grasp reference, not proof all possible grasps impossible.|
+|9|coupled_ik_unreachable|op2 tray0→temporary [.85,-1.55,.801]; place planning69.25s|Left/right25.646/25.665mm, rigid2.852mm, primitive0s. All18 correction candidates rejected:9coupled IK and9robot/table collision. Earlier lift had some duration rejects but selected inward-.04m successfully; those abandoned candidates do not explain terminal failure.|
+|10|carried_payload_support_contact|op1 tray0 during real base transport32.8s|Lift was accepted at150.899mm with no support. Later2 actual force-qualified support contacts at bottom clearance100.751mm, about50mm lower. Runtime guard checks every physical substep; this is neither retained-support timer rounding nor3s primitive budget.|
+
+Case10 last recorded pre-action frame is not the terminal failed substep: at that frame target table/support contacts0, bilateral grip13.127/17.023N, bottom~.900965m and maxpenetration.898mm. Terminal fault has support2. Raw terminal snapshot stores qpos/qvel/time but not pairwise contact forces, so exact partner/contact orientation cannot be inferred from the pre-frame. Evidence defines support by force>.05N with a table or another lower tray; it does not require a vertical contact normal. This may be side contact rather than useful support, but carried contact is still a real routing/dynamics risk under the current contract. No basis here to soften it.
+
+## One bounded next optimization proposal
+
+Diagnose destination serviceability for *ordinary temporary buffer operations* before the first carry navigation, using the measured grasp and a finite list of already geometrically legal buffer slots. Current buffer_serviceability.select_buffer requires a release-prerequisite context; ordinary scheduler temporary operations can have context=None and skip it entirely. Case9 is a direct representative worth checking for this eligibility gap. Reuse18-base full alignment/descent shadow checks per at most3 legal buffers, retain original source/protected-tray constraints and actual navigation/replan. This is a bounded planning proposal, not an assertion it will succeed: first compare the original buffer and two existing alternatives for this exact state privately; keep all IK/camera/collision/3s limits, and only physically validate after a qualified candidate exists. No present frozen-code modification is proposed during full400.
+
+For case2, adding required high-lift reachability to pickup qualification is a separate potential direction; existing grasp approach qualification alone does not establish18cm lift viability. Case10 instead requires route clearance/held-pose drift evidence. These should not be lumped into a generic duration extension or acceptance relaxation.

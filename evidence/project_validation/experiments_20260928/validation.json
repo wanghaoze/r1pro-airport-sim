@@ -1,0 +1,17 @@
+{
+  "server": "xinmatrix",
+  "release": "/home/michelle/haoze/r1pro-airport-sim/releases/experiments_v1_20260928",
+  "conda_environment": "/home/michelle/miniconda3/envs/r1pro-tray",
+  "server_tests": {
+    "passed": 136,
+    "xfailed": 1
+  },
+  "local_followup_tests": {
+    "experiment_and_spec_passed": 16,
+    "export_diagnostic_exclusion_passed": 1
+  },
+  "local_pip_check": "No broken requirements found",
+  "task_spec_sync": "write and check passed",
+  "physics": "in progress; see final report",
+  "no_existing_collection_modified": true
+}

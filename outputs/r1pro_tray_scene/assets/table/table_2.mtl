@@ -1,0 +1,12 @@
+# Blender 5.2.1 LTS MTL File: 'Table_1200x600x800.blend'
+# www.blender.org
+
+newmtl Charcoal_powder_coated_steel
+Ns 360.000000
+Ka 0.300000 0.300000 0.300000
+Kd 0.048000 0.057000 0.062000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3

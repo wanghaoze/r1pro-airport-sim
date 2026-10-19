@@ -1,0 +1,86 @@
+[
+  {
+    "frame": 3285,
+    "event": "push_reuses_existing_contact",
+    "target_tray": 0,
+    "retained_side": "right"
+  },
+  {
+    "event": "diagnostic_phase_snapshot",
+    "frame": 3285,
+    "phase": "adjust",
+    "pose": [
+      0.8485402495879913,
+      -0.614897391929367,
+      0.7999984769764907,
+      0.9999963257581761,
+      -2.106781761469313e-06,
+      -4.0754951325663616e-07,
+      0.0027108053311887706
+    ],
+    "gripper_force": [
+      0.0,
+      13.230031728678433
+    ],
+    "table_contact": 8
+  },
+  {
+    "frame": 3285,
+    "event": "primitive_start",
+    "primitive": "push",
+    "limit_s": 3.0,
+    "parameters": {
+      "destination": [
+        0.8500000000000001,
+        -0.5100000000000001,
+        0.8
+      ],
+      "yaw": 0.0,
+      "separation": false
+    }
+  },
+  {
+    "frame": 3285,
+    "event": "primitive_push_compliance_reference",
+    "side": "right",
+    "tcp_deflection_m": 0.01522225403322916,
+    "qualification": "command_reference_only_not_observed_rigid_attachment"
+  },
+  {
+    "frame": 3285,
+    "event": "primitive_push_feedforward",
+    "distance_m": 0.02,
+    "nominal_destination": [
+      0.8500000000000001,
+      -0.5100000000000001,
+      0.8
+    ],
+    "command_position": [
+      0.8502782927319722,
+      -0.4900019362648449,
+      0.7954984769764908
+    ]
+  },
+  {
+    "frame": 3285,
+    "event": "primitive_failed",
+    "primitive": "push",
+    "reason": "primitive_path_infeasible",
+    "detail": {
+      "available_s": 2.9,
+      "candidates": [
+        {
+          "mode": "CruiseJointPath",
+          "reason": "duration",
+          "required_s": 5.7
+        },
+        {
+          "mode": "BlendedJointPath",
+          "reason": "duration",
+          "required_s": 3.0
+        }
+      ]
+    },
+    "duration_s": 0.0
+  }
+]

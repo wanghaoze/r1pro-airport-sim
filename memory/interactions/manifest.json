@@ -1,0 +1,37 @@
+{
+  "schema": "project_interaction_archive/1",
+  "captured_at": "2026-10-19T05:32:51.298922+00:00",
+  "timezone": "Asia/Singapore",
+  "thread_ids": [
+    "01a0e72f-3107-74f3-8216-6fe65a45071f",
+    "01a11fa0-3cad-7053-9d17-104420949e84",
+    "01a14304-2b97-7b41-882a-29f50f9ad41b",
+    "01a14879-8f16-7240-8783-7b5d16fea0a7"
+  ],
+  "sources": [
+    {
+      "path": "C:\\Users\\HAOZEW\\.codex\\sessions\\2026\\10\\17\\rollout-2026-10-17T14-08-08-01a14879-8f16-7240-8783-7b5d16fea0a7.jsonl",
+      "bytes": 24096130,
+      "sha256": "09a80ea1adbd450a9f4dd47accab25da29ca05e8f178e0048e93f096c390e58f",
+      "thread_id": "01a14879-8f16-7240-8783-7b5d16fea0a7",
+      "history_base": null,
+      "forked_from_id": null
+    }
+  ],
+  "message_count": 79,
+  "counts": {
+    "runtime_context": 6,
+    "user_message": 11,
+    "assistant_reply": 62
+  },
+  "skipped": {},
+  "messages_sha256": "a6f64996b0b606562198a5c40bbe64b2e9072091aa6f7f9b2b3a35c5e0e1fb30",
+  "exclusions": [
+    "system/developer instructions",
+    "reasoning/analysis",
+    "tool calls and outputs",
+    "binary images",
+    "credentials"
+  ],
+  "coverage": "available local user-thread rollout messages; not a claim of all other chats or missing/deleted sessions"
+}

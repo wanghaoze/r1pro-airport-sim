@@ -1,0 +1,6 @@
+{
+  "version": "web_scene_agent/1",
+  "request_id": "example_list_datasets_v1",
+  "op": "datasets.list",
+  "args": {}
+}

@@ -1,0 +1,12 @@
+2026-10-16: Scheme C actual closed results.
+32 rooms, one engine/PhysicsScene/shared clock, GPU0 physics + two-GPU rendering.
+Scope: expert fixed-base empty Pick/Place, not VLA execution or three-action full task.
+narrow: 30/32 qualified complete pairs; 60 segments; simulation/record+export 1246.983s; 86.61 pairs/hour (initial load excluded).
+wide: 29/32 qualified complete pairs; 58 segments; simulation/record+export 1260.709s; 82.81 pairs/hour (initial load excluded).
+Both batches completed, native/export actual wait exit0. Historical native PIDs3813001/3879610 are not reported as live.
+59 pairs /118 segments across these two batches, all train. Four-room validation overlaps narrow batch and is not added.
+Training paused; no legal val/test in these batches.
+Server narrow: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native
+Server wide: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native
+Wide viewer: http://100.104.0.108:8776/parallel_wide_station_32_20261016_v1/native/dataset_viewer.html
+Evidence: runs/isaac_parallel_live_deploy_20261016/closed32/{narrow_catalog,wide_catalog}.json

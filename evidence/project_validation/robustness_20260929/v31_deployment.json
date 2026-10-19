@@ -1,0 +1,10 @@
+{
+  "release": "robust_v31_20260929",
+  "archive_sha256": "3d709c6c606097ff2d43ec29b4192a52e1bac3df232e69d9383c618ab0ae4f28",
+  "server_pid": 2730091,
+  "server_core_tests": "680 passed, 1 xfailed",
+  "local_targeted_tests": "58 passed",
+  "simulation_only": true,
+  "target_reached": false,
+  "experiment": "cases 6 and 9, ik30 versus ik40, 2 workers, 1 attempt per case"
+}

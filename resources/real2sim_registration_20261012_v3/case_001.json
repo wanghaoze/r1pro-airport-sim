@@ -1,0 +1,123 @@
+{
+  "schema": "real2sim_registration/1",
+  "status": "estimated_not_measured",
+  "units": "metres_radians",
+  "quaternion_order": "wxyz",
+  "frame": "scene_world",
+  "source_parquet_sha256": "01fef9ad4dfb88ace955a86d97b7a5821b76c90cb35b0aa05808503357fc41c4",
+  "prompt": "Place the tray",
+  "method": "initial_bilateral_pad_midpoint_rim_height_prior_and_release_table_alignment__native_finger_mesh_static_pose_fit",
+  "anchor_frame": 0,
+  "anchor_time_s": 0.0,
+  "initial_state": "held_pose_estimate_without_attachment",
+  "base_pose": {
+    "xyz": [
+      0.26200733047393443,
+      0.025967778937968505,
+      0.0
+    ],
+    "quaternion_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "tray_pose": {
+    "xyz": [
+      0.7891897139641546,
+      0.014250979394790697,
+      0.898909546160036
+    ],
+    "quaternion_wxyz": [
+      0.9932612489085033,
+      0.019804260233222862,
+      0.11409223250526246,
+      0.00477966267640466
+    ]
+  },
+  "tray_in_base_xyz": [
+    0.5271823834902202,
+    -0.011716799543177808,
+    0.898909546160036
+  ],
+  "tray_yaw_rad": 0.014388205929606837,
+  "geometry_prior": {
+    "table_size_xyz_m": [
+      1.2,
+      0.6,
+      0.8
+    ],
+    "tray_size_xyz_m": [
+      0.56,
+      0.43,
+      0.105
+    ],
+    "dimensions_measured": false,
+    "source": "existing_project_assets_unchanged"
+  },
+  "uncertainty": {
+    "translation_m": 0.03,
+    "yaw_rad": 0.1745329252,
+    "interpretation": "heuristic_range_not_confidence_interval"
+  },
+  "assumptions": [
+    "base_static_as_recorded",
+    "tray_long_axis_parallel_to_base_forward",
+    "Pick_fore_aft_centre_0.50m_prior",
+    "Place_pad_to_tray_bottom_0.09m_prior",
+    "no_gain_friction_or_geometry_fitting"
+  ],
+  "scene_registration_verified": false,
+  "refinement": {
+    "plan": {
+      "method": "bounded_static_collision_pose_fit_no_physics_no_robot_state_changes",
+      "bounds_delta_xyz_rpy": [
+        0.03,
+        0.03,
+        0.03,
+        0.17453292519943295,
+        0.2617993877991494,
+        0.17453292519943295
+      ],
+      "seed_z_shift_m": -0.04,
+      "max_nfev": 200,
+      "penetration_residual_weight": 10.0,
+      "model_sha256": "92fb46afa80e51304c13fd6fe5b5938047e2f9dd2893e2624069c2f0cd4e58da",
+      "source_registration_sha256": "030cabf1fb557e63aed88e3e01ff86e377de275a38c8518d6de3cdd69338fd4c"
+    },
+    "optimizer_converged": false,
+    "nfev": 200,
+    "delta": [
+      0.005039695783240805,
+      0.012198990454373781,
+      0.005678723522707661,
+      0.046072799024678944,
+      0.22757973216662516,
+      0.03451777385528967
+    ],
+    "initial_finger_distances_m": [
+      0.012097207626104745,
+      0.006726265031236565,
+      -0.005677854014364679,
+      0.014014038768208417
+    ],
+    "initial_palm_distances_m": [
+      0.039616964666438007,
+      0.025166277545843854
+    ],
+    "final_finger_distances_m": [
+      -4.6266177169544185e-08,
+      2.2012719472131003e-06,
+      -3.5101958263846124e-07,
+      2.1361900093588216e-05
+    ],
+    "final_palm_distances_m": [
+      0.010722970868834447,
+      0.010056717141737817
+    ],
+    "cost": 2.2114178912769794e-08,
+    "task_success": null,
+    "note": "local fit is not a proof of global feasibility or a dynamics result"
+  }
+}

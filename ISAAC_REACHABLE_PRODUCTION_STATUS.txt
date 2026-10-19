@@ -1,0 +1,4 @@
+## 2026-10-16 用户要求停止现有串行采集，已执行
+
+本条替代此前保持串行健康作业继续的要求。已核PID/start/argv/cwd并停止queue3691948、collector3699346、native3771140及所属runner/encoder，复核remaining=[]。自动恢复BC的queue先停止，未自动拉起训练。已导出10完整Pick/Place来源、20动作片段保留，case_011未闭合现场保留、不计合格。未动无关服务。实际证据runs/isaac_serial_stop_20261016_v1/result.json（服务器同相对路径）；32房间正式并行仍待接通与验证，不称已经运行。
+

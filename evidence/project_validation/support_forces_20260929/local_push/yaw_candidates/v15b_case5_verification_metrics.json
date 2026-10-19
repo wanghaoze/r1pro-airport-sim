@@ -1,0 +1,436 @@
+{
+  "operation": {
+    "tray": 1,
+    "slot": 1,
+    "destination": [
+      0.8500000000000001,
+      -0.06500000000000006,
+      0.8
+    ],
+    "yaw": 0.0,
+    "temporary": false
+  },
+  "mapping": [
+    2,
+    1,
+    0
+  ],
+  "criteria": {
+    "position_m": 0.03,
+    "yaw_deg": 5.0,
+    "tilt_deg": 5.0,
+    "gap_min_m": 0.0,
+    "gap_max_m": 0.03,
+    "stable_s": 1.0,
+    "max_speed_m_s": 0.01,
+    "penetration_m": 0.003,
+    "contact_n": 0.5,
+    "lifted_m": 0.02
+  },
+  "metrics": [
+    {
+      "frame": 1735,
+      "time_s": 86.75,
+      "phase": "b'unknown'",
+      "position": [
+        -1.084358519914937,
+        -0.263816145523942,
+        0.7999952170405822
+      ],
+      "position_error_m": 1.9445489819779238,
+      "yaw_error_deg": -86.24825506897577,
+      "tilt_deg": 1.9636793863786756e-05,
+      "speed_m_s": 1.3002933012346125e-11,
+      "table_contact": 4,
+      "gripper_force": [
+        0.0,
+        0.0
+      ],
+      "reserved_gaps_m": [
+        0.13320463778925523,
+        -0.26228429272520326
+      ],
+      "footprint_supported": false,
+      "reserved_slots_blocked": [],
+      "slot_geometry_ready": false
+    },
+    {
+      "frame": 1838,
+      "time_s": 91.9,
+      "phase": "b'pregrasp'",
+      "position": [
+        -1.0843585199740475,
+        -0.2638161454924039,
+        0.7999952170405815
+      ],
+      "position_error_m": 1.9445489820335,
+      "yaw_error_deg": -86.24825502990161,
+      "tilt_deg": 1.9636793863786756e-05,
+      "speed_m_s": 1.3021250353842511e-11,
+      "table_contact": 4,
+      "gripper_force": [
+        0.0,
+        0.0
+      ],
+      "reserved_gaps_m": [
+        0.1332046377728372,
+        -0.2622842928274804
+      ],
+      "footprint_supported": false,
+      "reserved_slots_blocked": [],
+      "slot_geometry_ready": false
+    },
+    {
+      "frame": 1899,
+      "time_s": 94.95,
+      "phase": "b'approach'",
+      "position": [
+        -1.0843585200089845,
+        -0.26381614547363846,
+        0.799995217040582
+      ],
+      "position_error_m": 1.9445489820663353,
+      "yaw_error_deg": -86.24825500486419,
+      "tilt_deg": 1.9636793863786756e-05,
+      "speed_m_s": 1.2933020942141278e-11,
+      "table_contact": 4,
+      "gripper_force": [
+        0.0,
+        0.0
+      ],
+      "reserved_gaps_m": [
+        0.13320463774679325,
+        -0.26228429289445926
+      ],
+      "footprint_supported": false,
+      "reserved_slots_blocked": [],
+      "slot_geometry_ready": false
+    },
+    {
+      "frame": 1993,
+      "time_s": 99.65,
+      "phase": "b'contact'",
+      "position": [
+        -1.0843585200628876,
+        -0.2638161454448173,
+        0.7999952170405821
+      ],
+      "position_error_m": 1.9445489821170092,
+      "yaw_error_deg": -86.24825496823463,
+      "tilt_deg": 1.9636793863786756e-05,
+      "speed_m_s": 1.2972746633134717e-11,
+      "table_contact": 4,
+      "gripper_force": [
+        0.0,
+        0.0
+      ],
+      "reserved_gaps_m": [
+        0.13320463772200342,
+        -0.26228429299108147
+      ],
+      "footprint_supported": false,
+      "reserved_slots_blocked": [],
+      "slot_geometry_ready": false
+    },
+    {
+      "frame": 1995,
+      "time_s": 99.75,
+      "phase": "b'close'",
+      "position": [
+        -1.0843585200640364,
+        -0.26381614544420556,
+        0.7999952170405825
+      ],
+      "position_error_m": 1.9445489821180895,
+      "yaw_error_deg": -86.24825496747435,
+      "tilt_deg": 1.9636793863786756e-05,
+      "speed_m_s": 1.2987828544220832e-11,
+      "table_contact": 4,
+      "gripper_force": [
+        0.0,
+        0.0
+      ],
+      "reserved_gaps_m": [
+        0.13320463772207325,
+        -0.2622842929930734
+      ],
+      "footprint_supported": false,
+      "reserved_slots_blocked": [],
+      "slot_geometry_ready": false
+    },
+    {
+      "frame": 2042,
+      "time_s": 102.1,
+      "phase": "b'lift'",
+      "position": [
+        -1.0843566176772286,
+        -0.26381469054492557,
+        0.7999949613276458
+      ],
+      "position_error_m": 1.9445469409488554,
+      "yaw_error_deg": -86.2480858596475,
+      "tilt_deg": 5.4037869432180484e-05,
+      "speed_m_s": 2.1877410774828847e-06,
+      "table_contact": 4,
+      "gripper_force": [
+        14.286848075794502,
+        14.485759222463717
+      ],
+      "reserved_gaps_m": [
+        0.13320260376059373,
+        -0.2622834172272302
+      ],
+      "footprint_supported": false,
+      "reserved_slots_blocked": [],
+      "slot_geometry_ready": false
+    },
+    {
+      "frame": 2069,
+      "time_s": 103.45,
+      "phase": "b'stabilize'",
+      "position": [
+        -1.0916973348485044,
+        -0.1915062682421624,
+        0.9752889668696079
+      ],
+      "position_error_m": 1.9536935783199365,
+      "yaw_error_deg": -87.31481609684026,
+      "tilt_deg": 3.025158199759115,
+      "speed_m_s": 0.0344167001848609,
+      "table_contact": 0,
+      "gripper_force": [
+        13.88457992765068,
+        13.735855419499199
+      ],
+      "reserved_gaps_m": [
+        0.06459799028356794,
+        -0.1862711861323591
+      ],
+      "footprint_supported": false,
+      "reserved_slots_blocked": [],
+      "slot_geometry_ready": false
+    },
+    {
+      "frame": 2071,
+      "time_s": 103.55,
+      "phase": "b'transport'",
+      "position": [
+        -1.0916714267022516,
+        -0.19158517813271364,
+        0.9762085182836348
+      ],
+      "position_error_m": 1.9537556598793417,
+      "yaw_error_deg": -87.33090157159585,
+      "tilt_deg": 2.984025760897989,
+      "speed_m_s": 0.004850033066908682,
+      "table_contact": 0,
+      "gripper_force": [
+        13.87780221846291,
+        13.75160463765474
+      ],
+      "reserved_gaps_m": [
+        0.06473352272704924,
+        -0.18629347347227515
+      ],
+      "footprint_supported": false,
+      "reserved_slots_blocked": [],
+      "slot_geometry_ready": false
+    },
+    {
+      "frame": 2420,
+      "time_s": 121.0,
+      "phase": "b'descend'",
+      "position": [
+        0.9074320623657338,
+        -0.11550172899796673,
+        0.9598386324783118
+      ],
+      "position_error_m": 0.17719270541391488,
+      "yaw_error_deg": -1.0654025975941104,
+      "tilt_deg": 3.7828810332829717,
+      "speed_m_s": 0.016310832650666733,
+      "table_contact": 0,
+      "gripper_force": [
+        13.46220649786712,
+        13.11793856300549
+      ],
+      "reserved_gaps_m": [
+        0.05818929892748714,
+        -0.04067079948502644
+      ],
+      "footprint_supported": false,
+      "reserved_slots_blocked": [
+        2
+      ],
+      "slot_geometry_ready": false
+    },
+    {
+      "frame": 2450,
+      "time_s": 122.5,
+      "phase": "b'open'",
+      "position": [
+        0.8474749387800775,
+        -0.16916743888895958,
+        0.8006664498752287
+      ],
+      "position_error_m": 0.10420016993405369,
+      "yaw_error_deg": 0.13277505653064228,
+      "tilt_deg": 0.19507826792645755,
+      "speed_m_s": 0.0035902948933836743,
+      "table_contact": 2,
+      "gripper_force": [
+        5.668410531082676,
+        13.16458433281441
+      ],
+      "reserved_gaps_m": [
+        0.11637579588817931,
+        -0.08981572234787949
+      ],
+      "footprint_supported": true,
+      "reserved_slots_blocked": [
+        2
+      ],
+      "slot_geometry_ready": false
+    },
+    {
+      "frame": 2466,
+      "time_s": 123.3,
+      "phase": "b'adjust'",
+      "position": [
+        0.8474720929970493,
+        -0.16917391263313158,
+        0.7999969859235929
+      ],
+      "position_error_m": 0.10420457953562091,
+      "yaw_error_deg": 0.13209104361362625,
+      "tilt_deg": 0.0005947224453964412,
+      "speed_m_s": 1.2092155304923409e-06,
+      "table_contact": 4,
+      "gripper_force": [
+        0.0,
+        13.149085768787394
+      ],
+      "reserved_gaps_m": [
+        0.11638560642870577,
+        -0.0898188593159881
+      ],
+      "footprint_supported": true,
+      "reserved_slots_blocked": [
+        2
+      ],
+      "slot_geometry_ready": false
+    },
+    {
+      "frame": 2523,
+      "time_s": 126.15,
+      "phase": "b'open'",
+      "position": [
+        0.8423742582931079,
+        -0.06903886802740679,
+        0.7999951784065887
+      ],
+      "position_error_m": 0.008629276607619378,
+      "yaw_error_deg": 2.76372921093882,
+      "tilt_deg": 0.000694744632325298,
+      "speed_m_s": 0.0005180718228152379,
+      "table_contact": 4,
+      "gripper_force": [
+        0.0,
+        10.454718382750452
+      ],
+      "reserved_gaps_m": [
+        0.003644691486467233,
+        -0.0022896851209266156
+      ],
+      "footprint_supported": true,
+      "reserved_slots_blocked": [
+        2
+      ],
+      "slot_geometry_ready": false
+    },
+    {
+      "frame": 2567,
+      "time_s": 128.35,
+      "phase": "b'retreat'",
+      "position": [
+        0.8423746234765286,
+        -0.06903627104178245,
+        0.7999952170405819
+      ],
+      "position_error_m": 0.008627738633277105,
+      "yaw_error_deg": 2.763979185501986,
+      "tilt_deg": 1.9636793863786756e-05,
+      "speed_m_s": 1.299973058707298e-11,
+      "table_contact": 4,
+      "gripper_force": [
+        0.0,
+        0.0
+      ],
+      "reserved_gaps_m": [
+        0.0036409196079441875,
+        -0.002288263089495979
+      ],
+      "footprint_supported": true,
+      "reserved_slots_blocked": [
+        2
+      ],
+      "slot_geometry_ready": false
+    },
+    {
+      "frame": 2746,
+      "time_s": 137.3,
+      "phase": "b'verified'",
+      "position": [
+        0.8423746235332652,
+        -0.06903627094007994,
+        0.7999952170405816
+      ],
+      "position_error_m": 0.008627738535553127,
+      "yaw_error_deg": 2.7639792564970302,
+      "tilt_deg": 1.9636793863786756e-05,
+      "speed_m_s": 1.3019130654883989e-11,
+      "table_contact": 4,
+      "gripper_force": [
+        0.0,
+        0.0
+      ],
+      "reserved_gaps_m": [
+        0.0036409194174127912,
+        -0.0022882633214905135
+      ],
+      "footprint_supported": true,
+      "reserved_slots_blocked": [
+        2
+      ],
+      "slot_geometry_ready": false
+    },
+    {
+      "frame": 2785,
+      "time_s": 139.25,
+      "phase": "b'verified'",
+      "position": [
+        0.8423746235455968,
+        -0.06903627091788968,
+        0.7999952170405816
+      ],
+      "position_error_m": 0.00862773851427306,
+      "yaw_error_deg": 2.763979271236624,
+      "tilt_deg": 1.9636793863786756e-05,
+      "speed_m_s": 1.3017236899821014e-11,
+      "table_contact": 4,
+      "gripper_force": [
+        0.0,
+        0.0
+      ],
+      "reserved_gaps_m": [
+        0.0036409193821764774,
+        -0.00228826336858054
+      ],
+      "footprint_supported": true,
+      "reserved_slots_blocked": [
+        2
+      ],
+      "slot_geometry_ready": false
+    }
+  ]
+}

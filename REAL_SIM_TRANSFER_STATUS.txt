@@ -1,0 +1,12 @@
+VERIFIED 2026-10-09T17:51:32.7791873+08:00 via live server process/status/GPU.
+CURRENT REAL+SIM TRANSFER RUN:/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_v3
+Real134episodes:Pick79/Place55; raw-file-grouped train102/val13/test19(testPick11/Place8). User confirmed gripper total widthmm; convertm, jointsrad, same30->20Hz indices for3RGB/state/action. Raw4views preserved.
+Sim:10complete V4TRAIN sources/30clips; exact training sampling90%real10%sim, normtrainonly. NumPy training descriptors explicitly not official LeRobot exports. Old data/failedv1-v2/checkpoints preserved.
+Actual stage:train, actual pi05 updates:324/10000, actual training_started:True. Supervisor2949577/birth148497182; trainer2949641 verifiedGPU1; GPU0other services untouched.
+Baseline MSE on19realTESTepisode holdouts:pi05 Pick arm0.049194rad^2/grip599.310mm^2; Place arm0.021413rad^2/grip1009.700mm^2. Afford Pick arm0.221882rad^2/grip2352.94mm^2; Place arm0.289961rad^2/grip1424.99mm^2. Full-channel/episode/first-step reports saved, baseexcluded and paddedtail excluded. Offline action MSE is not real robot success.
+Auto next: finish10000pi05BC ->mse_mixed_pi05.json on same19realTEST ->sim10Pick+10Place independent initial-state puremodel cases, no teacher/IK fallback. No posttrain result claimed now.
+Logs:newrun/logs/train.log and supervisor.log; stages own*.launch.json/*.exit.json. Status:newrun/pipeline_status.json;pi05/training_status.json.
+Checkpoints:newrun/pi05/checkpoints/pi05_real_sim_pickplace/training/ (saved each1000, final9999).
+Model sim media+trajectories:newrun/sim_evaluations/<case>/videos/*.mp4;attempt/trace.h5;decision_*.npz;result.json;summary.json. Not yet generated.
+Viewer index/paths remain server; local onlyJSON/TXTmetadata.
+Local monitor:powershell -ExecutionPolicy Bypass -File .\scripts\watch_real_sim_transfer.ps1

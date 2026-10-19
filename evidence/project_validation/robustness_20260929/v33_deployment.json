@@ -1,0 +1,18 @@
+{
+  "release": "robust_v33_20260929",
+  "archive_sha256": "ece7b75f8c38e5ce7db5202557257d1687e3b8131eb39ee5ddd4aa0b599cfaa3",
+  "server_pid": 2767555,
+  "server_core_tests": "735 passed, 1 xfailed",
+  "simulation_only": true,
+  "target_reached": false,
+  "development_groups": [
+    "baseline",
+    "direct",
+    "ik80",
+    "direct_ik80"
+  ],
+  "attempt_budget": 3,
+  "primitive_seconds": 5,
+  "development_workers": 16,
+  "full400_workers": 32
+}

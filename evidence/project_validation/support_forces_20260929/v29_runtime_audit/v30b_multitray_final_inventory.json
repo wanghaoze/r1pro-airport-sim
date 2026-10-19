@@ -1,0 +1,123 @@
+{
+  "actual_completed_at_read": 55,
+  "count": 19,
+  "difficulty_counts": {
+    "complex": 19
+  },
+  "cases": [
+    {
+      "scene": "airport_0000_20270916",
+      "index": 0,
+      "difficulty": "complex",
+      "front_count": 0
+    },
+    {
+      "scene": "airport_0001_20270917",
+      "index": 1,
+      "difficulty": "complex",
+      "front_count": 1
+    },
+    {
+      "scene": "airport_0003_20270919",
+      "index": 3,
+      "difficulty": "complex",
+      "front_count": 3
+    },
+    {
+      "scene": "airport_0084_20271000",
+      "index": 84,
+      "difficulty": "complex",
+      "front_count": 0
+    },
+    {
+      "scene": "airport_0085_20271001",
+      "index": 85,
+      "difficulty": "complex",
+      "front_count": 1
+    },
+    {
+      "scene": "airport_0086_20271002",
+      "index": 86,
+      "difficulty": "complex",
+      "front_count": 2
+    },
+    {
+      "scene": "airport_0087_20271003",
+      "index": 87,
+      "difficulty": "complex",
+      "front_count": 3
+    },
+    {
+      "scene": "airport_0168_20271084",
+      "index": 168,
+      "difficulty": "complex",
+      "front_count": 0
+    },
+    {
+      "scene": "airport_0169_20271085",
+      "index": 169,
+      "difficulty": "complex",
+      "front_count": 1
+    },
+    {
+      "scene": "airport_0170_20271086",
+      "index": 170,
+      "difficulty": "complex",
+      "front_count": 2
+    },
+    {
+      "scene": "airport_0171_20271087",
+      "index": 171,
+      "difficulty": "complex",
+      "front_count": 3
+    },
+    {
+      "scene": "airport_0352_20271268",
+      "index": 352,
+      "difficulty": "complex",
+      "front_count": 0
+    },
+    {
+      "scene": "airport_0353_20271269",
+      "index": 353,
+      "difficulty": "complex",
+      "front_count": 1
+    },
+    {
+      "scene": "airport_0354_20271270",
+      "index": 354,
+      "difficulty": "complex",
+      "front_count": 2
+    },
+    {
+      "scene": "airport_0355_20271271",
+      "index": 355,
+      "difficulty": "complex",
+      "front_count": 3
+    },
+    {
+      "scene": "airport_0396_20271312",
+      "index": 396,
+      "difficulty": "complex",
+      "front_count": 0
+    },
+    {
+      "scene": "airport_0397_20271313",
+      "index": 397,
+      "difficulty": "complex",
+      "front_count": 1
+    },
+    {
+      "scene": "airport_0398_20271314",
+      "index": 398,
+      "difficulty": "complex",
+      "front_count": 2
+    },
+    {
+      "scene": "airport_0399_20271315",
+      "index": 399,
+      "difficulty": "complex",
+      "front_count": 3
+    }
+  ]
+}

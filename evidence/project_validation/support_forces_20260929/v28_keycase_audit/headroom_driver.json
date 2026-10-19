@@ -1,0 +1,477 @@
+{
+  "qualification": "fresh_complete_episodes_two_cases_not_general_success_rate",
+  "release": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v28_20260929",
+  "archive_sha256": "44ec0e8cef27bb62cbfab38dbafb79d9262bf95e0afb4dd3a0b7c823cb164416",
+  "source_files_sha256": {
+    "r1pro_teleop/__init__.py": "41ebb66cb9a19e9373a46fbe6075bb25a937c8b2775252c5ac61e6876c820fc6",
+    "r1pro_teleop/airport_agent.py": "07ae2365527b4b59b3485bc2fb89982aaa77569e938e972b5e23e234bff6ab8d",
+    "r1pro_teleop/airport_annotations.py": "e579cf1b64f0edc0219daa6e87b79d97b8a22c7a6efe6654c7d28e577aae5e95",
+    "r1pro_teleop/airport_arrange.py": "9fc3d1b9095cd7fcd60e9274c3c1d629db898fb593de371f0c49db9cc1c23e2a",
+    "r1pro_teleop/airport_fsm/__init__.py": "72192a03385ce8ff1970c1f924c1a5e415f638ed76a79eb3ec8fa510ab4ae4ea",
+    "r1pro_teleop/airport_fsm/__main__.py": "37b34283bafb308653e6ee7703f5c8ccb36db10a4f01f1dd3a2e964e0cb73229",
+    "r1pro_teleop/airport_fsm/additive_yaw.py": "23895a35b2aa04ad1fc184e26779b4f2f3ae841395332b55bc5c5960328c1e46",
+    "r1pro_teleop/airport_fsm/alignment_feedforward.py": "e9c6ee79b9fdd5eef3d6ea03d7c49ed9b090ca97d8d6283321de6af3179379fb",
+    "r1pro_teleop/airport_fsm/arrival_replanning.py": "eaadd35d2eb31129b568221b4114adbe51acfd4b6eacf82eafdcad60efe76ef5",
+    "r1pro_teleop/airport_fsm/batch.py": "4d0e228b71ec181016e5407777639daa2e4d6369a87248dbb40adabf1b518942",
+    "r1pro_teleop/airport_fsm/buffer_serviceability.py": "41770c958c799839734a144681696399d613d507102d2d1d2f3ed1aeb18c5160",
+    "r1pro_teleop/airport_fsm/camera_guard.py": "987a37c93996f6650c7b68aafa1921b8fc15c96e6c76844ebce7a94ee65641f0",
+    "r1pro_teleop/airport_fsm/contracts.py": "78a5becc2cd767c9ab35718e9b75281832f235b1ca44cceca863d8a717926cc2",
+    "r1pro_teleop/airport_fsm/exporter.py": "d87a0bc67c018aeb7797d3c67440ee08e339b4083123c965b3d0635ffdd11c17",
+    "r1pro_teleop/airport_fsm/geometry.py": "6cffa006848991b274132d3e846b17b411eb23d814da2766ae59b91646478bf3",
+    "r1pro_teleop/airport_fsm/loading.py": "8fe4851d2a2c2baa7cb202a237f716d9f55661fb59f6de7c927264473f95c5b1",
+    "r1pro_teleop/airport_fsm/machine.py": "c5cc47b8a289d9b540a120ba32851dfaaa8021c6ef2d409cdcf636d286bb0600",
+    "r1pro_teleop/airport_fsm/online_push.py": "c9fef3c635d889f376ff929ef2591c5d0ed3af428474b3dcbf39247632ed0d43",
+    "r1pro_teleop/airport_fsm/physical_preview.py": "fe59a19e6a8f678b739fed2774f2cc96b8c9766cab2ddef3219b29676c10fbaa",
+    "r1pro_teleop/airport_fsm/placement_planner.py": "d811347542ab541deaf7d3ab034e58de15695b8406dd4f2379db9a504b4cf569",
+    "r1pro_teleop/airport_fsm/placement_reachability.py": "7eeb28048704dcb5d9198eeecbbe36f8e2d07d41403b27211771a4c7f306608e",
+    "r1pro_teleop/airport_fsm/primitives.py": "28d45e6de90b10f024698fa9501638c5877f8f4d5537a11842976192aec55d17",
+    "r1pro_teleop/airport_fsm/reach_pull.py": "50f6e6d841e3c821f12dfbc2b56b1f5e8a01a0fae48a0acc98320539db731b9d",
+    "r1pro_teleop/airport_fsm/reachability_planner.py": "5187e3db48c67cf447164f8be78512c166fc739270e688750d044901e016a2e4",
+    "r1pro_teleop/airport_fsm/reference_candidates.py": "0fc15583a28de9aed47fe5f7c34d61a813cf2b90e928f978ce51eedc4f6d34e0",
+    "r1pro_teleop/airport_fsm/registry.py": "1c5e536e73a2d8ea268b70bbae914bb302594ceec914b70f78a68d3aeb785bab",
+    "r1pro_teleop/airport_fsm/retreat_planner.py": "116c5438fdbfd61f4b89cb2523daa4efda337a96fba37360b3ce08b74f930bd9",
+    "r1pro_teleop/airport_fsm/rim_affordances.py": "8b8bfefb8469b8b66b4c76609ad16f6926aea1bca5ea8b42e079bb0c13dd8bf8",
+    "r1pro_teleop/airport_fsm/runtime.py": "cde48aa910d81913b61bbac26ab97f63ecbd2a20ede6856f8e9d327dbb2877db",
+    "r1pro_teleop/airport_fsm/scheduler.py": "8d7ea30a6f44c3ac54690f874066cf7da05c59adb7c735c3fa5c9823917ff871",
+    "r1pro_teleop/airport_fsm/substep_control.py": "815ca32125e701e2ecf72e837e13c2c62c358d02220882edcd4846eb153970bf",
+    "r1pro_teleop/airport_fsm/support_feedback.py": "6f3fe01697a93c528e1d8951aa091f486b1341c6a3e4dc583a4e13dfed282a7f",
+    "r1pro_teleop/airport_fsm/task_dag.py": "50061d1ee96674979f33f28d07822899712cb89e0096e8b440b450877f8a41a2",
+    "r1pro_teleop/airport_fsm/trace.py": "aa26cb8b2d7aaacf0bc9f93063293632b9ad70d9f969ffe73ef34f57678f4bee",
+    "r1pro_teleop/airport_fsm/trajectory.py": "2fe4747e031428d8becd37fac7137ac69ff1fff2aa886681c3045bf0ae892279",
+    "r1pro_teleop/airport_fsm/withdraw_merge.py": "c949ddc6f338b806ff993d40e76b9b0beb18964a58f4eba670ce07019b68fc41",
+    "r1pro_teleop/airport_fsm/yaw_feedback.py": "5bd929e3af2b8d476a239c268324e6c17d1e360095b974e77e20674cb2cfd80a",
+    "r1pro_teleop/airport_mobile.py": "1059024b0ffe940518261ec933b0190d10965856b0ef26fc7b500e513578b5cc",
+    "r1pro_teleop/airport_pipeline.py": "12b968bba247953b2cbc093aac8df4e453d7bfbcf749113d33e58ce6e0696875",
+    "r1pro_teleop/airport_recording.py": "520d76b855c0aa0787852d30e0ce4f9cd5c68bc92d161b1a2dc0068fd34038b6",
+    "r1pro_teleop/airport_scenes.py": "ec6c183d8efb6bec1a0fbf856ff6429120fbd53b2165f88f93be692e3c565f05",
+    "r1pro_teleop/airport_service.py": "2d174106f961da25484386a19a463e79caca5480d8df7e77f5c247e409791c49",
+    "r1pro_teleop/build_assets.py": "edf4962bb6833441cec9627b8e5ecebf1b94bb461a31832ea712920cf2b9c110",
+    "r1pro_teleop/core.py": "80ffbda1521934b15f3fefe9e560c482a4e7f26445f4f4d6581d5e169ef79e73",
+    "r1pro_teleop/dataset.py": "912baa515dd4a740d092911311354914debde4261baa07395855385297c5ffec",
+    "r1pro_teleop/experiments/__init__.py": "f64cf1f661c8001261e2a64608261e1e93b960915afa36e079bd767f5de5a55e",
+    "r1pro_teleop/experiments/__main__.py": "d533a867db4332b94be1417b3b4633bae33b69d4e115b0d4cd5048315ae485ba",
+    "r1pro_teleop/experiments/adapter.py": "5ea1f56b5df45659c61995cb959a1e6888911feea747e494001b864d1b3e4ef1",
+    "r1pro_teleop/experiments/assessment.py": "106bfbe89cd7b83b215ebbef47aabba1fa9cc288d4bbee9c4652fb5d5f51f9e0",
+    "r1pro_teleop/experiments/campaign.py": "ad40f976e77e40d053ff6ee8150547d1eccf407476bd04809288e3a25a91f705",
+    "r1pro_teleop/experiments/checkpoint_tree.py": "0af9cb33f942cc7a7365f90ccd3efd68e4bbe9cf5e69340c3689589ff847b921",
+    "r1pro_teleop/experiments/common.py": "a3b7724e4b4a77a6e386cac9393226724c938a954bb55fc4e5aeadd69d65376d",
+    "r1pro_teleop/experiments/parameter_search.py": "9b923e7d912271020d7c77488ead26dae9b949862eab1ab6adc7261048cffc7f",
+    "r1pro_teleop/experiments/scene_view.py": "d9b063e7e926604e9bedebc18f29f1afdd6627eca7a0cd119defef77e4a6db8d",
+    "r1pro_teleop/experiments/tools.py": "010747fa2145f5bf2ff7f0a97fd0184bfc625771e6c8d5961b00af43b89657a4",
+    "r1pro_teleop/experiments/worker.py": "64c9cf17c183b66c9c808a72098cf3523965433485dd4b6fc8923260b2771618",
+    "r1pro_teleop/quality.py": "1f1ac509818da7475e43dea49987b9e93fb2943a58b9208ea4a8f5641d7397d2",
+    "r1pro_teleop/quest_bridge.py": "2288fd3ee9008060833c7a9e513da2bd2aa3145ae9679e036ad636e78dab6cda",
+    "r1pro_teleop/quest_relay.py": "43413964aca895a21e5b564ef2b51315a0a374caaa0305304dc0855679ad9882",
+    "r1pro_teleop/real_calibration.py": "b617e6a6b1d9962b5845986c5f994325d54fb8bcdf04e3bd798edfcb972f6de0",
+    "r1pro_teleop/replay.py": "35e5be05da68d45f3497003ecf7f04c7a1799efd197c7486504f8a19f5bb6d41",
+    "r1pro_teleop/server.py": "88e8e7117bb4e894722cf853689b411426e01daf098357dc3d7917c7c05c6f5d",
+    "r1pro_teleop/smoke.py": "fa5be8b9c39138d7016dbf3dade2c7d5205390593585fe4296ce912a22d6e1d1",
+    "r1pro_teleop/workspace_check.py": "0889fd60282f650e5b0e7164c6a28686b7bbf20d905750e86c836e59dcb19c3e"
+  },
+  "source_manifest_sha256": "7238503464e27f11dc7cb487e6a50cc5d1d49af940fc4004da4318148a9c695d",
+  "config_difference": {
+    "empty_arm_shortcut_headroom_enabled": [
+      false,
+      true
+    ]
+  },
+  "original_config": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v28_20260929/configs/airport_clock_step_preview.json",
+  "original_config_sha256": "d9101768b0380c4472f5bb81526d93a38a2e10b0b181b6ffbe7d24e9437ab1a7",
+  "external_config": "/home/michelle/haoze/r1pro-airport-sim/diagnostictools/support_forces_20260929_v1/v28_preview_headroom_fresh_6_310.config.json",
+  "commands": [
+    {
+      "command": [
+        "/home/michelle/miniconda3/envs/r1pro-tray/bin/python",
+        "-m",
+        "r1pro_teleop.airport_fsm",
+        "prepare",
+        "--manifest",
+        "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v28_20260929/resources/scenes/server_v7/manifest.json",
+        "--output",
+        "/home/michelle/haoze/r1pro-airport-sim/diagnostictools/support_forces_20260929_v1/v28_preview_headroom_fresh_6_310",
+        "--config",
+        "/home/michelle/haoze/r1pro-airport-sim/diagnostictools/support_forces_20260929_v1/v28_preview_headroom_fresh_6_310.config.json",
+        "--half-turn-equivalent"
+      ],
+      "returncode": 0,
+      "wall_s": 0.5651576479431242
+    },
+    {
+      "command": [
+        "/home/michelle/miniconda3/envs/r1pro-tray/bin/python",
+        "-m",
+        "r1pro_teleop.airport_fsm",
+        "preflight",
+        "--root",
+        "/home/michelle/haoze/r1pro-airport-sim/diagnostictools/support_forces_20260929_v1/v28_preview_headroom_fresh_6_310",
+        "--workers",
+        "1",
+        "--scene-ids",
+        "airport_0006_20270922",
+        "airport_0310_20271226"
+      ],
+      "returncode": 0,
+      "wall_s": 11.93596684304066
+    },
+    {
+      "command": [
+        "/home/michelle/miniconda3/envs/r1pro-tray/bin/python",
+        "-m",
+        "r1pro_teleop.airport_fsm",
+        "generate",
+        "--root",
+        "/home/michelle/haoze/r1pro-airport-sim/diagnostictools/support_forces_20260929_v1/v28_preview_headroom_fresh_6_310",
+        "--workers",
+        "1",
+        "--scene-ids",
+        "airport_0006_20270922",
+        "airport_0310_20271226"
+      ],
+      "returncode": 0,
+      "wall_s": 109.90596891392488
+    }
+  ],
+  "scene_ids": [
+    "airport_0006_20270922",
+    "airport_0310_20271226"
+  ],
+  "results": [
+    {
+      "scene_id": "airport_0006_20270922",
+      "split": "train",
+      "attempt": 0,
+      "seed": 7203983872105699305,
+      "physics_success": false,
+      "recovery_used": false,
+      "training_candidate": false,
+      "failure_code": "contact_handoff_aborted",
+      "error": "contact_handoff_aborted: {'reason': 'primitive_postcondition_failed', 'detail': {'stable_frames': 0, 'tray_pose': array([ 8.40541556e-01, -5.04038716e-01,  7.99998611e-01,  9.99019372e-01,\n        3.69313587e-06, -8.74876456e-07, -4.42752072e-02]), 'bottom_z': 0.799996799237988, 'table_contact': 8, 'gripper_force': array([10.97369268,  0.        ])}}",
+      "operations": 1,
+      "frames": 706,
+      "simulation_seconds": 35.3,
+      "physical_elapsed_seconds": 35.299999999997176,
+      "simulation_seconds_semantics": "completed_20Hz_intervals; physical_elapsed_seconds also includes a failed substep prefix",
+      "wall_seconds": 52.126042195013724,
+      "acceptance": null,
+      "peak_mechanical_abs_sum_power_w": 50.63029043998078,
+      "inverse_dynamics_calls": 143,
+      "inverse_dynamics_slowdowns": 0,
+      "limits": {
+        "mode": "model80",
+        "fraction": 0.8,
+        "arm_velocity_rad_s": [
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002
+        ],
+        "reference_arm_velocity_rad_s": [
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672
+        ],
+        "arm_effort_nm": [
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4,
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4
+        ],
+        "actuator_forcerange": [
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -240.0,
+            240.0
+          ]
+        ],
+        "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+        "urdf": null,
+        "hardware_profile": null,
+        "mechanical_power_abs_sum_cap_w": null,
+        "external_profile_declares_80_percent_mechanical_power": false,
+        "real_robot_driver": false,
+        "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+        "base_reference_caps": {
+          "translation_m_s": 0.48,
+          "yaw_rad_s": 0.7200000000000001
+        },
+        "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+      },
+      "controller_source": "program_generated",
+      "environment_source": "simulation",
+      "privileged_teacher": true,
+      "real_robot_validated": false,
+      "native_video_validation": "pending_replay_export"
+    },
+    {
+      "scene_id": "airport_0310_20271226",
+      "split": "train",
+      "attempt": 0,
+      "seed": 15602839826125436088,
+      "physics_success": false,
+      "recovery_used": false,
+      "training_candidate": false,
+      "failure_code": "measured_joint_overspeed",
+      "error": "measured_joint_overspeed: {'joint': 'left_arm_joint5', 'measured_rad_s': 1.781772404099159, 'cap_rad_s': 1.7600000000000002, 'ratio': 1.0123706841472493, 'physics_time_s': 39.702000000002556}",
+      "operations": 1,
+      "frames": 795,
+      "simulation_seconds": 39.7,
+      "physical_elapsed_seconds": 39.702000000002556,
+      "simulation_seconds_semantics": "completed_20Hz_intervals; physical_elapsed_seconds also includes a failed substep prefix",
+      "wall_seconds": 55.270641049020924,
+      "acceptance": null,
+      "peak_mechanical_abs_sum_power_w": 49.38236511504432,
+      "inverse_dynamics_calls": 128,
+      "inverse_dynamics_slowdowns": 0,
+      "limits": {
+        "mode": "model80",
+        "fraction": 0.8,
+        "arm_velocity_rad_s": [
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.2000000000000002,
+          1.7600000000000002,
+          1.7600000000000002,
+          1.7600000000000002
+        ],
+        "reference_arm_velocity_rad_s": [
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          0.8640000000000001,
+          1.2672,
+          1.2672,
+          1.2672
+        ],
+        "arm_effort_nm": [
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4,
+          44.0,
+          44.0,
+          20.0,
+          20.0,
+          14.4,
+          14.4,
+          14.4
+        ],
+        "actuator_forcerange": [
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -44.0,
+            44.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -20.0,
+            20.0
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -14.4,
+            14.4
+          ],
+          [
+            -32.0,
+            32.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -480.0,
+            480.0
+          ],
+          [
+            -240.0,
+            240.0
+          ]
+        ],
+        "velocity_source": "engineering_simulation_caps_from_previous_teleop_configuration",
+        "urdf": null,
+        "hardware_profile": null,
+        "mechanical_power_abs_sum_cap_w": null,
+        "external_profile_declares_80_percent_mechanical_power": false,
+        "real_robot_driver": false,
+        "acceleration_and_jerk_source": "engineering_simulation_reference_caps",
+        "base_reference_caps": {
+          "translation_m_s": 0.48,
+          "yaw_rad_s": 0.7200000000000001
+        },
+        "inverse_dynamics_role": "arm reference feasibility and retiming; actual execution is force-limited position servo"
+      },
+      "controller_source": "program_generated",
+      "environment_source": "simulation",
+      "privileged_teacher": true,
+      "real_robot_validated": false,
+      "native_video_validation": "pending_replay_export"
+    }
+  ],
+  "wall_s": 122.40920597896911
+}

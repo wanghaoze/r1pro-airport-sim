@@ -1,0 +1,9 @@
+/home/michelle/haoze/r1pro-airport-sim/runs/three_actions_contact_allowed_20261007_v3/demo_action_preview/pick_up_the_tray/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_actions_contact_allowed_20261007_v3/demo_action_preview/pick_up_the_tray/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_actions_contact_allowed_20261007_v3/demo_action_preview/pick_up_the_tray/right_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_actions_contact_allowed_20261007_v3/demo_action_preview/place_the_tray/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_actions_contact_allowed_20261007_v3/demo_action_preview/place_the_tray/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_actions_contact_allowed_20261007_v3/demo_action_preview/place_the_tray/right_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_actions_contact_allowed_20261007_v3/demo_action_preview/flush_tray_to_the_left/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_actions_contact_allowed_20261007_v3/demo_action_preview/flush_tray_to_the_left/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_actions_contact_allowed_20261007_v3/demo_action_preview/flush_tray_to_the_left/right_wrist.mp4

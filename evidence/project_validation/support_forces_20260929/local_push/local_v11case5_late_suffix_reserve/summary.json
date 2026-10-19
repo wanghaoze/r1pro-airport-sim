@@ -1,0 +1,235 @@
+{
+  "qualification": "private_local_push_diagnostic_not_complete_episode",
+  "source": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v11_20260929/runs/regression",
+  "controller": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v11_20260929",
+  "case": 5,
+  "frame": 2463,
+  "tray": 1,
+  "side": "right",
+  "incoming_target_source": "previous_recorded_action",
+  "modifications": {},
+  "entry_restore": "recorded_integration_state",
+  "entry_restore_neighbor_validation": [],
+  "cartesian_withdraw_middle": false,
+  "entry_rollpitchyaw_deg": [
+    -0.0005760261935641608,
+    -9.168730000826136e-06,
+    0.14341004122901996
+  ],
+  "full_push_operation": true,
+  "final_slot_geometry_ready": false,
+  "yaw_compensation_deg": null,
+  "operation_acceptance_yaw_unchanged": 0.0,
+  "yaw_feedback_suffix": false,
+  "force_feedback_suffix": true,
+  "force_feedback_zero_gain": false,
+  "place_retained_side": null,
+  "free_retreat_rise_m": null,
+  "withdraw_middle_progress": null,
+  "planning_only": false,
+  "yaw_backtrack_once": false,
+  "yaw_normal_lift_once": false,
+  "yaw_normal_lift_m": null,
+  "final_all_poses": [
+    [
+      0.8463518054463732,
+      -1.5500852258968465,
+      0.7999952170405822,
+      0.999999391657028,
+      -1.4842827136037876e-07,
+      8.548084257821254e-08,
+      -0.0011030346974082532
+    ],
+    [
+      0.8434108406163773,
+      -0.08422289886790506,
+      0.800087425293099,
+      0.9997583273871757,
+      -9.410198613140445e-05,
+      7.340285368852596e-05,
+      0.021983461438888765
+    ],
+    [
+      0.8473864867710648,
+      0.37915986584125266,
+      0.7999952170405821,
+      0.0021060772182096015,
+      -8.562967941136263e-08,
+      -1.483424562611194e-07,
+      0.9999977822169016
+    ]
+  ],
+  "slot_mapping": [
+    2,
+    1,
+    0
+  ],
+  "final_position_error_m": 0.020321036032898553,
+  "final_yaw_rad": 0.043970451342256335,
+  "arm_kv_scale": null,
+  "arm_position_servos": [
+    {
+      "name": "left_arm_joint1_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint2_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint3_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint4_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint5_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint6_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint7_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint1_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint2_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint3_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint4_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint5_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint6_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint7_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    }
+  ],
+  "timestep_intervention": null,
+  "source_timestep_s": 0.002,
+  "timestep_s": 0.002,
+  "substeps_per_frame": 25,
+  "rollout_wall_s": 5.004170409054495,
+  "solver_settings": {
+    "integrator": "mjINT_IMPLICITFAST",
+    "solver": "mjSOL_NEWTON",
+    "iterations": 80,
+    "tolerance": 1e-08,
+    "geom_solref_unique": [
+      [
+        0.006,
+        1.0
+      ]
+    ],
+    "geom_solimp_unique": [
+      [
+        0.95,
+        0.99,
+        0.001,
+        0.5,
+        2.0
+      ]
+    ]
+  },
+  "restored_context": {
+    "retained_contact": [
+      1,
+      "right"
+    ],
+    "initial_holding": null,
+    "phase": "adjust",
+    "primitive_lift_xy_shift_m": 0.06,
+    "initial_bottom": [
+      0.801,
+      0.801,
+      0.801
+    ],
+    "support_timer": "reset only after confirming actual entry support",
+    "warnings": "fresh zero counters; source episode would have stopped at any prior warning",
+    "diagnostic_counters": "wall budget restarted; historical peak power and inverse-call tallies not restored"
+  },
+  "exact_original_trajectory_match": false,
+  "recorded_prefix_matches": false,
+  "maximum_qpos_error": 0.0442102118540294,
+  "maximum_qvel_error": 0.2724960722053645,
+  "maximum_action_error": 0.04880240559577942,
+  "endpoint_qpos_error": 0.02317053909745387,
+  "primitive_returned": false,
+  "failure": {
+    "code": "retained_contact_lost",
+    "detail": {
+      "tray": 1,
+      "side": "right",
+      "table_contact": 0,
+      "force_n": 10.712490322828701,
+      "command_opening_m": 0.0
+    }
+  },
+  "elapsed_s": 2.4999999999941735,
+  "final_pose": [
+    0.8434108406163773,
+    -0.08422289886790506,
+    0.800087425293099,
+    0.9997583273871757,
+    -9.410198613140445e-05,
+    7.340285368852596e-05,
+    0.021983461438888765
+  ],
+  "final_forces": [
+    0.0,
+    10.712490322828701
+  ],
+  "final_table_contacts": 0,
+  "physics_samples": 1250,
+  "longest_physics_missing_s": 0.008,
+  "table_force_peak_n": 49.20629908273467,
+  "support_fraction": 0.8256
+}

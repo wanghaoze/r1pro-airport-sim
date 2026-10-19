@@ -1,0 +1,16 @@
+2026-10-15 new pi0.5 BC 50% real / 50% simulation
+Server root: /home/michelle/haoze/r1pro-airport-sim/runs/real_sim50_pi05_20261015_v1
+Source release: /home/michelle/haoze/r1pro-airport-sim/releases/real_sim50_pi05_20261015_v1
+Supervisor PID3958414/start_ticks25156749; trainer PID3958677; GPU0
+Dataset root: cache/{train,val,test,simulation}; source data read-only reused
+Real train102/val13/test19; simulation train10 complete sources/30 action clips
+Every batch4 real+4 sim; total frozen draws40000+40000
+New optimizer; same sim10000 parent as old90/10; frozen vision BF16/FP32 LoRA
+Actual live updates: pi05/training_status.json (snapshot JSON kept locally)
+Pipeline: pipeline_status.json; log: supervisor.log; logs/train_00.log
+Checkpoint root: pi05/checkpoints/pi05_real_sim50/training/ (first999 after1000 updates; final9999 after10000)
+Offline evaluation after training: mse_mixed_pi05.json
+Monitor: powershell -ExecutionPolicy Bypass -File .\scripts\watch_pi05_mix50.ps1
+Existing model/data/hardware services not replaced. BC only, no DAgger or automatic robot deployment.
+
+2026-10-15 本轮实核完成：real_sim50_pi05_20261015_v1 已训练10000/10000步，prepare/train/evaluate实际子进程退出码均0，pipeline complete。最终loss0.0034330213。现存checkpoint仅pi05/checkpoints/pi05_real_sim50/training/9999（旧周期检查点已按保留策略清理）。真机test19离线H20 MSE：Pick11条 arm0.0086941904 rad²/gripper199.7232532 mm²；Place8条 arm0.0018802719 rad²/gripper755.9309904 mm²。未做此模型仿真闭环或真机执行，不能称任务成功。证据：runs/real_sim50_pi05_20261015_v1_reference/latest_status_snapshot.json；服务器同名run mse_mixed_pi05.json。

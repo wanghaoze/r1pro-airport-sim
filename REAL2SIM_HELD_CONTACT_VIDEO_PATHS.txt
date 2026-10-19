@@ -1,0 +1,8 @@
+/home/michelle/haoze/r1pro-airport-sim/runs/real2sim_held_contact_20261012_v2/case_000/videos/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real2sim_held_contact_20261012_v2/case_000/videos/head_right.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real2sim_held_contact_20261012_v2/case_000/videos/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real2sim_held_contact_20261012_v2/case_000/videos/right_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real2sim_held_contact_20261012_v2/case_001/videos/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real2sim_held_contact_20261012_v2/case_001/videos/head_right.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real2sim_held_contact_20261012_v2/case_001/videos/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/real2sim_held_contact_20261012_v2/case_001/videos/right_wrist.mp4

@@ -1,0 +1,1075 @@
+{
+  "v4": {
+    "physics_success": true,
+    "failure_code": null,
+    "error": null,
+    "frames": 2907,
+    "operations": 3,
+    "simulation_seconds": 145.35,
+    "wall_seconds": 167.31078680197243,
+    "acceptance": {
+      "reasons": [],
+      "stable_samples": 21,
+      "placement": {
+        "slot_to_tray": [
+          "tray_2",
+          "tray_1",
+          "tray_0"
+        ],
+        "max_position_error_m": 0.012260761702264963,
+        "max_yaw_error_deg": 1.2348244331318456,
+        "final_gaps_m": [
+          0.0067475459348626254,
+          0.008375216001036884
+        ]
+      }
+    },
+    "events": [
+      {
+        "frame": 78,
+        "event": "operation_selected",
+        "operation": {
+          "tray": 2,
+          "slot": 0,
+          "destination": [
+            0.8500000000000001,
+            0.38,
+            0.8
+          ],
+          "yaw": 0.0,
+          "temporary": false
+        },
+        "operation_index": 1
+      },
+      {
+        "frame": 158,
+        "event": "free_space_joint_shortcut",
+        "discarded_ik_waypoints": 6
+      },
+      {
+        "frame": 195,
+        "event": "direct_grasp_preflight_rejected",
+        "reason": "cartesian_collision_or_wrist",
+        "detail": {
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_1__tray_contact_004"
+            ],
+            "distance_m": -0.005235030351886101
+          },
+          "wrist_camera_front": false,
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013346021961138984,
+              "wrist_upright_dot": 0.9848078678042618,
+              "optical_forward_dot": -0.10231661795141368,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.01276967403308079,
+              "wrist_upright_dot": 0.9848076420944584,
+              "optical_forward_dot": -0.09236840875870729,
+              "self_view_geoms": []
+            }
+          },
+          "rigid_grasp_error": null
+        }
+      },
+      {
+        "frame": 239,
+        "event": "free_space_joint_shortcut",
+        "discarded_ik_waypoints": 6
+      },
+      {
+        "frame": 377,
+        "event": "primitive_start",
+        "primitive": "push",
+        "limit_s": 3.0,
+        "parameters": {
+          "destination": [
+            -1.4238563495843912,
+            0.5641899578266497,
+            0.7999934032195588
+          ],
+          "yaw": 0.005944766746380499,
+          "separation": true
+        }
+      },
+      {
+        "frame": 428,
+        "event": "primitive_complete",
+        "primitive": "push",
+        "duration_s": 2.55,
+        "planning_and_execution_wall_s": 2.479640800971538
+      },
+      {
+        "frame": 541,
+        "event": "primitive_start",
+        "primitive": "lift",
+        "limit_s": 3.0,
+        "parameters": {
+          "height_m": 0.18,
+          "accepted_height_m": [
+            0.15,
+            0.2
+          ]
+        }
+      },
+      {
+        "frame": 591,
+        "event": "primitive_complete",
+        "primitive": "lift",
+        "duration_s": 2.5,
+        "planning_and_execution_wall_s": 5.1901957700029016
+      },
+      {
+        "frame": 785,
+        "event": "primitive_start",
+        "primitive": "transport_align",
+        "limit_s": 3.0,
+        "parameters": {
+          "destination_xy": [
+            0.8500000000000001,
+            0.38
+          ]
+        }
+      },
+      {
+        "frame": 820,
+        "event": "primitive_complete",
+        "primitive": "transport_align",
+        "duration_s": 1.75,
+        "planning_and_execution_wall_s": 2.525485933991149
+      },
+      {
+        "frame": 820,
+        "event": "primitive_start",
+        "primitive": "place",
+        "limit_s": 3.0,
+        "parameters": {
+          "table_height_m": 0.8,
+          "staged": [
+            0.8500000000000001,
+            0.38,
+            0.8
+          ],
+          "retained_side": null
+        }
+      },
+      {
+        "frame": 878,
+        "event": "primitive_complete",
+        "primitive": "place",
+        "duration_s": 2.9,
+        "planning_and_execution_wall_s": 3.6677679769927636
+      },
+      {
+        "frame": 878,
+        "event": "free_space_joint_shortcut",
+        "discarded_ik_waypoints": 5
+      },
+      {
+        "frame": 993,
+        "event": "operation_selected",
+        "operation": {
+          "tray": 1,
+          "slot": 1,
+          "destination": [
+            0.8500000000000001,
+            -0.06500000000000006,
+            0.8
+          ],
+          "yaw": 0.0,
+          "temporary": false
+        },
+        "operation_index": 2
+      },
+      {
+        "frame": 1122,
+        "event": "free_space_joint_shortcut",
+        "discarded_ik_waypoints": 6
+      },
+      {
+        "frame": 1159,
+        "event": "direct_grasp_preflight_rejected",
+        "reason": "cartesian_collision_or_wrist",
+        "detail": {
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_004"
+            ],
+            "distance_m": -0.0001812356541347243
+          },
+          "wrist_camera_front": false,
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013136791775082526,
+              "wrist_upright_dot": 0.9844878512999307,
+              "optical_forward_dot": -0.09922451283228192,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.01285765145484114,
+              "wrist_upright_dot": 0.9848127185112021,
+              "optical_forward_dot": -0.09360774743345833,
+              "self_view_geoms": []
+            }
+          },
+          "rigid_grasp_error": null
+        }
+      },
+      {
+        "frame": 1203,
+        "event": "free_space_joint_shortcut",
+        "discarded_ik_waypoints": 6
+      },
+      {
+        "frame": 1341,
+        "event": "primitive_start",
+        "primitive": "push",
+        "limit_s": 3.0,
+        "parameters": {
+          "destination": [
+            -1.4204377625767086,
+            0.11524638415199938,
+            0.7999952170405826
+          ],
+          "yaw": 0.0055323746248860505,
+          "separation": true
+        }
+      },
+      {
+        "frame": 1392,
+        "event": "primitive_complete",
+        "primitive": "push",
+        "duration_s": 2.55,
+        "planning_and_execution_wall_s": 2.53665019699838
+      },
+      {
+        "frame": 1505,
+        "event": "primitive_start",
+        "primitive": "lift",
+        "limit_s": 3.0,
+        "parameters": {
+          "height_m": 0.18,
+          "accepted_height_m": [
+            0.15,
+            0.2
+          ]
+        }
+      },
+      {
+        "frame": 1556,
+        "event": "primitive_complete",
+        "primitive": "lift",
+        "duration_s": 2.55,
+        "planning_and_execution_wall_s": 5.400873812031932
+      },
+      {
+        "frame": 1750,
+        "event": "primitive_start",
+        "primitive": "transport_align",
+        "limit_s": 3.0,
+        "parameters": {
+          "destination_xy": [
+            0.8500000000000001,
+            -0.17000000000000007
+          ]
+        }
+      },
+      {
+        "frame": 1773,
+        "event": "primitive_complete",
+        "primitive": "transport_align",
+        "duration_s": 1.15,
+        "planning_and_execution_wall_s": 1.3196356649277732
+      },
+      {
+        "frame": 1773,
+        "event": "primitive_start",
+        "primitive": "place",
+        "limit_s": 3.0,
+        "parameters": {
+          "table_height_m": 0.8,
+          "staged": [
+            0.8500000000000001,
+            -0.17000000000000007,
+            0.8
+          ],
+          "retained_side": "right"
+        }
+      },
+      {
+        "frame": 1827,
+        "event": "primitive_complete",
+        "primitive": "place",
+        "duration_s": 2.7,
+        "planning_and_execution_wall_s": 3.6902297609485686
+      },
+      {
+        "frame": 1827,
+        "event": "primitive_start",
+        "primitive": "push",
+        "limit_s": 3.0,
+        "parameters": {
+          "destination": [
+            0.8500000000000001,
+            -0.06500000000000006,
+            0.8
+          ],
+          "yaw": 0.0,
+          "separation": false
+        }
+      },
+      {
+        "frame": 1878,
+        "event": "primitive_complete",
+        "primitive": "push",
+        "duration_s": 2.55,
+        "planning_and_execution_wall_s": 2.761333864997141
+      },
+      {
+        "frame": 1922,
+        "event": "free_space_joint_shortcut",
+        "discarded_ik_waypoints": 5
+      },
+      {
+        "frame": 2048,
+        "event": "operation_selected",
+        "operation": {
+          "tray": 0,
+          "slot": 2,
+          "destination": [
+            0.8500000000000001,
+            -0.5100000000000001,
+            0.8
+          ],
+          "yaw": 0.0,
+          "temporary": false
+        },
+        "operation_index": 3
+      },
+      {
+        "frame": 2177,
+        "event": "free_space_joint_shortcut",
+        "discarded_ik_waypoints": 6
+      },
+      {
+        "frame": 2214,
+        "event": "direct_grasp_preflight_rejected",
+        "reason": "direct_grasp_closure_blocked",
+        "detail": null
+      },
+      {
+        "frame": 2258,
+        "event": "free_space_joint_shortcut",
+        "discarded_ik_waypoints": 6
+      },
+      {
+        "frame": 2438,
+        "event": "primitive_start",
+        "primitive": "lift",
+        "limit_s": 3.0,
+        "parameters": {
+          "height_m": 0.18,
+          "accepted_height_m": [
+            0.15,
+            0.2
+          ]
+        }
+      },
+      {
+        "frame": 2467,
+        "event": "primitive_complete",
+        "primitive": "lift",
+        "duration_s": 1.45,
+        "planning_and_execution_wall_s": 2.969361294992268
+      },
+      {
+        "frame": 2661,
+        "event": "primitive_start",
+        "primitive": "place",
+        "limit_s": 3.0,
+        "parameters": {
+          "table_height_m": 0.8,
+          "staged": [
+            0.8500000000000001,
+            -0.6150000000000001,
+            0.8
+          ],
+          "retained_side": "right"
+        }
+      },
+      {
+        "frame": 2719,
+        "event": "primitive_complete",
+        "primitive": "place",
+        "duration_s": 2.9,
+        "planning_and_execution_wall_s": 3.363529273075983
+      },
+      {
+        "frame": 2719,
+        "event": "primitive_start",
+        "primitive": "push",
+        "limit_s": 3.0,
+        "parameters": {
+          "destination": [
+            0.8500000000000001,
+            -0.5100000000000001,
+            0.8
+          ],
+          "yaw": 0.0,
+          "separation": false
+        }
+      },
+      {
+        "frame": 2777,
+        "event": "primitive_complete",
+        "primitive": "push",
+        "duration_s": 2.9,
+        "planning_and_execution_wall_s": 3.16556909494102
+      }
+    ]
+  },
+  "v24b_baseline": {
+    "physics_success": false,
+    "failure_code": "contact_handoff_aborted",
+    "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 2, 'side': 'right', 'table_contact': 0, 'force_n': 10.820471531030835, 'command_opening_m': 0.0}}",
+    "frames": 456,
+    "operations": 1,
+    "simulation_seconds": 22.75,
+    "wall_seconds": 33.59545431798324,
+    "acceptance": null,
+    "events": [
+      {
+        "frame": 78,
+        "event": "operation_selected",
+        "operation": {
+          "tray": 2,
+          "slot": 0,
+          "destination": [
+            0.8500000000000001,
+            0.38,
+            0.8
+          ],
+          "yaw": 0.0,
+          "temporary": false
+        },
+        "operation_index": 1
+      },
+      {
+        "frame": 158,
+        "event": "free_space_joint_shortcut",
+        "discarded_ik_waypoints": 6
+      },
+      {
+        "frame": 219,
+        "event": "direct_grasp_preflight_rejected",
+        "reason": "cartesian_collision_or_wrist",
+        "detail": {
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_1__tray_contact_004"
+            ],
+            "distance_m": -0.005235033441560452
+          },
+          "wrist_camera_front": false,
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.01334602222802876,
+              "wrist_upright_dot": 0.9848078665535804,
+              "optical_forward_dot": -0.10231662114360897,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.012769673731277966,
+              "wrist_upright_dot": 0.9848076417572763,
+              "optical_forward_dot": -0.09236840451936831,
+              "self_view_geoms": []
+            }
+          },
+          "rigid_grasp_error": null
+        }
+      },
+      {
+        "frame": 263,
+        "event": "free_space_joint_shortcut",
+        "discarded_ik_waypoints": 6
+      },
+      {
+        "frame": 425,
+        "event": "primitive_start",
+        "primitive": "push",
+        "limit_s": 3.0,
+        "parameters": {
+          "destination": [
+            -1.4238563503043153,
+            0.5641899573290143,
+            0.7999934032195579
+          ],
+          "yaw": 0.005944767528214067,
+          "separation": true
+        }
+      },
+      {
+        "frame": 456,
+        "event": "primitive_failed",
+        "primitive": "push",
+        "reason": "retained_contact_lost",
+        "detail": {
+          "tray": 2,
+          "side": "right",
+          "table_contact": 0,
+          "force_n": 10.820471531030835,
+          "command_opening_m": 0.0
+        },
+        "duration_s": 1.5
+      },
+      {
+        "frame": 456,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "contact_handoff_aborted",
+        "detail": {
+          "reason": "retained_contact_lost",
+          "detail": {
+            "tray": 2,
+            "side": "right",
+            "table_contact": 0,
+            "force_n": 10.820471531030835,
+            "command_opening_m": 0.0
+          }
+        },
+        "recoverable": false
+      }
+    ]
+  },
+  "v27_shortcut": {
+    "physics_success": false,
+    "failure_code": "contact_handoff_aborted",
+    "error": "contact_handoff_aborted: {'reason': 'retained_contact_lost', 'detail': {'tray': 0, 'side': 'right', 'table_contact': 0, 'force_n': 10.838834912265341, 'command_opening_m': 0.0}}",
+    "frames": 2679,
+    "operations": 3,
+    "simulation_seconds": 133.9,
+    "wall_seconds": 229.78643060696777,
+    "acceptance": null,
+    "events": [
+      {
+        "frame": 78,
+        "event": "operation_selected",
+        "operation": {
+          "tray": 2,
+          "slot": 0,
+          "destination": [
+            0.8500000000000001,
+            0.38,
+            0.8
+          ],
+          "yaw": 0.0,
+          "temporary": false
+        },
+        "operation_index": 1
+      },
+      {
+        "frame": 158,
+        "event": "free_space_joint_shortcut",
+        "discarded_ik_waypoints": 6
+      },
+      {
+        "frame": 158,
+        "event": "empty_arm_shortcut_timing",
+        "endpoint_fallback": false,
+        "headroom_applied": false,
+        "normal_headroom_enabled": false,
+        "original_minimum_seconds": 0.7804208813825095,
+        "minimum_seconds": 0.7804208813825095,
+        "qualification": "reference_timing_only_measured_guards_unchanged"
+      },
+      {
+        "frame": 195,
+        "event": "direct_grasp_preflight_rejected",
+        "reason": "cartesian_collision_or_wrist",
+        "detail": {
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_1__tray_contact_004"
+            ],
+            "distance_m": -0.005235030351886101
+          },
+          "wrist_camera_front": false,
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013346021961138984,
+              "wrist_upright_dot": 0.9848078678042618,
+              "optical_forward_dot": -0.10231661795141368,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.01276967403308079,
+              "wrist_upright_dot": 0.9848076420944584,
+              "optical_forward_dot": -0.09236840875870729,
+              "self_view_geoms": []
+            }
+          },
+          "rigid_grasp_error": null
+        }
+      },
+      {
+        "frame": 239,
+        "event": "free_space_joint_shortcut",
+        "discarded_ik_waypoints": 6
+      },
+      {
+        "frame": 239,
+        "event": "empty_arm_shortcut_timing",
+        "endpoint_fallback": false,
+        "headroom_applied": false,
+        "normal_headroom_enabled": false,
+        "original_minimum_seconds": 0.7804483594352859,
+        "minimum_seconds": 0.7804483594352859,
+        "qualification": "reference_timing_only_measured_guards_unchanged"
+      },
+      {
+        "frame": 377,
+        "event": "primitive_start",
+        "primitive": "push",
+        "limit_s": 3.0,
+        "parameters": {
+          "destination": [
+            -1.4238563495843912,
+            0.5641899578266497,
+            0.7999934032195588
+          ],
+          "yaw": 0.005944766746380499,
+          "separation": true
+        }
+      },
+      {
+        "frame": 428,
+        "event": "primitive_complete",
+        "primitive": "push",
+        "duration_s": 2.55,
+        "planning_and_execution_wall_s": 3.351332367048599
+      },
+      {
+        "frame": 541,
+        "event": "primitive_start",
+        "primitive": "lift",
+        "limit_s": 3.0,
+        "parameters": {
+          "height_m": 0.18,
+          "accepted_height_m": [
+            0.15,
+            0.2
+          ]
+        }
+      },
+      {
+        "frame": 591,
+        "event": "primitive_complete",
+        "primitive": "lift",
+        "duration_s": 2.5,
+        "planning_and_execution_wall_s": 6.440966606023721
+      },
+      {
+        "frame": 785,
+        "event": "primitive_start",
+        "primitive": "transport_align",
+        "limit_s": 3.0,
+        "parameters": {
+          "destination_xy": [
+            0.8500000000000001,
+            0.38
+          ]
+        }
+      },
+      {
+        "frame": 820,
+        "event": "primitive_complete",
+        "primitive": "transport_align",
+        "duration_s": 1.75,
+        "planning_and_execution_wall_s": 3.341599526000209
+      },
+      {
+        "frame": 820,
+        "event": "primitive_start",
+        "primitive": "place",
+        "limit_s": 3.0,
+        "parameters": {
+          "table_height_m": 0.8,
+          "staged": [
+            0.8500000000000001,
+            0.38,
+            0.8
+          ],
+          "retained_side": null
+        }
+      },
+      {
+        "frame": 877,
+        "event": "primitive_complete",
+        "primitive": "place",
+        "duration_s": 2.85,
+        "planning_and_execution_wall_s": 5.691013026982546
+      },
+      {
+        "frame": 877,
+        "event": "free_space_joint_shortcut",
+        "discarded_ik_waypoints": 5
+      },
+      {
+        "frame": 877,
+        "event": "empty_arm_shortcut_timing",
+        "endpoint_fallback": false,
+        "headroom_applied": false,
+        "normal_headroom_enabled": false,
+        "original_minimum_seconds": 0.8125000000000008,
+        "minimum_seconds": 0.8125000000000008,
+        "qualification": "reference_timing_only_measured_guards_unchanged"
+      },
+      {
+        "frame": 994,
+        "event": "operation_selected",
+        "operation": {
+          "tray": 1,
+          "slot": 1,
+          "destination": [
+            0.8500000000000001,
+            -0.06500000000000006,
+            0.8
+          ],
+          "yaw": 0.0,
+          "temporary": false
+        },
+        "operation_index": 2
+      },
+      {
+        "frame": 1123,
+        "event": "free_space_joint_shortcut",
+        "discarded_ik_waypoints": 6
+      },
+      {
+        "frame": 1123,
+        "event": "empty_arm_shortcut_timing",
+        "endpoint_fallback": false,
+        "headroom_applied": false,
+        "normal_headroom_enabled": false,
+        "original_minimum_seconds": 0.7722698956273081,
+        "minimum_seconds": 0.7722698956273081,
+        "qualification": "reference_timing_only_measured_guards_unchanged"
+      },
+      {
+        "frame": 1160,
+        "event": "direct_grasp_preflight_rejected",
+        "reason": "cartesian_collision_or_wrist",
+        "detail": {
+          "collision": {
+            "geoms": [
+              "robot_geom_45",
+              "tray_0__tray_contact_004"
+            ],
+            "distance_m": -0.00018002022280289235
+          },
+          "wrist_camera_front": false,
+          "camera_metrics": {
+            "left": {
+              "camera_ahead_m": 0.013136791343563962,
+              "wrist_upright_dot": 0.9844878518077238,
+              "optical_forward_dot": -0.09922450673678404,
+              "self_view_geoms": []
+            },
+            "right": {
+              "camera_ahead_m": 0.012857651415407682,
+              "wrist_upright_dot": 0.984812718421259,
+              "optical_forward_dot": -0.09360774690301467,
+              "self_view_geoms": []
+            }
+          },
+          "rigid_grasp_error": null
+        }
+      },
+      {
+        "frame": 1204,
+        "event": "free_space_joint_shortcut",
+        "discarded_ik_waypoints": 6
+      },
+      {
+        "frame": 1204,
+        "event": "empty_arm_shortcut_timing",
+        "endpoint_fallback": false,
+        "headroom_applied": false,
+        "normal_headroom_enabled": false,
+        "original_minimum_seconds": 0.7804449679799267,
+        "minimum_seconds": 0.7804449679799267,
+        "qualification": "reference_timing_only_measured_guards_unchanged"
+      },
+      {
+        "frame": 1342,
+        "event": "primitive_start",
+        "primitive": "push",
+        "limit_s": 3.0,
+        "parameters": {
+          "destination": [
+            -1.4204377625763944,
+            0.1152463841525765,
+            0.7999952170405823
+          ],
+          "yaw": 0.005532374619687885,
+          "separation": true
+        }
+      },
+      {
+        "frame": 1393,
+        "event": "primitive_complete",
+        "primitive": "push",
+        "duration_s": 2.55,
+        "planning_and_execution_wall_s": 3.476874331012368
+      },
+      {
+        "frame": 1506,
+        "event": "primitive_start",
+        "primitive": "lift",
+        "limit_s": 3.0,
+        "parameters": {
+          "height_m": 0.18,
+          "accepted_height_m": [
+            0.15,
+            0.2
+          ]
+        }
+      },
+      {
+        "frame": 1557,
+        "event": "primitive_complete",
+        "primitive": "lift",
+        "duration_s": 2.55,
+        "planning_and_execution_wall_s": 7.554091837955639
+      },
+      {
+        "frame": 1751,
+        "event": "primitive_start",
+        "primitive": "transport_align",
+        "limit_s": 3.0,
+        "parameters": {
+          "destination_xy": [
+            0.8500000000000001,
+            -0.17000000000000007
+          ]
+        }
+      },
+      {
+        "frame": 1774,
+        "event": "primitive_complete",
+        "primitive": "transport_align",
+        "duration_s": 1.15,
+        "planning_and_execution_wall_s": 1.8195564289344475
+      },
+      {
+        "frame": 1774,
+        "event": "primitive_start",
+        "primitive": "place",
+        "limit_s": 3.0,
+        "parameters": {
+          "table_height_m": 0.8,
+          "staged": [
+            0.8500000000000001,
+            -0.17000000000000007,
+            0.8
+          ],
+          "retained_side": "right"
+        }
+      },
+      {
+        "frame": 1828,
+        "event": "primitive_complete",
+        "primitive": "place",
+        "duration_s": 2.7,
+        "planning_and_execution_wall_s": 4.722423681989312
+      },
+      {
+        "frame": 1828,
+        "event": "primitive_start",
+        "primitive": "push",
+        "limit_s": 3.0,
+        "parameters": {
+          "destination": [
+            0.8500000000000001,
+            -0.06500000000000006,
+            0.8
+          ],
+          "yaw": 0.0,
+          "separation": false
+        }
+      },
+      {
+        "frame": 1879,
+        "event": "primitive_complete",
+        "primitive": "push",
+        "duration_s": 2.55,
+        "planning_and_execution_wall_s": 3.726205455022864
+      },
+      {
+        "frame": 1923,
+        "event": "free_space_joint_shortcut",
+        "discarded_ik_waypoints": 5
+      },
+      {
+        "frame": 1923,
+        "event": "empty_arm_shortcut_timing",
+        "endpoint_fallback": false,
+        "headroom_applied": false,
+        "normal_headroom_enabled": false,
+        "original_minimum_seconds": 0.8125000000000008,
+        "minimum_seconds": 0.8125000000000008,
+        "qualification": "reference_timing_only_measured_guards_unchanged"
+      },
+      {
+        "frame": 2050,
+        "event": "operation_selected",
+        "operation": {
+          "tray": 0,
+          "slot": 2,
+          "destination": [
+            0.8500000000000001,
+            -0.5100000000000001,
+            0.8
+          ],
+          "yaw": 0.0,
+          "temporary": false
+        },
+        "operation_index": 3
+      },
+      {
+        "frame": 2179,
+        "event": "free_space_joint_shortcut",
+        "discarded_ik_waypoints": 6
+      },
+      {
+        "frame": 2179,
+        "event": "empty_arm_shortcut_timing",
+        "endpoint_fallback": false,
+        "headroom_applied": false,
+        "normal_headroom_enabled": false,
+        "original_minimum_seconds": 0.7725715536133391,
+        "minimum_seconds": 0.7725715536133391,
+        "qualification": "reference_timing_only_measured_guards_unchanged"
+      },
+      {
+        "frame": 2359,
+        "event": "primitive_start",
+        "primitive": "lift",
+        "limit_s": 3.0,
+        "parameters": {
+          "height_m": 0.18,
+          "accepted_height_m": [
+            0.15,
+            0.2
+          ]
+        }
+      },
+      {
+        "frame": 2388,
+        "event": "primitive_complete",
+        "primitive": "lift",
+        "duration_s": 1.45,
+        "planning_and_execution_wall_s": 4.302996588987298
+      },
+      {
+        "frame": 2582,
+        "event": "primitive_start",
+        "primitive": "place",
+        "limit_s": 3.0,
+        "parameters": {
+          "table_height_m": 0.8,
+          "staged": [
+            0.8500000000000001,
+            -0.6150000000000001,
+            0.8
+          ],
+          "retained_side": "right"
+        }
+      },
+      {
+        "frame": 2628,
+        "event": "primitive_complete",
+        "primitive": "place",
+        "duration_s": 2.3,
+        "planning_and_execution_wall_s": 3.770316945039667
+      },
+      {
+        "frame": 2628,
+        "event": "primitive_start",
+        "primitive": "push",
+        "limit_s": 3.0,
+        "parameters": {
+          "destination": [
+            0.8500000000000001,
+            -0.5100000000000001,
+            0.8
+          ],
+          "yaw": 0.0,
+          "separation": false
+        }
+      },
+      {
+        "frame": 2679,
+        "event": "primitive_failed",
+        "primitive": "push",
+        "reason": "retained_contact_lost",
+        "detail": {
+          "tray": 0,
+          "side": "right",
+          "table_contact": 0,
+          "force_n": 10.838834912265341,
+          "command_opening_m": 0.0
+        },
+        "duration_s": 2.5
+      },
+      {
+        "frame": 2679,
+        "event": "operation_failed",
+        "retry": 0,
+        "reason": "contact_handoff_aborted",
+        "detail": {
+          "reason": "retained_contact_lost",
+          "detail": {
+            "tray": 0,
+            "side": "right",
+            "table_contact": 0,
+            "force_n": 10.838834912265341,
+            "command_opening_m": 0.0
+          }
+        },
+        "recoverable": false
+      }
+    ]
+  },
+  "first_differences_vs_v4": {
+    "action": {
+      "frame": 378,
+      "max_abs_difference": 5.960464477539063e-08
+    },
+    "qpos": {
+      "frame": 379,
+      "max_abs_difference": 2.0718618265469502e-08
+    },
+    "qvel": {
+      "frame": 379,
+      "max_abs_difference": 3.390878238854385e-07
+    },
+    "phase": {
+      "frame": 857
+    },
+    "fsm_state": {
+      "frame": 971
+    },
+    "tray_pose": {
+      "frame": 379,
+      "max_abs_difference": 7.381172016285076e-12
+    }
+  }
+}

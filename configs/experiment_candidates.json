@@ -1,0 +1,6 @@
+[
+  {"name": "baseline", "strategy": "baseline", "params": {}},
+  {"name": "closer", "strategy": "baseline", "params": {"base_distance_delta_m": -0.02}},
+  {"name": "reverse", "strategy": "reverse_candidates", "params": {}},
+  {"name": "preview", "strategy": "full_approach_preview", "params": {}}
+]

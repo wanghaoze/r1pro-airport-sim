@@ -1,0 +1,30 @@
+{
+  "schema": "single_tray_robot_visual_palette/1",
+  "source_robot_xml": "outputs/r1pro_tray_scene/robot.xml",
+  "silver_rgba": [
+    0.61,
+    0.63,
+    0.65,
+    1
+  ],
+  "black_rgba": [
+    0.018,
+    0.022,
+    0.025,
+    1
+  ],
+  "silver_meshes": [
+    "torso_link2",
+    "torso_link4",
+    "left_arm_link1",
+    "left_arm_link3",
+    "left_arm_link5",
+    "left_arm_link7",
+    "right_arm_link1",
+    "right_arm_link3",
+    "right_arm_link5",
+    "right_arm_link7"
+  ],
+  "black_meshes_policy": "remaining visual links, joints, head housing, base and fingers",
+  "application_scope": "contype=0/conaffinity=0 visual geoms only; no collision mesh, mass, inertia, joint, camera or kinematic changes"
+}

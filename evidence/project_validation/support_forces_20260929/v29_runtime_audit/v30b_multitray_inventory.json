@@ -1,0 +1,325 @@
+[
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0000_20270916/a000",
+    "scene": "airport_0000_20270916",
+    "index": 0,
+    "time": 59.27600000002648,
+    "failure": {
+      "frame": 1186,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 1,
+        "other": 0
+      },
+      "recoverable": false
+    }
+  },
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0001_20270917/a000",
+    "scene": "airport_0001_20270917",
+    "index": 1,
+    "time": 20.72599999999939,
+    "failure": {
+      "frame": 415,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 2,
+        "other": 1
+      },
+      "recoverable": false
+    }
+  },
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0003_20270919/a000",
+    "scene": "airport_0003_20270919",
+    "index": 3,
+    "time": 19.677999999999972,
+    "failure": {
+      "frame": 394,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 1,
+        "other": 0
+      },
+      "recoverable": false
+    }
+  },
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0084_20271000/a000",
+    "scene": "airport_0084_20271000",
+    "index": 84,
+    "time": 61.89800000002968,
+    "failure": {
+      "frame": 1238,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 1,
+        "other": 0
+      },
+      "recoverable": false
+    }
+  },
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0085_20271001/a000",
+    "scene": "airport_0085_20271001",
+    "index": 85,
+    "time": 16.990000000001462,
+    "failure": {
+      "frame": 340,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 2,
+        "other": 1
+      },
+      "recoverable": false
+    }
+  },
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0086_20271002/a000",
+    "scene": "airport_0086_20271002",
+    "index": 86,
+    "time": 19.39400000000013,
+    "failure": {
+      "frame": 388,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 1,
+        "other": 0
+      },
+      "recoverable": false
+    }
+  },
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0087_20271003/a000",
+    "scene": "airport_0087_20271003",
+    "index": 87,
+    "time": 19.90199999999985,
+    "failure": {
+      "frame": 399,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 1,
+        "other": 0
+      },
+      "recoverable": false
+    }
+  },
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0168_20271084/a000",
+    "scene": "airport_0168_20271084",
+    "index": 168,
+    "time": 51.99600000001758,
+    "failure": {
+      "frame": 1040,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 1,
+        "other": 0
+      },
+      "recoverable": false
+    }
+  },
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0169_20271085/a000",
+    "scene": "airport_0169_20271085",
+    "index": 169,
+    "time": 28.54399999999506,
+    "failure": {
+      "frame": 571,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 2,
+        "other": 1
+      },
+      "recoverable": false
+    }
+  },
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0170_20271086/a000",
+    "scene": "airport_0170_20271086",
+    "index": 170,
+    "time": 26.027999999996453,
+    "failure": {
+      "frame": 521,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 1,
+        "other": 0
+      },
+      "recoverable": false
+    }
+  },
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0171_20271087/a000",
+    "scene": "airport_0171_20271087",
+    "index": 171,
+    "time": 16.788000000001574,
+    "failure": {
+      "frame": 336,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 1,
+        "other": 0
+      },
+      "recoverable": false
+    }
+  },
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0352_20271268/a000",
+    "scene": "airport_0352_20271268",
+    "index": 352,
+    "time": 59.84800000002718,
+    "failure": {
+      "frame": 1197,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 1,
+        "other": 0
+      },
+      "recoverable": false
+    }
+  },
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0353_20271269/a000",
+    "scene": "airport_0353_20271269",
+    "index": 353,
+    "time": 29.879999999994318,
+    "failure": {
+      "frame": 598,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 2,
+        "other": 1
+      },
+      "recoverable": false
+    }
+  },
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0354_20271270/a000",
+    "scene": "airport_0354_20271270",
+    "index": 354,
+    "time": 19.168000000000255,
+    "failure": {
+      "frame": 384,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 1,
+        "other": 0
+      },
+      "recoverable": false
+    }
+  },
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0355_20271271/a000",
+    "scene": "airport_0355_20271271",
+    "index": 355,
+    "time": 19.528000000000056,
+    "failure": {
+      "frame": 391,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 1,
+        "other": 0
+      },
+      "recoverable": false
+    }
+  },
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0396_20271312/a000",
+    "scene": "airport_0396_20271312",
+    "index": 396,
+    "time": 53.29800000001917,
+    "failure": {
+      "frame": 1066,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 1,
+        "other": 0
+      },
+      "recoverable": false
+    }
+  },
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0397_20271313/a000",
+    "scene": "airport_0397_20271313",
+    "index": 397,
+    "time": 16.718000000001613,
+    "failure": {
+      "frame": 335,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 2,
+        "other": 1
+      },
+      "recoverable": false
+    }
+  },
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0398_20271314/a000",
+    "scene": "airport_0398_20271314",
+    "index": 398,
+    "time": 20.27999999999964,
+    "failure": {
+      "frame": 406,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 1,
+        "other": 0
+      },
+      "recoverable": false
+    }
+  },
+  {
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v30b_20260929/runs/completion_full400/attempts/airport_0399_20271315/a000",
+    "scene": "airport_0399_20271315",
+    "index": 399,
+    "time": 22.573999999998367,
+    "failure": {
+      "frame": 452,
+      "event": "operation_failed",
+      "retry": 0,
+      "reason": "multiple_trays_lifted",
+      "detail": {
+        "intended": 1,
+        "other": 0
+      },
+      "recoverable": false
+    }
+  }
+]

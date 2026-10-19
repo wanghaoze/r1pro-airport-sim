@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "r1pro-airport-sim"
+version = "0.1.0"
+description = "Simulation-only R1 Pro airport tray FSM, recorder and LeRobot export"
+requires-python = ">=3.10,<3.13"
+
+[tool.setuptools.packages.find]
+include = ["r1pro_teleop*"]
+
+[tool.setuptools.package-data]
+r1pro_teleop = ["*.html", "static/*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

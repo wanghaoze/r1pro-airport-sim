@@ -1,0 +1,772 @@
+<mujoco model="R1Pro_Tray_Quest_Simulation">
+  <compiler angle="radian" />
+  <asset>
+    <mesh name="base_link" content_type="model/obj" file="assets/r1_pro/meshes/base_link.obj" />
+    <mesh name="base_link_collision" content_type="model/stl" file="assets/r1_pro/meshes/base_link_collision.STL" />
+    <mesh name="steer_motor_link1" content_type="model/obj" file="assets/r1_pro/meshes/steer_motor_link1.obj" />
+    <mesh name="steer_motor_link1_collision" content_type="model/stl" file="assets/r1_pro/meshes/steer_motor_link1_collision.STL" />
+    <mesh name="wheel_motor_link1" content_type="model/obj" file="assets/r1_pro/meshes/wheel_motor_link1.obj" />
+    <mesh name="wheel_motor_link1_collision" content_type="model/stl" file="assets/r1_pro/meshes/wheel_motor_link1_collision.STL" />
+    <mesh name="steer_motor_link2" content_type="model/obj" file="assets/r1_pro/meshes/steer_motor_link2.obj" />
+    <mesh name="steer_motor_link2_collision" content_type="model/stl" file="assets/r1_pro/meshes/steer_motor_link2_collision.STL" />
+    <mesh name="wheel_motor_link2" content_type="model/obj" file="assets/r1_pro/meshes/wheel_motor_link2.obj" />
+    <mesh name="wheel_motor_link2_collision" content_type="model/stl" file="assets/r1_pro/meshes/wheel_motor_link2_collision.STL" />
+    <mesh name="steer_motor_link3" content_type="model/obj" file="assets/r1_pro/meshes/steer_motor_link3.obj" />
+    <mesh name="steer_motor_link3_collision" content_type="model/stl" file="assets/r1_pro/meshes/steer_motor_link3_collision.STL" />
+    <mesh name="wheel_motor_link3" content_type="model/obj" file="assets/r1_pro/meshes/wheel_motor_link3.obj" />
+    <mesh name="wheel_motor_link3_collision" content_type="model/stl" file="assets/r1_pro/meshes/wheel_motor_link3_collision.STL" />
+    <mesh name="torso_link1" content_type="model/obj" file="assets/r1_pro/meshes/torso_link1.obj" />
+    <mesh name="torso_link1_collision" content_type="model/stl" file="assets/r1_pro/meshes/torso_link1_collision.STL" />
+    <mesh name="torso_link2" content_type="model/obj" file="assets/r1_pro/meshes/torso_link2.obj" />
+    <mesh name="torso_link2_collision" content_type="model/stl" file="assets/r1_pro/meshes/torso_link2_collision.STL" />
+    <mesh name="torso_link3" content_type="model/obj" file="assets/r1_pro/meshes/torso_link3.obj" />
+    <mesh name="torso_link3_collision" content_type="model/stl" file="assets/r1_pro/meshes/torso_link3_collision.STL" />
+    <mesh name="torso_link4" content_type="model/obj" file="assets/r1_pro/meshes/torso_link4.obj" />
+    <mesh name="torso_link4_collision" content_type="model/stl" file="assets/r1_pro/meshes/torso_link4_collision.STL" />
+    <mesh name="zed_link" content_type="model/obj" file="assets/r1_pro/meshes/zed_link.obj" />
+    <mesh name="zed_link_collision" content_type="model/stl" file="assets/r1_pro/meshes/zed_link_collision.STL" />
+    <mesh name="left_arm_base_link" content_type="model/obj" file="assets/r1_pro/meshes/left_arm_base_link.obj" />
+    <mesh name="left_arm_base_link_collision" content_type="model/stl" file="assets/r1_pro/meshes/left_arm_base_link_collision.STL" />
+    <mesh name="left_arm_link1" content_type="model/obj" file="assets/r1_pro/meshes/left_arm_link1.obj" />
+    <mesh name="left_arm_link1_collision" content_type="model/stl" file="assets/r1_pro/meshes/left_arm_link1_collision.STL" />
+    <mesh name="left_arm_link2" content_type="model/obj" file="assets/r1_pro/meshes/left_arm_link2.obj" />
+    <mesh name="left_arm_link2_collision" content_type="model/stl" file="assets/r1_pro/meshes/left_arm_link2_collision.STL" />
+    <mesh name="left_arm_link3" content_type="model/obj" file="assets/r1_pro/meshes/left_arm_link3.obj" />
+    <mesh name="left_arm_link3_collision" content_type="model/stl" file="assets/r1_pro/meshes/left_arm_link3_collision.STL" />
+    <mesh name="left_arm_link4" content_type="model/obj" file="assets/r1_pro/meshes/left_arm_link4.obj" />
+    <mesh name="left_arm_link4_collision" content_type="model/stl" file="assets/r1_pro/meshes/left_arm_link4_collision.STL" />
+    <mesh name="left_arm_link5" content_type="model/obj" file="assets/r1_pro/meshes/left_arm_link5.obj" />
+    <mesh name="left_arm_link5_collision" content_type="model/stl" file="assets/r1_pro/meshes/left_arm_link5_collision.STL" />
+    <mesh name="left_arm_link6" content_type="model/obj" file="assets/r1_pro/meshes/left_arm_link6.obj" />
+    <mesh name="left_arm_link6_collision" content_type="model/stl" file="assets/r1_pro/meshes/left_arm_link6_collision.STL" />
+    <mesh name="left_arm_link7" content_type="model/obj" file="assets/r1_pro/meshes/left_arm_link7.obj" />
+    <mesh name="left_arm_link7_collision" content_type="model/stl" file="assets/r1_pro/meshes/left_arm_link7_collision.STL" />
+    <mesh name="left_gripper_link" content_type="model/obj" file="assets/r1_pro/meshes/left_gripper_link.obj" />
+    <mesh name="left_gripper_link_collision" content_type="model/stl" file="assets/r1_pro/meshes/left_gripper_link_collision.STL" />
+    <mesh name="left_realsense_link" content_type="model/obj" file="assets/r1_pro/meshes/left_realsense_link.obj" />
+    <mesh name="left_realsense_link_collision" content_type="model/stl" file="assets/r1_pro/meshes/left_realsense_link_collision.STL" />
+    <mesh name="left_gripper_finger_link1" content_type="model/obj" file="assets/r1_pro/meshes/left_gripper_finger_link1.obj" />
+    <mesh name="left_gripper_finger_link2" content_type="model/obj" file="assets/r1_pro/meshes/left_gripper_finger_link2.obj" />
+    <mesh name="right_arm_base_link" content_type="model/obj" file="assets/r1_pro/meshes/right_arm_base_link.obj" />
+    <mesh name="right_arm_base_link_collision" content_type="model/stl" file="assets/r1_pro/meshes/right_arm_base_link_collision.STL" />
+    <mesh name="right_arm_link1" content_type="model/obj" file="assets/r1_pro/meshes/right_arm_link1.obj" />
+    <mesh name="right_arm_link1_collision" content_type="model/stl" file="assets/r1_pro/meshes/right_arm_link1_collision.STL" />
+    <mesh name="right_arm_link2" content_type="model/obj" file="assets/r1_pro/meshes/right_arm_link2.obj" />
+    <mesh name="right_arm_link2_collision" content_type="model/stl" file="assets/r1_pro/meshes/right_arm_link2_collision.STL" />
+    <mesh name="right_arm_link3" content_type="model/obj" file="assets/r1_pro/meshes/right_arm_link3.obj" />
+    <mesh name="right_arm_link3_collision" content_type="model/stl" file="assets/r1_pro/meshes/right_arm_link3_collision.STL" />
+    <mesh name="right_arm_link4" content_type="model/obj" file="assets/r1_pro/meshes/right_arm_link4.obj" />
+    <mesh name="right_arm_link4_collision" content_type="model/stl" file="assets/r1_pro/meshes/right_arm_link4_collision.STL" />
+    <mesh name="right_arm_link5" content_type="model/obj" file="assets/r1_pro/meshes/right_arm_link5.obj" />
+    <mesh name="right_arm_link5_collision" content_type="model/stl" file="assets/r1_pro/meshes/right_arm_link5_collision.STL" />
+    <mesh name="right_arm_link6" content_type="model/obj" file="assets/r1_pro/meshes/right_arm_link6.obj" />
+    <mesh name="right_arm_link6_collision" content_type="model/stl" file="assets/r1_pro/meshes/right_arm_link6_collision.STL" />
+    <mesh name="right_arm_link7" content_type="model/obj" file="assets/r1_pro/meshes/right_arm_link7.obj" />
+    <mesh name="right_arm_link7_collision" content_type="model/stl" file="assets/r1_pro/meshes/right_arm_link7_collision.STL" />
+    <mesh name="right_gripper_link" content_type="model/obj" file="assets/r1_pro/meshes/right_gripper_link.obj" />
+    <mesh name="right_gripper_link_collision" content_type="model/stl" file="assets/r1_pro/meshes/right_gripper_link_collision.STL" />
+    <mesh name="right_realsense_link" content_type="model/obj" file="assets/r1_pro/meshes/right_realsense_link.obj" />
+    <mesh name="right_realsense_link_collision" content_type="model/stl" file="assets/r1_pro/meshes/right_realsense_link_collision.STL" />
+    <mesh name="right_gripper_finger_link1" content_type="model/obj" file="assets/r1_pro/meshes/right_gripper_finger_link1.obj" />
+    <mesh name="right_gripper_finger_link2" content_type="model/obj" file="assets/r1_pro/meshes/right_gripper_finger_link2.obj" />
+    <mesh name="table_0" file="assets/table/table_0.obj" />
+    <mesh name="table_1" file="assets/table/table_1.obj" />
+    <mesh name="table_2" file="assets/table/table_2.obj" />
+    <mesh name="table_3" file="assets/table/table_3.obj" />
+    <mesh name="table_4" file="assets/table/table_4.obj" />
+    <mesh name="tray_0" file="assets/tray/tray_0.obj" />
+    <mesh name="tray_1" file="assets/tray/tray_1.obj" />
+    <mesh name="table_collision_v2_000" file="assets/collision/table_collision_v2_000.obj" />
+    <mesh name="table_collision_v2_001" file="assets/collision/table_collision_v2_001.obj" />
+    <mesh name="table_collision_v2_002" file="assets/collision/table_collision_v2_002.obj" />
+    <mesh name="table_collision_v2_003" file="assets/collision/table_collision_v2_003.obj" />
+    <mesh name="table_collision_v2_004" file="assets/collision/table_collision_v2_004.obj" />
+    <mesh name="table_collision_v2_005" file="assets/collision/table_collision_v2_005.obj" />
+    <mesh name="table_collision_v2_006" file="assets/collision/table_collision_v2_006.obj" />
+    <mesh name="table_collision_v2_007" file="assets/collision/table_collision_v2_007.obj" />
+    <mesh name="table_collision_v2_008" file="assets/collision/table_collision_v2_008.obj" />
+    <mesh name="table_collision_v2_009" file="assets/collision/table_collision_v2_009.obj" />
+    <mesh name="table_collision_v2_010" file="assets/collision/table_collision_v2_010.obj" />
+    <mesh name="table_collision_v2_011" file="assets/collision/table_collision_v2_011.obj" />
+    <mesh name="table_collision_v2_012" file="assets/collision/table_collision_v2_012.obj" />
+    <mesh name="table_collision_v2_013" file="assets/collision/table_collision_v2_013.obj" />
+    <mesh name="table_collision_v2_014" file="assets/collision/table_collision_v2_014.obj" />
+    <mesh name="table_collision_v2_015" file="assets/collision/table_collision_v2_015.obj" />
+    <mesh name="table_collision_v2_016" file="assets/collision/table_collision_v2_016.obj" />
+    <mesh name="table_collision_v2_017" file="assets/collision/table_collision_v2_017.obj" />
+    <mesh name="table_collision_v2_018" file="assets/collision/table_collision_v2_018.obj" />
+    <mesh name="table_collision_v2_019" file="assets/collision/table_collision_v2_019.obj" />
+    <mesh name="table_collision_v2_020" file="assets/collision/table_collision_v2_020.obj" />
+    <mesh name="table_collision_v2_021" file="assets/collision/table_collision_v2_021.obj" />
+    <mesh name="table_collision_v2_022" file="assets/collision/table_collision_v2_022.obj" />
+    <mesh name="table_collision_v2_023" file="assets/collision/table_collision_v2_023.obj" />
+    <mesh name="table_collision_v2_024" file="assets/collision/table_collision_v2_024.obj" />
+    <mesh name="table_collision_v2_025" file="assets/collision/table_collision_v2_025.obj" />
+    <mesh name="table_collision_v2_026" file="assets/collision/table_collision_v2_026.obj" />
+    <mesh name="table_collision_v2_027" file="assets/collision/table_collision_v2_027.obj" />
+    <mesh name="table_collision_v2_028" file="assets/collision/table_collision_v2_028.obj" />
+    <mesh name="table_collision_v2_029" file="assets/collision/table_collision_v2_029.obj" />
+    <mesh name="table_collision_v2_030" file="assets/collision/table_collision_v2_030.obj" />
+    <mesh name="table_collision_v2_031" file="assets/collision/table_collision_v2_031.obj" />
+    <mesh name="table_collision_v2_032" file="assets/collision/table_collision_v2_032.obj" />
+    <mesh name="table_collision_v2_033" file="assets/collision/table_collision_v2_033.obj" />
+    <mesh name="table_collision_v2_034" file="assets/collision/table_collision_v2_034.obj" />
+    <mesh name="table_collision_v2_035" file="assets/collision/table_collision_v2_035.obj" />
+    <mesh name="table_collision_v2_036" file="assets/collision/table_collision_v2_036.obj" />
+    <mesh name="table_collision_v2_037" file="assets/collision/table_collision_v2_037.obj" />
+    <mesh name="table_collision_v2_038" file="assets/collision/table_collision_v2_038.obj" />
+    <mesh name="table_collision_v2_039" file="assets/collision/table_collision_v2_039.obj" />
+    <mesh name="table_collision_v2_040" file="assets/collision/table_collision_v2_040.obj" />
+    <mesh name="table_collision_v2_041" file="assets/collision/table_collision_v2_041.obj" />
+    <mesh name="table_collision_v2_042" file="assets/collision/table_collision_v2_042.obj" />
+    <mesh name="table_collision_v2_043" file="assets/collision/table_collision_v2_043.obj" />
+    <mesh name="table_collision_v2_044" file="assets/collision/table_collision_v2_044.obj" />
+    <mesh name="table_collision_v2_045" file="assets/collision/table_collision_v2_045.obj" />
+    <mesh name="table_collision_v2_046" file="assets/collision/table_collision_v2_046.obj" />
+    <mesh name="table_collision_v2_047" file="assets/collision/table_collision_v2_047.obj" />
+    <mesh name="table_collision_v2_048" file="assets/collision/table_collision_v2_048.obj" />
+    <mesh name="table_collision_v2_049" file="assets/collision/table_collision_v2_049.obj" />
+    <mesh name="table_collision_v2_050" file="assets/collision/table_collision_v2_050.obj" />
+    <mesh name="table_collision_v2_051" file="assets/collision/table_collision_v2_051.obj" />
+    <mesh name="table_collision_v2_052" file="assets/collision/table_collision_v2_052.obj" />
+    <mesh name="table_collision_v2_053" file="assets/collision/table_collision_v2_053.obj" />
+    <mesh name="table_collision_v2_054" file="assets/collision/table_collision_v2_054.obj" />
+    <mesh name="table_collision_v2_055" file="assets/collision/table_collision_v2_055.obj" />
+    <mesh name="table_collision_v2_056" file="assets/collision/table_collision_v2_056.obj" />
+    <mesh name="table_collision_v2_057" file="assets/collision/table_collision_v2_057.obj" />
+    <mesh name="table_collision_v2_058" file="assets/collision/table_collision_v2_058.obj" />
+    <mesh name="table_collision_v2_059" file="assets/collision/table_collision_v2_059.obj" />
+    <mesh name="table_collision_v2_060" file="assets/collision/table_collision_v2_060.obj" />
+    <mesh name="table_collision_v2_061" file="assets/collision/table_collision_v2_061.obj" />
+    <mesh name="table_collision_v2_062" file="assets/collision/table_collision_v2_062.obj" />
+    <mesh name="table_collision_v2_063" file="assets/collision/table_collision_v2_063.obj" />
+    <mesh name="table_collision_v2_064" file="assets/collision/table_collision_v2_064.obj" />
+    <mesh name="table_collision_v2_065" file="assets/collision/table_collision_v2_065.obj" />
+    <mesh name="table_collision_v2_066" file="assets/collision/table_collision_v2_066.obj" />
+    <mesh name="table_collision_v2_067" file="assets/collision/table_collision_v2_067.obj" />
+    <mesh name="table_collision_v2_068" file="assets/collision/table_collision_v2_068.obj" />
+    <mesh name="table_collision_v2_069" file="assets/collision/table_collision_v2_069.obj" />
+    <mesh name="table_collision_v2_070" file="assets/collision/table_collision_v2_070.obj" />
+    <mesh name="table_collision_v2_071" file="assets/collision/table_collision_v2_071.obj" />
+    <mesh name="table_collision_v2_072" file="assets/collision/table_collision_v2_072.obj" />
+    <mesh name="table_collision_v2_073" file="assets/collision/table_collision_v2_073.obj" />
+    <mesh name="table_collision_v2_074" file="assets/collision/table_collision_v2_074.obj" />
+    <mesh name="table_collision_v2_075" file="assets/collision/table_collision_v2_075.obj" />
+    <mesh name="table_collision_v2_076" file="assets/collision/table_collision_v2_076.obj" />
+    <mesh name="table_collision_v2_077" file="assets/collision/table_collision_v2_077.obj" />
+    <mesh name="table_collision_v2_078" file="assets/collision/table_collision_v2_078.obj" />
+    <mesh name="table_collision_v2_079" file="assets/collision/table_collision_v2_079.obj" />
+    <mesh name="table_collision_v2_080" file="assets/collision/table_collision_v2_080.obj" />
+    <mesh name="table_collision_v2_081" file="assets/collision/table_collision_v2_081.obj" />
+    <mesh name="table_collision_v2_082" file="assets/collision/table_collision_v2_082.obj" />
+    <mesh name="table_collision_v2_083" file="assets/collision/table_collision_v2_083.obj" />
+    <mesh name="table_collision_v2_084" file="assets/collision/table_collision_v2_084.obj" />
+    <mesh name="table_collision_v2_085" file="assets/collision/table_collision_v2_085.obj" />
+    <mesh name="table_collision_v2_086" file="assets/collision/table_collision_v2_086.obj" />
+    <mesh name="table_collision_v2_087" file="assets/collision/table_collision_v2_087.obj" />
+    <mesh name="table_collision_v2_088" file="assets/collision/table_collision_v2_088.obj" />
+    <mesh name="table_collision_v2_089" file="assets/collision/table_collision_v2_089.obj" />
+    <mesh name="table_collision_v2_090" file="assets/collision/table_collision_v2_090.obj" />
+    <mesh name="table_collision_v2_091" file="assets/collision/table_collision_v2_091.obj" />
+    <mesh name="table_collision_v2_092" file="assets/collision/table_collision_v2_092.obj" />
+    <mesh name="table_collision_v2_093" file="assets/collision/table_collision_v2_093.obj" />
+    <mesh name="table_collision_v2_094" file="assets/collision/table_collision_v2_094.obj" />
+    <mesh name="table_collision_v2_095" file="assets/collision/table_collision_v2_095.obj" />
+    <mesh name="table_collision_v2_096" file="assets/collision/table_collision_v2_096.obj" />
+    <mesh name="table_collision_v2_097" file="assets/collision/table_collision_v2_097.obj" />
+    <mesh name="table_collision_v2_098" file="assets/collision/table_collision_v2_098.obj" />
+    <mesh name="table_collision_v2_099" file="assets/collision/table_collision_v2_099.obj" />
+    <mesh name="table_collision_v2_100" file="assets/collision/table_collision_v2_100.obj" />
+    <mesh name="table_collision_v2_101" file="assets/collision/table_collision_v2_101.obj" />
+    <mesh name="table_collision_v2_102" file="assets/collision/table_collision_v2_102.obj" />
+    <mesh name="table_collision_v2_103" file="assets/collision/table_collision_v2_103.obj" />
+    <mesh name="table_collision_v2_104" file="assets/collision/table_collision_v2_104.obj" />
+    <mesh name="table_collision_v2_105" file="assets/collision/table_collision_v2_105.obj" />
+    <mesh name="table_collision_v2_106" file="assets/collision/table_collision_v2_106.obj" />
+    <mesh name="table_collision_v2_107" file="assets/collision/table_collision_v2_107.obj" />
+    <mesh name="table_collision_v2_108" file="assets/collision/table_collision_v2_108.obj" />
+    <mesh name="table_collision_v2_109" file="assets/collision/table_collision_v2_109.obj" />
+    <mesh name="table_collision_v2_110" file="assets/collision/table_collision_v2_110.obj" />
+    <mesh name="table_collision_v2_111" file="assets/collision/table_collision_v2_111.obj" />
+    <mesh name="table_collision_v2_112" file="assets/collision/table_collision_v2_112.obj" />
+    <mesh name="table_collision_v2_113" file="assets/collision/table_collision_v2_113.obj" />
+    <mesh name="table_collision_v2_114" file="assets/collision/table_collision_v2_114.obj" />
+    <mesh name="table_collision_v2_115" file="assets/collision/table_collision_v2_115.obj" />
+    <mesh name="table_collision_v2_116" file="assets/collision/table_collision_v2_116.obj" />
+    <mesh name="table_collision_v2_117" file="assets/collision/table_collision_v2_117.obj" />
+    <mesh name="table_collision_v2_118" file="assets/collision/table_collision_v2_118.obj" />
+    <mesh name="table_collision_v2_119" file="assets/collision/table_collision_v2_119.obj" />
+    <mesh name="table_collision_v2_120" file="assets/collision/table_collision_v2_120.obj" />
+    <mesh name="table_collision_v2_121" file="assets/collision/table_collision_v2_121.obj" />
+    <mesh name="table_collision_v2_122" file="assets/collision/table_collision_v2_122.obj" />
+    <mesh name="table_collision_v2_123" file="assets/collision/table_collision_v2_123.obj" />
+    <mesh name="table_collision_v2_124" file="assets/collision/table_collision_v2_124.obj" />
+    <mesh name="table_collision_v2_125" file="assets/collision/table_collision_v2_125.obj" />
+    <mesh name="table_collision_v2_126" file="assets/collision/table_collision_v2_126.obj" />
+    <mesh name="table_collision_v2_127" file="assets/collision/table_collision_v2_127.obj" />
+    <mesh name="table_collision_v2_128" file="assets/collision/table_collision_v2_128.obj" />
+    <mesh name="table_collision_v2_129" file="assets/collision/table_collision_v2_129.obj" />
+    <mesh name="table_collision_v2_130" file="assets/collision/table_collision_v2_130.obj" />
+    <mesh name="table_collision_v2_131" file="assets/collision/table_collision_v2_131.obj" />
+    <mesh name="table_collision_v2_132" file="assets/collision/table_collision_v2_132.obj" />
+    <mesh name="table_collision_v2_133" file="assets/collision/table_collision_v2_133.obj" />
+    <mesh name="table_collision_v2_134" file="assets/collision/table_collision_v2_134.obj" />
+    <mesh name="table_collision_v2_135" file="assets/collision/table_collision_v2_135.obj" />
+    <mesh name="table_collision_v2_136" file="assets/collision/table_collision_v2_136.obj" />
+    <mesh name="table_collision_v2_137" file="assets/collision/table_collision_v2_137.obj" />
+    <mesh name="table_collision_v2_138" file="assets/collision/table_collision_v2_138.obj" />
+    <mesh name="table_collision_v2_139" file="assets/collision/table_collision_v2_139.obj" />
+    <mesh name="table_collision_v2_140" file="assets/collision/table_collision_v2_140.obj" />
+    <mesh name="table_collision_v2_141" file="assets/collision/table_collision_v2_141.obj" />
+    <mesh name="table_collision_v2_142" file="assets/collision/table_collision_v2_142.obj" />
+    <mesh name="table_collision_v2_143" file="assets/collision/table_collision_v2_143.obj" />
+    <mesh name="table_collision_v2_144" file="assets/collision/table_collision_v2_144.obj" />
+    <mesh name="table_collision_v2_145" file="assets/collision/table_collision_v2_145.obj" />
+    <mesh name="table_collision_v2_146" file="assets/collision/table_collision_v2_146.obj" />
+    <mesh name="table_collision_v2_147" file="assets/collision/table_collision_v2_147.obj" />
+    <mesh name="table_collision_v2_148" file="assets/collision/table_collision_v2_148.obj" />
+    <mesh name="table_collision_v2_149" file="assets/collision/table_collision_v2_149.obj" />
+    <mesh name="table_collision_v2_150" file="assets/collision/table_collision_v2_150.obj" />
+    <mesh name="table_collision_v2_151" file="assets/collision/table_collision_v2_151.obj" />
+    <mesh name="table_collision_v2_152" file="assets/collision/table_collision_v2_152.obj" />
+    <mesh name="table_collision_v2_153" file="assets/collision/table_collision_v2_153.obj" />
+    <mesh name="table_collision_v2_154" file="assets/collision/table_collision_v2_154.obj" />
+    <mesh name="table_collision_v2_155" file="assets/collision/table_collision_v2_155.obj" />
+    <mesh name="table_collision_v2_156" file="assets/collision/table_collision_v2_156.obj" />
+    <mesh name="table_collision_v2_157" file="assets/collision/table_collision_v2_157.obj" />
+    <mesh name="table_collision_v2_158" file="assets/collision/table_collision_v2_158.obj" />
+    <mesh name="table_collision_v2_159" file="assets/collision/table_collision_v2_159.obj" />
+    <mesh name="table_collision_v2_160" file="assets/collision/table_collision_v2_160.obj" />
+    <mesh name="table_collision_v2_161" file="assets/collision/table_collision_v2_161.obj" />
+    <mesh name="table_collision_v2_162" file="assets/collision/table_collision_v2_162.obj" />
+    <mesh name="table_collision_v2_163" file="assets/collision/table_collision_v2_163.obj" />
+    <mesh name="table_collision_v2_164" file="assets/collision/table_collision_v2_164.obj" />
+    <mesh name="table_collision_v2_165" file="assets/collision/table_collision_v2_165.obj" />
+    <mesh name="table_collision_v2_166" file="assets/collision/table_collision_v2_166.obj" />
+    <mesh name="table_collision_v2_167" file="assets/collision/table_collision_v2_167.obj" />
+    <mesh name="table_collision_v2_168" file="assets/collision/table_collision_v2_168.obj" />
+    <mesh name="table_collision_v2_169" file="assets/collision/table_collision_v2_169.obj" />
+    <mesh name="table_collision_v2_170" file="assets/collision/table_collision_v2_170.obj" />
+    <mesh name="table_collision_v2_171" file="assets/collision/table_collision_v2_171.obj" />
+    <mesh name="table_collision_v2_172" file="assets/collision/table_collision_v2_172.obj" />
+    <mesh name="table_collision_v2_173" file="assets/collision/table_collision_v2_173.obj" />
+    <mesh name="table_collision_v2_174" file="assets/collision/table_collision_v2_174.obj" />
+    <mesh name="table_collision_v2_175" file="assets/collision/table_collision_v2_175.obj" />
+    <mesh name="table_collision_v2_176" file="assets/collision/table_collision_v2_176.obj" />
+    <mesh name="table_collision_v2_177" file="assets/collision/table_collision_v2_177.obj" />
+    <mesh name="table_collision_v2_178" file="assets/collision/table_collision_v2_178.obj" />
+    <mesh name="table_collision_v2_179" file="assets/collision/table_collision_v2_179.obj" />
+    <mesh name="table_collision_v2_180" file="assets/collision/table_collision_v2_180.obj" />
+    <mesh name="table_collision_v2_181" file="assets/collision/table_collision_v2_181.obj" />
+    <mesh name="table_collision_v2_182" file="assets/collision/table_collision_v2_182.obj" />
+    <mesh name="table_collision_v2_183" file="assets/collision/table_collision_v2_183.obj" />
+    <mesh name="table_collision_v2_184" file="assets/collision/table_collision_v2_184.obj" />
+    <mesh name="table_collision_v2_185" file="assets/collision/table_collision_v2_185.obj" />
+    <mesh name="table_collision_v2_186" file="assets/collision/table_collision_v2_186.obj" />
+    <mesh name="table_collision_v2_187" file="assets/collision/table_collision_v2_187.obj" />
+    <mesh name="table_collision_v2_188" file="assets/collision/table_collision_v2_188.obj" />
+    <mesh name="table_collision_v2_189" file="assets/collision/table_collision_v2_189.obj" />
+    <mesh name="table_collision_v2_190" file="assets/collision/table_collision_v2_190.obj" />
+    <mesh name="table_collision_v2_191" file="assets/collision/table_collision_v2_191.obj" />
+    <mesh name="table_collision_v2_192" file="assets/collision/table_collision_v2_192.obj" />
+    <mesh name="table_collision_v2_193" file="assets/collision/table_collision_v2_193.obj" />
+    <mesh name="table_collision_v2_194" file="assets/collision/table_collision_v2_194.obj" />
+    <mesh name="table_collision_v2_195" file="assets/collision/table_collision_v2_195.obj" />
+    <mesh name="table_collision_v2_196" file="assets/collision/table_collision_v2_196.obj" />
+    <mesh name="table_collision_v2_197" file="assets/collision/table_collision_v2_197.obj" />
+    <mesh name="table_collision_v2_198" file="assets/collision/table_collision_v2_198.obj" />
+    <mesh name="table_collision_v2_199" file="assets/collision/table_collision_v2_199.obj" />
+    <mesh name="table_collision_v2_200" file="assets/collision/table_collision_v2_200.obj" />
+    <mesh name="table_collision_v2_201" file="assets/collision/table_collision_v2_201.obj" />
+    <mesh name="table_collision_v2_202" file="assets/collision/table_collision_v2_202.obj" />
+    <mesh name="table_collision_v2_203" file="assets/collision/table_collision_v2_203.obj" />
+    <mesh name="tray_contact_000" file="assets/collision/tray_contact_000.obj" />
+    <mesh name="tray_contact_001" file="assets/collision/tray_contact_001.obj" />
+    <mesh name="tray_contact_002" file="assets/collision/tray_contact_002.obj" />
+    <mesh name="tray_contact_003" file="assets/collision/tray_contact_003.obj" />
+    <mesh name="tray_contact_004" file="assets/collision/tray_contact_004.obj" />
+    <mesh name="tray_contact_005" file="assets/collision/tray_contact_005.obj" />
+    <mesh name="tray_contact_006" file="assets/collision/tray_contact_006.obj" />
+    <mesh name="tray_contact_007" file="assets/collision/tray_contact_007.obj" />
+    <mesh name="tray_contact_008" file="assets/collision/tray_contact_008.obj" />
+    <mesh name="tray_contact_009" file="assets/collision/tray_contact_009.obj" />
+    <mesh name="tray_contact_010" file="assets/collision/tray_contact_010.obj" />
+    <mesh name="tray_contact_011" file="assets/collision/tray_contact_011.obj" />
+    <mesh name="tray_contact_012" file="assets/collision/tray_contact_012.obj" />
+    <mesh name="tray_contact_013" file="assets/collision/tray_contact_013.obj" />
+    <mesh name="tray_contact_014" file="assets/collision/tray_contact_014.obj" />
+    <mesh name="tray_contact_015" file="assets/collision/tray_contact_015.obj" />
+    <mesh name="tray_contact_016" file="assets/collision/tray_contact_016.obj" />
+  </asset>
+  <worldbody>
+    <body name="base_link" pos="0.5 0 0">
+      <inertial pos="-0.049262 -8.8054e-05 0.18255" quat="0.510573 0.510522 -0.489248 0.489203" mass="47.63" diaginertia="2.83729 1.57891 1.4648" />
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="base_link" name="robot_geom_0" rgba="0.72 0.75 0.78 1" />
+      <geom type="mesh" mesh="base_link_collision" name="robot_geom_1" group="3" />
+      <body name="steer_motor_link1" pos="0.16897 0.28 0.15765">
+        <inertial pos="7.7174e-06 -0.004623 -0.049428" quat="0.707095 -0.000176703 0.000138216 0.707118" mass="1.5" diaginertia="0.00032908 0.00022164 0.00015872" />
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="steer_motor_link1" name="robot_geom_2" rgba="0.72 0.75 0.78 1" />
+        <geom type="mesh" mesh="steer_motor_link1_collision" name="robot_geom_3" group="3" />
+        <body name="wheel_motor_link1" pos="0 0 -0.08765">
+          <inertial pos="1.6481e-10 -1.6203e-10 -9.455e-10" quat="0.270598 0.653281 0.653281 0.270598" mass="1.5" diaginertia="0.0020893 0.00126281 0.00126279" />
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="wheel_motor_link1" name="robot_geom_4" rgba="0.72 0.75 0.78 1" />
+          <geom type="mesh" mesh="wheel_motor_link1_collision" name="robot_geom_5" group="3" />
+        </body>
+      </body>
+      <body name="steer_motor_link2" pos="0.16897 -0.28 0.15765">
+        <inertial pos="6.044e-06 0.00010023 -0.052223" quat="0.707092 -0.000520429 0.00047447 0.707122" mass="1.5" diaginertia="0.00037037 0.0002535 0.000163" />
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="steer_motor_link2" name="robot_geom_6" rgba="0.72 0.75 0.78 1" />
+        <geom type="mesh" mesh="steer_motor_link2_collision" name="robot_geom_7" group="3" />
+        <body name="wheel_motor_link2" pos="0 0 -0.08765">
+          <inertial pos="1.6448e-10 -1.616e-10 -9.4549e-10" quat="0.270598 0.653281 0.653281 0.270598" mass="1.5" diaginertia="0.0020893 0.00126281 0.00126279" />
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="wheel_motor_link2" name="robot_geom_8" rgba="0.72 0.75 0.78 1" />
+          <geom type="mesh" mesh="wheel_motor_link2_collision" name="robot_geom_9" group="3" />
+        </body>
+      </body>
+      <body name="steer_motor_link3" pos="-0.32703 0 0.15765">
+        <inertial pos="-6.029e-06 -0.00010167 -0.052221" quat="0.707092 0.000512639 -0.000484659 0.707121" mass="1.5" diaginertia="0.00037036 0.0002535 0.000163" />
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="steer_motor_link3" name="robot_geom_10" rgba="0.72 0.75 0.78 1" />
+        <geom type="mesh" mesh="steer_motor_link3_collision" name="robot_geom_11" group="3" />
+        <body name="wheel_motor_link3" pos="0 0 -0.08765">
+          <inertial pos="-2.443e-09 1.4779e-12 5.1754e-12" quat="0.270598 0.653281 0.653281 0.270598" mass="1.5" diaginertia="0.0020893 0.00126281 0.00126279" />
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="wheel_motor_link3" name="robot_geom_12" rgba="0.72 0.75 0.78 1" />
+          <geom type="mesh" mesh="wheel_motor_link3_collision" name="robot_geom_13" group="3" />
+        </body>
+      </body>
+      <body name="torso_link1" pos="-0.079032 0 0.34265">
+        <inertial pos="0.00065636 0.0032244 0.23142" quat="0.999998 0.000695924 0.000862045 0.00193552" mass="5.72" diaginertia="0.10931 0.10736 0.00812171" />
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="torso_link1" name="robot_geom_14" rgba="0.72 0.75 0.78 1" />
+        <geom type="mesh" mesh="torso_link1_collision" name="robot_geom_15" group="3" />
+        <body name="torso_link2" pos="0 0 0.4">
+          <inertial pos="0.0052517 0.014411 0.15711" quat="0.707019 -0.00357502 -0.00358594 0.707176" mass="3.5" diaginertia="0.027574 0.0260835 0.00184901" />
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="torso_link2" name="robot_geom_16" rgba="0.72 0.75 0.78 1" />
+          <geom type="mesh" mesh="torso_link2_collision" name="robot_geom_17" group="3" />
+          <body name="torso_link3" pos="0 0.0001005 0.3">
+            <inertial pos="-9.8337e-07 -0.0055146 0.020182" quat="0.493716 0.506467 0.494804 0.504882" mass="3.4" diaginertia="0.00230141 0.00170239 0.0016099" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="torso_link3" name="robot_geom_18" rgba="0.72 0.75 0.78 1" />
+            <geom type="mesh" mesh="torso_link3_collision" name="robot_geom_19" group="3" />
+            <body name="torso_link4" pos="0 -0.00010015 0.09962">
+              <inertial pos="0.0049601 -1.2497e-05 0.21237" quat="0.707074 0.707015 0.00972211 -0.00905438" mass="5" diaginertia="0.0268398 0.0215373 0.013023" />
+              <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="torso_link4" name="robot_geom_20" rgba="0.72 0.75 0.78 1" />
+              <geom type="mesh" mesh="torso_link4_collision" name="robot_geom_21" group="3" />
+              <body name="zed_link" pos="0.065511 0.060003 0.47598" quat="0.405568 -0.579235 0.579237 -0.40557">
+                <inertial pos="0.060004 0.015906 -0.068413" quat="0.469413 0.528842 0.469389 0.528821" mass="2.05" diaginertia="0.0146526 0.0121944 0.010375" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="zed_link" name="robot_geom_22" rgba="0.72 0.75 0.78 1" />
+                <geom type="mesh" mesh="zed_link_collision" name="robot_geom_23" group="3" />
+              </body>
+              <body name="left_arm_base_link" pos="-0.00048618 0.097234 0.30302">
+                <inertial pos="0.00026981 0.034587 1.3734e-08" quat="0.711959 0.00449571 0.00444422 0.702193" mass="1.48" diaginertia="0.00140767 0.00102973 0.0010201" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="left_arm_base_link" name="robot_geom_24" rgba="0.72 0.75 0.78 1" />
+                <geom type="mesh" mesh="left_arm_base_link_collision" name="robot_geom_25" group="3" />
+                <body name="left_arm_link1" pos="0 0.0735 0" gravcomp="1">
+                  <inertial pos="0.00042258 0.074131 7.9156e-05" quat="0.705776 0.708428 0.000383566 -0.00300782" mass="1.135" diaginertia="0.000616038 0.000471359 0.000302583" />
+                  <joint name="left_arm_joint1" range="-4.4506 1.309" actuatorfrcrange="-55 55" axis="0 1 0" damping="2" armature="0.02" />
+                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="left_arm_link1" name="robot_geom_26" rgba="0.72 0.75 0.78 1" />
+                  <geom type="mesh" mesh="left_arm_link1_collision" name="robot_geom_27" group="3" />
+                  <body name="left_arm_link2" pos="0.025012 0.081265 0" gravcomp="1">
+                    <inertial pos="-0.026826 -0.0040392 -0.031835" quat="0.967826 0.24999 -0.0279104 0.00629583" mass="0.92" diaginertia="0.000373948 0.000345466 0.000316696" />
+                    <joint name="left_arm_joint2" range="-0.1745 3.1416" actuatorfrcrange="-55 55" axis="1 0 0" damping="2" armature="0.02" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="left_arm_link2" name="robot_geom_28" rgba="0.72 0.75 0.78 1" />
+                    <geom type="mesh" mesh="left_arm_link2_collision" name="robot_geom_29" group="3" />
+                    <body name="left_arm_link3" pos="-0.025012 0 -0.1155" gravcomp="1">
+                      <inertial pos="0.0053849 -0.00086892 -0.1126" quat="0.987419 -0.0126124 0.157363 -0.00905809" mass="1.245" diaginertia="0.000765373 0.000738745 0.000331352" />
+                      <joint name="left_arm_joint3" range="-2.3562 2.3562" actuatorfrcrange="-25 25" damping="2" armature="0.02" />
+                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="left_arm_link3" name="robot_geom_30" rgba="0.72 0.75 0.78 1" />
+                      <geom type="mesh" mesh="left_arm_link3_collision" name="robot_geom_31" group="3" />
+                      <body name="left_arm_link4" pos="0 0.035065 -0.1945" gravcomp="1">
+                        <inertial pos="-0.0011018 -0.036243 -0.042164" quat="0.70731 -0.0289938 -0.0395261 0.705202" mass="0.827" diaginertia="0.000197532 0.000139189 0.000101919" />
+                        <joint name="left_arm_joint4" range="-1.7453 0.3491" actuatorfrcrange="-25 25" axis="0 1 0" damping="2" armature="0.02" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="left_arm_link4" name="robot_geom_32" rgba="0.72 0.75 0.78 1" />
+                        <geom type="mesh" mesh="left_arm_link4_collision" name="robot_geom_33" group="3" />
+                        <body name="left_arm_link5" pos="0 -0.035065 -0.095" gravcomp="1">
+                          <inertial pos="3.7881e-07 -0.0028035 -0.062981" quat="0.997254 -0.074061 2.09046e-05 0.000268168" mass="0.939" diaginertia="0.00070496 0.000677819 0.000322221" />
+                          <joint name="left_arm_joint5" range="-2.3562 2.3562" actuatorfrcrange="-18 18" damping="2" armature="0.02" />
+                          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="left_arm_link5" name="robot_geom_34" rgba="0.72 0.75 0.78 1" />
+                          <geom type="mesh" mesh="left_arm_link5_collision" name="robot_geom_35" group="3" />
+                          <body name="left_arm_link6" pos="0 -0.028 -0.16305" gravcomp="1">
+                            <inertial pos="0.0017919 0.027487 0.00025471" quat="0.704102 0.696344 -0.110248 0.0847966" mass="0.527" diaginertia="8.56857e-05 8.24979e-05 8.11804e-05" />
+                            <joint name="left_arm_joint6" range="-1.0472 1.0472" actuatorfrcrange="-18 18" axis="0 1 0" damping="2" armature="0.02" />
+                            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="left_arm_link6" name="robot_geom_36" rgba="0.72 0.75 0.78 1" />
+                            <geom type="mesh" mesh="left_arm_link6_collision" name="robot_geom_37" group="3" />
+                            <body name="left_arm_link7" pos="0.0295 0.028 0" gravcomp="1">
+                              <inertial pos="-0.022945 8.4007e-07 -0.056525" quat="-0.000110547 0.466398 0.000152804 0.884575" mass="0.185" diaginertia="5.26955e-05 4.5515e-05 3.78145e-05" />
+                              <joint name="left_arm_joint7" range="-1.5708 1.5708" actuatorfrcrange="-18 18" axis="1 0 0" damping="2" armature="0.02" />
+                              <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="left_arm_link7" name="robot_geom_38" rgba="0.72 0.75 0.78 1" />
+                              <geom type="mesh" mesh="left_arm_link7_collision" name="robot_geom_39" group="3" />
+                              <body name="left_gripper_link" pos="-0.0295 0 -0.16065">
+                                <inertial pos="-2.2589e-07 -5.2175e-08 0.031107" quat="0.496414 0.503584 -0.496391 0.503559" mass="0.24625" diaginertia="0.00017588 0.000165124 9.86373e-05" />
+                                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="left_gripper_link" name="robot_geom_40" rgba="0.72 0.75 0.78 1" />
+                                <geom type="mesh" mesh="left_gripper_link_collision" name="robot_geom_41" group="3" />
+                                <body name="left_realsense_link" pos="0.05051 0.0028934 0.0051317" quat="0.21643 -0.000394204 -0.976296 0.00176584">
+                                  <inertial pos="0.0058264 -0.02222 -0.017353" quat="0.409426 0.336138 -0.652716 0.541612" mass="0.042603" diaginertia="2.62084e-05 2.31251e-05 6.42539e-06" />
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="left_realsense_link" name="robot_geom_42" rgba="0.72 0.75 0.78 1" />
+                                  <geom type="mesh" mesh="left_realsense_link_collision" name="robot_geom_43" group="3" />
+                                </body>
+                                <body name="left_gripper_finger_link1" pos="-8.8709e-05 0.013453 -0.03689">
+                                  <inertial pos="0.0056571 -0.015027 0.01959" quat="0.996815 -0.0588415 0.00751429 0.0532934" mass="0.020196" diaginertia="6.4915e-06 5.75204e-06 2.35776e-06" />
+                                  <joint name="left_gripper_finger_joint1" type="slide" range="0.002 0.05" actuatorfrcrange="-100 100" axis="-0.0077873 0.99997 0" damping="10" armature="0.005" />
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="left_gripper_finger_link1" name="robot_geom_44" rgba="0.72 0.75 0.78 1" />
+                                  <geom size="0.03 0.005 0.02" pos="0 -0.01 0" type="box" name="robot_geom_45" group="3" friction="1.2 0.005 0.0001" condim="4" />
+                                </body>
+                                <body name="left_gripper_finger_link2" pos="8.9046e-05 -0.013453 -0.03689">
+                                  <inertial pos="-0.0056573 0.015027 0.01959" quat="0.996815 0.0588425 -0.00751885 0.0532936" mass="0.020196" diaginertia="6.4915e-06 5.75204e-06 2.35776e-06" />
+                                  <joint name="left_gripper_finger_joint2" type="slide" range="0.002 0.05" actuatorfrcrange="-100 100" axis="0.0077873 -0.99997 0" damping="10" armature="0.005" />
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="left_gripper_finger_link2" name="robot_geom_46" rgba="0.72 0.75 0.78 1" />
+                                  <geom size="0.03 0.005 0.02" pos="0 0.01 0" type="box" name="robot_geom_47" group="3" friction="1.2 0.005 0.0001" condim="4" />
+                                </body>
+                                <site name="left_tcp" pos="0 0 -0.045" size="0.006" rgba="0 0.8 0.5 1" group="4" />
+                                <camera name="left_wrist" pos="0.18000000 0.00000000 0.00500000" xyaxes="0.00000000 -1.00000000 0.00000000 0.67267279 0.00000000 -0.73994007" fovy="85" />
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+              <body name="right_arm_base_link" pos="-0.00048706 -0.097236 0.30302">
+                <inertial pos="-0.00026981 -0.034587 -3.669e-08" quat="0.711959 -0.00449627 -0.00444689 0.702193" mass="1.48" diaginertia="0.00140767 0.00102973 0.0010201" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="right_arm_base_link" name="robot_geom_48" rgba="0.72 0.75 0.78 1" />
+                <geom type="mesh" mesh="right_arm_base_link_collision" name="robot_geom_49" group="3" />
+                <body name="right_arm_link1" pos="0 -0.0735 0" gravcomp="1">
+                  <inertial pos="-0.00042261 -0.074132 7.8365e-05" quat="0.708417 0.705787 -0.00300924 0.000384982" mass="1.135" diaginertia="0.000616038 0.000471349 0.000302583" />
+                  <joint name="right_arm_joint1" range="-4.4506 1.309" actuatorfrcrange="-55 55" axis="0 1 0" damping="2" armature="0.02" />
+                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="right_arm_link1" name="robot_geom_50" rgba="0.72 0.75 0.78 1" />
+                  <geom type="mesh" mesh="right_arm_link1_collision" name="robot_geom_51" group="3" />
+                  <body name="right_arm_link2" pos="0.023988 -0.081265 0" gravcomp="1">
+                    <inertial pos="-0.022361 0.0049527 -0.032732" quat="0.973837 -0.224135 0.0325444 0.0186079" mass="0.92" diaginertia="0.000382057 0.000345953 0.00032461" />
+                    <joint name="right_arm_joint2" range="-3.1416 0.1745" actuatorfrcrange="-55 55" axis="1 0 0" damping="2" armature="0.02" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="right_arm_link2" name="robot_geom_52" rgba="0.72 0.75 0.78 1" />
+                    <geom type="mesh" mesh="right_arm_link2_collision" name="robot_geom_53" group="3" />
+                    <body name="right_arm_link3" pos="-0.023988 0 -0.1155" gravcomp="1">
+                      <inertial pos="0.0053839 -0.00087109 -0.11261" quat="0.987422 -0.0126678 0.15733 -0.00924199" mass="1.245" diaginertia="0.000765324 0.000738726 0.00033133" />
+                      <joint name="right_arm_joint3" range="-2.3562 2.3562" actuatorfrcrange="-25 25" damping="2" armature="0.02" />
+                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="right_arm_link3" name="robot_geom_54" rgba="0.72 0.75 0.78 1" />
+                      <geom type="mesh" mesh="right_arm_link3_collision" name="robot_geom_55" group="3" />
+                      <body name="right_arm_link4" pos="0 0.035058 -0.1945" gravcomp="1">
+                        <inertial pos="-0.00058877 -0.035687 -0.057422" quat="0.707245 -0.0306329 -0.0413532 0.705093" mass="0.827" diaginertia="0.000220262 0.000161937 0.000126441" />
+                        <joint name="right_arm_joint4" range="-1.7453 0.3491" actuatorfrcrange="-25 25" axis="0 1 0" damping="2" armature="0.02" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="right_arm_link4" name="robot_geom_56" rgba="0.72 0.75 0.78 1" />
+                        <geom type="mesh" mesh="right_arm_link4_collision" name="robot_geom_57" group="3" />
+                        <body name="right_arm_link5" pos="0 -0.035058 -0.095" gravcomp="1">
+                          <inertial pos="-2.2815e-07 0.0031762 -0.07334" quat="0.997325 0.0730935 -2.18067e-05 0.000267049" mass="0.63" diaginertia="0.00069134 0.000664096 0.000303914" />
+                          <joint name="right_arm_joint5" range="-2.3562 2.3562" actuatorfrcrange="-18 18" damping="2" armature="0.02" />
+                          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="right_arm_link5" name="robot_geom_58" rgba="0.72 0.75 0.78 1" />
+                          <geom type="mesh" mesh="right_arm_link5_collision" name="robot_geom_59" group="3" />
+                          <body name="right_arm_link6" pos="0 0.028001 -0.16305" gravcomp="1">
+                            <inertial pos="0.0017914 -0.027486 0.00025485" quat="0.696434 0.70404 -0.0847037 0.110151" mass="0.527" diaginertia="8.56852e-05 8.24984e-05 8.11794e-05" />
+                            <joint name="right_arm_joint6" range="-1.0472 1.0472" actuatorfrcrange="-18 18" axis="0 1 0" damping="2" armature="0.02" />
+                            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="right_arm_link6" name="robot_geom_60" rgba="0.72 0.75 0.78 1" />
+                            <geom type="mesh" mesh="right_arm_link6_collision" name="robot_geom_61" group="3" />
+                            <body name="right_arm_link7" pos="0.0295 -0.028001 0" gravcomp="1">
+                              <inertial pos="-0.022945 2.2938e-07 -0.056523" quat="0.949513 -2.92435e-05 0.313729 -7.4095e-05" mass="0.185" diaginertia="9.98337e-05 9.467e-05 3.98293e-05" />
+                              <joint name="right_arm_joint7" range="-1.5708 1.5708" actuatorfrcrange="-18 18" axis="1 0 0" damping="2" armature="0.02" />
+                              <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="right_arm_link7" name="robot_geom_62" rgba="0.72 0.75 0.78 1" />
+                              <geom type="mesh" mesh="right_arm_link7_collision" name="robot_geom_63" group="3" />
+                              <body name="right_gripper_link" pos="-0.0295 0 -0.16065">
+                                <inertial pos="-2.2589e-07 -5.2175e-08 0.031107" quat="0.496414 0.503584 -0.496391 0.503559" mass="0.24625" diaginertia="0.00017588 0.000165124 9.86373e-05" />
+                                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="right_gripper_link" name="robot_geom_64" rgba="0.72 0.75 0.78 1" />
+                                <geom type="mesh" mesh="right_gripper_link_collision" name="robot_geom_65" group="3" />
+                                <body name="right_realsense_link" pos="0.05051 0.0028934 0.0051317" quat="0.21643 -0.000394204 -0.976296 0.00176584">
+                                  <inertial pos="0.0058264 -0.02222 -0.017353" quat="0.409426 0.336138 -0.652716 0.541612" mass="0.042603" diaginertia="2.62084e-05 2.31251e-05 6.42539e-06" />
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="right_realsense_link" name="robot_geom_66" rgba="0.72 0.75 0.78 1" />
+                                  <geom type="mesh" mesh="right_realsense_link_collision" name="robot_geom_67" group="3" />
+                                </body>
+                                <body name="right_gripper_finger_link1" pos="-8.8709e-05 0.013453 -0.03689">
+                                  <inertial pos="0.0056571 -0.015027 0.01959" quat="0.996815 -0.0588415 0.00751429 0.0532934" mass="0.020196" diaginertia="6.4915e-06 5.75204e-06 2.35776e-06" />
+                                  <joint name="right_gripper_finger_joint1" type="slide" range="0.002 0.05" actuatorfrcrange="-100 100" axis="-0.0077873 0.99997 0" damping="10" armature="0.005" />
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="right_gripper_finger_link1" name="robot_geom_68" rgba="0.72 0.75 0.78 1" />
+                                  <geom size="0.03 0.005 0.02" pos="0 -0.01 0" type="box" name="robot_geom_69" group="3" friction="1.2 0.005 0.0001" condim="4" />
+                                </body>
+                                <body name="right_gripper_finger_link2" pos="8.9046e-05 -0.013453 -0.03689">
+                                  <inertial pos="-0.0056573 0.015027 0.01959" quat="0.996815 0.0588425 -0.00751885 0.0532936" mass="0.020196" diaginertia="6.4915e-06 5.75204e-06 2.35776e-06" />
+                                  <joint name="right_gripper_finger_joint2" type="slide" range="0.002 0.05" actuatorfrcrange="-100 100" axis="0.0077873 -0.99997 0" damping="10" armature="0.005" />
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="right_gripper_finger_link2" name="robot_geom_70" rgba="0.72 0.75 0.78 1" />
+                                  <geom size="0.03 0.005 0.02" pos="0 0.01 0" type="box" name="robot_geom_71" group="3" friction="1.2 0.005 0.0001" condim="4" />
+                                </body>
+                                <site name="right_tcp" pos="0 0 -0.045" size="0.006" rgba="0 0.8 0.5 1" group="4" />
+                                <camera name="right_wrist" pos="0.18000000 0.00000000 0.00500000" xyaxes="0.00000000 -1.00000000 0.00000000 0.67267279 0.00000000 -0.73994007" fovy="85" />
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <light pos="0 -2 3" dir="0 0 -1" diffuse="0.8 0.8 0.8" />
+    <geom name="floor" type="plane" size="4 4 0.05" rgba="0.19 0.22 0.27 1" />
+    <body name="table" pos="0.85 0 0" quat="0.7071067812 0 0 0.7071067812">
+      <geom name="table_0_visual" type="mesh" mesh="table_0" rgba="0.4613561380496703 0.4731206199577918 0.48452920783154513 1.0" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="table_1_visual" type="mesh" mesh="table_1" rgba="0.8433891712280845 0.8266570506430202 0.7673756654827062 1.0" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="table_2_visual" type="mesh" mesh="table_2" rgba="0.2426936996865593 0.26479154921011056 0.276193898507297 1.0" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="table_3_visual" type="mesh" mesh="table_3" rgba="0.12835403856590433 0.14282567775472238 0.15170371739116362 1.0" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="table_4_visual" type="mesh" mesh="table_4" rgba="0.297485285453852 0.31137887321768565 0.32086812114680424 1.0" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="table_collision_v2_000" type="mesh" mesh="table_collision_v2_000" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_001" type="mesh" mesh="table_collision_v2_001" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_002" type="mesh" mesh="table_collision_v2_002" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_003" type="mesh" mesh="table_collision_v2_003" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_004" type="mesh" mesh="table_collision_v2_004" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_005" type="mesh" mesh="table_collision_v2_005" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_006" type="mesh" mesh="table_collision_v2_006" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_007" type="mesh" mesh="table_collision_v2_007" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_008" type="mesh" mesh="table_collision_v2_008" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_009" type="mesh" mesh="table_collision_v2_009" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_010" type="mesh" mesh="table_collision_v2_010" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_011" type="mesh" mesh="table_collision_v2_011" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_012" type="mesh" mesh="table_collision_v2_012" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_013" type="mesh" mesh="table_collision_v2_013" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_014" type="mesh" mesh="table_collision_v2_014" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_015" type="mesh" mesh="table_collision_v2_015" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_016" type="mesh" mesh="table_collision_v2_016" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_017" type="mesh" mesh="table_collision_v2_017" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_018" type="mesh" mesh="table_collision_v2_018" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_019" type="mesh" mesh="table_collision_v2_019" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_020" type="mesh" mesh="table_collision_v2_020" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_021" type="mesh" mesh="table_collision_v2_021" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_022" type="mesh" mesh="table_collision_v2_022" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_023" type="mesh" mesh="table_collision_v2_023" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_024" type="mesh" mesh="table_collision_v2_024" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_025" type="mesh" mesh="table_collision_v2_025" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_026" type="mesh" mesh="table_collision_v2_026" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_027" type="mesh" mesh="table_collision_v2_027" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_028" type="mesh" mesh="table_collision_v2_028" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_029" type="mesh" mesh="table_collision_v2_029" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_030" type="mesh" mesh="table_collision_v2_030" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_031" type="mesh" mesh="table_collision_v2_031" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_032" type="mesh" mesh="table_collision_v2_032" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_033" type="mesh" mesh="table_collision_v2_033" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_034" type="mesh" mesh="table_collision_v2_034" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_035" type="mesh" mesh="table_collision_v2_035" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_036" type="mesh" mesh="table_collision_v2_036" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_037" type="mesh" mesh="table_collision_v2_037" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_038" type="mesh" mesh="table_collision_v2_038" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_039" type="mesh" mesh="table_collision_v2_039" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_040" type="mesh" mesh="table_collision_v2_040" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_041" type="mesh" mesh="table_collision_v2_041" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_042" type="mesh" mesh="table_collision_v2_042" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_043" type="mesh" mesh="table_collision_v2_043" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_044" type="mesh" mesh="table_collision_v2_044" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_045" type="mesh" mesh="table_collision_v2_045" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_046" type="mesh" mesh="table_collision_v2_046" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_047" type="mesh" mesh="table_collision_v2_047" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_048" type="mesh" mesh="table_collision_v2_048" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_049" type="mesh" mesh="table_collision_v2_049" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_050" type="mesh" mesh="table_collision_v2_050" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_051" type="mesh" mesh="table_collision_v2_051" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_052" type="mesh" mesh="table_collision_v2_052" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_053" type="mesh" mesh="table_collision_v2_053" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_054" type="mesh" mesh="table_collision_v2_054" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_055" type="mesh" mesh="table_collision_v2_055" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_056" type="mesh" mesh="table_collision_v2_056" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_057" type="mesh" mesh="table_collision_v2_057" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_058" type="mesh" mesh="table_collision_v2_058" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_059" type="mesh" mesh="table_collision_v2_059" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_060" type="mesh" mesh="table_collision_v2_060" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_061" type="mesh" mesh="table_collision_v2_061" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_062" type="mesh" mesh="table_collision_v2_062" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_063" type="mesh" mesh="table_collision_v2_063" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_064" type="mesh" mesh="table_collision_v2_064" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_065" type="mesh" mesh="table_collision_v2_065" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_066" type="mesh" mesh="table_collision_v2_066" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_067" type="mesh" mesh="table_collision_v2_067" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_068" type="mesh" mesh="table_collision_v2_068" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_069" type="mesh" mesh="table_collision_v2_069" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_070" type="mesh" mesh="table_collision_v2_070" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_071" type="mesh" mesh="table_collision_v2_071" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_072" type="mesh" mesh="table_collision_v2_072" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_073" type="mesh" mesh="table_collision_v2_073" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_074" type="mesh" mesh="table_collision_v2_074" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_075" type="mesh" mesh="table_collision_v2_075" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_076" type="mesh" mesh="table_collision_v2_076" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_077" type="mesh" mesh="table_collision_v2_077" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_078" type="mesh" mesh="table_collision_v2_078" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_079" type="mesh" mesh="table_collision_v2_079" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_080" type="mesh" mesh="table_collision_v2_080" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_081" type="mesh" mesh="table_collision_v2_081" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_082" type="mesh" mesh="table_collision_v2_082" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_083" type="mesh" mesh="table_collision_v2_083" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_084" type="mesh" mesh="table_collision_v2_084" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_085" type="mesh" mesh="table_collision_v2_085" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_086" type="mesh" mesh="table_collision_v2_086" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_087" type="mesh" mesh="table_collision_v2_087" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_088" type="mesh" mesh="table_collision_v2_088" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_089" type="mesh" mesh="table_collision_v2_089" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_090" type="mesh" mesh="table_collision_v2_090" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_091" type="mesh" mesh="table_collision_v2_091" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_092" type="mesh" mesh="table_collision_v2_092" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_093" type="mesh" mesh="table_collision_v2_093" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_094" type="mesh" mesh="table_collision_v2_094" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_095" type="mesh" mesh="table_collision_v2_095" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_096" type="mesh" mesh="table_collision_v2_096" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_097" type="mesh" mesh="table_collision_v2_097" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_098" type="mesh" mesh="table_collision_v2_098" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_099" type="mesh" mesh="table_collision_v2_099" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_100" type="mesh" mesh="table_collision_v2_100" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_101" type="mesh" mesh="table_collision_v2_101" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_102" type="mesh" mesh="table_collision_v2_102" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_103" type="mesh" mesh="table_collision_v2_103" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_104" type="mesh" mesh="table_collision_v2_104" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_105" type="mesh" mesh="table_collision_v2_105" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_106" type="mesh" mesh="table_collision_v2_106" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_107" type="mesh" mesh="table_collision_v2_107" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_108" type="mesh" mesh="table_collision_v2_108" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_109" type="mesh" mesh="table_collision_v2_109" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_110" type="mesh" mesh="table_collision_v2_110" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_111" type="mesh" mesh="table_collision_v2_111" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_112" type="mesh" mesh="table_collision_v2_112" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_113" type="mesh" mesh="table_collision_v2_113" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_114" type="mesh" mesh="table_collision_v2_114" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_115" type="mesh" mesh="table_collision_v2_115" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_116" type="mesh" mesh="table_collision_v2_116" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_117" type="mesh" mesh="table_collision_v2_117" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_118" type="mesh" mesh="table_collision_v2_118" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_119" type="mesh" mesh="table_collision_v2_119" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_120" type="mesh" mesh="table_collision_v2_120" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_121" type="mesh" mesh="table_collision_v2_121" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_122" type="mesh" mesh="table_collision_v2_122" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_123" type="mesh" mesh="table_collision_v2_123" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_124" type="mesh" mesh="table_collision_v2_124" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_125" type="mesh" mesh="table_collision_v2_125" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_126" type="mesh" mesh="table_collision_v2_126" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_127" type="mesh" mesh="table_collision_v2_127" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_128" type="mesh" mesh="table_collision_v2_128" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_129" type="mesh" mesh="table_collision_v2_129" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_130" type="mesh" mesh="table_collision_v2_130" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_131" type="mesh" mesh="table_collision_v2_131" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_132" type="mesh" mesh="table_collision_v2_132" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_133" type="mesh" mesh="table_collision_v2_133" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_134" type="mesh" mesh="table_collision_v2_134" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_135" type="mesh" mesh="table_collision_v2_135" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_136" type="mesh" mesh="table_collision_v2_136" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_137" type="mesh" mesh="table_collision_v2_137" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_138" type="mesh" mesh="table_collision_v2_138" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_139" type="mesh" mesh="table_collision_v2_139" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_140" type="mesh" mesh="table_collision_v2_140" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_141" type="mesh" mesh="table_collision_v2_141" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_142" type="mesh" mesh="table_collision_v2_142" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_143" type="mesh" mesh="table_collision_v2_143" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_144" type="mesh" mesh="table_collision_v2_144" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_145" type="mesh" mesh="table_collision_v2_145" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_146" type="mesh" mesh="table_collision_v2_146" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_147" type="mesh" mesh="table_collision_v2_147" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_148" type="mesh" mesh="table_collision_v2_148" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_149" type="mesh" mesh="table_collision_v2_149" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_150" type="mesh" mesh="table_collision_v2_150" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_151" type="mesh" mesh="table_collision_v2_151" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_152" type="mesh" mesh="table_collision_v2_152" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_153" type="mesh" mesh="table_collision_v2_153" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_154" type="mesh" mesh="table_collision_v2_154" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_155" type="mesh" mesh="table_collision_v2_155" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_156" type="mesh" mesh="table_collision_v2_156" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_157" type="mesh" mesh="table_collision_v2_157" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_158" type="mesh" mesh="table_collision_v2_158" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_159" type="mesh" mesh="table_collision_v2_159" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_160" type="mesh" mesh="table_collision_v2_160" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_161" type="mesh" mesh="table_collision_v2_161" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_162" type="mesh" mesh="table_collision_v2_162" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_163" type="mesh" mesh="table_collision_v2_163" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_164" type="mesh" mesh="table_collision_v2_164" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_165" type="mesh" mesh="table_collision_v2_165" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_166" type="mesh" mesh="table_collision_v2_166" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_167" type="mesh" mesh="table_collision_v2_167" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_168" type="mesh" mesh="table_collision_v2_168" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_169" type="mesh" mesh="table_collision_v2_169" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_170" type="mesh" mesh="table_collision_v2_170" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_171" type="mesh" mesh="table_collision_v2_171" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_172" type="mesh" mesh="table_collision_v2_172" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_173" type="mesh" mesh="table_collision_v2_173" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_174" type="mesh" mesh="table_collision_v2_174" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_175" type="mesh" mesh="table_collision_v2_175" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_176" type="mesh" mesh="table_collision_v2_176" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_177" type="mesh" mesh="table_collision_v2_177" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_178" type="mesh" mesh="table_collision_v2_178" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_179" type="mesh" mesh="table_collision_v2_179" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_180" type="mesh" mesh="table_collision_v2_180" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_181" type="mesh" mesh="table_collision_v2_181" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_182" type="mesh" mesh="table_collision_v2_182" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_183" type="mesh" mesh="table_collision_v2_183" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_184" type="mesh" mesh="table_collision_v2_184" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_185" type="mesh" mesh="table_collision_v2_185" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_186" type="mesh" mesh="table_collision_v2_186" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_187" type="mesh" mesh="table_collision_v2_187" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_188" type="mesh" mesh="table_collision_v2_188" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_189" type="mesh" mesh="table_collision_v2_189" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_190" type="mesh" mesh="table_collision_v2_190" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_191" type="mesh" mesh="table_collision_v2_191" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_192" type="mesh" mesh="table_collision_v2_192" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_193" type="mesh" mesh="table_collision_v2_193" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_194" type="mesh" mesh="table_collision_v2_194" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_195" type="mesh" mesh="table_collision_v2_195" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_196" type="mesh" mesh="table_collision_v2_196" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_197" type="mesh" mesh="table_collision_v2_197" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_198" type="mesh" mesh="table_collision_v2_198" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_199" type="mesh" mesh="table_collision_v2_199" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_200" type="mesh" mesh="table_collision_v2_200" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_201" type="mesh" mesh="table_collision_v2_201" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_202" type="mesh" mesh="table_collision_v2_202" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+      <geom name="table_collision_v2_203" type="mesh" mesh="table_collision_v2_203" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" />
+    </body>
+    <body name="tray" pos="0.85 0 0.801">
+      <geom name="tray_0_visual" type="mesh" mesh="tray_0" rgba="0.9357410338002828 0.91627355257257 0.8209798401712459 1.0" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="tray_1_visual" type="mesh" mesh="tray_1" rgba="0.35749117539233655 0.11207493995948536 0.15170371739116362 1.0" contype="0" conaffinity="0" group="1" mass="0" />
+      <freejoint name="tray_free" />
+      <geom name="tray_contact_000" type="mesh" mesh="tray_contact_000" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" mass="0.6948020059756543" />
+      <geom name="tray_contact_001" type="mesh" mesh="tray_contact_001" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" mass="0.0032072455094347076" />
+      <geom name="tray_contact_002" type="mesh" mesh="tray_contact_002" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" mass="0.0033331124075038784" />
+      <geom name="tray_contact_003" type="mesh" mesh="tray_contact_003" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" mass="0.003208524594762893" />
+      <geom name="tray_contact_004" type="mesh" mesh="tray_contact_004" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" mass="0.13458774766952228" />
+      <geom name="tray_contact_005" type="mesh" mesh="tray_contact_005" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" mass="0.003208524594762893" />
+      <geom name="tray_contact_006" type="mesh" mesh="tray_contact_006" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" mass="0.003333112407503868" />
+      <geom name="tray_contact_007" type="mesh" mesh="tray_contact_007" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" mass="0.003207245509434728" />
+      <geom name="tray_contact_008" type="mesh" mesh="tray_contact_008" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" mass="0.09851348431924757" />
+      <geom name="tray_contact_009" type="mesh" mesh="tray_contact_009" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" mass="0.0032072455094347076" />
+      <geom name="tray_contact_010" type="mesh" mesh="tray_contact_010" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" mass="0.0033331124075038883" />
+      <geom name="tray_contact_011" type="mesh" mesh="tray_contact_011" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" mass="0.003208524594762893" />
+      <geom name="tray_contact_012" type="mesh" mesh="tray_contact_012" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" mass="0.13458774766952228" />
+      <geom name="tray_contact_013" type="mesh" mesh="tray_contact_013" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" mass="0.0032085245947628916" />
+      <geom name="tray_contact_014" type="mesh" mesh="tray_contact_014" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" mass="0.00333311240750386" />
+      <geom name="tray_contact_015" type="mesh" mesh="tray_contact_015" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" mass="0.003207245509434733" />
+      <geom name="tray_contact_016" type="mesh" mesh="tray_contact_016" group="3" friction="0.8 0.005 0.0001" condim="4" solref="0.006 1" solimp="0.95 0.99 0.001" mass="0.09851348431924757" />
+    </body>
+    <camera name="front" pos="1.8 -1.7 1.8" xyaxes="0.85 0.526 0 -0.21 0.34 0.916" fovy="55" />
+    <camera name="overview" pos="0.1 0 2.8" xyaxes="0.000000000 -1.000000000 0.000000000 0.911921505 0.000000000 0.410364677" fovy="65" />
+    <camera name="head" pos="0.05 0 1.6" xyaxes="0 -1 0 0.73 0 0.684" fovy="80" />
+    <site name="place_target" pos="0.85 0.32 0.802" type="box" size="0.28 0.215 0.001" rgba="0.1 0.8 0.3 0.2" group="4" />
+  </worldbody>
+  <visual>
+    <global offwidth="1600" offheight="1000" />
+    <headlight ambient="0.35 0.35 0.35" diffuse="0.7 0.7 0.7" />
+  </visual>
+  <statistic center="0.4 0 0.85" extent="2.5" />
+  <option timestep="0.002" integrator="implicitfast" gravity="0 0 -9.81" cone="elliptic" iterations="80" />
+  <actuator>
+    <position name="left_arm_joint1_target" joint="left_arm_joint1" kp="250" kv="25" ctrlrange="-4.4506 1.309" forcerange="-55 55" />
+    <position name="left_arm_joint2_target" joint="left_arm_joint2" kp="250" kv="25" ctrlrange="-0.1745 3.1416" forcerange="-55 55" />
+    <position name="left_arm_joint3_target" joint="left_arm_joint3" kp="250" kv="25" ctrlrange="-2.3562 2.3562" forcerange="-25 25" />
+    <position name="left_arm_joint4_target" joint="left_arm_joint4" kp="250" kv="25" ctrlrange="-1.7453 0.3491" forcerange="-25 25" />
+    <position name="left_arm_joint5_target" joint="left_arm_joint5" kp="250" kv="25" ctrlrange="-2.3562 2.3562" forcerange="-18 18" />
+    <position name="left_arm_joint6_target" joint="left_arm_joint6" kp="250" kv="25" ctrlrange="-1.0472 1.0472" forcerange="-18 18" />
+    <position name="left_arm_joint7_target" joint="left_arm_joint7" kp="250" kv="25" ctrlrange="-1.5708 1.5708" forcerange="-18 18" />
+    <position name="left_gripper_target" joint="left_gripper_finger_joint1" kp="8000" kv="80" ctrlrange="0.002 0.05" forcerange="-40 40" />
+    <position name="right_arm_joint1_target" joint="right_arm_joint1" kp="250" kv="25" ctrlrange="-4.4506 1.309" forcerange="-55 55" />
+    <position name="right_arm_joint2_target" joint="right_arm_joint2" kp="250" kv="25" ctrlrange="-3.1416 0.1745" forcerange="-55 55" />
+    <position name="right_arm_joint3_target" joint="right_arm_joint3" kp="250" kv="25" ctrlrange="-2.3562 2.3562" forcerange="-25 25" />
+    <position name="right_arm_joint4_target" joint="right_arm_joint4" kp="250" kv="25" ctrlrange="-1.7453 0.3491" forcerange="-25 25" />
+    <position name="right_arm_joint5_target" joint="right_arm_joint5" kp="250" kv="25" ctrlrange="-2.3562 2.3562" forcerange="-18 18" />
+    <position name="right_arm_joint6_target" joint="right_arm_joint6" kp="250" kv="25" ctrlrange="-1.0472 1.0472" forcerange="-18 18" />
+    <position name="right_arm_joint7_target" joint="right_arm_joint7" kp="250" kv="25" ctrlrange="-1.5708 1.5708" forcerange="-18 18" />
+    <position name="right_gripper_target" joint="right_gripper_finger_joint1" kp="8000" kv="80" ctrlrange="0.002 0.05" forcerange="-40 40" />
+  </actuator>
+  <equality>
+    <joint joint1="left_gripper_finger_joint1" joint2="left_gripper_finger_joint2" polycoef="0 1 0 0 0" solref="0.004 1" />
+    <joint joint1="right_gripper_finger_joint1" joint2="right_gripper_finger_joint2" polycoef="0 1 0 0 0" solref="0.004 1" />
+  </equality>
+</mujoco>

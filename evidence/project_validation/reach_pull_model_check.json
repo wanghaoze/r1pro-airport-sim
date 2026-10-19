@@ -1,0 +1,13 @@
+{
+  "real_mujoco_model_interfaces_valid": true,
+  "physical_pull_executed": false,
+  "estimate_at_initial_base": {
+    "distances_m": {
+      "left": 1.3159802295271275,
+      "right": 1.707928728003177
+    },
+    "dual_likely_unreachable": true,
+    "single_candidates": [],
+    "qualification": "engineering_heuristic_not_workspace_calibration"
+  }
+}

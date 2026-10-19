@@ -1,0 +1,10 @@
+{
+  "source_scene_count": 400,
+  "attempted_scenes": 4,
+  "clean_complete_successes": 1,
+  "full_source_success_rate": 0.0025,
+  "all_400_attempted": false,
+  "target_70_percent_reached": false,
+  "attempt_budget": 1,
+  "simulation_only": true
+}

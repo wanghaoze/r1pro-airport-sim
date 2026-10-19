@@ -1,0 +1,26 @@
+[
+  {
+    "name": "local_push_case4_third_original",
+    "same_prefix_s": 1.85,
+    "samples": 925,
+    "support_fraction": 0.7978378378378378,
+    "max_missing_s": 0.008,
+    "peak_n": 61.92663047886282
+  },
+  {
+    "name": "local_push_case4_third_dt1ms",
+    "same_prefix_s": 1.85,
+    "samples": 1850,
+    "support_fraction": 0.8118918918918919,
+    "max_missing_s": 0.006,
+    "peak_n": 56.546554726815145
+  },
+  {
+    "name": "local_push_case4_third_dt0p5ms",
+    "same_prefix_s": 1.85,
+    "samples": 3700,
+    "support_fraction": 0.8175675675675675,
+    "max_missing_s": 0.0035,
+    "peak_n": 51.84989395919012
+  }
+]

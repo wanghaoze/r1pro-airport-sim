@@ -1,0 +1,12 @@
+# Blender 5.2.1 LTS MTL File: 'Changi_tray_FIXED.blend'
+# www.blender.org
+
+newmtl Warm_ivory_screen_print
+Ns 302.500000
+Ka 1.000000 1.000000 1.000000
+Kd 0.860000 0.820000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2

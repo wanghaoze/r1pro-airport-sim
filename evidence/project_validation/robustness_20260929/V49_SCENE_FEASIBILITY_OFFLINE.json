@@ -1,0 +1,541 @@
+{
+  "kind": "read_only_offline_diagnostic_not_resampling_or_control_result",
+  "source": {
+    "scenes": "resources/scenes/formal",
+    "v36_failure_context": "evidence/project_validation/robustness_20260929/v36_failure_context_snapshot.json",
+    "old400_completed": 180,
+    "old400_failed": 220
+  },
+  "matrix_definition": "TP=historical fail flagged; FP=historical success flagged; TN=historical success accepted; FN=historical fail accepted",
+  "reachability_signal_coverage": {
+    "initial_reachability_scene_ids_in_local_audit": [
+      "airport_0006_20270922"
+    ],
+    "initial_reachability_all400_available": false,
+    "post_motion_arrival_screen_records": 9,
+    "post_motion_arrival_screen_used_as_feature": false,
+    "reason": "Post-motion observations are available only for selected failed cases and would leak the outcome."
+  },
+  "variants": {
+    "front_ge_1_or_stack": {
+      "rule": "front_count >= 1 OR support_parent is tray",
+      "overall": {
+        "tp": 214,
+        "fp": 91,
+        "tn": 89,
+        "fn": 6
+      },
+      "by_difficulty": {
+        "ordinary": {
+          "tp": 194,
+          "fp": 91,
+          "tn": 89,
+          "fn": 6
+        },
+        "complex": {
+          "tp": 20,
+          "fp": 0,
+          "tn": 0,
+          "fn": 0
+        }
+      },
+      "by_front_count": {
+        "0": {
+          "tp": 5,
+          "fp": 0,
+          "tn": 89,
+          "fn": 6
+        },
+        "1": {
+          "tp": 51,
+          "fp": 49,
+          "tn": 0,
+          "fn": 0
+        },
+        "2": {
+          "tp": 82,
+          "fp": 18,
+          "tn": 0,
+          "fn": 0
+        },
+        "3": {
+          "tp": 76,
+          "fp": 24,
+          "tn": 0,
+          "fn": 0
+        }
+      },
+      "by_failure_code": {
+        "carried_payload_support_contact": {
+          "total": 1,
+          "flagged": 1
+        },
+        "carried_tray_tilt": {
+          "total": 1,
+          "flagged": 1
+        },
+        "cartesian_collision_or_wrist": {
+          "total": 1,
+          "flagged": 1
+        },
+        "contact_handoff_aborted": {
+          "total": 32,
+          "flagged": 29
+        },
+        "coupled_ik_unreachable": {
+          "total": 130,
+          "flagged": 130
+        },
+        "ik_unreachable": {
+          "total": 4,
+          "flagged": 4
+        },
+        "illegal_collision": {
+          "total": 4,
+          "flagged": 2
+        },
+        "joint_path_collision_or_wrist": {
+          "total": 1,
+          "flagged": 1
+        },
+        "measured_joint_overspeed": {
+          "total": 3,
+          "flagged": 3
+        },
+        "multiple_trays_lifted": {
+          "total": 19,
+          "flagged": 19
+        },
+        "no_feasible_grasp_approach": {
+          "total": 2,
+          "flagged": 2
+        },
+        "no_free_single_rim": {
+          "total": 1,
+          "flagged": 1
+        },
+        "no_safe_release_precondition": {
+          "total": 8,
+          "flagged": 8
+        },
+        "placement_needs_correction": {
+          "total": 4,
+          "flagged": 4
+        },
+        "primitive_lift_path_unavailable": {
+          "total": 3,
+          "flagged": 2
+        },
+        "primitive_postcondition_failed": {
+          "total": 5,
+          "flagged": 5
+        },
+        "wrist_camera_front_guard": {
+          "total": 1,
+          "flagged": 1
+        }
+      },
+      "rejected_historical_success_scene_ids": [
+        "airport_0005_20270921",
+        "airport_0007_20270923",
+        "airport_0011_20270927",
+        "airport_0017_20270933",
+        "airport_0019_20270935",
+        "airport_0021_20270937",
+        "airport_0022_20270938",
+        "airport_0025_20270941",
+        "airport_0026_20270942",
+        "airport_0033_20270949",
+        "airport_0034_20270950",
+        "airport_0041_20270957",
+        "airport_0045_20270961",
+        "airport_0049_20270965",
+        "airport_0053_20270969",
+        "airport_0065_20270981",
+        "airport_0066_20270982",
+        "airport_0067_20270983",
+        "airport_0069_20270985",
+        "airport_0071_20270987",
+        "airport_0077_20270993",
+        "airport_0082_20270998",
+        "airport_0083_20270999",
+        "airport_0090_20271006",
+        "airport_0093_20271009",
+        "airport_0094_20271010",
+        "airport_0097_20271013",
+        "airport_0105_20271021",
+        "airport_0113_20271029",
+        "airport_0117_20271033",
+        "airport_0121_20271037",
+        "airport_0125_20271041",
+        "airport_0133_20271049",
+        "airport_0134_20271050",
+        "airport_0135_20271051",
+        "airport_0141_20271057",
+        "airport_0145_20271061",
+        "airport_0146_20271062",
+        "airport_0147_20271063",
+        "airport_0151_20271067",
+        "airport_0157_20271073",
+        "airport_0159_20271075",
+        "airport_0161_20271077",
+        "airport_0162_20271078",
+        "airport_0165_20271081",
+        "airport_0173_20271089",
+        "airport_0175_20271091",
+        "airport_0185_20271101",
+        "airport_0189_20271105",
+        "airport_0193_20271109",
+        "airport_0197_20271113",
+        "airport_0201_20271117",
+        "airport_0211_20271127",
+        "airport_0213_20271129",
+        "airport_0217_20271133",
+        "airport_0221_20271137",
+        "airport_0223_20271139",
+        "airport_0235_20271151",
+        "airport_0245_20271161",
+        "airport_0247_20271163",
+        "airport_0249_20271165",
+        "airport_0253_20271169",
+        "airport_0255_20271171",
+        "airport_0261_20271177",
+        "airport_0262_20271178",
+        "airport_0270_20271186",
+        "airport_0277_20271193",
+        "airport_0278_20271194",
+        "airport_0281_20271197",
+        "airport_0285_20271201",
+        "airport_0289_20271205",
+        "airport_0293_20271209",
+        "airport_0294_20271210",
+        "airport_0299_20271215",
+        "airport_0301_20271217",
+        "airport_0305_20271221",
+        "airport_0307_20271223",
+        "airport_0310_20271226",
+        "airport_0314_20271230",
+        "airport_0329_20271245",
+        "airport_0335_20271251",
+        "airport_0341_20271257",
+        "airport_0347_20271263",
+        "airport_0358_20271274",
+        "airport_0361_20271277",
+        "airport_0365_20271281",
+        "airport_0366_20271282",
+        "airport_0371_20271287",
+        "airport_0379_20271295",
+        "airport_0391_20271307",
+        "airport_0395_20271311"
+      ]
+    },
+    "front_ge_2_or_stack": {
+      "rule": "front_count >= 2 OR support_parent is tray",
+      "overall": {
+        "tp": 168,
+        "fp": 42,
+        "tn": 138,
+        "fn": 52
+      },
+      "by_difficulty": {
+        "ordinary": {
+          "tp": 148,
+          "fp": 42,
+          "tn": 138,
+          "fn": 52
+        },
+        "complex": {
+          "tp": 20,
+          "fp": 0,
+          "tn": 0,
+          "fn": 0
+        }
+      },
+      "by_front_count": {
+        "0": {
+          "tp": 5,
+          "fp": 0,
+          "tn": 89,
+          "fn": 6
+        },
+        "1": {
+          "tp": 5,
+          "fp": 0,
+          "tn": 49,
+          "fn": 46
+        },
+        "2": {
+          "tp": 82,
+          "fp": 18,
+          "tn": 0,
+          "fn": 0
+        },
+        "3": {
+          "tp": 76,
+          "fp": 24,
+          "tn": 0,
+          "fn": 0
+        }
+      },
+      "by_failure_code": {
+        "carried_payload_support_contact": {
+          "total": 1,
+          "flagged": 1
+        },
+        "carried_tray_tilt": {
+          "total": 1,
+          "flagged": 0
+        },
+        "cartesian_collision_or_wrist": {
+          "total": 1,
+          "flagged": 0
+        },
+        "contact_handoff_aborted": {
+          "total": 32,
+          "flagged": 24
+        },
+        "coupled_ik_unreachable": {
+          "total": 130,
+          "flagged": 106
+        },
+        "ik_unreachable": {
+          "total": 4,
+          "flagged": 3
+        },
+        "illegal_collision": {
+          "total": 4,
+          "flagged": 1
+        },
+        "joint_path_collision_or_wrist": {
+          "total": 1,
+          "flagged": 0
+        },
+        "measured_joint_overspeed": {
+          "total": 3,
+          "flagged": 3
+        },
+        "multiple_trays_lifted": {
+          "total": 19,
+          "flagged": 19
+        },
+        "no_feasible_grasp_approach": {
+          "total": 2,
+          "flagged": 0
+        },
+        "no_free_single_rim": {
+          "total": 1,
+          "flagged": 1
+        },
+        "no_safe_release_precondition": {
+          "total": 8,
+          "flagged": 0
+        },
+        "placement_needs_correction": {
+          "total": 4,
+          "flagged": 2
+        },
+        "primitive_lift_path_unavailable": {
+          "total": 3,
+          "flagged": 2
+        },
+        "primitive_postcondition_failed": {
+          "total": 5,
+          "flagged": 5
+        },
+        "wrist_camera_front_guard": {
+          "total": 1,
+          "flagged": 1
+        }
+      },
+      "rejected_historical_success_scene_ids": [
+        "airport_0007_20270923",
+        "airport_0011_20270927",
+        "airport_0019_20270935",
+        "airport_0022_20270938",
+        "airport_0026_20270942",
+        "airport_0034_20270950",
+        "airport_0066_20270982",
+        "airport_0067_20270983",
+        "airport_0071_20270987",
+        "airport_0082_20270998",
+        "airport_0083_20270999",
+        "airport_0090_20271006",
+        "airport_0094_20271010",
+        "airport_0134_20271050",
+        "airport_0135_20271051",
+        "airport_0146_20271062",
+        "airport_0147_20271063",
+        "airport_0151_20271067",
+        "airport_0159_20271075",
+        "airport_0162_20271078",
+        "airport_0175_20271091",
+        "airport_0211_20271127",
+        "airport_0223_20271139",
+        "airport_0235_20271151",
+        "airport_0247_20271163",
+        "airport_0255_20271171",
+        "airport_0262_20271178",
+        "airport_0270_20271186",
+        "airport_0278_20271194",
+        "airport_0294_20271210",
+        "airport_0299_20271215",
+        "airport_0307_20271223",
+        "airport_0310_20271226",
+        "airport_0314_20271230",
+        "airport_0335_20271251",
+        "airport_0347_20271263",
+        "airport_0358_20271274",
+        "airport_0366_20271282",
+        "airport_0371_20271287",
+        "airport_0379_20271295",
+        "airport_0391_20271307",
+        "airport_0395_20271311"
+      ]
+    },
+    "front_ge_3_or_stack": {
+      "rule": "front_count >= 3 OR support_parent is tray",
+      "overall": {
+        "tp": 91,
+        "fp": 24,
+        "tn": 156,
+        "fn": 129
+      },
+      "by_difficulty": {
+        "ordinary": {
+          "tp": 71,
+          "fp": 24,
+          "tn": 156,
+          "fn": 129
+        },
+        "complex": {
+          "tp": 20,
+          "fp": 0,
+          "tn": 0,
+          "fn": 0
+        }
+      },
+      "by_front_count": {
+        "0": {
+          "tp": 5,
+          "fp": 0,
+          "tn": 89,
+          "fn": 6
+        },
+        "1": {
+          "tp": 5,
+          "fp": 0,
+          "tn": 49,
+          "fn": 46
+        },
+        "2": {
+          "tp": 5,
+          "fp": 0,
+          "tn": 18,
+          "fn": 77
+        },
+        "3": {
+          "tp": 76,
+          "fp": 24,
+          "tn": 0,
+          "fn": 0
+        }
+      },
+      "by_failure_code": {
+        "carried_payload_support_contact": {
+          "total": 1,
+          "flagged": 0
+        },
+        "carried_tray_tilt": {
+          "total": 1,
+          "flagged": 0
+        },
+        "cartesian_collision_or_wrist": {
+          "total": 1,
+          "flagged": 0
+        },
+        "contact_handoff_aborted": {
+          "total": 32,
+          "flagged": 4
+        },
+        "coupled_ik_unreachable": {
+          "total": 130,
+          "flagged": 60
+        },
+        "ik_unreachable": {
+          "total": 4,
+          "flagged": 0
+        },
+        "illegal_collision": {
+          "total": 4,
+          "flagged": 1
+        },
+        "joint_path_collision_or_wrist": {
+          "total": 1,
+          "flagged": 0
+        },
+        "measured_joint_overspeed": {
+          "total": 3,
+          "flagged": 1
+        },
+        "multiple_trays_lifted": {
+          "total": 19,
+          "flagged": 19
+        },
+        "no_feasible_grasp_approach": {
+          "total": 2,
+          "flagged": 0
+        },
+        "no_free_single_rim": {
+          "total": 1,
+          "flagged": 0
+        },
+        "no_safe_release_precondition": {
+          "total": 8,
+          "flagged": 0
+        },
+        "placement_needs_correction": {
+          "total": 4,
+          "flagged": 2
+        },
+        "primitive_lift_path_unavailable": {
+          "total": 3,
+          "flagged": 2
+        },
+        "primitive_postcondition_failed": {
+          "total": 5,
+          "flagged": 1
+        },
+        "wrist_camera_front_guard": {
+          "total": 1,
+          "flagged": 1
+        }
+      },
+      "rejected_historical_success_scene_ids": [
+        "airport_0007_20270923",
+        "airport_0011_20270927",
+        "airport_0019_20270935",
+        "airport_0067_20270983",
+        "airport_0071_20270987",
+        "airport_0083_20270999",
+        "airport_0135_20271051",
+        "airport_0147_20271063",
+        "airport_0151_20271067",
+        "airport_0159_20271075",
+        "airport_0175_20271091",
+        "airport_0211_20271127",
+        "airport_0223_20271139",
+        "airport_0235_20271151",
+        "airport_0247_20271163",
+        "airport_0255_20271171",
+        "airport_0299_20271215",
+        "airport_0307_20271223",
+        "airport_0335_20271251",
+        "airport_0347_20271263",
+        "airport_0371_20271287",
+        "airport_0379_20271295",
+        "airport_0391_20271307",
+        "airport_0395_20271311"
+      ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+case,v4_success_seconds,v24b_baseline_result,baseline_seconds,v24b_additive_result,additive_seconds
+4,147.8,success,158.25,success,168.5
+16,145.2,retained_contact_lost / table0,99.45,success,165.6
+24,144.5,retained_contact_lost / table0,141.75,retained_contact_lost / table0,148.6
+60,145.35,retained_contact_lost / table0,22.75,retained_contact_lost / table0,22.75
+80,153.6,success,163.75,success,173.9
+132,144.8,retained_contact_lost / table0,141.9,success,165.1
+147,139.5,push_accuracy_not_met,89.8,retained_contact_lost / table0,135.0
+152,145.35,retained_contact_lost / table0,99.25,retained_contact_lost / table0,149.15
+156,146.95,retained_contact_lost / table0,144.25,retained_contact_lost / table0,104.35
+160,150.05,retained_contact_lost / table0,97.7,retained_contact_lost / table0,153.95
+176,146.45,success,156.55,retained_contact_lost / table0,103.25
+188,147.25,retained_contact_lost / table0,144.8,retained_contact_lost / table0,104.25
+236,144.5,retained_contact_lost / table0,98.05,success,164.8
+240,146.25,retained_contact_lost / table0,142.8,success,166.75
+256,146.3,retained_contact_lost / table0,143.9,success,166.9
+276,152.9,success,163.2,success,173.5
+288,144.0,retained_contact_lost / table0,98.15,retained_contact_lost / table0,76.8
+292,146.25,retained_contact_lost / table0,100.0,success,166.8
+300,144.85,success,155.15,retained_contact_lost / table0,149.0
+304,144.5,primitive_postcondition_failed,142.45,retained_contact_lost / table0,101.35
+344,144.15,retained_contact_lost / table0,98.15,retained_contact_lost / table0,148.15
+364,145.3,retained_contact_lost / table0,99.05,success,165.7

@@ -1,0 +1,90 @@
+{
+  "qualification": "private_local_push_diagnostic_not_complete_episode",
+  "source": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v11_20260929/runs/regression",
+  "controller": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v16_20260929",
+  "case": 4,
+  "frame": 2861,
+  "tray": 0,
+  "side": "right",
+  "incoming_target_source": "previous_recorded_action",
+  "modifications": {
+    "loaded_command_reference_enabled": true,
+    "loaded_command_reference_scope": "push",
+    "push_withdraw_preload_scale": 1.5
+  },
+  "cartesian_withdraw_middle": true,
+  "entry_rollpitchyaw_deg": [
+    0.0010215170310876127,
+    7.81705846260872e-05,
+    -179.79757235987574
+  ],
+  "timestep_intervention": null,
+  "source_timestep_s": 0.002,
+  "timestep_s": 0.002,
+  "substeps_per_frame": 25,
+  "rollout_wall_s": 3.797002063016407,
+  "solver_settings": {
+    "integrator": "mjINT_IMPLICITFAST",
+    "solver": "mjSOL_NEWTON",
+    "iterations": 80,
+    "tolerance": 1e-08,
+    "geom_solref_unique": [
+      [
+        0.006,
+        1.0
+      ]
+    ],
+    "geom_solimp_unique": [
+      [
+        0.95,
+        0.99,
+        0.001,
+        0.5,
+        2.0
+      ]
+    ]
+  },
+  "restored_context": {
+    "retained_contact": [
+      0,
+      "right"
+    ],
+    "holding": null,
+    "phase": "adjust",
+    "primitive_lift_xy_shift_m": 0.06,
+    "initial_bottom": [
+      0.801,
+      0.801,
+      0.801
+    ],
+    "support_timer": "reset only after confirming actual entry support",
+    "warnings": "fresh zero counters; source episode would have stopped at any prior warning",
+    "diagnostic_counters": "wall budget restarted; historical peak power and inverse-call tallies not restored"
+  },
+  "exact_original_trajectory_match": false,
+  "maximum_qpos_error": 0.04296026013691234,
+  "maximum_qvel_error": 0.25195309168240115,
+  "maximum_action_error": 0.04319286346435547,
+  "endpoint_qpos_error": 0.0013633890185334521,
+  "primitive_returned": true,
+  "failure": null,
+  "elapsed_s": 2.900000000013847,
+  "final_pose": [
+    0.8448910302314608,
+    -0.5161674772745644,
+    0.7999972033094427,
+    -0.021423148065386175,
+    -1.0605863548090786e-06,
+    8.790692679439869e-06,
+    0.9997704979886974
+  ],
+  "final_forces": [
+    0.0,
+    10.906422414290487
+  ],
+  "final_table_contacts": 8,
+  "physics_samples": 1450,
+  "longest_physics_missing_s": 0.008,
+  "table_force_peak_n": 53.85533924773894,
+  "support_fraction": 0.8020689655172414
+}

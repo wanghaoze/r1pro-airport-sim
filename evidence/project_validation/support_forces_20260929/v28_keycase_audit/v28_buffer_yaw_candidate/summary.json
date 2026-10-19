@@ -1,0 +1,258 @@
+{
+  "qualification": "private_local_push_diagnostic_not_complete_episode",
+  "source": "/home/michelle/haoze/r1pro-airport-sim/diagnostictools/support_forces_20260929_v1/v28_preview_headroom_fresh_6_310",
+  "controller": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v28_20260929",
+  "case": 6,
+  "frame": 655,
+  "tray": 0,
+  "side": "left",
+  "restored_integer_clock": {
+    "physics_step_count": 16375,
+    "physics_clock_origin_time": 0.0,
+    "physics_timestep_s": 0.002,
+    "missing_step": null,
+    "observed_physics_time_s": 32.74999999999406,
+    "missing_since_s": null,
+    "evidence": "all preceding intervals complete; recorded dt/substeps match; entry real table support resets missing clock in original guard"
+  },
+  "incoming_target_source": "previous_recorded_action",
+  "modifications": {
+    "push_yaw_feedback_enabled": true,
+    "push_yaw_feedback_scope": "all"
+  },
+  "entry_restore": "recorded_integration_state",
+  "entry_restore_neighbor_validation": [],
+  "cartesian_withdraw_middle": false,
+  "entry_rollpitchyaw_deg": [
+    -0.0010605746585928104,
+    0.0011368073644053105,
+    0.3628079623468337
+  ],
+  "full_push_operation": true,
+  "final_slot_geometry_ready": null,
+  "yaw_compensation_deg": null,
+  "operation_acceptance_yaw_unchanged": 0.0,
+  "yaw_feedback_suffix": false,
+  "force_feedback_suffix": false,
+  "force_feedback_zero_gain": false,
+  "place_retained_side": null,
+  "free_retreat_rise_m": null,
+  "withdraw_middle_progress": null,
+  "planning_only": false,
+  "yaw_backtrack_once": false,
+  "yaw_normal_lift_once": false,
+  "yaw_normal_lift_m": null,
+  "final_all_poses": [
+    [
+      0.8405415557356687,
+      -0.5040387164388399,
+      0.7999986106044721,
+      0.9990193721889767,
+      3.693135874638458e-06,
+      -8.748764563716897e-07,
+      -0.044275207246702114
+    ],
+    [
+      0.7704065085805255,
+      -1.1225661226821217,
+      0.7999951466352234,
+      0.5002126177701073,
+      9.592816489925818e-07,
+      -1.4276540409477338e-06,
+      -0.8659026140511509
+    ],
+    [
+      -1.6083551546879793,
+      0.016058609165094502,
+      0.7999952170405826,
+      0.7705492143319477,
+      -6.00644361895913e-08,
+      1.6040632592756881e-07,
+      -0.6373805051085181
+    ]
+  ],
+  "slot_mapping": [
+    2,
+    0,
+    1
+  ],
+  "final_position_error_m": 0.009788882586471958,
+  "final_yaw_rad": -0.08857937085731989,
+  "arm_kv_scale": null,
+  "arm_position_servos": [
+    {
+      "name": "left_arm_joint1_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint2_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint3_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint4_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint5_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint6_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint7_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint1_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint2_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint3_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint4_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint5_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint6_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint7_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    }
+  ],
+  "timestep_intervention": null,
+  "source_timestep_s": 0.002,
+  "timestep_s": 0.002,
+  "substeps_per_frame": 25,
+  "rollout_wall_s": 4.003768516005948,
+  "solver_settings": {
+    "integrator": "mjINT_IMPLICITFAST",
+    "solver": "mjSOL_NEWTON",
+    "iterations": 80,
+    "tolerance": 1e-08,
+    "geom_solref_unique": [
+      [
+        0.006,
+        1.0
+      ]
+    ],
+    "geom_solimp_unique": [
+      [
+        0.95,
+        0.99,
+        0.001,
+        0.5,
+        2.0
+      ]
+    ]
+  },
+  "restored_context": {
+    "retained_contact": [
+      0,
+      "left"
+    ],
+    "initial_holding": null,
+    "phase": "adjust",
+    "primitive_lift_xy_shift_m": 0.0,
+    "initial_bottom": [
+      0.801,
+      0.801,
+      0.801
+    ],
+    "support_timer": "reset only after confirming actual entry support",
+    "warnings": "fresh zero counters; source episode would have stopped at any prior warning",
+    "diagnostic_counters": "wall budget restarted; historical peak power and inverse-call tallies not restored"
+  },
+  "exact_original_trajectory_match": false,
+  "recorded_prefix_matches": true,
+  "maximum_qpos_error": 0.0,
+  "maximum_qvel_error": 0.0,
+  "maximum_action_error": 0.0,
+  "endpoint_qpos_error": null,
+  "primitive_returned": false,
+  "failure": {
+    "code": "primitive_postcondition_failed",
+    "detail": {
+      "stable_frames": 0,
+      "tray_pose": [
+        0.8405415557356687,
+        -0.5040387164388399,
+        0.7999986106044721,
+        0.9990193721889767,
+        3.693135874638458e-06,
+        -8.748764563716897e-07,
+        -0.044275207246702114
+      ],
+      "bottom_z": 0.799996799237988,
+      "table_contact": 8,
+      "gripper_force": [
+        10.973692683116,
+        0.0
+      ]
+    }
+  },
+  "elapsed_s": 2.5500000000031164,
+  "final_pose": [
+    0.8405415557356687,
+    -0.5040387164388399,
+    0.7999986106044721,
+    0.9990193721889767,
+    3.693135874638458e-06,
+    -8.748764563716897e-07,
+    -0.044275207246702114
+  ],
+  "final_forces": [
+    10.973692683116,
+    0.0
+  ],
+  "final_table_contacts": 8,
+  "physics_samples": 1275,
+  "longest_physics_missing_s": 0.01,
+  "table_force_peak_n": 37.336854932331896,
+  "support_fraction": 0.76
+}

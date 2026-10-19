@@ -1,0 +1,15 @@
+{
+  "version": "web_scene_agent/1",
+  "request_id": "example_plan_training_v2",
+  "op": "training.plan",
+  "args": {
+    "dataset_ids": [
+      "isaac32_narrow_20261016",
+      "isaac32_wide_20261016"
+    ],
+    "model": "pi05_lora",
+    "steps": 1000,
+    "batch_size": 8,
+    "seed": 42
+  }
+}

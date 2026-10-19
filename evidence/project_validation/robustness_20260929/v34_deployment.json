@@ -1,0 +1,18 @@
+{
+  "release": "robust_v34_20260929",
+  "archive_sha256": "3049c9589291281a2fb36aca269f40ee48dbc2b2ea29ec2f1711f86ff69be60c",
+  "server_pid": 2801595,
+  "server_core_tests": "772 passed, 1 xfailed including POSIX SIGTERM child cleanup",
+  "simulation_only": true,
+  "target_reached": false,
+  "development_groups": [
+    "lift",
+    "nominal",
+    "combined",
+    "direct_combined"
+  ],
+  "attempt_budget": 3,
+  "primitive_seconds": 5,
+  "development_workers": 16,
+  "full400_workers": 32
+}

@@ -1,0 +1,11 @@
+{
+  "returncode": 1,
+  "stdout": "F                                                                        [100%]\n=================================== FAILURES ===================================\n__________ test_direct_scene_preserves_home_and_supports_native_720p ___________\n\n    def test_direct_scene_preserves_home_and_supports_native_720p():\n>       old = Simulation('outputs/r1pro_tray_scene/scene_launch_pose.xml', render=False)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n../../releases/robust_v27_20260929/tests/test_direct_grasp.py:30: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <r1pro_teleop.core.Simulation object at 0x7b73b4474a90>\nscene = 'outputs/r1pro_tray_scene/scene_launch_pose.xml', fps = 20\nrender = False, width = 320, height = 240\n\n    def __init__(self, scene, fps=20, render=True, width=320, height=240):\n        self.scene = Path(scene).resolve()\n>       self.model = mujoco.MjModel.from_xml_path(str(self.scene))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       ValueError: Error: Error opening file 'assets/r1_pro/meshes/steer_motor_link1_collision.STL'\n\n../../releases/robust_v27_20260929/r1pro_teleop/core.py:49: ValueError\n=========================== short test summary info ============================\nFAILED ../../releases/robust_v27_20260929/tests/test_direct_grasp.py::test_direct_scene_preserves_home_and_supports_native_720p\n1 failed in 0.35s\n",
+  "stderr": "",
+  "fixture_sha256": {
+    "scene_direct_grasp_720p.xml": "9c1065e9a5b406d27798133bf6d1d5e9e6aa6689b2532d6ccacaa8bc2122b24b",
+    "scene_launch_pose.xml": "b0196ad5f0430f69d7a0323101351b00352027524c55f5ca87408f4e47459594"
+  },
+  "frozen_release_modified": false,
+  "qualification": "The same frozen test and code, original local XML fixtures, immutable server asset directory; independent test working directory."
+}

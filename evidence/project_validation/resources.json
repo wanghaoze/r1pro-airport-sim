@@ -1,0 +1,27 @@
+{
+  "portable_dependencies": true,
+  "scene_counts": {
+    "smoke": 12,
+    "formal": 400
+  },
+  "asset_references_checked": 121952,
+  "compiled": [
+    {
+      "xml": "resources\\scenes\\smoke\\complex\\airport_0000_20260916\\scene.xml",
+      "nq": 39,
+      "ncam": 5
+    },
+    {
+      "xml": "resources\\scenes\\smoke\\ordinary\\airport_0001_20260917\\scene.xml",
+      "nq": 39,
+      "ncam": 5
+    },
+    {
+      "xml": "resources\\scenes\\smoke\\ordinary\\airport_0002_20260918\\scene.xml",
+      "nq": 39,
+      "ncam": 5
+    }
+  ],
+  "physics_preflight_performed": false,
+  "note": "Compilation is not a two-second settling or task-success test."
+}

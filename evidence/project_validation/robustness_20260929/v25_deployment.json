@@ -1,0 +1,32 @@
+{
+  "release": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v25_20260929",
+  "archive_sha256": "308ea63bb4570286db779b837b6a547aa86426b30fc0dca0da82ff2ec7ca95f0",
+  "conda": "/home/michelle/miniconda3/envs/r1pro-tray",
+  "local_tests_passed": 318,
+  "server_tests_passed": 318,
+  "queue_pid": 2346654,
+  "indices": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    16,
+    218,
+    310
+  ],
+  "variants": [
+    "baseline",
+    "geometry",
+    "paths",
+    "guarded",
+    "combined"
+  ],
+  "attempt_budget": 1,
+  "simulation_only": true,
+  "status": "development_running",
+  "full400_target_reached": false,
+  "preview_max_candidates": 3,
+  "preview_scoping": "retained final-placement push only; original first; same-physics independent copies; actual one execution without rollback; overhead consumes original attempt wall budget",
+  "pid": 2397256
+}

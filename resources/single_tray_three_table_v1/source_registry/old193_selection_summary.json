@@ -1,0 +1,28 @@
+{
+  "schema": "airport_complete_task_action_plan_summary/1",
+  "status": "completed",
+  "source_rows": 193,
+  "output_rows": 193,
+  "counts": {
+    "planned_sources": 193,
+    "action_episodes": 3425,
+    "raw_unique_frames": 603498,
+    "label:initialize_posture": 193,
+    "label:navigate_to_tray": 806,
+    "label:push_adjust_tray": 554,
+    "label:grasp_lift_tray": 647,
+    "label:carry_to_position_1": 193,
+    "label:place_release_tray": 647,
+    "label:carry_to_position_2": 193,
+    "label:carry_to_position_3": 192
+  },
+  "excluded_sources": [],
+  "output": "/home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/task_complete_actions_v1/plans/all193_v4.jsonl",
+  "output_sha256": "3c6b26d0e114575f260dbea163e4b80d7d2a7b8f7ee8ae070281ea5cde5e1a96",
+  "label_spec": "/home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/task_complete_actions_v1/plans/all193_v4_label_spec.json",
+  "label_spec_sha256": "c5b503869cc9a3097486f93567acc1db481348456e7daeb4a75cb88d900961a5",
+  "source_inventory_sha256": "e769261ff89566562358e2edb4f3f6a63a0cf840fbb339652679463d3f8f68c7",
+  "cpu_only": true,
+  "training_started": false,
+  "rendering_started": false
+}

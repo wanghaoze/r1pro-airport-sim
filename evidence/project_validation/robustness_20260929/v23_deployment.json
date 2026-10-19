@@ -1,0 +1,38 @@
+{
+  "release": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v23_20260929",
+  "archive_sha256": "2b3ed3df5724c36d642016bf7e3c5b6cce1cc9af92bcfa4484aeb7a0b3244665",
+  "conda": "/home/michelle/miniconda3/envs/r1pro-tray",
+  "local_tests_passed": 263,
+  "server_tests_passed": 263,
+  "pid": 2156801,
+  "indices": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    16,
+    218,
+    310
+  ],
+  "variants": [
+    "baseline",
+    "geometry",
+    "geometry_feedback",
+    "geometry_reference",
+    "combined"
+  ],
+  "attempt_budget": 1,
+  "simulation_only": true,
+  "status": "complete",
+  "full400_target_reached": false,
+  "successes": {
+    "baseline": 1,
+    "geometry": 1,
+    "geometry_feedback": 1,
+    "geometry_reference": 1,
+    "combined": 1
+  },
+  "cases_per_variant": 8,
+  "fresh_verification": "not_launched_no_complete_development_improvement"
+}

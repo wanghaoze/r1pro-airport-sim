@@ -1,0 +1,12 @@
+WARNING Tue Oct  6 18:06:51 2026: flex 'coat' is not rigid and has no equality constraints or passive forces
+Element name 'coat', id 0
+
+WARNING Tue Oct  6 18:11:46 2026: flex 'coat' is not rigid and has no equality constraints or passive forces
+Element name 'coat', id 0
+
+WARNING Tue Oct  6 19:02:22 2026: flex 'coat' is not rigid and has no equality constraints or passive forces
+Element name 'coat', id 0
+
+WARNING Tue Oct  6 19:03:40 2026: flex 'coat' is not rigid and has no equality constraints or passive forces
+Element name 'coat', id 0
+

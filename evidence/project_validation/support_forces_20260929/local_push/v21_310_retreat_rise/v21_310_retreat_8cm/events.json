@@ -1,0 +1,148 @@
+[
+  {
+    "frame": 2278,
+    "event": "push_reuses_existing_contact",
+    "target_tray": 0,
+    "retained_side": "right"
+  },
+  {
+    "event": "diagnostic_phase_snapshot",
+    "frame": 2278,
+    "phase": "adjust",
+    "pose": [
+      0.8485563392734329,
+      -0.17052133737532135,
+      0.799996701629351,
+      0.0029219993084113,
+      7.110002921366793e-08,
+      -3.377790083089288e-06,
+      -0.9999957309452007
+    ],
+    "gripper_force": [
+      0.0,
+      13.30591016398806
+    ],
+    "table_contact": 4
+  },
+  {
+    "frame": 2278,
+    "event": "primitive_start",
+    "primitive": "push",
+    "limit_s": 3.0,
+    "parameters": {
+      "destination": [
+        0.8500000000000001,
+        -0.06500000000000006,
+        0.8
+      ],
+      "yaw": 0.0,
+      "separation": false
+    }
+  },
+  {
+    "frame": 2278,
+    "event": "primitive_push_compliance_reference",
+    "side": "right",
+    "tcp_deflection_m": 0.015041448555837706,
+    "qualification": "command_reference_only_not_observed_rigid_attachment"
+  },
+  {
+    "frame": 2278,
+    "event": "primitive_push_feedforward",
+    "distance_m": 0.02,
+    "nominal_destination": [
+      0.8500000000000001,
+      -0.06500000000000006,
+      0.8
+    ],
+    "command_position": [
+      0.8502735988137106,
+      -0.04500187149533402,
+      0.795496701629351
+    ]
+  },
+  {
+    "frame": 2278,
+    "event": "push_withdraw_path_search",
+    "original_fraction": 0.3,
+    "selected_fraction": null,
+    "rejected": [
+      {
+        "fraction": 0.45,
+        "reason": "primitive_path_infeasible",
+        "detail": {
+          "available_s": 2.9,
+          "candidates": [
+            {
+              "mode": "CruiseJointPath",
+              "reason": "duration",
+              "required_s": 8.9
+            },
+            {
+              "mode": "BlendedJointPath",
+              "reason": "duration",
+              "required_s": 3.0
+            }
+          ]
+        }
+      },
+      {
+        "fraction": 0.6,
+        "reason": "primitive_path_infeasible",
+        "detail": {
+          "available_s": 2.9,
+          "candidates": [
+            {
+              "mode": "CruiseJointPath",
+              "reason": "duration",
+              "required_s": 9.0
+            },
+            {
+              "mode": "BlendedJointPath",
+              "reason": "duration",
+              "required_s": 3.05
+            }
+          ]
+        }
+      }
+    ],
+    "maximum_alternatives": 2,
+    "original_failure": {
+      "available_s": 2.9,
+      "candidates": [
+        {
+          "mode": "CruiseJointPath",
+          "reason": "duration",
+          "required_s": 6.8
+        },
+        {
+          "mode": "BlendedJointPath",
+          "reason": "duration",
+          "required_s": 3.0
+        }
+      ]
+    }
+  },
+  {
+    "frame": 2278,
+    "event": "primitive_failed",
+    "primitive": "push",
+    "reason": "primitive_path_infeasible",
+    "detail": {
+      "available_s": 2.9,
+      "candidates": [
+        {
+          "mode": "CruiseJointPath",
+          "reason": "duration",
+          "required_s": 6.8
+        },
+        {
+          "mode": "BlendedJointPath",
+          "reason": "duration",
+          "required_s": 3.0
+        }
+      ]
+    },
+    "duration_s": 0.0
+  }
+]

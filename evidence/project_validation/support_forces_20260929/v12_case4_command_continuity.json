@@ -1,0 +1,56 @@
+{
+  "qualification": "private_kinematic_only_no_physical_execution",
+  "start_frame": 2023,
+  "start_command_position": [
+    0.8472903241008485,
+    -0.3897901809250365,
+    0.9074466559162436
+  ],
+  "target_command_position": [
+    0.8508901054446794,
+    -0.24920852638400245,
+    0.9074466559162436
+  ],
+  "candidates": [
+    {
+      "knots": 5,
+      "planned": true,
+      "frames": 49,
+      "seconds": 2.45,
+      "minimum_command_z": 0.9070685795564197,
+      "maximum_command_z": 0.9077244932700081,
+      "normal_deviation_m": 0.00037807635982389787,
+      "controller": "BlendedJointPath"
+    },
+    {
+      "knots": 7,
+      "planned": true,
+      "frames": 54,
+      "seconds": 2.7,
+      "minimum_command_z": 0.9074423737045971,
+      "maximum_command_z": 0.9074587869362906,
+      "normal_deviation_m": 1.2131020046934893e-05,
+      "controller": "CruiseJointPath"
+    },
+    {
+      "knots": 9,
+      "planned": true,
+      "frames": 54,
+      "seconds": 2.7,
+      "minimum_command_z": 0.9074406739607845,
+      "maximum_command_z": 0.907451224522174,
+      "normal_deviation_m": 5.981955459088972e-06,
+      "controller": "CruiseJointPath"
+    },
+    {
+      "knots": 13,
+      "planned": true,
+      "frames": 54,
+      "seconds": 2.7,
+      "minimum_command_z": 0.9074454145483803,
+      "maximum_command_z": 0.9074501182632488,
+      "normal_deviation_m": 3.4623470052119742e-06,
+      "controller": "CruiseJointPath"
+    }
+  ]
+}

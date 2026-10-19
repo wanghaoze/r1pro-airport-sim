@@ -1,0 +1,281 @@
+{
+  "counts": {
+    "complex": 2,
+    "ordinary": 10
+  },
+  "master_seed": 20260916,
+  "rejection_counts": {
+    "com_outside_table": 4,
+    "ordinary_overlap": 32
+  },
+  "scenes": [
+    {
+      "difficulty": "complex",
+      "front_count": 0,
+      "json": "complex/airport_0000_20260916/scene.json",
+      "rejections": [],
+      "resample_count": 0,
+      "scene_id": "airport_0000_20260916",
+      "seed": 20260916,
+      "split": "smoke"
+    },
+    {
+      "difficulty": "ordinary",
+      "front_count": 1,
+      "json": "ordinary/airport_0001_20260917/scene.json",
+      "rejections": [
+        {
+          "attempt": 0,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 1,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 2,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 3,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 4,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 5,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 6,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 7,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 8,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 9,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 10,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 11,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 12,
+          "reason": "com_outside_table"
+        },
+        {
+          "attempt": 13,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 14,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 15,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 16,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 17,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 18,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 19,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 20,
+          "reason": "com_outside_table"
+        },
+        {
+          "attempt": 21,
+          "reason": "com_outside_table"
+        },
+        {
+          "attempt": 22,
+          "reason": "ordinary_overlap"
+        }
+      ],
+      "resample_count": 23,
+      "scene_id": "airport_0001_20260917",
+      "seed": 20260917,
+      "split": "smoke"
+    },
+    {
+      "difficulty": "ordinary",
+      "front_count": 2,
+      "json": "ordinary/airport_0002_20260918/scene.json",
+      "rejections": [],
+      "resample_count": 0,
+      "scene_id": "airport_0002_20260918",
+      "seed": 20260918,
+      "split": "smoke"
+    },
+    {
+      "difficulty": "ordinary",
+      "front_count": 3,
+      "json": "ordinary/airport_0003_20260919/scene.json",
+      "rejections": [],
+      "resample_count": 0,
+      "scene_id": "airport_0003_20260919",
+      "seed": 20260919,
+      "split": "smoke"
+    },
+    {
+      "difficulty": "ordinary",
+      "front_count": 0,
+      "json": "ordinary/airport_0004_20260920/scene.json",
+      "rejections": [],
+      "resample_count": 0,
+      "scene_id": "airport_0004_20260920",
+      "seed": 20260920,
+      "split": "smoke"
+    },
+    {
+      "difficulty": "complex",
+      "front_count": 1,
+      "json": "complex/airport_0005_20260921/scene.json",
+      "rejections": [],
+      "resample_count": 0,
+      "scene_id": "airport_0005_20260921",
+      "seed": 20260921,
+      "split": "smoke"
+    },
+    {
+      "difficulty": "ordinary",
+      "front_count": 2,
+      "json": "ordinary/airport_0006_20260922/scene.json",
+      "rejections": [],
+      "resample_count": 0,
+      "scene_id": "airport_0006_20260922",
+      "seed": 20260922,
+      "split": "smoke"
+    },
+    {
+      "difficulty": "ordinary",
+      "front_count": 3,
+      "json": "ordinary/airport_0007_20260923/scene.json",
+      "rejections": [],
+      "resample_count": 0,
+      "scene_id": "airport_0007_20260923",
+      "seed": 20260923,
+      "split": "smoke"
+    },
+    {
+      "difficulty": "ordinary",
+      "front_count": 0,
+      "json": "ordinary/airport_0008_20260924/scene.json",
+      "rejections": [],
+      "resample_count": 0,
+      "scene_id": "airport_0008_20260924",
+      "seed": 20260924,
+      "split": "smoke"
+    },
+    {
+      "difficulty": "ordinary",
+      "front_count": 1,
+      "json": "ordinary/airport_0009_20260925/scene.json",
+      "rejections": [
+        {
+          "attempt": 0,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 1,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 2,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 3,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 4,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 5,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 6,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 7,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 8,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 9,
+          "reason": "com_outside_table"
+        },
+        {
+          "attempt": 10,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 11,
+          "reason": "ordinary_overlap"
+        },
+        {
+          "attempt": 12,
+          "reason": "ordinary_overlap"
+        }
+      ],
+      "resample_count": 13,
+      "scene_id": "airport_0009_20260925",
+      "seed": 20260925,
+      "split": "smoke"
+    },
+    {
+      "difficulty": "ordinary",
+      "front_count": 2,
+      "json": "ordinary/airport_0010_20260926/scene.json",
+      "rejections": [],
+      "resample_count": 0,
+      "scene_id": "airport_0010_20260926",
+      "seed": 20260926,
+      "split": "smoke"
+    },
+    {
+      "difficulty": "ordinary",
+      "front_count": 3,
+      "json": "ordinary/airport_0011_20260927/scene.json",
+      "rejections": [],
+      "resample_count": 0,
+      "scene_id": "airport_0011_20260927",
+      "seed": 20260927,
+      "split": "smoke"
+    }
+  ],
+  "schema_version": "airport_trays/1.0.0",
+  "total": 12
+}

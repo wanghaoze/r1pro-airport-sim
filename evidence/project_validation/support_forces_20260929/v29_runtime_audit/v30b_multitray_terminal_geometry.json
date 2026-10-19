@@ -1,0 +1,95 @@
+[
+  {
+    "index": 0,
+    "time": 59.27600000002648,
+    "trays": [
+      {
+        "tray": 0,
+        "terminal_min_z": 0.8200613105957768,
+        "baseline_min_z": 0.7999902224320897,
+        "delta": 0.02007108816368708,
+        "terminal_vz": 0.15539998819568013,
+        "recorded_geometry_error": -1.1102230246251565e-16
+      },
+      {
+        "tray": 1,
+        "terminal_min_z": 0.887184642724697,
+        "baseline_min_z": 0.8666060615136929,
+        "delta": 0.020578581211004088,
+        "terminal_vz": 0.15556478230993362,
+        "recorded_geometry_error": 0.0
+      },
+      {
+        "tray": 2,
+        "terminal_min_z": 0.7999951165822289,
+        "baseline_min_z": 0.7999951165822294,
+        "delta": -5.551115123125783e-16,
+        "terminal_vz": 1.3387711460341028e-14,
+        "recorded_geometry_error": 0.0
+      }
+    ],
+    "method": "Frozen MjModel mesh geometry + recorded terminal qpos; no MjData, forward, or mj_step"
+  },
+  {
+    "index": 1,
+    "time": 20.72599999999939,
+    "trays": [
+      {
+        "tray": 0,
+        "terminal_min_z": 0.7999963843734936,
+        "baseline_min_z": 0.799996384373518,
+        "delta": -2.4424906541753444e-14,
+        "terminal_vz": -1.051741204767888e-14,
+        "recorded_geometry_error": 0.0
+      },
+      {
+        "tray": 1,
+        "terminal_min_z": 0.8202568716171258,
+        "baseline_min_z": 0.7999740456843214,
+        "delta": 0.020282825932804394,
+        "terminal_vz": 0.1545548830015158,
+        "recorded_geometry_error": 0.0
+      },
+      {
+        "tray": 2,
+        "terminal_min_z": 0.8873773087210521,
+        "baseline_min_z": 0.8665908765915501,
+        "delta": 0.02078643212950204,
+        "terminal_vz": 0.15471786568995743,
+        "recorded_geometry_error": 0.0
+      }
+    ],
+    "method": "Frozen MjModel mesh geometry + recorded terminal qpos; no MjData, forward, or mj_step"
+  },
+  {
+    "index": 3,
+    "time": 19.677999999999972,
+    "trays": [
+      {
+        "tray": 0,
+        "terminal_min_z": 0.819996064612018,
+        "baseline_min_z": 0.7999718819370469,
+        "delta": 0.02002418267497108,
+        "terminal_vz": 0.15522401479554812,
+        "recorded_geometry_error": 0.0
+      },
+      {
+        "tray": 1,
+        "terminal_min_z": 0.8871127181245547,
+        "baseline_min_z": 0.8665888816941135,
+        "delta": 0.0205238364304412,
+        "terminal_vz": 0.15539314734291837,
+        "recorded_geometry_error": 0.0
+      },
+      {
+        "tray": 2,
+        "terminal_min_z": 0.7999869046895981,
+        "baseline_min_z": 0.799986904689606,
+        "delta": -7.882583474838611e-15,
+        "terminal_vz": -1.3931758458422773e-14,
+        "recorded_geometry_error": 0.0
+      }
+    ],
+    "method": "Frozen MjModel mesh geometry + recorded terminal qpos; no MjData, forward, or mj_step"
+  }
+]

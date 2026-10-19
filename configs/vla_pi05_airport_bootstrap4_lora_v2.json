@@ -1,0 +1,16 @@
+{
+  "dataset_root": "/home/michelle/haoze/r1pro-airport-sim/runs/vla_20261001/lerobot/airport/pi05_bootstrap4",
+  "dataset_repo_id": "airport/pi05_bootstrap4",
+  "openpi_root": "/home/michelle/haoze/r1pro-airport-sim/third_party/openpi",
+  "base_params": "/home/michelle/haoze/r1pro-airport-sim/resources/models/pi05_base/params",
+  "run_dir": "/home/michelle/haoze/r1pro-airport-sim/runs/vla_20261001/bc_bootstrap4_250_v2",
+  "name": "pi05_airport_bootstrap4_lora_v2",
+  "action_horizon": 20,
+  "batch_size": 8,
+  "num_train_steps": 250,
+  "save_interval": 100,
+  "num_workers": 0,
+  "seed": 42,
+  "fsdp_devices": 1,
+  "lora": true
+}

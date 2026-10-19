@@ -1,0 +1,20 @@
+{
+  "source_release": "robust_v17_20260929",
+  "run": "ablation/pickup",
+  "scene": "airport_0310_20271226",
+  "attempt": "a000",
+  "start_frame": 600,
+  "diagnostic_only": true,
+  "restoration_qpos_error": 0,
+  "original_action_qpos_qvel_errors": [0, 0, 0],
+  "original_motion_frames": 42,
+  "original_failure": "measured_joint_overspeed",
+  "original_failure_elapsed_seconds": 1.002,
+  "measured_joint_rad_s": 1.7884091136997697,
+  "unchanged_cap_rad_s": 1.7600000000000002,
+  "candidate_motion_frames": 58,
+  "candidate_verification_frames": 2,
+  "candidate_total_seconds": 3.0,
+  "candidate_failure": null,
+  "qualification": "Same original curve, slowed within original action budget, all runtime guards and alignment postcondition passed. Only local alignment, not full Episode. Independent script logs a legacy push retime event; production uses a distinct transport align event."
+}

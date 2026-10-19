@@ -1,0 +1,52 @@
+{
+  "actual_attempt_count": 400,
+  "unique_scenes": 400,
+  "attempts": [
+    0
+  ],
+  "profiles": [
+    "completion_first"
+  ],
+  "recovered_completed": [],
+  "strict_clean": 58,
+  "old_retained_strict": [
+    "airport_0132_20271048",
+    "airport_0288_20271204",
+    "airport_0188_20271104",
+    "airport_0024_20270940",
+    "airport_0344_20271260",
+    "airport_0152_20271068",
+    "airport_0292_20271208",
+    "airport_0300_20271216",
+    "airport_0080_20270996",
+    "airport_0176_20271092",
+    "airport_0364_20271280",
+    "airport_0276_20271192",
+    "airport_0236_20271152",
+    "airport_0060_20270976"
+  ],
+  "old_all": [
+    "airport_0004_20270920",
+    "airport_0016_20270932",
+    "airport_0024_20270940",
+    "airport_0060_20270976",
+    "airport_0080_20270996",
+    "airport_0132_20271048",
+    "airport_0147_20271063",
+    "airport_0152_20271068",
+    "airport_0156_20271072",
+    "airport_0160_20271076",
+    "airport_0176_20271092",
+    "airport_0188_20271104",
+    "airport_0236_20271152",
+    "airport_0240_20271156",
+    "airport_0256_20271172",
+    "airport_0276_20271192",
+    "airport_0288_20271204",
+    "airport_0292_20271208",
+    "airport_0300_20271216",
+    "airport_0304_20271220",
+    "airport_0344_20271260",
+    "airport_0364_20271280"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "release": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v26_20260929",
+  "registered": 400,
+  "selected_ids": [
+    "airport_0004_20270920",
+    "airport_0310_20271226"
+  ],
+  "verified": 2,
+  "unchecked": 398,
+  "total_wall_seconds": 13.474230888998136,
+  "preflight_wall_seconds": 13.044155437033623,
+  "workers": 1,
+  "actual_episodes": 0,
+  "all_registered_verified": false,
+  "report": {
+    "total": 2,
+    "valid": 2,
+    "rejected": 0,
+    "rejection_codes": {},
+    "task_rollouts_validated": 0,
+    "rendering_tested": false,
+    "registered": 400,
+    "selected": 2,
+    "selected_scene_ids": [
+      "airport_0004_20270920",
+      "airport_0310_20271226"
+    ],
+    "checked": 2,
+    "verified": 2,
+    "missing": 398,
+    "selected_checked": 2,
+    "selected_verified": 2,
+    "all_registered_verified": false,
+    "qualification": "Initial physics preflight only; no complete task or rendering validation"
+  }
+}

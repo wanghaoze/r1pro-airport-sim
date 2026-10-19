@@ -1,0 +1,54 @@
+{
+  "task_completed_scenes": 6,
+  "task_completed_attempts": 6,
+  "strict_clean_successful_scenes": 1,
+  "completed_with_recovery_scenes": 0,
+  "acceptance_profiles": [
+    "completion_first"
+  ],
+  "source_scene_count": 400,
+  "attempted_scenes": 8,
+  "completed_attempts": 8,
+  "clean_complete_attempts": 6,
+  "clean_complete_successes": 6,
+  "full_source_success_rate": 0.015,
+  "attempted_scene_success_rate": 0.75,
+  "all_400_attempted": false,
+  "target_70_percent_reached": false,
+  "task_completion_rate": 0.015,
+  "strict_clean_success_rate": 0.0025,
+  "task_completion_target_70_percent_reached": false,
+  "strict_target_70_percent_reached": false,
+  "attempt_budget": 1,
+  "simulation_only": true,
+  "qualification": "Task completion uses the recorded acceptance profile and includes physical recovery; strict clean success excludes deviations and recovery. Legacy clean counters use the recorded profile. Partial-source rate is coverage, not an estimated full-source result.",
+  "primitive_budget_exclusions": [
+    "initial_grasp",
+    "navigation",
+    "push_release_retreat",
+    "final_stability",
+    "cpu_planning"
+  ],
+  "episode_time_includes_all_physical_motion": true,
+  "preflight_coverage": {
+    "registered": 400,
+    "selected": 8,
+    "selected_scene_ids": [
+      "airport_0004_20270920",
+      "airport_0005_20270921",
+      "airport_0006_20270922",
+      "airport_0007_20270923",
+      "airport_0008_20270924",
+      "airport_0016_20270932",
+      "airport_0218_20271134",
+      "airport_0310_20271226"
+    ],
+    "checked": 8,
+    "verified": 8,
+    "missing": 392,
+    "selected_checked": 8,
+    "selected_verified": 8,
+    "all_registered_verified": false,
+    "qualification": "Initial physics preflight only; no complete task or rendering validation"
+  }
+}

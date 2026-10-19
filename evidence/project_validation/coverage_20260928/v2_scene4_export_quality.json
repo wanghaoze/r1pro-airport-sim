@@ -1,0 +1,46 @@
+{
+  "status": "accepted",
+  "scene_id": "airport_0004_20270920",
+  "split": "train",
+  "loader_every_episode_first_last": true,
+  "replay_max_qpos_error": 0.0,
+  "cameras": {
+    "head_left": {
+      "frames": 2956,
+      "shape": [
+        1536,
+        1920,
+        3
+      ],
+      "blank_frames": 0
+    },
+    "head_right": {
+      "frames": 2956,
+      "shape": [
+        1536,
+        1920,
+        3
+      ],
+      "blank_frames": 0
+    },
+    "left_wrist": {
+      "frames": 2956,
+      "shape": [
+        720,
+        1280,
+        3
+      ],
+      "blank_frames": 0
+    },
+    "right_wrist": {
+      "frames": 2956,
+      "shape": [
+        720,
+        1280,
+        3
+      ],
+      "blank_frames": 0
+    }
+  },
+  "training_candidate": true
+}

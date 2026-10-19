@@ -1,0 +1,24 @@
+{
+  "completed_at": "2026-10-09T16:02:18.291213+08:00",
+  "scope": "local_documentation_and_project_memory_only",
+  "server_reverified": false,
+  "archive_tests": {
+    "passed": 3,
+    "command": "python -m pytest tests/test_project_interaction_archive.py -q"
+  },
+  "task_spec_sync": {
+    "write": "passed",
+    "check": "passed"
+  },
+  "local_link_audit": {
+    "files": 12,
+    "checked": 90,
+    "broken": 0
+  },
+  "decision_provenance": {
+    "referenced_ids": 32,
+    "missing": 0
+  },
+  "archive_manifest": "memory/interactions/manifest.json",
+  "old_agents_backup": "docs/governance/AGENTS_20261009_BEFORE.md"
+}

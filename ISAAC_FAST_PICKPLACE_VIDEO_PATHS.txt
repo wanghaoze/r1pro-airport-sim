@@ -1,0 +1,22 @@
+﻿Snapshot: 2026-10-16T04:56:03.119506+00:00
+# case_000 ENDPOINT_AUDITED_PATH_STABILITY_SEPARATE_NOT_TRAINING
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/case_000/clips/pick_up_the_tray_head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/case_000/clips/pick_up_the_tray_head_right.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/case_000/clips/pick_up_the_tray_left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/case_000/clips/pick_up_the_tray_presentation.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/case_000/clips/pick_up_the_tray_right_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/case_000/clips/place_the_tray_head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/case_000/clips/place_the_tray_head_right.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/case_000/clips/place_the_tray_left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/case_000/clips/place_the_tray_presentation.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/case_000/clips/place_the_tray_right_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/case_000/clips/presentation_6s.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/case_000/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/case_000/head_right.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/case_000/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/case_000/presentation.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/case_000/right_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/multi_pose_audited_pair.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/multi_pose_overview.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/multi_pose_pickup.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded/multi_pose_place.mp4

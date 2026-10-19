@@ -1,0 +1,14 @@
+New pickup camera-housing render version
+Server root: /home/michelle/haoze/r1pro-airport-sim/runs/pickup_camera_shells_hidden_20261007_v2
+Dataset after status=ready: /home/michelle/haoze/r1pro-airport-sim/runs/pickup_camera_shells_hidden_20261007_v2/lerobot
+Status: status.json in server root
+Only the temporary render scene hides left/right_realsense_link visual meshes.
+Complete gripper appearance, physics, camera pose and original raw trajectories are preserved.
+200 episodes; 3 cameras;224x224;20fps. Original collection remains unchanged.
+Smoke exported official dataset and exact numerical-column comparison passed.
+Full batch launched detached PID987747, eight workers, on GPU1. Training is not yet started.
+
+All 200 episodes /600 videos rendered. Official dataset re-export continues in background.
+Preview: http://100.104.0.108:8771/viewer.html
+One server video location per line: server root/VIDEO_PATHS.txt
+Per-episode rendering checks: server root/cases/episode_XXXXXX/render_receipt.json

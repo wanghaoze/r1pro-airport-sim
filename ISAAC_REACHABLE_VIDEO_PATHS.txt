@@ -1,0 +1,18 @@
+SUCCESSFUL PHYSICAL EXPERT SMOKE; NOT MODEL TEST
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_reachable_fixedbase_20261016_v1/case_000/presentation.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_reachable_fixedbase_20261016_v1/case_000/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_reachable_fixedbase_20261016_v1/case_000/head_right.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_reachable_fixedbase_20261016_v1/case_000/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_reachable_fixedbase_20261016_v1/case_000/right_wrist.mp4
+
+ACCEPTED TRAIN PAIRS, physical expert, successful and aligned
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_reachable_private_candidates_20261016_v2/dataset/pick_up_the_tray/train/case_000/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_reachable_private_candidates_20261016_v2/dataset/pick_up_the_tray/train/case_000/head_right.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_reachable_private_candidates_20261016_v2/dataset/pick_up_the_tray/train/case_000/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_reachable_private_candidates_20261016_v2/dataset/pick_up_the_tray/train/case_000/right_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_reachable_private_candidates_20261016_v2/dataset/pick_up_the_tray/train/case_000/presentation.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_reachable_private_candidates_20261016_v2/dataset/place_the_tray/train/case_000/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_reachable_private_candidates_20261016_v2/dataset/place_the_tray/train/case_000/head_right.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_reachable_private_candidates_20261016_v2/dataset/place_the_tray/train/case_000/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_reachable_private_candidates_20261016_v2/dataset/place_the_tray/train/case_000/right_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_reachable_private_candidates_20261016_v2/dataset/place_the_tray/train/case_000/presentation.mp4

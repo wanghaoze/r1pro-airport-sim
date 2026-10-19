@@ -1,0 +1,7 @@
+2026-10-16 17:20 SGT
+v5/code55 FAILED, actual wait=1, 294 frames. Pick preparation only; full Pick/Place not passed.
+Tray yaw 75.0003 -> 15.2238 deg; translation along table 0.210057m; max tilt 0.533deg.
+Failure: left-arm IK target after actual supported translation unavailable at selected fixed station.
+New qualified diverse sources=0. No failed source used for training.
+Viewer: http://100.104.0.108:8776/diverse_repair_20261016_v5/case_000/viewer.html
+Server root: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_diverse_pickplace_20261016_v5/case_000

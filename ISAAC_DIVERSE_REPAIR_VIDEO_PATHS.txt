@@ -1,0 +1,6 @@
+FAILED PHYSICAL DIAGNOSTIC, excluded from training
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_diverse_pickplace_20261016_v5/case_000/presentation.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_diverse_pickplace_20261016_v5/case_000/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_diverse_pickplace_20261016_v5/case_000/head_right.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_diverse_pickplace_20261016_v5/case_000/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_diverse_pickplace_20261016_v5/case_000/right_wrist.mp4

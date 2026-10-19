@@ -1,0 +1,89 @@
+{
+  "qualification": "private_local_push_diagnostic_not_complete_episode",
+  "source": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v11_20260929/runs/regression",
+  "controller": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v11_20260929",
+  "case": 4,
+  "frame": 2010,
+  "tray": 1,
+  "side": "right",
+  "incoming_target_source": "previous_recorded_action",
+  "modifications": {},
+  "timestep_intervention": 0.0005,
+  "source_timestep_s": 0.002,
+  "timestep_s": 0.0005,
+  "substeps_per_frame": 100,
+  "rollout_wall_s": 10.837539041996934,
+  "solver_settings": {
+    "integrator": "mjINT_IMPLICITFAST",
+    "solver": "mjSOL_NEWTON",
+    "iterations": 80,
+    "tolerance": 1e-08,
+    "geom_solref_unique": [
+      [
+        0.006,
+        1.0
+      ]
+    ],
+    "geom_solimp_unique": [
+      [
+        0.95,
+        0.99,
+        0.001,
+        0.5,
+        2.0
+      ]
+    ]
+  },
+  "restored_context": {
+    "retained_contact": [
+      1,
+      "right"
+    ],
+    "holding": null,
+    "phase": "adjust",
+    "primitive_lift_xy_shift_m": 0.0,
+    "initial_bottom": [
+      0.801,
+      0.801,
+      0.801
+    ],
+    "support_timer": "reset only after confirming actual entry support",
+    "warnings": "fresh zero counters; source episode would have stopped at any prior warning",
+    "diagnostic_counters": "wall budget restarted; historical peak power and inverse-call tallies not restored"
+  },
+  "exact_original_trajectory_match": false,
+  "maximum_qpos_error": 0.0007244298277125874,
+  "maximum_qvel_error": 0.21241671994445915,
+  "maximum_action_error": 0.0,
+  "endpoint_qpos_error": 0.0003164601414964441,
+  "primitive_returned": false,
+  "failure": {
+    "code": "retained_contact_lost",
+    "detail": {
+      "tray": 1,
+      "side": "right",
+      "table_contact": 0,
+      "force_n": 10.214544913801634,
+      "command_opening_m": 0.0
+    }
+  },
+  "elapsed_s": 1.8500000000088335,
+  "final_pose": [
+    0.8491289867146815,
+    -0.0866452570207682,
+    0.80000998691883,
+    -0.001954176007766389,
+    -2.5569486669266195e-06,
+    -8.239939093546392e-06,
+    0.9999980905590252
+  ],
+  "final_forces": [
+    0.0,
+    10.214544913801634
+  ],
+  "final_table_contacts": 0,
+  "physics_samples": 3700,
+  "longest_physics_missing_s": 0.0035,
+  "table_force_peak_n": 51.84989395919012,
+  "support_fraction": 0.8175675675675675
+}

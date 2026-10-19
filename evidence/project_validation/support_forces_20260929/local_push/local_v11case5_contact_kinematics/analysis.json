@@ -1,0 +1,856 @@
+{
+  "first_missing_s": 1.1839999999972453,
+  "windows": [
+    {
+      "start_s": 0,
+      "end_s": 0.5,
+      "support_fraction": 1.0,
+      "tray_com_v_z": {
+        "mean": -4.851874938992072e-06,
+        "rms": 1.969148040483032e-05,
+        "min": -8.993231019934995e-05,
+        "max": 1.688202308115291e-05
+      },
+      "lowest_vertex_vz": {
+        "mean": -3.5043473910699333e-06,
+        "rms": 3.146291217324655e-05,
+        "min": -0.00021918086811658548,
+        "max": 4.290794908080727e-05
+      },
+      "tcp_v_z": {
+        "mean": 0.00020827846663970558,
+        "rms": 0.0003685680008306805,
+        "min": -0.00043437184541883153,
+        "max": 0.0005669850124861153
+      },
+      "tray_omega_x": {
+        "mean": 2.2762055217113945e-05,
+        "rms": 0.00010743845316209073,
+        "min": -9.524459955565474e-05,
+        "max": 0.0004935123615432594
+      },
+      "tray_omega_y": {
+        "mean": 5.5563953390765845e-06,
+        "rms": 3.26819676965329e-05,
+        "min": -3.356836535179999e-05,
+        "max": 0.00014696402595343908
+      },
+      "tcp_omega_x": {
+        "mean": -0.005282202414824752,
+        "rms": 0.007346484600965452,
+        "min": -0.01568001701210505,
+        "max": 9.877797290530163e-05
+      },
+      "tcp_omega_y": {
+        "mean": -0.0007946258190286513,
+        "rms": 0.0010967425310493197,
+        "min": -0.00357875246454668,
+        "max": 0.00035839878384810037
+      },
+      "command_minus_measured_tcp_z": {
+        "mean": 0.011590357133509083,
+        "rms": 0.011594008390016668,
+        "min": 0.011038665989097196,
+        "max": 0.011950682187887418
+      },
+      "command_minus_measured_rotvec_x": {
+        "mean": 0.00589019262384157,
+        "rms": 0.00590943806782785,
+        "min": 0.005517543430521628,
+        "max": 0.007332838807911831
+      },
+      "command_minus_measured_rotvec_y": {
+        "mean": -0.0258364152273251,
+        "rms": 0.02583646027843696,
+        "min": -0.02593823028527496,
+        "max": -0.025766891684830887
+      },
+      "hand_moment_x": {
+        "mean": -0.3941432250415088,
+        "rms": 0.5690751235950603,
+        "min": -0.890415734854791,
+        "max": 0.697594323674375
+      },
+      "hand_moment_y": {
+        "mean": 0.08615138173790568,
+        "rms": 0.1359021236589879,
+        "min": -0.04005069884978711,
+        "max": 0.4089135089456234
+      },
+      "qualifying_contact_samples": 1000,
+      "contact_normal_velocity_rms": 2.9776145622649333e-05,
+      "contact_angular_normal_component_rms": 2.2183233746736072e-05
+    },
+    {
+      "start_s": 0.5,
+      "end_s": 1.5,
+      "support_fraction": 0.93,
+      "tray_com_v_z": {
+        "mean": 4.408558339211967e-05,
+        "rms": 0.004105149702971403,
+        "min": -0.019240406535280568,
+        "max": 0.01200078294089801
+      },
+      "lowest_vertex_vz": {
+        "mean": -0.002406242003934277,
+        "rms": 0.010773453149564807,
+        "min": -0.04805854844660548,
+        "max": 0.029512786333869757
+      },
+      "tcp_v_z": {
+        "mean": -0.001915113486821634,
+        "rms": 0.002722325952559141,
+        "min": -0.006919941757940137,
+        "max": 0.005430122266597196
+      },
+      "tray_omega_x": {
+        "mean": -7.294120046884961e-05,
+        "rms": 0.02309956344763166,
+        "min": -0.09785971134301391,
+        "max": 0.07369564073814916
+      },
+      "tray_omega_y": {
+        "mean": -0.00010320652855981023,
+        "rms": 0.023964270191342153,
+        "min": -0.10916357484246338,
+        "max": 0.10408148168666992
+      },
+      "tcp_omega_x": {
+        "mean": -0.020916650850047624,
+        "rms": 0.028629127848698397,
+        "min": -0.04743713521982645,
+        "max": 0.04034768494935384
+      },
+      "tcp_omega_y": {
+        "mean": -0.004685510833873609,
+        "rms": 0.007087847487337755,
+        "min": -0.02048209481216471,
+        "max": 0.016855546354382633
+      },
+      "command_minus_measured_tcp_z": {
+        "mean": 0.010272940631759321,
+        "rms": 0.010275971347838033,
+        "min": 0.009863231412735818,
+        "max": 0.010891648812604515
+      },
+      "command_minus_measured_rotvec_x": {
+        "mean": 0.020755476624915503,
+        "rms": 0.02250767656975261,
+        "min": 0.007189604043966928,
+        "max": 0.03178603407060493
+      },
+      "command_minus_measured_rotvec_y": {
+        "mean": -0.024582387548471408,
+        "rms": 0.02461418079659565,
+        "min": -0.025948903300399118,
+        "max": -0.022196209012151392
+      },
+      "hand_moment_x": {
+        "mean": 0.3242385466566375,
+        "rms": 1.1074766466597283,
+        "min": -1.7442233353842846,
+        "max": 1.4917692623374057
+      },
+      "hand_moment_y": {
+        "mean": 0.4052298918891823,
+        "rms": 0.5989550273483659,
+        "min": -0.8543057848598502,
+        "max": 0.836692619495174
+      },
+      "qualifying_contact_samples": 1632,
+      "contact_normal_velocity_rms": 0.00809668692288436,
+      "contact_angular_normal_component_rms": 0.006161660201268953
+    },
+    {
+      "start_s": 1.5,
+      "end_s": 2.7,
+      "support_fraction": 0.6066666666666667,
+      "tray_com_v_z": {
+        "mean": -1.9902004586820524e-05,
+        "rms": 0.011682650779419107,
+        "min": -0.031344545844812555,
+        "max": 0.028235166822461768
+      },
+      "lowest_vertex_vz": {
+        "mean": -0.010304021478657508,
+        "rms": 0.031086126421417642,
+        "min": -0.09130012472879911,
+        "max": 0.05786314300615412
+      },
+      "tcp_v_z": {
+        "mean": -0.0012983823554924847,
+        "rms": 0.004272055122013196,
+        "min": -0.018086705900202824,
+        "max": 0.008870048828348057
+      },
+      "tray_omega_x": {
+        "mean": 5.026798965664316e-05,
+        "rms": 0.06548814763857992,
+        "min": -0.23018701028723543,
+        "max": 0.15669448389558735
+      },
+      "tray_omega_y": {
+        "mean": 0.0001291532114912584,
+        "rms": 0.07187108014575538,
+        "min": -0.19245050159202914,
+        "max": 0.1850669648075378
+      },
+      "tcp_omega_x": {
+        "mean": 0.0004970926006936071,
+        "rms": 0.021492786799071985,
+        "min": -0.06515011568915395,
+        "max": 0.05014842859976918
+      },
+      "tcp_omega_y": {
+        "mean": -0.0009043986641146982,
+        "rms": 0.013221033864804568,
+        "min": -0.037139248424032725,
+        "max": 0.034823428060958506
+      },
+      "command_minus_measured_tcp_z": {
+        "mean": 0.010902506271699523,
+        "rms": 0.010907184704634238,
+        "min": 0.010504500938176009,
+        "max": 0.011533836754155535
+      },
+      "command_minus_measured_rotvec_x": {
+        "mean": 0.030181373912351053,
+        "rms": 0.03020573397592282,
+        "min": 0.02787830242717238,
+        "max": 0.03229538618658125
+      },
+      "command_minus_measured_rotvec_y": {
+        "mean": -0.02111151690167798,
+        "rms": 0.02112404670789288,
+        "min": -0.022233697656159835,
+        "max": -0.019580773300139406
+      },
+      "hand_moment_x": {
+        "mean": -1.0870771407119917,
+        "rms": 1.2493603423735826,
+        "min": -2.068547727277674,
+        "max": 1.6169244874295525
+      },
+      "hand_moment_y": {
+        "mean": -0.11359532419629469,
+        "rms": 0.484468380946294,
+        "min": -1.053619205156769,
+        "max": 0.9255344099970488
+      },
+      "qualifying_contact_samples": 789,
+      "contact_normal_velocity_rms": 0.033353335288731474,
+      "contact_angular_normal_component_rms": 0.0254996954390169
+    }
+  ],
+  "table_peak_gt30_count": 19,
+  "peak_contact_approaching_fraction": 0.8939393939393939,
+  "peak_physics_steps_mod25": [
+    2,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    4,
+    0,
+    0,
+    1
+  ],
+  "impact_example": [
+    {
+      "time_s": 1.311999999996947,
+      "table_force_n": 17.24849777970542,
+      "tray_com_vz": -0.01048166294213662,
+      "tcp_vz": -0.0007390147883993927,
+      "contacts": [
+        {
+          "kind": "hand",
+          "other_body": "right_gripper_finger_link1",
+          "geom1": "robot_geom_69",
+          "geom2": "tray_1__tray_contact_012",
+          "pos": [
+            0.8238680653227323,
+            -0.3631785040433775,
+            0.8648814214789913
+          ],
+          "distance_m": -0.00018884157360377074,
+          "local_normal_force_n": 1.523386401615093,
+          "signed_world_z_force_n": 0.6598318635849644,
+          "relative_support_normal_velocity_m_s": 0.003610149161401835,
+          "moment_world_nm": [
+            -0.06774539708212655,
+            -0.04030660437521102,
+            -0.2621382431561778
+          ]
+        },
+        {
+          "kind": "hand",
+          "other_body": "right_gripper_finger_link2",
+          "geom1": "robot_geom_71",
+          "geom2": "tray_1__tray_contact_012",
+          "pos": [
+            0.869877287529224,
+            -0.3798882011198861,
+            0.9050788763718793
+          ],
+          "distance_m": -0.0006847847456400323,
+          "local_normal_force_n": 8.351287199886487,
+          "signed_world_z_force_n": 2.703969830348844,
+          "relative_support_normal_velocity_m_s": 0.0020056889017350424,
+          "moment_world_nm": [
+            -1.2012721965417752,
+            0.20354112988800976,
+            0.8829187987804982
+          ]
+        },
+        {
+          "kind": "hand",
+          "other_body": "right_gripper_finger_link2",
+          "geom1": "robot_geom_71",
+          "geom2": "tray_1__tray_contact_012",
+          "pos": [
+            0.8765110647946758,
+            -0.37798267679388775,
+            0.8939258904456274
+          ],
+          "distance_m": -0.0003715175742966693,
+          "local_normal_force_n": 2.385673964519715,
+          "signed_world_z_force_n": -0.4533968585008911,
+          "relative_support_normal_velocity_m_s": 0.0015047057920099536,
+          "moment_world_nm": [
+            -0.06910804088974618,
+            -0.04496670915842096,
+            -0.1282026486417053
+          ]
+        },
+        {
+          "kind": "table",
+          "other_body": "front_left",
+          "geom1": "front_left__table_collision_v2_004",
+          "geom2": "tray_1__tray_contact_000",
+          "pos": [
+            0.5866789015252705,
+            0.0173847541555439,
+            0.7999944677860746
+          ],
+          "distance_m": -1.108840609331811e-05,
+          "local_normal_force_n": 0.0,
+          "signed_world_z_force_n": 0.0,
+          "relative_support_normal_velocity_m_s": -0.010765418399417696,
+          "moment_world_nm": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "kind": "table",
+          "other_body": "front_left",
+          "geom1": "front_left__table_collision_v2_004",
+          "geom2": "tray_1__tray_contact_000",
+          "pos": [
+            0.5834367573188041,
+            0.004856513523239431,
+            0.7999949744976542
+          ],
+          "distance_m": -1.007498293748025e-05,
+          "local_normal_force_n": 6.6140824148708885,
+          "signed_world_z_force_n": 6.61449445104261,
+          "relative_support_normal_velocity_m_s": -0.00985430751849309,
+          "moment_world_nm": [
+            0.9804213080899835,
+            1.7364954960580508,
+            1.306288812718535
+          ]
+        },
+        {
+          "kind": "table",
+          "other_body": "front_left",
+          "geom1": "front_left__table_collision_v2_004",
+          "geom2": "tray_1__tray_contact_000",
+          "pos": [
+            1.109817466159266,
+            0.009366567391855695,
+            0.7999928393869389
+          ],
+          "distance_m": -1.4345204354504532e-05,
+          "local_normal_force_n": 10.633336184701962,
+          "signed_world_z_force_n": 10.63400332866281,
+          "relative_support_normal_velocity_m_s": -0.032314739502769765,
+          "moment_world_nm": [
+            1.6234013037951252,
+            -2.7961470110970406,
+            -2.3055811319123127
+          ]
+        },
+        {
+          "kind": "table",
+          "other_body": "front_left",
+          "geom1": "front_left__table_collision_v2_004",
+          "geom2": "tray_1__tray_contact_000",
+          "pos": [
+            1.0846041695636006,
+            0.034151462305572804,
+            0.7999919545358423
+          ],
+          "distance_m": -1.6114906542075205e-05,
+          "local_normal_force_n": 0.0,
+          "signed_world_z_force_n": 0.0,
+          "relative_support_normal_velocity_m_s": -0.03278443933477898,
+          "moment_world_nm": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "time_s": 1.3139999999969423,
+      "table_force_n": 0.0,
+      "tray_com_vz": 0.0034958001026739022,
+      "tcp_vz": -0.003653100222395584,
+      "contacts": [
+        {
+          "kind": "hand",
+          "other_body": "right_gripper_finger_link1",
+          "geom1": "robot_geom_69",
+          "geom2": "tray_1__tray_contact_012",
+          "pos": [
+            0.8238913867332036,
+            -0.36310903707610465,
+            0.8648733618898679
+          ],
+          "distance_m": -0.00017521183304850928,
+          "local_normal_force_n": 2.42936798657603,
+          "signed_world_z_force_n": 2.2020810015866497,
+          "relative_support_normal_velocity_m_s": -0.0008680662121347839,
+          "moment_world_nm": [
+            -0.32856849664663546,
+            0.09519218534111776,
+            0.2932561052767454
+          ]
+        },
+        {
+          "kind": "hand",
+          "other_body": "right_gripper_finger_link2",
+          "geom1": "robot_geom_71",
+          "geom2": "tray_1__tray_contact_012",
+          "pos": [
+            0.8699014907771077,
+            -0.379818677087283,
+            0.90506971889933
+          ],
+          "distance_m": -0.0006966081216167944,
+          "local_normal_force_n": 6.5764344084576205,
+          "signed_world_z_force_n": 0.2595765874392543,
+          "relative_support_normal_velocity_m_s": -0.0012257378116295637,
+          "moment_world_nm": [
+            -0.5683396609115529,
+            -0.0975093746617169,
+            -0.10854481447333328
+          ]
+        },
+        {
+          "kind": "hand",
+          "other_body": "right_gripper_finger_link2",
+          "geom1": "robot_geom_71",
+          "geom2": "tray_1__tray_contact_012",
+          "pos": [
+            0.8765345909773916,
+            -0.37791248239787656,
+            0.8939178074164443
+          ],
+          "distance_m": -0.0003819937309029074,
+          "local_normal_force_n": 2.5329372336352978,
+          "signed_world_z_force_n": -0.03125889163744323,
+          "relative_support_normal_velocity_m_s": -0.0011203876802213485,
+          "moment_world_nm": [
+            -0.16392153335383117,
+            -0.029021753487058415,
+            -0.021617165673777264
+          ]
+        }
+      ]
+    },
+    {
+      "time_s": 1.3159999999969376,
+      "table_force_n": 32.09813637999613,
+      "tray_com_vz": -0.012073946079082491,
+      "tcp_vz": -0.002933521309877624,
+      "contacts": [
+        {
+          "kind": "hand",
+          "other_body": "right_gripper_finger_link1",
+          "geom1": "robot_geom_69",
+          "geom2": "tray_1__tray_contact_012",
+          "pos": [
+            0.8239141570505069,
+            -0.36302095505598514,
+            0.8648675095851717
+          ],
+          "distance_m": -0.00017873630502301605,
+          "local_normal_force_n": 1.0937876969236606,
+          "signed_world_z_force_n": -1.3693312428753095,
+          "relative_support_normal_velocity_m_s": -0.00028647337854917007,
+          "moment_world_nm": [
+            0.30246280130622527,
+            -0.012110915728602498,
+            0.13247082364299068
+          ]
+        },
+        {
+          "kind": "hand",
+          "other_body": "right_gripper_finger_link2",
+          "geom1": "robot_geom_71",
+          "geom2": "tray_1__tray_contact_012",
+          "pos": [
+            0.8699237985085675,
+            -0.37972222320654936,
+            0.9050650531133334
+          ],
+          "distance_m": -0.0006927944249863873,
+          "local_normal_force_n": 8.182625174239812,
+          "signed_world_z_force_n": -5.992883874213884,
+          "relative_support_normal_velocity_m_s": 0.00037717450934163926,
+          "moment_world_nm": [
+            0.5540801350286314,
+            0.6088672620059518,
+            1.531570315969808
+          ]
+        },
+        {
+          "kind": "hand",
+          "other_body": "right_gripper_finger_link2",
+          "geom1": "robot_geom_71",
+          "geom2": "tray_1__tray_contact_012",
+          "pos": [
+            0.8765571726465013,
+            -0.37781590153190014,
+            0.8939129016806449
+          ],
+          "distance_m": -0.00037903060426751345,
+          "local_normal_force_n": 2.8289799931652673,
+          "signed_world_z_force_n": -2.0335627170716295,
+          "relative_support_normal_velocity_m_s": 0.0002902182151754665,
+          "moment_world_nm": [
+            0.21631553251006305,
+            0.20239199219215723,
+            0.5567540452887605
+          ]
+        },
+        {
+          "kind": "table",
+          "other_body": "front_left",
+          "geom1": "front_left__table_collision_v2_004",
+          "geom2": "tray_1__tray_contact_000",
+          "pos": [
+            0.5866505206426285,
+            0.017491081993988446,
+            0.7999815689507377
+          ],
+          "distance_m": -3.6886076651088246e-05,
+          "local_normal_force_n": 0.0,
+          "signed_world_z_force_n": 0.0,
+          "relative_support_normal_velocity_m_s": -0.0223484291493817,
+          "moment_world_nm": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "kind": "table",
+          "other_body": "front_left",
+          "geom1": "front_left__table_collision_v2_004",
+          "geom2": "tray_1__tray_contact_000",
+          "pos": [
+            0.5864338111170802,
+            -0.34008453306701847,
+            0.7999973926482808
+          ],
+          "distance_m": -5.238681694441657e-06,
+          "local_normal_force_n": 3.6016272938044396,
+          "signed_world_z_force_n": 3.60179326446431,
+          "relative_support_normal_velocity_m_s": -0.006101865760895249,
+          "moment_world_nm": [
+            -0.6921867001085883,
+            0.9920157775134659,
+            0.2778744469574511
+          ]
+        },
+        {
+          "kind": "table",
+          "other_body": "front_left",
+          "geom1": "front_left__table_collision_v2_004",
+          "geom2": "tray_1__tray_contact_000",
+          "pos": [
+            0.6116518935968998,
+            -0.3648645584331478,
+            0.7999987283990344
+          ],
+          "distance_m": -2.567180198087558e-06,
+          "local_normal_force_n": 11.268567280954104,
+          "signed_world_z_force_n": 11.269082691658275,
+          "relative_support_normal_velocity_m_s": -0.004785796816289162,
+          "moment_world_nm": [
+            -2.443959772408861,
+            2.8207672932038315,
+            0.5357756070022041
+          ]
+        },
+        {
+          "kind": "table",
+          "other_body": "front_left",
+          "geom1": "front_left__table_collision_v2_004",
+          "geom2": "tray_1__tray_contact_000",
+          "pos": [
+            1.109790623960123,
+            0.009573921691544328,
+            0.7999868778322285
+          ],
+          "distance_m": -2.6268313712885056e-05,
+          "local_normal_force_n": 17.22604322774364,
+          "signed_world_z_force_n": 17.227260423873542,
+          "relative_support_normal_velocity_m_s": -0.01804579585843837,
+          "moment_world_nm": [
+            2.6303935746574156,
+            -4.504365715434346,
+            -3.583044483008612
+          ]
+        }
+      ]
+    },
+    {
+      "time_s": 1.317999999996933,
+      "table_force_n": 11.765521832312395,
+      "tray_com_vz": 0.006143198966596982,
+      "tcp_vz": 0.0012948076108260501,
+      "contacts": [
+        {
+          "kind": "hand",
+          "other_body": "right_gripper_finger_link1",
+          "geom1": "robot_geom_69",
+          "geom2": "tray_1__tray_contact_012",
+          "pos": [
+            0.823943519075394,
+            -0.3629590586148669,
+            0.8648687410288751
+          ],
+          "distance_m": -0.00015961089853887972,
+          "local_normal_force_n": 1.1715553373762775,
+          "signed_world_z_force_n": 0.7130033836914655,
+          "relative_support_normal_velocity_m_s": 0.0050641967351057315,
+          "moment_world_nm": [
+            -0.09137455899353537,
+            -0.018609205064557002,
+            -0.16399220373337045
+          ]
+        },
+        {
+          "kind": "hand",
+          "other_body": "right_gripper_finger_link2",
+          "geom1": "robot_geom_71",
+          "geom2": "tray_1__tray_contact_012",
+          "pos": [
+            0.86994604232899,
+            -0.3796657493440371,
+            0.9050777700828913
+          ],
+          "distance_m": -0.000699698895316769,
+          "local_normal_force_n": 8.326745773730787,
+          "signed_world_z_force_n": 1.5493500467093269,
+          "relative_support_normal_velocity_m_s": 0.005207807209435348,
+          "moment_world_nm": [
+            -0.966613275509351,
+            0.08634625395703414,
+            0.5060720337832343
+          ]
+        },
+        {
+          "kind": "hand",
+          "other_body": "right_gripper_finger_link2",
+          "geom1": "robot_geom_71",
+          "geom2": "tray_1__tray_contact_012",
+          "pos": [
+            0.8765863049489384,
+            -0.37775725659521914,
+            0.8939145099693446
+          ],
+          "distance_m": -0.0003852507172508279,
+          "local_normal_force_n": 2.60630574383385,
+          "signed_world_z_force_n": 0.033990177308798004,
+          "relative_support_normal_velocity_m_s": 0.0051543669774563195,
+          "moment_world_nm": [
+            -0.18225981761052484,
+            0.002483024505844992,
+            0.08222072629406263
+          ]
+        },
+        {
+          "kind": "table",
+          "other_body": "front_left",
+          "geom1": "front_left__table_collision_v2_004",
+          "geom2": "tray_1__tray_contact_000",
+          "pos": [
+            0.5866453648834637,
+            0.017525534195647268,
+            0.7999873312515603
+          ],
+          "distance_m": -2.5361475053720198e-05,
+          "local_normal_force_n": 0.0,
+          "signed_world_z_force_n": 0.0,
+          "relative_support_normal_velocity_m_s": 0.005762284090913469,
+          "moment_world_nm": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "kind": "table",
+          "other_body": "front_left",
+          "geom1": "front_left__table_collision_v2_004",
+          "geom2": "tray_1__tray_contact_000",
+          "pos": [
+            0.5834064689115632,
+            0.004996453412139868,
+            0.7999878412509513
+          ],
+          "distance_m": -2.434147627583547e-05,
+          "local_normal_force_n": 5.094648552093618,
+          "signed_world_z_force_n": 5.095006011332612,
+          "relative_support_normal_velocity_m_s": 0.0057484827574270855,
+          "moment_world_nm": [
+            0.7543369466316621,
+            1.3464983689519536,
+            1.064564626283542
+          ]
+        },
+        {
+          "kind": "table",
+          "other_body": "front_left",
+          "geom1": "front_left__table_collision_v2_004",
+          "geom2": "tray_1__tray_contact_000",
+          "pos": [
+            1.1097859907649177,
+            0.00964297885783474,
+            0.7999936218734642
+          ],
+          "distance_m": -1.2780231297138168e-05,
+          "local_normal_force_n": 6.670048431245962,
+          "signed_world_z_force_n": 6.670515820979784,
+          "relative_support_normal_velocity_m_s": 0.006744035616415586,
+          "moment_world_nm": [
+            1.0186001971166077,
+            -1.74752534546535,
+            -1.4092186001571023
+          ]
+        },
+        {
+          "kind": "table",
+          "other_body": "front_left",
+          "geom1": "front_left__table_collision_v2_004",
+          "geom2": "tray_1__tray_contact_000",
+          "pos": [
+            1.0845662691780908,
+            0.0344213360307372,
+            0.7999922537772491
+          ],
+          "distance_m": -1.551642371599998e-05,
+          "local_normal_force_n": 0.0,
+          "signed_world_z_force_n": 0.0,
+          "relative_support_normal_velocity_m_s": 0.006711688097432913,
+          "moment_world_nm": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "time_s": 1.3199999999969283,
+      "table_force_n": 0.0,
+      "tray_com_vz": 0.009959522727177752,
+      "tcp_vz": -0.000970751872754012,
+      "contacts": [
+        {
+          "kind": "hand",
+          "other_body": "right_gripper_finger_link1",
+          "geom1": "robot_geom_69",
+          "geom2": "tray_1__tray_contact_012",
+          "pos": [
+            0.8239706691080818,
+            -0.3629034523276824,
+            0.8648655661067325
+          ],
+          "distance_m": -0.00014468853095724217,
+          "local_normal_force_n": 2.0545543634923096,
+          "signed_world_z_force_n": 1.8523283151629115,
+          "relative_support_normal_velocity_m_s": 0.0022076473324050545,
+          "moment_world_nm": [
+            -0.27599904370027817,
+            0.08111485250664961,
+            0.25281868071454355
+          ]
+        },
+        {
+          "kind": "hand",
+          "other_body": "right_gripper_finger_link2",
+          "geom1": "robot_geom_71",
+          "geom2": "tray_1__tray_contact_012",
+          "pos": [
+            0.8699697082412678,
+            -0.3796153650773175,
+            0.9050803735426112
+          ],
+          "distance_m": -0.0007069195392513453,
+          "local_normal_force_n": 6.894803620726335,
+          "signed_world_z_force_n": 0.2502357277780307,
+          "relative_support_normal_velocity_m_s": 0.0024153418211021456,
+          "moment_world_nm": [
+            -0.5916736901415202,
+            -0.07693655486974334,
+            -0.0449403281958362
+          ]
+        },
+        {
+          "kind": "hand",
+          "other_body": "right_gripper_finger_link2",
+          "geom1": "robot_geom_71",
+          "geom2": "tray_1__tray_contact_012",
+          "pos": [
+            0.8766133979212269,
+            -0.377705234007787,
+            0.8939115199902194
+          ],
+          "distance_m": -0.00039065550373030286,
+          "local_normal_force_n": 2.6496377683281143,
+          "signed_world_z_force_n": -0.08159954244765912,
+          "relative_support_normal_velocity_m_s": 0.0026002234239112846,
+          "moment_world_nm": [
+            -0.16168800415542756,
+            -0.02102271149469772,
+            0.002976568910642664
+          ]
+        }
+      ]
+    }
+  ]
+}

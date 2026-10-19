@@ -1,0 +1,312 @@
+[
+  {
+    "case": 9,
+    "variant": "ik80",
+    "attempt": 0,
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v33_20260929/runs/completion_candidates/ik80/attempts/airport_0009_20270925/a000",
+    "failure": {
+      "frame": 1324,
+      "event": "primitive_failed",
+      "primitive": "lift",
+      "reason": "primitive_postcondition_failed",
+      "detail": {
+        "stable_frames": 0,
+        "tray_pose": [
+          0.8438244808264548,
+          -0.6084427732145907,
+          0.9559542867487739,
+          0.6843105260393091,
+          -0.025124137696926306,
+          -0.01600729669121751,
+          0.7285819433045472
+        ],
+        "bottom_z": 0.9410526650649136,
+        "table_contact": 0,
+        "gripper_force": [
+          13.72592573394595,
+          13.516181230169334
+        ]
+      },
+      "duration_s": 3.1,
+      "configured_budget_s": 5.0,
+      "strict_budget_s": 3.0,
+      "actual_duration_s": 3.1,
+      "duration_source": "executed_physics_steps",
+      "strict_duration_exceeded": true
+    },
+    "lift": {
+      "frame": 1262,
+      "event": "state_transition",
+      "previous": [
+        "GRASP_TRAY",
+        "load_transfer"
+      ],
+      "state": "GRASP_TRAY",
+      "dag_node_id": "transition_000031",
+      "dag_predecessor": "transition_000030",
+      "phase": "lift",
+      "target_tray": 0,
+      "target_slot": -1,
+      "recovery": false,
+      "simulation_time": 63.10000000003115
+    },
+    "start_bottom": 0.7999968316400665,
+    "initial_bottom": 0.7999971637778702,
+    "last_bottom": 0.941042468234355,
+    "last_delta": 0.14104563659428848,
+    "last_tilt_deg": 3.4212316243797756,
+    "last_support": 0.0,
+    "last_table": 0.0,
+    "last_forces": [
+      13.73130253273099,
+      13.510782537686637
+    ],
+    "tail": [
+      {
+        "frame": 1316,
+        "time": 65.80000000002805,
+        "delta": 0.13735934990618492,
+        "support": 0.0,
+        "table": 0.0,
+        "forces": [
+          13.853066915749132,
+          13.341699896386135
+        ]
+      },
+      {
+        "frame": 1317,
+        "time": 65.85000000002793,
+        "delta": 0.1384977658313914,
+        "support": 0.0,
+        "table": 0.0,
+        "forces": [
+          13.822541500363574,
+          13.386617049707825
+        ]
+      },
+      {
+        "frame": 1318,
+        "time": 65.90000000002782,
+        "delta": 0.13939471015257976,
+        "support": 0.0,
+        "table": 0.0,
+        "forces": [
+          13.796878169491825,
+          13.43082911914891
+        ]
+      },
+      {
+        "frame": 1319,
+        "time": 65.9500000000277,
+        "delta": 0.14006520451851856,
+        "support": 0.0,
+        "table": 0.0,
+        "forces": [
+          13.776555511523489,
+          13.453923341009302
+        ]
+      },
+      {
+        "frame": 1320,
+        "time": 66.00000000002758,
+        "delta": 0.14053168218398404,
+        "support": 0.0,
+        "table": 0.0,
+        "forces": [
+          13.759903000829954,
+          13.479093690365447
+        ]
+      },
+      {
+        "frame": 1321,
+        "time": 66.05000000002747,
+        "delta": 0.14082399707128468,
+        "support": 0.0,
+        "table": 0.0,
+        "forces": [
+          13.74767106471615,
+          13.4926651387999
+        ]
+      },
+      {
+        "frame": 1322,
+        "time": 66.10000000002735,
+        "delta": 0.14098064919106557,
+        "support": 0.0,
+        "table": 0.0,
+        "forces": [
+          13.738369914220215,
+          13.502905126948832
+        ]
+      },
+      {
+        "frame": 1323,
+        "time": 66.15000000002723,
+        "delta": 0.14104563659428848,
+        "support": 0.0,
+        "table": 0.0,
+        "forces": [
+          13.73130253273099,
+          13.510782537686637
+        ]
+      }
+    ],
+    "terminal_delta_m": 0.14105583342484707,
+    "terminal_tilt_deg": 3.414210248197527
+  },
+  {
+    "case": 7,
+    "variant": "direct_ik80",
+    "attempt": 1,
+    "path": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v33_20260929/runs/completion_candidates/direct_ik80/attempts/airport_0007_20270923/a001",
+    "failure": {
+      "frame": 432,
+      "event": "primitive_failed",
+      "primitive": "lift",
+      "reason": "primitive_postcondition_failed",
+      "detail": {
+        "stable_frames": 0,
+        "tray_pose": [
+          0.9046046059227831,
+          0.3166597944444255,
+          0.94531272550298,
+          0.05366475741337033,
+          0.023495324924831914,
+          -0.014371838996668527,
+          -0.9981790990409956
+        ],
+        "bottom_z": 0.9277498780067326,
+        "table_contact": 0,
+        "gripper_force": [
+          13.946132931420008,
+          13.506078410253224
+        ]
+      },
+      "duration_s": 3.2,
+      "configured_budget_s": 5.0,
+      "strict_budget_s": 3.0,
+      "actual_duration_s": 3.2,
+      "duration_source": "executed_physics_steps",
+      "strict_duration_exceeded": true
+    },
+    "lift": {
+      "frame": 368,
+      "event": "state_transition",
+      "previous": [
+        "GRASP_TRAY",
+        "load_transfer"
+      ],
+      "state": "GRASP_TRAY",
+      "dag_node_id": "transition_000009",
+      "dag_predecessor": "transition_000008",
+      "phase": "lift",
+      "target_tray": 0,
+      "target_slot": 0,
+      "recovery": false,
+      "simulation_time": 18.40000000000068
+    },
+    "start_bottom": 0.7999890538232335,
+    "initial_bottom": 0.799987024493781,
+    "last_bottom": 0.9276619813029136,
+    "last_delta": 0.12767292747968007,
+    "last_tilt_deg": 3.178996827691955,
+    "last_support": 0.0,
+    "last_table": 0.0,
+    "last_forces": [
+      13.948080252556338,
+      13.497485238983188
+    ],
+    "tail": [
+      {
+        "frame": 424,
+        "time": 21.19999999999913,
+        "delta": 0.12446138386696726,
+        "support": 0.0,
+        "table": 0.0,
+        "forces": [
+          14.045166326220382,
+          13.31585425917475
+        ]
+      },
+      {
+        "frame": 425,
+        "time": 21.2499999999991,
+        "delta": 0.12535675711916416,
+        "support": 0.0,
+        "table": 0.0,
+        "forces": [
+          14.019244357271685,
+          13.380112561983744
+        ]
+      },
+      {
+        "frame": 426,
+        "time": 21.299999999999073,
+        "delta": 0.1260733269034079,
+        "support": 0.0,
+        "table": 0.0,
+        "forces": [
+          13.999392004872908,
+          13.397095646370001
+        ]
+      },
+      {
+        "frame": 427,
+        "time": 21.349999999999046,
+        "delta": 0.12663021029586385,
+        "support": 0.0,
+        "table": 0.0,
+        "forces": [
+          13.981010002220872,
+          13.198617651043907
+        ]
+      },
+      {
+        "frame": 428,
+        "time": 21.399999999999018,
+        "delta": 0.1270696319365765,
+        "support": 0.0,
+        "table": 0.0,
+        "forces": [
+          13.964083936996577,
+          13.355829058137402
+        ]
+      },
+      {
+        "frame": 429,
+        "time": 21.44999999999899,
+        "delta": 0.12736500143723528,
+        "support": 0.0,
+        "table": 0.0,
+        "forces": [
+          13.957443064488892,
+          13.585521767814644
+        ]
+      },
+      {
+        "frame": 430,
+        "time": 21.499999999998963,
+        "delta": 0.12754938478410116,
+        "support": 0.0,
+        "table": 0.0,
+        "forces": [
+          13.95513284122959,
+          13.453009817743181
+        ]
+      },
+      {
+        "frame": 431,
+        "time": 21.549999999998935,
+        "delta": 0.12767292747968007,
+        "support": 0.0,
+        "table": 0.0,
+        "forces": [
+          13.948080252556338,
+          13.497485238983188
+        ]
+      }
+    ],
+    "terminal_delta_m": 0.1277608241834991,
+    "terminal_tilt_deg": 3.1565179222307425
+  }
+]

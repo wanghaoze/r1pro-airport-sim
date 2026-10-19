@@ -1,0 +1,79 @@
+{
+  "qualification": "read_only_mj_forward_force_reconstruction_not_new_labels_or_accepted_episodes",
+  "root": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v14_20260929/runs/ablation/substep",
+  "mujoco_version": "3.13.0",
+  "script_sha256": "b429f013a5df5690071985e44772a10694792061b84ed76b7cb8af9095216f6d",
+  "estimator_sha256": "6f3fe01697a93c528e1d8951aa091f486b1341c6a3e4dc583a4e13dfed282a7f",
+  "missing_time_semantics": "20 Hz sample durations; terminal rejected substep is not a complete recorded interval; full-trace missing time includes carrying",
+  "cases": [
+    {
+      "scene_id": "airport_0016_20270932",
+      "attempt": "a000",
+      "source_trace": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v14_20260929/runs/ablation/substep/attempts/airport_0016_20270932/a000/trace.h5",
+      "source_xml_sha256": "502c9a5159cce8d3436d6cda0b37268e708796b69ea14680c6cdc70a82f957ec",
+      "frames": 2854,
+      "fps": 20.0,
+      "csv": "airport_0016_20270932_a000.csv",
+      "physics_success": false,
+      "failure_code": "contact_handoff_aborted",
+      "simulation_seconds": 142.65,
+      "whole_trace_longest_missing_s_by_tray": [
+        12.250000000000039,
+        14.800000000000075,
+        15.300000000000082
+      ],
+      "whole_trace_table_load_peak_n_by_tray": [
+        36.015560129574794,
+        53.2069533130913,
+        41.7838085378754
+      ],
+      "push_segments": [
+        {
+          "start_frame": 422,
+          "target_tray": 2,
+          "frames": 51,
+          "table_normal_peak_n": 41.7838085378754,
+          "gripper_fz_min_n": -12.937381515515549,
+          "gripper_fz_max_n": 8.490460671562902,
+          "missing_frames": 8,
+          "longest_missing_s": 0.1,
+          "min_z_max_m": 0.8000269507046358
+        },
+        {
+          "start_frame": 1466,
+          "target_tray": 1,
+          "frames": 51,
+          "table_normal_peak_n": 33.70418505953066,
+          "gripper_fz_min_n": -13.202464504692783,
+          "gripper_fz_max_n": 8.860854455011497,
+          "missing_frames": 6,
+          "longest_missing_s": 0.15000000000000002,
+          "min_z_max_m": 0.8000343647542144
+        },
+        {
+          "start_frame": 1953,
+          "target_tray": 1,
+          "frames": 51,
+          "table_normal_peak_n": 53.2069533130913,
+          "gripper_fz_min_n": -10.38463756774178,
+          "gripper_fz_max_n": 5.696478162795626,
+          "missing_frames": 12,
+          "longest_missing_s": 0.1,
+          "min_z_max_m": 0.8000509820894907
+        },
+        {
+          "start_frame": 2802,
+          "target_tray": 0,
+          "frames": 52,
+          "table_normal_peak_n": 36.015560129574794,
+          "gripper_fz_min_n": -10.100882737661085,
+          "gripper_fz_max_n": 5.992495069361953,
+          "missing_frames": 8,
+          "longest_missing_s": 0.15000000000000002,
+          "min_z_max_m": 0.8000669071476973
+        }
+      ],
+      "maximum_restored_body_position_error_m": 0.0
+    }
+  ]
+}

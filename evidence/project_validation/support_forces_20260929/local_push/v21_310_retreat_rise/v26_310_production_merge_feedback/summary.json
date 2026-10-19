@@ -1,0 +1,248 @@
+{
+  "qualification": "private_local_push_diagnostic_not_complete_episode",
+  "source": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v21_20260929/runs/ablation/geometry",
+  "controller": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v26_20260929",
+  "case": 310,
+  "frame": 2278,
+  "tray": 0,
+  "side": "right",
+  "incoming_target_source": "previous_recorded_action",
+  "modifications": {
+    "push_withdraw_merge_fallback_enabled": true,
+    "push_withdraw_path_search_enabled": true,
+    "push_yaw_feedback_enabled": true,
+    "push_yaw_feedback_scope": "placement",
+    "push_yaw_feedback_seconds": 1.5,
+    "push_yaw_feedback_gain": 2.0,
+    "push_yaw_feedback_max_deg": 1.5,
+    "push_yaw_feedback_additive_fallback_enabled": true
+  },
+  "entry_restore": "replayed_completed_terminal_interval_no_recorded_endpoint",
+  "entry_restore_neighbor_validation": [
+    {
+      "frame": 2275,
+      "qpos": 0.0,
+      "qvel": 0.0
+    },
+    {
+      "frame": 2276,
+      "qpos": 0.0,
+      "qvel": 0.0
+    }
+  ],
+  "cartesian_withdraw_middle": false,
+  "entry_rollpitchyaw_deg": [
+    0.000387088386167798,
+    7.016421155165107e-06,
+    -179.66516306727158
+  ],
+  "full_push_operation": true,
+  "final_slot_geometry_ready": true,
+  "yaw_compensation_deg": null,
+  "operation_acceptance_yaw_unchanged": 0.0,
+  "yaw_feedback_suffix": false,
+  "force_feedback_suffix": false,
+  "force_feedback_zero_gain": false,
+  "place_retained_side": null,
+  "free_retreat_rise_m": null,
+  "withdraw_middle_progress": null,
+  "planning_only": false,
+  "yaw_backtrack_once": false,
+  "yaw_normal_lift_once": false,
+  "yaw_normal_lift_m": null,
+  "final_all_poses": [
+    [
+      0.8432441173447832,
+      -0.06933787215078648,
+      0.7999952170405819,
+      0.010794092182267527,
+      8.370893400516397e-08,
+      1.494347389722244e-07,
+      -0.9999417420899741
+    ],
+    [
+      0.8925182610183603,
+      -1.278753923230848,
+      0.799994159354717,
+      0.9412665827384742,
+      -5.493171580458044e-06,
+      1.5433666261483557e-06,
+      -0.33766436025627466
+    ],
+    [
+      0.8469348440245686,
+      0.38222176332683183,
+      0.799995217040583,
+      0.0004826266039993096,
+      8.524537809637791e-08,
+      1.4856362827222822e-07,
+      -0.99999988353576
+    ]
+  ],
+  "slot_mapping": [
+    2,
+    0,
+    1
+  ],
+  "final_position_error_m": 0.008028642981496272,
+  "final_yaw_rad": -3.120004049988013,
+  "arm_kv_scale": null,
+  "arm_position_servos": [
+    {
+      "name": "left_arm_joint1_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint2_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint3_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint4_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint5_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint6_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint7_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint1_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint2_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint3_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint4_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint5_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint6_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint7_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    }
+  ],
+  "timestep_intervention": null,
+  "source_timestep_s": 0.002,
+  "timestep_s": 0.002,
+  "substeps_per_frame": 25,
+  "rollout_wall_s": 21.25361250306014,
+  "solver_settings": {
+    "integrator": "mjINT_IMPLICITFAST",
+    "solver": "mjSOL_NEWTON",
+    "iterations": 80,
+    "tolerance": 1e-08,
+    "geom_solref_unique": [
+      [
+        0.006,
+        1.0
+      ]
+    ],
+    "geom_solimp_unique": [
+      [
+        0.95,
+        0.99,
+        0.001,
+        0.5,
+        2.0
+      ]
+    ]
+  },
+  "restored_context": {
+    "retained_contact": null,
+    "initial_holding": null,
+    "phase": "adjust",
+    "primitive_lift_xy_shift_m": 0.06,
+    "initial_bottom": [
+      0.801,
+      0.801,
+      0.801
+    ],
+    "support_timer": "reset only after confirming actual entry support",
+    "warnings": "fresh zero counters; source episode would have stopped at any prior warning",
+    "diagnostic_counters": "wall budget restarted; historical peak power and inverse-call tallies not restored"
+  },
+  "exact_original_trajectory_match": false,
+  "recorded_prefix_matches": false,
+  "before_feedback_errors": {
+    "qpos_error": null,
+    "qvel_error": null,
+    "action_error": null
+  },
+  "maximum_qpos_error": null,
+  "maximum_qvel_error": null,
+  "maximum_action_error": null,
+  "endpoint_qpos_error": null,
+  "primitive_returned": true,
+  "failure": null,
+  "elapsed_s": 18.29999999998718,
+  "final_pose": [
+    0.8432441173447832,
+    -0.06933787215078648,
+    0.7999952170405819,
+    0.010794092182267527,
+    8.370893400516397e-08,
+    1.494347389722244e-07,
+    -0.9999417420899741
+  ],
+  "final_forces": [
+    0.0,
+    0.0
+  ],
+  "final_table_contacts": 4,
+  "physics_samples": 9150,
+  "longest_physics_missing_s": 0.008,
+  "table_force_peak_n": 57.210952911720234,
+  "support_fraction": 0.97224043715847
+}

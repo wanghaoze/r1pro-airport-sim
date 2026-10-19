@@ -1,0 +1,10 @@
+{
+  "pid": 2865640,
+  "profile": "completion_first",
+  "release": "robust_v36_20260929",
+  "archive_sha256": "e2b77ea1ffd2f8e2fe30a8c3267fb48830f760cdad09ec7415b779105e939c72",
+  "server_core_tests": "824 passed, 1 xfailed, 2 warnings in 22.66s",
+  "simulation_only": true,
+  "target_reached": false,
+  "sequence": "4 groups of 8 development scenes, 5 seconds, 3 attempts, 16 workers; predeclared selection then fresh full400 at 32 workers after prior workers finish"
+}

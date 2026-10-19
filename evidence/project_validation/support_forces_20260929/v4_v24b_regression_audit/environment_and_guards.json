@@ -1,0 +1,88 @@
+{
+  "v4": {
+    "physics_environment": {
+      "mujoco": "3.13.0",
+      "numpy": "2.2.6",
+      "scipy": "1.15.3"
+    },
+    "source_hash_checks": {
+      "runtime.py": {
+        "actual": "d84622ca9e8f2d44478792202e86f2656a1c76a132f1b3b544c8796c49e413ea",
+        "recorded": "d84622ca9e8f2d44478792202e86f2656a1c76a132f1b3b544c8796c49e413ea",
+        "matches": true
+      },
+      "primitives.py": {
+        "actual": "762b9baceb87653e9e52800f8a84deba8a45938e6f34fa7aff9c5b18cec0e13a",
+        "recorded": "762b9baceb87653e9e52800f8a84deba8a45938e6f34fa7aff9c5b18cec0e13a",
+        "matches": true
+      },
+      "machine.py": {
+        "actual": "cf1a6f5682fa71d6817e17dde8263897062475a6760503668f7ed054df52c7ec",
+        "recorded": "cf1a6f5682fa71d6817e17dde8263897062475a6760503668f7ed054df52c7ec",
+        "matches": true
+      },
+      "geometry.py": {
+        "actual": "6cffa006848991b274132d3e846b17b411eb23d814da2766ae59b91646478bf3",
+        "recorded": "6cffa006848991b274132d3e846b17b411eb23d814da2766ae59b91646478bf3",
+        "matches": true
+      },
+      "trajectory.py": {
+        "actual": "2fe4747e031428d8becd37fac7137ac69ff1fff2aa886681c3045bf0ae892279",
+        "recorded": "2fe4747e031428d8becd37fac7137ac69ff1fff2aa886681c3045bf0ae892279",
+        "matches": true
+      },
+      "camera_guard.py": {
+        "actual": "987a37c93996f6650c7b68aafa1921b8fc15c96e6c76844ebce7a94ee65641f0",
+        "recorded": "987a37c93996f6650c7b68aafa1921b8fc15c96e6c76844ebce7a94ee65641f0",
+        "matches": true
+      }
+    }
+  },
+  "v24b": {
+    "physics_environment": {
+      "mujoco": "3.13.0",
+      "numpy": "2.2.6",
+      "scipy": "1.15.3"
+    },
+    "source_hash_checks": {
+      "runtime.py": {
+        "actual": "696c51df00e2dfadfe81921ad76381e7042d99c05267ee5683d965be2dff46c6",
+        "recorded": "696c51df00e2dfadfe81921ad76381e7042d99c05267ee5683d965be2dff46c6",
+        "matches": true
+      },
+      "primitives.py": {
+        "actual": "f1234573e77fec4bafed3f161a9cd9eefd9d9fe6d225d54e5a3d0db50c2607e3",
+        "recorded": "f1234573e77fec4bafed3f161a9cd9eefd9d9fe6d225d54e5a3d0db50c2607e3",
+        "matches": true
+      },
+      "machine.py": {
+        "actual": "29d450b2372c5d48ca141e0b8055a6d761135c7a760ccc6e4e7ddb47be3d5ef2",
+        "recorded": "29d450b2372c5d48ca141e0b8055a6d761135c7a760ccc6e4e7ddb47be3d5ef2",
+        "matches": true
+      },
+      "geometry.py": {
+        "actual": "6cffa006848991b274132d3e846b17b411eb23d814da2766ae59b91646478bf3",
+        "recorded": "6cffa006848991b274132d3e846b17b411eb23d814da2766ae59b91646478bf3",
+        "matches": true
+      },
+      "trajectory.py": {
+        "actual": "2fe4747e031428d8becd37fac7137ac69ff1fff2aa886681c3045bf0ae892279",
+        "recorded": "2fe4747e031428d8becd37fac7137ac69ff1fff2aa886681c3045bf0ae892279",
+        "matches": true
+      },
+      "camera_guard.py": {
+        "actual": "987a37c93996f6650c7b68aafa1921b8fc15c96e6c76844ebce7a94ee65641f0",
+        "recorded": "987a37c93996f6650c7b68aafa1921b8fc15c96e6c76844ebce7a94ee65641f0",
+        "matches": true
+      }
+    }
+  },
+  "runtime_methods_ast_equal": {
+    "guard": true,
+    "check_retained_contact": true,
+    "camera_guard": true,
+    "_ik_tolerances": true,
+    "cartesian": false,
+    "solve_pair": false
+  }
+}

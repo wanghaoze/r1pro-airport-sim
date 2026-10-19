@@ -1,0 +1,35 @@
+1
+00:00:00,000 --> 00:00:05,000
+Select a room, edit its appearance and save a scene version.
+
+2
+00:00:05,000 --> 00:00:10,000
+Choose training data and a mixture ratio, then monitor the GPU job.
+
+3
+00:00:10,000 --> 00:00:15,600
+Explore the laboratory with a moving camera.
+
+4
+00:00:15,600 --> 00:00:19,600
+Change the tray color while preserving its markings.
+
+5
+00:00:19,600 --> 00:00:23,600
+Edit the robot shell without changing the grippers or physics.
+
+6
+00:00:23,600 --> 00:00:27,600
+Restore the original laboratory and robot materials.
+
+7
+00:00:27,600 --> 00:00:30,900
+Expert-controlled Isaac simulation: prepare the arms.
+
+8
+00:00:30,900 --> 00:00:33,900
+Grasp opposite long edges and lift the physical tray.
+
+9
+00:00:33,900 --> 00:00:36,900
+Lower the tray and release it onto the table.

@@ -1,0 +1,3353 @@
+{
+  "schema": "single_tray_lab_visual_assets/1",
+  "creator": "program_generated_in_Blender",
+  "blender_version": "5.2.1 LTS",
+  "units": "metres",
+  "axes": {
+    "x": "robot_forward",
+    "y": "robot_left",
+    "z": "up"
+  },
+  "quaternion_order": "wxyz",
+  "fidelity": "Photo-inspired approximate arrangement; no measured room survey or exact reconstruction claim",
+  "room_dimensions_assumed_m": [
+    7,
+    6,
+    3.05
+  ],
+  "room_objects": [
+    {
+      "name": "floor_0",
+      "entity": "floor",
+      "kind": "background_visual",
+      "mesh": "meshes/floor_0.obj",
+      "mesh_sha256": "3388737e5b1b6c4db47a2a4ba54b1b5f6dee40231b62051e99bae1988d0c527e",
+      "local_dimensions_m": [
+        7.0,
+        6.0,
+        0.03500000014901161
+      ],
+      "local_bounds_m": [
+        [
+          -3.5,
+          -3.0,
+          0.0
+        ],
+        [
+          3.5,
+          3.0,
+          0.03500000014901161
+        ]
+      ],
+      "world_position_m": [
+        0.8000000715255737,
+        0.0,
+        -0.03500000014901161
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.68,
+        0.69,
+        0.68,
+        1
+      ],
+      "material": "floor_light_gray_granular",
+      "material_properties": {
+        "rgba": [
+          0.68,
+          0.69,
+          0.68,
+          1
+        ],
+        "roughness": 0.87,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0,
+        "texture": "textures/floor_grain.png"
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "back_wall_0",
+      "entity": "back_wall",
+      "kind": "background_visual",
+      "mesh": "meshes/back_wall_0.obj",
+      "mesh_sha256": "e9e640e665d7677afcd376cacc93841281a06c109325b44a55eb520c91898f18",
+      "local_dimensions_m": [
+        0.10000000149011612,
+        6.0,
+        3.049999952316284
+      ],
+      "local_bounds_m": [
+        [
+          -0.05000000074505806,
+          -3.0,
+          0.0
+        ],
+        [
+          0.05000000074505806,
+          3.0,
+          3.049999952316284
+        ]
+      ],
+      "world_position_m": [
+        -2.75,
+        0.0,
+        0.0
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.84,
+        0.85,
+        0.84,
+        1
+      ],
+      "material": "wall_white",
+      "material_properties": {
+        "rgba": [
+          0.84,
+          0.85,
+          0.84,
+          1
+        ],
+        "roughness": 0.72,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "wall_slats_0",
+      "entity": "wall_slats",
+      "kind": "background_visual",
+      "mesh": "meshes/wall_slats_0.obj",
+      "mesh_sha256": "9a603e829ec3005134b3b675df8e48fb125631951aaeee8468b4aeef7673ed86",
+      "local_dimensions_m": [
+        0.017999999225139618,
+        5.923000335693359,
+        2.950000047683716
+      ],
+      "local_bounds_m": [
+        [
+          -0.008999999612569809,
+          -2.9615001678466797,
+          0.0
+        ],
+        [
+          0.008999999612569809,
+          2.9615001678466797,
+          2.950000047683716
+        ]
+      ],
+      "world_position_m": [
+        -2.687999963760376,
+        -0.03400003910064697,
+        0.0
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.84,
+        0.85,
+        0.84,
+        1
+      ],
+      "material": "wall_white",
+      "material_properties": {
+        "rgba": [
+          0.84,
+          0.85,
+          0.84,
+          1
+        ],
+        "roughness": 0.72,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "side_wall_0",
+      "entity": "side_wall",
+      "kind": "background_visual",
+      "mesh": "meshes/side_wall_0.obj",
+      "mesh_sha256": "acd84676018df5509ea69328d0cc6f7bd035ed5906f9fb872cae262b4ef4d09f",
+      "local_dimensions_m": [
+        7.0,
+        0.07999999821186066,
+        3.049999952316284
+      ],
+      "local_bounds_m": [
+        [
+          -3.5,
+          -0.03999999910593033,
+          0.0
+        ],
+        [
+          3.5,
+          0.03999999910593033,
+          3.049999952316284
+        ]
+      ],
+      "world_position_m": [
+        0.8000000715255737,
+        -3.0,
+        0.0
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.84,
+        0.85,
+        0.84,
+        1
+      ],
+      "material": "wall_white",
+      "material_properties": {
+        "rgba": [
+          0.84,
+          0.85,
+          0.84,
+          1
+        ],
+        "roughness": 0.72,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "wall_display_0",
+      "entity": "wall_display",
+      "kind": "background_visual",
+      "mesh": "meshes/wall_display_0.obj",
+      "mesh_sha256": "a3d32108fc93fd8f49c099a320c882153a3dc7ea5e87baa56731d87e23ae2ef5",
+      "local_dimensions_m": [
+        0.07999999821186066,
+        1.6799999475479126,
+        0.9600000083446503
+      ],
+      "local_bounds_m": [
+        [
+          -0.048750199377536774,
+          -0.8399999737739563,
+          2.9802322387695312e-08
+        ],
+        [
+          0.031249798834323883,
+          0.8399999737739563,
+          0.9600000381469727
+        ]
+      ],
+      "world_position_m": [
+        -2.631250023841858,
+        0.6400000154972076,
+        1.350000023841858
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.018,
+        0.022,
+        0.025,
+        1
+      ],
+      "material": "matte_black",
+      "material_properties": {
+        "rgba": [
+          0.018,
+          0.022,
+          0.025,
+          1
+        ],
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "wall_display_1",
+      "entity": "wall_display",
+      "kind": "background_visual",
+      "mesh": "meshes/wall_display_1.obj",
+      "mesh_sha256": "f72c557c174f287ae473326c3833f978890f004bd33217e6abfee44287b78920",
+      "local_dimensions_m": [
+        0.012999996542930603,
+        1.590000033378601,
+        0.8600000143051147
+      ],
+      "local_bounds_m": [
+        [
+          0.03574991971254349,
+          -0.7950000166893005,
+          0.050000011920928955
+        ],
+        [
+          0.04874991625547409,
+          0.7950000166893005,
+          0.9100000262260437
+        ]
+      ],
+      "world_position_m": [
+        -2.631250023841858,
+        0.6400000154972076,
+        1.350000023841858
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.009,
+        0.013,
+        0.017,
+        1
+      ],
+      "material": "black_display_glass",
+      "material_properties": {
+        "rgba": [
+          0.009,
+          0.013,
+          0.017,
+          1
+        ],
+        "roughness": 0.21,
+        "metallic": 0.12,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "wood_door_0",
+      "entity": "wood_door",
+      "kind": "background_visual",
+      "mesh": "meshes/wood_door_0.obj",
+      "mesh_sha256": "02508d9cb0a4bdcdadad3c78d7b37ed796057b79de7a7092ab9cbda0c7b08a42",
+      "local_dimensions_m": [
+        0.07500000298023224,
+        0.949999988079071,
+        2.3499999046325684
+      ],
+      "local_bounds_m": [
+        [
+          -0.05975017696619034,
+          -0.4749999940395355,
+          0.0
+        ],
+        [
+          0.0152498260140419,
+          0.4749999940395355,
+          2.3499999046325684
+        ]
+      ],
+      "world_position_m": [
+        -2.6177499294281006,
+        2.1800000071525574,
+        0.0
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.44,
+        0.28,
+        0.14,
+        1
+      ],
+      "material": "warm_oak",
+      "material_properties": {
+        "rgba": [
+          0.44,
+          0.28,
+          0.14,
+          1
+        ],
+        "roughness": 0.5,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "wood_door_1",
+      "entity": "wood_door",
+      "kind": "background_visual",
+      "mesh": "meshes/wood_door_1.obj",
+      "mesh_sha256": "8c4f1386f9fbaddaaef85004b88924a70084f7459b69cb5ff173656f0e3ec46c",
+      "local_dimensions_m": [
+        0.024000167846679688,
+        0.023999929428100586,
+        0.5699999928474426
+      ],
+      "local_bounds_m": [
+        [
+          0.03574991226196289,
+          -0.3619999885559082,
+          0.9300000071525574
+        ],
+        [
+          0.05975008010864258,
+          -0.3380000591278076,
+          1.5
+        ]
+      ],
+      "world_position_m": [
+        -2.6177499294281006,
+        2.1800000071525574,
+        0.0
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.018,
+        0.022,
+        0.025,
+        1
+      ],
+      "material": "matte_black",
+      "material_properties": {
+        "rgba": [
+          0.018,
+          0.022,
+          0.025,
+          1
+        ],
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "exit_sign_0",
+      "entity": "exit_sign",
+      "kind": "background_visual",
+      "mesh": "meshes/exit_sign_0.obj",
+      "mesh_sha256": "199d2d7e2126510183fd127ce69007d8e7ef028366632febd309675a73b6e532",
+      "local_dimensions_m": [
+        0.026000000536441803,
+        0.4300000071525574,
+        0.19999999552965164
+      ],
+      "local_bounds_m": [
+        [
+          -0.013000000268220901,
+          -0.2150000035762787,
+          -9.685754776000977e-08
+        ],
+        [
+          0.013000000268220901,
+          0.2150000035762787,
+          0.19999989867210388
+        ]
+      ],
+      "world_position_m": [
+        -2.5799999237060547,
+        2.1800000071525574,
+        2.4600000381469727
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.01,
+        0.35,
+        0.2,
+        1
+      ],
+      "material": "exit_green",
+      "material_properties": {
+        "rgba": [
+          0.01,
+          0.35,
+          0.2,
+          1
+        ],
+        "roughness": 0.6,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.8
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "wood_cabinets_0",
+      "entity": "wood_cabinets",
+      "kind": "background_visual",
+      "mesh": "meshes/wood_cabinets_0.obj",
+      "mesh_sha256": "5d96b2f777ba0efb3833267dc2f9cde954d763b15b6ae69f4dffd12dcb5b6bb4",
+      "local_dimensions_m": [
+        0.48000000417232513,
+        1.7199997901916504,
+        2.569999933242798
+      ],
+      "local_bounds_m": [
+        [
+          -0.25750017166137695,
+          -0.8599998950958252,
+          0.0
+        ],
+        [
+          0.22249983251094818,
+          0.8599998950958252,
+          2.569999933242798
+        ]
+      ],
+      "world_position_m": [
+        -2.4325000047683716,
+        -1.7899999618530273,
+        0.0
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.44,
+        0.28,
+        0.14,
+        1
+      ],
+      "material": "warm_oak",
+      "material_properties": {
+        "rgba": [
+          0.44,
+          0.28,
+          0.14,
+          1
+        ],
+        "roughness": 0.5,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "wood_cabinets_1",
+      "entity": "wood_cabinets",
+      "kind": "background_visual",
+      "mesh": "meshes/wood_cabinets_1.obj",
+      "mesh_sha256": "be04ca6827239ab17c0dbef85e2e54db1c889f8449bfd9621c82b99274e0be75",
+      "local_dimensions_m": [
+        0.009999990463256836,
+        1.1780000925064087,
+        0.2600000202655792
+      ],
+      "local_bounds_m": [
+        [
+          0.24749982357025146,
+          -0.3890001177787781,
+          0.3499999940395355
+        ],
+        [
+          0.2574998140335083,
+          0.7889999747276306,
+          0.6100000143051147
+        ]
+      ],
+      "world_position_m": [
+        -2.4325000047683716,
+        -1.7899999618530273,
+        0.0
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.018,
+        0.022,
+        0.025,
+        1
+      ],
+      "material": "matte_black",
+      "material_properties": {
+        "rgba": [
+          0.018,
+          0.022,
+          0.025,
+          1
+        ],
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "glass_partition_0",
+      "entity": "glass_partition",
+      "kind": "background_visual",
+      "mesh": "meshes/glass_partition_0.obj",
+      "mesh_sha256": "2eef17f2a3804378d196598fac71011e46bc665b0a98f1fd3fe758043353e5eb",
+      "local_dimensions_m": [
+        5.699999809265137,
+        0.019999999552965164,
+        2.700000047683716
+      ],
+      "local_bounds_m": [
+        [
+          -2.8499999046325684,
+          -0.009999999776482582,
+          0.0
+        ],
+        [
+          2.8499999046325684,
+          0.009999999776482582,
+          2.700000047683716
+        ]
+      ],
+      "world_position_m": [
+        0.6800000667572021,
+        2.9600000381469727,
+        0.0
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.62,
+        0.72,
+        0.7,
+        0.23
+      ],
+      "material": "glass_partition",
+      "material_properties": {
+        "rgba": [
+          0.62,
+          0.72,
+          0.7,
+          0.23
+        ],
+        "roughness": 0.15,
+        "metallic": 0.0,
+        "transmission": 1.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "glass_frame_0",
+      "entity": "glass_frame",
+      "kind": "background_visual",
+      "mesh": "meshes/glass_frame_0.obj",
+      "mesh_sha256": "bab4064ba993da3afcf28ab75c242d960ae7a1e637c6cca770f9d1c88a080dac",
+      "local_dimensions_m": [
+        5.736999988555908,
+        0.03500000014901161,
+        2.75
+      ],
+      "local_bounds_m": [
+        [
+          -2.868499994277954,
+          -0.017500000074505806,
+          0.0
+        ],
+        [
+          2.868499994277954,
+          0.017500000074505806,
+          2.75
+        ]
+      ],
+      "world_position_m": [
+        0.6749999523162842,
+        2.9749999046325684,
+        0.0
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.24,
+        0.27,
+        0.29,
+        1
+      ],
+      "material": "gray_metal",
+      "material_properties": {
+        "rgba": [
+          0.24,
+          0.27,
+          0.29,
+          1
+        ],
+        "roughness": 0.4,
+        "metallic": 0.65,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "glass_dots_0",
+      "entity": "glass_dots",
+      "kind": "background_visual",
+      "mesh": "meshes/glass_dots_0.obj",
+      "mesh_sha256": "55e0d968bccb9d6774469344dbc45289b3ba523f62e9ca6a5893c6810effff8c",
+      "local_dimensions_m": [
+        5.491000175476074,
+        0.0010000016773119569,
+        1.95800018871526
+      ],
+      "local_bounds_m": [
+        [
+          -2.745500087738037,
+          -0.0005000008386559784,
+          -5.609791298155642e-09
+        ],
+        [
+          2.745500087738037,
+          0.0005000008386559784,
+          1.9580001831054688
+        ]
+      ],
+      "world_position_m": [
+        0.6464999914169312,
+        2.943000078201294,
+        0.23100000619888306
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.71,
+        0.71,
+        0.59,
+        0.74
+      ],
+      "material": "glass_frosted_dots",
+      "material_properties": {
+        "rgba": [
+          0.71,
+          0.71,
+          0.59,
+          0.74
+        ],
+        "roughness": 0.8,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "ceiling_rafts_0",
+      "entity": "ceiling_rafts",
+      "kind": "background_visual",
+      "mesh": "meshes/ceiling_rafts_0.obj",
+      "mesh_sha256": "58e44d0b2195b3b686c679600548db9f98ac6016c694211bd756ca96c9edf3ce",
+      "local_dimensions_m": [
+        5.299999713897705,
+        1.7999999523162842,
+        0.04500000178813934
+      ],
+      "local_bounds_m": [
+        [
+          -2.6499998569488525,
+          -0.8999999761581421,
+          3.725290298461914e-08
+        ],
+        [
+          2.6499998569488525,
+          0.8999999761581421,
+          0.04500003904104233
+        ]
+      ],
+      "world_position_m": [
+        0.6999999284744263,
+        0.10000002384185791,
+        2.8575000762939453
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.84,
+        0.85,
+        0.84,
+        1
+      ],
+      "material": "wall_white",
+      "material_properties": {
+        "rgba": [
+          0.84,
+          0.85,
+          0.84,
+          1
+        ],
+        "roughness": 0.72,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "ceiling_lights_0",
+      "entity": "ceiling_lights",
+      "kind": "background_visual",
+      "mesh": "meshes/ceiling_lights_0.obj",
+      "mesh_sha256": "e097029fb47ab100efc627944d1835473338829d3a9c0f794755dc56731323a6",
+      "local_dimensions_m": [
+        4.710000038146973,
+        0.5099999904632568,
+        0.04999999888241291
+      ],
+      "local_bounds_m": [
+        [
+          -2.3550000190734863,
+          -0.2549999952316284,
+          9.499490261077881e-08
+        ],
+        [
+          2.3550000190734863,
+          0.2549999952316284,
+          0.05000009387731552
+        ]
+      ],
+      "world_position_m": [
+        0.6999999284744263,
+        -1.2999999523162842,
+        2.81499981880188
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.94,
+        0.95,
+        0.94,
+        1
+      ],
+      "material": "lamp_diffuser",
+      "material_properties": {
+        "rgba": [
+          0.94,
+          0.95,
+          0.94,
+          1
+        ],
+        "roughness": 0.3,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 3.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "ceiling_vents_0",
+      "entity": "ceiling_vents",
+      "kind": "background_visual",
+      "mesh": "meshes/ceiling_vents_0.obj",
+      "mesh_sha256": "7f9991f70a7f89201e05a93b2dcc2d29cbd635c58492f137701082bb86313b71",
+      "local_dimensions_m": [
+        4.599999904632568,
+        0.4000000059604645,
+        0.017999999225139618
+      ],
+      "local_bounds_m": [
+        [
+          -2.299999952316284,
+          -0.20000000298023224,
+          6.332993507385254e-08
+        ],
+        [
+          2.299999952316284,
+          0.20000000298023224,
+          0.018000062555074692
+        ]
+      ],
+      "world_position_m": [
+        0.699999988079071,
+        1.5499999523162842,
+        2.8409998416900635
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.84,
+        0.85,
+        0.84,
+        1
+      ],
+      "material": "wall_white",
+      "material_properties": {
+        "rgba": [
+          0.84,
+          0.85,
+          0.84,
+          1
+        ],
+        "roughness": 0.72,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "ceiling_pipes_0",
+      "entity": "ceiling_pipes",
+      "kind": "background_visual",
+      "mesh": "meshes/ceiling_pipes_0.obj",
+      "mesh_sha256": "5ee0e6b2628dc3a06b15b511bb332e6509fe2359b8440bde128fd1e19ef6a5ee",
+      "local_dimensions_m": [
+        6.5,
+        4.859999656677246,
+        0.1700002854111773
+      ],
+      "local_bounds_m": [
+        [
+          -3.25,
+          -2.429999828338623,
+          -1.0480910361820861e-07
+        ],
+        [
+          3.25,
+          2.429999828338623,
+          0.17000018060207367
+        ]
+      ],
+      "world_position_m": [
+        0.6000000238418579,
+        -0.004999995231628418,
+        2.924999952316284
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.84,
+        0.85,
+        0.84,
+        1
+      ],
+      "material": "wall_white",
+      "material_properties": {
+        "rgba": [
+          0.84,
+          0.85,
+          0.84,
+          1
+        ],
+        "roughness": 0.72,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "ceiling_beams_0",
+      "entity": "ceiling_beams",
+      "kind": "background_visual",
+      "mesh": "meshes/ceiling_beams_0.obj",
+      "mesh_sha256": "bb3a445386cb70f0ce9ef94a96eb0dc004533a6fb868169aba5c848748fc0553",
+      "local_dimensions_m": [
+        4.400000095367432,
+        5.800000190734863,
+        0.1599999964237213
+      ],
+      "local_bounds_m": [
+        [
+          -2.200000047683716,
+          -2.9000000953674316,
+          -7.450580596923828e-08
+        ],
+        [
+          2.200000047683716,
+          2.9000000953674316,
+          0.15999992191791534
+        ]
+      ],
+      "world_position_m": [
+        0.5250000357627869,
+        0.0,
+        2.9700000286102295
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.84,
+        0.85,
+        0.84,
+        1
+      ],
+      "material": "wall_white",
+      "material_properties": {
+        "rgba": [
+          0.84,
+          0.85,
+          0.84,
+          1
+        ],
+        "roughness": 0.72,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "desk_0_0",
+      "entity": "desk_0",
+      "kind": "background_visual",
+      "mesh": "meshes/desk_0_0.obj",
+      "mesh_sha256": "a74649dbc2b410dd9b3b43ed5e940ce485cf4c1d8c613a8a7ab2c7696e2dbefb",
+      "local_dimensions_m": [
+        1.100000023841858,
+        0.800000011920929,
+        0.039999961853027344
+      ],
+      "local_bounds_m": [
+        [
+          -0.550000011920929,
+          -0.4000000059604645,
+          0.7300000190734863
+        ],
+        [
+          0.550000011920929,
+          0.4000000059604645,
+          0.7699999809265137
+        ]
+      ],
+      "world_position_m": [
+        -1.690000057220459,
+        -1.899999976158142,
+        0.0
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.35,
+        0.34,
+        0.31,
+        1
+      ],
+      "material": "gray_wood_desk",
+      "material_properties": {
+        "rgba": [
+          0.35,
+          0.34,
+          0.31,
+          1
+        ],
+        "roughness": 0.6,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "desk_0_1",
+      "entity": "desk_0",
+      "kind": "background_visual",
+      "mesh": "meshes/desk_0_1.obj",
+      "mesh_sha256": "2bb8609fdd13d600589d7ba04f6b0dcae4bdb29e8a4864e3d4faa44f307c2e12",
+      "local_dimensions_m": [
+        0.8750001788139343,
+        0.6499999761581421,
+        1.159999966621399
+      ],
+      "local_bounds_m": [
+        [
+          -0.45750007033348083,
+          -0.32499998807907104,
+          0.0
+        ],
+        [
+          0.4175001084804535,
+          0.32499998807907104,
+          1.159999966621399
+        ]
+      ],
+      "world_position_m": [
+        -1.690000057220459,
+        -1.899999976158142,
+        0.0
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.018,
+        0.022,
+        0.025,
+        1
+      ],
+      "material": "matte_black",
+      "material_properties": {
+        "rgba": [
+          0.018,
+          0.022,
+          0.025,
+          1
+        ],
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "desk_0_2",
+      "entity": "desk_0",
+      "kind": "background_visual",
+      "mesh": "meshes/desk_0_2.obj",
+      "mesh_sha256": "c528a9ee8a97565d50afc19f12233f4355fb577ba63e656e260148dc65d486c2",
+      "local_dimensions_m": [
+        0.04500001668930054,
+        0.04500000178813934,
+        0.16999995708465576
+      ],
+      "local_bounds_m": [
+        [
+          -0.46250006556510925,
+          -0.02250000089406967,
+          0.7350000143051147
+        ],
+        [
+          -0.4175000488758087,
+          0.02250000089406967,
+          0.9049999713897705
+        ]
+      ],
+      "world_position_m": [
+        -1.690000057220459,
+        -1.899999976158142,
+        0.0
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.24,
+        0.27,
+        0.29,
+        1
+      ],
+      "material": "gray_metal",
+      "material_properties": {
+        "rgba": [
+          0.24,
+          0.27,
+          0.29,
+          1
+        ],
+        "roughness": 0.4,
+        "metallic": 0.65,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "desk_1_0",
+      "entity": "desk_1",
+      "kind": "background_visual",
+      "mesh": "meshes/desk_1_0.obj",
+      "mesh_sha256": "4be036382fef5618d85953e92efe370c65bb95a0feb995de5536d5c984747d85",
+      "local_dimensions_m": [
+        1.100000023841858,
+        0.800000011920929,
+        0.039999961853027344
+      ],
+      "local_bounds_m": [
+        [
+          -0.550000011920929,
+          -0.4000000059604645,
+          0.7300000190734863
+        ],
+        [
+          0.550000011920929,
+          0.4000000059604645,
+          0.7699999809265137
+        ]
+      ],
+      "world_position_m": [
+        -1.690000057220459,
+        -1.0499999523162842,
+        0.0
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.35,
+        0.34,
+        0.31,
+        1
+      ],
+      "material": "gray_wood_desk",
+      "material_properties": {
+        "rgba": [
+          0.35,
+          0.34,
+          0.31,
+          1
+        ],
+        "roughness": 0.6,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "desk_1_1",
+      "entity": "desk_1",
+      "kind": "background_visual",
+      "mesh": "meshes/desk_1_1.obj",
+      "mesh_sha256": "0625cbf6ab15b21b2190198bc25652e9003557f7974b975c6016b8ce1fddb87d",
+      "local_dimensions_m": [
+        0.8750001788139343,
+        0.6499999761581421,
+        1.159999966621399
+      ],
+      "local_bounds_m": [
+        [
+          -0.45750007033348083,
+          -0.32499998807907104,
+          0.0
+        ],
+        [
+          0.4175001084804535,
+          0.32499998807907104,
+          1.159999966621399
+        ]
+      ],
+      "world_position_m": [
+        -1.690000057220459,
+        -1.0499999523162842,
+        0.0
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.018,
+        0.022,
+        0.025,
+        1
+      ],
+      "material": "matte_black",
+      "material_properties": {
+        "rgba": [
+          0.018,
+          0.022,
+          0.025,
+          1
+        ],
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "desk_1_2",
+      "entity": "desk_1",
+      "kind": "background_visual",
+      "mesh": "meshes/desk_1_2.obj",
+      "mesh_sha256": "e6bdde31ad468d6391fd6ff2017629eab5b6eefffa7e2a0af2f71a6745e3a148",
+      "local_dimensions_m": [
+        0.04500001668930054,
+        0.04500000178813934,
+        0.16999995708465576
+      ],
+      "local_bounds_m": [
+        [
+          -0.46250006556510925,
+          -0.02250000089406967,
+          0.7350000143051147
+        ],
+        [
+          -0.4175000488758087,
+          0.02250000089406967,
+          0.9049999713897705
+        ]
+      ],
+      "world_position_m": [
+        -1.690000057220459,
+        -1.0499999523162842,
+        0.0
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.24,
+        0.27,
+        0.29,
+        1
+      ],
+      "material": "gray_metal",
+      "material_properties": {
+        "rgba": [
+          0.24,
+          0.27,
+          0.29,
+          1
+        ],
+        "roughness": 0.4,
+        "metallic": 0.65,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "desk_2_0",
+      "entity": "desk_2",
+      "kind": "background_visual",
+      "mesh": "meshes/desk_2_0.obj",
+      "mesh_sha256": "b5c47da4b616f3c35d2751fd391ed35d2162b9ef396c3a6cd56f717c90d44b26",
+      "local_dimensions_m": [
+        1.100000023841858,
+        0.800000011920929,
+        0.039999961853027344
+      ],
+      "local_bounds_m": [
+        [
+          -0.550000011920929,
+          -0.3999999761581421,
+          0.7300000190734863
+        ],
+        [
+          0.550000011920929,
+          0.40000003576278687,
+          0.7699999809265137
+        ]
+      ],
+      "world_position_m": [
+        -1.690000057220459,
+        -0.20000001043081284,
+        0.0
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.35,
+        0.34,
+        0.31,
+        1
+      ],
+      "material": "gray_wood_desk",
+      "material_properties": {
+        "rgba": [
+          0.35,
+          0.34,
+          0.31,
+          1
+        ],
+        "roughness": 0.6,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "desk_2_1",
+      "entity": "desk_2",
+      "kind": "background_visual",
+      "mesh": "meshes/desk_2_1.obj",
+      "mesh_sha256": "aeedf3b01489535841c5ac6033d93c7efd341233b6361b3760c5722548e67484",
+      "local_dimensions_m": [
+        0.8750001788139343,
+        0.6499999761581421,
+        1.159999966621399
+      ],
+      "local_bounds_m": [
+        [
+          -0.45750007033348083,
+          -0.32499998807907104,
+          0.0
+        ],
+        [
+          0.4175001084804535,
+          0.32499998807907104,
+          1.159999966621399
+        ]
+      ],
+      "world_position_m": [
+        -1.690000057220459,
+        -0.20000001043081284,
+        0.0
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.018,
+        0.022,
+        0.025,
+        1
+      ],
+      "material": "matte_black",
+      "material_properties": {
+        "rgba": [
+          0.018,
+          0.022,
+          0.025,
+          1
+        ],
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "desk_2_2",
+      "entity": "desk_2",
+      "kind": "background_visual",
+      "mesh": "meshes/desk_2_2.obj",
+      "mesh_sha256": "3ee7d9a44c319a44b53be9b4c9a651fd674fe28c003f61208d180dd467142907",
+      "local_dimensions_m": [
+        0.04500001668930054,
+        0.04500000178813934,
+        0.16999995708465576
+      ],
+      "local_bounds_m": [
+        [
+          -0.46250006556510925,
+          -0.022499985992908478,
+          0.7350000143051147
+        ],
+        [
+          -0.4175000488758087,
+          0.022500015795230865,
+          0.9049999713897705
+        ]
+      ],
+      "world_position_m": [
+        -1.690000057220459,
+        -0.20000001043081284,
+        0.0
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.24,
+        0.27,
+        0.29,
+        1
+      ],
+      "material": "gray_metal",
+      "material_properties": {
+        "rgba": [
+          0.24,
+          0.27,
+          0.29,
+          1
+        ],
+        "roughness": 0.4,
+        "metallic": 0.65,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "office_chair_0_0",
+      "entity": "office_chair_0",
+      "kind": "background_visual",
+      "mesh": "meshes/office_chair_0_0.obj",
+      "mesh_sha256": "6950d6153c23cc9bbc82c7cc3350fb7b335767d0b7771680105eeb1b6917a23c",
+      "local_dimensions_m": [
+        0.46000002324581146,
+        0.46000000834465027,
+        0.5450000166893005
+      ],
+      "local_bounds_m": [
+        [
+          -0.2556273937225342,
+          -0.23000012338161469,
+          0.4300000071525574
+        ],
+        [
+          0.20437262952327728,
+          0.22999988496303558,
+          0.9750000238418579
+        ]
+      ],
+      "world_position_m": [
+        -0.7543725818395615,
+        -1.9499999284744263,
+        0.004999998491257429
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.13,
+        0.15,
+        0.16,
+        1
+      ],
+      "material": "gray_mesh_chair_fabric",
+      "material_properties": {
+        "rgba": [
+          0.13,
+          0.15,
+          0.16,
+          1
+        ],
+        "roughness": 0.92,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "office_chair_0_1",
+      "entity": "office_chair_0",
+      "kind": "background_visual",
+      "mesh": "meshes/office_chair_0_1.obj",
+      "mesh_sha256": "7cd5d6ca49e65d4838891d514eb99a178a10ef274409e6d9bd7aebe46543af56",
+      "local_dimensions_m": [
+        0.574745237827301,
+        0.6043227910995483,
+        0.6480000025411637
+      ],
+      "local_bounds_m": [
+        [
+          -0.2873726189136505,
+          -0.30216145515441895,
+          -6.338151115059532e-10
+        ],
+        [
+          0.2873726189136505,
+          0.3021613359451294,
+          0.6480000019073486
+        ]
+      ],
+      "world_position_m": [
+        -0.7543725818395615,
+        -1.9499999284744263,
+        0.004999998491257429
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.018,
+        0.022,
+        0.025,
+        1
+      ],
+      "material": "matte_black",
+      "material_properties": {
+        "rgba": [
+          0.018,
+          0.022,
+          0.025,
+          1
+        ],
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "office_chair_1_0",
+      "entity": "office_chair_1",
+      "kind": "background_visual",
+      "mesh": "meshes/office_chair_1_0.obj",
+      "mesh_sha256": "208e168bd1ab8c6034edd2caadacbafef83dc587362e64e33a2bfcb673358f5b",
+      "local_dimensions_m": [
+        0.46000002324581146,
+        0.46000000834465027,
+        0.5450000166893005
+      ],
+      "local_bounds_m": [
+        [
+          -0.2556273937225342,
+          -0.23000000417232513,
+          0.4300000071525574
+        ],
+        [
+          0.20437262952327728,
+          0.23000000417232513,
+          0.9750000238418579
+        ]
+      ],
+      "world_position_m": [
+        -0.7543725818395615,
+        -0.9000000059604645,
+        0.004999998491257429
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.13,
+        0.15,
+        0.16,
+        1
+      ],
+      "material": "gray_mesh_chair_fabric",
+      "material_properties": {
+        "rgba": [
+          0.13,
+          0.15,
+          0.16,
+          1
+        ],
+        "roughness": 0.92,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "office_chair_1_1",
+      "entity": "office_chair_1",
+      "kind": "background_visual",
+      "mesh": "meshes/office_chair_1_1.obj",
+      "mesh_sha256": "84a7f169d273ec4311add31e736080e3fb65393b1172bb4c9c634bb2c8245a63",
+      "local_dimensions_m": [
+        0.574745237827301,
+        0.6043228507041931,
+        0.6480000025411637
+      ],
+      "local_bounds_m": [
+        [
+          -0.2873726189136505,
+          -0.30216145515441895,
+          -6.338151115059532e-10
+        ],
+        [
+          0.2873726189136505,
+          0.30216139554977417,
+          0.6480000019073486
+        ]
+      ],
+      "world_position_m": [
+        -0.7543725818395615,
+        -0.9000000059604645,
+        0.004999998491257429
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.018,
+        0.022,
+        0.025,
+        1
+      ],
+      "material": "matte_black",
+      "material_properties": {
+        "rgba": [
+          0.018,
+          0.022,
+          0.025,
+          1
+        ],
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "green_chair_0_0",
+      "entity": "green_chair_0",
+      "kind": "background_visual",
+      "mesh": "meshes/green_chair_0_0.obj",
+      "mesh_sha256": "3876427bb4bd4064d14f1a7a97f4dc9d4906546e4eee425091a9e72a05354426",
+      "local_dimensions_m": [
+        0.4599999934434891,
+        0.46000000834465027,
+        0.5450000166893005
+      ],
+      "local_bounds_m": [
+        [
+          -0.2556273937225342,
+          -0.23000000417232513,
+          0.4300000071525574
+        ],
+        [
+          0.2043725997209549,
+          0.23000000417232513,
+          0.9750000238418579
+        ]
+      ],
+      "world_position_m": [
+        0.22562740184366703,
+        2.2499998807907104,
+        0.004999998491257429
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.32,
+        0.41,
+        0.055,
+        1
+      ],
+      "material": "green_chair_upholstery",
+      "material_properties": {
+        "rgba": [
+          0.32,
+          0.41,
+          0.055,
+          1
+        ],
+        "roughness": 0.75,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "green_chair_0_1",
+      "entity": "green_chair_0",
+      "kind": "background_visual",
+      "mesh": "meshes/green_chair_0_1.obj",
+      "mesh_sha256": "cf2b98173fcf02c3aaab4867201cedda061cc5a15716011df0cc27840255c766",
+      "local_dimensions_m": [
+        0.5043707937002182,
+        0.5659999847412109,
+        0.6013919450342655
+      ],
+      "local_bounds_m": [
+        [
+          -0.2552299201488495,
+          -0.28299999237060547,
+          0.046608056873083115
+        ],
+        [
+          0.2491408735513687,
+          0.28299999237060547,
+          0.6480000019073486
+        ]
+      ],
+      "world_position_m": [
+        0.22562740184366703,
+        2.2499998807907104,
+        0.004999998491257429
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.84,
+        0.85,
+        0.84,
+        1
+      ],
+      "material": "wall_white",
+      "material_properties": {
+        "rgba": [
+          0.84,
+          0.85,
+          0.84,
+          1
+        ],
+        "roughness": 0.72,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "green_chair_0_2",
+      "entity": "green_chair_0",
+      "kind": "background_visual",
+      "mesh": "meshes/green_chair_0_2.obj",
+      "mesh_sha256": "e1068de37cf25d57776ee7759ef84f230c008cb92c8008ecd1c173002eb7a706",
+      "local_dimensions_m": [
+        0.5747452080249786,
+        0.6043227910995483,
+        0.0860000035544427
+      ],
+      "local_bounds_m": [
+        [
+          -0.2873726189136505,
+          -0.30216145515441895,
+          -6.338151115059532e-10
+        ],
+        [
+          0.2873725891113281,
+          0.3021613359451294,
+          0.0860000029206276
+        ]
+      ],
+      "world_position_m": [
+        0.22562740184366703,
+        2.2499998807907104,
+        0.004999998491257429
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.018,
+        0.022,
+        0.025,
+        1
+      ],
+      "material": "matte_black",
+      "material_properties": {
+        "rgba": [
+          0.018,
+          0.022,
+          0.025,
+          1
+        ],
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "green_chair_1_0",
+      "entity": "green_chair_1",
+      "kind": "background_visual",
+      "mesh": "meshes/green_chair_1_0.obj",
+      "mesh_sha256": "d3c1bade809cd63a2dc7a68851f6ec3562c0cc58d2c052f56356ba0141d918fd",
+      "local_dimensions_m": [
+        0.46000002324581146,
+        0.46000000834465027,
+        0.5450000166893005
+      ],
+      "local_bounds_m": [
+        [
+          -0.2556273937225342,
+          -0.23000000417232513,
+          0.4300000071525574
+        ],
+        [
+          0.20437262952327728,
+          0.23000000417232513,
+          0.9750000238418579
+        ]
+      ],
+      "world_position_m": [
+        1.0256273746490479,
+        2.2499998807907104,
+        0.004999998491257429
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.32,
+        0.41,
+        0.055,
+        1
+      ],
+      "material": "green_chair_upholstery",
+      "material_properties": {
+        "rgba": [
+          0.32,
+          0.41,
+          0.055,
+          1
+        ],
+        "roughness": 0.75,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "green_chair_1_1",
+      "entity": "green_chair_1",
+      "kind": "background_visual",
+      "mesh": "meshes/green_chair_1_1.obj",
+      "mesh_sha256": "bf872b28d426690376402f7c0edc8b3a16db5d78a8ee3b250435c2205e126c67",
+      "local_dimensions_m": [
+        0.5043707489967346,
+        0.5659999847412109,
+        0.6013919450342655
+      ],
+      "local_bounds_m": [
+        [
+          -0.2552298903465271,
+          -0.28299999237060547,
+          0.046608056873083115
+        ],
+        [
+          0.24914085865020752,
+          0.28299999237060547,
+          0.6480000019073486
+        ]
+      ],
+      "world_position_m": [
+        1.0256273746490479,
+        2.2499998807907104,
+        0.004999998491257429
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.84,
+        0.85,
+        0.84,
+        1
+      ],
+      "material": "wall_white",
+      "material_properties": {
+        "rgba": [
+          0.84,
+          0.85,
+          0.84,
+          1
+        ],
+        "roughness": 0.72,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "green_chair_1_2",
+      "entity": "green_chair_1",
+      "kind": "background_visual",
+      "mesh": "meshes/green_chair_1_2.obj",
+      "mesh_sha256": "70dc426e1d863f8596cbff82e91364b44058aa01e2db605493945c7ab3f31654",
+      "local_dimensions_m": [
+        0.5747451782226562,
+        0.6043227910995483,
+        0.0860000035544427
+      ],
+      "local_bounds_m": [
+        [
+          -0.28737255930900574,
+          -0.30216145515441895,
+          -6.338151115059532e-10
+        ],
+        [
+          0.2873726189136505,
+          0.3021613359451294,
+          0.0860000029206276
+        ]
+      ],
+      "world_position_m": [
+        1.0256273746490479,
+        2.2499998807907104,
+        0.004999998491257429
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.018,
+        0.022,
+        0.025,
+        1
+      ],
+      "material": "matte_black",
+      "material_properties": {
+        "rgba": [
+          0.018,
+          0.022,
+          0.025,
+          1
+        ],
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "green_chair_2_0",
+      "entity": "green_chair_2",
+      "kind": "background_visual",
+      "mesh": "meshes/green_chair_2_0.obj",
+      "mesh_sha256": "81687b8eb6348426715662433fcefc191f307542bbe200a2dfe58e41fab7c88c",
+      "local_dimensions_m": [
+        0.46000002324581146,
+        0.46000000834465027,
+        0.5450000166893005
+      ],
+      "local_bounds_m": [
+        [
+          -0.2556273937225342,
+          -0.23000000417232513,
+          0.4300000071525574
+        ],
+        [
+          0.20437262952327728,
+          0.23000000417232513,
+          0.9750000238418579
+        ]
+      ],
+      "world_position_m": [
+        1.825627326965332,
+        2.2499998807907104,
+        0.004999998491257429
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.32,
+        0.41,
+        0.055,
+        1
+      ],
+      "material": "green_chair_upholstery",
+      "material_properties": {
+        "rgba": [
+          0.32,
+          0.41,
+          0.055,
+          1
+        ],
+        "roughness": 0.75,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "green_chair_2_1",
+      "entity": "green_chair_2",
+      "kind": "background_visual",
+      "mesh": "meshes/green_chair_2_1.obj",
+      "mesh_sha256": "3929aa7500706b245e4112498da9d9d301013e2eb1a6324bc4df2260313a1771",
+      "local_dimensions_m": [
+        0.5043708086013794,
+        0.5659999847412109,
+        0.6013919450342655
+      ],
+      "local_bounds_m": [
+        [
+          -0.2552298307418823,
+          -0.28299999237060547,
+          0.046608056873083115
+        ],
+        [
+          0.24914097785949707,
+          0.28299999237060547,
+          0.6480000019073486
+        ]
+      ],
+      "world_position_m": [
+        1.825627326965332,
+        2.2499998807907104,
+        0.004999998491257429
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.84,
+        0.85,
+        0.84,
+        1
+      ],
+      "material": "wall_white",
+      "material_properties": {
+        "rgba": [
+          0.84,
+          0.85,
+          0.84,
+          1
+        ],
+        "roughness": 0.72,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "green_chair_2_2",
+      "entity": "green_chair_2",
+      "kind": "background_visual",
+      "mesh": "meshes/green_chair_2_2.obj",
+      "mesh_sha256": "6a29b1d9386de61c31d06b7cbf3069200f6b6c8967b17a8500d76e7083c46bec",
+      "local_dimensions_m": [
+        0.5747451782226562,
+        0.6043227910995483,
+        0.0860000035544427
+      ],
+      "local_bounds_m": [
+        [
+          -0.28737255930900574,
+          -0.30216145515441895,
+          -6.338151115059532e-10
+        ],
+        [
+          0.2873726189136505,
+          0.3021613359451294,
+          0.0860000029206276
+        ]
+      ],
+      "world_position_m": [
+        1.825627326965332,
+        2.2499998807907104,
+        0.004999998491257429
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.018,
+        0.022,
+        0.025,
+        1
+      ],
+      "material": "matte_black",
+      "material_properties": {
+        "rgba": [
+          0.018,
+          0.022,
+          0.025,
+          1
+        ],
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "equipment_case_0_0",
+      "entity": "equipment_case_0",
+      "kind": "background_visual",
+      "mesh": "meshes/equipment_case_0_0.obj",
+      "mesh_sha256": "8c616074603209986f799051d7c4b040205e544c6e8fff5d72bb222d7a7d0987",
+      "local_dimensions_m": [
+        0.7400000095367432,
+        0.7200000286102295,
+        0.6800000071525574
+      ],
+      "local_bounds_m": [
+        [
+          -0.37250006198883057,
+          -0.36000001430511475,
+          0.0
+        ],
+        [
+          0.3674999475479126,
+          0.36000001430511475,
+          0.6800000071525574
+        ]
+      ],
+      "world_position_m": [
+        2.152500092983246,
+        -2.450000047683716,
+        0.02000001072883606
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.018,
+        0.022,
+        0.025,
+        1
+      ],
+      "material": "matte_black",
+      "material_properties": {
+        "rgba": [
+          0.018,
+          0.022,
+          0.025,
+          1
+        ],
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "equipment_case_0_1",
+      "entity": "equipment_case_0",
+      "kind": "background_visual",
+      "mesh": "meshes/equipment_case_0_1.obj",
+      "mesh_sha256": "8b1e18f21ab8f6ed0e3879b722b317a3ff75fcc0d41c9bbc99863f2a8df4e511",
+      "local_dimensions_m": [
+        0.7649998664855957,
+        0.7350000143051147,
+        0.6744999587535858
+      ],
+      "local_bounds_m": [
+        [
+          -0.3825000524520874,
+          -0.3675000071525574,
+          0.015000015497207642
+        ],
+        [
+          0.3824998140335083,
+          0.3675000071525574,
+          0.6894999742507935
+        ]
+      ],
+      "world_position_m": [
+        2.152500092983246,
+        -2.450000047683716,
+        0.02000001072883606
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.61,
+        0.63,
+        0.65,
+        1
+      ],
+      "material": "silver_gray_polished_panels",
+      "material_properties": {
+        "rgba": [
+          0.61,
+          0.63,
+          0.65,
+          1
+        ],
+        "roughness": 0.22,
+        "metallic": 0.78,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "equipment_case_1_0",
+      "entity": "equipment_case_1",
+      "kind": "background_visual",
+      "mesh": "meshes/equipment_case_1_0.obj",
+      "mesh_sha256": "3c670a2f5e2ce43a598d96cc5d872da5a78d989e4e98167943df0ee27d9a7e73",
+      "local_dimensions_m": [
+        0.7400000095367432,
+        0.7200000286102295,
+        0.6800000071525574
+      ],
+      "local_bounds_m": [
+        [
+          -0.37250030040740967,
+          -0.36000001430511475,
+          0.0
+        ],
+        [
+          0.3674997091293335,
+          0.36000001430511475,
+          0.6800000071525574
+        ]
+      ],
+      "world_position_m": [
+        3.0525001287460327,
+        -2.450000047683716,
+        0.02000001072883606
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.018,
+        0.022,
+        0.025,
+        1
+      ],
+      "material": "matte_black",
+      "material_properties": {
+        "rgba": [
+          0.018,
+          0.022,
+          0.025,
+          1
+        ],
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    },
+    {
+      "name": "equipment_case_1_1",
+      "entity": "equipment_case_1",
+      "kind": "background_visual",
+      "mesh": "meshes/equipment_case_1_1.obj",
+      "mesh_sha256": "8ab609b91e71bd0b0d0f996c492d865c6f20757d19e58caccc7ac6807dbb0462",
+      "local_dimensions_m": [
+        0.7650001049041748,
+        0.7350000143051147,
+        0.6744999587535858
+      ],
+      "local_bounds_m": [
+        [
+          -0.3825002908706665,
+          -0.3675000071525574,
+          0.015000015497207642
+        ],
+        [
+          0.3824998140335083,
+          0.3675000071525574,
+          0.6894999742507935
+        ]
+      ],
+      "world_position_m": [
+        3.0525001287460327,
+        -2.450000047683716,
+        0.02000001072883606
+      ],
+      "world_quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rgba": [
+        0.61,
+        0.63,
+        0.65,
+        1
+      ],
+      "material": "silver_gray_polished_panels",
+      "material_properties": {
+        "rgba": [
+          0.61,
+          0.63,
+          0.65,
+          1
+        ],
+        "roughness": 0.22,
+        "metallic": 0.78,
+        "transmission": 0.0,
+        "emission_strength": 0.0
+      },
+      "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+    }
+  ],
+  "payloads": {
+    "laptop": {
+      "parts": [
+        {
+          "name": "laptop_0",
+          "entity": "laptop",
+          "kind": "payload_visual",
+          "mesh": "meshes/laptop_0.obj",
+          "mesh_sha256": "95d8cfdc34a9870dc38634e996100ccfad9a90c91f41678947a2730bef052cd7",
+          "local_dimensions_m": [
+            0.29999998211860657,
+            0.20999999344348907,
+            0.017753424122929573
+          ],
+          "local_bounds_m": [
+            [
+              -0.14999999105930328,
+              -0.10499999672174454,
+              0.0
+            ],
+            [
+              0.14999999105930328,
+              0.10499999672174454,
+              0.017753424122929573
+            ]
+          ],
+          "world_position_m": [
+            0,
+            0,
+            0
+          ],
+          "world_quaternion_wxyz": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "rgba": [
+            0.1,
+            0.115,
+            0.13,
+            1
+          ],
+          "material": "laptop_dark_graphite",
+          "material_properties": {
+            "rgba": [
+              0.1,
+              0.115,
+              0.13,
+              1
+            ],
+            "roughness": 0.48,
+            "metallic": 0.24,
+            "transmission": 0.0,
+            "emission_strength": 0.0
+          },
+          "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+        },
+        {
+          "name": "laptop_1",
+          "entity": "laptop",
+          "kind": "payload_visual",
+          "mesh": "meshes/laptop_1.obj",
+          "mesh_sha256": "f64130e9419656fe396b159f332722c9e878b70c5a304fd0065a9e7a7c31e65c",
+          "local_dimensions_m": [
+            0.27699998021125793,
+            0.11250000260770321,
+            0.009616438299417496
+          ],
+          "local_bounds_m": [
+            [
+              -0.13849999010562897,
+              -0.012000000104308128,
+              0.008383560925722122
+            ],
+            [
+              0.13849999010562897,
+              0.10050000250339508,
+              0.017999999225139618
+            ]
+          ],
+          "world_position_m": [
+            0,
+            0,
+            0
+          ],
+          "world_quaternion_wxyz": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "rgba": [
+            0.018,
+            0.022,
+            0.025,
+            1
+          ],
+          "material": "matte_black",
+          "material_properties": {
+            "rgba": [
+              0.018,
+              0.022,
+              0.025,
+              1
+            ],
+            "roughness": 0.55,
+            "metallic": 0.0,
+            "transmission": 0.0,
+            "emission_strength": 0.0
+          },
+          "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+        }
+      ],
+      "origin": "XY bounding centre, bottom Z zero",
+      "physics_implementation": "scene pipeline owns dynamic body/flex, not this Blender preview",
+      "local_bounds_m": [
+        [
+          -0.14999999105930328,
+          -0.10499999672174454,
+          0.0
+        ],
+        [
+          0.14999999105930328,
+          0.10499999672174454,
+          0.017999999225139618
+        ]
+      ],
+      "local_dimensions_m": [
+        0.29999998211860657,
+        0.20999999344348907,
+        0.017999999225139618
+      ]
+    },
+    "backpack": {
+      "parts": [
+        {
+          "name": "backpack_0",
+          "entity": "backpack",
+          "kind": "payload_visual",
+          "mesh": "meshes/backpack_0.obj",
+          "mesh_sha256": "40a910857cbd60a63165ee70ad8f25f7a7536424a3c0629558ea51f3414fea02",
+          "local_dimensions_m": [
+            0.2800000011920929,
+            0.17788691073656082,
+            0.10313870757818222
+          ],
+          "local_bounds_m": [
+            [
+              -0.14000000059604645,
+              -0.0927480161190033,
+              0.0
+            ],
+            [
+              0.14000000059604645,
+              0.08513889461755753,
+              0.10313870757818222
+            ]
+          ],
+          "world_position_m": [
+            0,
+            0,
+            0
+          ],
+          "world_quaternion_wxyz": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "rgba": [
+            0.045,
+            0.052,
+            0.055,
+            1
+          ],
+          "material": "backpack_charcoal_canvas",
+          "material_properties": {
+            "rgba": [
+              0.045,
+              0.052,
+              0.055,
+              1
+            ],
+            "roughness": 0.94,
+            "metallic": 0.0,
+            "transmission": 0.0,
+            "emission_strength": 0.0
+          },
+          "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+        },
+        {
+          "name": "backpack_1",
+          "entity": "backpack",
+          "kind": "payload_visual",
+          "mesh": "meshes/backpack_1.obj",
+          "mesh_sha256": "ec7e197c67e744e5c5aa2e711980046f147f34de9abbc10e86d191a7a85e98c1",
+          "local_dimensions_m": [
+            0.2043316513299942,
+            0.006824083626270294,
+            0.010756805539131165
+          ],
+          "local_bounds_m": [
+            [
+              -0.1021658256649971,
+              -0.10000000149011612,
+              0.07758373767137527
+            ],
+            [
+              0.1021658256649971,
+              -0.09317591786384583,
+              0.08834054321050644
+            ]
+          ],
+          "world_position_m": [
+            0,
+            0,
+            0
+          ],
+          "world_quaternion_wxyz": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "rgba": [
+            0.24,
+            0.27,
+            0.29,
+            1
+          ],
+          "material": "gray_metal",
+          "material_properties": {
+            "rgba": [
+              0.24,
+              0.27,
+              0.29,
+              1
+            ],
+            "roughness": 0.4,
+            "metallic": 0.65,
+            "transmission": 0.0,
+            "emission_strength": 0.0
+          },
+          "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+        },
+        {
+          "name": "backpack_2",
+          "entity": "backpack",
+          "kind": "payload_visual",
+          "mesh": "meshes/backpack_2.obj",
+          "mesh_sha256": "49ab173ae2ca4b57952f52011d09fab069af5b04f25e27ff58f20834dc16b96c",
+          "local_dimensions_m": [
+            0.18756486475467682,
+            0.05172579362988472,
+            0.11750149237923324
+          ],
+          "local_bounds_m": [
+            [
+              -0.09378243237733841,
+              0.0482742004096508,
+              0.002498512389138341
+            ],
+            [
+              0.09378243237733841,
+              0.09999999403953552,
+              0.12000000476837158
+            ]
+          ],
+          "world_position_m": [
+            0,
+            0,
+            0
+          ],
+          "world_quaternion_wxyz": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "rgba": [
+            0.018,
+            0.022,
+            0.025,
+            1
+          ],
+          "material": "matte_black",
+          "material_properties": {
+            "rgba": [
+              0.018,
+              0.022,
+              0.025,
+              1
+            ],
+            "roughness": 0.55,
+            "metallic": 0.0,
+            "transmission": 0.0,
+            "emission_strength": 0.0
+          },
+          "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+        }
+      ],
+      "origin": "XY bounding centre, bottom Z zero",
+      "physics_implementation": "scene pipeline owns dynamic body/flex, not this Blender preview",
+      "local_bounds_m": [
+        [
+          -0.14000000059604645,
+          -0.10000000149011612,
+          0.0
+        ],
+        [
+          0.14000000059604645,
+          0.09999999403953552,
+          0.12000000476837158
+        ]
+      ],
+      "local_dimensions_m": [
+        0.2800000011920929,
+        0.19999999552965164,
+        0.12000000476837158
+      ]
+    },
+    "coat": {
+      "parts": [
+        {
+          "name": "coat_0",
+          "entity": "coat",
+          "kind": "payload_visual",
+          "mesh": "meshes/coat_0.obj",
+          "mesh_sha256": "dd724c52afb8bd7c145c4c4865f1756f29a87c74976a1a578aa5308397042b7c",
+          "local_dimensions_m": [
+            0.26738402247428894,
+            0.2174951434135437,
+            0.02106930041918531
+          ],
+          "local_bounds_m": [
+            [
+              -0.1336575746536255,
+              -0.1090269684791565,
+              0.0004452252178452909
+            ],
+            [
+              0.13372644782066345,
+              0.10846817493438721,
+              0.0215145256370306
+            ]
+          ],
+          "world_position_m": [
+            0,
+            0,
+            0
+          ],
+          "world_quaternion_wxyz": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "rgba": [
+            0.13,
+            0.18,
+            0.23,
+            1
+          ],
+          "material": "coat_blue_gray_fabric",
+          "material_properties": {
+            "rgba": [
+              0.13,
+              0.18,
+              0.23,
+              1
+            ],
+            "roughness": 0.98,
+            "metallic": 0.0,
+            "transmission": 0.0,
+            "emission_strength": 0.0
+          },
+          "collision_policy": "visual_only; scene pipeline owns separate physical geometry"
+        }
+      ],
+      "origin": "XY bounding centre, bottom Z zero",
+      "physics_implementation": "scene pipeline owns dynamic body/flex, not this Blender preview",
+      "physics_mesh": "meshes/coat_physics.obj",
+      "physics_mesh_sha256": "5f1521f6ac6b18fff2cc2079e0ad1dd2ab75560ebf661b113176b948a62959af",
+      "physics_vertices": 63,
+      "physics_triangles": 96,
+      "physics_mesh_closed": false,
+      "required_physics": "MuJoCo dynamic flex surface; high-poly fixed visual reference is not a soft body",
+      "tunable_physics": {
+        "mass_kg": null,
+        "contact_friction": null,
+        "stretch_stiffness": null,
+        "bending_stiffness": null
+      },
+      "local_bounds_m": [
+        [
+          -0.1336575746536255,
+          -0.1090269684791565,
+          0.0004452252178452909
+        ],
+        [
+          0.13372644782066345,
+          0.10846817493438721,
+          0.0215145256370306
+        ]
+      ],
+      "local_dimensions_m": [
+        0.26738402247428894,
+        0.2174951434135437,
+        0.02106930041918531
+      ],
+      "visual_parts_render_policy": "High-poly parts are Blender reference only; MuJoCo must render its true dynamic flex geometry"
+    }
+  },
+  "materials": {
+    "floor_light_gray_granular": {
+      "rgba": [
+        0.68,
+        0.69,
+        0.68,
+        1
+      ],
+      "roughness": 0.87,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.0,
+      "texture": "textures/floor_grain.png"
+    },
+    "wall_white": {
+      "rgba": [
+        0.84,
+        0.85,
+        0.84,
+        1
+      ],
+      "roughness": 0.72,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "wall_groove_shadow": {
+      "rgba": [
+        0.57,
+        0.59,
+        0.58,
+        1
+      ],
+      "roughness": 0.8,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "matte_black": {
+      "rgba": [
+        0.018,
+        0.022,
+        0.025,
+        1
+      ],
+      "roughness": 0.55,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "black_display_glass": {
+      "rgba": [
+        0.009,
+        0.013,
+        0.017,
+        1
+      ],
+      "roughness": 0.21,
+      "metallic": 0.12,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "warm_oak": {
+      "rgba": [
+        0.44,
+        0.28,
+        0.14,
+        1
+      ],
+      "roughness": 0.5,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "gray_wood_desk": {
+      "rgba": [
+        0.35,
+        0.34,
+        0.31,
+        1
+      ],
+      "roughness": 0.6,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "silver_gray_polished_panels": {
+      "rgba": [
+        0.61,
+        0.63,
+        0.65,
+        1
+      ],
+      "roughness": 0.22,
+      "metallic": 0.78,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "gray_metal": {
+      "rgba": [
+        0.24,
+        0.27,
+        0.29,
+        1
+      ],
+      "roughness": 0.4,
+      "metallic": 0.65,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "glass_partition": {
+      "rgba": [
+        0.62,
+        0.72,
+        0.7,
+        0.23
+      ],
+      "roughness": 0.15,
+      "metallic": 0.0,
+      "transmission": 1.0,
+      "emission_strength": 0.0
+    },
+    "glass_frosted_dots": {
+      "rgba": [
+        0.71,
+        0.71,
+        0.59,
+        0.74
+      ],
+      "roughness": 0.8,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "gray_mesh_chair_fabric": {
+      "rgba": [
+        0.13,
+        0.15,
+        0.16,
+        1
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "green_chair_upholstery": {
+      "rgba": [
+        0.32,
+        0.41,
+        0.055,
+        1
+      ],
+      "roughness": 0.75,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "backpack_charcoal_canvas": {
+      "rgba": [
+        0.045,
+        0.052,
+        0.055,
+        1
+      ],
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "coat_blue_gray_fabric": {
+      "rgba": [
+        0.13,
+        0.18,
+        0.23,
+        1
+      ],
+      "roughness": 0.98,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "laptop_dark_graphite": {
+      "rgba": [
+        0.1,
+        0.115,
+        0.13,
+        1
+      ],
+      "roughness": 0.48,
+      "metallic": 0.24,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "lamp_diffuser": {
+      "rgba": [
+        0.94,
+        0.95,
+        0.94,
+        1
+      ],
+      "roughness": 0.3,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 3.0
+    },
+    "exit_green": {
+      "rgba": [
+        0.01,
+        0.35,
+        0.2,
+        1
+      ],
+      "roughness": 0.6,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.8
+    },
+    "unchanged_work_table_table_0_source_material": {
+      "rgba": [
+        0.18,
+        0.19,
+        0.2,
+        1
+      ],
+      "roughness": 0.55,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "unchanged_work_table_table_1_source_material": {
+      "rgba": [
+        0.68,
+        0.65,
+        0.55,
+        1
+      ],
+      "roughness": 0.55,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "unchanged_work_table_table_2_source_material": {
+      "rgba": [
+        0.048,
+        0.057,
+        0.062,
+        1
+      ],
+      "roughness": 0.55,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "unchanged_work_table_table_3_source_material": {
+      "rgba": [
+        0.015,
+        0.018,
+        0.02,
+        1
+      ],
+      "roughness": 0.55,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "unchanged_work_table_table_4_source_material": {
+      "rgba": [
+        0.072,
+        0.079,
+        0.084,
+        1
+      ],
+      "roughness": 0.55,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "unchanged_tray_visual_tray_0_source_material": {
+      "rgba": [
+        0.86,
+        0.82,
+        0.64,
+        1
+      ],
+      "roughness": 0.55,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    },
+    "unchanged_tray_visual_tray_1_source_material": {
+      "rgba": [
+        0.105,
+        0.012,
+        0.02,
+        1
+      ],
+      "roughness": 0.55,
+      "metallic": 0.0,
+      "transmission": 0.0,
+      "emission_strength": 0.0
+    }
+  },
+  "reference_photos": [
+    {
+      "path": "reference_photos/laptop.jpg",
+      "sha256": "ca41de90576c565dcce34b8f6ff1d8a734ebc2b61617639c4a8fc5d4ff383866"
+    },
+    {
+      "path": "reference_photos/robot.jpg",
+      "sha256": "9d40e72469cb6554e627812e4ef3276691d1387665ce610decaf782bb24c4aa5"
+    },
+    {
+      "path": "reference_photos/room_cabinets.jpg",
+      "sha256": "d6faf158377529d901df160d08636320850f3ddeea5562a83501a8b3108fe874"
+    },
+    {
+      "path": "reference_photos/room_desks.jpg",
+      "sha256": "bba65aa2fd89097d72cb58f9e34797fae56ea9daae8274f4b45799fcddf30a9a"
+    },
+    {
+      "path": "reference_photos/room_glass.jpg",
+      "sha256": "8454fef4e6debad8bfa99d3f115489b86d88b83fe2a3f1c3ece8f51ffcfbbcd9"
+    },
+    {
+      "path": "reference_photos/room_wall.jpg",
+      "sha256": "9f25cb167392bce812537dfc4d1bb8d75be2924b4d50d07b2bf3592eabbbf7bc"
+    }
+  ],
+  "mesh_origin_policy": "Room entity local XY footprint centre, minimum local Z zero; all material parts share entity anchor/world pose",
+  "operation_table": {
+    "source": "outputs/r1pro_tray_scene/assets/table/table_*.obj",
+    "unchanged": true,
+    "included_in_room_objects": false,
+    "preview_world_position_m": [
+      0.85,
+      0,
+      0
+    ],
+    "preview_yaw_rad": 1.5707963267948966,
+    "physical_table_contract": "Root clones original table body, collision/friction/inertia. These previews never replace it."
+  },
+  "source_resources_sha256": {
+    "outputs/r1pro_tray_scene/assets/table/table_0.obj": "f3684670db2c8b1213d7a20b04825db563ed64dcffd83fbb367f6eeddc3a1349",
+    "outputs/r1pro_tray_scene/assets/table/table_0.mtl": "f57996d17ae25c28bc57d04d58dd1aa9ae8ae8224695f0cd99bd576204b12542",
+    "outputs/r1pro_tray_scene/assets/table/table_1.obj": "15170dbc448c86050b3057759f276b493e53de3dab3947081a127ab3b4df2f4f",
+    "outputs/r1pro_tray_scene/assets/table/table_1.mtl": "f124366b9d29c6ad4310e2e7e8030bab2b20a9750a4295f2045a1a3bb8b39a35",
+    "outputs/r1pro_tray_scene/assets/table/table_2.obj": "2b158e8687fe7bb1d88a96cbca9782046a8e9e34833a01fc6fbbb9ff96033f8e",
+    "outputs/r1pro_tray_scene/assets/table/table_2.mtl": "ad8f81fbe8d1010bfe5ef985ea1410364ba99d2d1d25b411ff88c3a038895582",
+    "outputs/r1pro_tray_scene/assets/table/table_3.obj": "9ac50eef51a3a2aa843c589d24a9805d28c37ec2cc80a410f2c982d4333eed8a",
+    "outputs/r1pro_tray_scene/assets/table/table_3.mtl": "bc4ec25a4fa074d70d263b68a391868df965a57b4602490a3359e387e33a67ea",
+    "outputs/r1pro_tray_scene/assets/table/table_4.obj": "671fe9bb8cfe6848df957f217c3e819c098d5a68cf3b7dd6242593e0dae269b1",
+    "outputs/r1pro_tray_scene/assets/table/table_4.mtl": "650b1a969ba8e00641b6860176ecb2fe5190daab5e95c3bd94b4ccecf8388fb7",
+    "outputs/r1pro_tray_scene/assets/tray/tray_0.obj": "ac0f9be6dd6904a15611ec3b78c1429bcca9dedaf2b9be42f4ad44ee1c91a3d9",
+    "outputs/r1pro_tray_scene/assets/tray/tray_0.mtl": "5008d06b0c36b7a613320cb26357fa4ae9ffebcacce556b768cf903d306ce233",
+    "outputs/r1pro_tray_scene/assets/tray/tray_1.obj": "bcec568e608141bf6348c0a2bd42d2ff8e399f6d7b2aa7d89096fbaecd65d13f",
+    "outputs/r1pro_tray_scene/assets/tray/tray_1.mtl": "e56cf7f255b375b84ac2585d6baf351696946de227a6fe1c58bd49577c97f1c3",
+    "outputs/r1pro_tray_scene/robot.xml": "86843a7545e84f61d2a1781683ea06e5c78ccaec3900eced8ec71e09fb34a9ee",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/base_link.obj": "fc9ad103045fca8354530cbfa35ef91bac39a4eaaa2ad0080d0eb4910be219ad",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/steer_motor_link1.obj": "d129e80d996a92c3e330a623b1836b652907a00111476801506251fe2e71d779",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/wheel_motor_link1.obj": "eef711f9b5566c800eb9dc47740b2673b6cc8a79410d883a041928abeae869a9",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/steer_motor_link2.obj": "99d047d713ffc1047dac0dc7a5305561e0febef7d711bc1fb22209fc2727edc1",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/wheel_motor_link2.obj": "59110686ce6958834cbab01e2f0197d1dad65c10fb042bbe2de8a713b32ffba6",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/steer_motor_link3.obj": "831f29f90dce3ac287e4bfba2b2199131c209a67a4403660574e1838d699e958",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/wheel_motor_link3.obj": "ebb81fdc472820fc6177cbada09b983e899c9174c3fdba0632ae065228ecf339",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link1.obj": "256664d53b696a46099f90ddecbefae8ec398b869f12f9121a5c23c04a34009e",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link2.obj": "00b0244dbd788e03151700171abe4320de98b38e1556238c3f5d1dd612289938",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link3.obj": "3238da5be681bb8105e5d814b1d6b84c321318a158ad7022b2f1bc70ecf99d20",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link4.obj": "6b61f7b72c706c4f719e6e4110464fa340c5b2322a735f4ad894e53896156a46",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/zed_link.obj": "3c0e435bc0203ffe73f141b2d76f47a687a1a51076d8a7f83c1891a424049dd0",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_base_link.obj": "739c993f51f712984290899949de260203c3b31d269f5e0119afd7e4fe55cea5",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link1.obj": "8bfb3b0889cbee563fe76a7db750c63a36f336050d71441f3bd7621c0bd3abf2",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link2.obj": "6306333168268b06fd6cf2c3da50ea833c1fff1714ce463d68c38120e04811fb",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link3.obj": "b5413a49b8cb0dce1cd7c2c659735aae47a0e61b2e4f193f9316d67d3df8d657",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link4.obj": "925da7f12b69e1f70219d8fdbc749c40d608ff8ebc75c1d8fe5e3536d674b961",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link5.obj": "70faa087318b239bb0e50bdbcca46b7ee9100ce63bfafb0fd9baa9c9e21030ab",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link6.obj": "4d1939e8624861bf83ed78858d6698a227977e593dec517d8164636d62403123",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link7.obj": "735c4c476ea69cd8769118a5301f9e62f8267da40d07fa379f6cea0285a5c572",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_gripper_link.obj": "d99c6d995239c376633c53c58bd317c629d4c0e27cc9cc9581a1a056fad65ce5",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_realsense_link.obj": "154014fe780c941409822cfc22228132229838510021b1e3591f2f5c9a1f5717",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_gripper_finger_link1.obj": "ddf9e2e7d3096886a4673ca877bb7db1512bfe5659e96f7798f4c2acead4a60f",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_gripper_finger_link2.obj": "c36a15d2d158b95e2fce94867352ff69687018b23ee17e55beb6ffa97f9838e9",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_base_link.obj": "60aef6fce4cd99fd532ecfc667939e66b5fd256ab08f1e340272f88d5470cfaf",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link1.obj": "67c26a7794548268cf4c394701700ce43e26951639cd0ef389d60bf4a6656e3f",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link2.obj": "ed4ba6a9ea43c7f009456c92935a7e09e7a2020d1c410230f93e9d4b36422af9",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link3.obj": "882f4d24432bb2fba5463bf1a4b865f8e98e32b79286d0abbd0e923bcda431bc",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link4.obj": "75aa528be6cde481c5ff17c30b7277fda7c490b1344db4fb8b7ee18c4570b6ee",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link5.obj": "4a5b2846756b4ad2ef98388d3e3a8e5d0199b5d82f02d3c8ce0200dcc41d28a8",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link6.obj": "07afd7aac595027f8b9366d9c9d188af21241fc70e1480e46e4e83f631943415",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link7.obj": "43b163d9bb0f99328698ff1e57a70c9361a29f37da68ac5a5c0a840e587e9e7d",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_gripper_link.obj": "a91b54ab69054ebcf71ddf969abfa4eff7e3d11fb724ce7e731a69adb8d905fa",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_realsense_link.obj": "2af3f416d7a4270b25d43f0fa1b01de9bc14ddc0a8770760b95b39db06e5086a",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_gripper_finger_link1.obj": "e5433ac273e71a31f0a5b2925c5af176c3e23549e7de55731f5e453a31aad373",
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_gripper_finger_link2.obj": "ee559bd1a3012250da93779e22cafd38066483f64166ac5b40679a16dcfbbfd7"
+  },
+  "robot_appearance": "robot_appearance.json",
+  "preview_scope": "Editable visual mockup, no physics or trajectory success claim; source robot/table copied for display only",
+  "cloth_scope": "coat_physics.obj is an open rest surface only. Root must instantiate real dynamic flex; coat high-poly mesh is not soft-body physics.",
+  "robot_visual_overrides": {
+    "torso_link4": [
+      {
+        "mesh": "meshes/torso_link4_robot_silver.obj",
+        "mesh_sha256": "a4c44e1a207df4a7c15c3dc55a9744f6e68eee82f121e57f078e165ab192befd",
+        "material": "robot_silver",
+        "rgba": [
+          0.6100000143051147,
+          0.6299999952316284,
+          0.6499999761581421,
+          1.0
+        ],
+        "vertices": 3932,
+        "triangles": 7262,
+        "local_geometry_coordinates_unchanged": true
+      },
+      {
+        "mesh": "meshes/torso_link4_robot_black.obj",
+        "mesh_sha256": "d8a602f8eb81a6e9045a12f052ef2fdbc718cc416c08d19ce1c20c00df340651",
+        "material": "robot_black",
+        "rgba": [
+          0.017999999225139618,
+          0.02199999988079071,
+          0.02500000037252903,
+          1.0
+        ],
+        "vertices": 26158,
+        "triangles": 51834,
+        "local_geometry_coordinates_unchanged": true
+      }
+    ]
+  },
+  "robot_visual_partition_audit": {
+    "source_mesh": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link4.obj",
+    "source_sha256": "6b61f7b72c706c4f719e6e4110464fa340c5b2322a735f4ad894e53896156a46",
+    "source_triangles": 59096,
+    "source_vertices": 29473,
+    "silver_triangles": 7262,
+    "black_triangles": 51834,
+    "rule": "triangle centroid local X>0.025m and local Z<0.25m is silver chest; remaining original faces black",
+    "exact_disjoint_face_union": true,
+    "reference_fidelity": "Approximate photo-informed material partition, not measured surface segmentation",
+    "original_collision_and_inertia_untouched": true
+  },
+  "blender_project": "source.blend"
+}

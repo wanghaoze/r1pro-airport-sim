@@ -1,0 +1,3397 @@
+{
+  "baseline": "primitives3_v50_20260923",
+  "source_archive_sha256": "d1f828128501ffc5badd0a191fc46cc77612ff7063ad62a10d71d28e078960ae",
+  "note": "Code baseline frozen; bundled scenes are local generation, not server v7 stable revised sources. Historical evidence is not a new project test.",
+  "copied_files": [
+    {
+      "path": "r1pro_teleop/airport_recording.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_recording.py",
+      "sha256": "520d76b855c0aa0787852d30e0ce4f9cd5c68bc92d161b1a2dc0068fd34038b6"
+    },
+    {
+      "path": "r1pro_teleop/quest_relay.py",
+      "source": "validated_release_v50:r1pro_teleop/quest_relay.py",
+      "sha256": "43413964aca895a21e5b564ef2b51315a0a374caaa0305304dc0855679ad9882"
+    },
+    {
+      "path": "r1pro_teleop/__init__.py",
+      "source": "validated_release_v50:r1pro_teleop/__init__.py",
+      "sha256": "41ebb66cb9a19e9373a46fbe6075bb25a937c8b2775252c5ac61e6876c820fc6"
+    },
+    {
+      "path": "r1pro_teleop/viewer.html",
+      "source": "validated_release_v50:r1pro_teleop/viewer.html",
+      "sha256": "ab799be3fdf37645fdc88ea9a9262e3489ca47ac963d4556f025abde0bf0d8f8"
+    },
+    {
+      "path": "r1pro_teleop/airport_scenes.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_scenes.py",
+      "sha256": "ec6c183d8efb6bec1a0fbf856ff6429120fbd53b2165f88f93be692e3c565f05"
+    },
+    {
+      "path": "r1pro_teleop/dataset.py",
+      "source": "validated_release_v50:r1pro_teleop/dataset.py",
+      "sha256": "912baa515dd4a740d092911311354914debde4261baa07395855385297c5ffec"
+    },
+    {
+      "path": "r1pro_teleop/airport_service.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_service.py",
+      "sha256": "2d174106f961da25484386a19a463e79caca5480d8df7e77f5c247e409791c49"
+    },
+    {
+      "path": "r1pro_teleop/airport_annotations.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_annotations.py",
+      "sha256": "e579cf1b64f0edc0219daa6e87b79d97b8a22c7a6efe6654c7d28e577aae5e95"
+    },
+    {
+      "path": "r1pro_teleop/airport_quest_monitor.html",
+      "source": "validated_release_v50:r1pro_teleop/airport_quest_monitor.html",
+      "sha256": "3de108f2a28099260d40994669f8596d6ec17f6bed54be073d6a6ccce0be51a9"
+    },
+    {
+      "path": "r1pro_teleop/airport_mobile.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_mobile.py",
+      "sha256": "1059024b0ffe940518261ec933b0190d10965856b0ef26fc7b500e513578b5cc"
+    },
+    {
+      "path": "r1pro_teleop/replay.py",
+      "source": "validated_release_v50:r1pro_teleop/replay.py",
+      "sha256": "35e5be05da68d45f3497003ecf7f04c7a1799efd197c7486504f8a19f5bb6d41"
+    },
+    {
+      "path": "r1pro_teleop/build_assets.py",
+      "source": "validated_release_v50:r1pro_teleop/build_assets.py",
+      "sha256": "edf4962bb6833441cec9627b8e5ecebf1b94bb461a31832ea712920cf2b9c110"
+    },
+    {
+      "path": "r1pro_teleop/airport_agent.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_agent.py",
+      "sha256": "07ae2365527b4b59b3485bc2fb89982aaa77569e938e972b5e23e234bff6ab8d"
+    },
+    {
+      "path": "r1pro_teleop/quality.py",
+      "source": "validated_release_v50:r1pro_teleop/quality.py",
+      "sha256": "1f1ac509818da7475e43dea49987b9e93fb2943a58b9208ea4a8f5641d7397d2"
+    },
+    {
+      "path": "r1pro_teleop/vr.html",
+      "source": "validated_release_v50:r1pro_teleop/vr.html",
+      "sha256": "1987800c17e02b85a79b45937ac6c67386223dd2960138b8f1509d77977c730b"
+    },
+    {
+      "path": "r1pro_teleop/airport_arrange.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_arrange.py",
+      "sha256": "9fc3d1b9095cd7fcd60e9274c3c1d629db898fb593de371f0c49db9cc1c23e2a"
+    },
+    {
+      "path": "r1pro_teleop/workspace_check.py",
+      "source": "validated_release_v50:r1pro_teleop/workspace_check.py",
+      "sha256": "0889fd60282f650e5b0e7164c6a28686b7bbf20d905750e86c836e59dcb19c3e"
+    },
+    {
+      "path": "r1pro_teleop/core.py",
+      "source": "validated_release_v50:r1pro_teleop/core.py",
+      "sha256": "80ffbda1521934b15f3fefe9e560c482a4e7f26445f4f4d6581d5e169ef79e73"
+    },
+    {
+      "path": "r1pro_teleop/airport_pipeline.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_pipeline.py",
+      "sha256": "12b968bba247953b2cbc093aac8df4e453d7bfbcf749113d33e58ce6e0696875"
+    },
+    {
+      "path": "r1pro_teleop/real_calibration.py",
+      "source": "validated_release_v50:r1pro_teleop/real_calibration.py",
+      "sha256": "b617e6a6b1d9962b5845986c5f994325d54fb8bcdf04e3bd798edfcb972f6de0"
+    },
+    {
+      "path": "r1pro_teleop/airport_viewer.html",
+      "source": "validated_release_v50:r1pro_teleop/airport_viewer.html",
+      "sha256": "15afeff76618eb386b44205ef80a1875be686d319a20f44ac90e876603aefccb"
+    },
+    {
+      "path": "r1pro_teleop/quest_bridge.py",
+      "source": "validated_release_v50:r1pro_teleop/quest_bridge.py",
+      "sha256": "2288fd3ee9008060833c7a9e513da2bd2aa3145ae9679e036ad636e78dab6cda"
+    },
+    {
+      "path": "r1pro_teleop/smoke.py",
+      "source": "validated_release_v50:r1pro_teleop/smoke.py",
+      "sha256": "fa5be8b9c39138d7016dbf3dade2c7d5205390593585fe4296ce912a22d6e1d1"
+    },
+    {
+      "path": "r1pro_teleop/server.py",
+      "source": "validated_release_v50:r1pro_teleop/server.py",
+      "sha256": "88e8e7117bb4e894722cf853689b411426e01daf098357dc3d7917c7c05c6f5d"
+    },
+    {
+      "path": "r1pro_teleop/static/LICENSE.aframe",
+      "source": "validated_release_v50:r1pro_teleop/static/LICENSE.aframe",
+      "sha256": "b486eb4c17a49ce36f033ed04ffab48c778070f5622a19f0a3c5bd9fb89394ea"
+    },
+    {
+      "path": "r1pro_teleop/static/aframe.min.js",
+      "source": "validated_release_v50:r1pro_teleop/static/aframe.min.js",
+      "sha256": "df703579e1a2d263c4a4b33ea8d777c784c89b5d059c804811432324c0b9b717"
+    },
+    {
+      "path": "r1pro_teleop/airport_fsm/geometry.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_fsm/geometry.py",
+      "sha256": "ae3b0bad1c2e56065ee71e8772d8afbf9bc2945eeb575514f6128ce2a0f81cd4"
+    },
+    {
+      "path": "r1pro_teleop/airport_fsm/primitives.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_fsm/primitives.py",
+      "sha256": "5753130daad08c940fe06f2a3f9835d009743f93725428f9644186c67d1782c6"
+    },
+    {
+      "path": "r1pro_teleop/airport_fsm/batch.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_fsm/batch.py",
+      "sha256": "2c52c2c9208d2655022cebe62b7c40073336677c5fe498593cd1fd7936bba407"
+    },
+    {
+      "path": "r1pro_teleop/airport_fsm/online_push.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_fsm/online_push.py",
+      "sha256": "c9fef3c635d889f376ff929ef2591c5d0ed3af428474b3dcbf39247632ed0d43"
+    },
+    {
+      "path": "r1pro_teleop/airport_fsm/__init__.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_fsm/__init__.py",
+      "sha256": "72192a03385ce8ff1970c1f924c1a5e415f638ed76a79eb3ec8fa510ab4ae4ea"
+    },
+    {
+      "path": "r1pro_teleop/airport_fsm/exporter.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_fsm/exporter.py",
+      "sha256": "044418034ed137d08e32635b78e9b4cbadc2ac81b0a3687d3d2120a09a94e7bd"
+    },
+    {
+      "path": "r1pro_teleop/airport_fsm/registry.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_fsm/registry.py",
+      "sha256": "ee85018a7d6cc6552a60d871a9c7596151c59e68aeb5c437c602fa29d9bfe81b"
+    },
+    {
+      "path": "r1pro_teleop/airport_fsm/contracts.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_fsm/contracts.py",
+      "sha256": "33e73959d838a51f7751b83459b796d04a0c4aa103cee6df519972f4f0a0c8cf"
+    },
+    {
+      "path": "r1pro_teleop/airport_fsm/loading.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_fsm/loading.py",
+      "sha256": "8fe4851d2a2c2baa7cb202a237f716d9f55661fb59f6de7c927264473f95c5b1"
+    },
+    {
+      "path": "r1pro_teleop/airport_fsm/camera_guard.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_fsm/camera_guard.py",
+      "sha256": "987a37c93996f6650c7b68aafa1921b8fc15c96e6c76844ebce7a94ee65641f0"
+    },
+    {
+      "path": "r1pro_teleop/airport_fsm/machine.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_fsm/machine.py",
+      "sha256": "869dd988287078cc42b6af858ed8830549ad23c0d810273767be63199c97aa29"
+    },
+    {
+      "path": "r1pro_teleop/airport_fsm/trace.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_fsm/trace.py",
+      "sha256": "ec5541ff5c048b140bbc924a6ab6bed22af5081753571f5191b6fba84d96c076"
+    },
+    {
+      "path": "r1pro_teleop/airport_fsm/runtime.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_fsm/runtime.py",
+      "sha256": "36a3a343bd6b4225c794d6bb4a1410841e2c02fc3995e58471f464c9a2f93caa"
+    },
+    {
+      "path": "r1pro_teleop/airport_fsm/trajectory.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_fsm/trajectory.py",
+      "sha256": "2fe4747e031428d8becd37fac7137ac69ff1fff2aa886681c3045bf0ae892279"
+    },
+    {
+      "path": "r1pro_teleop/airport_fsm/__main__.py",
+      "source": "validated_release_v50:r1pro_teleop/airport_fsm/__main__.py",
+      "sha256": "43dc0927b75422c0a2f90eca56d74c3985627b8115eda2f6d9186f4edc9dffa4"
+    },
+    {
+      "path": "configs/r1pro_verified_limits_TEMPLATE.json",
+      "source": "validated_release_v50:configs/r1pro_verified_limits_TEMPLATE.json",
+      "sha256": "b16f846d34e668021f56bf2ca5d5a74eaae2d812f2aa58af64e9f28365b8cb7b"
+    },
+    {
+      "path": "configs/vr_teleoperation_whole_body_launch.py",
+      "source": "validated_release_v50:configs/vr_teleoperation_whole_body_launch.py",
+      "sha256": "2da5aeb841606850b59f15b63d8628c4955e030c68a4d7b53b736291a77b11ac"
+    },
+    {
+      "path": "configs/airport_primitives3.json",
+      "source": "validated_release_v50:configs/airport_primitives3.json",
+      "sha256": "14abc0388f0dc4f205509367c03062d28245c22847bd47771eddfa8986bd6632"
+    },
+    {
+      "path": "scripts/setup_r1pro_server.sh",
+      "source": "validated_release_v50:scripts/setup_r1pro_server.sh",
+      "sha256": "1f163d7d234a7cdfac68ebd1ce488c8b3c0b6e12c5f10140a0f8e999daf35676"
+    },
+    {
+      "path": "scripts/audit_fixed_primitives.py",
+      "source": "validated_release_v50:scripts/audit_fixed_primitives.py",
+      "sha256": "13202194cea37b63b59319cfd2f3359da73fbd127baa3143332a2e9dc2db0c26"
+    },
+    {
+      "path": "scripts/preview_airport_success.py",
+      "source": "validated_release_v50:scripts/preview_airport_success.py",
+      "sha256": "d46fcaa5faa7f524d2dc72d3f4896fab57e14321f413475e72f359072f09586b"
+    },
+    {
+      "path": "scripts/probe_airport_motion.py",
+      "source": "validated_release_v50:scripts/probe_airport_motion.py",
+      "sha256": "08c7e8a29f92f477ff7663f26f5305903e2251ac081ca0e14663c2f565a7cc91"
+    },
+    {
+      "path": "scripts/run_r1pro_gpu.sh",
+      "source": "validated_release_v50:scripts/run_r1pro_gpu.sh",
+      "sha256": "1830942432f75c4a589d4b4ca4c5a78a64f8d238b4b8bff8d56fdbc20299648d"
+    },
+    {
+      "path": "scripts/smoke_fourcam_lerobot.py",
+      "source": "validated_release_v50:scripts/smoke_fourcam_lerobot.py",
+      "sha256": "932447d25275cc6b08863efb5bda022a694dbe40d20ae09c3ad2be003f90d49b"
+    },
+    {
+      "path": "scripts/validate_fourcam_scene.py",
+      "source": "validated_release_v50:scripts/validate_fourcam_scene.py",
+      "sha256": "613c47f0e08757c48291b1de66fda82887c9fcf2bae59163da45ee00b8de0695"
+    },
+    {
+      "path": "scripts/upgrade_airport_fourcam.py",
+      "source": "validated_release_v50:scripts/upgrade_airport_fourcam.py",
+      "sha256": "ecca8b1d01f5833919477a090b57de4f144e858a1f4dc28bbf293f7e0b14e85c"
+    },
+    {
+      "path": "scripts/select_r1pro_gpu.py",
+      "source": "validated_release_v50:scripts/select_r1pro_gpu.py",
+      "sha256": "8d4fb023a7cb9705d62133d967cd21bd00618dab92170ea7b5ca0bd3a5f1a66b"
+    },
+    {
+      "path": "scripts/repair_airport_initial_settle.py",
+      "source": "validated_release_v50:scripts/repair_airport_initial_settle.py",
+      "sha256": "ed80b3e007a88cc13121607f69c0d96dfcdd45e1eb238726a2674bc41cb7244f"
+    },
+    {
+      "path": "scripts/probe_fixed_primitives.py",
+      "source": "validated_release_v50:scripts/probe_fixed_primitives.py",
+      "sha256": "bd4666757e03156670e226de73ad11a080883afe54509484e815c1ef7000bb3f"
+    },
+    {
+      "path": "scripts/check_r1pro_runtime.py",
+      "source": "validated_release_v50:scripts/check_r1pro_runtime.py",
+      "sha256": "230f1ef6548e1d9be4ceebfa7b447168b66e5ff83f743ddc06e48b717799a005"
+    },
+    {
+      "path": "scripts/generate_airport_scenes.py",
+      "source": "validated_release_v50:scripts/generate_airport_scenes.py",
+      "sha256": "5bc9b26ad3b9ff765f90e0b09cce71839947bb20b864e6f0fee5f13d2884585e"
+    },
+    {
+      "path": "tests/test_continuous_planning.py",
+      "source": "validated_release_v50:tests/test_continuous_planning.py",
+      "sha256": "152f29f2a8a24ef0c6cd3823d0c79762af127f831e15a9e15aa9bc25d2eec3fa"
+    },
+    {
+      "path": "tests/test_direct_grasp.py",
+      "source": "validated_release_v50:tests/test_direct_grasp.py",
+      "sha256": "e54a500d7e5e54fd013d3799cf27cffad2d112992f644c6a5a7f23cdedd5b598"
+    },
+    {
+      "path": "tests/test_online_push.py",
+      "source": "validated_release_v50:tests/test_online_push.py",
+      "sha256": "1239f05dd2e401d84fe8ab24e5c3c68ad02d4a87e9feeb39af1224b2cfe779dd"
+    },
+    {
+      "path": "tests/test_fixed_primitives.py",
+      "source": "validated_release_v50:tests/test_fixed_primitives.py",
+      "sha256": "a7299c7d45cb11d053e57568247949e34c025ebe325728afd8b714a25e70864c"
+    },
+    {
+      "path": "tests/test_airport_mobile.py",
+      "source": "validated_release_v50:tests/test_airport_mobile.py",
+      "sha256": "2a0ca096bc8c8d72568dcd78b1eb4ca4ad67af22e710fde44e7234212433b331"
+    },
+    {
+      "path": "tests/test_contact_handoff.py",
+      "source": "validated_release_v50:tests/test_contact_handoff.py",
+      "sha256": "e176682c39c363e3acadfd9d58f4340672ace5a9c7955507cc4a82bb73b64422"
+    },
+    {
+      "path": "tests/test_repeat_handling.py",
+      "source": "validated_release_v50:tests/test_repeat_handling.py",
+      "sha256": "d6b684af13d5c7ef54a94d8cd1ddb7972d413d6f057e12e23b00c1cb48f85e1f"
+    },
+    {
+      "path": "tests/test_airport_scenes.py",
+      "source": "validated_release_v50:tests/test_airport_scenes.py",
+      "sha256": "e0339ea777b903f82983fb2c724e40ece571700ac6195a64e8c349002caf84d3"
+    },
+    {
+      "path": "tests/test_fourcam_upgrade.py",
+      "source": "validated_release_v50:tests/test_fourcam_upgrade.py",
+      "sha256": "7a1d60a8ebfbd1feab132f595a64557c6127e8471d0c7352a5390e0341e7b857"
+    },
+    {
+      "path": "tests/test_blended_trajectory.py",
+      "source": "validated_release_v50:tests/test_blended_trajectory.py",
+      "sha256": "59f60eb0d47340ce345c856ed5b8483428cac70fa3deb69dd89a9e604023e1e2"
+    },
+    {
+      "path": "tests/test_motion_repair.py",
+      "source": "validated_release_v50:tests/test_motion_repair.py",
+      "sha256": "33c70596bf401da95164e0f5cfc393ad8086bcec46070e4d21673707a8418863"
+    },
+    {
+      "path": "tests/test_r1pro_pipeline.py",
+      "source": "validated_release_v50:tests/test_r1pro_pipeline.py",
+      "sha256": "d26a46991d39f6ce438297707df359623a313cf7dde06d0bc74607c5f6d9cb1d"
+    },
+    {
+      "path": "tests/test_push_contract_stop.py",
+      "source": "validated_release_v50:tests/test_push_contract_stop.py",
+      "sha256": "547bcd786e44b754582a322487c459fa84fd639acefff99a5243bfab8b33b44c"
+    },
+    {
+      "path": "tests/test_airport_fsm_unit.py",
+      "source": "validated_release_v50:tests/test_airport_fsm_unit.py",
+      "sha256": "ee00364b79688f2bbd0241364d6bd2abee14bd8c467f22927f2fbf03f9524855"
+    },
+    {
+      "path": "tests/test_airport_batch_pipeline.py",
+      "source": "validated_release_v50:tests/test_airport_batch_pipeline.py",
+      "sha256": "36285855bc83a2095d52dcd3dcf1208a21a4cf12204ed5222388b0cf6a38ca5e"
+    },
+    {
+      "path": "tests/test_camera_self_view.py",
+      "source": "validated_release_v50:tests/test_camera_self_view.py",
+      "sha256": "307b00ff7b71d0ce9f82d8cbf044ed680fe6e772fc4ff9401560b0c960a05640"
+    },
+    {
+      "path": "tests/test_airport_pipeline.py",
+      "source": "validated_release_v50:tests/test_airport_pipeline.py",
+      "sha256": "4bca30b31be0610b9880f2bd74747a5773ccbf1ea905d5acb32e29b03b102b9c"
+    },
+    {
+      "path": "tests/test_r1pro_quality.py",
+      "source": "validated_release_v50:tests/test_r1pro_quality.py",
+      "sha256": "79b352471b4679955c20a720cf724202ff2a9670e6f9e3e0adb0d53abab57160"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/manifest.json",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\manifest.json",
+      "sha256": "4559c5058e5a67286de2387cc06c8f707ea0a47dc42246de3efe730dc4fab2e9"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_000.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_000.obj",
+      "sha256": "9433503d98127b5ac92a0e9976e1264039ccad12f985f3eb62a0b5fa0976af82"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_001.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_001.obj",
+      "sha256": "b80223e5fa4a75c2e7a45d147dd6ca55b05284ff0c9300d2ecdddd5444261fbc"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_002.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_002.obj",
+      "sha256": "defc051e633104dd40d8384249b0cfdc00a186e8c67845bc375fa82a3aca6a4d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_003.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_003.obj",
+      "sha256": "cc8fc9ca45fb9f2d4f0c3fbde3adeefdcb06d435a018a5826fe9c560354d2dca"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_004.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_004.obj",
+      "sha256": "d5b36bb9795ecfe0785b516b6217039613260d601918a0916997106e60db88bf"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_005.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_005.obj",
+      "sha256": "cef6810109e11476eaf9168aba9301c520b279e1d2dd410b88a96f3c15457a60"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_006.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_006.obj",
+      "sha256": "080b9801ee6fd3560331a3e7a98be73bda40fd1043a5541156fd017a71beb2ab"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_007.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_007.obj",
+      "sha256": "312fc384f9162993d88bdcbdbfaae739a69e47eb51bde257d99dc5854d7452ad"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_008.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_008.obj",
+      "sha256": "6594b839d3bb80ee89f19dfe8e8c9b5db4620dfe322f642cbd4b9dd889bff86a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_009.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_009.obj",
+      "sha256": "7968ebb8f55ecaf9cf375fce5a6c95715938c49930ab639ffbf7dc261f01d93b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_010.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_010.obj",
+      "sha256": "ae886ec31acc7b3436b853df1d38b1f979ae5be95f0187050fec6c45686d0caa"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_011.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_011.obj",
+      "sha256": "6b9638adbdf421f9f8784cbb1ed42283da320e8314cf97db7e100f1a10aa7b9a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_012.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_012.obj",
+      "sha256": "e22c179efc4551902d5ea4ee107975c6b34b53546216d0b9efe6d6a447f5b08f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_013.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_013.obj",
+      "sha256": "772cb942f8b285059b11cf6cedf032804e1e688ab7f9279ed8bf1ee87cbe93eb"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_014.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_014.obj",
+      "sha256": "483d3eb8eeea763af567c41f6f2f84c255a11c6098488c7c8aa72d4c5377600b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_015.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_015.obj",
+      "sha256": "7a42aa5b630ef3884a81c778452def48ff63b07cc88a5c488f32aca952a3510b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_016.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_016.obj",
+      "sha256": "92f2166fa75f62608bd9f1d13d897de0e0a1b8e8808a6d202f8fd6b98bb01b75"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_017.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_017.obj",
+      "sha256": "55a1370cc2608ac1edc8944b7f3ce969e6edf7cab4683ab59ca5ecc0c7fe1bed"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_018.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_018.obj",
+      "sha256": "dc4b6abc7a4bceb16a18c7eba047cd211a1c9f0206797da2e92c82e66b237142"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_019.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_019.obj",
+      "sha256": "0e26a57234dcb9c494f72d17d64170477639f04c07fd2333517a1e03aa9ab8ed"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_020.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_020.obj",
+      "sha256": "1bd5bbcbbe2832458bb127820a035adb85b26781bc00aaea752d6887178bc2fb"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_021.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_021.obj",
+      "sha256": "991939dbd780ab95ccf7838b67c5b0a9967b3351315197fa421dc976bb4b5420"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_022.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_022.obj",
+      "sha256": "dbc0ca0eb5cb58508365d3f8f305fabacd2e80d1a6a6a7f8e38b0cb64717bc73"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_023.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_023.obj",
+      "sha256": "0340e885820e8aaa7f1f70ec391e60b88ac19820e6413cc02098351951148eb8"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_024.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_024.obj",
+      "sha256": "83a44e680a3ff8af48f7140bf799907f8e23703d10150ec7f2d0dda9692ce8ff"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_025.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_025.obj",
+      "sha256": "60127801390ed68e846cbc4f420ba30a556fc1c0d3d538842d522165a2a6a582"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_026.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_026.obj",
+      "sha256": "a6de1f17a00b9a942c8ce44e4b301ec6ed7adac1702afdc78419eaa12a55f556"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_027.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_027.obj",
+      "sha256": "aa4d489b3e7a41f4b9a2580cef7b8f4098e9d2b535d81299f10794973d62839e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_028.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_028.obj",
+      "sha256": "2f8f47e1cf60a89671dafefd73a2dacf5082c3864050ca178ce0bce8896dcea9"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_029.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_029.obj",
+      "sha256": "4c661a24dde97368a59386259beaac4b12364a17b50c6a52187db84d03ec77e0"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_030.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_030.obj",
+      "sha256": "3536e0ca0da9f96855107fdbb125ee8a95b1b19dafc1f3126c358131c2941ef7"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_031.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_031.obj",
+      "sha256": "46b8b29fbca0d17347113cf2af7f11b8f3d389f4066ca4d5980aefd3dd268b09"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_032.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_032.obj",
+      "sha256": "b411abd1332e195e73ef3edee4c111efa0cb5fa7cd31153fddaadf01b23c0b8d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_033.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_033.obj",
+      "sha256": "17f88a10cf46ba97edec13864c5fcc400df3fd007ac6abceb9d4edc8d73fbc28"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_034.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_034.obj",
+      "sha256": "c9586101b061e547b0a4e220ea4c413a04f8b37a1ad9809c25ffce528479fa38"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_035.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_035.obj",
+      "sha256": "3b6ef9ffbbdf53253b81097f81fba2ae80b85f0c1c6a8e0041041dadc52364e4"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_036.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_036.obj",
+      "sha256": "3ff5463860e987f2b2f240306be6d36284f9c9eafdbcc7fe44ac16548fe8a229"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_037.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_037.obj",
+      "sha256": "066edef09393df36610496c7afb25307945a50311532c9ceda799d1be70fae85"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_038.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_038.obj",
+      "sha256": "0c0123ab260707529e510dd67a26e4f363ff160230330a5dbaa815574957ff38"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_039.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_039.obj",
+      "sha256": "eb41c1027c26b583820f9970f6dab47dc5b876b891bae7633f356bd2de9462e5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_040.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_040.obj",
+      "sha256": "061db8d353fc474f7d243522ea2ad45070c21feceec0980e785581fecd0ed39f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_041.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_041.obj",
+      "sha256": "33b028b8853dcb22a2f838ec9b12436b7aa25688877fd605edaa0553c634a887"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_042.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_042.obj",
+      "sha256": "42e6859f49f8255fded6604d4d6c52be6e6aa305ccee0877b10a4daf829a2af8"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_043.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_043.obj",
+      "sha256": "739aa5323b843aa10fac2192e35d8698329f1576e0f496f050c5b46a1a4f4c59"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_044.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_044.obj",
+      "sha256": "db71693af32a98fefd691809c08a0ea743b185a0dc7d4c6d040d7d8d6bb5358d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_045.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_045.obj",
+      "sha256": "4fa4af878c21f1c01a7463f7dd02f3c75d2d75c5b40296c45af35d95ebf0a9ca"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_046.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_046.obj",
+      "sha256": "76121b7ad2023defcaf73216df91bd134970eaffe7aaa6bc2bf8e68c8c62b054"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_047.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_047.obj",
+      "sha256": "bea716d8f0a090c286eaccf5659efb292e186d9c58619e2c34ed27ad16d4ca1e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_048.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_048.obj",
+      "sha256": "240a2b80d31cec509c41cbde960201f298da9984db3354e13483f87250185319"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_049.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_049.obj",
+      "sha256": "8e552da4f29f97be44b4807bfd81d9ae6eb3a6a70720094a8e960f61b41eb64c"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_050.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_050.obj",
+      "sha256": "f533d893576cbbe2983b00d8c42a29b775ba6e15187adcc36b2ed008ebc3481f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_051.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_051.obj",
+      "sha256": "a568883eaf0643db0e840274e4e69bfc11bfe02827e8928b1dff475035bddff7"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_052.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_052.obj",
+      "sha256": "be394ef192a9aea6a1c98e757b7420adfd3c8f1522ce6083debbb6c23adf2ad5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_053.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_053.obj",
+      "sha256": "d964841be55dfc71ec427d8edea4a72767149b750f30163412b58e4dfe1d7ee5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_054.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_054.obj",
+      "sha256": "b6a40d114e8aa12bc2c0d5b899e42e21d6a061ca52b793f4e3c6e9ace0527dc0"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_055.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_055.obj",
+      "sha256": "c848ede87db77475b3b4d2a6db4724d9ef03257ec59f6337659213d84a867ea4"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_056.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_056.obj",
+      "sha256": "c9a4d88d4271050de87b681a4108e213c39af9e998343769c864010f15fab106"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_057.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_057.obj",
+      "sha256": "2cae7dc55fadb859ed302eadbc0445425bea29d81349fe83af6628f31a8e2df2"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_058.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_058.obj",
+      "sha256": "a261e0bf6c32530795d9eedb4e91212e71226d898de2340f629f6f95afc1ed0e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_059.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_059.obj",
+      "sha256": "992cb9d4d68220ff4525af22fb8820aa900469a5592270d55a27e9bd4ef6eb3a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_060.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_060.obj",
+      "sha256": "0c3cccb31ad8147c4db63a90eeae7e02e2205797bc563e29c2ef8b6016bc07f8"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_061.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_061.obj",
+      "sha256": "06372a5d705426e4f15b21f2a090da3a619df54cd4b046628a4a67dc577f7a8f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_062.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_062.obj",
+      "sha256": "9104d2e985bffb9e356e76c1218988faec438a0d06ad0d350ff517d7c4054c1b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_063.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_063.obj",
+      "sha256": "9bd68c889d72d14cec1825ad932222dad000a9875408fa2e99694e041800092d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_064.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_064.obj",
+      "sha256": "a422f4872eb2ca364f28f7ab6c4fe2554f1252f02ff3675633f248747b6d71ab"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_065.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_065.obj",
+      "sha256": "bd205721ba0ed5f073f839c8071f8fba2dac2520d086b257507cdbdb5079b6c9"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_066.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_066.obj",
+      "sha256": "1da46a69ca9acd273961c6e32e0d37b014ec71e31ead79e654a71a518224e640"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_067.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_067.obj",
+      "sha256": "5b874125d8b6b02e4940cb06b48953199bb04abf96da01b3448055e27bf51fc1"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_068.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_068.obj",
+      "sha256": "b121c3b7735fdb0ee87d49bdcabbbeb72a284ab8d86e075802eb8df3e8def393"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_069.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_069.obj",
+      "sha256": "e9179800388e553f4f1a04c0908d3685714bfb03915f2907a9d9d7c4e0cc743a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_070.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_070.obj",
+      "sha256": "40fb2975591987558ab43af9f032399206f20870ed11ddcfe5a80d9e3e6fcb27"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_071.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_071.obj",
+      "sha256": "a56d62f55668506a2ca22dc69b127efc7532e7ac16e22e6bd87da18f54324754"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_072.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_072.obj",
+      "sha256": "7d1f2a2cc63b14826731939f8cfbea46f902bacc350640b71a1f2d5db6bfa168"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_073.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_073.obj",
+      "sha256": "8d4d66aba9c9d5da89718173e7582635d6dfd62972097412090c80fd1f4c8b06"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_074.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_074.obj",
+      "sha256": "d593e48c74b79de5f24a03aab8de8daa8c24a6f2029cc26c8dbb5b7ea0fcb031"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_075.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_075.obj",
+      "sha256": "d5a192c150abae728553c3d66fffeb436c1f6a591dc6da6d134b6bba4b0fc7b5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_076.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_076.obj",
+      "sha256": "09acd11dd011bb98279efb128060e9ce4a3586e3851e4371bcc3a311a40c2aac"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_077.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_077.obj",
+      "sha256": "9129ad0f3dec7786e8370de4dc7a56197397ca208e8b1cd857136bd2638300a0"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_078.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_078.obj",
+      "sha256": "41674ace6be221223fd7d1537c8994d04e31d060aefe331500546b28d83854e8"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_079.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_079.obj",
+      "sha256": "fef8f9678c80b12708d4ec055e126e2cfd895276d7c66949307671a98c7ba9a3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_080.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_080.obj",
+      "sha256": "8e80feb3e8a2790429d574561ea11d879ea8d9f296b4216fe279cc45eec39474"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_081.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_081.obj",
+      "sha256": "d34228a41a2f9be4ab05a3541b7942933f4b8d0ef79d4fd6f6c36ba7564539f8"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_082.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_082.obj",
+      "sha256": "0e183d7ef1f1da0030b5aa64bb0fa984c77f57a9341a66e9994b4473451cd5fa"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_083.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_083.obj",
+      "sha256": "d2358ce1b4c54128a77b2abfa315b87903fe789354377549671228eb8acc5aae"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_084.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_084.obj",
+      "sha256": "7156ab53db0debff356039288ab5870e23fd4408b445b10e4054f20dd34013a0"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_085.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_085.obj",
+      "sha256": "966023d974292b6e9fe6da87178eef3302f20fac353f911534b78174c0aa0134"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_086.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_086.obj",
+      "sha256": "92ea85c7df5858692c824a86a1e8c956c9b53588ad604d1476fb96f5699d1c87"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_087.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_087.obj",
+      "sha256": "cf5facfa80a2374b71467bb4d18ae2e3b098acc2dee37c16cb024452effb6e89"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_088.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_088.obj",
+      "sha256": "8cfa18b623740ccfb29d822b0767661b3b2d87fd0e3276ce041836491babcf73"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_089.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_089.obj",
+      "sha256": "c89ad917a6531bc57d6125f3300d1bbb1e05501b7cebf4a8451b7437bfa83978"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_090.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_090.obj",
+      "sha256": "83d2af4c79c3ecfe94212b7ed0ef1c7ec278d3527ec18a245a7c1a1307da333f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_091.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_091.obj",
+      "sha256": "a783aea9eaba58f8938281c0d095ac60d230928fe1b52440a990793f42d75fa3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_092.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_092.obj",
+      "sha256": "508158e7357dbb3639f3b38b52c3d6b652793707e11e30ec35873cccdf62f854"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_093.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_093.obj",
+      "sha256": "c971038fd91e8f68faf4a8ca50ca0097ad0ee142512bb5e024779d934259b476"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_094.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_094.obj",
+      "sha256": "3507f66643c3c414983e3c4665086c743da10de2c6515959cc6e1e6b1785a65c"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_095.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_095.obj",
+      "sha256": "7603355bf4712f5d1a9760494b12c72f7d14ed03ac3965c8e8c4483858b96193"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_096.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_096.obj",
+      "sha256": "9861bcd097b45bf4c29a86d652ae93726736321f38bb5e47489607933bd4ebe2"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_097.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_097.obj",
+      "sha256": "afe475064935b7bf93e5e8bfa4227441bbfdeb6c42e52340e8efd838abd63c84"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_098.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_098.obj",
+      "sha256": "041b6609e36162b02b13d252f3948ea47e82446fbcf6c60edfe19991a5819f31"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_099.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_099.obj",
+      "sha256": "f14a8d1bbbc16b4c33689ca09becff0a5a001d2a4632ef2dc63b4a0ec6a74b7c"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_100.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_100.obj",
+      "sha256": "fbf5bb61a39c814309e387d9874aaabf01e0045a0917efb185c9fa9ed0c33136"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_101.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_101.obj",
+      "sha256": "81e632402489f9967e942286541bcfa85abbb8882ed67b23f757e2df2f36693a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_102.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_102.obj",
+      "sha256": "add4be30bcab78316442f04938cc44b211eb4fae3164abe3960c80f44ebb7281"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_103.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_103.obj",
+      "sha256": "023d94d61632414475fb1d38cd903d41a696a2442b567724f3844a3a1cb08a33"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_104.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_104.obj",
+      "sha256": "80ba645566b432ca08b7d489849cfcb3b74b6198413b1ec07359a9b9ac929d9f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_105.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_105.obj",
+      "sha256": "d1decc9f8fe50aeeef49621a22473354b1b95d9f03277268028af903e3cc7af4"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_106.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_106.obj",
+      "sha256": "40d199e8f75170e543603bfa417bd9b4957a9eeaeff8e9b327089e924a447cb5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_107.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_107.obj",
+      "sha256": "fca807fd2de65d13f2ef8b275c1d4c2c3ff9e09add27f4975c330e50619e0c75"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_108.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_108.obj",
+      "sha256": "f79e069595dd131748b81108b9b71267c5fc3f1cfb9bd0638a88675fc34bdc3e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_109.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_109.obj",
+      "sha256": "7ac634ee4b0f5c12edcfc7e9afcb79e06d9f7e4ccb28838bd9c21278618772bf"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_110.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_110.obj",
+      "sha256": "d7e813a02deefb695b8e9daebedc56642cf40307e3302b20c336499ca9e90a81"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_111.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_111.obj",
+      "sha256": "b46f8812e7f544cb118e385a83b248658560ef2050f01a8eee56883f9d9a239e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_112.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_112.obj",
+      "sha256": "6d5adc78fea7d7c81c27d63c1f641e13029d71a1daa6e3724d82113f6f772456"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_113.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_113.obj",
+      "sha256": "c5e3957c07b5c8320225cf38f864008014472c5caa375512bedd16d63f5b2777"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_114.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_114.obj",
+      "sha256": "f3fd7c233415ae988816a463601b658dc127cfef6eb1fac37c345344377b79ee"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_115.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_115.obj",
+      "sha256": "abcda7517f78f524969d66d1f8014a7954cc8a6dca6b3df4a31c24926c48c206"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_116.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_116.obj",
+      "sha256": "e89dcaf9418699571ee9545e79a82953c0e9c9494d91d877954b0004e06a055b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_117.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_117.obj",
+      "sha256": "9c9c206ed0c390b7934f231a0e19742cc4b22f62ea6363f691cfdbebd2408deb"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_118.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_118.obj",
+      "sha256": "b2ad518ddc653307cc7b1937ceaea8e701764e7012176e080ecd785e389ac80b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_119.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_119.obj",
+      "sha256": "94139283bee90bb82473d7de50bcecc71c90dfea4e6b2c7840b2fe8b63228b08"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_000.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_000.obj",
+      "sha256": "9433503d98127b5ac92a0e9976e1264039ccad12f985f3eb62a0b5fa0976af82"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_001.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_001.obj",
+      "sha256": "b80223e5fa4a75c2e7a45d147dd6ca55b05284ff0c9300d2ecdddd5444261fbc"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_002.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_002.obj",
+      "sha256": "defc051e633104dd40d8384249b0cfdc00a186e8c67845bc375fa82a3aca6a4d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_003.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_003.obj",
+      "sha256": "cc8fc9ca45fb9f2d4f0c3fbde3adeefdcb06d435a018a5826fe9c560354d2dca"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_004.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_004.obj",
+      "sha256": "b1fcee02fdda381ab33546bf867b1e7ee16e0599068ae9fd86aa3869008822e2"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_005.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_005.obj",
+      "sha256": "c096985808242414c825fdd38ec1ee42d6b41f2ba528a792ad8c5f350cc5b627"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_006.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_006.obj",
+      "sha256": "4787b8d71ba7f5bf8b9d001c4004a17417a3d9a4dc84c083c558f453ac62cf9f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_007.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_007.obj",
+      "sha256": "2dd5efc415e056ecc0b14b6629fc0b95bf950daf749000af55006778661bcede"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_008.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_008.obj",
+      "sha256": "678d904b15aaab2f8602fdc6b04e7049898ac26067c3596ba7dace93f733f88c"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_009.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_009.obj",
+      "sha256": "19459305219fe142568ad01c43f1511a5ba8277e0e7106683a6a6636b07de0ad"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_010.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_010.obj",
+      "sha256": "af7cf44cdbaf35aecafb02386251b7db54e9bd9e09aa50103b1e30c52f502e18"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_011.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_011.obj",
+      "sha256": "c3468bba57a78112b758db68a5aa819f3b5a5249dfd76f1fce8b839dab2f7b0e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_012.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_012.obj",
+      "sha256": "f0946285c5939c83d6cbda54d5693e5d3f0ab5f3d409e8166051822bb6e639da"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_013.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_013.obj",
+      "sha256": "e54e4f60d95db8c39623b75d1bad3ec98fa3412ba897db5c17c29c47c7d9669a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_014.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_014.obj",
+      "sha256": "a38a4264dce8c7a0d1851036e48de218395a1b08de9b4d822dd148e791bb8fb4"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_015.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_015.obj",
+      "sha256": "9b4e31125645f306da57f825d14eeb838df82234ab221560ee5890b018e557db"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_016.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_016.obj",
+      "sha256": "3536e0ca0da9f96855107fdbb125ee8a95b1b19dafc1f3126c358131c2941ef7"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_017.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_017.obj",
+      "sha256": "46b8b29fbca0d17347113cf2af7f11b8f3d389f4066ca4d5980aefd3dd268b09"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_018.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_018.obj",
+      "sha256": "b411abd1332e195e73ef3edee4c111efa0cb5fa7cd31153fddaadf01b23c0b8d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_019.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_019.obj",
+      "sha256": "17f88a10cf46ba97edec13864c5fcc400df3fd007ac6abceb9d4edc8d73fbc28"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_020.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_020.obj",
+      "sha256": "c9586101b061e547b0a4e220ea4c413a04f8b37a1ad9809c25ffce528479fa38"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_021.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_021.obj",
+      "sha256": "3b6ef9ffbbdf53253b81097f81fba2ae80b85f0c1c6a8e0041041dadc52364e4"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_022.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_022.obj",
+      "sha256": "3ff5463860e987f2b2f240306be6d36284f9c9eafdbcc7fe44ac16548fe8a229"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_023.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_023.obj",
+      "sha256": "066edef09393df36610496c7afb25307945a50311532c9ceda799d1be70fae85"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_024.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_024.obj",
+      "sha256": "0c0123ab260707529e510dd67a26e4f363ff160230330a5dbaa815574957ff38"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_025.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_025.obj",
+      "sha256": "eb41c1027c26b583820f9970f6dab47dc5b876b891bae7633f356bd2de9462e5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_026.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_026.obj",
+      "sha256": "061db8d353fc474f7d243522ea2ad45070c21feceec0980e785581fecd0ed39f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_027.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_027.obj",
+      "sha256": "33b028b8853dcb22a2f838ec9b12436b7aa25688877fd605edaa0553c634a887"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_028.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_028.obj",
+      "sha256": "42e6859f49f8255fded6604d4d6c52be6e6aa305ccee0877b10a4daf829a2af8"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_029.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_029.obj",
+      "sha256": "739aa5323b843aa10fac2192e35d8698329f1576e0f496f050c5b46a1a4f4c59"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_030.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_030.obj",
+      "sha256": "db71693af32a98fefd691809c08a0ea743b185a0dc7d4c6d040d7d8d6bb5358d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_031.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_031.obj",
+      "sha256": "4fa4af878c21f1c01a7463f7dd02f3c75d2d75c5b40296c45af35d95ebf0a9ca"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_032.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_032.obj",
+      "sha256": "76121b7ad2023defcaf73216df91bd134970eaffe7aaa6bc2bf8e68c8c62b054"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_033.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_033.obj",
+      "sha256": "bea716d8f0a090c286eaccf5659efb292e186d9c58619e2c34ed27ad16d4ca1e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_034.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_034.obj",
+      "sha256": "240a2b80d31cec509c41cbde960201f298da9984db3354e13483f87250185319"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_035.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_035.obj",
+      "sha256": "8e552da4f29f97be44b4807bfd81d9ae6eb3a6a70720094a8e960f61b41eb64c"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_036.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_036.obj",
+      "sha256": "f533d893576cbbe2983b00d8c42a29b775ba6e15187adcc36b2ed008ebc3481f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_037.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_037.obj",
+      "sha256": "a568883eaf0643db0e840274e4e69bfc11bfe02827e8928b1dff475035bddff7"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_038.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_038.obj",
+      "sha256": "be394ef192a9aea6a1c98e757b7420adfd3c8f1522ce6083debbb6c23adf2ad5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_039.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_039.obj",
+      "sha256": "d964841be55dfc71ec427d8edea4a72767149b750f30163412b58e4dfe1d7ee5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_040.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_040.obj",
+      "sha256": "b6a40d114e8aa12bc2c0d5b899e42e21d6a061ca52b793f4e3c6e9ace0527dc0"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_041.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_041.obj",
+      "sha256": "c848ede87db77475b3b4d2a6db4724d9ef03257ec59f6337659213d84a867ea4"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_042.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_042.obj",
+      "sha256": "c9a4d88d4271050de87b681a4108e213c39af9e998343769c864010f15fab106"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_043.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_043.obj",
+      "sha256": "2cae7dc55fadb859ed302eadbc0445425bea29d81349fe83af6628f31a8e2df2"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_044.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_044.obj",
+      "sha256": "a261e0bf6c32530795d9eedb4e91212e71226d898de2340f629f6f95afc1ed0e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_045.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_045.obj",
+      "sha256": "992cb9d4d68220ff4525af22fb8820aa900469a5592270d55a27e9bd4ef6eb3a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_046.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_046.obj",
+      "sha256": "0c3cccb31ad8147c4db63a90eeae7e02e2205797bc563e29c2ef8b6016bc07f8"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_047.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_047.obj",
+      "sha256": "06372a5d705426e4f15b21f2a090da3a619df54cd4b046628a4a67dc577f7a8f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_048.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_048.obj",
+      "sha256": "9dab6f0c300540e5c7d87afee7a0d0df2eeb79203f6946917a1fbe2cf49f896a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_049.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_049.obj",
+      "sha256": "7ea8532ecb91471d3317bc19189247d0c48fb3d55febbc9b887efa802e463bb3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_050.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_050.obj",
+      "sha256": "7857e39a481213207e6ba76ad8e4f81a32cb09e6ffa039103f2d5e9629f268d0"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_051.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_051.obj",
+      "sha256": "27f2b167b8a7053fa5392e5c07ca15257ef239f45efc79da11df5d83ca497a94"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_052.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_052.obj",
+      "sha256": "903feb6ba63a68db203b5e1db6fd7f7bf63da517254dad34e7f280ad719c0c31"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_053.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_053.obj",
+      "sha256": "3f290a9862a42c99d8348036bfbc3c703ebc4bb590012adf37852cc66ecd0c6e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_054.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_054.obj",
+      "sha256": "d34228a41a2f9be4ab05a3541b7942933f4b8d0ef79d4fd6f6c36ba7564539f8"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_055.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_055.obj",
+      "sha256": "90e13d4bbf1a1bec9280b0d0bba172f5197ea2eadddc18ea798d43b49cb436af"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_056.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_056.obj",
+      "sha256": "e126a14363c60480b18e18c0a0c4526b57d4753efa3f0480db17b820f1a1fce5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_057.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_057.obj",
+      "sha256": "8b37773f9e04a8f9525bab1bafcc96c0e984415d10e8cb655d8f143f5c0f7117"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_058.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_058.obj",
+      "sha256": "dc39bcb65113e983a95fd7aeb21b8b651ff4ef270e07e78790f990b21a3cd7bd"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_059.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_059.obj",
+      "sha256": "72bec318eb11fb0f4670f44be34572aaf664b7091a1157a221b6c632123bc4e0"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_060.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_060.obj",
+      "sha256": "81e632402489f9967e942286541bcfa85abbb8882ed67b23f757e2df2f36693a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_061.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_061.obj",
+      "sha256": "add4be30bcab78316442f04938cc44b211eb4fae3164abe3960c80f44ebb7281"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_062.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_062.obj",
+      "sha256": "023d94d61632414475fb1d38cd903d41a696a2442b567724f3844a3a1cb08a33"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_063.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_063.obj",
+      "sha256": "80ba645566b432ca08b7d489849cfcb3b74b6198413b1ec07359a9b9ac929d9f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_064.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_064.obj",
+      "sha256": "d1decc9f8fe50aeeef49621a22473354b1b95d9f03277268028af903e3cc7af4"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_065.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_065.obj",
+      "sha256": "d1098b6d0f05bfdc7b9fed046ab7acf3df766143b882f64de03011577ce5f5dd"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_066.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_066.obj",
+      "sha256": "b06cd3a2dfcb078e6c04578060d2a98787cf781501b135643c7e8fa1f3a3588e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_067.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_067.obj",
+      "sha256": "330518b5c03d00335f15ece2f5148a462e9e17d031ef1e49a154d9a10616f48a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_068.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_068.obj",
+      "sha256": "c9410305df0c8e09d975dd5715e490e6cfb43bcc591f195897e22b98653a1087"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_069.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_069.obj",
+      "sha256": "eb53c86c752c4f059a14ffcd8eaf07e2b18fcdbfd0faab32de644cb1845c07c3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_070.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_070.obj",
+      "sha256": "2c9faaa0efdc0969da61057635eefad1f0e15104b121ece3d8887b21b9a748ff"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_071.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_071.obj",
+      "sha256": "cbe7f6e41d4c755cd290db08b4da0453732e1e9375597b96386ba47459116a58"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_072.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_072.obj",
+      "sha256": "840900bf34ce06549f9d26d984395d80ee24c6e51e2ff9a0be1f665c01e4080b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_073.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_073.obj",
+      "sha256": "279a59c6a8ba4864f3f023b4c544e3593dcdc4e98a66f79aa7a713f60ae6ec5d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_074.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_074.obj",
+      "sha256": "5ad89c21b1e681fb573c07777c080d36bb64fb2ccec8102bed1efc556b37c8ad"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_075.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_075.obj",
+      "sha256": "6cec7a5086454f02bafdd1384d738ae32ff8dddb84322497b446cb585911a869"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_076.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_076.obj",
+      "sha256": "1ca57a6909b04c46dee9b5ddbfbcf94fc1f1b3375bd0fcd099f8d7927696d10f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_077.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_077.obj",
+      "sha256": "8e09d3abcd729b7c02d476a2a35231e117ccc5446d04bffb71df8be3c863ee91"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_078.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_078.obj",
+      "sha256": "43949ee73c87c4e7f35bde2151bb87ba464b3170ac387a9d82fb48b41bc530ac"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_079.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_079.obj",
+      "sha256": "ddcdda9bf29174612b51a2f28915964d8c6e1f9afcbb86890d8825f81b7afdf6"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_080.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_080.obj",
+      "sha256": "1677194cdea7798c2656e3b0c1c096b3f8b100cbb639bcac9d1695799a83388a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_081.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_081.obj",
+      "sha256": "b912369f57314de42c9d78e5ffd4d97d08f888fe3127bb526f179b48b982378b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_082.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_082.obj",
+      "sha256": "8a7e8d743c7d4f322f8b6249be58daf960a46b97fc220a9d13c86e5d917324bf"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_083.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_083.obj",
+      "sha256": "321595ac63c00987fd707a90d08edb7dd4860f1f6c4eea6f5377b625147be066"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_084.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_084.obj",
+      "sha256": "a9e4fb8983821d810b21afbb1c9f51d6b7c0b0447a31a098e9f254ccd756e30a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_085.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_085.obj",
+      "sha256": "266315071b819f8a359f5974eddd79f5f488bb818fbc17267e6f926fd9212464"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_086.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_086.obj",
+      "sha256": "c8d271af8532ad6f929019f1cf16981ca16cc5f511e6a8c1f3ea268830458cf9"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_087.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_087.obj",
+      "sha256": "563bb64188d75557ea4025c688a3489d2a56c6b9be1d44e1c7bd5b5e0f03dd82"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_088.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_088.obj",
+      "sha256": "98a2ba0138e1b4dd204d96e1f9e90e54d0dfd1f4df0bb79f3ae86d3743cd0777"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_089.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_089.obj",
+      "sha256": "c150aa8c9d283e3b85a25341f42f960a5b58aa183193e44eda08c578b04054c0"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_090.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_090.obj",
+      "sha256": "016d3d44d8322ad69c95a163803289f72c927830f6a3116e72fda3274279e7a1"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_091.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_091.obj",
+      "sha256": "5ba5e57d3c814af35f5fc7c6d72469dfe1d4cd796855885bc1802f330fbf71b3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_092.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_092.obj",
+      "sha256": "6ea7bd51a27f0fd99585c33302de665608973fe7d54272515dfd95d0e6399115"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_093.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_093.obj",
+      "sha256": "869c4bb69ae61d33c3b63a2213db1d87387b65dba463279e9ad666811a843b04"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_094.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_094.obj",
+      "sha256": "1162a58f90b33640ba135e23a9ef210713495f50ec8074600e8201b2a2fb5bdb"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_095.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_095.obj",
+      "sha256": "2ac3072dc29f43914698aba3f3c0ddbeecdebd67ff23a66f6365ea4115d161d4"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_096.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_096.obj",
+      "sha256": "74ec7c4f5ae6e18ffc163c40695c923ca9056831c9f1cf22773f0ee220bb6a98"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_097.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_097.obj",
+      "sha256": "6667ee654d76305aad494e61506e6731718e0292254662337a6b86cdc930c288"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_098.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_098.obj",
+      "sha256": "a96ea3c41c7534be358eda979365e728e7aa37df5f318a7881357ab6b152ab78"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_099.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_099.obj",
+      "sha256": "4083c6faa35c0fc08bdacb79fd5b642af41d012372df9cb683d20cdf75fa55bd"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_100.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_100.obj",
+      "sha256": "0859a000fca7089e78deab773566b8cea9b66a0aeb448af8eb098be5ed628c4f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_101.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_101.obj",
+      "sha256": "d12210aba46a6d63cb9f7f0144a257c1ff57dfa5fc80ad4a7db6055c41b9765b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_102.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_102.obj",
+      "sha256": "c303e9c65c6c77f1198e25c47157413def3ab083ef76162945e911e3298074bd"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_103.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_103.obj",
+      "sha256": "1dead6744c3418e7f9408b3c584b6a2fd3960f9efd75f7c748282e62922368fb"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_104.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_104.obj",
+      "sha256": "766eabfa5283ce577a72762804e6081a51dc73a66629bf21041a98bcb13de292"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_105.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_105.obj",
+      "sha256": "58753af369f610a4520951a140754e28f2939b46aa66a10297f0e6884d59fc13"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_106.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_106.obj",
+      "sha256": "d05523455a12cd00aaed969d3fab445cf41d4ebb66fb9d38f9b266944e1444fc"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_107.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_107.obj",
+      "sha256": "fb59dfc51c71afb88a8885b9043f2142001ab272606ae367f8ed6f621900ceb0"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_108.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_108.obj",
+      "sha256": "347ca30f545a98490ca370142fe05b078070afad109b842f0f42b6f4d95e3f2f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_109.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_109.obj",
+      "sha256": "a1d8c6c2e28d3a0687593654db9efd36e377dd0a906ff322a527d0b8515e5ef7"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_110.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_110.obj",
+      "sha256": "a255b37259e0a639715db1d39fd534867ad73dd78b1e75a879766d926a84c824"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_111.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_111.obj",
+      "sha256": "6dfff321c5b5f909bd2505d79336489170ca2860e8f4281d15d6ff4a3ed5a12d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_112.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_112.obj",
+      "sha256": "97c397c1260b0dafd37f116d3df2b1ef70682c703081859513299fd2d52fc83e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_113.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_113.obj",
+      "sha256": "bf6df6e587079f6bdd4b86b8321e9f191744c3f163162abdb1ecd601f839179a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_114.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_114.obj",
+      "sha256": "40c9f486ae0510a2d24ec08be37142eb78d1b04c583d50ebc25495c387f5869b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_115.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_115.obj",
+      "sha256": "3caac166688cbb66ec44c0e2502f0108f2fb99861c5135cf1bdd608ceb1611a3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_116.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_116.obj",
+      "sha256": "659a8cc37d88b25c4c7b70e5427e1cda71708f17dbda4f87fa5ff5752638735a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_117.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_117.obj",
+      "sha256": "7b0d39f3e527649b2d1fd1a11c1b11dd119ae3692f1e35e0492cb43e07989d3a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_118.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_118.obj",
+      "sha256": "4ee129ed23b0af21b90f3dc3297538e43e4c2c26a77f15ea36d6b116866455c8"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_119.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_119.obj",
+      "sha256": "308551f9055a6fc5744737c0e746d6653b06424de360dd1cf33607e97e1442d6"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_120.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_120.obj",
+      "sha256": "2fe0b7aea13c560467388023f077bfe0d5a76dd0259e8e4334a408aa8013b0ed"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_121.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_121.obj",
+      "sha256": "cbc435aefec72218e9848acd30f97332f2efbf4f70eb0788e0806d4c2c66f058"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_122.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_122.obj",
+      "sha256": "caeb27b59ff99064e3797af0410dfef2cf4ba65a905a4154efe07f38d3aa2c5e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_123.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_123.obj",
+      "sha256": "bfeaab47e251e9f046c92e4fefe592074c929d3a15ae8a2c2e6f8ee00dcce0c7"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_124.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_124.obj",
+      "sha256": "52f00e4a13c8faae5c77a413c2343a3290528ae31255374eb4c45bf63abd551e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_125.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_125.obj",
+      "sha256": "2ba89def5809adaba922a0a1ee9e12d6e41cf779fc51186491b13c21e6a2e65e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_126.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_126.obj",
+      "sha256": "7054b64dc84e4b62eff2096aca6d23684f1d507c9be97c3a3cc382d7b4719b35"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_127.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_127.obj",
+      "sha256": "2898de8836a48ec134bb5d3512a1eb32631482b28724a6cf5b88a3d768abad52"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_128.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_128.obj",
+      "sha256": "0eca37f3a3b42eebbf5ec304c958686d3b039b638b2b150638b94c4f797d0471"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_129.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_129.obj",
+      "sha256": "41d13fdcd4b819841dcd8f6d4da4783418e1ba3c23a7dde3749c82259032496b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_130.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_130.obj",
+      "sha256": "63b24f1cfe8fa81f6877627862fa4097f934343a74e0456063d5d28cae1ae173"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_131.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_131.obj",
+      "sha256": "85ed21e18b58881985b7f845a6ee245b81592c69780c02c2b705514cab29ee53"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_132.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_132.obj",
+      "sha256": "c7ed5985cd4384d0e8cc6174a8597e8e5cc46ed044a0abcc653b54dcfd0f72dd"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_133.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_133.obj",
+      "sha256": "e022669db419d301ed7fa4e3298446bcb3e653788bb7d82a370b877731a8b52f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_134.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_134.obj",
+      "sha256": "b19d0b85288a2be6fc61db02b0afffc4f2e49ac775a5a0df23c5f3a0a7270162"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_135.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_135.obj",
+      "sha256": "48d398b836c7cdab7757237392fb0d7b02674b622b33e7c487ac4439cc5be9d8"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_136.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_136.obj",
+      "sha256": "e8fd59b88422604f30d31e01a754f05daaee9a0c598eec57373b3551b0132491"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_137.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_137.obj",
+      "sha256": "d711bee0fe8f07f0de670857a17fd53fac1b6041f542c9210f7fdbc05f4cb13e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_138.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_138.obj",
+      "sha256": "6ce5698e75750a3bff07b1930befd6d8446c5ceb3bfb12d4b38d3f9bfed251ce"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_139.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_139.obj",
+      "sha256": "b9656d441fd23e2416565b53eeeb423a83ae6ab3235e9866283b9d43f091b0d6"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_140.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_140.obj",
+      "sha256": "f856f9e953522c029f801bec2029e9f38df9b5d03eadcafcaeb4dcbc6df774e3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_141.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_141.obj",
+      "sha256": "ede62f2b3d798b70074f5df40404cfcabe2db9de00061938f7e1c46ff7b6f226"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_142.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_142.obj",
+      "sha256": "fa9618d4dd9e2045264cf9973667285a79dd4802a3f6582375dc390977c2476e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_143.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_143.obj",
+      "sha256": "594969937ff66e2e383783ece98d6cc244ce4d3d9825bd06c81433b687c7e365"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_144.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_144.obj",
+      "sha256": "d1c987a9666586d4d1efd79414de52a8fcd6e1120b1e5df8e44d1e1bc2f159af"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_145.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_145.obj",
+      "sha256": "0afbbc762a69e0ac68d50b821a07d039a48cd5925577e996adae29ae356daa46"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_146.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_146.obj",
+      "sha256": "81a76eb663aab3f095724477316833c2fe07ce0f4bafa408c5bd6a8a055597d8"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_147.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_147.obj",
+      "sha256": "9a3acfc20a0ff91b137ba55924a268a2f9403f350c44fbd30207426bc0b7297f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_148.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_148.obj",
+      "sha256": "302739a11c931d1d0ac738ffc417b7078d54b1c3a9ad228b4ee4ef4293e45d7e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_149.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_149.obj",
+      "sha256": "ee1b0df7dd737d50109a4674a4b6312d3b4ad3b85b1f71959f6b69c8a7326ba5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_150.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_150.obj",
+      "sha256": "4a67a582b3fd9e15421923c4e43f2bb9026e0e88d92eb7a3aabf09e04ced2559"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_151.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_151.obj",
+      "sha256": "1313e2d7fca55bc5322c0d317bc727787672254cf7f9cba68072f8d9cf7eae95"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_152.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_152.obj",
+      "sha256": "ed171224b1b9e42bd96ff9441f4d20967871e5b858d46837fde6aca877befc12"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_153.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_153.obj",
+      "sha256": "d3ee4195f2e6877decd0ae2a6b3dc4120b37c78eb61a68522203c9de72d06203"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_154.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_154.obj",
+      "sha256": "8f727840485b7a6eabaff5a606e9863daa087cd6447e4f5aa5651f835e3649ce"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_155.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_155.obj",
+      "sha256": "a9b8116ce74a0fa005bb2a3e8c4750d9852781d3d98e7ff83d424390908b5698"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_156.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_156.obj",
+      "sha256": "78a8f00489c5d1575ca4141d1661668149a84fd727e7f968ab7888dab9d0485d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_157.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_157.obj",
+      "sha256": "306e05308f9b1c8f1e7e97e6c6213c7fd64839690f2c7be6bcbf9fe56d3a51b4"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_158.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_158.obj",
+      "sha256": "a759f0f6d7428be1a43177a4dd57f9f14a85e3e0db1af39f470f445851987875"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_159.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_159.obj",
+      "sha256": "4c0fd33c589027c532b477a2c8a9900f9efa389726ae44f26107e9abe2d3b14c"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_160.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_160.obj",
+      "sha256": "3bd40ffaccad35a1482cf34a193791ac27b9997203def4e39e0e1a0cec8c7fc2"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_161.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_161.obj",
+      "sha256": "310efd6915805089e6d806e0c2287dc8ed9069a4ec9d612b913de59838929bf1"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_162.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_162.obj",
+      "sha256": "c637f2592f60538a6790e38c89351a0af259a3386324af355798d8176b00e556"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_163.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_163.obj",
+      "sha256": "c8909a50a4d77ce177574631cb4fe1c071e281406b53cf12578054b917dc5437"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_164.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_164.obj",
+      "sha256": "f0d429b101102384bbf0a76cdc4b91e4ffdb8a50797d7a615753b8972afc3bac"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_165.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_165.obj",
+      "sha256": "ef2447ead74790db6aa598b1213079a8a72f64b7a026f09e32dd82686474b6f1"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_166.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_166.obj",
+      "sha256": "90b21389c3cc0c388696bf25aab8ce4e831922ff920350631af71a9c32577121"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_167.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_167.obj",
+      "sha256": "e26cd34bfc19ce809b25fe76a2795343db76b65c78c93a397b7a94a66bdbb237"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_168.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_168.obj",
+      "sha256": "f25e3a8c7ccdf82d696d646dd7974bca9ebc93f54d03347f2c7d0898b3262116"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_169.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_169.obj",
+      "sha256": "7f155af2a96de62969454f91446c3acfa42c2d8a96c28d35547e5315597e5a69"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_170.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_170.obj",
+      "sha256": "20eba20850d30fd0a8ac29169caf8caaa809072ab04832165e5ad306481a9765"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_171.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_171.obj",
+      "sha256": "1453ff472991aa3ed4ab16653a84c473fb0f2c099cfb0e70deb5a1eb31d929fc"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_172.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_172.obj",
+      "sha256": "09f03b6901dc17cd7b97bf4ae15b0ccc2663f901ad629a583a5ebba0d20d10d7"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_173.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_173.obj",
+      "sha256": "6ec0686b3ca96094ddb5a75a1592ae1c5374a9af26905bd9e7c92af2734df9c9"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_174.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_174.obj",
+      "sha256": "6dfea8ae89d18e8816a9662b736512ffbd370769c029854e008ef53e9a370643"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_175.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_175.obj",
+      "sha256": "5d1035ef0b8719fb673e80b6b0f1d41d925a7fe0aa4efa71386530f11f60d89a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_176.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_176.obj",
+      "sha256": "7a2c5a075c1b6a8771a8353e9dc89e5a6b4f4fb2da9a47420f8ab4bf7c713833"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_177.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_177.obj",
+      "sha256": "2b228bab256eb2cc11394eed57b05b588e0b2d6272937776889528dd52fb668c"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_178.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_178.obj",
+      "sha256": "2e51a990b87c6975413ea362a56d0eabda4c060ded795ffc5c63adb34a717eac"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_179.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_179.obj",
+      "sha256": "4035f4854f7970d247b80cf837ca17a6b4dbd9fa4309eb912d0cd116da2b5350"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_180.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_180.obj",
+      "sha256": "bac338156e5c5cda5711efae372c6827a774b83444c66cccc74f9447265714d6"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_181.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_181.obj",
+      "sha256": "266dfea499f3bd654a85bfa43c30735e0120728cf5a0fc1432efd61ae9275fc5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_182.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_182.obj",
+      "sha256": "63ac9ca9b12dad00825197c22b29c8d82b1c3c821f66e705e7d53a64e560cbe0"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_183.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_183.obj",
+      "sha256": "299477fa4c2df0dfa1a9117f2c9d4dd83b67c0b79e405428633459aa43a172e1"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_184.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_184.obj",
+      "sha256": "43b491e0132414d82a43dcc129d45e33260ff47e0401a9939b837dc685a27797"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_185.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_185.obj",
+      "sha256": "7912201e86973e4bda0942c16c2ae001509f1d9e2e665810924a9b5cdec0dd46"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_186.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_186.obj",
+      "sha256": "5af4d21cd1c5745cb02c89bf13b0f46f18e44fa114318d3efeb1ea33e9e0cd5c"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_187.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_187.obj",
+      "sha256": "0c9a97b118456337eda3b97259fed9dae8d70167a3caf642579f57d5aa3f4791"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_188.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_188.obj",
+      "sha256": "c9613f0f828188b3177d8d895756c4e0a993d233094416f538cef534084ae8a1"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_189.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_189.obj",
+      "sha256": "6f930f9cc90d5457ac8da11daa223791c4b16a7890c7750c17966c67251803eb"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_190.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_190.obj",
+      "sha256": "da4d523d0fbd74be71a285adac36b672a479141d6039569556d5a349b6481fc7"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_191.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_191.obj",
+      "sha256": "82f0f76cbe96ab4772331f98fcb65a47d439d098128709db19623cfb14e0c857"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_192.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_192.obj",
+      "sha256": "199f997610217bf2ba486fe90ee3834513ad6430c91989b73e5385fb75ff780f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_193.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_193.obj",
+      "sha256": "5c95e24180a65e28ba5bf3be0667ed51d8253517ee443a5d2327cb765e16d995"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_194.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_194.obj",
+      "sha256": "789a5eea435bdc44bc90e6228ddb730d333d66af60dafef464fba0eb6af8531d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_195.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_195.obj",
+      "sha256": "53380ce72f23b50693ad07771fac4dc05a36e45f3c6183856d60c5d228f04492"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_196.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_196.obj",
+      "sha256": "a7dac0503cc912a28b9d88e521d014c50da96378072d35dca4068ff238ef39c3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_197.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_197.obj",
+      "sha256": "40d199e8f75170e543603bfa417bd9b4957a9eeaeff8e9b327089e924a447cb5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_198.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_198.obj",
+      "sha256": "fca807fd2de65d13f2ef8b275c1d4c2c3ff9e09add27f4975c330e50619e0c75"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_199.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_199.obj",
+      "sha256": "60d9fa27bd5995bafe07ac6ae2cf6579c067b68928ae3e664a0e23e70617aace"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_200.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_200.obj",
+      "sha256": "c5f95be8a8068d21bc1ce28a9ae18a9a6d279c403ea8449c1258dfdee479aa2d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_201.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_201.obj",
+      "sha256": "61894c9723ee9ee2a699503b960dc30c805231515b16ab1dbb8f09e27da263cb"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_202.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_202.obj",
+      "sha256": "b0f8cfe46199892849712d329d0c210e022130b6ccf5f375a908694848de8d60"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/table_collision_v2_203.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\table_collision_v2_203.obj",
+      "sha256": "12b35beb8919f6be6636af7c491cb91f73dd35f8c2b690c98462b2a8982d90c1"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_000.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_000.obj",
+      "sha256": "4d2662906ed07fa099caec9bb541ee223de1097f560ee6d344bd6216409ee1ff"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_001.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_001.obj",
+      "sha256": "b3406969981b8abc204474315fcc2d7c005adbc52c233134141ab1b8f271e483"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_002.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_002.obj",
+      "sha256": "ee56a36e586695eee9fc24e427ea27b96af57801957feb83573a222489833517"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_003.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_003.obj",
+      "sha256": "6d2a38817297c66cc68664411ec6cf00a8023f7fa32de1c3350ec61ce790f5fe"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_004.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_004.obj",
+      "sha256": "b13c24b7fccf4f854a7e4440375ef4a789c6d7b7cb3975f0c9c5e4679d0f534b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_005.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_005.obj",
+      "sha256": "4fb7060bc5fed535b34131a98a9d79d0e216f27913769a0dee8230674e677856"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_006.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_006.obj",
+      "sha256": "2cb17de5e0fb8e44626f609a3cceeb0ffb581d325f5063a5be0e7fc7e1f50b3e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_007.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_007.obj",
+      "sha256": "9b6187e6d66abf73091ff806d257338cb831bcab7eec6573b17148e924b23d9b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_008.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_008.obj",
+      "sha256": "953669ee48abc89044c00c77dedf842ab9ec348b2492b12aff47623e372988a5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_009.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_009.obj",
+      "sha256": "b367110faf5958a3b1e85cf1d2d9fdb3f44aa66a0ca0c04282cf8097cb42ffb5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_010.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_010.obj",
+      "sha256": "52981c893c10bf359a1c0f30269d46f30e33f09f98a71d178cc929796c907f8b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_011.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_011.obj",
+      "sha256": "f36f32fb2132b0504e8dcc789d510c4bb1077057749c8be4c2bbaa6348a9e840"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_012.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_012.obj",
+      "sha256": "533f7ed8731cb1fcd554ded5841fc55853237b06b8307fdc117fc83cae695c99"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_013.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_013.obj",
+      "sha256": "22fab8e1f769f88e6e24abe182f15312bf9b8e31119bc8d6a5f3bccb9b73c75c"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_014.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_014.obj",
+      "sha256": "8c6f0bdcada0e0df8be121d5966d6e078a6c8262a67e286881ba9ba96877dbf3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_015.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_015.obj",
+      "sha256": "56956f6a83a5ac118ce392c455357f3ba18043734674477572b085a1ead50610"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_016.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_016.obj",
+      "sha256": "44afc17716cca9702e5f860e9422ea6ee3e2d5d1967cfb80e6a04f45fb03b9f0"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_017.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_017.obj",
+      "sha256": "1e5a6f6f3f3a18839578331d4c882d4e1825822e49f510bb99fbce266f0cf482"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_018.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_018.obj",
+      "sha256": "76c2e4ab159c551740386d5b0b9b94c0d9be9100f65b611d756ca8ddcb90cd66"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_019.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_019.obj",
+      "sha256": "6a4146c7c2631bbbbf99f3526df096693b47c0d1f6935da0205076aa1fe8d042"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_020.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_020.obj",
+      "sha256": "69af36feb46fa8b117f1c4d6dee104b273d6efb05d1c557e9be2168bb9542eb7"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_021.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_021.obj",
+      "sha256": "1e611738e0ee01b7e81a05eba1b50e9d5313dd79cb4c1916aae2cea6503b4cd6"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_022.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_022.obj",
+      "sha256": "9dda7b7df0a1da9561682919623be046238e77c687a4452d28122427c308aaaf"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_023.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_023.obj",
+      "sha256": "43e11952a9ba9ce90424aae887f2fe55c72af1a03c902accefbd241c02c5b32e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_024.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_024.obj",
+      "sha256": "584631aab6daa32150ec319ccb384457e94490bf46d419e203bc5d020d7c07fc"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_025.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_025.obj",
+      "sha256": "26e64063b896678d76cdf11801d83feadfb2c54b521ab194b1cf8d91c0ad8491"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_026.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_026.obj",
+      "sha256": "2d8eed4ca0a579e65a4f82e842e6f92e311cba4f755a9afca706be704f88f462"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_027.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_027.obj",
+      "sha256": "499d2f80b8f3aee012f6d1183e2cacd4d0056b3ee9ddd81888c15a1165df0a04"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_028.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_028.obj",
+      "sha256": "89fd14bfc0ffe3f9b2683ae125c06a1fcec24e3b048f23f8b95f80e6975e5bc5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_029.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_029.obj",
+      "sha256": "6d95140c6b80354b6e98e0ccc84ea6ae68d600e2957b6646dbbe8d2eb6568b6a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_030.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_030.obj",
+      "sha256": "47916ee31bdb22780e4cc1ac287376de3a18d2b6543c12c9f61c999317c95b65"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_031.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_031.obj",
+      "sha256": "160502dcb719bc1ffe741eabcbe3485ac1ac9fea872f043250890645c6536254"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_032.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_032.obj",
+      "sha256": "09ab096cd2eb05c7e5a154eb226830aec306b054b197a2d483a7e00bcd407e08"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_033.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_033.obj",
+      "sha256": "a9397fc61bcc03792af43ae07b302a798ee8b2abc3423dc503ae67790701908f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_034.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_034.obj",
+      "sha256": "77f14a5707bc704b80bddb82c358958a0370d23f6a654766c0330884fe099ca8"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_035.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_035.obj",
+      "sha256": "7e19b7d91a23f8a596d456880386ee4d2d8b9538b460c2d442c849087cf667c9"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_036.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_036.obj",
+      "sha256": "b7b2750b91db29303385a174bda83cbdf5761be8a28825cf27a18ed392bb2bc3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_037.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_037.obj",
+      "sha256": "6bf25a331925311f81784ad155ed3cf36675804f9dc0c7c5731c2db760c35c26"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_038.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_038.obj",
+      "sha256": "58c20b40c698dd3b318a75f540ab11a7ee1a7abc816ed81012fa49d9150dffcc"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_039.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_039.obj",
+      "sha256": "87e4dfbaaa4bf235dde9872cbec3af87b671895fddaa709fced89877cf95d1d1"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_040.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_040.obj",
+      "sha256": "59928a0881c069e5e2f1dd032753a53ca985014ff6427a66b2366455368c465c"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_041.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_041.obj",
+      "sha256": "53162de2d2bea62b66e0d77e104060b654042bc40e12c03f53fa8332823a4f4e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_042.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_042.obj",
+      "sha256": "1509e4507fc32127585d84addc8788543fcbc765b3b7db2bf2d4bdead88216b6"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_043.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_043.obj",
+      "sha256": "29fb4616ecb5a16ded7d2712095856d0eed9b628f5513704f02d6e825e87220d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_044.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_044.obj",
+      "sha256": "d01c8b751f4e40346bc4e7bc66f181a91964b0a454eedbae247ae9d20de78a0b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_045.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_045.obj",
+      "sha256": "7642e38b958a1cd3f3a029d5ff673bae0c2045772f973bc2fdfbede129882ccb"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_046.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_046.obj",
+      "sha256": "850c39ba9e2d5eb22aed11e1f3e306af9e96a8fba829eb88ea9932774a0e8626"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_047.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_047.obj",
+      "sha256": "4a97b2277d54ad6ea41376c34243c4d217a88ddb88b7bd9d5818ee8899f31db3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_048.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_048.obj",
+      "sha256": "43b307e96c30c1c71572b8f879eeb098750cf539912c79b2f1d23d2f5281c1ba"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_049.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_049.obj",
+      "sha256": "ac9f2b425324a0e36fedba51c7bc91b874d94e9ae4ec2a486376753c349910de"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_050.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_050.obj",
+      "sha256": "1b8a5b0e93ec07d5713684ee3d7c5684a19a2414366e138c55e99beeeb74bf4e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_051.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_051.obj",
+      "sha256": "9b37fa28079ddc3d0c0dd03a03ae48d67e919ef4b4b1b3a9be87a027ba3a32ea"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_052.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_052.obj",
+      "sha256": "b68ffd6b0aa8b43113dd59c848603a3caed0294ee3db310f7610d74ff03ec81f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_053.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_053.obj",
+      "sha256": "592bdbaf59e1e7d55c447ea07dc3d6812d233a757500122f0555404accc461ab"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_054.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_054.obj",
+      "sha256": "5013f4d7dec657169b8256c9ea5722c763de2f96ab17b6b6f0fc6500a3c30ced"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_055.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_055.obj",
+      "sha256": "08b7f0e853940621b33635dce8480296ef7468a8c2280127789f217449fdb72f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_056.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_056.obj",
+      "sha256": "16751e3bedb9893f284728de63460ca1888ad5147ab76162d5b08de7ec41143b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_057.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_057.obj",
+      "sha256": "37bd3947bbdc4419bd3e6989eeba8c5fb5def535d1d2a25464d58c12d896320d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_058.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_058.obj",
+      "sha256": "cc840dd65fc5f21d235f29bb3e89816d32dfea5e92e392344050f210bb1582c4"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_059.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_059.obj",
+      "sha256": "6375ab7f42036e51be5c6d0392b47b931954ed4ec12c6ffc764860c65c028a97"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_060.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_060.obj",
+      "sha256": "8c6160750dcde3ab32d36efdb92706d8a3126caa8d235bd5f98c4f6466f26166"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_061.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_061.obj",
+      "sha256": "5a9f5f35237b92aead280a40b2f6544fe4e57cb4e1e0acc6d8269a07180732e1"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_062.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_062.obj",
+      "sha256": "251dab06847493c9d74f81eef31beffb18e162efbb48ad747fbbaa1711d2380b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_collision_063.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_collision_063.obj",
+      "sha256": "7930bf01c021efbec26cbcad86086868b7e49b16bdb85d34863af2326916338b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_contact_000.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_contact_000.obj",
+      "sha256": "9320105a5dc43084f0a98013b1a9764d16040d9db25cf13377d0faf847b78dba"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_contact_001.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_contact_001.obj",
+      "sha256": "42a01b4b8f9536a3f25bccd15a693248c172ab3ea2ed92c9f1574271c5aa531c"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_contact_002.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_contact_002.obj",
+      "sha256": "84cee9900ce93fba0797df4ee552a8f0c39e70770251e8d90a2f42380100e021"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_contact_003.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_contact_003.obj",
+      "sha256": "6243ee754f4b8aac3f63b285e506023c7dcdd466e8b8fb60a237de7349a2576d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_contact_004.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_contact_004.obj",
+      "sha256": "ba59b34ff989cfbadfd0e0933cc4a157f3004f42d37eea432b55cb18fdf19ea8"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_contact_005.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_contact_005.obj",
+      "sha256": "c77ed48e7def044a81ecb4fec57c55d06310003875acafbca890c16a90e5627e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_contact_006.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_contact_006.obj",
+      "sha256": "95dc58b8958b2d3c0e5c51c4d1fd96f5105fba4cf51d0156300782642c904959"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_contact_007.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_contact_007.obj",
+      "sha256": "ac4cffb799f7d5b32e8b45750b089174e187ff431f6a3d5fe5c8c31ca33b972d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_contact_008.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_contact_008.obj",
+      "sha256": "285c62fc7eddda24bd2b618f9d7e89f616dedbf0672d38926ed3be5dac0a15f7"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_contact_009.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_contact_009.obj",
+      "sha256": "90c2bcaa29441069df838bd768d07bd0440e162a95a8bf7526cee76708ecacbc"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_contact_010.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_contact_010.obj",
+      "sha256": "b0f4ad126e95f977556df2f426d2e9ce1a650cb0e1fa98e2616c9a45e449ffc0"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_contact_011.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_contact_011.obj",
+      "sha256": "1fd2a97bd1e2ec243121bafdcc88257e0082b911c6a51b86a304310fd71dc4a4"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_contact_012.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_contact_012.obj",
+      "sha256": "69abdead976bc70331394344e7301052ac06d486593d41f56b4818251470a2e7"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_contact_013.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_contact_013.obj",
+      "sha256": "ffef09db912ed6d620e5867c27d8ca9b930fdbb8ec4b5ac2d4939e971130cd8e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_contact_014.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_contact_014.obj",
+      "sha256": "7e9d63453e83e3a3c68c2c0823934de4720aa4dd6e549655fd40c1679217e9c6"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_contact_015.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_contact_015.obj",
+      "sha256": "0e95a3a02b8438191cb83cf79861ed698adb947271894e5ffa4e87b384366da3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/collision/tray_contact_016.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\collision\\tray_contact_016.obj",
+      "sha256": "63effeb0327ba8e2d75d205e3094307d506262273e2c7663619a2224bb8266fe"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/converted.urdf",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\converted.urdf",
+      "sha256": "c112f0ff5dc94a97e8ad6d653d8ba792b784608afc16581882fe63aa70f64505"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/LICENSE",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\LICENSE",
+      "sha256": "053002a4783b5c99f84719d0c58e0ba06c7a0cf78b22596647d82c2a015235db"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/NOTICE",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\NOTICE",
+      "sha256": "8a18a90a7d4f2687e3884ed54b982c78bfdae646bef5cf49d20a48e81960ea88"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/base_link.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\base_link.mtl",
+      "sha256": "6b93510540d012035dcc299c33a9a179b276e33e68f2b59539c489cd30e560d1"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/base_link.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\base_link.obj",
+      "sha256": "fc9ad103045fca8354530cbfa35ef91bac39a4eaaa2ad0080d0eb4910be219ad"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/base_link.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\base_link.STL",
+      "sha256": "9981b3d22c033936fa13ea5211c14f593bf28ebdb4934988e2a0a94d0c7f57e6"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/base_link_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\base_link_collision.STL",
+      "sha256": "ad4a7b53b87fa108378827277ac2309244e642951030e1148d36979b43898077"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_base.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_base.mtl",
+      "sha256": "f9c3636f9125ee4705e23160edbbdb8f53f595d8384d9bc0725db902570388e6"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_base.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_base.obj",
+      "sha256": "32d03af7e13ebc937f838f5391f0e83ff2adbb6d08db2bbf8ecbc0b74c0c3293"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_base_link.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_base_link.mtl",
+      "sha256": "f9c3636f9125ee4705e23160edbbdb8f53f595d8384d9bc0725db902570388e6"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_base_link.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_base_link.obj",
+      "sha256": "739c993f51f712984290899949de260203c3b31d269f5e0119afd7e4fe55cea5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_base_link.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_base_link.STL",
+      "sha256": "94482f8b27c7e6c541cd7dd24e0c3baa5b3078224191d97f38cc3509faf305b0"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_base_link_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_base_link_collision.STL",
+      "sha256": "926e0f0dfa95fe5335b0ca6a9170df0c216ea4e4da4402f4a336b0b1bd504235"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link1.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link1.mtl",
+      "sha256": "e0032a697497a91e44cba767dc961c77fd85fbd0f2c5286d8b5a2d6dac116519"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link1.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link1.obj",
+      "sha256": "8bfb3b0889cbee563fe76a7db750c63a36f336050d71441f3bd7621c0bd3abf2"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link1.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link1.STL",
+      "sha256": "94039e90eef58e91dd7475d0dba8d9d42c0a87acd773b435709980d6536832a2"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link1_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link1_collision.STL",
+      "sha256": "1f8e0f4c3a14d46a2e48d243c662536ac69079300de4e552dd2825bbee21e89c"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link2.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link2.mtl",
+      "sha256": "5409a1846041b1823c7a14ed2a6edf6abbd029ff0b211153a1eff97b7548abf1"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link2.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link2.obj",
+      "sha256": "6306333168268b06fd6cf2c3da50ea833c1fff1714ce463d68c38120e04811fb"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link2.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link2.STL",
+      "sha256": "d88fe0ab337ef9c143dafc2d4ebe7a4735b0f1ac9a5dcb28aa96105a518ca005"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link2_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link2_collision.STL",
+      "sha256": "7fbf799fa425ed14b8167a50d558b09250e6564f620114a99338957c9f422c21"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link3.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link3.mtl",
+      "sha256": "75fe51a0aed4275114f202655042ccbea60852e6af830d006a3ef74f9b444463"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link3.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link3.obj",
+      "sha256": "b5413a49b8cb0dce1cd7c2c659735aae47a0e61b2e4f193f9316d67d3df8d657"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link3.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link3.STL",
+      "sha256": "0665aaba941a9c34025f54063433fca22352e3f055d1f078b063533bf34811f3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link3_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link3_collision.STL",
+      "sha256": "5c96c4d99bec5c3a6246748698035f1bd54f9a4c019cc2fd9bcf37669d7c928a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link4.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link4.mtl",
+      "sha256": "a9543ac0c6e3a745fc23e9623cdcd359aa618defb5bb65b75c5ee44bb3ba88f5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link4.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link4.obj",
+      "sha256": "925da7f12b69e1f70219d8fdbc749c40d608ff8ebc75c1d8fe5e3536d674b961"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link4.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link4.STL",
+      "sha256": "2e26250085fc7f9850ab87acba12c0546f7647ebbdbcbaf18f127ecd0a7462a9"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link4_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link4_collision.STL",
+      "sha256": "e1d6d06bd04baf4bfb7231c925e29bac83433748bfc17380126b7f0cf1f21486"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link5.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link5.mtl",
+      "sha256": "4b1d525a5c50dcf03a38e059cfedcf41dd01faeb7e28f3f15d6059e5fe4a24b7"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link5.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link5.obj",
+      "sha256": "70faa087318b239bb0e50bdbcca46b7ee9100ce63bfafb0fd9baa9c9e21030ab"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link5.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link5.STL",
+      "sha256": "cf1516f9ba0c4df3fb5ac721a58da784bcef17eec116492d2ba7e840d4b58de8"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link5_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link5_collision.STL",
+      "sha256": "23a1ecb1074556780473cd727036a80f8f8ed086d8a727165b3eed719501fdf8"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link6.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link6.mtl",
+      "sha256": "5b373b4f53ed620b8c2ae1f4afe361deb059a07f9292306185835a67323952aa"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link6.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link6.obj",
+      "sha256": "4d1939e8624861bf83ed78858d6698a227977e593dec517d8164636d62403123"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link6.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link6.STL",
+      "sha256": "edafb192f239c8b0aa89874980eb06c353b2c94c02b4d055707590b6cba80ac3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link6_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link6_collision.STL",
+      "sha256": "fc12f7563fe450cd59bcb03d40d8b519b7cce7b24955dc115efd58231fad4aea"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link7.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link7.mtl",
+      "sha256": "aea99154953d08e7ed605e5375022f2393f35e7235093bafd0d3442aa844efdd"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link7.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link7.obj",
+      "sha256": "735c4c476ea69cd8769118a5301f9e62f8267da40d07fa379f6cea0285a5c572"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link7.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link7.STL",
+      "sha256": "69e0583b37843885ec6330acdd0b6551da258d9429f7959ec06ce28f2996bd91"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link7_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_arm_link7_collision.STL",
+      "sha256": "eab3aa7ff0eae77f42dba6d7fd30bdfa20ea938338b3e2dfce5150db0d2721b2"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_gripper_finger_link1.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_gripper_finger_link1.mtl",
+      "sha256": "eb509eaa125bf2ece2d7b0fd973f64135cb28d4914b972c475c55fc80127722f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_gripper_finger_link1.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_gripper_finger_link1.obj",
+      "sha256": "ddf9e2e7d3096886a4673ca877bb7db1512bfe5659e96f7798f4c2acead4a60f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_gripper_finger_link1.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_gripper_finger_link1.STL",
+      "sha256": "189e318354276aa82beb27e5741f9c980bd592bb53793d8702e29c1ab5a6439b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_gripper_finger_link1_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_gripper_finger_link1_collision.STL",
+      "sha256": "63c5daa52737b5288f817c47662d0284eafe961991de95a5ae7ce3213a55329a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_gripper_finger_link2.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_gripper_finger_link2.mtl",
+      "sha256": "d9662ab7433b611f86f8bf8e35c9da0dda43ce80e4868f745a4c5c29e037d9ef"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_gripper_finger_link2.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_gripper_finger_link2.obj",
+      "sha256": "c36a15d2d158b95e2fce94867352ff69687018b23ee17e55beb6ffa97f9838e9"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_gripper_finger_link2.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_gripper_finger_link2.STL",
+      "sha256": "c98c36d176ed01017f1a9f6abea2fdc722e0fc894fd21fa9d5d978315aee5b09"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_gripper_finger_link2_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_gripper_finger_link2_collision.STL",
+      "sha256": "13877ba3af6707ce9d22759a020ec7f2d2db2062792e743ca76d5e288913c0bf"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_gripper_link.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_gripper_link.mtl",
+      "sha256": "2cb6535fe41edcc90e5eb040784a4479d20c17e8e5d6ad2e8d65edd528f33f12"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_gripper_link.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_gripper_link.obj",
+      "sha256": "d99c6d995239c376633c53c58bd317c629d4c0e27cc9cc9581a1a056fad65ce5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_gripper_link.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_gripper_link.STL",
+      "sha256": "52fc27faa43753734a5538ecd4df3773c8e13278d06d19358f44e0dbd25f5d6a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_gripper_link_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_gripper_link_collision.STL",
+      "sha256": "87a16ffa4cf2785bb3099a6b8c3ce2fd3de8f08aea3e92489c15b2f469008bbf"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_realsense_link.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_realsense_link.mtl",
+      "sha256": "dd20fbcd2626fb0eccd5c28ec5eaa0d9ada0f7db7fc8b87c468d4f52f3a2cfa3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_realsense_link.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_realsense_link.obj",
+      "sha256": "154014fe780c941409822cfc22228132229838510021b1e3591f2f5c9a1f5717"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_realsense_link.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_realsense_link.STL",
+      "sha256": "5c007580839d74fe7b4d0d6b5273e2b520679f5f9f0916e9f6c8e25ef4b4d624"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_realsense_link_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\left_realsense_link_collision.STL",
+      "sha256": "8d3b9650f5994de2305e8d8e40622db6720582fa53b8bc08cb7776ea33788742"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/output.jpg",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\output.jpg",
+      "sha256": "78c362d79cdf478a48a13a9f48cb4be4bf6a74bc9f627d222ec7f9e5adb86d84"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/r1_pro_with_gripper.urdf",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\r1_pro_with_gripper.urdf",
+      "sha256": "0884596b6fe25ba9492a5794070a7a0b107fef9a27a63b5e651452f7eca15cd3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_base_link.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_base_link.mtl",
+      "sha256": "0e61a024db5c9b03d73fdd14db3312cb1b0b427136cf616d4eceb9b03f273176"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_base_link.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_base_link.obj",
+      "sha256": "60aef6fce4cd99fd532ecfc667939e66b5fd256ab08f1e340272f88d5470cfaf"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_base_link.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_base_link.STL",
+      "sha256": "10e37eb8794900e5f1c783f6e2c519cf86cdd3375b6b3d3ff29ff88d72e6e4a4"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_base_link_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_base_link_collision.STL",
+      "sha256": "c82cfc1ded0858f0ab013e5f42a7192b204ee229ef6e4428dba72ed6bb4da1ad"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link1.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link1.mtl",
+      "sha256": "85ed8bc293131e22819357c58123ad7c5e2dc0491d0f2dfa2bd7231f0ff0e61f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link1.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link1.obj",
+      "sha256": "67c26a7794548268cf4c394701700ce43e26951639cd0ef389d60bf4a6656e3f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link1.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link1.STL",
+      "sha256": "65c10249e6271bf22719a54cbb40d0d5f7337d673ed76ef2af9ae01253d4cfad"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link1_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link1_collision.STL",
+      "sha256": "09529c797decea4fbcf21fc2e7a51a3dc2937847af14a1c96a0f0b744939de88"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link2.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link2.mtl",
+      "sha256": "c02c7aaf9d05ca3e0876f6419df7ee4981c641b4be8664299036a4e2470521f3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link2.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link2.obj",
+      "sha256": "ed4ba6a9ea43c7f009456c92935a7e09e7a2020d1c410230f93e9d4b36422af9"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link2.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link2.STL",
+      "sha256": "8f53ee7f71b96473d1007675f5772174542910c79064670a7699ae3c90cd21e2"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link2_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link2_collision.STL",
+      "sha256": "c66971fbbc65a4d111d8761b0311b5e6328ba6d8735ce9d3ecb70f2580f23ec5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link3.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link3.mtl",
+      "sha256": "4172d89f93d3fd39e986c511672d4f08b3c72b3f94f9e8d6e1c7774f2aa92859"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link3.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link3.obj",
+      "sha256": "882f4d24432bb2fba5463bf1a4b865f8e98e32b79286d0abbd0e923bcda431bc"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link3.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link3.STL",
+      "sha256": "16e0c8d09a7a8f2b565da7a25564aaf4b0f303173f0e592e27213a5718c54813"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link3_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link3_collision.STL",
+      "sha256": "46eee2bbe5e2ea1522b297be089a52fce2b39d8b9c341c6b2eee9ffd503b9cea"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link4.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link4.mtl",
+      "sha256": "a9543ac0c6e3a745fc23e9623cdcd359aa618defb5bb65b75c5ee44bb3ba88f5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link4.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link4.obj",
+      "sha256": "75aa528be6cde481c5ff17c30b7277fda7c490b1344db4fb8b7ee18c4570b6ee"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link4.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link4.STL",
+      "sha256": "83f730469354db707f9bfc5bd949b1b47b102cfc699a772651f99532d26ce841"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link4_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link4_collision.STL",
+      "sha256": "7d80eccc97609adb2ecc83222f9db085cebab3c8e9a4d3c4ac5192f2db0a37fb"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link5.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link5.mtl",
+      "sha256": "a29d1a6485f8fbc651eee11bcc4daace322e03c229fa99d79af960d13f004430"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link5.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link5.obj",
+      "sha256": "4a5b2846756b4ad2ef98388d3e3a8e5d0199b5d82f02d3c8ce0200dcc41d28a8"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link5.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link5.STL",
+      "sha256": "38a08ac068570a1d53a9bfae9a4228c298c7b559a37d087ab99e88e9e3e3e590"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link5_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link5_collision.STL",
+      "sha256": "f33485e396a2611eb5ccf131cfb17ca445735c31fb083a540a6ca7c115d6c4c0"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link6.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link6.mtl",
+      "sha256": "2cd869e0514c9745039134d02a310ede6c0740981efb45f94a228f353b32f9e3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link6.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link6.obj",
+      "sha256": "07afd7aac595027f8b9366d9c9d188af21241fc70e1480e46e4e83f631943415"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link6.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link6.STL",
+      "sha256": "296ebc8245afda46ae8ee9a13a6b1161cc881306797da0fd50e53bb4d89c4690"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link6_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link6_collision.STL",
+      "sha256": "2cfaddc3876995ceab8431056ddd7c73d32d64f7de1c0fa26b59cfce64523d45"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link7.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link7.mtl",
+      "sha256": "7970a5db168d4e21bfcad3309bbcce7c7b3f53207910e0a446b618b3ac14ed75"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link7.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link7.obj",
+      "sha256": "43b163d9bb0f99328698ff1e57a70c9361a29f37da68ac5a5c0a840e587e9e7d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link7.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link7.STL",
+      "sha256": "1f52ce88e4da57eb0cc688eade103a885ba3662fae65af179aee5f08fc761c69"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link7_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_arm_link7_collision.STL",
+      "sha256": "cc564ec5f518c2e4e81a0f6535dbf72a6f44541fcdabf16e59ad3860cc57c52b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_gripper_finger_link1.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_gripper_finger_link1.mtl",
+      "sha256": "b3d6f2eb489d19c975095da3123de42d84aeda8e92d57ca03c32ce6611c67eb2"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_gripper_finger_link1.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_gripper_finger_link1.obj",
+      "sha256": "e5433ac273e71a31f0a5b2925c5af176c3e23549e7de55731f5e453a31aad373"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_gripper_finger_link1.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_gripper_finger_link1.STL",
+      "sha256": "189e318354276aa82beb27e5741f9c980bd592bb53793d8702e29c1ab5a6439b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_gripper_finger_link1_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_gripper_finger_link1_collision.STL",
+      "sha256": "63c5daa52737b5288f817c47662d0284eafe961991de95a5ae7ce3213a55329a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_gripper_finger_link2.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_gripper_finger_link2.mtl",
+      "sha256": "d0e7de143f00eceed2bf95094e891275ad961a8f6f7b3f72dbba81e21b6e8c6b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_gripper_finger_link2.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_gripper_finger_link2.obj",
+      "sha256": "ee559bd1a3012250da93779e22cafd38066483f64166ac5b40679a16dcfbbfd7"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_gripper_finger_link2.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_gripper_finger_link2.STL",
+      "sha256": "c98c36d176ed01017f1a9f6abea2fdc722e0fc894fd21fa9d5d978315aee5b09"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_gripper_finger_link2_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_gripper_finger_link2_collision.STL",
+      "sha256": "13877ba3af6707ce9d22759a020ec7f2d2db2062792e743ca76d5e288913c0bf"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_gripper_link.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_gripper_link.mtl",
+      "sha256": "d4de23b532acc808f7d3936688e94c29781dcfe36a864eefe88a6f8605a830c4"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_gripper_link.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_gripper_link.obj",
+      "sha256": "a91b54ab69054ebcf71ddf969abfa4eff7e3d11fb724ce7e731a69adb8d905fa"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_gripper_link.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_gripper_link.STL",
+      "sha256": "52fc27faa43753734a5538ecd4df3773c8e13278d06d19358f44e0dbd25f5d6a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_gripper_link_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_gripper_link_collision.STL",
+      "sha256": "87a16ffa4cf2785bb3099a6b8c3ce2fd3de8f08aea3e92489c15b2f469008bbf"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_realsense_link.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_realsense_link.mtl",
+      "sha256": "f06823657a77d50ab52a89d89d0a41b485446fecaac53e1c12d61a2772f53f24"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_realsense_link.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_realsense_link.obj",
+      "sha256": "2af3f416d7a4270b25d43f0fa1b01de9bc14ddc0a8770760b95b39db06e5086a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_realsense_link.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_realsense_link.STL",
+      "sha256": "5c007580839d74fe7b4d0d6b5273e2b520679f5f9f0916e9f6c8e25ef4b4d624"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_realsense_link_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\right_realsense_link_collision.STL",
+      "sha256": "8d3b9650f5994de2305e8d8e40622db6720582fa53b8bc08cb7776ea33788742"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/steer_motor_link1.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\steer_motor_link1.mtl",
+      "sha256": "673faabb3c4bea1bb4596c2e4329f63d355f5498d1831887ec73115192f9c62d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/steer_motor_link1.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\steer_motor_link1.obj",
+      "sha256": "d129e80d996a92c3e330a623b1836b652907a00111476801506251fe2e71d779"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/steer_motor_link1.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\steer_motor_link1.STL",
+      "sha256": "c65f641c1cb62e1e7ca3957c08b6ebb411fd914a4908483faf69ecb6520dff34"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/steer_motor_link1_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\steer_motor_link1_collision.STL",
+      "sha256": "e1236c66e9aeb7c8ee4d2c2925850cf6c527965b5480eeac75d675f4df68ded7"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/steer_motor_link2.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\steer_motor_link2.mtl",
+      "sha256": "f06d374e280b12b2ec846de7253d47866ada1dad53093eb786a26597aade46ef"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/steer_motor_link2.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\steer_motor_link2.obj",
+      "sha256": "99d047d713ffc1047dac0dc7a5305561e0febef7d711bc1fb22209fc2727edc1"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/steer_motor_link2.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\steer_motor_link2.STL",
+      "sha256": "b7961835873a3dcbc61e07c77fc88d1cd975ee2f796bfc35990d381218cf67e8"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/steer_motor_link2_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\steer_motor_link2_collision.STL",
+      "sha256": "9cd1d3b8ef8c538dd6ab465f133add45dcc10464b3987b3c94463631c9019e7e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/steer_motor_link3.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\steer_motor_link3.mtl",
+      "sha256": "bbc5045c9ab83caf6a58545ee0379e64d2c851bddf5a09c2d1405f1816614ba9"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/steer_motor_link3.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\steer_motor_link3.obj",
+      "sha256": "831f29f90dce3ac287e4bfba2b2199131c209a67a4403660574e1838d699e958"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/steer_motor_link3.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\steer_motor_link3.STL",
+      "sha256": "bb93fb5e995b1fec2dd0a57d7108c8c20108cc2d68c3d84d43aba4b30ac0c8fb"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/steer_motor_link3_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\steer_motor_link3_collision.STL",
+      "sha256": "efcd649a071cbcce12b208bf924ecd8fce49ea4fa439aa36aaa1b11a86eb0bf9"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link1.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\torso_link1.mtl",
+      "sha256": "732d0eca4e05c256450b1cef8ad5be79c6295cd9cbc3ebdf606c15439cfa8fec"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link1.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\torso_link1.obj",
+      "sha256": "256664d53b696a46099f90ddecbefae8ec398b869f12f9121a5c23c04a34009e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link1.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\torso_link1.STL",
+      "sha256": "965fe8b4dd127a63387c9b07e452c6e8ca2e192fca2a8be226eb029fbd217ea3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link1_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\torso_link1_collision.STL",
+      "sha256": "a39bfd443f37dc0cf9fda8feb69d65622f45bede93272576d157b826617abf6d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link2.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\torso_link2.mtl",
+      "sha256": "fa048fdf67e274bb97789c77a1c6bc6fe5b06cc8c17ad5d30feacb4a13b78ca5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link2.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\torso_link2.obj",
+      "sha256": "00b0244dbd788e03151700171abe4320de98b38e1556238c3f5d1dd612289938"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link2.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\torso_link2.STL",
+      "sha256": "8eb26b30bea7705ec172794796a4115e02209d7fd611c821b49ed1d97ab5c78a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link2_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\torso_link2_collision.STL",
+      "sha256": "c42deaccfd43743bb5fa92bfc44cd2e30f12a1008226f4e684638988806cff20"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link3.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\torso_link3.mtl",
+      "sha256": "2ee08e684fc6e96cfaab1de98f495a7f32809501182987bdeba9c7faf1f7cff1"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link3.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\torso_link3.obj",
+      "sha256": "3238da5be681bb8105e5d814b1d6b84c321318a158ad7022b2f1bc70ecf99d20"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link3.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\torso_link3.STL",
+      "sha256": "e22d17be05cc4f7bd98da9dbc022ae1c25490c8ff6d0cf069956fd5f2f56aef7"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link3_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\torso_link3_collision.STL",
+      "sha256": "422005c87a1acc810c677071155bacae20332e2522431df2d0de999cac8edbdd"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link4.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\torso_link4.mtl",
+      "sha256": "1992bc41d79bea2b3b7edcc139d304457e2c0befd4617ca40095c4787bfd4336"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link4.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\torso_link4.obj",
+      "sha256": "6b61f7b72c706c4f719e6e4110464fa340c5b2322a735f4ad894e53896156a46"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link4.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\torso_link4.STL",
+      "sha256": "c5de88ab4e59ee7fc6e277a0a2e9fc822fa7f8d3a80e94eba3d12dcebe339035"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link4_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\torso_link4_collision.STL",
+      "sha256": "129b39117f65872f98e517a969ae2ebfb44c4b73357c16330258b769313d04fd"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link4_old.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\torso_link4_old.STL",
+      "sha256": "f86b32dfddf4eaa8f6d3691be2c69b81b518d477c7d9b3df01c2a0bba1b3be34"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link4_old_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\torso_link4_old_collision.STL",
+      "sha256": "0fdbf612eb815d0fff6da50162a27c56f60bca70cf3dd71988631be0a416de05"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/wheel_motor_link1.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\wheel_motor_link1.mtl",
+      "sha256": "07a880f3d4cdd8a651062711580155890a3dac2d71d77e17ccccd2e826765783"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/wheel_motor_link1.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\wheel_motor_link1.obj",
+      "sha256": "eef711f9b5566c800eb9dc47740b2673b6cc8a79410d883a041928abeae869a9"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/wheel_motor_link1.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\wheel_motor_link1.STL",
+      "sha256": "f03406e7c0da32c54589f3d239dcc4dd339d2ad806d8fc2b7c5b215093382f98"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/wheel_motor_link1_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\wheel_motor_link1_collision.STL",
+      "sha256": "08a58ce9eb51a0dba2e09d5d088cffd9b6c12497acfb62034278f1e10b2713e1"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/wheel_motor_link2.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\wheel_motor_link2.mtl",
+      "sha256": "6b93510540d012035dcc299c33a9a179b276e33e68f2b59539c489cd30e560d1"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/wheel_motor_link2.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\wheel_motor_link2.obj",
+      "sha256": "59110686ce6958834cbab01e2f0197d1dad65c10fb042bbe2de8a713b32ffba6"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/wheel_motor_link2.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\wheel_motor_link2.STL",
+      "sha256": "4304e1616f6d407ab239918b89a9b9b344f0872127e3b44de7091e98364f80f3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/wheel_motor_link2_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\wheel_motor_link2_collision.STL",
+      "sha256": "9d84d7ee0ea2c60741ff8b73b2e573c2498c4de787b9d0322286450b4666721d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/wheel_motor_link3.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\wheel_motor_link3.mtl",
+      "sha256": "a4c4dc474c211b60fc8c780f9f919f210955731af0b3a6f3de2ca7a95368369e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/wheel_motor_link3.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\wheel_motor_link3.obj",
+      "sha256": "ebb81fdc472820fc6177cbada09b983e899c9174c3fdba0632ae065228ecf339"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/wheel_motor_link3.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\wheel_motor_link3.STL",
+      "sha256": "a6463ec6755ade6b4d8ea4885f69b97b9d4423e52721b5e6d870fef818d64b75"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/wheel_motor_link3_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\wheel_motor_link3_collision.STL",
+      "sha256": "05028c294cd6f6d9133c546861661f6e66e826897632b88b00d3f7436b87ed44"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/zed_link.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\zed_link.mtl",
+      "sha256": "cd7fbb3a9f3c4a51e8714ca51d2bf2a88ec47e40f6c20749bf08874da652f22d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/zed_link.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\zed_link.obj",
+      "sha256": "3c0e435bc0203ffe73f141b2d76f47a687a1a51076d8a7f83c1891a424049dd0"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/zed_link.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\zed_link.STL",
+      "sha256": "b8eb0beeb3bc8612d56af5b8f22a5d1cff7122867dc25e7d69171d63a6e3dc86"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/zed_link_collision.STL",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\r1_pro\\meshes\\zed_link_collision.STL",
+      "sha256": "73fa3ed1124f22a58f2f79bd4c3f9b1a8e99389be55173d8328fb50bd2ad18c0"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/table/table.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\table\\table.mtl",
+      "sha256": "35d7256c1baf10d02659a66e8201dcd7d87452ba77e657a16ceb75f31b93af9a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/table/table.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\table\\table.obj",
+      "sha256": "0e89012b5c1212a5c10b5539f5bdb66c734cc25554b66651ad67b1d2fb809a17"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/table/table.usdc",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\table\\table.usdc",
+      "sha256": "b0f493f335e0fa37e6464ab63149e8c2b92fa04dec0a555fc849ef7b07e7f983"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/table/table_0.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\table\\table_0.mtl",
+      "sha256": "f57996d17ae25c28bc57d04d58dd1aa9ae8ae8224695f0cd99bd576204b12542"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/table/table_0.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\table\\table_0.obj",
+      "sha256": "f3684670db2c8b1213d7a20b04825db563ed64dcffd83fbb367f6eeddc3a1349"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/table/table_1.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\table\\table_1.mtl",
+      "sha256": "f124366b9d29c6ad4310e2e7e8030bab2b20a9750a4295f2045a1a3bb8b39a35"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/table/table_1.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\table\\table_1.obj",
+      "sha256": "15170dbc448c86050b3057759f276b493e53de3dab3947081a127ab3b4df2f4f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/table/table_2.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\table\\table_2.mtl",
+      "sha256": "ad8f81fbe8d1010bfe5ef985ea1410364ba99d2d1d25b411ff88c3a038895582"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/table/table_2.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\table\\table_2.obj",
+      "sha256": "2b158e8687fe7bb1d88a96cbca9782046a8e9e34833a01fc6fbbb9ff96033f8e"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/table/table_3.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\table\\table_3.mtl",
+      "sha256": "bc4ec25a4fa074d70d263b68a391868df965a57b4602490a3359e387e33a67ea"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/table/table_3.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\table\\table_3.obj",
+      "sha256": "9ac50eef51a3a2aa843c589d24a9805d28c37ec2cc80a410f2c982d4333eed8a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/table/table_4.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\table\\table_4.mtl",
+      "sha256": "650b1a969ba8e00641b6860176ecb2fe5190daab5e95c3bd94b4ccecf8388fb7"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/table/table_4.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\table\\table_4.obj",
+      "sha256": "671fe9bb8cfe6848df957f217c3e819c098d5a68cf3b7dd6242593e0dae269b1"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/tray/tray.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\tray\\tray.mtl",
+      "sha256": "b7c90fbee0884fa9b6f6eab853c9d06daf233eced996e85c386887be5c189420"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/tray/tray.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\tray\\tray.obj",
+      "sha256": "9bdc2445081c48f236b74cad34c3f95a8f6f461aed9854a33d4cbcab83cf7522"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/tray/tray.usdc",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\tray\\tray.usdc",
+      "sha256": "80b6ad88c3495601bccd10e9938041823d40c6177a0f53cf2b279791a2ae776a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/tray/tray_0.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\tray\\tray_0.mtl",
+      "sha256": "5008d06b0c36b7a613320cb26357fa4ae9ffebcacce556b768cf903d306ce233"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/tray/tray_0.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\tray\\tray_0.obj",
+      "sha256": "ac0f9be6dd6904a15611ec3b78c1429bcca9dedaf2b9be42f4ad44ee1c91a3d9"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/tray/tray_1.mtl",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\tray\\tray_1.mtl",
+      "sha256": "e56cf7f255b375b84ac2585d6baf351696946de227a6fe1c58bd49577c97f1c3"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/assets/tray/tray_1.obj",
+      "source": "local_asset:outputs\\r1pro_tray_scene\\assets\\tray\\tray_1.obj",
+      "sha256": "bcec568e608141bf6348c0a2bd42d2ff8e399f6d7b2aa7d89096fbaecd65d13f"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/object_dimensions.json",
+      "source": "local_template:object_dimensions.json",
+      "sha256": "70e3d8dd12f9bc5c3a06fb18a07d86251ea1ade18caa4923fd7283b73d87fda5"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/physics_build.json",
+      "source": "local_template:physics_build.json",
+      "sha256": "7a27c7e064ed1583e3991db2e2f634ad607e960f556dc9e5b4fc645c926c575d"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/robot.xml",
+      "source": "local_template:robot.xml",
+      "sha256": "531bff32770c9634083d4201c74c68a560f3a53f63a0ede53c8db3693682ceb1"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/scene.xml",
+      "source": "local_template:scene.xml",
+      "sha256": "e9c8547525ea454a4e175c1e0697896e8e947301ce35da634d75014e9b12e56a"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/scene_base_forward_050.xml",
+      "source": "local_template:scene_base_forward_050.xml",
+      "sha256": "e7171b2b4e29d437314b511d0b575a8270ed4db016103e8d1376c221ada89308"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/scene_direct_grasp_720p.xml",
+      "source": "local_template:scene_direct_grasp_720p.xml",
+      "sha256": "9c1065e9a5b406d27798133bf6d1d5e9e6aa6689b2532d6ccacaa8bc2122b24b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/scene_direct_rebuild_check.xml",
+      "source": "local_template:scene_direct_rebuild_check.xml",
+      "sha256": "9c1065e9a5b406d27798133bf6d1d5e9e6aa6689b2532d6ccacaa8bc2122b24b"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/scene_grip_control.xml",
+      "source": "local_template:scene_grip_control.xml",
+      "sha256": "bb9e3025ad6b9c324146c71a1d48f3bc420ef6579edeb3966e1ca3fb955944dd"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/scene_grip_solver.xml",
+      "source": "local_template:scene_grip_solver.xml",
+      "sha256": "38bfc9864b7be0a66d27c96ba7ae4521faf2554ef85e14544ab62021e8dfa944"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/scene_launch_pose.xml",
+      "source": "local_template:scene_launch_pose.xml",
+      "sha256": "b0196ad5f0430f69d7a0323101351b00352027524c55f5ca87408f4e47459594"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/scene_physics.xml",
+      "source": "local_template:scene_physics.xml",
+      "sha256": "16a96d50d111460208831106469fe9e86c3c0f186b9586aae45cd24f0b633c98"
+    },
+    {
+      "path": "outputs/r1pro_tray_scene/scene_workspace_candidate.xml",
+      "source": "local_template:scene_workspace_candidate.xml",
+      "sha256": "7c91d7af3a31794e85b8683c6c4a342677f6657334a3e5d2ef8cc52886259ae5"
+    },
+    {
+      "path": "schemas/airport_scene_v1.schema.json",
+      "source": "local_schema:airport_scene_v1.schema.json",
+      "sha256": "9c13f5c0a83749e441b5af2a5ce879a1bf9a6b1ba8fbc6adf58de16d80dc991b"
+    },
+    {
+      "path": "schemas/airport_scene_v1_1.schema.json",
+      "source": "local_schema:airport_scene_v1_1.schema.json",
+      "sha256": "6981a89f401e4fbf7d647e635e42c0638775e7e6971fbf432f77be3369e6f641"
+    },
+    {
+      "path": "licenses/GalaxeaManipSim/LICENSE",
+      "source": "vendor/GalaxeaManipSim/LICENSE",
+      "sha256": "053002a4783b5c99f84719d0c58e0ba06c7a0cf78b22596647d82c2a015235db"
+    },
+    {
+      "path": "licenses/GalaxeaManipSim/NOTICE",
+      "source": "vendor/GalaxeaManipSim/NOTICE",
+      "sha256": "8a18a90a7d4f2687e3884ed54b982c78bfdae646bef5cf49d20a48e81960ea88"
+    },
+    {
+      "path": "requirements-r1pro-sim.txt",
+      "source": "local_requirements",
+      "sha256": "75d892846be9dee888ac87161a8aa29273882c569d68769b2231f234a94e456a"
+    },
+    {
+      "path": "resources/calibration/camera_audit.json",
+      "source": "camera-audit-20260922/audit.json",
+      "sha256": "c3c3a2c92125463d8b301df4fc5bd627076e057dec5d5ba71e936274b3612e53"
+    },
+    {
+      "path": "evidence/v50/audit.json",
+      "source": "historical_v50_evidence:audit.json",
+      "sha256": "1341d9164d6749152b29a53e64a591ab3dd0575729c568383366563d0697c233"
+    },
+    {
+      "path": "evidence/v50/export_summary.json",
+      "source": "historical_v50_evidence:export_summary.json",
+      "sha256": "8d851cd65993f245a3f3d94d71f80d68b9750855a54e44d00b90fbda7001d7e9"
+    },
+    {
+      "path": "evidence/v50/final_overview.png",
+      "source": "historical_v50_evidence:final_overview.png",
+      "sha256": "e03bfa99c71244183f62069417817d316e75d41cd909591414d2d0a4529fd560"
+    },
+    {
+      "path": "evidence/v50/scene132_source_manifest.json",
+      "source": "historical_v50_evidence:scene132_source_manifest.json",
+      "sha256": "03b51cd423f661649baaaea3e54eb9b58f91fd103d2ba84ec114285abe0c7974"
+    },
+    {
+      "path": "evidence/v50/scene4_source_manifest.json",
+      "source": "historical_v50_evidence:scene4_source_manifest.json",
+      "sha256": "e57b337d852ca35df4eb9776bfa9195b73fd5246b496d141528b6d67c1e561f1"
+    },
+    {
+      "path": "evidence/v50/RUNBOOK_original.md",
+      "source": "historical_v50_runbook",
+      "sha256": "84b118f729c05560cb4fadb9910e8393b9aedc611beff02fb98cab4f67b75e74"
+    }
+  ]
+}

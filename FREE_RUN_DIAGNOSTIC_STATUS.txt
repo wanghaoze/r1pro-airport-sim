@@ -1,0 +1,26 @@
+Independent free_run_diagnostic: COMPLETE; final verified 2026-10-07 SGT
+Scope: simulation/program_generated; controller_source=vla_generated; not formal evaluation, task success, or training data.
+Actual recording: 600 sim seconds /12000 frames /20Hz /2400 model replies /300000 physics substeps.
+Prompts: Pick up the tray [0,200); Place the tray [200,400); Flush tray to the left [400,600).
+Actual stage switches: frames0/4000/8000; one payload-only environment event at8000; extra ticks0.
+Actual teacher calls0; inverse/IK calls0; original model inputs/actions, submitted controls, engine-limit diagnostics preserved and full audits passed.
+Actual record exit0; native exit0; four videos each12000frames20Hz and original resolutions; ffprobe full decode and source/video SHA verified.
+Continuous and terminal qpos/qvel/time replay errors: all six0. Full four-camera media closure verified.
+Actual behavior: no opposed-long-edge bilateral grip; tray fell to floor; maxbase XY drift0.951702m; selected penetration peak0.043898m. Model did not complete the task.
+Checkpoint: actual1000 completed updates; /home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_hardened_v29_v1/training_batch_v1/checkpoints/pi05_three_table_overnight_firstbatch_bc_lora/training/999
+Checkpoint ID: sha256:b96ec726c5d23fb3011a588efc80a94e6178dc4b7fa114803f1ff2ef3d7a40e3
+Server root: /home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/free_run_diagnostic_20261007_v2
+Trajectory: /home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/free_run_diagnostic_20261007_v2/full_case_00/attempt/trace.h5
+Original model request/replies/chunks: /home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/free_run_diagnostic_20261007_v2/full_case_00/policy_decisions/
+Checks: /home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/free_run_diagnostic_20261007_v2/full_case_00/diagnostics/free_run_guard_diagnostics.jsonl
+Result: /home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/free_run_diagnostic_20261007_v2/full_case_00/result.json
+Native closure: /home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/free_run_diagnostic_20261007_v2/full_native_00/video_closure.json
+Report: /home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/free_run_diagnostic_20261007_v2/closed_full_diagnostics_readonly_summary.json
+Full viewer: http://100.104.0.108:8767/free_run_diagnostic_20261007_v2/full_native_00/viewer.html
+Native videos: /home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/free_run_diagnostic_20261007_v2/full_native_00/
+Local video index: FREE_RUN_VIDEO_PATHS.txt (one actual server video per line).
+Local trajectory index: FREE_RUN_TRAJECTORY_PATHS.txt.
+Local audit metadata: runs/vla_deploy_20261005/free_run_v2_metadata and actual_free_run_v2_*audit.json.
+Supervisor1389029 and native1408964 completed; adopted diagnostic model1381152 no longer alive. Detached/nonchild supervisor and model OS exit codes unavailable/null, not fabricated0.
+Publication watcher1415893 completed and published verified full viewer. Source evidence and old v1 failure retained.
+Completion follow-up0-5-600 PAUSED after completion; old formal follow-up0-5 unchanged.

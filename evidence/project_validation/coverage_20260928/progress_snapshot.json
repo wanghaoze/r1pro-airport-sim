@@ -1,0 +1,52 @@
+{
+  "time_unix": 1790580691.4372966,
+  "versions": {
+    "coverage_v4_20260928": {
+      "completed": 47,
+      "successes": 2,
+      "clean_successes": 2,
+      "failures": {
+        "ik_unreachable": 9,
+        "measured_joint_overspeed": 2,
+        "no_feasible_grasp_approach": 12,
+        "contact_handoff_aborted": 5,
+        "primitive_postcondition_failed": 4,
+        "joint_path_collision_or_wrist": 1,
+        "multiple_trays_lifted": 8,
+        "primitive_path_infeasible": 2,
+        "primitive_lift_path_unavailable": 1,
+        "recovery_support_missing": 1
+      },
+      "successful_scenes": [
+        "airport_0016_20270932",
+        "airport_0004_20270920"
+      ]
+    },
+    "coverage_v5_20260928": {
+      "completed": 2,
+      "successes": 0,
+      "clean_successes": 0,
+      "failures": {
+        "ik_unreachable": 1,
+        "contact_handoff_aborted": 1
+      },
+      "successful_scenes": [],
+      "results": [
+        {
+          "scene_id": "airport_0006_20270922",
+          "physics_success": false,
+          "failure_code": "ik_unreachable",
+          "simulation_seconds": 173.9,
+          "wall_seconds": 155.8828406590037
+        },
+        {
+          "scene_id": "airport_0004_20270920",
+          "physics_success": false,
+          "failure_code": "contact_handoff_aborted",
+          "simulation_seconds": 86.05,
+          "wall_seconds": 74.3369703029748
+        }
+      ]
+    }
+  }
+}

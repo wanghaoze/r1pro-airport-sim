@@ -1,0 +1,94 @@
+Fixed-scene pi0.5 free-run diagnostic — 2026-10-07
+
+User-selected saved model (1000 actual updates; milestone verified 2026-10-07):
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_hardened_v29_v1/training_batch_v1/checkpoints/pi05_three_table_overnight_firstbatch_bc_lora/training/999
+
+Model provenance/milestone:
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_hardened_v29_v1/training_batch_v1/milestone_001000.json
+
+Current saved evidence: step10 and step100 model tests completed 0/3 tasks.
+This diagnostic disables TASK termination checks; completing 300s is not task success.
+SSH access restored. Selected checkpoint999 exists and its milestone reports
+checkpoint_verified=true / actual_completed_updates=1000. No new model success claimed.
+
+Local files to copy to project/scripts on the server (no edits to frozen releases):
+scripts/run_vla_fixed_scene.py
+scripts/vla_fixed_scene_commands.sh
+
+PowerShell upload, after SSH authorization renewal:
+scp -i .secrets/experiments_ed25519 scripts/run_vla_fixed_scene.py scripts/vla_fixed_scene_commands.sh michelle@100.104.0.108:/home/michelle/haoze/r1pro-airport-sim/scripts/
+
+Server terminal 1:
+cd /home/michelle/haoze/r1pro-airport-sim
+nvidia-smi
+bash scripts/vla_fixed_scene_commands.sh prepare
+VLA_GPU=0 bash scripts/vla_fixed_scene_commands.sh serve
+
+Use a GPU with enough free inference memory. Do not stop the main trainer implicitly.
+The serving process stays in terminal 1; run commands below in terminal 2.
+Optional detached service (instead of the foreground serve command):
+VLA_GPU=0 nohup bash scripts/vla_fixed_scene_commands.sh serve > runs/vla_free_fixed_scene_20261007_step999/model_service.log 2>&1 < /dev/null &
+
+Server terminal 2 — same fixed source scene, separate correct initial stage state:
+cd /home/michelle/haoze/r1pro-airport-sim
+bash scripts/vla_fixed_scene_commands.sh pick
+bash scripts/vla_fixed_scene_commands.sh place
+bash scripts/vla_fixed_scene_commands.sh push
+
+Or sequentially run all three, 300s EACH (900s total simulated duration):
+bash scripts/vla_fixed_scene_commands.sh all
+
+Optional detached all-three runner:
+nohup bash scripts/vla_fixed_scene_commands.sh all > runs/vla_free_fixed_scene_20261007_step999/rollouts.log 2>&1 < /dev/null &
+
+Short smoke (recommended before full five-minute rollouts):
+VLA_SECONDS=1 bash scripts/vla_fixed_scene_commands.sh pick
+
+Choose a newer verified milestone explicitly (use same environment for prepare):
+VLA_MILESTONE=/absolute/path/milestone_001000.json VLA_DEMO_ROOT=/absolute/path/new_run bash scripts/vla_fixed_scene_commands.sh prepare
+VLA_DEMO_ROOT=/absolute/path/new_run VLA_GPU=0 bash scripts/vla_fixed_scene_commands.sh serve
+VLA_DEMO_ROOT=/absolute/path/new_run bash scripts/vla_fixed_scene_commands.sh pick
+
+Other overrides: VLA_PORT (default8027), VLA_EGL_DEVICE (default0), VLA_SOURCE_CASE,
+VLA_CONFIG, VLA_CODE_ROOT (default frozen v34 runtime), VLA_EXECUTE_STEPS (default5).
+Existing output roots are never overwritten; change VLA_DEMO_ROOT for a new prepare.
+
+Default fixed source:
+/home/michelle/haoze/r1pro-airport-sim/runs/three_table_single_tray_20261006/overnight_20261006_v1/campaign_v1/case_0000/observed_source
+Pick restores its actual pre-Pick state; Place restores the held-empty-tray state;
+Flush restores the actual placed/loaded state. Exactly one initialization restore.
+No online teacher, IK, inverse dynamics, trajectory replay, or state resets.
+XML actuator limits, contact physics and gravity remain enabled.
+Nonfinite outputs/physics and actual engine clock resets still stop with real prefix.
+
+Outputs (server only):
+/home/michelle/haoze/r1pro-airport-sim/runs/vla_free_fixed_scene_20261007_step999/{pick|place|push}_TIMESTAMP_PID/
+  viewer.html
+  videos/head_left.mp4 (224x224 training-size preview)
+  videos/head_right.mp4
+  videos/left_wrist.mp4
+  videos/right_wrist.mp4
+  attempt/trace.h5
+  decision_*.npz (model raw action chunks and measured input state)
+  initial_state.npz
+  VIDEO_PATHS.txt
+  result.json / status.json
+
+Optional preview server, bind to local or the server's Tailscale IP:
+/home/michelle/miniconda3/envs/r1pro-tray/bin/python -m http.server 8769 --bind 100.104.0.108 --directory runs/vla_free_fixed_scene_20261007_step999
+Browser: http://100.104.0.108:8769/ ; open a case's viewer.html.
+
+Duration is SIMULATION time. Rendering/inference/encoding wall time is extra.
+These are diagnostic videos, not successful training data or a formal success rate.
+Input and all four video streams default to224x224, matching training size.
+Low resolution render keeps the original camera aspect ratio and FOV; official
+openpi-client resize_with_pad supplies the same letterboxing as data preparation.
+Rendering at224 has different rasterization from downsampling native frames;
+pixel values are not claimed identical to original training samples.
+MP4 uses one-second fragments, allowing completed fragments to be inspected while
+recording. Reopen/refresh the browser for newly written fragments; viewers do not
+automatically act as a live stream. result.json includes per-stage timing.
+Optional --native-images on the Python CLI returns original resolution.
+Validation here: 6 standalone unit tests and task-spec --write/--check passed.
+Both program files uploaded and SHA256/CLI/Bash syntax verified on the server.
+Full MuJoCo/PyAV/model integration has NOT been run from this side conversation.

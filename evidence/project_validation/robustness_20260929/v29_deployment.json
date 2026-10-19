@@ -1,0 +1,10 @@
+{
+  "pid": 2633829,
+  "profile": "completion_first",
+  "release": "robust_v29_20260929",
+  "archive_sha256": "97509c638493223d61ba0ba7a8bac5036ec36b4910f220137b95e3cb1d808f4e",
+  "server_core_tests": "651 passed, 1 xfailed",
+  "simulation_only": true,
+  "target_reached": false,
+  "sequence": "after v28 workers: 8 scene smoke then full400 if >=4 completed"
+}

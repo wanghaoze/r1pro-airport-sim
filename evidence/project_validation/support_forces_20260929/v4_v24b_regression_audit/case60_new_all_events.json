@@ -1,0 +1,404 @@
+[
+  {
+    "frame": 0,
+    "event": "state_transition",
+    "previous": [
+      "SEARCH_TARGET",
+      "unknown"
+    ],
+    "state": "SEARCH_TARGET",
+    "dag_node_id": "transition_000000",
+    "dag_predecessor": null,
+    "phase": "unknown",
+    "target_tray": null,
+    "target_slot": -1,
+    "recovery": false,
+    "simulation_time": 0.0
+  },
+  {
+    "frame": 0,
+    "event": "state_transition",
+    "previous": [
+      "SEARCH_TARGET",
+      "unknown"
+    ],
+    "state": "SEARCH_TARGET",
+    "dag_node_id": "transition_000001",
+    "dag_predecessor": "transition_000000",
+    "phase": "unknown",
+    "target_tray": null,
+    "target_slot": -1,
+    "recovery": false,
+    "simulation_time": 0.0
+  },
+  {
+    "frame": 78,
+    "event": "state_transition",
+    "previous": [
+      "SEARCH_TARGET",
+      "unknown"
+    ],
+    "state": "SEARCH_TARGET",
+    "dag_node_id": "transition_000002",
+    "dag_predecessor": "transition_000001",
+    "phase": "unknown",
+    "target_tray": null,
+    "target_slot": -1,
+    "recovery": false,
+    "simulation_time": 3.899999999999792
+  },
+  {
+    "frame": 78,
+    "event": "operation_selected",
+    "operation": {
+      "tray": 2,
+      "slot": 0,
+      "destination": [
+        0.8500000000000001,
+        0.38,
+        0.8
+      ],
+      "yaw": 0.0,
+      "temporary": false
+    },
+    "operation_index": 1
+  },
+  {
+    "frame": 78,
+    "event": "state_transition",
+    "previous": [
+      "SEARCH_TARGET",
+      "unknown"
+    ],
+    "state": "ALIGN_BASE",
+    "dag_node_id": "transition_000003",
+    "dag_predecessor": "transition_000002",
+    "phase": "unknown",
+    "target_tray": 2,
+    "target_slot": 0,
+    "recovery": false,
+    "simulation_time": 3.899999999999792
+  },
+  {
+    "frame": 78,
+    "event": "reachability_screen",
+    "target_tray": 2,
+    "examined": 24,
+    "planning_wall_seconds": 2.3673587740631774,
+    "probe_budget": 24,
+    "qualified_budget": 2,
+    "live_candidate_budget": 12,
+    "alternate_rim_enabled": false,
+    "alternate_rim_allowed": true,
+    "exhausted": false,
+    "qualification": "shadow_only_live_replanning_required",
+    "qualified_count": 0
+  },
+  {
+    "frame": 78,
+    "event": "affordance_candidate",
+    "candidate": 0,
+    "base_world": [
+      -0.8738660634891307,
+      0.4524595607104746,
+      -3.1356478918639237
+    ],
+    "rim_pair": "opposed_short_axis_rims",
+    "grasp_geometry": null,
+    "rim_local_z": 0.075,
+    "rim_inset_m": 0.01,
+    "rim_x_offset_m": 0.0,
+    "hand_heading_world": -3.1356478918639237,
+    "source": "existing_validated_rim_template_scaled_by_declared_geometry",
+    "qualification": "candidate_only_until_collision_IK_and_contact_checks_pass"
+  },
+  {
+    "frame": 78,
+    "event": "base_timed_segment",
+    "duration_s": 3.85,
+    "distance_m": 0.762217095234255,
+    "angle_rad": 1.7260370243636185,
+    "mode": "cruise"
+  },
+  {
+    "frame": 158,
+    "event": "state_transition",
+    "previous": [
+      "ALIGN_BASE",
+      "unknown"
+    ],
+    "state": "APPROACH_TRAY",
+    "dag_node_id": "transition_000004",
+    "dag_predecessor": "transition_000003",
+    "phase": "pregrasp",
+    "target_tray": 2,
+    "target_slot": 0,
+    "recovery": false,
+    "simulation_time": 7.899999999999352
+  },
+  {
+    "frame": 158,
+    "event": "free_space_joint_shortcut",
+    "discarded_ik_waypoints": 6
+  },
+  {
+    "frame": 219,
+    "event": "direct_grasp_preflight_rejected",
+    "reason": "cartesian_collision_or_wrist",
+    "detail": {
+      "collision": {
+        "geoms": [
+          "robot_geom_45",
+          "tray_1__tray_contact_004"
+        ],
+        "distance_m": -0.005235033441560452
+      },
+      "wrist_camera_front": false,
+      "camera_metrics": {
+        "left": {
+          "camera_ahead_m": 0.01334602222802876,
+          "wrist_upright_dot": 0.9848078665535804,
+          "optical_forward_dot": -0.10231662114360897,
+          "self_view_geoms": []
+        },
+        "right": {
+          "camera_ahead_m": 0.012769673731277966,
+          "wrist_upright_dot": 0.9848076417572763,
+          "optical_forward_dot": -0.09236840451936831,
+          "self_view_geoms": []
+        }
+      },
+      "rigid_grasp_error": null
+    }
+  },
+  {
+    "frame": 256,
+    "event": "state_transition",
+    "previous": [
+      "APPROACH_TRAY",
+      "pregrasp"
+    ],
+    "state": "ALIGN_BASE",
+    "dag_node_id": "transition_000005",
+    "dag_predecessor": "transition_000004",
+    "phase": "unknown",
+    "target_tray": 2,
+    "target_slot": -1,
+    "recovery": false,
+    "simulation_time": 12.800000000000944
+  },
+  {
+    "frame": 256,
+    "event": "reachability_screen",
+    "target_tray": 2,
+    "examined": 24,
+    "planning_wall_seconds": 2.307210264960304,
+    "probe_budget": 24,
+    "qualified_budget": 2,
+    "live_candidate_budget": 12,
+    "alternate_rim_enabled": false,
+    "alternate_rim_allowed": false,
+    "exhausted": false,
+    "qualification": "shadow_only_live_replanning_required",
+    "qualified_count": 0
+  },
+  {
+    "frame": 256,
+    "event": "affordance_candidate",
+    "candidate": 0,
+    "base_world": [
+      -0.8738660688474592,
+      0.45245956021134986,
+      -3.1356478860615784
+    ],
+    "rim_pair": "opposed_short_axis_rims",
+    "grasp_geometry": null,
+    "rim_local_z": 0.075,
+    "rim_inset_m": 0.01,
+    "rim_x_offset_m": 0.0,
+    "hand_heading_world": -3.1356478860615784,
+    "source": "existing_validated_rim_template_scaled_by_declared_geometry",
+    "qualification": "candidate_only_until_collision_IK_and_contact_checks_pass"
+  },
+  {
+    "frame": 256,
+    "event": "base_timed_segment",
+    "duration_s": 0.2,
+    "distance_m": 0.00025739663316248936,
+    "angle_rad": 4.161093244015035e-05,
+    "mode": "cruise"
+  },
+  {
+    "frame": 263,
+    "event": "state_transition",
+    "previous": [
+      "ALIGN_BASE",
+      "unknown"
+    ],
+    "state": "APPROACH_TRAY",
+    "dag_node_id": "transition_000006",
+    "dag_predecessor": "transition_000005",
+    "phase": "pregrasp",
+    "target_tray": 2,
+    "target_slot": -1,
+    "recovery": false,
+    "simulation_time": 13.15000000000106
+  },
+  {
+    "frame": 263,
+    "event": "free_space_joint_shortcut",
+    "discarded_ik_waypoints": 6
+  },
+  {
+    "frame": 324,
+    "event": "state_transition",
+    "previous": [
+      "APPROACH_TRAY",
+      "pregrasp"
+    ],
+    "state": "ADJUST_TRAY",
+    "dag_node_id": "transition_000007",
+    "dag_predecessor": "transition_000006",
+    "phase": "approach",
+    "target_tray": 2,
+    "target_slot": -1,
+    "recovery": false,
+    "simulation_time": 16.2000000000019
+  },
+  {
+    "frame": 324,
+    "event": "continuous_path_selected",
+    "selected": "cruise",
+    "waypoints": 6
+  },
+  {
+    "frame": 324,
+    "event": "timed_joint_path",
+    "mode": "cruise",
+    "waypoints": 6,
+    "duration_s": 2.6,
+    "minimum_seconds": 2.1840331623481752,
+    "inverse_ratio": 1.000000000000001
+  },
+  {
+    "frame": 379,
+    "event": "state_transition",
+    "previous": [
+      "ADJUST_TRAY",
+      "approach"
+    ],
+    "state": "ADJUST_TRAY",
+    "dag_node_id": "transition_000008",
+    "dag_predecessor": "transition_000007",
+    "phase": "close",
+    "target_tray": 2,
+    "target_slot": -1,
+    "recovery": false,
+    "simulation_time": 18.950000000000376
+  },
+  {
+    "frame": 425,
+    "event": "state_transition",
+    "previous": [
+      "ADJUST_TRAY",
+      "close"
+    ],
+    "state": "ADJUST_TRAY",
+    "dag_node_id": "transition_000009",
+    "dag_predecessor": "transition_000008",
+    "phase": "adjust",
+    "target_tray": 2,
+    "target_slot": -1,
+    "recovery": false,
+    "simulation_time": 21.2499999999991
+  },
+  {
+    "frame": 425,
+    "event": "primitive_start",
+    "primitive": "push",
+    "limit_s": 3.0,
+    "parameters": {
+      "destination": [
+        -1.4238563503043153,
+        0.5641899573290143,
+        0.7999934032195579
+      ],
+      "yaw": 0.005944767528214067,
+      "separation": true
+    }
+  },
+  {
+    "frame": 425,
+    "event": "primitive_push_feedforward",
+    "distance_m": 0.012,
+    "nominal_destination": [
+      -1.4238563503043153,
+      0.5641899573290143,
+      0.7999934032195579
+    ],
+    "command_position": [
+      -1.4238562721818155,
+      0.57618995732876,
+      0.799993439242291
+    ]
+  },
+  {
+    "frame": 425,
+    "event": "primitive_reference",
+    "duration_s": 2.45,
+    "controller": "BlendedJointPath",
+    "knot_stop_fallback": false
+  },
+  {
+    "frame": 443,
+    "event": "retained_support_microbounce",
+    "tray": 2,
+    "side": "right",
+    "measured_bottom_gap_m": -7.536023032161943e-06
+  },
+  {
+    "frame": 449,
+    "event": "retained_support_microbounce",
+    "tray": 2,
+    "side": "right",
+    "measured_bottom_gap_m": 7.024823857837426e-06
+  },
+  {
+    "frame": 451,
+    "event": "retained_support_microbounce",
+    "tray": 2,
+    "side": "right",
+    "measured_bottom_gap_m": -3.86650620760598e-05
+  },
+  {
+    "frame": 456,
+    "event": "primitive_failed",
+    "primitive": "push",
+    "reason": "retained_contact_lost",
+    "detail": {
+      "tray": 2,
+      "side": "right",
+      "table_contact": 0,
+      "force_n": 10.820471531030835,
+      "command_opening_m": 0.0
+    },
+    "duration_s": 1.5
+  },
+  {
+    "frame": 456,
+    "event": "operation_failed",
+    "retry": 0,
+    "reason": "contact_handoff_aborted",
+    "detail": {
+      "reason": "retained_contact_lost",
+      "detail": {
+        "tray": 2,
+        "side": "right",
+        "table_contact": 0,
+        "force_n": 10.820471531030835,
+        "command_opening_m": 0.0
+      }
+    },
+    "recoverable": false
+  }
+]

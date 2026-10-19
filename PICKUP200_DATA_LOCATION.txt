@@ -1,0 +1,20 @@
+Verified delivery: 2026-10-07, pickup-only LeRobot dataset READY.
+Dataset:
+/home/michelle/haoze/r1pro-airport-sim/runs/pickup200_20261007_v1/lerobot
+Run/source evidence:
+/home/michelle/haoze/r1pro-airport-sim/runs/pickup200_20261007_v1
+200 successful pickup episodes / 45223 frames / 200 parquet / 600 MP4.
+LeRobot v2.1; fps20; three RGB cameras224x224; state19/action19.
+Only prompt: Pick up the tray
+All sources inherit train split; no val/test reassignment or whole-task relabel.
+Each complete approach/grasp/lift episode:11.30..11.35simseconds.
+Raw controllers preserve robot/gripper geometry and existing physics/guards.
+Actual collector outcomes:223 successes,0failures; selected first200 into dataset.
+Background collection+export elapsed:1117.60seconds (~18min38sec),24workers.
+Official loader verified, actual file counts and sampled ffprobe headers verified.
+Delivery audit:
+/home/michelle/haoze/r1pro-airport-sim/runs/pickup200_20261007_v1/final_delivery_audit.json
+Episode source/hash manifest:
+/home/michelle/haoze/r1pro-airport-sim/runs/pickup200_20261007_v1/episodes.jsonl
+These are independent simulated pickup episodes, not complete three-action tasks.
+Current model/training corpus was not automatically replaced by this dataset.

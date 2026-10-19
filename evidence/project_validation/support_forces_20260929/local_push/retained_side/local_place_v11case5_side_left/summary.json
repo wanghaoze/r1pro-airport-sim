@@ -1,0 +1,245 @@
+{
+  "qualification": "private_local_push_diagnostic_not_complete_episode",
+  "source": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v11_20260929/runs/regression",
+  "controller": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v11_20260929",
+  "case": 5,
+  "frame": 2418,
+  "tray": 1,
+  "side": "right",
+  "incoming_target_source": "previous_recorded_action",
+  "modifications": {},
+  "cartesian_withdraw_middle": false,
+  "entry_rollpitchyaw_deg": [
+    -0.8712834529144955,
+    -3.6872833372850957,
+    -1.0659746112685784
+  ],
+  "full_push_operation": false,
+  "final_slot_geometry_ready": false,
+  "yaw_compensation_deg": null,
+  "operation_acceptance_yaw_unchanged": 0.0,
+  "yaw_feedback_suffix": false,
+  "force_feedback_suffix": false,
+  "force_feedback_zero_gain": false,
+  "place_retained_side": "left",
+  "final_all_poses": [
+    [
+      0.8463518054291108,
+      -1.5500852259243436,
+      0.7999952170405822,
+      0.9999993916568319,
+      -1.4842827048140939e-07,
+      8.548083961501544e-08,
+      -0.0011030348755805082
+    ],
+    [
+      0.846723606282433,
+      -0.16752140589935108,
+      0.7999956467425237,
+      0.999997227797915,
+      1.6266615107933304e-06,
+      7.375356487816423e-07,
+      -0.00235465354044564
+    ],
+    [
+      0.8473864867883316,
+      0.3791598658688447,
+      0.799995217040582,
+      0.002106077379433653,
+      -8.562967696867896e-08,
+      -1.483424570153406e-07,
+      0.9999977822165621
+    ]
+  ],
+  "slot_mapping": [
+    2,
+    1,
+    0
+  ],
+  "final_position_error_m": 0.10257374635998653,
+  "final_yaw_rad": -0.004709311430208768,
+  "arm_kv_scale": null,
+  "arm_position_servos": [
+    {
+      "name": "left_arm_joint1_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint2_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint3_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint4_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint5_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint6_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "left_arm_joint7_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint1_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint2_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint3_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint4_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint5_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint6_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    },
+    {
+      "name": "right_arm_joint7_target",
+      "kp": 250.0,
+      "kv_before": 25.0,
+      "kv_after": 25.0
+    }
+  ],
+  "timestep_intervention": null,
+  "source_timestep_s": 0.002,
+  "timestep_s": 0.002,
+  "substeps_per_frame": 25,
+  "rollout_wall_s": 4.118269000086002,
+  "solver_settings": {
+    "integrator": "mjINT_IMPLICITFAST",
+    "solver": "mjSOL_NEWTON",
+    "iterations": 80,
+    "tolerance": 1e-08,
+    "geom_solref_unique": [
+      [
+        0.006,
+        1.0
+      ]
+    ],
+    "geom_solimp_unique": [
+      [
+        0.95,
+        0.99,
+        0.001,
+        0.5,
+        2.0
+      ]
+    ]
+  },
+  "restored_context": {
+    "retained_contact": [
+      1,
+      "left"
+    ],
+    "initial_holding": 1,
+    "phase": "trace_phase",
+    "primitive_lift_xy_shift_m": 0.06,
+    "initial_bottom": [
+      0.801,
+      0.801,
+      0.801
+    ],
+    "support_timer": "reset only after confirming actual entry support",
+    "warnings": "fresh zero counters; source episode would have stopped at any prior warning",
+    "diagnostic_counters": "wall budget restarted; historical peak power and inverse-call tallies not restored"
+  },
+  "exact_original_trajectory_match": false,
+  "recorded_prefix_matches": false,
+  "maximum_qpos_error": 0.010398736870230926,
+  "maximum_qvel_error": 0.12469285009714468,
+  "maximum_action_error": 0.03799227252602577,
+  "endpoint_qpos_error": 0.010464690431062915,
+  "primitive_returned": false,
+  "failure": {
+    "code": "cartesian_collision_or_wrist",
+    "detail": {
+      "collision": {
+        "geoms": [
+          "robot_geom_45",
+          "tray_2__tray_contact_004"
+        ],
+        "distance_m": -0.01478383312991087
+      },
+      "wrist_camera_front": false,
+      "camera_metrics": {
+        "left": {
+          "camera_ahead_m": 0.01689213794551655,
+          "wrist_upright_dot": 0.985227674152353,
+          "optical_forward_dot": -0.1531516331998753,
+          "self_view_geoms": []
+        },
+        "right": {
+          "camera_ahead_m": 0.01727035689283969,
+          "wrist_upright_dot": 0.9844426469039457,
+          "optical_forward_dot": -0.15620568721614525,
+          "self_view_geoms": []
+        }
+      },
+      "rigid_grasp_error": null
+    }
+  },
+  "elapsed_s": 2.249999999994756,
+  "final_pose": [
+    0.846723606282433,
+    -0.16752140589935108,
+    0.7999956467425237,
+    0.999997227797915,
+    1.6266615107933304e-06,
+    7.375356487816423e-07,
+    -0.00235465354044564
+  ],
+  "final_forces": [
+    13.04021533047597,
+    0.0
+  ],
+  "final_table_contacts": 4,
+  "physics_samples": 1125,
+  "longest_physics_missing_s": 1.25,
+  "table_force_peak_n": 29.47177792783109,
+  "support_fraction": 0.4222222222222222
+}

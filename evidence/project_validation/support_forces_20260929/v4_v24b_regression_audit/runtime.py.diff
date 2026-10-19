@@ -1,0 +1,282 @@
+--- /home/michelle/haoze/r1pro-airport-sim/releases/coverage_v4_20260928/r1pro_teleop/airport_fsm/runtime.py
++++ /home/michelle/haoze/r1pro-airport-sim/releases/robust_v24b_20260929/r1pro_teleop/airport_fsm/runtime.py
+@@ -286,12 +286,13 @@
+             if not len(self.table_geoms):
+                 continue
+             distances = np.linalg.norm(d.geom_xpos[self.table_geoms]-d.geom_xpos[g], axis=1)
+-            candidates = self.table_geoms[distances < self.m.geom_rbound[self.table_geoms]+self.m.geom_rbound[g]+.001]
++            query_margin = max(.001, self.cfg.planner_margin_m) if planning else .001
++            candidates = self.table_geoms[distances < self.m.geom_rbound[self.table_geoms]+self.m.geom_rbound[g]+query_margin]
+             for other in candidates:
+                 if not ((self.m.geom_contype[g] & self.m.geom_conaffinity[other]) or (self.m.geom_contype[other] & self.m.geom_conaffinity[g])):
+                     continue
+-                distance = self.mj.mj_geomDistance(self.m, d, int(g), int(other), .001, None)
+-                if distance < -.0002:
++                distance = self.mj.mj_geomDistance(self.m, d, int(g), int(other), query_margin, None)
++                if distance < contact_limit:
+                     return {"geoms": [self.m.geom(int(g)).name, self.m.geom(int(other)).name], "distance_m": float(distance)}
+         return None
+ 
+@@ -352,7 +353,15 @@
+         return e
+ 
+     # 唯一实时推进入口：检查动作预算、积分物理、同步记录并执行安全守卫。
+-    def tick(self):
++    def tick(self, *, substep_targets=None):
++        if substep_targets is not None:
++            if not self.cfg.substep_control_enabled:
++                raise Fault('substep_control_not_enabled')
++            substep_targets = np.asarray(substep_targets, dtype=np.float32)
++            if substep_targets.shape != (self.sim.nstep, 16) or not np.isfinite(substep_targets).all():
++                raise Fault('invalid_substep_targets')
++            if not np.array_equal(substep_targets[-1], np.asarray(self.sim.target, dtype=np.float32)):
++                raise Fault('substep_endpoint_mismatch')
+         deadline = getattr(self, 'primitive_deadline_step', None)
+         if deadline is not None and self.steps >= deadline:
+             raise Fault('primitive_deadline_exceeded', {'limit_s': self.cfg.primitive_seconds})
+@@ -366,11 +375,21 @@
+         integration = np.empty(self.integration_size, dtype=np.float64)
+         self.mj.mj_getState(self.m, self.d, integration, self.integration_spec)
+         row = dict(integration_state=integration, ctrl=self.d.ctrl.copy(), timestamp=np.float64(self.steps/c.fps), sim_time=np.float64(self.d.time), qpos=self.d.qpos.copy(), qvel=self.d.qvel.copy(), qacc_warmstart=self.d.qacc_warmstart.copy(), act=self.d.act.copy(), state=self.sim.state(), action=self.sim.target.copy(), base_action=self.sim.base_target.copy(), base_state=self.sim.base_state(), fsm_state=self.fsm_state.value, phase=self.phase, target_tray=np.int32(-1 if self.allowed_tray is None else self.allowed_tray), target_slot=np.int32(self.target_slot), recovery=np.bool_(self.recovery), wrist_violation=np.bool_(False), transition_completed=np.bool_(False), **e)
++        if c.substep_control_enabled:
++            row['ctrl_substeps'] = np.zeros((self.sim.nstep, self.m.nu), dtype=np.float64)
++            row['executed_substeps'] = np.int32(0)
+         t0 = float(self.d.time)
+         self.sim.apply_target()
+         try:
+-            for _ in range(self.sim.nstep):
++            for substep in range(self.sim.nstep):
++                if substep_targets is not None:
++                    self.sim.target = substep_targets[substep].copy()
++                    self.sim.apply_target()
++                if c.substep_control_enabled:
++                    row['ctrl_substeps'][substep] = self.d.ctrl
+                 self.mj.mj_step(self.m, self.d)
++                if c.substep_control_enabled:
++                    row['executed_substeps'] = np.int32(substep+1)
+                 # mj_step advances qpos; synchronize derived poses/contacts for
+                 # guards and RGB rather than mixing pre/post-integration state.
+                 self.mj.mj_forward(self.m, self.d)
+@@ -438,11 +457,14 @@
+         if target is not None:
+             target = np.asarray(target)
+             d.qpos[self.qids] = target[ARM_COLUMNS]
++            # Both hands observe the same unchanged live state. Do not rebuild
++            # all tray/contact evidence separately for each aperture decision.
++            contact_forces = (self.observation()['gripper_contact_force'][self.allowed_tray]
++                              if self.allowed_tray is not None else None)
+             for side, col in (("left", 7), ("right", 15)):
+                 opening = float(target[col])
+                 side_index = 0 if side == "left" else 1
+-                contact_closing = (self.allowed_tray is not None and
+-                                   self.observation()["gripper_contact_force"][self.allowed_tray, side_index] > .5)
++                contact_closing = (contact_forces is not None and contact_forces[side_index] > .5)
+                 if self.holding is not None or contact_closing:
+                     # The force-limited close target may be zero while the
+                     # payload physically holds the fingers apart.  Planning
+@@ -510,7 +532,14 @@
+         return position,orientation
+ 
+     # IK 只求参考关节位置；实际运动仍需限力伺服和接触动力学验证。
+-    def solve_pair(self, goals: dict, seed=None):
++    def solve_pair(self, goals: dict, seed=None, *, free_endpoint=False):
++        # A collision-checked, time-parameterized empty-arm joint route may
++        # connect distant endpoint configurations. This is not permission for
++        # an instantaneous branch jump in a Cartesian/contact trajectory.
++        if free_endpoint and (self.holding is not None or self.retained_contact is not None or
++                              np.max(self.observation()['gripper_contact_force']) > .5):
++            raise Fault('endpoint_ik_requires_empty_arms')
++        branch_limit = np.inf if free_endpoint else self.cfg.max_ik_branch_step_rad
+         target = self.sim.target.copy().astype(float) if seed is None else np.array(seed, float)
+         reference = target.copy()
+         d = self.shadow
+@@ -527,9 +556,14 @@
+                 continue
+             position_tolerance,orientation_tolerance=self._ik_tolerances(side)
+             position_weights=np.ones(3)
+-            if (self.cfg.fixed_primitives and self.retained_contact is not None and
+-                    self.retained_contact[1]==side and self.fsm_state==State.ADJUST_TRAY):
+-                position_weights[2]=5.
++            supported_push=(self.cfg.fixed_primitives and self.retained_contact is not None and
++                            self.retained_contact[1]==side and self.fsm_state==State.ADJUST_TRAY)
++            # A centimetre-scale reach tolerance cannot preserve a table
++            # contact. Constrain only the support normal; preserve the existing
++            # tangential/orientation/branch criteria and bounded solver budget.
++            normal_tolerance=.00025 if supported_push else np.inf
++            if supported_push:
++                position_weights[2]=20.
+             p, R = goals[side]
+             qids = self.qids[index:index+7]
+             q0 = target[offset:offset+7].copy()
+@@ -562,20 +596,30 @@
+                 branch = float(np.max(np.abs(fit.x-q0)))
+                 score = (np.linalg.norm(pos_error)/position_tolerance +
+                          np.linalg.norm(rot_error)/orientation_tolerance +
++                         abs(pos_error[2])/normal_tolerance +
+                          .01*np.linalg.norm(fit.x-q0) +
+-                         10.*max(0., branch-self.cfg.max_ik_branch_step_rad))
+-                if best is None or score < best[0]:
++                         10.*max(0., branch-branch_limit))
++                accepted=(np.linalg.norm(pos_error) <= position_tolerance and
++                          abs(pos_error[2]) <= normal_tolerance and
++                          np.linalg.norm(rot_error) <= orientation_tolerance and
++                          branch <= branch_limit)
++                # An admissible solution takes precedence over a lower-score
++                # candidate which violates one of the hard acceptance limits.
++                if accepted or best is None or score < best[0]:
+                     best = (score, fit.x.copy(), pos_error.copy(), rot_error.copy())
+-                if (np.linalg.norm(pos_error) <= position_tolerance and
+-                        np.linalg.norm(rot_error) <= orientation_tolerance and
+-                        branch <= self.cfg.max_ik_branch_step_rad):
++                if accepted:
+                     break
+             _, q, pos_error, rot_error = best
+             d.qpos[qids] = q
+             if (np.linalg.norm(pos_error) > position_tolerance or
++                    abs(pos_error[2]) > normal_tolerance or
+                     np.linalg.norm(rot_error) > orientation_tolerance):
+-                raise Fault("ik_unreachable", {"side": side, "position_error_m": float(np.linalg.norm(pos_error)), "rotation_error_rad": float(np.linalg.norm(rot_error))}, recoverable=True)
+-            if np.max(np.abs(q-q0)) > self.cfg.max_ik_branch_step_rad:
++                detail={"side": side, "position_error_m": float(np.linalg.norm(pos_error)),
++                        "rotation_error_rad": float(np.linalg.norm(rot_error))}
++                if supported_push:
++                    detail.update(normal_error_m=float(abs(pos_error[2])),normal_tolerance_m=normal_tolerance)
++                raise Fault("ik_unreachable", detail, recoverable=True)
++            if np.max(np.abs(q-q0)) > branch_limit:
+                 raise Fault("ik_branch_jump", {"side": side, "max_rad": float(np.max(np.abs(q-q0)))}, recoverable=True)
+             target[offset:offset+7] = q
+ 
+@@ -763,10 +807,19 @@
+             self.sim.target[cols] = start+delta*quintic(frame/frames)
+             self.tick()
+ 
+-    def cartesian(self, goals: dict, *, speed=None, opening=None, wrist=False, preview_only=False):
++    def cartesian(self, goals: dict, *, speed=None, opening=None, wrist=False, preview_only=False,
++                  start_from_command=False):
+         """Preplan the whole Cartesian segment before the first live action."""
+         speed = speed or self.cfg.transit_tcp_speed
+         starts = {s: self.sim.tcp(s) for s in goals}
++        if start_from_command:
++            # Loaded endpoints preserve servo compression in their command
++            # relationship. Interpolating from measured TCPs would introduce
++            # an unintended detour immediately after the command's first knot.
++            # Only private forward kinematics are read; live state is unchanged.
++            commanded = self._shadow(self.sim.target)
++            starts = {s: (commanded.site(s+'_tcp').xpos.copy(),
++                          commanded.site(s+'_tcp').xmat.reshape(3, 3).copy()) for s in goals}
+         distance = max(np.linalg.norm(goals[s][0]-starts[s][0]) for s in goals)
+         angle = max(Rotation.from_matrix(goals[s][1]@starts[s][1].T).magnitude() for s in goals)
+         knots = max(1, math.ceil(distance/.025), math.ceil(angle/.12))
+@@ -803,9 +856,35 @@
+             planned.append(target)
+             return target
+         lo = 0.
+-        for u in np.linspace(0, 1, knots+1)[1:]:
+-            previous = advance(lo, u, previous)
+-            lo = u
++        endpoint_fallback = False
++        try:
++            for u in np.linspace(0, 1, knots+1)[1:]:
++                previous = advance(lo, u, previous)
++                lo = u
++        except Fault as original:
++            eligible=(self.cfg.free_space_joint_shortcut and not wrist and
++                      self.holding is None and self.retained_contact is None and
++                      original.code in ('ik_unreachable','ik_branch_jump') and
++                      original.recoverable and
++                      np.max(self.observation()['gripper_contact_force']) <= .5)
++            if not eligible:raise
++            try:
++                start=self.sim.state().astype(float)
++                finish=self.solve_pair(goals,start,free_endpoint=True)
++                if opening is not None:
++                    for side,col in (('left',7),('right',15)):
++                        if side in goals:finish[col]=opening
++                count=max(32,math.ceil(float(np.max(abs(finish-start)))/.02))
++                if not all(self._target_valid(start+(finish-start)*u)
++                           for u in np.linspace(0,1,count+1)):
++                    raise original
++            except Fault:
++                raise original
++            planned=[finish]
++            endpoint_fallback = True
++            if self.trace:self.trace.event('free_space_endpoint_fallback',
++                cartesian_failure=original.code,collision_samples=count+1,
++                endpoint_max_joint_displacement_rad=float(np.max(abs(finish-start))))
+         if subdivisions and self.trace:
+             self.trace.event('cartesian_branch_subdivision',subdivisions=subdivisions,
+                              max_depth=4,planned_knots=len(planned),executed=False)
+@@ -819,7 +898,14 @@
+             count=max(32,math.ceil(float(np.max(abs(finish-start)))/.02))
+             if all(self._target_valid(start+(finish-start)*u) for u in np.linspace(0,1,count+1)):
+                 if self.trace:self.trace.event('free_space_joint_shortcut',discarded_ik_waypoints=len(planned)-1)
+-                self.joints(finish,minimum_seconds=max(.15,1.875*distance/speed))
++                duration = max(.15, 1.875*distance/speed)
++                # Every empty-arm shortcut can excite the same position-servo
++                # overshoot, whether Cartesian IK failed first or succeeded.
++                # Apply the existing fallback headroom to both paths; hard
++                # measured limits and contact primitive budgets are unchanged.
++                duration = max(duration, minimum_duration(
++                    finish-start, self.v*.5, self.a*.5, self.j*.5))
++                self.joints(finish,minimum_seconds=duration)
+                 return
+         self.follow_joint_path([self.sim.target.copy()]+planned,
+                                minimum_seconds=max(.15, (1. if self.cfg.trajectory_mode=='cruise' else 1.875)*distance/speed), wrist=wrist)
+@@ -972,6 +1058,15 @@
+         ratio=float(np.max(required/self.effort))
+         if ratio>1.+1e-6:raise Fault('online_reference_effort_limit',ratio)
+ 
++    def grasp_goals(self, center, face, *, rim_pair=None, x_offset=0., sides=("left", "right")):
++        """Explicit pickup geometry; pushing retains its separate rim template."""
++        if rim_pair is None:
++            return self.rim_goals(center, face, x_offset=x_offset, sides=sides)
++        if abs(float(wrap_angle(face-rim_pair.face))) > 1e-7:
++            raise ValueError('Grasp face does not match the selected rim pair')
++        return rim_pair.goals(center, x_offset=x_offset, sides=sides,
++                              pitch_deg=self.cfg.rim_pitch_deg, roll_deg=self.cfg.rim_roll_deg)
++
+     def rim_goals(self, center, face, *, x_offset=0., sides=("left", "right")):
+         R = rz(face)
+         t = self.allowed_tray
+@@ -1061,6 +1156,17 @@
+         goal = np.asarray(goal, float)
+         gap = float(self.spec["aisle_gap_m"])
+         bg = self.g.to_belt(np.r_[goal[:2], self.g.origin[2]])
++        # All route selection below reads one immutable live state. Preserve
++        # query order and exact values, reusing only identical segment checks.
++        # This cache belongs to this call and is discarded BEFORE any tick;
++        # subsequent navigation must recheck the new measured state/payload.
++        segment_checks = {}
++        def segment_valid(a, b):
++            aa, bb = np.asarray(a), np.asarray(b)
++            key = (aa.dtype.str, aa.shape, aa.tobytes(), bb.dtype.str, bb.shape, bb.tobytes())
++            if key not in segment_checks:
++                segment_checks[key] = self._base_segment_valid(a, b)
++            return segment_checks[key]
+ 
+         def routes_from(route_start):
+             bs = self.g.to_belt(np.r_[route_start[:2], self.g.origin[2]])
+@@ -1114,7 +1220,7 @@
+                     continue
+                 seen.add(key)
+                 escape = start.copy(); escape[:2] += .18*direction
+-                if self._base_segment_valid(start, escape):
++                if segment_valid(start, escape):
+                     expanded = [[escape]+route for route in routes_from(escape)]
+                     if neighbours and direction_index == 0:
+                         preferred_escape_candidates += expanded
+@@ -1133,11 +1239,13 @@
+                    sorted(candidates, key=cost))
+         for route in ordered:
+             previous = start
+-            if all(self._base_segment_valid(a, b) for a, b in zip([start]+route[:-1], route)):
++            if all(segment_valid(a, b) for a, b in zip([start]+route[:-1], route)):
+                 chosen = route
+                 break
+         if chosen is None:
+             raise Fault("no_collision_free_base_route", recoverable=True)
++        segment_checks.clear()
++        del segment_valid
+         for target in chosen:
+             start = self.sim.base_state().astype(float)
+             delta = target-start

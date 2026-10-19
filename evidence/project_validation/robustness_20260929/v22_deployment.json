@@ -1,0 +1,36 @@
+{
+  "release": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v22_20260929",
+  "archive_sha256": "dd2f3a6e8cd4912a35a410ed0c40c16b6d89ecad0912ba277f11c7dab949e50f",
+  "conda": "/home/michelle/miniconda3/envs/r1pro-tray",
+  "local_tests_passed": 191,
+  "server_tests_passed": 191,
+  "queue_pid": 2072495,
+  "dependency": "robust_v21_20260929/runs/ablation/summary.json",
+  "indices": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    16,
+    218,
+    310
+  ],
+  "variants": [
+    "baseline",
+    "paths",
+    "feedback_all",
+    "feedback_placement"
+  ],
+  "attempt_budget": 1,
+  "simulation_only": true,
+  "status": "complete",
+  "full400_target_reached": false,
+  "pid": 2082213,
+  "clean_successes_by_variant": {
+    "baseline": 1,
+    "paths": 1,
+    "feedback_all": 1,
+    "feedback_placement": 1
+  }
+}

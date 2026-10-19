@@ -1,0 +1,9 @@
+{
+  "model": "real_only",
+  "training_status": "/home/michelle/haoze/r1pro-airport-sim/runs/real_only_pi05_20261012_v1/pi05/training_status.json",
+  "host": "100.104.0.108",
+  "port": 8096,
+  "execute_steps": 5,
+  "control_file": "/home/michelle/haoze/r1pro-airport-sim/runs/galaxea_robot_deploy_20261013_v2/operator_control.json",
+  "gripper_range_mm": [0, 80]
+}

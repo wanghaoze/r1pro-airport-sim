@@ -1,0 +1,12 @@
+{
+  "date": "2026-09-28",
+  "server_v4_tests_passed": 93,
+  "server_v5_tests_passed": 96,
+  "local_core_regression": {
+    "passed": 57,
+    "known_xfailed": 1
+  },
+  "simulation_only": true,
+  "v5_change": "validate descent and closure within each base candidate",
+  "full_400_success_claimed": false
+}

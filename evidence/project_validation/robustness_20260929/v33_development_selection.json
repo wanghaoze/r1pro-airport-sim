@@ -1,0 +1,94 @@
+{
+  "results": {
+    "baseline": {
+      "returncode": 0,
+      "runner_complete": true,
+      "budget_closed": true,
+      "completed": 3,
+      "first_attempt_completed": 3,
+      "successes": [
+        "airport_0004_20270920",
+        "airport_0007_20270923",
+        "airport_0082_20270998"
+      ],
+      "first_successes": [
+        "airport_0004_20270920",
+        "airport_0007_20270923",
+        "airport_0082_20270998"
+      ],
+      "attempts": 18,
+      "wall_seconds": 2629.945325353765,
+      "config": "configs/airport_completion_retry3.json",
+      "lost_vs_baseline": [],
+      "added_vs_baseline": []
+    },
+    "direct": {
+      "returncode": 0,
+      "runner_complete": true,
+      "budget_closed": true,
+      "completed": 2,
+      "first_attempt_completed": 2,
+      "successes": [
+        "airport_0004_20270920",
+        "airport_0082_20270998"
+      ],
+      "first_successes": [
+        "airport_0004_20270920",
+        "airport_0082_20270998"
+      ],
+      "attempts": 20,
+      "wall_seconds": 2795.2206672611646,
+      "config": "configs/airport_completion_direct_retry3.json",
+      "lost_vs_baseline": [
+        "airport_0007_20270923"
+      ],
+      "added_vs_baseline": []
+    },
+    "ik80": {
+      "returncode": 0,
+      "runner_complete": true,
+      "budget_closed": true,
+      "completed": 2,
+      "first_attempt_completed": 2,
+      "successes": [
+        "airport_0004_20270920",
+        "airport_0082_20270998"
+      ],
+      "first_successes": [
+        "airport_0004_20270920",
+        "airport_0082_20270998"
+      ],
+      "attempts": 20,
+      "wall_seconds": 2620.8097890680656,
+      "config": "configs/airport_completion_ik80_retry3.json",
+      "lost_vs_baseline": [
+        "airport_0007_20270923"
+      ],
+      "added_vs_baseline": []
+    },
+    "direct_ik80": {
+      "returncode": 0,
+      "runner_complete": true,
+      "budget_closed": true,
+      "completed": 2,
+      "first_attempt_completed": 2,
+      "successes": [
+        "airport_0004_20270920",
+        "airport_0082_20270998"
+      ],
+      "first_successes": [
+        "airport_0004_20270920",
+        "airport_0082_20270998"
+      ],
+      "attempts": 20,
+      "wall_seconds": 2593.892260276829,
+      "config": "configs/airport_completion_direct_ik80_retry3.json",
+      "lost_vs_baseline": [
+        "airport_0007_20270923"
+      ],
+      "added_vs_baseline": []
+    }
+  },
+  "selected": null,
+  "qualification": "Predeclared development ranking, not evidence of 70% full400 completion"
+}

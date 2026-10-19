@@ -1,0 +1,26 @@
+{
+  "schema": "single_tray_blender_asset_review/1",
+  "status": "actual_Blender_assets_created_and_structure_verified",
+  "blender_version": "5.2.1 LTS",
+  "room_mesh_parts": 45,
+  "coat_physics_vertices": 63,
+  "coat_physics_triangles": 96,
+  "coat_surface_open": true,
+  "original_source_hashes_unchanged": true,
+  "work_table_not_exported_as_replacement": true,
+  "robot_visual_face_partition": {
+    "source_mesh": "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link4.obj",
+    "source_sha256": "6b61f7b72c706c4f719e6e4110464fa340c5b2322a735f4ad894e53896156a46",
+    "source_triangles": 59096,
+    "source_vertices": 29473,
+    "silver_triangles": 7262,
+    "black_triangles": 51834,
+    "rule": "triangle centroid local X>0.025m and local Z<0.25m is silver chest; remaining original faces black",
+    "exact_disjoint_face_union": true,
+    "reference_fidelity": "Approximate photo-informed material partition, not measured surface segmentation",
+    "original_collision_and_inertia_untouched": true
+  },
+  "visual_review": "Second draft image inspected: room, original table/tray and robot clearly visible; photo-inspired approximate layout. First draft outside-room camera failure retained in drafts. No simulation/softbody verification claimed.",
+  "manifest_sha256": "ea033e0a6cd44cd09fb945e4f350ce396bf3bcc96d586f5e13416689b38b584f",
+  "blend_sha256": "abf3e5b5d741b7239658711d56a34abc1ad21ef6fa26b809bf389dd7c3f2a8bc"
+}

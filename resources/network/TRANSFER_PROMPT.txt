@@ -1,0 +1,23 @@
+请帮我在这台Windows电脑配置MobaXterm，使用本压缩包中的两个SSH会话访问我的EC2和GPU服务器。
+
+这是用户授权的个人跨电脑连接迁移。压缩包含两把登录私钥，只在本机使用，不输出、上传或写进聊天/日志；不要把keys目录或压缩包提交到Git。不要读取或导出其他MobaXterm保存的密码。
+
+已部署的连接信息：
+1. EC2-public：47.130.167.160:22，用户ec2-user，密钥keys/haoze_ec2.pem。IP是实例i-0ccc8b7f31055d791关联的弹性IP。
+2. GPU-public-via-EC2：目标127.0.0.1:2222，用户michelle，密钥keys/mobaxterm_gpu_ed25519；SSH gateway是47.130.167.160:22，用户ec2-user，gateway密钥keys/haoze_ec2.pem。目标的127.0.0.1是EC2跳板看到的本机回环地址，不是公网2222。无需客户端VPN。
+3. 原GPU服务器hostname为xinmatrix；项目/home/michelle/haoze/r1pro-airport-sim。反向隧道已在GPU以michelle用户服务r1pro-public-ssh.service部署、enabled和linger=yes，最多3次恢复，run为runs/public_ssh_ec2_20261009_v1。不要重复部署、开放公网2222、修改安全组或停止训练。
+
+实施步骤：
+- 先把整个包解压到本机固定、仅英文字符的路径，例如C:\ssh-access，保留keys目录。不要直接在ZIP预览中运行，不要沿用另一台电脑的用户名和绝对路径。
+- 在包所在目录运行powershell -NoProfile -ExecutionPolicy Bypass -File .\Prepare-Sessions.ps1。这会收紧两把私钥的文件权限，并用实际解压目录生成EC2-and-GPU.mxtsessions，不改MobaXterm全局配置。
+- 再运行powershell -NoProfile -ExecutionPolicy Bypass -File .\Test-Connections.ps1，独立测试EC2公网SSH与经EC2到GPU的SSH。known_hosts来自原电脑已登录核验的主机身份，不禁用主机身份验证。
+- 在MobaXterm左侧Sessions/User sessions右键，选择Import sessions from file，导入生成的EC2-and-GPU.mxtsessions。若使用文件修改方式，先备份且保留已有会话，避免覆盖正在运行应用保存的配置。不关闭其他用户会话。
+- 分别打开EC2-public、GPU-public-via-EC2检查终端；EC2应显示ip-172-31-39-206相关主机名，GPU应显示xinmatrix。只有实际验证后才报告成功。SSH命令行通过与MobaXterm GUI通过分开。
+
+失败诊断：
+- EC2:22超时，先检查当前网络和EC2安全组是否仅允许原电脑出口IP；报告原因，不擅自扩大访问范围。
+- Permission denied：核对两把密钥对应角色、文件权限、用户名；EC2是ec2-user而非ubuntu。
+- EC2可连但GPU失败：经EC2检查ss -ltn sport = :2222，先核实GPU已有服务状态及日志；没有Tailscale或其他GPU入口时明确缺少恢复通道，不能宣称GPU已停。
+- 目标主机密钥不匹配时停下来核验，不删除known_hosts绕过检查。
+
+本包不包含MobaXterm安装程序、GPU隧道专用私钥、原实验临时SSH密钥、训练视频或其他项目聊天。首次新电脑连接与MobaXterm实际GUI连接尚待实测。

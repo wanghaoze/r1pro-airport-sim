@@ -1,0 +1,31 @@
+{
+  "release": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v26_20260929",
+  "archive_sha256": "0ae13ba4bbafdc103eeabc8ee03005fa8214df7bb5d187965ef591e70315e714",
+  "conda": "/home/michelle/miniconda3/envs/r1pro-tray",
+  "local_tests_passed": 361,
+  "server_tests_passed": 361,
+  "queue_pid": 2396808,
+  "verification_queue_pid": 2419346,
+  "indices": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    16,
+    218,
+    310
+  ],
+  "variants": [
+    "baseline",
+    "additive",
+    "combined",
+    "combined_merge",
+    "preview_merge"
+  ],
+  "attempt_budget": 1,
+  "simulation_only": true,
+  "status": "queued_after_v25_development_and_conditional_verification",
+  "full400_target_reached": false,
+  "local_physical_probe": "case310 full push release retreat verify passed with frozen production merge and yaw/additive; not a complete Episode"
+}

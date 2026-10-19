@@ -1,0 +1,106 @@
+{
+  "release": "robust_v24b_20260929",
+  "queue_pid": 2265837,
+  "criteria": "Strictly more complete clean development successes AND preserve all same-code baseline successes; tie by successful physical elapsed time then variant name",
+  "candidates": [
+    "geometry",
+    "guarded_reference",
+    "additive",
+    "combined"
+  ],
+  "fresh_verification_source": "verification_plan.json",
+  "fresh_plan": {
+    "source": "/home/michelle/haoze/r1pro-airport-sim/releases/coverage_v4_20260928/runs/firstpass",
+    "development_indices": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      16,
+      218,
+      310
+    ],
+    "protected_baseline_success_indices": [
+      4,
+      16,
+      24,
+      60,
+      80,
+      132,
+      147,
+      152,
+      156,
+      160,
+      176,
+      188,
+      236,
+      240,
+      256,
+      276,
+      288,
+      292,
+      300,
+      304,
+      344,
+      364
+    ],
+    "holdout_indices_by_front_count": {
+      "0": [
+        120,
+        148,
+        172,
+        204,
+        216,
+        224,
+        248,
+        272,
+        308,
+        328
+      ],
+      "1": [
+        85,
+        113,
+        241,
+        269,
+        301,
+        309,
+        317,
+        329,
+        341,
+        385
+      ],
+      "2": [
+        110,
+        146,
+        174,
+        210,
+        306,
+        318,
+        338,
+        346,
+        382,
+        390
+      ],
+      "3": [
+        87,
+        151,
+        159,
+        251,
+        279,
+        315,
+        323,
+        343,
+        347,
+        367
+      ]
+    },
+    "selection_seed": 20260929,
+    "selection_before_v18_results": true,
+    "attempt_budget": 1,
+    "qualification": "Controller holdout only; original v4 outcomes are known. No training split changes. Full 400-scene validation is required for the 70% claim.",
+    "promotion_rule": "Do not promote on partial-stage success; check protected complete successes and report all failures. Holdout cannot be reused as unseen after tuning on its results."
+  },
+  "max_control_workers": 32,
+  "full400_target_claimed": false
+}

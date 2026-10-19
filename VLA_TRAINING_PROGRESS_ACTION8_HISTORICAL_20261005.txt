@@ -1,0 +1,21 @@
+VLA training / evaluation metadata snapshot
+Verified at (Asia/Singapore): 2026-10-05T18:33:30.431596+08:00
+Data root: /home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/task_complete_actions_v1
+Training and model-test artifact root: /home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/action8_accelerated_v1
+Source: simulation/program_generated
+Native full tasks: 193/193; producer_state=complete (native media alone is not a ready training dataset)
+Export test [current parallel v2]: 22/22; stage=complete; dataset_ready=True; status=/home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/task_complete_actions_v1/action8_export_test_parallel_v2/status.json
+Export test [historical snapshot; serial v1 superseded]: 5/22; stage=exporting_case; dataset_ready=False; status=/home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/task_complete_actions_v1/action8_export_test_v1/status.json
+Export train [current parallel v2]: 149/149; stage=complete; dataset_ready=True; status=/home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/task_complete_actions_v1/action8_export_train_parallel_v2/status.json
+Export train [historical snapshot; serial v1 superseded]: 3/149; stage=exporting_case; dataset_ready=False; status=/home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/task_complete_actions_v1/action8_export_train_v1/status.json
+Export val [current parallel v2]: 22/22; stage=complete; dataset_ready=True; status=/home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/task_complete_actions_v1/action8_export_val_parallel_v2/status.json
+Export val [historical snapshot; serial v1 superseded]: 4/22; stage=exporting_case; dataset_ready=False; status=/home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/task_complete_actions_v1/action8_export_val_v1/status.json
+Training state: not_started
+Actual completed updates in NEW run: 0
+Matching live trainer process: None
+Checkpoint status: /home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/action8_accelerated_v1/training_status.json
+Milestone evaluation artifacts: /home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/action8_accelerated_v1/evaluations
+Supervisor state: preparing_cpu_train_cache; pid=1974863; evaluation_mode=dual_static_two_gpu; status=/home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/action8_accelerated_v1/pipeline_status.json
+Training cache: building; written_frames=366364/505060; model_training_started=False; status=/home/michelle/haoze/r1pro-airport-sim/runs/vla_20261005/action8_accelerated_v1/data_cache/status.json
+No new-model success rate is available: no actual milestone summary exists yet.
+Video and trajectory files stay on the server; this snapshot contains metadata only.

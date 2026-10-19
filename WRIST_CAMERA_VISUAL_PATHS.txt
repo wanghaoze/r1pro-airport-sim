@@ -1,0 +1,10 @@
+Viewer: http://100.104.0.108:8767/wrist_camera_housing_removed_20261007_v1/
+Server scene: /home/michelle/haoze/r1pro-airport-sim/runs/wrist_camera_housing_removed_20261007_v1/scene.xml
+New generator release: /home/michelle/haoze/r1pro-airport-sim/releases/three_table_wrist_visual_v1_20261007
+Verification: /home/michelle/haoze/r1pro-airport-sim/runs/wrist_camera_housing_removed_20261007_v1/verification.json
+Visual-only historical recorded-state comparison; not a new task episode, not training data.
+Physical collision/camera/actuator parameters unchanged, 100-substep qpos/qvel difference0; local8/server8 tests passed.
+/home/michelle/haoze/r1pro-airport-sim/runs/wrist_camera_housing_removed_20261007_v1/left_wrist_before.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/wrist_camera_housing_removed_20261007_v1/left_wrist_after.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/wrist_camera_housing_removed_20261007_v1/right_wrist_before.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/wrist_camera_housing_removed_20261007_v1/right_wrist_after.mp4

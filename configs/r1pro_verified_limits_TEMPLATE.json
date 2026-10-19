@@ -1,0 +1,44 @@
+{
+  "robot_model": "R1 Pro",
+  "source": {
+    "document_or_measurement_id": null,
+    "hardware_serial": null,
+    "checked_at": null
+  },
+  "verified": false,
+  "joint_velocity_rad_s": {
+    "left_arm_joint1": null,
+    "left_arm_joint2": null,
+    "left_arm_joint3": null,
+    "left_arm_joint4": null,
+    "left_arm_joint5": null,
+    "left_arm_joint6": null,
+    "left_arm_joint7": null,
+    "right_arm_joint1": null,
+    "right_arm_joint2": null,
+    "right_arm_joint3": null,
+    "right_arm_joint4": null,
+    "right_arm_joint5": null,
+    "right_arm_joint6": null,
+    "right_arm_joint7": null
+  },
+  "joint_effort_nm": {
+    "left_arm_joint1": null,
+    "left_arm_joint2": null,
+    "left_arm_joint3": null,
+    "left_arm_joint4": null,
+    "left_arm_joint5": null,
+    "left_arm_joint6": null,
+    "left_arm_joint7": null,
+    "right_arm_joint1": null,
+    "right_arm_joint2": null,
+    "right_arm_joint3": null,
+    "right_arm_joint4": null,
+    "right_arm_joint5": null,
+    "right_arm_joint6": null,
+    "right_arm_joint7": null
+  },
+  "mechanical_power_abs_sum_w": null,
+  "power_definition": "sum_abs_actuator_mechanical_power",
+  "note": "UNUSABLE TEMPLATE: fill values and provenance from actual calibrated/manufacturer limits; do not infer mechanical power from electrical input watts"
+}

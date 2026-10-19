@@ -1,0 +1,445 @@
+[
+  {
+    "frame": 0,
+    "event": "state_transition",
+    "previous": [
+      "SEARCH_TARGET",
+      "unknown"
+    ],
+    "state": "SEARCH_TARGET",
+    "dag_node_id": "transition_000000",
+    "dag_predecessor": null,
+    "phase": "unknown",
+    "target_tray": null,
+    "target_slot": -1,
+    "recovery": false,
+    "simulation_time": 0.0
+  },
+  {
+    "frame": 0,
+    "event": "state_transition",
+    "previous": [
+      "SEARCH_TARGET",
+      "unknown"
+    ],
+    "state": "SEARCH_TARGET",
+    "dag_node_id": "transition_000001",
+    "dag_predecessor": "transition_000000",
+    "phase": "unknown",
+    "target_tray": null,
+    "target_slot": -1,
+    "recovery": false,
+    "simulation_time": 0.0
+  },
+  {
+    "frame": 78,
+    "event": "state_transition",
+    "previous": [
+      "SEARCH_TARGET",
+      "unknown"
+    ],
+    "state": "SEARCH_TARGET",
+    "dag_node_id": "transition_000002",
+    "dag_predecessor": "transition_000001",
+    "phase": "unknown",
+    "target_tray": null,
+    "target_slot": -1,
+    "recovery": false,
+    "simulation_time": 3.899999999999792
+  },
+  {
+    "frame": 78,
+    "event": "operation_selected",
+    "operation": {
+      "tray": 2,
+      "slot": 0,
+      "destination": [
+        0.8500000000000001,
+        0.38,
+        0.8
+      ],
+      "yaw": 0.0,
+      "temporary": false
+    },
+    "operation_index": 1
+  },
+  {
+    "frame": 78,
+    "event": "state_transition",
+    "previous": [
+      "SEARCH_TARGET",
+      "unknown"
+    ],
+    "state": "ALIGN_BASE",
+    "dag_node_id": "transition_000003",
+    "dag_predecessor": "transition_000002",
+    "phase": "unknown",
+    "target_tray": 2,
+    "target_slot": 0,
+    "recovery": false,
+    "simulation_time": 3.899999999999792
+  },
+  {
+    "frame": 78,
+    "event": "affordance_candidate",
+    "candidate": 0,
+    "base_world": [
+      -0.8738660634891307,
+      0.4524595607104746,
+      -3.1356478918639237
+    ],
+    "rim_pair": "opposed_short_axis_rims",
+    "rim_local_z": 0.075,
+    "rim_inset_m": 0.01,
+    "rim_x_offset_m": 0.0,
+    "hand_heading_world": -3.1356478918639237,
+    "source": "existing_validated_rim_template_scaled_by_declared_geometry",
+    "qualification": "candidate_only_until_collision_IK_and_contact_checks_pass"
+  },
+  {
+    "frame": 78,
+    "event": "base_timed_segment",
+    "duration_s": 3.85,
+    "distance_m": 0.762217095234255,
+    "angle_rad": 1.7260370243636185,
+    "mode": "cruise"
+  },
+  {
+    "frame": 158,
+    "event": "state_transition",
+    "previous": [
+      "ALIGN_BASE",
+      "unknown"
+    ],
+    "state": "APPROACH_TRAY",
+    "dag_node_id": "transition_000004",
+    "dag_predecessor": "transition_000003",
+    "phase": "pregrasp",
+    "target_tray": 2,
+    "target_slot": 0,
+    "recovery": false,
+    "simulation_time": 7.899999999999352
+  },
+  {
+    "frame": 158,
+    "event": "free_space_joint_shortcut",
+    "discarded_ik_waypoints": 6
+  },
+  {
+    "frame": 195,
+    "event": "direct_grasp_preflight_rejected",
+    "reason": "cartesian_collision_or_wrist",
+    "detail": {
+      "collision": {
+        "geoms": [
+          "robot_geom_45",
+          "tray_1__tray_contact_004"
+        ],
+        "distance_m": -0.005235030351886101
+      },
+      "wrist_camera_front": false,
+      "camera_metrics": {
+        "left": {
+          "camera_ahead_m": 0.013346021961138984,
+          "wrist_upright_dot": 0.9848078678042618,
+          "optical_forward_dot": -0.10231661795141368,
+          "self_view_geoms": []
+        },
+        "right": {
+          "camera_ahead_m": 0.01276967403308079,
+          "wrist_upright_dot": 0.9848076420944584,
+          "optical_forward_dot": -0.09236840875870729,
+          "self_view_geoms": []
+        }
+      },
+      "rigid_grasp_error": null
+    }
+  },
+  {
+    "frame": 232,
+    "event": "state_transition",
+    "previous": [
+      "APPROACH_TRAY",
+      "pregrasp"
+    ],
+    "state": "ALIGN_BASE",
+    "dag_node_id": "transition_000005",
+    "dag_predecessor": "transition_000004",
+    "phase": "unknown",
+    "target_tray": 2,
+    "target_slot": -1,
+    "recovery": false,
+    "simulation_time": 11.600000000000543
+  },
+  {
+    "frame": 232,
+    "event": "affordance_candidate",
+    "candidate": 0,
+    "base_world": [
+      -0.8738660681249788,
+      0.4524595602789841,
+      -3.1356478868434126
+    ],
+    "rim_pair": "opposed_short_axis_rims",
+    "rim_local_z": 0.075,
+    "rim_inset_m": 0.01,
+    "rim_x_offset_m": 0.0,
+    "hand_heading_world": -3.1356478868434126,
+    "source": "existing_validated_rim_template_scaled_by_declared_geometry",
+    "qualification": "candidate_only_until_collision_IK_and_contact_checks_pass"
+  },
+  {
+    "frame": 232,
+    "event": "base_timed_segment",
+    "duration_s": 0.2,
+    "distance_m": 0.0002562337195651608,
+    "angle_rad": 4.137173202689581e-05,
+    "mode": "cruise"
+  },
+  {
+    "frame": 239,
+    "event": "state_transition",
+    "previous": [
+      "ALIGN_BASE",
+      "unknown"
+    ],
+    "state": "APPROACH_TRAY",
+    "dag_node_id": "transition_000006",
+    "dag_predecessor": "transition_000005",
+    "phase": "pregrasp",
+    "target_tray": 2,
+    "target_slot": -1,
+    "recovery": false,
+    "simulation_time": 11.95000000000066
+  },
+  {
+    "frame": 239,
+    "event": "free_space_joint_shortcut",
+    "discarded_ik_waypoints": 6
+  },
+  {
+    "frame": 276,
+    "event": "state_transition",
+    "previous": [
+      "APPROACH_TRAY",
+      "pregrasp"
+    ],
+    "state": "ADJUST_TRAY",
+    "dag_node_id": "transition_000007",
+    "dag_predecessor": "transition_000006",
+    "phase": "approach",
+    "target_tray": 2,
+    "target_slot": -1,
+    "recovery": false,
+    "simulation_time": 13.800000000001278
+  },
+  {
+    "frame": 276,
+    "event": "continuous_path_selected",
+    "selected": "cruise",
+    "waypoints": 6
+  },
+  {
+    "frame": 276,
+    "event": "timed_joint_path",
+    "mode": "cruise",
+    "waypoints": 6,
+    "duration_s": 2.6,
+    "minimum_seconds": 2.189969730251893,
+    "inverse_ratio": 1.0000000000000013
+  },
+  {
+    "frame": 331,
+    "event": "state_transition",
+    "previous": [
+      "ADJUST_TRAY",
+      "approach"
+    ],
+    "state": "ADJUST_TRAY",
+    "dag_node_id": "transition_000008",
+    "dag_predecessor": "transition_000007",
+    "phase": "close",
+    "target_tray": 2,
+    "target_slot": -1,
+    "recovery": false,
+    "simulation_time": 16.550000000001706
+  },
+  {
+    "frame": 377,
+    "event": "state_transition",
+    "previous": [
+      "ADJUST_TRAY",
+      "close"
+    ],
+    "state": "ADJUST_TRAY",
+    "dag_node_id": "transition_000009",
+    "dag_predecessor": "transition_000008",
+    "phase": "adjust",
+    "target_tray": 2,
+    "target_slot": -1,
+    "recovery": false,
+    "simulation_time": 18.85000000000043
+  },
+  {
+    "frame": 377,
+    "event": "primitive_start",
+    "primitive": "push",
+    "limit_s": 3.0,
+    "parameters": {
+      "destination": [
+        -1.4238563495843912,
+        0.5641899578266497,
+        0.7999934032195588
+      ],
+      "yaw": 0.005944766746380499,
+      "separation": true
+    }
+  },
+  {
+    "frame": 377,
+    "event": "primitive_push_feedforward",
+    "distance_m": 0.012,
+    "nominal_destination": [
+      -1.4238563495843912,
+      0.5641899578266497,
+      0.7999934032195588
+    ],
+    "command_position": [
+      -1.4238562739515248,
+      0.5761899578264114,
+      0.7999934396813773
+    ]
+  },
+  {
+    "frame": 377,
+    "event": "primitive_reference",
+    "duration_s": 2.45,
+    "controller": "BlendedJointPath",
+    "knot_stop_fallback": false
+  },
+  {
+    "frame": 398,
+    "event": "retained_support_microbounce",
+    "tray": 2,
+    "side": "right",
+    "measured_bottom_gap_m": 2.2402495301832026e-05
+  },
+  {
+    "frame": 400,
+    "event": "retained_support_microbounce",
+    "tray": 2,
+    "side": "right",
+    "measured_bottom_gap_m": 1.2731738970650497e-05
+  },
+  {
+    "frame": 403,
+    "event": "retained_support_microbounce",
+    "tray": 2,
+    "side": "right",
+    "measured_bottom_gap_m": -8.204177425608083e-05
+  },
+  {
+    "frame": 407,
+    "event": "retained_support_microbounce",
+    "tray": 2,
+    "side": "right",
+    "measured_bottom_gap_m": -2.2283486188046098e-05
+  },
+  {
+    "frame": 414,
+    "event": "retained_support_microbounce",
+    "tray": 2,
+    "side": "right",
+    "measured_bottom_gap_m": -0.0009992817974736612
+  },
+  {
+    "frame": 428,
+    "event": "primitive_complete",
+    "primitive": "push",
+    "duration_s": 2.55,
+    "planning_and_execution_wall_s": 2.479640800971538
+  },
+  {
+    "frame": 428,
+    "event": "separation_contact_retained",
+    "target_tray": 2,
+    "retained_side": "right"
+  },
+  {
+    "frame": 428,
+    "event": "state_transition",
+    "previous": [
+      "ADJUST_TRAY",
+      "adjust"
+    ],
+    "state": "APPROACH_TRAY",
+    "dag_node_id": "transition_000010",
+    "dag_predecessor": "transition_000009",
+    "phase": "approach",
+    "target_tray": 2,
+    "target_slot": 0,
+    "recovery": false,
+    "simulation_time": 21.399999999999018
+  },
+  {
+    "frame": 428,
+    "event": "joining_grasp_candidate",
+    "side": "left",
+    "height_offset_m": 0.014,
+    "rim_x_shift_m": 0.0
+  },
+  {
+    "frame": 428,
+    "event": "separation_to_grasp_handoff",
+    "target_tray": 2,
+    "retained_side": "right",
+    "moving_side": "left"
+  },
+  {
+    "frame": 428,
+    "event": "continuous_path_selected",
+    "selected": "cruise",
+    "waypoints": 7
+  },
+  {
+    "frame": 428,
+    "event": "timed_joint_path",
+    "mode": "cruise",
+    "waypoints": 7,
+    "duration_s": 3.05,
+    "minimum_seconds": 2.67425218479701,
+    "inverse_ratio": 1.0000000000000016
+  },
+  {
+    "frame": 492,
+    "event": "state_transition",
+    "previous": [
+      "APPROACH_TRAY",
+      "approach"
+    ],
+    "state": "GRASP_TRAY",
+    "dag_node_id": "transition_000011",
+    "dag_predecessor": "transition_000010",
+    "phase": "contact",
+    "target_tray": 2,
+    "target_slot": 0,
+    "recovery": false,
+    "simulation_time": 24.599999999997245
+  },
+  {
+    "frame": 494,
+    "event": "state_transition",
+    "previous": [
+      "GRASP_TRAY",
+      "contact"
+    ],
+    "state": "GRASP_TRAY",
+    "dag_node_id": "transition_000012",
+    "dag_predecessor": "transition_000011",
+    "phase": "close",
+    "target_tray": 2,
+    "target_slot": 0,
+    "recovery": false,
+    "simulation_time": 24.69999999999719
+  }
+]

@@ -1,0 +1,144 @@
+{
+  "built_at": "2026-10-16T05:23:35.471273+00:00",
+  "pdf": "R1Pro_Project_Review_and_Operations_Handover_EN.pdf",
+  "pdf_sha256": "1f94a76844f5da46ea6cf6499ad250732ddf051ab3c9a7da2396a3bd2032119b",
+  "english_source": "docs/handoff/README_EN.md",
+  "source_sha256": "c210fb066e206bda6d206384693346c9669f08765ebe94914a083ad014bf851b",
+  "builder_sha256": "fbcfefbf6ff5d68fe9f62d9f1d54112e79cbb75bc0b79115f4f60ad7ac021a79",
+  "inventory_sha256": "ff98e599bfc6a24dc54a5a90810601f190889b13539fadea547bfa5cf209911b",
+  "script_count": 232,
+  "configuration_count": 132,
+  "pages": 43,
+  "headings": [
+    {
+      "heading": "R1Pro Airport Tray Manipulation",
+      "page": 1,
+      "key": "section-1"
+    },
+    {
+      "heading": "1. Exploration summary",
+      "page": 2,
+      "key": "section-2"
+    },
+    {
+      "heading": "Contents",
+      "page": 3,
+      "key": "contents"
+    },
+    {
+      "heading": "2. Historical control and task development",
+      "page": 4,
+      "key": "section-3"
+    },
+    {
+      "heading": "3. Policy learning and simulation diagnostics",
+      "page": 5,
+      "key": "section-4"
+    },
+    {
+      "heading": "4. Real-data training and offline comparison",
+      "page": 6,
+      "key": "section-5"
+    },
+    {
+      "heading": "5. Closed-loop transfer and the 50/50 branch",
+      "page": 7,
+      "key": "section-6"
+    },
+    {
+      "heading": "6. Real-command replay and native simulation",
+      "page": 8,
+      "key": "section-7"
+    },
+    {
+      "heading": "7. Contact stability and the latest branch",
+      "page": 9,
+      "key": "section-8"
+    },
+    {
+      "heading": "8. Project layout, access and environments",
+      "page": 10,
+      "key": "section-9"
+    },
+    {
+      "heading": "9. Installation and reproducibility",
+      "page": 11,
+      "key": "section-10"
+    },
+    {
+      "heading": "10. Preflight, job ownership and recovery",
+      "page": 12,
+      "key": "section-11"
+    },
+    {
+      "heading": "11. MuJoCo scene generation and collection",
+      "page": 13,
+      "key": "section-12"
+    },
+    {
+      "heading": "12. Native Isaac assets and complete episodes",
+      "page": 14,
+      "key": "section-13"
+    },
+    {
+      "heading": "13. Dataset freezing and specialized collection",
+      "page": 15,
+      "key": "section-14"
+    },
+    {
+      "heading": "14. Training entry points and new runs",
+      "page": 16,
+      "key": "section-15"
+    },
+    {
+      "heading": "15. Native BC restoration and policy evaluation",
+      "page": 17,
+      "key": "section-16"
+    },
+    {
+      "heading": "16. Start the workstation inference services",
+      "page": 18,
+      "key": "section-17"
+    },
+    {
+      "heading": "17. Operator control and robot LAN transport",
+      "page": 19,
+      "key": "section-18"
+    },
+    {
+      "heading": "18. Robot-side startup and recorded execution",
+      "page": 20,
+      "key": "section-19"
+    },
+    {
+      "heading": "19. Robot execution contract and troubleshooting",
+      "page": 21,
+      "key": "section-20"
+    },
+    {
+      "heading": "20. Replay, monitoring and maintenance",
+      "page": 22,
+      "key": "section-21"
+    },
+    {
+      "heading": "21. Acceptance, ownership and continuing the project",
+      "page": 23,
+      "key": "section-22"
+    },
+    {
+      "heading": "22. Reference register",
+      "page": 24,
+      "key": "section-23"
+    },
+    {
+      "heading": "Appendix A. Script inventory",
+      "page": 25,
+      "key": "appendix-a"
+    },
+    {
+      "heading": "Appendix B. Configuration inventory",
+      "page": 39,
+      "key": "appendix-b"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "fourcam_source_contract_valid": 12,
+  "compiled_camera_names": [
+    "front",
+    "overview",
+    "head",
+    "head_left",
+    "head_right",
+    "left_wrist",
+    "right_wrist"
+  ]
+}

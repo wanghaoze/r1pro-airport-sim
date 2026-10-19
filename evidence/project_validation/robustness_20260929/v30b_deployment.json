@@ -1,0 +1,10 @@
+{
+  "pid": 2664396,
+  "profile": "completion_first",
+  "release": "robust_v30b_20260929",
+  "archive_sha256": "695f9680818dd72d3f9d092a4555b83d5aa968cd989a8777df2fd11c8c738700",
+  "server_core_tests": "659 passed, 1 xfailed, 2 warnings in 20.80s",
+  "simulation_only": true,
+  "target_reached": false,
+  "sequence": "8 scene smoke then full400 if >=4 completed"
+}

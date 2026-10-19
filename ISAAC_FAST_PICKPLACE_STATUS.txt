@@ -1,0 +1,7 @@
+﻿Snapshot: 2026-10-16T04:56:03.119506+00:00
+Scope: native expert fast benchmark, not VLA, not full three-tray task, not training data. Endpoint success does not prove path stability.
+Run: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fast_stability_20261016_v9_recorded
+Stage: complete
+Completed: 1/1; endpoint passed: 1; independently audited endpoints: 1
+Guardian: False; producer: False; active native: False; finalizer: False
+Viewer: http://100.104.0.108:8776/fast_stability_20261016_v9/index.html

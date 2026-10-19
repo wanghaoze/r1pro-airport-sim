@@ -1,0 +1,16 @@
+Verified=2026-10-15T16:17:45.650191+08:00
+Scope=full Isaac experiment including training data
+migration_complete=false
+native_control_and_GPU_deformable_coat=passed
+candidate01=1381 frames; actual wait exit0; four original-resolution20Hz videos ffprobe/SHA closed; Pick failed; not VLA execution; training_eligible=false
+candidate02=source friction mapping corrected; 668 active colliders binding validated; native control passed/actual exit0
+candidate02 supervisor PID=221900; child PID=221901; birth=26510323; live identity verified at snapshot
+candidate02 stage=native_reference_running; frames=421/1381; action=place; Pick did not lift
+Qualified Isaac sources=0; exported action clips=0; new training=waiting_for_data
+Root=/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_full_experiment_20261015_demo01
+Candidate02 log=/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_full_experiment_20261015_demo01/material_candidate02/episode.log
+Candidate02 status=/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_full_experiment_20261015_demo01/material_candidate02/native_episode_00/status.json
+Candidate02 actual exit=/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_full_experiment_20261015_demo01/material_candidate02/episode_exit.json (pending at snapshot)
+Viewer=http://100.104.0.108:8775/native_demo01/viewer.html
+Evidence=runs/isaacsim_full_experiment_20261015_demo01_reference/verified_snapshot.json
+Whole-task native observer, randomized collection supervision and pure-model PhysX evaluation remain incomplete.

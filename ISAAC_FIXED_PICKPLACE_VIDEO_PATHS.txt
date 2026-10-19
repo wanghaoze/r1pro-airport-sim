@@ -1,0 +1,13 @@
+Snapshot: 2026-10-16T05:22:51.647859+00:00
+# Pick up the tray train EXPERT_CLOSED_TWO_ACTION_SCOPE
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fixed_pickplace_20261016_v1/dataset/pick_up_the_tray/train/case_000/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fixed_pickplace_20261016_v1/dataset/pick_up_the_tray/train/case_000/head_right.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fixed_pickplace_20261016_v1/dataset/pick_up_the_tray/train/case_000/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fixed_pickplace_20261016_v1/dataset/pick_up_the_tray/train/case_000/right_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fixed_pickplace_20261016_v1/dataset/pick_up_the_tray/train/case_000/presentation.mp4
+# Place the tray train EXPERT_CLOSED_TWO_ACTION_SCOPE
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fixed_pickplace_20261016_v1/dataset/place_the_tray/train/case_000/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fixed_pickplace_20261016_v1/dataset/place_the_tray/train/case_000/head_right.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fixed_pickplace_20261016_v1/dataset/place_the_tray/train/case_000/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fixed_pickplace_20261016_v1/dataset/place_the_tray/train/case_000/right_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_fixed_pickplace_20261016_v1/dataset/place_the_tray/train/case_000/presentation.mp4

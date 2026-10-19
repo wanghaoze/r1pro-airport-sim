@@ -1,0 +1,114 @@
+{
+  "qualification": "private_exact_raw1_replay_diagnostic_only_no_label_changes",
+  "mujoco_version": "3.13.0",
+  "script_sha256": "9775339a9175d0613852b436ee0d7f388692d48f52551e607a33f7c666e1135d",
+  "estimator_sha256": "6f3fe01697a93c528e1d8951aa091f486b1341c6a3e4dc583a4e13dfed282a7f",
+  "root": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v12_20260929/runs/regression",
+  "cases": [
+    {
+      "scene_id": "airport_0005_20270921",
+      "source_xml_sha256": "e9d79e48d96d5d52912721a58a9f91594e6e4bf9c2e47d49d54b6b8967c5791b",
+      "source_trace": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v12_20260929/runs/regression/attempts/airport_0005_20270921/a000/trace.h5",
+      "maximum_qpos_endpoint_error": 0.0,
+      "maximum_qvel_endpoint_error": 0.0,
+      "physics_timestep_s": 0.002,
+      "push_segments": [
+        {
+          "start_frame": 403,
+          "end_frame": 463,
+          "tray": 2,
+          "accepted_intervals": 60,
+          "skipped_incomplete_intervals": 0,
+          "skipped_no_endpoint_intervals": 0,
+          "sampled_substeps": 1500,
+          "supported_substeps": 1333,
+          "table_load_peak_n": 46.74367116398667,
+          "table_load_impulse_ns": 36.696306577718524,
+          "longest_missing_substeps": 3,
+          "recorded_endpoint_missing_intervals": 7,
+          "support_fraction": 0.8886666666666667,
+          "longest_physics_missing_s": 0.006,
+          "mean_table_load_n": 12.23210219257284
+        },
+        {
+          "start_frame": 2471,
+          "end_frame": 2531,
+          "tray": 1,
+          "accepted_intervals": 60,
+          "skipped_incomplete_intervals": 0,
+          "skipped_no_endpoint_intervals": 0,
+          "sampled_substeps": 1500,
+          "supported_substeps": 1227,
+          "table_load_peak_n": 49.5733320125726,
+          "table_load_impulse_ns": 36.147760322242654,
+          "longest_missing_substeps": 3,
+          "recorded_endpoint_missing_intervals": 9,
+          "support_fraction": 0.818,
+          "longest_physics_missing_s": 0.006,
+          "mean_table_load_n": 12.04925344074755
+        }
+      ]
+    },
+    {
+      "scene_id": "airport_0008_20270924",
+      "source_xml_sha256": "504685fad7909416ea42bb569fb7bcf574cc8b9851233465596687916644bdba",
+      "source_trace": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v12_20260929/runs/regression/attempts/airport_0008_20270924/a000/trace.h5",
+      "maximum_qpos_endpoint_error": 0.0,
+      "maximum_qvel_endpoint_error": 0.0,
+      "physics_timestep_s": 0.002,
+      "push_segments": [
+        {
+          "start_frame": 412,
+          "end_frame": 472,
+          "tray": 2,
+          "accepted_intervals": 60,
+          "skipped_incomplete_intervals": 0,
+          "skipped_no_endpoint_intervals": 0,
+          "sampled_substeps": 1500,
+          "supported_substeps": 1307,
+          "table_load_peak_n": 50.47108029434782,
+          "table_load_impulse_ns": 38.17545911600775,
+          "longest_missing_substeps": 3,
+          "recorded_endpoint_missing_intervals": 9,
+          "support_fraction": 0.8713333333333333,
+          "longest_physics_missing_s": 0.006,
+          "mean_table_load_n": 12.72515303866925
+        },
+        {
+          "start_frame": 1467,
+          "end_frame": 1527,
+          "tray": 1,
+          "accepted_intervals": 60,
+          "skipped_incomplete_intervals": 0,
+          "skipped_no_endpoint_intervals": 0,
+          "sampled_substeps": 1500,
+          "supported_substeps": 1346,
+          "table_load_peak_n": 52.007295734154575,
+          "table_load_impulse_ns": 39.01428494498458,
+          "longest_missing_substeps": 3,
+          "recorded_endpoint_missing_intervals": 9,
+          "support_fraction": 0.8973333333333333,
+          "longest_physics_missing_s": 0.006,
+          "mean_table_load_n": 13.004761648328193
+        },
+        {
+          "start_frame": 1962,
+          "end_frame": 2000,
+          "tray": 1,
+          "accepted_intervals": 37,
+          "skipped_incomplete_intervals": 1,
+          "skipped_no_endpoint_intervals": 0,
+          "sampled_substeps": 925,
+          "supported_substeps": 778,
+          "table_load_peak_n": 48.0370883932191,
+          "table_load_impulse_ns": 26.568280524104207,
+          "longest_missing_substeps": 4,
+          "recorded_endpoint_missing_intervals": 8,
+          "support_fraction": 0.841081081081081,
+          "longest_physics_missing_s": 0.008,
+          "mean_table_load_n": 14.361232715732003
+        }
+      ]
+    }
+  ]
+}

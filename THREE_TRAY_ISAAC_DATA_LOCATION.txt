@@ -1,0 +1,24 @@
+Last verified: 2026-10-15T18:58:27.581961+00:00
+Native THREE-tray scope; full native expert demo passed, not model execution.
+Validated complete sources: train1/val1/test0. 18 total source action spans.
+Current exported preview: train source1, Pick3/Place3/Flush3=9 segments, 36 camera files; NOT a legal three-split training batch.
+Qualified train: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/demo_candidate_12
+Qualified val: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/pipeline_v14/episodes/case_0000
+Failed old test preserved: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/pipeline_v14/episodes/case_0001
+Active test retry: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/pipeline_v15/episodes/case_0000
+Preview index: http://100.104.0.108:8776/demo12_action_preview_v1/index.html
+Preview directories: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/demo12_action_preview_v1/by_action/
+Full demo/latest status: http://100.104.0.108:8776/demo12_v15.html
+Actual video paths one per line: THREE_TRAY_ISAAC_VIDEO_PATHS.txt
+Training waiting_for_data, actual new updates0, no new checkpoint.
+Future frozen manifest (NOT ready): /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/pipeline_v15/dataset_v1/manifest.json
+Future legal action dataset (NOT ready): /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/pipeline_v15/three_actions_v1/by_action/
+Future checked cache (NOT ready): /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/pipeline_v15/cache_v1/integrity.json
+Future training/checkpoint receipts (NONE yet): /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/pipeline_v15/training/
+Supervisor PID1623767, outer guardian PID1623768, active test PID1629246.
+Supervisor log: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/pipeline_v15_supervisor.log
+Guardian log: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/guardian_v15.log
+Active collection log: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/pipeline_v15/logs/episode_0000.log
+Pipeline state: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/pipeline_v15/pipeline_status.json
+Guardian state: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/pipeline_v15/guardian_status.json
+Later independent dataset: /home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/expansion_v10/dataset_v2

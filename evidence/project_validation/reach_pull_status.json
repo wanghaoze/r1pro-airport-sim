@@ -1,0 +1,14 @@
+{
+  "implementation": "optional_reach_pull_v1",
+  "new_tests_passed": 11,
+  "earlier_combined_regression": {
+    "passed": 97,
+    "xfailed": 1,
+    "note": "before adding two new control-flow tests; those pass in final 11-test focused run"
+  },
+  "spec_sync_test_passed": true,
+  "real_mujoco_interfaces_checked": true,
+  "physical_pull_success_validated": false,
+  "server_deployed": false,
+  "baseline_default_enabled": false
+}

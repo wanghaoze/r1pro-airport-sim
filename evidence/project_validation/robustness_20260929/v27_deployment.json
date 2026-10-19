@@ -1,0 +1,22 @@
+{
+  "release": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v27_20260929",
+  "archive_sha256": "485b5d47fa239cf5f402cd5d87e3676e125e4e9d7627b760576339eb067275cb",
+  "conda": "/home/michelle/miniconda3/envs/r1pro-tray",
+  "local_core_tests_passed": 368,
+  "server_targeted_tests_passed": 88,
+  "server_broader_tests": {"passed": 570, "xfailed": 1, "failed": 1,
+    "failure": "test_direct_scene_preserves_home_and_supports_native_720p: historical scene_launch_pose.xml fixture is absent from server asset release; not a formal400 scene"},
+  "missing_fixture_resolution": {"passed": 1, "independent_test_directory": "/home/michelle/haoze/r1pro-airport-sim/diagnostictools/v27_legacy_fixture_complete", "evidence": "v27_legacy_fixture_complete_test.json", "frozen_release_modified": false, "note": "Exact frozen test/code passes with complete original local legacy XML and referenced assets; original failed run preserved."},
+  "queue_pid": 2535121,
+  "status": "cancelled_before_matrix_launch_superseded_by_integer_clock_audit",
+  "matrix_actual_episodes": 0,
+  "cancellation_reason": "Confirmed numerical150ms boundary issue. Avoid140 floating-clock matrix episodes; retain deployed source and actual case60 failure. v28 will compare float and integer baselines explicitly.",
+  "development_plan": "v27_development_plan.json",
+  "attempt_budget": 1,
+  "max_control_workers": 32,
+  "separate_diagnostic_case": 60,
+  "separate_diagnostic_result": "Failed on third tray at 133.90 physical seconds; two historical37-frame shortcuts restored, initial failure passed, not a complete success.",
+  "full400_target_reached": false,
+  "simulation_only": true,
+  "qualification": "Normal empty-arm shortcut timing compatibility only; actual motion caps and contact/camera/acceptance unchanged. No claim of entire v4 control equivalence."
+}

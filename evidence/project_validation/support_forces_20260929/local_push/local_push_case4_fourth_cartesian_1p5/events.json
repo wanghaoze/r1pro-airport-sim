@@ -1,0 +1,184 @@
+[
+  {
+    "frame": 2861,
+    "event": "primitive_start",
+    "primitive": "push",
+    "limit_s": 3.0,
+    "parameters": {
+      "destination": [
+        0.8500000000000001,
+        -0.5100000000000001,
+        0.8
+      ],
+      "yaw": 0.0,
+      "separation": false
+    }
+  },
+  {
+    "frame": 2861,
+    "event": "primitive_push_compliance_reference",
+    "side": "right",
+    "tcp_deflection_m": 0.015431172406958281,
+    "qualification": "command_reference_only_not_observed_rigid_attachment"
+  },
+  {
+    "frame": 2861,
+    "event": "primitive_push_feedforward",
+    "distance_m": 0.02,
+    "nominal_destination": [
+      0.8500000000000001,
+      -0.5100000000000001,
+      0.8
+    ],
+    "command_position": [
+      0.8502633622672061,
+      -0.49000173406726955,
+      0.7954994507149885
+    ]
+  },
+  {
+    "frame": 2861,
+    "event": "diagnostic_cartesian_withdraw_middle",
+    "fraction": 0.3,
+    "retained_target": [
+      0.848504283231135,
+      -0.7813455552970187,
+      0.8951016669188185
+    ],
+    "free_target": [
+      0.7846658368212691,
+      -0.4073330785906472,
+      0.9925905795754199
+    ]
+  },
+  {
+    "frame": 2861,
+    "event": "supported_command_reference",
+    "side": "right",
+    "start_z_m": 0.8964516669188185,
+    "end_z_m": 0.8919516669188186,
+    "normal_tolerance_m": 0.00025,
+    "validation_samples": 201,
+    "shortcut_enabled": false,
+    "qualification": "command_geometry_only_original_physical_support_guards_required"
+  },
+  {
+    "frame": 2861,
+    "event": "primitive_reference",
+    "duration_s": 2.8,
+    "controller": "BlendedJointPath",
+    "knot_stop_fallback": false,
+    "reference_bounds": {
+      "velocity": [
+        0.35410491642429004,
+        3.537923342496374e-09,
+        0.23548130180928148,
+        0.8639991360008641,
+        0.2068245452372076,
+        0.46887916408816405,
+        0.08080513649179569,
+        0.07644852106887648,
+        0.07459276100611471,
+        0.2873275787773855,
+        0.014247087921599537,
+        0.2592376602015304,
+        0.012310313236046767,
+        0.11200632385918262,
+        0.14404325344889674,
+        0.0
+      ],
+      "acceleration": [
+        0.7190853377807371,
+        7.1845055345688976e-09,
+        0.4781948614621394,
+        1.7545339059297285,
+        0.42000122301335935,
+        0.9521588558874953,
+        0.16409201390188838,
+        0.1552449797951462,
+        0.33304088142989946,
+        1.1839344906609983,
+        0.06662179929571482,
+        1.1454666174230308,
+        0.05625836342674693,
+        0.4916229049009589,
+        0.4669394504476055,
+        0.0
+      ],
+      "jerk": [
+        4.928362991356687,
+        4.9240124766812187e-08,
+        3.2773827167166423,
+        12.024970062413043,
+        2.8785435817838074,
+        6.525768529408252,
+        1.1246300904800839,
+        1.063995568839717,
+        5.04408401250142,
+        16.85117067170594,
+        1.081356381343085,
+        17.20871428156324,
+        0.8677185102718866,
+        7.34761425963885,
+        8.077009459954386,
+        0.0
+      ]
+    }
+  },
+  {
+    "frame": 2890,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 1.1588709694421162e-05
+  },
+  {
+    "frame": 2897,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 1.785973166690269e-05
+  },
+  {
+    "frame": 2900,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 1.2300430773493076e-05
+  },
+  {
+    "frame": 2903,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 1.2136500806780859e-05
+  },
+  {
+    "frame": 2905,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 7.692361221267596e-05
+  },
+  {
+    "frame": 2907,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 2.6454332528014213e-05
+  },
+  {
+    "frame": 2909,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 3.485326834207214e-05
+  },
+  {
+    "frame": 2919,
+    "event": "primitive_complete",
+    "primitive": "push",
+    "duration_s": 2.9,
+    "planning_and_execution_wall_s": 3.7969459230080247
+  }
+]

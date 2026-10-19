@@ -1,0 +1,143 @@
+{
+  "push_withdraw_path_search": [
+    {
+      "frame": 2278,
+      "event": "push_withdraw_path_search",
+      "original_fraction": 0.3,
+      "selected_fraction": null,
+      "rejected": [
+        {
+          "fraction": 0.45,
+          "reason": "primitive_path_infeasible",
+          "detail": {
+            "available_s": 2.9,
+            "candidates": [
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 9.0
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 3.05
+              }
+            ]
+          }
+        },
+        {
+          "fraction": 0.6,
+          "reason": "primitive_path_infeasible",
+          "detail": {
+            "available_s": 2.9,
+            "candidates": [
+              {
+                "mode": "CruiseJointPath",
+                "reason": "duration",
+                "required_s": 9.1
+              },
+              {
+                "mode": "BlendedJointPath",
+                "reason": "duration",
+                "required_s": 3.1
+              }
+            ]
+          }
+        }
+      ],
+      "maximum_alternatives": 2,
+      "original_failure": {
+        "available_s": 2.9,
+        "candidates": [
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 6.9
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 3.05
+          }
+        ]
+      }
+    }
+  ],
+  "push_withdraw_merge_fallback": [
+    {
+      "frame": 2278,
+      "event": "push_withdraw_merge_fallback",
+      "accepted": true,
+      "original_failure": {
+        "available_s": 2.9,
+        "candidates": [
+          {
+            "mode": "CruiseJointPath",
+            "reason": "duration",
+            "required_s": 6.9
+          },
+          {
+            "mode": "BlendedJointPath",
+            "reason": "duration",
+            "required_s": 3.05
+          }
+        ]
+      },
+      "retained_indices": [
+        0,
+        2,
+        3
+      ],
+      "maximum_alternatives": 1,
+      "available_s": 2.9,
+      "qualification": "identical_free_clearance_real_ik_midpoint_original_guards_and_budget"
+    }
+  ],
+  "push_withdraw_planning_invariant": [],
+  "push_yaw_feedback_additive_fallback": [
+    {
+      "frame": 2308,
+      "event": "push_yaw_feedback_additive_fallback",
+      "original_quintic_rejection": {
+        "reason": "exact_joint_limit"
+      },
+      "accepted": true,
+      "certificate": {
+        "method": "exact_rational_combined_piecewise_polynomial_bernstein_subdivision",
+        "pieces": 2,
+        "nodes": 116,
+        "max_depth": 18,
+        "max_nodes": 8192,
+        "largest_float_reserve": 2.993098637173855e-08,
+        "grid_sampling_used": false
+      },
+      "boundary_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "terminal_errors": [
+        2.220446049250313e-16,
+        4.372541950624409e-14,
+        1.6404713825574905e-13
+      ],
+      "limit_ratios": {
+        "velocity": 0.812174114388171,
+        "acceleration": 0.9735167914674447,
+        "jerk": 0.8813685620549242
+      },
+      "rejection": null,
+      "planning_wall_s": 0.6184612249489874
+    }
+  ],
+  "primitive_complete": [
+    {
+      "frame": 2330,
+      "event": "primitive_complete",
+      "primitive": "push",
+      "duration_s": 2.6,
+      "planning_and_execution_wall_s": 4.318805078044534
+    }
+  ],
+  "forces_identical_to_private_combination": true
+}

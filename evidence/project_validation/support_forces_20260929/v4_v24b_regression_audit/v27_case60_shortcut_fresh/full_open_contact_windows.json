@@ -1,0 +1,30 @@
+{
+  "v27_case60_full_open_candidate": {
+    "1.95": {
+      "samples": 975,
+      "support_fraction": 0.8974358974358975,
+      "peak_n": 39.31225187748403,
+      "longest_missing_s": 0.004
+    },
+    "2.0": {
+      "samples": 1000,
+      "support_fraction": 0.889,
+      "peak_n": 39.97558590439707,
+      "longest_missing_s": 0.004
+    }
+  },
+  "v27_case60_full_open_original": {
+    "1.95": {
+      "samples": 975,
+      "support_fraction": 0.8943589743589744,
+      "peak_n": 44.01051392983794,
+      "longest_missing_s": 0.006
+    },
+    "2.0": {
+      "samples": 1000,
+      "support_fraction": 0.886,
+      "peak_n": 44.01051392983794,
+      "longest_missing_s": 0.006
+    }
+  }
+}

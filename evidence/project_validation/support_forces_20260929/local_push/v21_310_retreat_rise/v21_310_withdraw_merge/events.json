@@ -1,0 +1,490 @@
+[
+  {
+    "frame": 2278,
+    "event": "push_reuses_existing_contact",
+    "target_tray": 0,
+    "retained_side": "right"
+  },
+  {
+    "event": "diagnostic_phase_snapshot",
+    "frame": 2278,
+    "phase": "adjust",
+    "pose": [
+      0.8485563392734329,
+      -0.17052133737532135,
+      0.799996701629351,
+      0.0029219993084113,
+      7.110002921366793e-08,
+      -3.377790083089288e-06,
+      -0.9999957309452007
+    ],
+    "gripper_force": [
+      0.0,
+      13.30591016398806
+    ],
+    "table_contact": 4
+  },
+  {
+    "frame": 2278,
+    "event": "primitive_start",
+    "primitive": "push",
+    "limit_s": 3.0,
+    "parameters": {
+      "destination": [
+        0.8500000000000001,
+        -0.06500000000000006,
+        0.8
+      ],
+      "yaw": 0.0,
+      "separation": false
+    }
+  },
+  {
+    "frame": 2278,
+    "event": "primitive_push_compliance_reference",
+    "side": "right",
+    "tcp_deflection_m": 0.015041448555837706,
+    "qualification": "command_reference_only_not_observed_rigid_attachment"
+  },
+  {
+    "frame": 2278,
+    "event": "primitive_push_feedforward",
+    "distance_m": 0.02,
+    "nominal_destination": [
+      0.8500000000000001,
+      -0.06500000000000006,
+      0.8
+    ],
+    "command_position": [
+      0.8502735988137106,
+      -0.04500187149533402,
+      0.795496701629351
+    ]
+  },
+  {
+    "frame": 2278,
+    "event": "push_withdraw_path_search",
+    "original_fraction": 0.3,
+    "selected_fraction": null,
+    "rejected": [
+      {
+        "fraction": 0.45,
+        "reason": "primitive_path_infeasible",
+        "detail": {
+          "available_s": 2.9,
+          "candidates": [
+            {
+              "mode": "CruiseJointPath",
+              "reason": "duration",
+              "required_s": 9.0
+            },
+            {
+              "mode": "BlendedJointPath",
+              "reason": "duration",
+              "required_s": 3.05
+            }
+          ]
+        }
+      },
+      {
+        "fraction": 0.6,
+        "reason": "primitive_path_infeasible",
+        "detail": {
+          "available_s": 2.9,
+          "candidates": [
+            {
+              "mode": "CruiseJointPath",
+              "reason": "duration",
+              "required_s": 9.1
+            },
+            {
+              "mode": "BlendedJointPath",
+              "reason": "duration",
+              "required_s": 3.1
+            }
+          ]
+        }
+      }
+    ],
+    "maximum_alternatives": 2,
+    "original_failure": {
+      "available_s": 2.9,
+      "candidates": [
+        {
+          "mode": "CruiseJointPath",
+          "reason": "duration",
+          "required_s": 6.9
+        },
+        {
+          "mode": "BlendedJointPath",
+          "reason": "duration",
+          "required_s": 3.05
+        }
+      ]
+    }
+  },
+  {
+    "frame": 2278,
+    "event": "diagnostic_withdraw_merge",
+    "original_rejection": {
+      "available_s": 2.9,
+      "candidates": [
+        {
+          "mode": "CruiseJointPath",
+          "reason": "duration",
+          "required_s": 6.9
+        },
+        {
+          "mode": "BlendedJointPath",
+          "reason": "duration",
+          "required_s": 3.05
+        }
+      ]
+    },
+    "original_points": [
+      [
+        -0.9665682911872864,
+        -0.159019336104393,
+        0.23041899502277374,
+        -0.39318910241127014,
+        -0.23862504959106445,
+        0.5819098949432373,
+        -0.10588650405406952,
+        0.03821294382214546,
+        -1.0068533420562744,
+        -0.22415193915367126,
+        0.825413167476654,
+        -0.4315679967403412,
+        -0.9039223790168762,
+        0.5290110111236572,
+        0.0641942247748375,
+        0.0
+      ],
+      [
+        -0.6457988521618201,
+        -0.15949999999999995,
+        -0.013713646321807495,
+        -1.1854693901128637,
+        -0.01799757375135324,
+        1.0321999999999998,
+        -0.031149208938356297,
+        0.1,
+        -1.0176449279917505,
+        -0.14053733548631897,
+        0.8186295891904511,
+        -0.38748502614554947,
+        -0.9059525995670423,
+        0.5091845964370659,
+        0.010219318183680937,
+        0.0
+      ],
+      [
+        -0.6457988521618201,
+        -0.15949999999999995,
+        -0.013713646321807495,
+        -1.1854693901128637,
+        -0.01799757375135324,
+        1.0321999999999998,
+        -0.031149208938356297,
+        0.1,
+        -1.0020318156557362,
+        -0.10624775145456464,
+        0.806532466323176,
+        -0.42956808521239315,
+        -0.9167475653460023,
+        0.5235191419334041,
+        -0.061391173605654555,
+        0.0
+      ],
+      [
+        -0.6457988521618201,
+        -0.15949999999999995,
+        -0.013713646321807495,
+        -1.1854693901128637,
+        -0.01799757375135324,
+        1.0321999999999998,
+        -0.031149208938356297,
+        0.1,
+        -1.0428252951745283,
+        0.054563406404169706,
+        0.8028012398559775,
+        -0.28462476142436877,
+        -0.9106897808507634,
+        0.46292296216835294,
+        -0.11572213052901768,
+        0.0
+      ]
+    ],
+    "candidate_points": [
+      [
+        -0.9665682911872864,
+        -0.159019336104393,
+        0.23041899502277374,
+        -0.39318910241127014,
+        -0.23862504959106445,
+        0.5819098949432373,
+        -0.10588650405406952,
+        0.03821294382214546,
+        -1.0068533420562744,
+        -0.22415193915367126,
+        0.825413167476654,
+        -0.4315679967403412,
+        -0.9039223790168762,
+        0.5290110111236572,
+        0.0641942247748375,
+        0.0
+      ],
+      [
+        -0.6457988521618201,
+        -0.15949999999999995,
+        -0.013713646321807495,
+        -1.1854693901128637,
+        -0.01799757375135324,
+        1.0321999999999998,
+        -0.031149208938356297,
+        0.1,
+        -1.0020318156557362,
+        -0.10624775145456464,
+        0.806532466323176,
+        -0.42956808521239315,
+        -0.9167475653460023,
+        0.5235191419334041,
+        -0.061391173605654555,
+        0.0
+      ],
+      [
+        -0.6457988521618201,
+        -0.15949999999999995,
+        -0.013713646321807495,
+        -1.1854693901128637,
+        -0.01799757375135324,
+        1.0321999999999998,
+        -0.031149208938356297,
+        0.1,
+        -1.0428252951745283,
+        0.054563406404169706,
+        0.8028012398559775,
+        -0.28462476142436877,
+        -0.9106897808507634,
+        0.46292296216835294,
+        -0.11572213052901768,
+        0.0
+      ]
+    ],
+    "free_clearance_exactly_preserved": true,
+    "endpoint_exactly_preserved": true,
+    "available_s": 2.9
+  },
+  {
+    "frame": 2278,
+    "event": "primitive_reference",
+    "duration_s": 2.5,
+    "controller": "BlendedJointPath",
+    "knot_stop_fallback": false,
+    "reference_bounds": {
+      "velocity": [
+        0.34980615127694387,
+        0.0005241745843707624,
+        0.2662320323571805,
+        0.8639991360008642,
+        0.24059913071490943,
+        0.49105129555528493,
+        0.08150266945848689,
+        0.06738014813995966,
+        0.10363493810611545,
+        0.3794961340166567,
+        0.018491341547354413,
+        0.36771669966451076,
+        0.015389668364402172,
+        0.1525505807931587,
+        0.11142952784371866,
+        0.0
+      ],
+      "acceleration": [
+        0.6264677636572779,
+        0.000938744154264814,
+        0.47679489144457543,
+        1.5473358731869626,
+        0.4308889332181089,
+        0.8794236632047556,
+        0.14596311380280094,
+        0.12067109330709648,
+        0.4323728971033924,
+        1.5301322671626576,
+        0.03137620670799904,
+        1.5332910017046724,
+        0.06420687480282118,
+        0.6341025400245001,
+        0.3943505289816522,
+        0.0
+      ],
+      "jerk": [
+        3.7865508338209266,
+        0.005674038899178279,
+        2.881885068149644,
+        9.352541791795126,
+        2.604416290849764,
+        5.315488838164008,
+        0.8822429218871349,
+        0.7293706962870035,
+        6.088138313054286,
+        20.978571324116878,
+        0.33411549704922655,
+        21.580517205428546,
+        0.9040814932371724,
+        8.902819243818525,
+        4.890319343926909,
+        0.0
+      ]
+    }
+  },
+  {
+    "frame": 2302,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 3.282686721894912e-05
+  },
+  {
+    "frame": 2314,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 3.3195229268701e-06
+  },
+  {
+    "frame": 2316,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 4.203137803504564e-05
+  },
+  {
+    "frame": 2318,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 2.2892173285549156e-05
+  },
+  {
+    "frame": 2321,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 9.913019447638227e-05
+  },
+  {
+    "frame": 2323,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 5.1375425849542466e-05
+  },
+  {
+    "frame": 2326,
+    "event": "retained_support_microbounce",
+    "tray": 0,
+    "side": "right",
+    "measured_bottom_gap_m": 1.7353361816407897e-06
+  },
+  {
+    "frame": 2330,
+    "event": "primitive_complete",
+    "primitive": "push",
+    "duration_s": 2.6,
+    "planning_and_execution_wall_s": 3.7185755469836295
+  },
+  {
+    "frame": 2330,
+    "event": "retained_push_phase_end",
+    "target_tray": 0,
+    "retained_side": "right",
+    "physical_verification_pending": true
+  },
+  {
+    "event": "diagnostic_phase_snapshot",
+    "frame": 2330,
+    "phase": "open",
+    "pose": [
+      0.844817989699998,
+      -0.07136176824052498,
+      0.7999953951573053,
+      0.01921727321703532,
+      4.858537006891434e-07,
+      -5.691317477187352e-06,
+      -0.9998153311374426
+    ],
+    "gripper_force": [
+      0.0,
+      11.233575128345638
+    ],
+    "table_contact": 4
+  },
+  {
+    "event": "diagnostic_phase_snapshot",
+    "frame": 2374,
+    "phase": "retreat",
+    "pose": [
+      0.8448178898259696,
+      -0.07135917529861183,
+      0.799995217040582,
+      0.019218445228761403,
+      8.244694204701811e-08,
+      1.5013469863309694e-07,
+      -0.9998153086260272
+    ],
+    "gripper_force": [
+      0.0,
+      0.0
+    ],
+    "table_contact": 4
+  },
+  {
+    "frame": 2374,
+    "event": "free_space_endpoint_fallback",
+    "cartesian_failure": "ik_branch_jump",
+    "collision_samples": 84,
+    "endpoint_max_joint_displacement_rad": 1.658321475669942
+  },
+  {
+    "frame": 2374,
+    "event": "cartesian_branch_subdivision",
+    "subdivisions": 4,
+    "max_depth": 4,
+    "planned_knots": 1,
+    "executed": false
+  },
+  {
+    "frame": 2374,
+    "event": "free_space_joint_shortcut",
+    "discarded_ik_waypoints": 0
+  },
+  {
+    "frame": 2484,
+    "event": "unloaded_tuck_timing",
+    "reference_scale": 0.5,
+    "minimum_seconds": 6.056534822541053,
+    "original_minimum_seconds": 0.3,
+    "counted_in_episode": true,
+    "qualification": "final_unloaded_retreat_only_original_measured_limits_unchanged"
+  },
+  {
+    "event": "diagnostic_phase_snapshot",
+    "frame": 2620,
+    "phase": "verified",
+    "pose": [
+      0.8448177836378964,
+      -0.07135859048849379,
+      0.7999952170405823,
+      0.01921826492615215,
+      8.244696653054182e-08,
+      1.5013468489606253e-07,
+      -0.9998153120917879
+    ],
+    "gripper_force": [
+      0.0,
+      0.0
+    ],
+    "table_contact": 4
+  }
+]

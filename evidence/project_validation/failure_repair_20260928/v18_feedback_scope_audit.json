@@ -1,0 +1,3256 @@
+{
+  "root": "/home/michelle/haoze/r1pro-airport-sim/releases/robust_v18_20260929/runs/ablation",
+  "rows": [
+    {
+      "mode": "baseline",
+      "case": 4,
+      "status": "complete",
+      "physics_success": true,
+      "failure": null,
+      "simulation_seconds": 158.25,
+      "pushes": [
+        {
+          "start_frame": 473,
+          "operation_index": 1,
+          "operation": {
+            "tray": 2,
+            "slot": 0,
+            "destination": [
+              0.8500000000000001,
+              0.38,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {},
+          "feedback": [],
+          "end_event": {
+            "frame": 524,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 3.7269664329942316
+          },
+          "feedforward": {
+            "frame": 473,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -1.0877067421680024,
+              0.5629759350245922,
+              0.7999933997667319
+            ],
+            "command_position": [
+              -1.0877066649955593,
+              0.5749759350243441,
+              0.7999934359396466
+            ]
+          }
+        },
+        {
+          "start_frame": 1524,
+          "operation_index": 2,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {
+            "frame": 637,
+            "event": "primitive_lift_path_selected",
+            "inward_m": 0.0,
+            "target_position": [
+              -1.0697035072365584,
+              0.5475248562403324,
+              0.9811189529755231
+            ],
+            "command_height_m": 0.18000000000000005,
+            "rejected_candidates": []
+          },
+          "feedback": [],
+          "end_event": {
+            "frame": 1575,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 3.551103905076161
+          },
+          "feedforward": {
+            "frame": 1524,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -1.0863356363153314,
+              0.11438345330440614,
+              0.7999952170405819
+            ],
+            "command_position": [
+              -1.0863355852228083,
+              0.12638345330429737,
+              0.7999951164107078
+            ]
+          }
+        },
+        {
+          "start_frame": 2010,
+          "operation_index": 2,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": false,
+          "free_retreat": true,
+          "withdraw_free": false,
+          "retained_side": "right",
+          "last_lift": {
+            "frame": 1688,
+            "event": "primitive_lift_path_selected",
+            "inward_m": 0.0,
+            "target_position": [
+              -1.0728844795024497,
+              0.09923952308915064,
+              0.9799943301912002
+            ],
+            "command_height_m": 0.18000000000000005,
+            "rejected_candidates": []
+          },
+          "feedback": [],
+          "end_event": {
+            "frame": 2061,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 3.187051931046881
+          },
+          "feedforward": {
+            "frame": 2010,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.035,
+            "nominal_destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "command_position": [
+              0.8508268886107758,
+              -0.030009769145869218,
+              0.7999949983547859
+            ]
+          }
+        },
+        {
+          "start_frame": 2861,
+          "operation_index": 3,
+          "operation": {
+            "tray": 0,
+            "slot": 2,
+            "destination": [
+              0.8500000000000001,
+              -0.5100000000000001,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": false,
+          "free_retreat": true,
+          "withdraw_free": true,
+          "retained_side": "right",
+          "last_lift": {
+            "frame": 2592,
+            "event": "primitive_lift_path_selected",
+            "inward_m": -0.06,
+            "target_position": [
+              -1.1463422242329866,
+              -0.4471430860890437,
+              0.9999883863327461
+            ],
+            "command_height_m": 0.20000000000000007,
+            "rejected_candidates": [
+              {
+                "inward_m": 0.0,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.025931258687755514,
+                  "rotation_error_rad": 0.04241527962048259
+                }
+              },
+              {
+                "inward_m": 0.02,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.029727015305644058,
+                  "rotation_error_rad": 0.05189438170364295
+                }
+              },
+              {
+                "inward_m": -0.02,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.029820336048355215,
+                  "rotation_error_rad": 0.045364714945035925
+                }
+              },
+              {
+                "inward_m": 0.04,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.03364918707960548,
+                  "rotation_error_rad": 0.06207216302668312
+                }
+              },
+              {
+                "inward_m": -0.04,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.02243880707964733,
+                  "rotation_error_rad": 0.030466757913591182
+                }
+              },
+              {
+                "inward_m": 0.06,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.024435499642329404,
+                  "rotation_error_rad": 0.04580028963118743
+                }
+              }
+            ]
+          },
+          "feedback": [],
+          "end_event": {
+            "frame": 2919,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.9,
+            "planning_and_execution_wall_s": 3.320393458008766
+          },
+          "feedforward": {
+            "frame": 2861,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.02,
+            "nominal_destination": [
+              0.8500000000000001,
+              -0.5100000000000001,
+              0.8
+            ],
+            "command_position": [
+              0.8502633622672061,
+              -0.49000173406726955,
+              0.7954994507149885
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mode": "baseline",
+      "case": 5,
+      "status": "complete",
+      "physics_success": false,
+      "failure": "contact_handoff_aborted",
+      "simulation_seconds": 125.8,
+      "pushes": [
+        {
+          "start_frame": 403,
+          "operation_index": 1,
+          "operation": {
+            "tray": 2,
+            "slot": 0,
+            "destination": [
+              0.8500000000000001,
+              0.38,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {},
+          "feedback": [],
+          "end_event": {
+            "frame": 454,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 3.758070570998825
+          },
+          "feedforward": {
+            "frame": 403,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -1.148271992924504,
+              0.35875692304431306,
+              0.7999952180110919
+            ],
+            "command_position": [
+              -1.148271931933142,
+              0.3707569230441581,
+              0.7999951197515341
+            ]
+          }
+        },
+        {
+          "start_frame": 2463,
+          "operation_index": 3,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": false,
+          "free_retreat": true,
+          "withdraw_free": true,
+          "retained_side": "right",
+          "last_lift": {
+            "frame": 2040,
+            "event": "primitive_lift_path_selected",
+            "inward_m": -0.06,
+            "target_position": [
+              -1.0882718498963806,
+              -0.20394256881560666,
+              0.9999949613276355
+            ],
+            "command_height_m": 0.20000000000000007,
+            "rejected_candidates": [
+              {
+                "inward_m": 0.0,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.02593447903022317,
+                  "rotation_error_rad": 0.04242075009380506
+                }
+              },
+              {
+                "inward_m": 0.02,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.029730335900233714,
+                  "rotation_error_rad": 0.05190034365085026
+                }
+              },
+              {
+                "inward_m": -0.02,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.02982331788707737,
+                  "rotation_error_rad": 0.04536950485589458
+                }
+              },
+              {
+                "inward_m": 0.04,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.03365257630701585,
+                  "rotation_error_rad": 0.062078614661323764
+                }
+              },
+              {
+                "inward_m": -0.04,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.022441818480058467,
+                  "rotation_error_rad": 0.030470939251697794
+                }
+              },
+              {
+                "inward_m": 0.06,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.02443927929090787,
+                  "rotation_error_rad": 0.045807565502860144
+                }
+              }
+            ]
+          },
+          "feedback": [],
+          "end_event": {
+            "frame": 2517,
+            "event": "primitive_failed",
+            "primitive": "push",
+            "reason": "retained_contact_lost",
+            "detail": {
+              "tray": 1,
+              "side": "right",
+              "table_contact": 0,
+              "force_n": 10.23106420066894,
+              "command_opening_m": 0.0
+            },
+            "duration_s": 2.65
+          },
+          "feedforward": {
+            "frame": 2463,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.02,
+            "nominal_destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "command_position": [
+              0.8505042500999501,
+              -0.04500635771459592,
+              0.7954969528054165
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mode": "baseline",
+      "case": 8,
+      "status": "complete",
+      "physics_success": false,
+      "failure": "contact_handoff_aborted",
+      "simulation_seconds": 99.05,
+      "pushes": [
+        {
+          "start_frame": 412,
+          "operation_index": 1,
+          "operation": {
+            "tray": 2,
+            "slot": 0,
+            "destination": [
+              0.8500000000000001,
+              0.38,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {},
+          "feedback": [],
+          "end_event": {
+            "frame": 463,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 3.5681521530495957
+          },
+          "feedforward": {
+            "frame": 412,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -1.452647403084225,
+              0.5626272245580926,
+              0.7999933948707391
+            ],
+            "command_position": [
+              -1.4526473264646522,
+              0.574627224557848,
+              0.799993432464595
+            ]
+          }
+        },
+        {
+          "start_frame": 1459,
+          "operation_index": 2,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {
+            "frame": 576,
+            "event": "primitive_lift_path_selected",
+            "inward_m": 0.0,
+            "target_position": [
+              -1.4354141515230374,
+              0.5471290067783942,
+              0.9811647627042546
+            ],
+            "command_height_m": 0.17999999999999994,
+            "rejected_candidates": []
+          },
+          "feedback": [],
+          "end_event": {
+            "frame": 1510,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 3.7634536650730297
+          },
+          "feedforward": {
+            "frame": 1459,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -1.4496871372401692,
+              0.11366276158455542,
+              0.7999952170405831
+            ],
+            "command_position": [
+              -1.449687085730016,
+              0.12566276158444487,
+              0.7999951164111035
+            ]
+          }
+        },
+        {
+          "start_frame": 1945,
+          "operation_index": 2,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": false,
+          "free_retreat": true,
+          "withdraw_free": false,
+          "retained_side": "right",
+          "last_lift": {
+            "frame": 1623,
+            "event": "primitive_lift_path_selected",
+            "inward_m": 0.0,
+            "target_position": [
+              -1.4364626515811738,
+              0.09809883271485514,
+              0.9799942892969193
+            ],
+            "command_height_m": 0.18000000000000005,
+            "rejected_candidates": []
+          },
+          "feedback": [],
+          "end_event": {
+            "frame": 1982,
+            "event": "primitive_failed",
+            "primitive": "push",
+            "reason": "retained_contact_lost",
+            "detail": {
+              "tray": 1,
+              "side": "right",
+              "table_contact": 0,
+              "force_n": 10.270550620362409,
+              "command_opening_m": 0.0
+            },
+            "duration_s": 1.8
+          },
+          "feedforward": {
+            "frame": 1945,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.035,
+            "nominal_destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "command_position": [
+              0.8507275365987281,
+              -0.030007562381315765,
+              0.7999948820191283
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mode": "baseline",
+      "case": 16,
+      "status": "complete",
+      "physics_success": false,
+      "failure": "contact_handoff_aborted",
+      "simulation_seconds": 99.45,
+      "pushes": [
+        {
+          "start_frame": 422,
+          "operation_index": 1,
+          "operation": {
+            "tray": 2,
+            "slot": 0,
+            "destination": [
+              0.8500000000000001,
+              0.38,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {},
+          "feedback": [],
+          "end_event": {
+            "frame": 473,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 3.149572788970545
+          },
+          "feedforward": {
+            "frame": 422,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -0.8996067896411316,
+              0.5621009297884133,
+              0.7999951120728008
+            ],
+            "command_position": [
+              -0.899606707657484,
+              0.5741009297881332,
+              0.7999949833021651
+            ]
+          }
+        },
+        {
+          "start_frame": 1467,
+          "operation_index": 2,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {
+            "frame": 586,
+            "event": "primitive_lift_path_selected",
+            "inward_m": 0.0,
+            "target_position": [
+              -0.8830014598071798,
+              0.5469401756667326,
+              0.9811733164620544
+            ],
+            "command_height_m": 0.18000000000000005,
+            "rejected_candidates": []
+          },
+          "feedback": [],
+          "end_event": {
+            "frame": 1518,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 2.976246524020098
+          },
+          "feedforward": {
+            "frame": 1467,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -0.9038245977133265,
+              0.11404867243333396,
+              0.799995217040582
+            ],
+            "command_position": [
+              -0.9038245471478937,
+              0.12604867243322743,
+              0.7999951164107001
+            ]
+          }
+        },
+        {
+          "start_frame": 1953,
+          "operation_index": 2,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": false,
+          "free_retreat": true,
+          "withdraw_free": false,
+          "retained_side": "right",
+          "last_lift": {
+            "frame": 1631,
+            "event": "primitive_lift_path_selected",
+            "inward_m": 0.0,
+            "target_position": [
+              -0.8905591017855224,
+              0.09959865271088861,
+              0.979994334054719
+            ],
+            "command_height_m": 0.17999999999999994,
+            "rejected_candidates": []
+          },
+          "feedback": [],
+          "end_event": {
+            "frame": 1990,
+            "event": "primitive_failed",
+            "primitive": "push",
+            "reason": "retained_contact_lost",
+            "detail": {
+              "tray": 1,
+              "side": "right",
+              "table_contact": 0,
+              "force_n": 10.276376062857818,
+              "command_opening_m": 0.0
+            },
+            "duration_s": 1.8
+          },
+          "feedforward": {
+            "frame": 1953,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.035,
+            "nominal_destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "command_position": [
+              0.8508502948919577,
+              -0.03001033011592269,
+              0.7999949722210499
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mode": "feedback",
+      "case": 4,
+      "status": "complete",
+      "physics_success": true,
+      "failure": null,
+      "simulation_seconds": 158.25,
+      "pushes": [
+        {
+          "start_frame": 473,
+          "operation_index": 1,
+          "operation": {
+            "tray": 2,
+            "slot": 0,
+            "destination": [
+              0.8500000000000001,
+              0.38,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {},
+          "feedback": [
+            {
+              "frame": 503,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 0.95,
+              "measured_yaw_error_deg": 5.220342468604947,
+              "command_yaw_correction_deg": -1.5000000000000002,
+              "original_terminal_velocity_max": 1.8126090197961737e-16,
+              "original_terminal_acceleration_max": 2.9593616649733445e-16,
+              "boundary_errors": [
+                0.0,
+                0.0,
+                2.7755575615628914e-17
+              ],
+              "terminal_errors": [
+                2.220446049250313e-16,
+                6.865852915445047e-16,
+                2.444950982207755e-15
+              ],
+              "limit_ratios": {
+                "velocity": 0.1684796956908846,
+                "acceleration": 0.31974675025249855,
+                "jerk": 0.21051675527334526
+              },
+              "accepted": false,
+              "rejection": {
+                "reason": "supported_normal_reference_excursion",
+                "side": "right",
+                "path_fraction": 0.0,
+                "command_z_m": 0.8828796813674908,
+                "allowed_z_m": [
+                  0.8839990381852465,
+                  0.8892434060857152
+                ],
+                "tolerance_m": 0.00025
+              },
+              "planning_wall_s": 0.39207389298826456,
+              "fallback_original_suffix": true
+            }
+          ],
+          "end_event": {
+            "frame": 524,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 3.913942337036133
+          },
+          "feedforward": {
+            "frame": 473,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -1.0877067421680024,
+              0.5629759350245922,
+              0.7999933997667319
+            ],
+            "command_position": [
+              -1.0877066649955593,
+              0.5749759350243441,
+              0.7999934359396466
+            ]
+          }
+        },
+        {
+          "start_frame": 1524,
+          "operation_index": 2,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {
+            "frame": 637,
+            "event": "primitive_lift_path_selected",
+            "inward_m": 0.0,
+            "target_position": [
+              -1.0697035072365584,
+              0.5475248562403324,
+              0.9811189529755231
+            ],
+            "command_height_m": 0.18000000000000005,
+            "rejected_candidates": []
+          },
+          "feedback": [
+            {
+              "frame": 1554,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 0.95,
+              "measured_yaw_error_deg": 3.1155245580314057,
+              "command_yaw_correction_deg": -1.5000000000000002,
+              "original_terminal_velocity_max": 1.3594567648471302e-16,
+              "original_terminal_acceleration_max": 5.918723329946689e-16,
+              "boundary_errors": [
+                0.0,
+                0.0,
+                2.7755575615628914e-17
+              ],
+              "terminal_errors": [
+                1.1102230246251565e-16,
+                3.944213376957793e-16,
+                1.0302623635718212e-15
+              ],
+              "limit_ratios": {
+                "velocity": 0.1666628482051552,
+                "acceleration": 0.3139164081641188,
+                "jerk": 0.20193569332933256
+              },
+              "accepted": false,
+              "rejection": {
+                "reason": "supported_normal_reference_excursion",
+                "side": "right",
+                "path_fraction": 0.0,
+                "command_z_m": 0.882918029328439,
+                "allowed_z_m": [
+                  0.8840006854123148,
+                  0.8892452269520214
+                ],
+                "tolerance_m": 0.00025
+              },
+              "planning_wall_s": 0.3804832729510963,
+              "fallback_original_suffix": true
+            }
+          ],
+          "end_event": {
+            "frame": 1575,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 3.876291027991101
+          },
+          "feedforward": {
+            "frame": 1524,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -1.0863356363153314,
+              0.11438345330440614,
+              0.7999952170405819
+            ],
+            "command_position": [
+              -1.0863355852228083,
+              0.12638345330429737,
+              0.7999951164107078
+            ]
+          }
+        },
+        {
+          "start_frame": 2010,
+          "operation_index": 2,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": false,
+          "free_retreat": true,
+          "withdraw_free": false,
+          "retained_side": "right",
+          "last_lift": {
+            "frame": 1688,
+            "event": "primitive_lift_path_selected",
+            "inward_m": 0.0,
+            "target_position": [
+              -1.0728844795024497,
+              0.09923952308915064,
+              0.9799943301912002
+            ],
+            "command_height_m": 0.18000000000000005,
+            "rejected_candidates": []
+          },
+          "feedback": [
+            {
+              "frame": 2040,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 0.95,
+              "measured_yaw_error_deg": 0.21017870071925207,
+              "command_yaw_correction_deg": -0.42035740143850414,
+              "original_terminal_velocity_max": 7.250436079184695e-16,
+              "original_terminal_acceleration_max": 2.3674893319786756e-15,
+              "boundary_errors": [
+                0.0,
+                1.3877787807814457e-17,
+                5.551115123125783e-17
+              ],
+              "terminal_errors": [
+                2.220446049250313e-16,
+                7.304098846218136e-17,
+                1.9990165263333845e-16
+              ],
+              "limit_ratios": {
+                "velocity": 0.411255223524854,
+                "acceleration": 0.26284737199199154,
+                "jerk": 0.12300924190276108
+              },
+              "accepted": false,
+              "rejection": {
+                "reason": "supported_normal_reference_excursion",
+                "side": "right",
+                "path_fraction": 0.0,
+                "command_z_m": 0.9045667201752233,
+                "allowed_z_m": [
+                  0.9067023165690028,
+                  0.9072023165690027
+                ],
+                "tolerance_m": 0.00025
+              },
+              "planning_wall_s": 0.3386314839590341,
+              "fallback_original_suffix": true
+            }
+          ],
+          "end_event": {
+            "frame": 2061,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 3.3470178830903023
+          },
+          "feedforward": {
+            "frame": 2010,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.035,
+            "nominal_destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "command_position": [
+              0.8508268886107758,
+              -0.030009769145869218,
+              0.7999949983547859
+            ]
+          }
+        },
+        {
+          "start_frame": 2861,
+          "operation_index": 3,
+          "operation": {
+            "tray": 0,
+            "slot": 2,
+            "destination": [
+              0.8500000000000001,
+              -0.5100000000000001,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": false,
+          "free_retreat": true,
+          "withdraw_free": true,
+          "retained_side": "right",
+          "last_lift": {
+            "frame": 2592,
+            "event": "primitive_lift_path_selected",
+            "inward_m": -0.06,
+            "target_position": [
+              -1.1463422242329866,
+              -0.4471430860890437,
+              0.9999883863327461
+            ],
+            "command_height_m": 0.20000000000000007,
+            "rejected_candidates": [
+              {
+                "inward_m": 0.0,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.025931258687755514,
+                  "rotation_error_rad": 0.04241527962048259
+                }
+              },
+              {
+                "inward_m": 0.02,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.029727015305644058,
+                  "rotation_error_rad": 0.05189438170364295
+                }
+              },
+              {
+                "inward_m": -0.02,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.029820336048355215,
+                  "rotation_error_rad": 0.045364714945035925
+                }
+              },
+              {
+                "inward_m": 0.04,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.03364918707960548,
+                  "rotation_error_rad": 0.06207216302668312
+                }
+              },
+              {
+                "inward_m": -0.04,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.02243880707964733,
+                  "rotation_error_rad": 0.030466757913591182
+                }
+              },
+              {
+                "inward_m": 0.06,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.024435499642329404,
+                  "rotation_error_rad": 0.04580028963118743
+                }
+              }
+            ]
+          },
+          "feedback": [
+            {
+              "frame": 2891,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 1.3,
+              "measured_yaw_error_deg": 0.6488330183119816,
+              "command_yaw_correction_deg": -1.2976660366239632,
+              "original_terminal_velocity_max": 4.0769354956453624e-14,
+              "original_terminal_acceleration_max": 1.719996038041903e-13,
+              "boundary_errors": [
+                0.0,
+                0.0,
+                2.7755575615628914e-17
+              ],
+              "terminal_errors": [
+                5.568462357885551e-16,
+                7.045646117813493e-16,
+                9.700080975136582e-16
+              ],
+              "limit_ratios": {
+                "velocity": 0.29065672913344653,
+                "acceleration": 0.29820756845996793,
+                "jerk": 0.18606916725409908
+              },
+              "accepted": false,
+              "rejection": {
+                "reason": "supported_normal_reference_excursion",
+                "side": "right",
+                "path_fraction": 0.5700000000000001,
+                "command_z_m": 0.8917012604981763,
+                "allowed_z_m": [
+                  0.8917016669188186,
+                  0.8967016669188185
+                ],
+                "tolerance_m": 0.00025
+              },
+              "planning_wall_s": 0.41714771499391645,
+              "fallback_original_suffix": true
+            }
+          ],
+          "end_event": {
+            "frame": 2919,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.9,
+            "planning_and_execution_wall_s": 4.194500012905337
+          },
+          "feedforward": {
+            "frame": 2861,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.02,
+            "nominal_destination": [
+              0.8500000000000001,
+              -0.5100000000000001,
+              0.8
+            ],
+            "command_position": [
+              0.8502633622672061,
+              -0.49000173406726955,
+              0.7954994507149885
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mode": "feedback",
+      "case": 5,
+      "status": "complete",
+      "physics_success": false,
+      "failure": "contact_handoff_aborted",
+      "simulation_seconds": 164.25,
+      "pushes": [
+        {
+          "start_frame": 403,
+          "operation_index": 1,
+          "operation": {
+            "tray": 2,
+            "slot": 0,
+            "destination": [
+              0.8500000000000001,
+              0.38,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {},
+          "feedback": [
+            {
+              "frame": 433,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 0.95,
+              "measured_yaw_error_deg": 2.3168901054307707,
+              "command_yaw_correction_deg": -1.5000000000000002,
+              "original_terminal_velocity_max": 7.250436079184695e-16,
+              "original_terminal_acceleration_max": 1.1837446659893378e-15,
+              "boundary_errors": [
+                0.0,
+                3.469446951953614e-18,
+                2.7755575615628914e-17
+              ],
+              "terminal_errors": [
+                1.3877787807814457e-16,
+                1.5338607577058083e-16,
+                9.533771125589988e-16
+              ],
+              "limit_ratios": {
+                "velocity": 0.18774169282036152,
+                "acceleration": 0.28897514460468193,
+                "jerk": 0.1752314181829436
+              },
+              "accepted": false,
+              "rejection": {
+                "reason": "supported_normal_reference_excursion",
+                "side": "right",
+                "path_fraction": 0.0,
+                "command_z_m": 0.8830198697446647,
+                "allowed_z_m": [
+                  0.8840006930074927,
+                  0.8892452401800738
+                ],
+                "tolerance_m": 0.00025
+              },
+              "planning_wall_s": 0.42049401602707803,
+              "fallback_original_suffix": true
+            }
+          ],
+          "end_event": {
+            "frame": 454,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 4.4246620499761775
+          },
+          "feedforward": {
+            "frame": 403,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -1.148271992924504,
+              0.35875692304431306,
+              0.7999952180110919
+            ],
+            "command_position": [
+              -1.148271931933142,
+              0.3707569230441581,
+              0.7999951197515341
+            ]
+          }
+        },
+        {
+          "start_frame": 2463,
+          "operation_index": 3,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": false,
+          "free_retreat": true,
+          "withdraw_free": true,
+          "retained_side": "right",
+          "last_lift": {
+            "frame": 2040,
+            "event": "primitive_lift_path_selected",
+            "inward_m": -0.06,
+            "target_position": [
+              -1.0882718498963806,
+              -0.20394256881560666,
+              0.9999949613276355
+            ],
+            "command_height_m": 0.20000000000000007,
+            "rejected_candidates": [
+              {
+                "inward_m": 0.0,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.02593447903022317,
+                  "rotation_error_rad": 0.04242075009380506
+                }
+              },
+              {
+                "inward_m": 0.02,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.029730335900233714,
+                  "rotation_error_rad": 0.05190034365085026
+                }
+              },
+              {
+                "inward_m": -0.02,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.02982331788707737,
+                  "rotation_error_rad": 0.04536950485589458
+                }
+              },
+              {
+                "inward_m": 0.04,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.03365257630701585,
+                  "rotation_error_rad": 0.062078614661323764
+                }
+              },
+              {
+                "inward_m": -0.04,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.022441818480058467,
+                  "rotation_error_rad": 0.030470939251697794
+                }
+              },
+              {
+                "inward_m": 0.06,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.02443927929090787,
+                  "rotation_error_rad": 0.045807565502860144
+                }
+              }
+            ]
+          },
+          "feedback": [
+            {
+              "frame": 2493,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 1.25,
+              "measured_yaw_error_deg": 0.8405898990662583,
+              "command_yaw_correction_deg": -1.5000000000000002,
+              "original_terminal_velocity_max": 1.5615769635068656e-14,
+              "original_terminal_acceleration_max": 6.797675070358566e-14,
+              "boundary_errors": [
+                0.0,
+                5.421010862427522e-20,
+                5.551115123125783e-17
+              ],
+              "terminal_errors": [
+                1.6653345369377348e-16,
+                3.9412917374193055e-16,
+                5.684341886080802e-16
+              ],
+              "limit_ratios": {
+                "velocity": 0.283957603005065,
+                "acceleration": 0.288546149868647,
+                "jerk": 0.17760335651547962
+              },
+              "accepted": true,
+              "rejection": null,
+              "planning_wall_s": 0.5177490119822323,
+              "fallback_original_suffix": false
+            }
+          ],
+          "end_event": {
+            "frame": 2520,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.85,
+            "planning_and_execution_wall_s": 3.9402501930017024
+          },
+          "feedforward": {
+            "frame": 2463,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.02,
+            "nominal_destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "command_position": [
+              0.8505042500999501,
+              -0.04500635771459592,
+              0.7954969528054165
+            ]
+          }
+        },
+        {
+          "start_frame": 3285,
+          "operation_index": 4,
+          "operation": {
+            "tray": 0,
+            "slot": 2,
+            "destination": [
+              0.8500000000000001,
+              -0.5100000000000001,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": false,
+          "free_retreat": true,
+          "withdraw_free": true,
+          "retained_side": "right",
+          "last_lift": {
+            "frame": 3068,
+            "event": "primitive_lift_path_selected",
+            "inward_m": -0.06,
+            "target_position": [
+              0.9063530076581869,
+              -1.5502304087946361,
+              0.9999949616070809
+            ],
+            "command_height_m": 0.20000000000000007,
+            "rejected_candidates": [
+              {
+                "inward_m": 0.0,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.02593463924537008,
+                  "rotation_error_rad": 0.042421018057779
+                }
+              },
+              {
+                "inward_m": 0.02,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.029730388664392753,
+                  "rotation_error_rad": 0.05190044821860249
+                }
+              },
+              {
+                "inward_m": -0.02,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.029823541821726387,
+                  "rotation_error_rad": 0.04536978786182092
+                }
+              },
+              {
+                "inward_m": 0.04,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.033652643111866734,
+                  "rotation_error_rad": 0.06207877866695725
+                }
+              },
+              {
+                "inward_m": -0.04,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.02244201882526916,
+                  "rotation_error_rad": 0.03047117807743234
+                }
+              },
+              {
+                "inward_m": 0.06,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.024439174062154602,
+                  "rotation_error_rad": 0.04580744050681005
+                }
+              }
+            ]
+          },
+          "feedback": [],
+          "end_event": {
+            "frame": 3285,
+            "event": "primitive_failed",
+            "primitive": "push",
+            "reason": "primitive_path_infeasible",
+            "detail": {
+              "available_s": 2.9,
+              "candidates": [
+                {
+                  "mode": "CruiseJointPath",
+                  "reason": "duration",
+                  "required_s": 5.7
+                },
+                {
+                  "mode": "BlendedJointPath",
+                  "reason": "duration",
+                  "required_s": 3.0
+                }
+              ]
+            },
+            "duration_s": 0.0
+          },
+          "feedforward": {
+            "frame": 3285,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.02,
+            "nominal_destination": [
+              0.8500000000000001,
+              -0.5100000000000001,
+              0.8
+            ],
+            "command_position": [
+              0.8502782927319722,
+              -0.4900019362648449,
+              0.7954984769764908
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mode": "feedback",
+      "case": 8,
+      "status": "complete",
+      "physics_success": false,
+      "failure": "contact_handoff_aborted",
+      "simulation_seconds": 99.05,
+      "pushes": [
+        {
+          "start_frame": 412,
+          "operation_index": 1,
+          "operation": {
+            "tray": 2,
+            "slot": 0,
+            "destination": [
+              0.8500000000000001,
+              0.38,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {},
+          "feedback": [
+            {
+              "frame": 442,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 0.95,
+              "measured_yaw_error_deg": 4.8230139361794375,
+              "command_yaw_correction_deg": -1.5000000000000002,
+              "original_terminal_velocity_max": 4.5315225494904343e-17,
+              "original_terminal_acceleration_max": 1.1837446659893378e-15,
+              "boundary_errors": [
+                0.0,
+                2.7755575615628914e-17,
+                2.7755575615628914e-17
+              ],
+              "terminal_errors": [
+                2.220446049250313e-16,
+                4.674623261579606e-16,
+                9.226230121538698e-16
+              ],
+              "limit_ratios": {
+                "velocity": 0.16898951204627807,
+                "acceleration": 0.32009698853742824,
+                "jerk": 0.21068312606529468
+              },
+              "accepted": false,
+              "rejection": {
+                "reason": "supported_normal_reference_excursion",
+                "side": "right",
+                "path_fraction": 0.0,
+                "command_z_m": 0.8828734295006906,
+                "allowed_z_m": [
+                  0.8839990590097105,
+                  0.8892434111131737
+                ],
+                "tolerance_m": 0.00025
+              },
+              "planning_wall_s": 0.4169888789765537,
+              "fallback_original_suffix": true
+            }
+          ],
+          "end_event": {
+            "frame": 463,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 3.996451619081199
+          },
+          "feedforward": {
+            "frame": 412,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -1.452647403084225,
+              0.5626272245580926,
+              0.7999933948707391
+            ],
+            "command_position": [
+              -1.4526473264646522,
+              0.574627224557848,
+              0.799993432464595
+            ]
+          }
+        },
+        {
+          "start_frame": 1459,
+          "operation_index": 2,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {
+            "frame": 576,
+            "event": "primitive_lift_path_selected",
+            "inward_m": 0.0,
+            "target_position": [
+              -1.4354141515230374,
+              0.5471290067783942,
+              0.9811647627042546
+            ],
+            "command_height_m": 0.17999999999999994,
+            "rejected_candidates": []
+          },
+          "feedback": [
+            {
+              "frame": 1489,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 0.95,
+              "measured_yaw_error_deg": 3.205648966847934,
+              "command_yaw_correction_deg": -1.5000000000000002,
+              "original_terminal_velocity_max": 1.8126090197961737e-16,
+              "original_terminal_acceleration_max": 2.9593616649733445e-16,
+              "boundary_errors": [
+                0.0,
+                3.469446951953614e-18,
+                2.7755575615628914e-17
+              ],
+              "terminal_errors": [
+                2.220446049250313e-16,
+                2.9216395384872543e-16,
+                4.305574056718059e-16
+              ],
+              "limit_ratios": {
+                "velocity": 0.16744515549750777,
+                "acceleration": 0.31212830140191583,
+                "jerk": 0.19997005762261508
+              },
+              "accepted": false,
+              "rejection": {
+                "reason": "supported_normal_reference_excursion",
+                "side": "right",
+                "path_fraction": 0.0,
+                "command_z_m": 0.8829250041613896,
+                "allowed_z_m": [
+                  0.8840006587540336,
+                  0.8892452513067666
+                ],
+                "tolerance_m": 0.00025
+              },
+              "planning_wall_s": 0.33250590902753174,
+              "fallback_original_suffix": true
+            }
+          ],
+          "end_event": {
+            "frame": 1510,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 3.4105922030285
+          },
+          "feedforward": {
+            "frame": 1459,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -1.4496871372401692,
+              0.11366276158455542,
+              0.7999952170405831
+            ],
+            "command_position": [
+              -1.449687085730016,
+              0.12566276158444487,
+              0.7999951164111035
+            ]
+          }
+        },
+        {
+          "start_frame": 1945,
+          "operation_index": 2,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": false,
+          "free_retreat": true,
+          "withdraw_free": false,
+          "retained_side": "right",
+          "last_lift": {
+            "frame": 1623,
+            "event": "primitive_lift_path_selected",
+            "inward_m": 0.0,
+            "target_position": [
+              -1.4364626515811738,
+              0.09809883271485514,
+              0.9799942892969193
+            ],
+            "command_height_m": 0.18000000000000005,
+            "rejected_candidates": []
+          },
+          "feedback": [
+            {
+              "frame": 1975,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 0.95,
+              "measured_yaw_error_deg": 0.05629255363171445,
+              "command_yaw_correction_deg": -0.1125851072634289,
+              "original_terminal_velocity_max": 7.250436079184695e-16,
+              "original_terminal_acceleration_max": 2.3674893319786756e-15,
+              "boundary_errors": [
+                0.0,
+                2.7755575615628914e-17,
+                2.7755575615628914e-17
+              ],
+              "terminal_errors": [
+                2.220446049250313e-16,
+                4.382459307730881e-17,
+                7.688525101282248e-17
+              ],
+              "limit_ratios": {
+                "velocity": 0.41261198268379623,
+                "acceleration": 0.2641570625229732,
+                "jerk": 0.12433007149782975
+              },
+              "accepted": false,
+              "rejection": {
+                "reason": "supported_normal_reference_excursion",
+                "side": "right",
+                "path_fraction": 0.0,
+                "command_z_m": 0.9048126054188815,
+                "allowed_z_m": [
+                  0.906951633899317,
+                  0.907451633899317
+                ],
+                "tolerance_m": 0.00025
+              },
+              "planning_wall_s": 0.3236833220580593,
+              "fallback_original_suffix": true
+            }
+          ],
+          "end_event": {
+            "frame": 1982,
+            "event": "primitive_failed",
+            "primitive": "push",
+            "reason": "retained_contact_lost",
+            "detail": {
+              "tray": 1,
+              "side": "right",
+              "table_contact": 0,
+              "force_n": 10.270550620362409,
+              "command_opening_m": 0.0
+            },
+            "duration_s": 1.8
+          },
+          "feedforward": {
+            "frame": 1945,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.035,
+            "nominal_destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "command_position": [
+              0.8507275365987281,
+              -0.030007562381315765,
+              0.7999948820191283
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mode": "feedback",
+      "case": 16,
+      "status": "complete",
+      "physics_success": false,
+      "failure": "contact_handoff_aborted",
+      "simulation_seconds": 99.45,
+      "pushes": [
+        {
+          "start_frame": 422,
+          "operation_index": 1,
+          "operation": {
+            "tray": 2,
+            "slot": 0,
+            "destination": [
+              0.8500000000000001,
+              0.38,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {},
+          "feedback": [
+            {
+              "frame": 452,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 0.95,
+              "measured_yaw_error_deg": 4.743657857676548,
+              "command_yaw_correction_deg": -1.5000000000000002,
+              "original_terminal_velocity_max": 3.6252180395923475e-16,
+              "original_terminal_acceleration_max": 1.1837446659893378e-15,
+              "boundary_errors": [
+                0.0,
+                0.0,
+                2.7755575615628914e-17
+              ],
+              "terminal_errors": [
+                4.440892098500626e-16,
+                3.652049423109068e-16,
+                5.535738072923219e-16
+              ],
+              "limit_ratios": {
+                "velocity": 0.16723586347131839,
+                "acceleration": 0.3175857923062511,
+                "jerk": 0.2077133739408287
+              },
+              "accepted": false,
+              "rejection": {
+                "reason": "supported_normal_reference_excursion",
+                "side": "right",
+                "path_fraction": 0.0,
+                "command_z_m": 0.8828960215039768,
+                "allowed_z_m": [
+                  0.8840004631091625,
+                  0.8892451324610192
+                ],
+                "tolerance_m": 0.00025
+              },
+              "planning_wall_s": 0.44806206808425486,
+              "fallback_original_suffix": true
+            }
+          ],
+          "end_event": {
+            "frame": 473,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 4.106507324962877
+          },
+          "feedforward": {
+            "frame": 422,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -0.8996067896411316,
+              0.5621009297884133,
+              0.7999951120728008
+            ],
+            "command_position": [
+              -0.899606707657484,
+              0.5741009297881332,
+              0.7999949833021651
+            ]
+          }
+        },
+        {
+          "start_frame": 1467,
+          "operation_index": 2,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {
+            "frame": 586,
+            "event": "primitive_lift_path_selected",
+            "inward_m": 0.0,
+            "target_position": [
+              -0.8830014598071798,
+              0.5469401756667326,
+              0.9811733164620544
+            ],
+            "command_height_m": 0.18000000000000005,
+            "rejected_candidates": []
+          },
+          "feedback": [
+            {
+              "frame": 1497,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 0.95,
+              "measured_yaw_error_deg": 3.09361717393717,
+              "command_yaw_correction_deg": -1.5000000000000002,
+              "original_terminal_velocity_max": 1.8126090197961737e-16,
+              "original_terminal_acceleration_max": 5.918723329946689e-16,
+              "boundary_errors": [
+                0.0,
+                0.0,
+                1.3877787807814457e-17
+              ],
+              "terminal_errors": [
+                2.498001805406602e-16,
+                3.79813140003343e-16,
+                1.084082039280797e-15
+              ],
+              "limit_ratios": {
+                "velocity": 0.1661189095942494,
+                "acceleration": 0.3152763967048043,
+                "jerk": 0.20355058353512687
+              },
+              "accepted": false,
+              "rejection": {
+                "reason": "supported_normal_reference_excursion",
+                "side": "right",
+                "path_fraction": 0.0,
+                "command_z_m": 0.882908880227334,
+                "allowed_z_m": [
+                  0.8840006779336206,
+                  0.8892452405479526
+                ],
+                "tolerance_m": 0.00025
+              },
+              "planning_wall_s": 0.40118425199761987,
+              "fallback_original_suffix": true
+            }
+          ],
+          "end_event": {
+            "frame": 1518,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 3.7569158809492365
+          },
+          "feedforward": {
+            "frame": 1467,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -0.9038245977133265,
+              0.11404867243333396,
+              0.799995217040582
+            ],
+            "command_position": [
+              -0.9038245471478937,
+              0.12604867243322743,
+              0.7999951164107001
+            ]
+          }
+        },
+        {
+          "start_frame": 1953,
+          "operation_index": 2,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": false,
+          "free_retreat": true,
+          "withdraw_free": false,
+          "retained_side": "right",
+          "last_lift": {
+            "frame": 1631,
+            "event": "primitive_lift_path_selected",
+            "inward_m": 0.0,
+            "target_position": [
+              -0.8905591017855224,
+              0.09959865271088861,
+              0.979994334054719
+            ],
+            "command_height_m": 0.17999999999999994,
+            "rejected_candidates": []
+          },
+          "feedback": [
+            {
+              "frame": 1983,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 0.95,
+              "measured_yaw_error_deg": 0.2387577082194353,
+              "command_yaw_correction_deg": -0.4775154164388706,
+              "original_terminal_velocity_max": 1.8126090197961737e-16,
+              "original_terminal_acceleration_max": 1.1837446659893378e-15,
+              "boundary_errors": [
+                0.0,
+                0.0,
+                2.7755575615628914e-17
+              ],
+              "terminal_errors": [
+                2.220446049250313e-16,
+                1.899065700016715e-16,
+                5.381967570897574e-16
+              ],
+              "limit_ratios": {
+                "velocity": 0.40846817289904935,
+                "acceleration": 0.26113460085454515,
+                "jerk": 0.12231894078146799
+              },
+              "accepted": false,
+              "rejection": {
+                "reason": "supported_normal_reference_excursion",
+                "side": "right",
+                "path_fraction": 0.0,
+                "command_z_m": 0.9043479419831802,
+                "allowed_z_m": [
+                  0.9064875492649963,
+                  0.9069875492649963
+                ],
+                "tolerance_m": 0.00025
+              },
+              "planning_wall_s": 0.32133788999635726,
+              "fallback_original_suffix": true
+            }
+          ],
+          "end_event": {
+            "frame": 1990,
+            "event": "primitive_failed",
+            "primitive": "push",
+            "reason": "retained_contact_lost",
+            "detail": {
+              "tray": 1,
+              "side": "right",
+              "table_contact": 0,
+              "force_n": 10.276376062857818,
+              "command_opening_m": 0.0
+            },
+            "duration_s": 1.8
+          },
+          "feedforward": {
+            "frame": 1953,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.035,
+            "nominal_destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "command_position": [
+              0.8508502948919577,
+              -0.03001033011592269,
+              0.7999949722210499
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mode": "command_feedback",
+      "case": 4,
+      "status": "complete",
+      "physics_success": false,
+      "failure": "contact_handoff_aborted",
+      "simulation_seconds": 25.75,
+      "pushes": [
+        {
+          "start_frame": 473,
+          "operation_index": 1,
+          "operation": {
+            "tray": 2,
+            "slot": 0,
+            "destination": [
+              0.8500000000000001,
+              0.38,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {},
+          "feedback": [
+            {
+              "frame": 503,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 0.95,
+              "measured_yaw_error_deg": 2.931032101331129,
+              "command_yaw_correction_deg": -1.5000000000000002,
+              "original_terminal_velocity_max": 1.993869921775791e-14,
+              "original_terminal_acceleration_max": 4.054325481013482e-14,
+              "boundary_errors": [
+                0.0,
+                0.0,
+                1.3877787807814457e-17
+              ],
+              "terminal_errors": [
+                2.220446049250313e-16,
+                2.1912296538654407e-16,
+                4.151803554692414e-16
+              ],
+              "limit_ratios": {
+                "velocity": 0.14918518731751068,
+                "acceleration": 0.21812112290501562,
+                "jerk": 0.21858642695169928
+              },
+              "accepted": true,
+              "rejection": null,
+              "planning_wall_s": 0.5222728319931775,
+              "fallback_original_suffix": false
+            }
+          ],
+          "end_event": {
+            "frame": 516,
+            "event": "primitive_failed",
+            "primitive": "push",
+            "reason": "retained_contact_lost",
+            "detail": {
+              "tray": 2,
+              "side": "right",
+              "table_contact": 0,
+              "force_n": 10.477750606405461,
+              "command_opening_m": 0.0
+            },
+            "duration_s": 2.1
+          },
+          "feedforward": {
+            "frame": 473,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -1.0877067421680024,
+              0.5629759350245922,
+              0.7999933997667319
+            ],
+            "command_position": [
+              -1.0877066649955593,
+              0.5749759350243441,
+              0.7999934359396466
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mode": "command_feedback",
+      "case": 5,
+      "status": "complete",
+      "physics_success": false,
+      "failure": "contact_handoff_aborted",
+      "simulation_seconds": 164.15,
+      "pushes": [
+        {
+          "start_frame": 403,
+          "operation_index": 1,
+          "operation": {
+            "tray": 2,
+            "slot": 0,
+            "destination": [
+              0.8500000000000001,
+              0.38,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {},
+          "feedback": [
+            {
+              "frame": 433,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 0.95,
+              "measured_yaw_error_deg": 1.7404290358712857,
+              "command_yaw_correction_deg": -1.5000000000000002,
+              "original_terminal_velocity_max": 1.2642947913078312e-14,
+              "original_terminal_acceleration_max": 2.9741584732982113e-14,
+              "boundary_errors": [
+                0.0,
+                0.0,
+                1.3877787807814457e-17
+              ],
+              "terminal_errors": [
+                1.1102230246251565e-16,
+                2.70251657310071e-16,
+                4.613115060769349e-16
+              ],
+              "limit_ratios": {
+                "velocity": 0.16440476937868617,
+                "acceleration": 0.19185416377815795,
+                "jerk": 0.18017997257405594
+              },
+              "accepted": true,
+              "rejection": null,
+              "planning_wall_s": 0.5186647609807551,
+              "fallback_original_suffix": false
+            }
+          ],
+          "end_event": {
+            "frame": 454,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 3.6639268411090598
+          },
+          "feedforward": {
+            "frame": 403,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -1.148271992924504,
+              0.35875692304431306,
+              0.7999952180110919
+            ],
+            "command_position": [
+              -1.148271931933142,
+              0.3707569230441581,
+              0.7999951197515341
+            ]
+          }
+        },
+        {
+          "start_frame": 2463,
+          "operation_index": 3,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": false,
+          "free_retreat": true,
+          "withdraw_free": true,
+          "retained_side": "right",
+          "last_lift": {
+            "frame": 2039,
+            "event": "primitive_lift_path_selected",
+            "inward_m": -0.06,
+            "target_position": [
+              -1.088271849905421,
+              -0.2039425688267313,
+              0.9999949613279688
+            ],
+            "command_height_m": 0.19999999999999996,
+            "rejected_candidates": [
+              {
+                "inward_m": 0.0,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.025788922577440886,
+                  "rotation_error_rad": 0.042178161446557914
+                }
+              },
+              {
+                "inward_m": 0.02,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.029497185096563197,
+                  "rotation_error_rad": 0.05148383483273698
+                }
+              },
+              {
+                "inward_m": -0.02,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.02966945828084488,
+                  "rotation_error_rad": 0.04512730802025849
+                }
+              },
+              {
+                "inward_m": 0.04,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.033441837335074824,
+                  "rotation_error_rad": 0.06167635569586886
+                }
+              },
+              {
+                "inward_m": -0.04,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.022272906973718913,
+                  "rotation_error_rad": 0.030237681022049795
+                }
+              },
+              {
+                "inward_m": 0.06,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.024178420431077603,
+                  "rotation_error_rad": 0.04530962606312445
+                }
+              }
+            ]
+          },
+          "feedback": [
+            {
+              "frame": 2493,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 1.25,
+              "measured_yaw_error_deg": 0.8772998901226948,
+              "command_yaw_correction_deg": -1.5000000000000002,
+              "original_terminal_velocity_max": 3.7828326329955336e-14,
+              "original_terminal_acceleration_max": 1.5831596823216777e-13,
+              "boundary_errors": [
+                0.0,
+                6.938893903907228e-18,
+                5.551115123125783e-17
+              ],
+              "terminal_errors": [
+                3.3306690738754696e-16,
+                3.219646771412954e-16,
+                5.240252676230739e-16
+              ],
+              "limit_ratios": {
+                "velocity": 0.28451649109140303,
+                "acceleration": 0.2890211598364495,
+                "jerk": 0.1778381932022777
+              },
+              "accepted": true,
+              "rejection": null,
+              "planning_wall_s": 0.5300985990324989,
+              "fallback_original_suffix": false
+            }
+          ],
+          "end_event": {
+            "frame": 2520,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.85,
+            "planning_and_execution_wall_s": 3.849404445034452
+          },
+          "feedforward": {
+            "frame": 2463,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.02,
+            "nominal_destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "command_position": [
+              0.8504852343453451,
+              -0.045005887175718566,
+              0.795496986263693
+            ]
+          }
+        },
+        {
+          "start_frame": 3283,
+          "operation_index": 4,
+          "operation": {
+            "tray": 0,
+            "slot": 2,
+            "destination": [
+              0.8500000000000001,
+              -0.5100000000000001,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": false,
+          "free_retreat": true,
+          "withdraw_free": true,
+          "retained_side": "right",
+          "last_lift": {
+            "frame": 3068,
+            "event": "primitive_lift_path_selected",
+            "inward_m": -0.06,
+            "target_position": [
+              0.9063584649616964,
+              -1.550249623187559,
+              0.9999949616096857
+            ],
+            "command_height_m": 0.20000000000000007,
+            "rejected_candidates": [
+              {
+                "inward_m": 0.0,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.025789263586870823,
+                  "rotation_error_rad": 0.04217871329733597
+                }
+              },
+              {
+                "inward_m": 0.02,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.029497514420396526,
+                  "rotation_error_rad": 0.051484422314617556
+                }
+              },
+              {
+                "inward_m": -0.02,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.02966985982157432,
+                  "rotation_error_rad": 0.04512785234718854
+                }
+              },
+              {
+                "inward_m": 0.04,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.03344215700016614,
+                  "rotation_error_rad": 0.06167698198219616
+                }
+              },
+              {
+                "inward_m": -0.04,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.022273300987840024,
+                  "rotation_error_rad": 0.030238159303961926
+                }
+              },
+              {
+                "inward_m": 0.06,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.024178682310133908,
+                  "rotation_error_rad": 0.04531015582965405
+                }
+              }
+            ]
+          },
+          "feedback": [],
+          "end_event": {
+            "frame": 3283,
+            "event": "primitive_failed",
+            "primitive": "push",
+            "reason": "primitive_path_infeasible",
+            "detail": {
+              "available_s": 2.9,
+              "candidates": [
+                {
+                  "mode": "CruiseJointPath",
+                  "reason": "duration",
+                  "required_s": 6.65
+                },
+                {
+                  "mode": "BlendedJointPath",
+                  "reason": "duration",
+                  "required_s": 3.0
+                }
+              ]
+            },
+            "duration_s": 0.0
+          },
+          "feedforward": {
+            "frame": 3283,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.02,
+            "nominal_destination": [
+              0.8500000000000001,
+              -0.5100000000000001,
+              0.8
+            ],
+            "command_position": [
+              0.8502247258846476,
+              -0.49000126258293375,
+              0.7954992002287229
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mode": "command_feedback",
+      "case": 8,
+      "status": "complete",
+      "physics_success": true,
+      "failure": null,
+      "simulation_seconds": 154.2,
+      "pushes": [
+        {
+          "start_frame": 412,
+          "operation_index": 1,
+          "operation": {
+            "tray": 2,
+            "slot": 0,
+            "destination": [
+              0.8500000000000001,
+              0.38,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {},
+          "feedback": [
+            {
+              "frame": 442,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 0.95,
+              "measured_yaw_error_deg": 2.92553850077986,
+              "command_yaw_correction_deg": -1.5000000000000002,
+              "original_terminal_velocity_max": 1.3657347625648324e-14,
+              "original_terminal_acceleration_max": 3.2518062814095826e-14,
+              "boundary_errors": [
+                0.0,
+                6.938893903907228e-18,
+                1.3877787807814457e-17
+              ],
+              "terminal_errors": [
+                3.3306690738754696e-16,
+                1.6069017461679898e-16,
+                4.920656064820639e-16
+              ],
+              "limit_ratios": {
+                "velocity": 0.1496480165060466,
+                "acceleration": 0.2184962174329197,
+                "jerk": 0.21930092714828386
+              },
+              "accepted": true,
+              "rejection": null,
+              "planning_wall_s": 0.5206923879450187,
+              "fallback_original_suffix": false
+            }
+          ],
+          "end_event": {
+            "frame": 463,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 3.579884895007126
+          },
+          "feedforward": {
+            "frame": 412,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -1.452647403084225,
+              0.5626272245580926,
+              0.7999933948707391
+            ],
+            "command_position": [
+              -1.4526473264646522,
+              0.574627224557848,
+              0.799993432464595
+            ]
+          }
+        },
+        {
+          "start_frame": 1439,
+          "operation_index": 2,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {
+            "frame": 576,
+            "event": "primitive_lift_path_selected",
+            "inward_m": 0.0,
+            "target_position": [
+              -1.4358925816082517,
+              0.5484976276933137,
+              0.9813803800099103
+            ],
+            "command_height_m": 0.18000000000000005,
+            "rejected_candidates": []
+          },
+          "feedback": [
+            {
+              "frame": 1469,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 0.95,
+              "measured_yaw_error_deg": 2.4240449903439547,
+              "command_yaw_correction_deg": -1.5000000000000002,
+              "original_terminal_velocity_max": 1.6249612283217597e-14,
+              "original_terminal_acceleration_max": 3.323043223065816e-14,
+              "boundary_errors": [
+                0.0,
+                1.232595164407831e-32,
+                5.551115123125783e-17
+              ],
+              "terminal_errors": [
+                1.1102230246251565e-16,
+                7.669303788529042e-17,
+                1.0456394137743857e-15
+              ],
+              "limit_ratios": {
+                "velocity": 0.1466126273746526,
+                "acceleration": 0.21386210775397616,
+                "jerk": 0.21031717531055336
+              },
+              "accepted": true,
+              "rejection": null,
+              "planning_wall_s": 0.510780876968056,
+              "fallback_original_suffix": false
+            }
+          ],
+          "end_event": {
+            "frame": 1490,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 3.813833606080152
+          },
+          "feedforward": {
+            "frame": 1439,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -1.4496871372468734,
+              0.11366276157340474,
+              0.7999952170405822
+            ],
+            "command_position": [
+              -1.449687085738403,
+              0.1256627615732942,
+              0.7999951164109688
+            ]
+          }
+        },
+        {
+          "start_frame": 1924,
+          "operation_index": 2,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": false,
+          "free_retreat": true,
+          "withdraw_free": false,
+          "retained_side": "right",
+          "last_lift": {
+            "frame": 1603,
+            "event": "primitive_lift_path_selected",
+            "inward_m": 0.0,
+            "target_position": [
+              -1.4353493847817629,
+              0.09871602316858893,
+              0.9799941204380789
+            ],
+            "command_height_m": 0.17999999999999994,
+            "rejected_candidates": []
+          },
+          "feedback": [
+            {
+              "frame": 1954,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 1.2,
+              "measured_yaw_error_deg": -0.04507678790229017,
+              "command_yaw_correction_deg": 0.09015357580458035,
+              "original_terminal_velocity_max": 0.0,
+              "original_terminal_acceleration_max": 0.0,
+              "boundary_errors": [
+                0.0,
+                1.3877787807814457e-17,
+                6.938893903907228e-18
+              ],
+              "terminal_errors": [
+                2.5326962749261384e-16,
+                1.9660199394403815e-16,
+                7.902629168338789e-16
+              ],
+              "limit_ratios": {
+                "velocity": 0.265956704941751,
+                "acceleration": 0.241742699947282,
+                "jerk": 0.14157139318217163
+              },
+              "accepted": false,
+              "rejection": {
+                "reason": "supported_normal_reference_excursion",
+                "side": "right",
+                "path_fraction": 0.29,
+                "command_z_m": 0.9089578263059309,
+                "allowed_z_m": [
+                  0.9089644822148158,
+                  0.9094644822148159
+                ],
+                "tolerance_m": 0.00025
+              },
+              "planning_wall_s": 0.384741885936819,
+              "fallback_original_suffix": true
+            }
+          ],
+          "end_event": {
+            "frame": 1980,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.8,
+            "planning_and_execution_wall_s": 8.143607927951962
+          },
+          "feedforward": {
+            "frame": 1924,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.035,
+            "nominal_destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "command_position": [
+              0.8508623055369838,
+              -0.030010624052994546,
+              0.7999948480479167
+            ]
+          }
+        },
+        {
+          "start_frame": 2777,
+          "operation_index": 3,
+          "operation": {
+            "tray": 0,
+            "slot": 2,
+            "destination": [
+              0.8500000000000001,
+              -0.5100000000000001,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": false,
+          "free_retreat": true,
+          "withdraw_free": true,
+          "retained_side": "right",
+          "last_lift": {
+            "frame": 2508,
+            "event": "primitive_lift_path_selected",
+            "inward_m": -0.06,
+            "target_position": [
+              -1.5131573786538821,
+              -0.4458098407869149,
+              0.9999948563729295
+            ],
+            "command_height_m": 0.19999999999999996,
+            "rejected_candidates": [
+              {
+                "inward_m": 0.0,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.025788894706042828,
+                  "rotation_error_rad": 0.04217804505051733
+                }
+              },
+              {
+                "inward_m": 0.02,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.029497168507858777,
+                  "rotation_error_rad": 0.051483749522679464
+                }
+              },
+              {
+                "inward_m": -0.02,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.02966943760289892,
+                  "rotation_error_rad": 0.045127172552041364
+                }
+              },
+              {
+                "inward_m": 0.04,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.03344183314591722,
+                  "rotation_error_rad": 0.0616763025468024
+                }
+              },
+              {
+                "inward_m": -0.04,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.022272857500965592,
+                  "rotation_error_rad": 0.030237524656208055
+                }
+              },
+              {
+                "inward_m": 0.06,
+                "reason": "ik_unreachable",
+                "detail": {
+                  "side": "left",
+                  "position_error_m": 0.024178395773297046,
+                  "rotation_error_rad": 0.045309547229154847
+                }
+              }
+            ]
+          },
+          "feedback": [
+            {
+              "frame": 2807,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 1.3,
+              "measured_yaw_error_deg": 0.5212184063423229,
+              "command_yaw_correction_deg": -1.0424368126846457,
+              "original_terminal_velocity_max": 3.434814517819071e-14,
+              "original_terminal_acceleration_max": 1.68252510855883e-13,
+              "boundary_errors": [
+                0.0,
+                0.0,
+                1.3877787807814457e-17
+              ],
+              "terminal_errors": [
+                6.938893903907228e-16,
+                4.85722573273506e-16,
+                1.4657900140206391e-15
+              ],
+              "limit_ratios": {
+                "velocity": 0.29676828378539555,
+                "acceleration": 0.30463094813036634,
+                "jerk": 0.1892750467691846
+              },
+              "accepted": false,
+              "rejection": {
+                "reason": "supported_normal_reference_excursion",
+                "side": "right",
+                "path_fraction": 0.5750000000000001,
+                "command_z_m": 0.8917404860072472,
+                "allowed_z_m": [
+                  0.8917433343290934,
+                  0.8967433343290933
+                ],
+                "tolerance_m": 0.00025
+              },
+              "planning_wall_s": 0.3609995939768851,
+              "fallback_original_suffix": true
+            }
+          ],
+          "end_event": {
+            "frame": 2835,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.9,
+            "planning_and_execution_wall_s": 3.8225898270029575
+          },
+          "feedforward": {
+            "frame": 2777,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.02,
+            "nominal_destination": [
+              0.8500000000000001,
+              -0.5100000000000001,
+              0.8
+            ],
+            "command_position": [
+              0.8503131248365895,
+              -0.49000245132930775,
+              0.7954995039972477
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mode": "command_feedback",
+      "case": 16,
+      "status": "complete",
+      "physics_success": false,
+      "failure": "contact_handoff_aborted",
+      "simulation_seconds": 98.65,
+      "pushes": [
+        {
+          "start_frame": 422,
+          "operation_index": 1,
+          "operation": {
+            "tray": 2,
+            "slot": 0,
+            "destination": [
+              0.8500000000000001,
+              0.38,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {},
+          "feedback": [
+            {
+              "frame": 452,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 0.95,
+              "measured_yaw_error_deg": 2.9044845394948506,
+              "command_yaw_correction_deg": -1.5000000000000002,
+              "original_terminal_velocity_max": 1.2056173086071049e-14,
+              "original_terminal_acceleration_max": 2.7498242549553276e-14,
+              "boundary_errors": [
+                0.0,
+                3.0814879110195774e-33,
+                1.3877787807814457e-17
+              ],
+              "terminal_errors": [
+                2.220446049250313e-16,
+                2.629475584638529e-16,
+                1.0456394137743857e-15
+              ],
+              "limit_ratios": {
+                "velocity": 0.14807786540995865,
+                "acceleration": 0.21697955252183646,
+                "jerk": 0.21657753579887626
+              },
+              "accepted": true,
+              "rejection": null,
+              "planning_wall_s": 0.4973376120906323,
+              "fallback_original_suffix": false
+            }
+          ],
+          "end_event": {
+            "frame": 473,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 3.518934129970148
+          },
+          "feedforward": {
+            "frame": 422,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -0.8996067896411316,
+              0.5621009297884133,
+              0.7999951120728008
+            ],
+            "command_position": [
+              -0.899606707657484,
+              0.5741009297881332,
+              0.7999949833021651
+            ]
+          }
+        },
+        {
+          "start_frame": 1447,
+          "operation_index": 2,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": true,
+          "free_retreat": false,
+          "withdraw_free": false,
+          "retained_side": null,
+          "last_lift": {
+            "frame": 586,
+            "event": "primitive_lift_path_selected",
+            "inward_m": 0.0,
+            "target_position": [
+              -0.8828823576865432,
+              0.5481443104019568,
+              0.981389894665083
+            ],
+            "command_height_m": 0.18000000000000005,
+            "rejected_candidates": []
+          },
+          "feedback": [
+            {
+              "frame": 1477,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 0.95,
+              "measured_yaw_error_deg": 2.449289514067621,
+              "command_yaw_correction_deg": -1.5000000000000002,
+              "original_terminal_velocity_max": 9.334936451950295e-15,
+              "original_terminal_acceleration_max": 2.456270181927876e-14,
+              "boundary_errors": [
+                0.0,
+                1.232595164407831e-32,
+                2.7755575615628914e-17
+              ],
+              "terminal_errors": [
+                3.3306690738754696e-16,
+                3.652049423109068e-16,
+                1.3531804178256757e-15
+              ],
+              "limit_ratios": {
+                "velocity": 0.14711895377153264,
+                "acceleration": 0.21532087057385324,
+                "jerk": 0.2128556046588905
+              },
+              "accepted": true,
+              "rejection": null,
+              "planning_wall_s": 0.5108432359993458,
+              "fallback_original_suffix": false
+            }
+          ],
+          "end_event": {
+            "frame": 1498,
+            "event": "primitive_complete",
+            "primitive": "push",
+            "duration_s": 2.55,
+            "planning_and_execution_wall_s": 3.634625068982132
+          },
+          "feedforward": {
+            "frame": 1447,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.012,
+            "nominal_destination": [
+              -0.9038245977201473,
+              0.11404867242226084,
+              0.7999952170405826
+            ],
+            "command_position": [
+              -0.9038245471549639,
+              0.1260486724221543,
+              0.7999951164106881
+            ]
+          }
+        },
+        {
+          "start_frame": 1932,
+          "operation_index": 2,
+          "operation": {
+            "tray": 1,
+            "slot": 1,
+            "destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "yaw": 0.0,
+            "temporary": false
+          },
+          "separation": false,
+          "free_retreat": true,
+          "withdraw_free": false,
+          "retained_side": "right",
+          "last_lift": {
+            "frame": 1611,
+            "event": "primitive_lift_path_selected",
+            "inward_m": 0.0,
+            "target_position": [
+              -0.8890392544207095,
+              0.09879169080448703,
+              0.9799941098690776
+            ],
+            "command_height_m": 0.17999999999999994,
+            "rejected_candidates": []
+          },
+          "feedback": [
+            {
+              "frame": 1962,
+              "event": "push_yaw_feedback_suffix",
+              "feedback_s": 1.5,
+              "remaining_s": 1.2,
+              "measured_yaw_error_deg": -0.13119599154113767,
+              "command_yaw_correction_deg": 0.26239198308227535,
+              "original_terminal_velocity_max": 0.0,
+              "original_terminal_acceleration_max": 0.0,
+              "boundary_errors": [
+                0.0,
+                1.3877787807814457e-17,
+                6.938893903907228e-18
+              ],
+              "terminal_errors": [
+                4.440892098500626e-16,
+                3.469446951953614e-16,
+                8.023096076392733e-16
+              ],
+              "limit_ratios": {
+                "velocity": 0.2670989596887731,
+                "acceleration": 0.2426524345972626,
+                "jerk": 0.14216510655751877
+              },
+              "accepted": false,
+              "rejection": {
+                "reason": "supported_normal_reference_excursion",
+                "side": "right",
+                "path_fraction": 0.27,
+                "command_z_m": 0.9090984118871175,
+                "allowed_z_m": [
+                  0.909102328256323,
+                  0.9096023282563229
+                ],
+                "tolerance_m": 0.00025
+              },
+              "planning_wall_s": 0.3494261789601296,
+              "fallback_original_suffix": true
+            }
+          ],
+          "end_event": {
+            "frame": 1974,
+            "event": "primitive_failed",
+            "primitive": "push",
+            "reason": "retained_contact_lost",
+            "detail": {
+              "tray": 1,
+              "side": "right",
+              "table_contact": 0,
+              "force_n": 10.206182036648276,
+              "command_opening_m": 0.0
+            },
+            "duration_s": 2.05
+          },
+          "feedforward": {
+            "frame": 1932,
+            "event": "primitive_push_feedforward",
+            "distance_m": 0.035,
+            "nominal_destination": [
+              0.8500000000000001,
+              -0.06500000000000006,
+              0.8
+            ],
+            "command_position": [
+              0.8508521830593275,
+              -0.030010376051843722,
+              0.7999948944897853
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

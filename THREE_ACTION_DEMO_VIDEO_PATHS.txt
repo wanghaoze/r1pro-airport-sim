@@ -1,0 +1,4 @@
+/home/michelle/haoze/r1pro-airport-sim/runs/three_actions_reachable_20261007_v2/demo_native/head_left.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_actions_reachable_20261007_v2/demo_native/head_right.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_actions_reachable_20261007_v2/demo_native/left_wrist.mp4
+/home/michelle/haoze/r1pro-airport-sim/runs/three_actions_reachable_20261007_v2/demo_native/right_wrist.mp4
