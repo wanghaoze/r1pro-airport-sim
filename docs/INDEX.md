@@ -1,5 +1,7 @@
 # 文档导航
 
+- [Scene Studio 零基础完整操作手册](site/USER_GUIDE_ZH.md)：从场景草稿、服务器采集验收与数据登记，到训练、进度、数据结构、单房间/批量评估和 MSE 下载；明确网页按钮与维护者步骤的分界。
+
 - [单策略实时网页评测](site/POLICY_EVALUATION.md)：任意登记room/检查点、仿真时长、实测3D/相机与逐次视频下载。
 
 - [实际相机→模型服务→Isaac运行与视频](site/LIVE_INFERENCE.md)：启动命令、持续服务、ROS2、真实墙钟性能及失败边界。

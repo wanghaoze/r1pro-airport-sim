@@ -1,4 +1,19 @@
 
+## 2026-10-19 Workstation runtime optimization and protected model output
+
+Scope DEC-WEB-013. User explicitly requested actual physics/synchronous-inference speed improvements, reuse of prior real-robot joint restrictions on checkpoint inference, same-room/checkpoint before/after measurements and website videos/results. Implemented one in-flight asynchronous request with frame-aligned prediction-prefix skipping; single-room CPU PhysX with GPU inference/render and Fabric. Original 0.002 s x25 substeps/frame, contacts, cameras and task gates retained. Warmup is outside rollout and does not execute actions. Reused real-robot configured caps (source SHA in gpu/robot_action_limits.json): step0.1rad, velocity1.5rad/s =>0.075rad/20Hz frame, tracking0.25rad, feedback-age0.5s, gripper0..80mm. Mechanical bounds at model endpoint; rate/tracking guard per executed command. Original outputs/logs retained, weights unchanged; protected diagnostic not pure-model success or training.
+
+Actual paired benchmark Room000 / cp_d0c1ec449340c22c344ee87c /40frames/2simseconds: baseline3056577e-54e0-45fd-9b49-9c0533cccdf6 15.870699s rollout, physics9.136041s, wait3.648970s; optimized02237d37-2fe8-42fb-81f5-574e42b6d924 4.744614s rollout, physics1.940640s, wait0.522161s. Speedup3.34499x; realtime factor0.12602 to0.42153, still below real time. Both completed1000substeps, duration stop, successRate=null, no Pick/Place success claim. Protected command audit maxstep0.075rad, tracking0.06615/0.12846rad, measured movement0.71673/0.54230rad. Native media exit0. One short pair, CPU/GPU trajectories differ; no long-run stability or generalization claim.
+
+Evidence: runs/web_realtime_optimization_20261019/comparison.json, audit.json, check_v10.json. Server videos at runs/web_runtime_comparison_20261019_v1/{baseline,realtime}; website artifacts referenced by JSON. Wall-time videos retain inference waits; normal native videos use20Hz simulated timeline. Offline releasev11 adds comparison/video panel and Help; physics measured on identical backendv10. Cloud workerbridgev7 uses same backendv10 after oldv5 dispatcher unexpectedly grabbed first baseline with obsoletev4 code; failed85467e04 run preserved and excluded. Hosted Site frontend not republished this turn. Six CPU contract tests and offline build passed; spec1.181 sync current. Remaining: 1x real-time unachieved; GPU dynamics slower for this single-room case; G0.5 missing gripper and GR00T weights remain separate unresolved scopes.
+
+
+## 2026-10-19 网站完整新手操作手册
+
+scope=DEC-WEB-014，文档交付，不改变服务器状态。用户要求详细易懂的网站操作说明，覆盖生成场景、数据入库、训练、进度/结构和场景任务评估。已新增 [完整手册](../docs/site/USER_GUIDE_ZH.md)，根 README、docs/INDEX、网站 README 均有入口。按当前页面与服务端代码核对：scene.sync 只到草稿；新来源需独立采集/资格/冻结及前后端登记；评估采用登记初态而非编辑草稿；当前固定 Pick→Place；新工作站默认 Robot limits，保护诊断排除纯模型成功率。含三条新手操作路线、数据结构、按钮/字段表、停止原因与下载排障。
+
+文档核验收据：[verification.json](../runs/site_user_guide_20261019/verification.json)。只检查本地源码、合同、链接和文档；未重新核验线上部署、未启动采集/训练/评估，历史数字均注明范围。新手手册扩充 DEC-WEB-007 的简明说明，不替代真实运行证据。
+
 ## 2026-10-19 18:05 SGT Policy stop diagnosis and explicit clipping diagnostic
 
 User reported runs 997b6e1d and 0dcd95a4 stopping at5 frames. Actual reports show right_arm_joint4 model target -1.764047265 rad below source XML lower -1.7453 rad; not wall timeout. Source units radians, right channel11 maps joint4 directly. No mapping bug established. Native timing baseline5frames: physics/contact1.28s, first inference~4s,next~0.44s. Evidence runs/web_policy_stop_20261019/before.json,detail.json,limits.json.

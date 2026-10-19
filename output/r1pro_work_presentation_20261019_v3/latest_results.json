@@ -1,0 +1,334 @@
+{
+  "sampledAt": "2026-10-19T18:29:52+08:00",
+  "vla": {
+    "scope": "training_scene_native_closed_loop_diagnostic",
+    "checkpointId": "cp_8788068a6984a796aed42ef1",
+    "totalRooms": 32,
+    "passedPairs": 0,
+    "modelFailures": 32,
+    "infrastructureFailures": 0,
+    "successRate": 0,
+    "evaluationCoverage": 1
+  },
+  "failures": {
+    "left_arm_joint4": 29,
+    "right_arm_joint4": 3
+  },
+  "pairedMse": {
+    "protocol": {
+      "protocol": "real_all_frames_h20_noise42000_v1",
+      "split": "test",
+      "manifestSha256": "cd2e935be3dcb01bbfba09c886da0fa93d85ecf125f35c49ba84ee0ff452120c",
+      "sampleKeysSha256": "946ccef27afeb9f754f566cdec3f87fe6ae784dd98432b5465b1ab7db726f874",
+      "horizon": 20,
+      "stride": 1,
+      "noise": "float32 standard_normal(20,32), seed=42000+global_cache_frame_index",
+      "paddingExcluded": true,
+      "baseChannelsExcluded": true,
+      "frames": 3653,
+      "scope": "offline_real_prediction_not_robot_execution"
+    },
+    "split": "test",
+    "frames": 3653,
+    "validTimesteps": 69450,
+    "models": [
+      {
+        "id": "cp_8788068a6984a796aed42ef1",
+        "label": "\u65b0 300 \u5bf9 + \u771f\u673a 50/50 \u00b7 10000 \u6b65",
+        "contract": {
+          "protocol": "real_all_frames_h20_noise42000_v1",
+          "split": "test",
+          "manifestSha256": "cd2e935be3dcb01bbfba09c886da0fa93d85ecf125f35c49ba84ee0ff452120c",
+          "sampleKeysSha256": "946ccef27afeb9f754f566cdec3f87fe6ae784dd98432b5465b1ab7db726f874",
+          "horizon": 20,
+          "stride": 1,
+          "noise": "float32 standard_normal(20,32), seed=42000+global_cache_frame_index",
+          "paddingExcluded": true,
+          "baseChannelsExcluded": true,
+          "frames": 3653,
+          "scope": "offline_real_prediction_not_robot_execution"
+        },
+        "armMseRad2": 0.007229873102764685,
+        "gripperMseMm2": 356.79581982087905,
+        "firstArmMseRad2": 0.0023562253709542885,
+        "firstGripperMseMm2": 89.44782047956063,
+        "perChannelMseRad2OrM2": [
+          0.002441180477157867,
+          0.0008884130703460276,
+          0.0017955055871995745,
+          0.006901547614685049,
+          0.008395124275490346,
+          0.004316616155880446,
+          0.005738264565782147,
+          0.00034071383610564227,
+          0.0034032492332688913,
+          0.0027444837983416934,
+          0.0034797778888746647,
+          0.007803762180528537,
+          0.023718203933265323,
+          0.00532391055779489,
+          0.024268184100090136,
+          0.0003728778035361158
+        ],
+        "byAction": {
+          "Pick up the tray": {
+            "arm_mse_rad2": 0.009350590592523347,
+            "gripper_mse_m2": 0.0002141254188163475,
+            "gripper_mse_mm2": 214.1254188163475,
+            "per_channel_mse": [
+              0.00287668357167987,
+              0.001160193623014428,
+              0.002366783472727836,
+              0.007233341201214981,
+              0.011416381992651152,
+              0.004804744642258633,
+              0.007762008461000397,
+              0.00019228744399145173,
+              0.00412950216700875,
+              0.0037628028169191,
+              0.004769234116532528,
+              0.008549950512601531,
+              0.032736318730327084,
+              0.006357850431753731,
+              0.03298247255563685,
+              0.00023596339364124325
+            ],
+            "base_excluded": true
+          },
+          "Place the tray": {
+            "arm_mse_rad2": 0.001813035338494309,
+            "gripper_mse_m2": 0.000721211363021206,
+            "gripper_mse_mm2": 721.211363021206,
+            "per_channel_mse": [
+              0.001328797700925164,
+              0.00019421821959477275,
+              0.0003363203637238669,
+              0.006054064610402895,
+              0.0006780837092931098,
+              0.003069815093693751,
+              0.0005691213820385676,
+              0.0007198316063419534,
+              0.0015482193498016462,
+              0.00014344479029675065,
+              0.00018618728895635335,
+              0.0058978123517847494,
+              0.0006837049813025255,
+              0.002682972015866182,
+              0.0020097328812399926,
+              0.0007225911197004585
+            ],
+            "base_excluded": true
+          }
+        },
+        "frames": 3653,
+        "validTimesteps": 69450,
+        "validMaskSha256": "fa94cebd196fd4d06945db0ef9d43820486eab0bf56c3716774b418db85dc137",
+        "truthSha256": "5f811405039f7dcf2269e2a22b2474c0327a5076f3f2436fd4c64cfb091f5b2a"
+      },
+      {
+        "id": "cp_d7adb17f33462f648d898d8d",
+        "label": "\u771f\u673a 100% \u00b7 10000 \u6b65",
+        "contract": {
+          "protocol": "real_all_frames_h20_noise42000_v1",
+          "split": "test",
+          "manifestSha256": "cd2e935be3dcb01bbfba09c886da0fa93d85ecf125f35c49ba84ee0ff452120c",
+          "sampleKeysSha256": "946ccef27afeb9f754f566cdec3f87fe6ae784dd98432b5465b1ab7db726f874",
+          "horizon": 20,
+          "stride": 1,
+          "noise": "float32 standard_normal(20,32), seed=42000+global_cache_frame_index",
+          "paddingExcluded": true,
+          "baseChannelsExcluded": true,
+          "frames": 3653,
+          "scope": "offline_real_prediction_not_robot_execution"
+        },
+        "armMseRad2": 0.006771753502435589,
+        "gripperMseMm2": 405.97845179832854,
+        "firstArmMseRad2": 0.002120233773391462,
+        "firstGripperMseMm2": 130.23696247168274,
+        "perChannelMseRad2OrM2": [
+          0.0026513539781017354,
+          0.0006658540374114535,
+          0.0019370099403366395,
+          0.006750331211398798,
+          0.008518433950205713,
+          0.004460709067372139,
+          0.005280854190425636,
+          0.00039453551181084425,
+          0.003118542673290674,
+          0.0024366767607106763,
+          0.0030182292023993645,
+          0.006708370107442828,
+          0.02093978801877626,
+          0.005877580985104133,
+          0.022440814911122188,
+          0.0004174213917858128
+        ],
+        "byAction": {
+          "Pick up the tray": {
+            "arm_mse_rad2": 0.008718355002288587,
+            "gripper_mse_m2": 0.00023162220740455795,
+            "gripper_mse_mm2": 231.62220740455794,
+            "per_channel_mse": [
+              0.0031111148518960683,
+              0.0008532314905461246,
+              0.00258404444098291,
+              0.007191670558357428,
+              0.011620615134147931,
+              0.004751836119282011,
+              0.007111107520935554,
+              0.00021714353410296158,
+              0.0037182877289967907,
+              0.0033274154236794915,
+              0.0041197957630476865,
+              0.006987703438867696,
+              0.028911577035514516,
+              0.007198131048650106,
+              0.030570439477135898,
+              0.0002461008807061543
+            ],
+            "base_excluded": true
+          },
+          "Place the tray": {
+            "arm_mse_rad2": 0.0017996511043980672,
+            "gripper_mse_m2": 0.0008513274875040997,
+            "gripper_mse_mm2": 851.3274875040997,
+            "per_channel_mse": [
+              0.0014770108250280723,
+              0.00018724560926653154,
+              0.000284323557160765,
+              0.0056230412008222925,
+              0.0005946948053461353,
+              0.0037170984654874744,
+              0.0006059338359858754,
+              0.0008476385623429996,
+              0.0015866452459475226,
+              0.00016150958216540727,
+              0.00020455535173623013,
+              0.00599488358895099,
+              0.0005778642815497263,
+              0.002504569026476462,
+              0.001675740085649456,
+              0.0008550164126651999
+            ],
+            "base_excluded": true
+          }
+        },
+        "frames": 3653,
+        "validTimesteps": 69450,
+        "validMaskSha256": "fa94cebd196fd4d06945db0ef9d43820486eab0bf56c3716774b418db85dc137",
+        "truthSha256": "5f811405039f7dcf2269e2a22b2474c0327a5076f3f2436fd4c64cfb091f5b2a"
+      }
+    ]
+  },
+  "runtime": {
+    "schema": "runtime_comparison/1",
+    "checkpointId": "cp_d0c1ec449340c22c344ee87c",
+    "roomId": 0,
+    "note": "Both runs use identical robot action limits and 25 physics substeps per frame. Native video wall time retains inference waits. Protected diagnostic; not a task success claim.",
+    "runs": [
+      {
+        "profile": "baseline",
+        "jobId": "3056577e-54e0-45fd-9b49-9c0533cccdf6",
+        "frames": 40,
+        "simulationSeconds": 2.0,
+        "rolloutWallSeconds": 15.87069921696093,
+        "physicsSeconds": 9.136040605953895,
+        "waitSeconds": 3.6489697188371792,
+        "realtimeFactor": 0.12601839230010806,
+        "overallWallSeconds": 45.54315733909607,
+        "warmup": {
+          "seconds": 3.897780498955399,
+          "executedActions": 0,
+          "syntheticWarmupOnly": true
+        },
+        "physicsSettings": {
+          "physics_device": "cuda:0",
+          "profile": "baseline",
+          "fabric": true,
+          "updateToUsd": false,
+          "physics_dt": 0.002,
+          "substeps": 25
+        },
+        "allTimings": {
+          "planning_wait": 3.6489697188371792,
+          "render": 2.3558735847473145e-05,
+          "readback_encode": 0.0944379874272272,
+          "physics_contacts": 10.119733633706346,
+          "physics_step": 9.136040605953895,
+          "contact_read": 0.7556124618276954,
+          "post_render": 0.9896421139128506,
+          "live_publish": 0.2213734172983095
+        },
+        "inferenceLatencies": [
+          0.4446687010349706,
+          0.4423791429726407,
+          0.4428794210543856,
+          0.4426126499893144,
+          0.44196548394393176,
+          0.44250213098712265,
+          0.4431214069481939,
+          0.4422426070086658
+        ],
+        "wallVideo": "/api/artifacts?key=3056577e-54e0-45fd-9b49-9c0533cccdf6/9189a396aa967342/baseline_wallclock.mp4",
+        "wallVideoSha256": "9189a396aa96734258aa23d2bd88c467f155b1a58d5ab3cff933e0529510f397",
+        "stopReason": {
+          "type": "ValueError",
+          "message": "simulation_time_budget_reached",
+          "traceback": "Traceback (most recent call last):\n  File \"/home/michelle/haoze/r1pro-airport-sim/releases/scene_studio_live_policy_20261019_v10/r1pro_teleop/real2sim/isaac_policy_pickplace.py\", line 166, in run_policy_room\n    if cfg.get('max_simulation_frames') is not None and r.frames>=cfg['max_simulation_frames']:raise ValueError('simulation_time_budget_reached')\n                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: simulation_time_budget_reached\n"
+        },
+        "successRate": null
+      },
+      {
+        "profile": "realtime",
+        "jobId": "02237d37-2fe8-42fb-81f5-574e42b6d924",
+        "frames": 40,
+        "simulationSeconds": 2.0,
+        "rolloutWallSeconds": 4.744613965973258,
+        "physicsSeconds": 1.940640221000649,
+        "waitSeconds": 0.5221613404573873,
+        "realtimeFactor": 0.42153060593407876,
+        "overallWallSeconds": 34.02844309806824,
+        "warmup": {
+          "seconds": 3.868314453982748,
+          "executedActions": 0,
+          "syntheticWarmupOnly": true
+        },
+        "physicsSettings": {
+          "physics_device": "cpu",
+          "profile": "realtime",
+          "fabric": true,
+          "updateToUsd": false,
+          "physics_dt": 0.002,
+          "substeps": 25
+        },
+        "allTimings": {
+          "planning_wait": 0.5221613404573873,
+          "render": 2.323032822459936e-05,
+          "readback_encode": 0.0967718018218875,
+          "physics_contacts": 2.5045232463162392,
+          "physics_step": 1.940640221000649,
+          "contact_read": 0.44233753776643425,
+          "post_render": 0.967394474777393,
+          "live_publish": 0.23294443869963288
+        },
+        "inferenceLatencies": [
+          0.4403130420250818,
+          0.5210382950026542,
+          0.519615268916823,
+          0.520051795989275,
+          0.5179460319923237
+        ],
+        "wallVideo": "/api/artifacts?key=02237d37-2fe8-42fb-81f5-574e42b6d924/761bb2cce2955c57/realtime_wallclock.mp4",
+        "wallVideoSha256": "761bb2cce2955c578e6f9b1f103753f754e736100ad2f544ab59850124eabc49",
+        "stopReason": {
+          "type": "ValueError",
+          "message": "simulation_time_budget_reached",
+          "traceback": "Traceback (most recent call last):\n  File \"/home/michelle/haoze/r1pro-airport-sim/releases/scene_studio_live_policy_20261019_v10/r1pro_teleop/real2sim/isaac_policy_pickplace.py\", line 166, in run_policy_room\n    if cfg.get('max_simulation_frames') is not None and r.frames>=cfg['max_simulation_frames']:raise ValueError('simulation_time_budget_reached')\n                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: simulation_time_budget_reached\n"
+        },
+        "successRate": null
+      }
+    ],
+    "measuredAt": 1792405463.2501373,
+    "speedup": 3.344992728761525
+  }
+}

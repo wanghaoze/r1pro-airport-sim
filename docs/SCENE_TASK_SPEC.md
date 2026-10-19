@@ -3742,7 +3742,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
   "apps/scene-agent/app/MseFigures.tsx": "b542d2af6e25e161e78a37767bfe98fb98500bbb7ce3ae4d606ad80a244cca34",
   "apps/scene-agent/app/page.tsx": "b3adc2ea28e31f9cd3f45d345000aea2b61fd1d29f5099aa38becc9e545917c5",
   "apps/scene-agent/app/PanelBoundary.tsx": "d5e95b98b8b88ac9b2551ec0c6facecd0a3dd7cb4e3220f979987fdf1818a6db",
-  "apps/scene-agent/app/PolicyEvaluation.tsx": "80c5fcfad657a1d1db856ce5d3f18449360c074a1f009a412d7ff73d97a6b65d",
+  "apps/scene-agent/app/PolicyEvaluation.tsx": "d0fb9042d9af7b44b9d20c3d28044f76074d23218a6b9dff506e62597ee58565",
   "apps/scene-agent/app/SceneViewport.tsx": "2e489db2198aa29f9609a79c16d0a31e0a3d3a7b183d32d6942b157c613f4e5f",
   "apps/scene-agent/app/TrainingPanel.tsx": "f58d0e344b5d857597e41f56f781268ee1de0c92771bf73f3eb35855b6824184",
   "apps/scene-agent/db/index.ts": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",

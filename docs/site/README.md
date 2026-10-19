@@ -1,5 +1,7 @@
 # R1 Pro Scene Studio — 网站使用 README
 
+**第一次使用请先读 [从场景到训练和评估的完整操作手册](USER_GUIDE_ZH.md)**：逐步说明场景编辑、草稿如何转成合格训练数据、数据结构、训练配比与进度、单房间/批量评估、MSE 和下载。新手手册包含较新工作站版的 Robot limits 默认设置；本文后续部分保留历史界面说明。
+
 网站：[打开 R1 Pro Scene Studio](https://r1pro-scene-agent-haoze.exactmyna128.chatgpt.site/)
 
 适用：2026-10-19 英文界面及 MSE 图表版本。本文用中文解释操作，按钮名称保留网页上的英文。网站由 ChatGPT Sites 托管，仿真、训练和评测由 GPU 服务器执行。

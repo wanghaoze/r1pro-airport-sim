@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:04,800
+Same room, checkpoint and 40-frame budget. Waiting time is preserved.
+
+2
+00:00:04,800 --> 00:00:15,920
+Optimized rollout has ended; its last frame is held while baseline continues.
+
+3
+00:00:15,920 --> 00:00:17,920
+Both stopped at the time limit. This diagnostic does not establish task success.
