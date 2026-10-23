@@ -128,7 +128,7 @@ def train(run,stop):
     for p,h in json.loads((run/'integrity.json').read_text())['files'].items():
         if sha(p)!=h:raise ValueError('frozen_native_data_changed:'+p)
     cfg,spec=config_for(run);inputs=json.loads((run/'inputs.json').read_text());cache=MixedCache(run);fraction=float(inputs.get('real_fraction',.5))
-    if jax.device_count()!=2:raise ValueError('two_visible_training_devices_required')
+    if jax.device_count()<1 or spec.batch_size%jax.device_count():raise ValueError('training_batch_must_divide_selected_device_count')
     norm={k:normalize.NormStats(**{f:np.asarray(v) for f,v in row.items()}) for k,row in json.loads((run/'norm.json').read_text()).items()}
     normalize.save(cfg.assets_dirs/spec.dataset_repo_id,norm);data=cfg.data.create(cfg.assets_dirs,cfg.model)
     transform=transforms.compose([AirportInputs('legacy'),transforms.Normalize(norm,use_quantiles=True),*data.model_transforms.inputs])
@@ -139,7 +139,7 @@ def train(run,stop):
     resume=any(cfg.checkpoint_dir.rglob('train_state')) if cfg.checkpoint_dir.exists() else False
     manager,resuming=project_checkpoint_manager(cfg,checkpoints,resume=resume)
     status=dict(stage='initializing',training_started=False,actual_completed_updates=0,target_updates=spec.num_train_steps,
-        pid=os.getpid(),spec=dataclasses.asdict(spec),method='duration_weighted_sampling_BC_LoRA',engine='jax_two_gpu',source='real_world/user_provided' if fraction==1 else 'simulation/program_generated' if fraction==0 else 'real_world_plus_isaac',real_fraction=fraction,sim_fraction=1-fraction,reward_enabled=False,
+        pid=os.getpid(),spec=dataclasses.asdict(spec),method='duration_weighted_sampling_BC_LoRA',engine='jax_selected_gpu',visible_gpu_selection=os.environ.get('CUDA_VISIBLE_DEVICES'),source='real_world/user_provided' if fraction==1 else 'simulation/program_generated' if fraction==0 else 'real_world_plus_isaac',real_fraction=fraction,sim_fraction=1-fraction,reward_enabled=False,
         initialization='own_optimizer_resume' if resume else 'verified_parent_weights_new_optimizer',
         precision=dict(compute='bfloat16',trainable_optimizer='float32',rgb='uint8',numeric='float32'),
         actual_devices=list(map(str,jax.devices())),freeze_visual_encoder=True,

@@ -1,0 +1,83 @@
+{
+  "real_pickplace_v2": {
+    "domain": "real_world",
+    "cacheRoot": "/home/michelle/haoze/r1pro-airport-sim/runs/real_sim_pickplace_20261009_v3/cache"
+  },
+  "isaac300_20261017": {
+    "domain": "simulation/program_generated",
+    "frozenFile": "/home/michelle/haoze/r1pro-airport-sim/runs/real_isaac300_timeweighted_pi05_20261017_v1/frozen_simulation.json",
+    "cache": "/home/michelle/haoze/r1pro-airport-sim/runs/real_isaac300_timeweighted_pi05_20261017_v1/simulation_cache",
+    "pairs": 300
+  },
+  "isaac32_narrow_20261016": {
+    "domain": "simulation/program_generated",
+    "batchManifests": [
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_000/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_001/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_002/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_003/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_004/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_005/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_007/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_008/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_009/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_010/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_011/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_012/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_013/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_014/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_015/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_016/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_017/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_018/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_019/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_020/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_022/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_023/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_024/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_025/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_026/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_027/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_028/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_029/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_030/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_live_20261016_v3/native/dataset/batches/room_031/manifest.json"
+    ],
+    "pairs": 30
+  },
+  "isaac32_wide_20261016": {
+    "domain": "simulation/program_generated",
+    "batchManifests": [
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_000/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_001/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_002/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_003/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_005/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_006/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_007/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_008/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_009/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_011/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_012/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_013/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_014/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_015/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_016/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_017/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_018/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_019/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_020/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_021/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_022/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_023/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_024/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_025/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_026/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_027/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_028/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_029/manifest.json",
+      "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_parallel_wide_station_20261016_v1/native/dataset/batches/room_030/manifest.json"
+    ],
+    "pairs": 29
+  }
+}

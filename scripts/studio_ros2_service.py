@@ -24,7 +24,9 @@ def serve(run):
         from studio_reuse_service import find_service
         from studio_mse import ROOT
         shared=find_service(ROOT,entry)
-        if shared and shared.get('actionSafetyMode','strict')!=request.get('actionSafetyMode','strict'):shared=None
+        from r1pro_teleop.real2sim.robot_action_filter import configured_limits,contract_id
+        if shared and shared.get('actionFilterContract')!=contract_id(configured_limits(request.get('filterSettings'))):shared=None
+        if shared and shared.get('inferenceGpu')!=request.get('inferenceGpu',0):shared=None
         if shared:(run/'model_http.ready.json').write_text(json.dumps(shared))
     try:
         if not shared and entry.get('family')=='g05':

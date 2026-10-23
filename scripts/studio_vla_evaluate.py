@@ -9,6 +9,10 @@ import time
 import traceback
 import numpy as np
 from studio_mse import ROOT,CODE,load_registered_policy,write,sha
+sys.path.insert(0,str(CODE/'gpu'))
+from r1pro_teleop.vla.inference_timing import read_events, summarize
+from r1pro_teleop.vla.request_inbox import RequestInbox
+from r1pro_teleop.real2sim.robot_action_filter import load_limits, contract_id, bound_actions, configured_limits
 
 
 def serve(run):
@@ -16,26 +20,29 @@ def serve(run):
     if request.get('transport')=='ros2':
         from studio_ros2_service import serve as ros_serve
         return ros_serve(run)
-    os.environ['CUDA_VISIBLE_DEVICES']='1'
+    os.environ['CUDA_VISIBLE_DEVICES']=str(request.get('inferenceGpu',0))
     entry=json.loads((run/'checkpoints.json').read_text())[0];directory=run/'policy';directory.mkdir(exist_ok=True)
-    policy=load_registered_policy(entry)
-    write(directory/'ready.json',dict(checkpoint_id=entry['id'],horizon=20,pid=os.getpid(),receipt_sha256=entry['receiptSha256']))
+    policy=load_registered_policy(entry);limits=configured_limits(request.get('filterSettings'),CODE);filter_id=contract_id(limits)
+    write(directory/'ready.json',dict(checkpoint_id=entry['id'],horizon=20,pid=os.getpid(),receipt_sha256=entry['receiptSha256'],action_filter_contract=filter_id))
     done=set()
+    inbox=RequestInbox(directory,request['roomIds'])
     while not (directory/'stop').exists():
-        for path in sorted(directory.glob('*.request.npz')):
-            if path.name in done:continue
+        for room,path in inbox.ready():
             stem=path.name.removesuffix('.request.npz')
             try:
                 with np.load(path,allow_pickle=False) as values:
                     sample={key:values[key].copy() for key in values.files};sample['prompt']=str(sample['prompt'])
                 if set(sample)!={'state','prompt','image/head_left','image/left_wrist','image/right_wrist'}:raise ValueError('invalid_policy_input_fields')
-                actions=np.asarray(policy.infer(sample)['actions'])
+                began=time.monotonic();actions=np.asarray(policy.infer(sample)['actions']);latency=time.monotonic()-began
+                with (run/'inference_model_events.jsonl').open('a') as log:log.write(json.dumps(dict(schema='inference_timing_event/1',stage='model_adapter',unix=time.time(),requestId=run.name+':'+stem,checkpointId=entry['id'],latency_seconds=latency))+'\n')
                 if actions.shape!=(20,19) or not np.isfinite(actions).all():raise ValueError('invalid_native_model_chunk')
+                raw=actions.copy();actions=bound_actions(raw,limits,20)
                 target=directory/(stem+'.reply.npz');tmp=target.with_suffix('.tmp')
-                with tmp.open('wb') as stream:np.savez(stream,actions=actions)
+                with tmp.open('wb') as stream:np.savez(stream,actions=actions,raw_actions=raw)
                 tmp.replace(target)
             except Exception as exc:write(directory/(stem+'.error.json'),dict(error=repr(exc)))
             done.add(path.name)
+            inbox.acknowledge(room,path)
         write(directory/'heartbeat.json',dict(heartbeat_unix=time.time(),inference_requests=len(done),pid=os.getpid()))
         time.sleep(.02)
 
@@ -62,31 +69,52 @@ def audit_room(room):
 def evaluate(run,native_python):
     request=json.loads((run/'request.json').read_text())['payload'];entry=json.loads((run/'checkpoints.json').read_text())[0]
     directory=run/'policy';directory.mkdir(exist_ok=True)
+    def check_stop():
+        if (run/'stop_requested').exists():raise InterruptedError('policy_stopped_by_user')
+    check_stop()
+    write(run/'execution_contract.json',dict(actionSafetyMode='robot_limits',actionFilterContract=contract_id(configured_limits(request.get('filterSettings'),CODE)),requestedActionSafetyMode=request.get('actionSafetyMode'),pureModelSuccessEligible=False,filterSettings=request.get('filterSettings',{}),simulationGpu=request.get('simulationGpu',0),inferenceGpu=request.get('inferenceGpu',0),engine='NVIDIA Isaac Sim / PhysX'))
     cfg=json.loads((ROOT/'runs/isaacsim_parallel_pickplace300_20261017_v1/batch_001/config.json').read_text())
+    start_mode=request.get('diagnosticStart','native_initial')
+    if start_mode not in ('native_initial','prepared_pick_pose'):
+        raise ValueError('unknown_policy_diagnostic_start')
     selected=[]
     for index in request['roomIds']:
-        case=cfg['cases'][index];case.update(original_room_id=index,policy=dict(runtime_profile=request.get('runtimeProfile','baseline'),robot_action_limits=json.loads((CODE/'gpu/robot_action_limits.json').read_text()) if (CODE/'gpu/robot_action_limits.json').exists() else None,action_safety_mode=request.get('actionSafetyMode','strict'),directory=str(directory),checkpoint_id=entry['id'],frames_per_action=request['framesPerAction'],action_horizon=entry.get('modelConfig',{}).get('horizon',20),inference_timeout_seconds=request.get('inferenceTimeoutSeconds',300),max_simulation_frames=int(request['maxSimulationSeconds']*20) if request.get('liveEvaluation') else None,wall_deadline=time.time()+request.get('maxWallSeconds',7200) if request.get('liveEvaluation') else None))
+        case=cfg['cases'][index];case.update(original_room_id=index,policy=dict(runtime_profile=request.get('runtimeProfile','baseline'),robot_action_limits=configured_limits(request.get('filterSettings'),CODE),action_safety_mode='robot_limits',directory=str(directory),checkpoint_id=entry['id'],frames_per_action=request['framesPerAction'],action_horizon=entry.get('modelConfig',{}).get('horizon',20),inference_timeout_seconds=request.get('inferenceTimeoutSeconds',300),max_simulation_frames=int(request['maxSimulationSeconds']*20) if request.get('liveEvaluation') else None,wall_deadline=time.time()+request.get('maxWallSeconds',7200) if request.get('liveEvaluation') and request.get('maxWallSeconds',7200)>0 else None))
+        if start_mode=='prepared_pick_pose':
+            from r1pro_teleop.real2sim.policy_start_diagnostic import prepared_pick_start
+            case['prepared_pick_start']=prepared_pick_start(
+                ROOT/'runs/real_isaac300_timeweighted_pi05_20261017_v1/frozen_simulation.json',
+                ROOT/'runs/isaacsim_parallel_pickplace300_20261017_v1/batch_001/native/rooms'/f'room_{index:03d}',
+                case, configured_limits(request.get('filterSettings'),CODE))
         selected.append(case)
-    cfg.update(cases=selected,rooms=len(selected),execution_mode='policy',output=str(run/'native'),pin_render_products_to_gpus=False, realtime_pacing=request.get('realtimePacing',False),live_evaluation=request.get('liveEvaluation',False),runtime_profile=request.get('runtimeProfile','baseline'))
+    cfg.update(simulation_gpu=request.get('simulationGpu',0),cases=selected,rooms=len(selected),execution_mode='policy',output=str(run/'native'),pin_render_products_to_gpus=False, realtime_pacing=request.get('realtimePacing',False),live_evaluation=request.get('liveEvaluation',False),runtime_profile=request.get('runtimeProfile','baseline'))
     write(run/'native_config.json',cfg)
     service_log=(run/'policy.log').open('ab');native_log=None;service=None;native=None
     started=time.time()
     try:
         if not request.get('externalService'):
             service=subprocess.Popen([sys.executable,__file__,'--run',str(run),'--serve'],cwd=ROOT,stdin=subprocess.DEVNULL,stdout=service_log,stderr=subprocess.STDOUT)
-        deadline=time.monotonic()+min(1200,request.get('maxWallSeconds',7200))
+        deadline=time.monotonic()+min(1200,request.get('maxWallSeconds') or 7200)
         while not (directory/'ready.json').exists():
+            check_stop()
             if service is not None and service.poll() is not None:raise RuntimeError('policy_service_initialization_failed')
             if time.monotonic()>deadline:raise TimeoutError('policy_initialization_timeout')
             write(run/'progress.json',dict(stage='initializing',completed=0,total=len(selected),heartbeat_unix=time.time()));time.sleep(3)
         native_log=(run/'native.log').open('ab')
+        from execution_settings import gpu_inventory
+        devices=gpu_inventory()['devices']
+        if not devices:raise RuntimeError('native_GPU_inventory_unavailable')
         native=subprocess.Popen([native_python,str(CODE/'scripts/run_isaac_parallel_pickplace.py'),'--config',str(run/'native_config.json')],cwd=ROOT,
-            stdin=subprocess.DEVNULL,stdout=native_log,stderr=subprocess.STDOUT,env={**os.environ,'CUDA_VISIBLE_DEVICES':os.environ.get('STUDIO_SIM_GPU','0,1'),'OMNI_KIT_ACCEPT_EULA':'YES','PYTHONUNBUFFERED':'1'})
+            stdin=subprocess.DEVNULL,stdout=native_log,stderr=subprocess.STDOUT,env={**os.environ,'CUDA_VISIBLE_DEVICES':','.join(str(d['index']) for d in devices),'OMNI_KIT_ACCEPT_EULA':'YES','PYTHONUNBUFFERED':'1'})
         write(run/'native.launch.json',dict(pid=native.pid,startedAt=time.time(),configSha256=sha(run/'native_config.json')))
+        stop_started=None
         while native.poll() is None:
+            if (run/'stop_requested').exists():
+                stop_started=stop_started or time.time()
+                if time.time()-stop_started>15:raise InterruptedError('policy_stopped_by_user')
             if service is not None and service.poll() is not None:raise RuntimeError('policy_service_disappeared')
-            if time.time()-started>request.get('maxWallSeconds',7200):
-                (run/'stop_requested').touch()
+            if request.get('maxWallSeconds',7200)>0 and time.time()-started>request.get('maxWallSeconds',7200):
+                (run/'wall_timeout').touch()
                 if time.time()-started>request.get('maxWallSeconds',7200)+15:raise TimeoutError('native_evaluation_wall_budget_exceeded')
             progress=[]
             for p in (run/'native/rooms').glob('*/policy_progress.json'):
@@ -111,11 +139,13 @@ def evaluate(run,native_python):
             maxSimulationSeconds=request.get('maxSimulationSeconds'),inferenceTimeoutSeconds=request.get('inferenceTimeoutSeconds'),maxWallSeconds=request.get('maxWallSeconds'),elapsedWallSeconds=time.time()-started,wallTimingIncludes=['model_initialization','native_initialization','inference','physics','render','encoding'],baseActuatorMask='fixed_episode_base')
         evaluated=report['passedPairs']+report['modelFailures']
         report.update(evaluatedRooms=evaluated,successRate=report['passedPairs']/evaluated if evaluated else None,successRateDenominator='passedPairs + modelFailures; infrastructure failures excluded',evaluationCoverage=evaluated/len(rows) if rows else 0)
+        timing_rows,malformed=read_events(run)
+        report['inferenceTiming']=summarize(timing_rows,malformed)
         report['runtimeProfile']=request.get('runtimeProfile','baseline')
+        report.update(diagnosticStart=start_mode,fullTaskSuccessEligible=False)
+        if start_mode=='prepared_pick_pose':report['scope']='prepared_pose_policy_diagnostic'
         report['nativeTiming']=json.loads((run/'native/status.json').read_text())
-        if request.get('actionSafetyMode') in ('clip_diagnostic','robot_limits'):
-            report.update(actionSafetyMode=request['actionSafetyMode'],pureModelSuccessEligible=False,diagnosticPassedPairs=report['passedPairs'],passedPairs=0,successRate=None,successRateDenominator='Excluded: explicit action clipping diagnostic')
-        else:report.update(actionSafetyMode='strict',pureModelSuccessEligible=True)
+        report.update(actionSafetyMode='robot_limits',actionFilterContract=contract_id(configured_limits(request.get('filterSettings'),CODE)),pureModelSuccessEligible=False,diagnosticPassedPairs=report['passedPairs'],passedPairs=0,successRate=None,successRateDenominator='Excluded: mandatory filtered policy diagnostic')
         write(run/'report.json',report)
         (run/'native_videos.txt').write_text('\n'.join(str(p) for p in sorted((run/'native').rglob('*.mp4')))+'\n')
         write(run/'progress.json',dict(stage='completed',completed=len(rows),total=len(rows),heartbeat_unix=time.time()))

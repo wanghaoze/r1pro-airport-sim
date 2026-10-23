@@ -1,5 +1,25 @@
 # 用户决定与替代关系
 
+## DEC-NO-TRAIN-REPAIR-20261022 · 修复期间禁止训练，停止当前训练
+
+active，用户当前线程明确要求“修复过程不要训练，刚刚的训练也停止”。替代DEC-PICK-REPAIR-20261022中停止d6ce3be9训练待批准状态，并暂停修复范围内此前训练启动/恢复授权：禁止新训练、恢复、重排队和自动重试；现有检查点推理、MSE与仿真诊断仍可进行。停止d6ce3be9-d74f-48fc-8061-03fbcdebab60无需再次确认，保留日志和检查点，先核对实际身份再停止，验证退出；不停止无关服务。DEC-NO-EC2-20261022继续有效，本轮直连超时，尚未发送停止指令，不能记为训练已停。见[失败连接与未执行状态](../runs/stop_training_no_ec2_20261022/status.json)。每小时跟进已更新；待用户提供/恢复合规连接。
+
+## DEC-NO-EC2-20261022 · 禁止通过 EC2 跳板连接服务器
+
+active，当前线程用户明确要求“现在开始不要使用ec跳板机连接服务器”。从该消息起替代一切历史 EC2 跳板使用授权；禁止经 EC2 的 SSH、ProxyCommand/ProxyJump、隧道及依赖这些路径的辅助脚本，包括状态读取。不要求停止已在服务器独立运行的作业，不取消持续修复目标；无已确认合规连接时继续本地工作。已同步每小时跟进 automation r1pro 与 CURRENT，本轮未连接服务器。
+
+## DEC-PICK-REPAIR-20261022 · 持续修复 Isaac Pick 退化
+
+active/scoped-simulation-repair，当前线程 `01a15c7b-f7a7-78b3-8436-41894377690e` 用户明确要求“那你来持续修复”，扩展 DEC-MSE-ROOTCAUSE-20261022 的只读范围为普通实现修复、显式隔离诊断与持续跟进。旧90/10真机Pick成功基准保留；不授权真机控制、放宽机械范围、修改冻结数据/成功标签。已实施初始化诊断与原始命令记录修复，详见[报告](../reports/REPAIR_PROGRESS_20261022.md)。用户尚未回答停止已有d6ce3be9训练的取舍问题；训练配方与正式片段范围修订仍未批准。每小时跟进已创建，队列健康时不重复启动，不继承历史GPU清理授权。
+
+## DEC-MSE-ROOTCAUSE-20261022 · 从 MSE 分析 Isaac 退化和速度
+
+active/scoped-analysis，当前线程 `01a15c7b-f7a7-78b3-8436-41894377690e` 用户要求从 MSE 分析模型、关节限制及其他因素，并明确回复早期 `real_sim_pickplace（90/10）` 真机成功 Pick。该确认替代“成功基准可能是10月15日50/50”的待核验假设，作为用户反馈保留，不编造试验分母。范围为已有服务器产物与源码审计；不据此改变训练片段、机械边界、验收门或启动真机控制。推荐方案及实测统计见[报告](../reports/MSE_ROOTCAUSE_20261022.md)；匹配初态诊断、数据范围修订与训练消融仍是待决方案。本轮没有新增部署/训练/物理episode。
+
+## DEC-WEB-CONTROLS-20261021 · 网页六项运行控制
+
+active/scoped-simulation，用户当前线程 `01a15c7b-f7a7-78b3-8436-41894377690e` 明确要求网页显示错误、10000s（unlimited）、Stop policy、核对Isaac Sim、可调全模型插值filter、仿真和训练GPU选择。解释10000为有限仿真上限、总墙钟guard0，保留故障终止；扩展DEC-WEB-FILTER-20261021和既有网页执行授权，替代固定短预算与固定GPU选择。只允许收紧登记约束，不放宽机械边界，不修改训练方案/历史成功标签/数据/权重。已发布与实测见[报告](../reports/WEB_CONTROLS_20261021.md)；无真机控制授权。
+
 ## DEC-WEB-007 · 2026-10-19 网站使用 README
 
 active/scoped-documentation，当前线程`01a14879-8f16-7240-8783-7b5d16fea0a7`用户要求“生成如何使用site的readme”。补充DEC-WEB-005/006的操作文档，不替代训练/评测方案。交付[网站使用 README](../docs/site/README.md)：中文说明配英文按钮名，优先说明MSE入口/图表下载，覆盖场景编辑、数据配比、训练进度、自动最终检查点评测、手动MSE/VLA及状态排障。按当前源码和已有页面核验截图编写；截图明确为历史示例，不据此宣称当前运行结果。本次仅文档与导航索引更新，无网站重部署、训练或服务器操作。
@@ -272,3 +292,24 @@ User explicitly asks reload restore original robot state; replace automatic late
 ## DEC-WEB-015 - 2026-10-19 English guide in Help
 
 Active/scoped; extends DEC-WEB-014. User explicitly requests an English version inside Help. Translate the full workflow and integrate readable chapters, search and downloads into the existing website, preserving its audience and existing training/evaluation contracts. Workstation Help deployed in a new immutable release with identity-checked replacement of the owned web/bridge supervisor only. No collection, gradient training or model evaluation submitted. English source: docs/site/USER_GUIDE_EN.md; deployment/verification evidence: runs/site_help_english_20261019.
+
+## DEC-WEB-REVIEW-20261021 · 网站项目分析
+
+scoped；thread=01a15c7b-f7a7-78b3-8436-41894377690e。用户原要求：“你先读一下这个网站项目，然后看一下目前有什么问题，出一个分析报告”。范围为阅读、检查与报告；不替代既有动作、训练、部署或访问范围决定，不解释为自动修复/新训练授权。交付 reports/SCENE_STUDIO_REVIEW_20261021.md，证据 runs/site_audit_20261021。历史模型结论与本轮代码/页面/元数据检查分标，v5源码风险不直接宣称当前云端缺陷。原文显式导出到本轮独立交互快照，旧档案保留。
+
+
+## DEC-WEB-SOURCE-PULL-20261021 · 连接工作站并拉取网站代码
+
+scoped；thread=01a15c7b-f7a7-78b3-8436-41894377690e。用户：“你连workstation服务器拉一下代码呢？” 延续 DEC-WEB-REVIEW-20261021，授权连接已有 workstation、读取并下载网站实际版本用于审阅。已取回当前 v13 源码和 v10 GPU worker 补充快照，SHA-256 校验 551/551；报告已补充。未替代训练、部署、真机或临时访问期限决定。证据 runs/workstation_source_pull_20261021/README.md。
+
+
+## DEC-WEB-FILTER-20261021（active；simulation scoped）
+
+用户原文：“所有的策略应该输出都不应该超过真机的约束范围，所以要加一个filter。”来源本线程01a15c7b-f7a7-78b3-8436-41894377690e，逐消息ID见本轮显式导出档案；本记录不虚构原始message ID。对新网站策略执行替代DEC-WEB-013/规范1.180–1.181中的可选strict/robot_limits；全部统一强制robot_limits，原始网络预测保留、MSE原样、历史标签不改。不扩展真机控制或训练授权。沿用已归档参数，无新容差；缺现行TOML明确待核验。实施/验证/部署结论见[报告](../reports/ROBOT_ACTION_FILTER_REVIEW_20261021.md)。
+# DEC-WEB-CHECKPOINTS-20261021 · active
+
+用户本轮要求“把本地的那些检查点什么的也加到GPT site上”。来源线程01a15c7b-f7a7-78b3-8436-41894377690e，本轮独立交互快照见runs/site_checkpoint_sync_20261021/interactions。落实为原Site展示工作站已登记检查点、搜索与选中评测入口，权重仍在工作站；保留作业登录权限与强制filter。不替代物理任务合同，不授权真机控制或新训练。交付见[报告](../reports/GPT_SITE_CHECKPOINTS_20261021.md)。
+
+## DEC-G05-REPAIR-20261023 · active/scoped
+
+用户原文“修复G05的代码”，来源当前线程01a15c7b-f7a7-78b3-8436-41894377690e；原文档案见runs/repair_g05_20261023/interactions。授权G0.5代码修复及相关验证，延续禁止训练、仅合规直连与无真机控制边界，不替代缺夹爪时停止的动作合同。普通协议/错误传递/缓存修复在本地执行；模型实际缺字段原因与服务器闭环仍未确认。无新增“保持夹爪”或教师/IK补偿决定。详[修复报告](../reports/G05_REPAIR_20261023.md)。

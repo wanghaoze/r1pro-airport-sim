@@ -8,10 +8,13 @@ import threading
 import time
 import hashlib
 import numpy as np
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from r1pro_teleop.real2sim.robot_action_filter import load_limits, contract_id, bound_actions, configured_limits
 
 class Adapter:
     def __init__(self,entry):
-        self.entry=entry;self.config=entry.get('modelConfig',{});self.family=entry.get('family','pi05');self.clients={}
+        self.entry=entry;self.config=entry.get('modelConfig',{});self.family=entry.get('family','pi05')
         if self.family=='pi05':
             from studio_mse import load_registered_policy
             self.policy=load_registered_policy(entry)
@@ -20,28 +23,23 @@ class Adapter:
             from gr00t.data.embodiment_tags import EmbodimentTag
             self.policy=Gr00tPolicy(model_path=self.config['checkpointPath'],embodiment_tag=EmbodimentTag(self.config['embodimentTag']),device='cuda:0')
             self.modalities=self.policy.get_modality_config()
+        elif self.family=='g05':
+            from r1pro_teleop.vla.g05_protocol import G05Client
+            self.g05=G05Client(self.config)
         elif self.family!='g05':raise ValueError('unsupported_model_family')
+    def close(self):
+        if self.family=='g05':self.g05.close()
+    @property
+    def protocol_evidence(self):
+        return self.g05.last_evidence if self.family=='g05' else None
     def infer(self,sample,room):
         if self.family=='pi05':return np.asarray(self.policy.infer(sample)['actions'])
+        if self.family=='g05':self.g05.last_evidence=None
         c=self.config;s=np.asarray(sample['state']);unit=1250 if c['gripperUnit']=='percent80' else 1000 if c['gripperUnit']=='mm' else 1
         state={'left_arm':s[:7],'left_gripper':s[7:8]*unit,'right_arm':s[8:15],'right_gripper':s[15:16]*unit}
         if self.family=='g05':
-            import msgpack
-            from websockets.sync.client import connect
-            def encode(a):
-                if isinstance(a,np.ndarray):return {b'__ndarray__':True,b'data':a.tobytes(),b'dtype':a.dtype.str,b'shape':a.shape}
-                if isinstance(a,np.generic):return a.item()
-                raise TypeError(type(a).__name__)
-            def decode(d):
-                if b'__ndarray__' in d:return np.frombuffer(d[b'data'],dtype=d[b'dtype']).reshape(d[b'shape'])
-                return d
-            if room not in self.clients:
-                ws=connect(f"ws://{c['host']}:{c['port']}",max_size=None,open_timeout=15);metadata=msgpack.unpackb(ws.recv(timeout=20),object_hook=decode,raw=False);self.clients[room]=ws
-            ws=self.clients[room]
             request=dict(images={key:sample['image/'+cam].transpose(2,0,1) for cam,key in [('head_left','head_rgb'),('left_wrist','left_wrist_rgb'),('right_wrist','right_wrist_rgb')]},state=state,task=sample['prompt'],embodiment_type='galaxea_r1pro',frequency=20)
-            ws.send(msgpack.packb(request,default=encode));reply=msgpack.unpackb(ws.recv(timeout=120),object_hook=decode,raw=False)
-            if 'error' in reply:raise RuntimeError(reply['error'])
-            actions={k:np.asarray(v).reshape(1,-1) for k,v in reply['action'].items()}
+            actions=self.g05.infer(request,room)
         else:
             # Explicit joint-key mapping. Relative-EEF checkpoints cannot use this adapter.
             sk=c['stateKeys'];ck=c['cameraKeys']
@@ -59,38 +57,49 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);p.add_argument('--port',type=int,default=0);a=p.parse_args()
     entry=json.loads((a.run/'checkpoints.json').read_text())[0];adapter=Adapter(entry)
     request_config=json.loads((a.run/'request.json').read_text()).get('payload',{})
-    limits=json.loads((Path(__file__).resolve().parents[1]/'gpu/robot_action_limits.json').read_text()) if request_config.get('actionSafetyMode')=='robot_limits' else None
+    limits=configured_limits(request_config.get('filterSettings'));filter_id=contract_id(limits)
     if adapter.family=='pi05' and request_config.get('runtimeProfile') in ('baseline','realtime'):
         began=time.monotonic()
         adapter.infer(dict(state=np.zeros(19,np.float32),prompt='Pick up the tray',**{'image/'+c:np.zeros((224,224,3),np.uint8) for c in ('head_left','left_wrist','right_wrist')}),'warmup_only')
         (a.run/'model_warmup.json').write_text(json.dumps(dict(seconds=time.monotonic()-began,executedActions=0,syntheticWarmupOnly=True)))
-    (a.run/'checkpoint_action_contract.json').write_text(json.dumps(dict(checkpointId=entry['id'],actionSafetyMode=request_config.get('actionSafetyMode','strict'),limits=limits,weightsModified=False)))
+    (a.run/'checkpoint_action_contract.json').write_text(json.dumps(dict(checkpointId=entry['id'],inferenceGpu=request_config.get('inferenceGpu',0),actionSafetyMode='robot_limits',actionFilterContract=filter_id,limits=limits,weightsModified=False)))
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self):
             if self.path!='/health':self.send_error(404);return
             self.send_response(200);self.send_header('Content-Type','application/json');self.end_headers()
-            self.wfile.write(json.dumps(dict(checkpointId=entry['id'],family=adapter.family,ready=True,simulationOnly=True)).encode())
+            self.wfile.write(json.dumps(dict(checkpointId=entry['id'],family=adapter.family,ready=True,simulationOnly=True,actionFilterContract=filter_id)).encode())
         def do_POST(self):
+            room=None;began=None;inference_started=False
             try:
                 size=int(self.headers.get('Content-Length',0))
                 if not 0<size<=32*1024*1024:raise ValueError('invalid_observation_size')
                 with np.load(io.BytesIO(self.rfile.read(size)),allow_pickle=False) as d:sample={k:d[k].copy() for k in d.files}
                 room=str(sample.pop('_room'));sample['prompt']=str(sample['prompt'])
                 if set(sample)!={'state','prompt','image/head_left','image/left_wrist','image/right_wrist'}:raise ValueError('invalid_observation_fields')
-                began=time.monotonic();actions=adapter.infer(sample,room);latency=time.monotonic()-began
-                with (a.run/'inference_events.jsonl').open('a') as log:log.write(json.dumps(dict(unix=time.time(),room=room,checkpointId=entry['id'],latency_seconds=latency,prompt=sample['prompt'],camera_sha256={k:hashlib.sha256(sample['image/'+k].tobytes()).hexdigest() for k in ('head_left','left_wrist','right_wrist')},state=sample['state'].tolist(),actions_sha256=hashlib.sha256(actions.tobytes()).hexdigest(),action_shape=list(actions.shape)))+'\n')
-                if limits:
-                    raw=actions.copy();actions=actions.astype(np.float64)
-                    for side,offset in [('left',0),('right',8)]:
-                        for j in range(7):actions[:,offset+j]=np.clip(actions[:,offset+j],*limits['mechanical']['ranges'][f'{side}_arm_joint{j+1}'])
-                        actions[:,offset+7]=np.clip(actions[:,offset+7],*limits['gripper_range_m'])
-                    with (a.run/'checkpoint_limit_events.jsonl').open('a') as log:log.write(json.dumps(dict(unix=time.time(),room=room,raw=raw.tolist(),bounded=actions.tolist(),checkpointId=entry['id']))+'\n')
+                began=time.monotonic();inference_started=True
+                try:actions=adapter.infer(sample,room);latency=time.monotonic()-began
+                finally:
+                    protocol=getattr(adapter,'protocol_evidence',None)
+                    if protocol is not None:
+                        with (a.run/'g05_protocol_events.jsonl').open('a',encoding='utf8') as log:
+                            log.write(json.dumps(dict(unix=time.time(),requestId=self.headers.get('X-Inference-Request-Id'),checkpointId=entry['id'],**protocol),allow_nan=False)+'\n')
+                with (a.run/'inference_model_events.jsonl').open('a') as log:log.write(json.dumps(dict(schema='inference_timing_event/1',stage='model_adapter',requestId=self.headers.get('X-Inference-Request-Id'),unix=time.time(),room=room,checkpointId=entry['id'],latency_seconds=latency,prompt=sample['prompt'],camera_sha256={k:hashlib.sha256(sample['image/'+k].tobytes()).hexdigest() for k in ('head_left','left_wrist','right_wrist')},state=sample['state'].tolist(),actions_sha256=hashlib.sha256(actions.tobytes()).hexdigest(),action_shape=list(actions.shape)))+'\n')
                 h=entry.get('modelConfig',{}).get('horizon',20)
-                if actions.shape!=(h,19) or not np.isfinite(actions).all():raise ValueError('invalid_model_output')
-                out=io.BytesIO();np.savez(out,actions=actions);self.send_response(200);self.end_headers();self.wfile.write(out.getvalue())
-            except Exception as exc:self.send_response(500);self.end_headers();self.wfile.write(json.dumps({'error':repr(exc)}).encode())
+                raw=actions.copy();actions=bound_actions(raw,limits,h)
+                with (a.run/'checkpoint_limit_events.jsonl').open('a') as log:
+                    log.write(json.dumps(dict(unix=time.time(),room=room,raw=raw.tolist(),bounded=actions.tolist(),checkpointId=entry['id'],actionFilterContract=filter_id),allow_nan=False)+'\n')
+                out=io.BytesIO();np.savez(out,actions=actions,raw_actions=raw);self.send_response(200);self.end_headers();self.wfile.write(out.getvalue())
+            except Exception as exc:
+                error={'error':repr(exc),'details':getattr(exc,'details',None)}
+                with (a.run/'model_error_events.jsonl').open('a',encoding='utf8') as log:
+                    log.write(json.dumps(dict(unix=time.time(),room=room,requestId=self.headers.get('X-Inference-Request-Id'),checkpointId=entry['id'],inferenceStarted=inference_started,**error),allow_nan=False)+'\n')
+                self.send_response(500);self.send_header('Content-Type','application/json');self.end_headers();self.wfile.write(json.dumps(error).encode())
         def log_message(self,*args):pass
     server=HTTPServer(('127.0.0.1',a.port),Handler)
-    (a.run/'model_http.ready.json').write_text(json.dumps(dict(port=server.server_port,checkpoint_id=entry['id'],family=entry.get('family','pi05'),actionSafetyMode=request_config.get('actionSafetyMode','strict'))))
-    server.serve_forever()
+    (a.run/'model_http.ready.json').write_text(json.dumps(dict(port=server.server_port,checkpoint_id=entry['id'],family=entry.get('family','pi05'),inferenceGpu=request_config.get('inferenceGpu',0),actionSafetyMode='robot_limits',actionFilterContract=filter_id)))
+    try:server.serve_forever()
+    finally:
+        server.server_close()
+        close=getattr(adapter,'close',None)
+        if close is not None:close()
 if __name__=='__main__':main()

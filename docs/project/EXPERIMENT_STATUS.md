@@ -1,3 +1,47 @@
+## 2026-10-23 G0.5本地协议验证
+
+78项CPU测试通过，使用真实HTTP/WebSocket传输与synthetic模型响应，覆盖单位/映射、缓存隔离、缺字段拒绝及实际filter；没有加载权重/训练/Isaac/部署。G0.5历史缺夹爪的模型原因尚未验证，见[报告与证据](../../reports/G05_REPAIR_20261023.md)。
+
+## 2026-10-22 请求轮询局部验证
+
+64项CPU测试通过，包含真实文件服务配假模型，未训练/部署/连接工作站。Windows空文件轮询20次中位数，1000请求4.69ms→0.060ms，5000请求26.57ms→0.112ms；不是GPU/ROS/物理性能实测。规范1.189同步通过。见[收据](../../runs/repair_request_polling_20261022/validation.json)。
+
+## 2026-10-22 推理统计本地验证
+
+71项CPU测试通过；模型/通信分层、历史混合日志识别、坏行/错误隔离、视频非重复计数与实际loopback HTTP返回验证通过。假模型不作GPU计时或成功率证据，无训练/服务器操作/部署。规范1.188同步通过。[收据](../../runs/repair_inference_timing_20261022/validation.json)。
+
+## 2026-10-22 历史推理计时解释修正
+
+模型服务与ROS传输层共写inference_events，旧聚合未分层，125块/250条的0.445s不能当纯GPU前向时延。原生physics_step/planning_wait统计仍有效；本轮无新性能实验。见[速度分析](../../reports/INFERENCE_SPEED_ANALYSIS_20261022.md)。
+
+## 2026-10-22 本地推理退出验证
+
+106项CPU测试通过；真实文件等待/线程、假物理覆盖预算/物理失败/用户停止退出，结果和动作记录保留，停止不包装成推理故障。规范1.187同步通过。无GPU、训练、远程连接或部署，目标训练停止仍未核验。见[证据](../../runs/repair_policy_shutdown_20261022/validation.json)。
+
+## 2026-10-22 准备诊断本地修正验证
+
+76项CPU通过/1项Windows fcntl跳过；准备起点观测保留训练缓存底盘偏移，夹爪保持来源初始化开度，普通初态/机械限制回归通过。规范1.186同步通过。无新物理结果、无训练、无远程连接；服务器旧隔离版本未更新。见[收据](../../runs/repair_prepared_observation_20261022/validation.json)。
+
+## 2026-10-22 修复期训练执行门本地验证
+
+45项CPU测试通过；新训练/旧排队/直接runner及子阶段的禁训门已实现，维护策略缺失或无效时拒绝训练，推理/MSE继续可调度。规范1.185同步通过，无梯度训练、物理episode、远程操作或部署；旧训练停止仍未核验。见[验证收据](../../runs/repair_training_gate_20261022/validation.json)。
+
+## 2026-10-22 初态/动作记录修复与数据范围审计
+
+本地72通过/1跳过，隔离服务器CPU59通过；300来源候选Pick范围18000→37638帧，命令位置/速度越界来源0，未做新数据导出。服务器repair_pick_20261022_v2已排队等待已有训练释放GPU（11:14:26+08），新四项物理对照和共同协议旧模型MSE均未执行；不能宣布任务成功或性能提升。第一轮GPU锁冲突退出现场保留。见[报告与运行身份](../../reports/REPAIR_PROGRESS_20261022.md)。
+
+## 2026-10-22 Pick 根因只读数值审计
+
+旧90/10真机Pick成功由用户确认，具体试验分母待补。历史同stride5真实Test11个Pick：旧手臂MSE0.00846284、新Isaac0.00958686rad²；非新共同噪声配对。服务器300个Isaac Pick训练片段省略准备59–70帧，网页从更早初态启动；真实Pick Train4984/13431帧至少一侧joint4低于当前登记下限。最新v17 Room009 baseline原生625帧/15625子步，31.25sim秒/236.53wall秒，用户取消、无双侧有效接触。两次旧/新Room000 120sim秒诊断亦无双侧接触；不是正式泛化成功率。本轮CPU重算已有预测、缓存与轨迹，没有新推理/训练/物理episode。见[完整报告](../../reports/MSE_ROOTCAUSE_20261022.md)。
+
+## 2026-10-21 网页控制v17实测
+
+GPU1、Room000、π0.5诊断22帧/550子步，范围/速度越界0，最大0.39999746rad/s≤配置0.4；停止3.03秒，native/policy正常退出。状态cancelled，successRate=null，不计Pick成功。v16浮点超速现场保留；v17修复验证通过。训练仅JAX GPU1设备探针，无梯度/新检查点；无10000秒耐久测试。见[报告](../../reports/WEB_CONTROLS_20261021.md)。
+
+## 2026-10-21 Mandatory robot filter 原生诊断
+
+v15 / Room000 / cp_8788068a6984a796aed42ef1：200帧、5000实际子步下发越界0；Pick预算耗尽0/1，Place未执行。52项Python、请求测试4项、UI静态渲染与offline build通过。夹爪实测反馈最大超限0.43756mm，目标合法不代表反馈无超调。训练/真机控制均未执行。v1–v3准备/初始化/实现错误保留，不计模型样本。详见[报告](../../reports/ROBOT_ACTION_FILTER_REVIEW_20261021.md)与[审计](../../runs/mandatory_robot_filter_20261021/command_audit.json)。
+
 ## 2026-10-19 18:29 SGT evidence incorporated into English PPT v3
 
 scope=DEC-PPT-002. User requested optimization for current state. [27-slide English PPT](../../output/r1pro_work_presentation_20261019_v3/R1Pro_Real2Sim_VLA_Technical_Report_v3.pptx) supersedes v2 as recommended presentation; older outputs remain. Added workstation/ROS2/single-policy workflow, actual automatic VLA/MSE outcomes, strict joint-limit failures, runtime benchmark and third English-captioned video. [Delivery and limitations](../../runs/presentation_20261019_v3/DELIVERY.md).

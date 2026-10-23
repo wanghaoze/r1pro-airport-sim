@@ -1,3 +1,39 @@
+## 2026-10-23 G0.5协议
+
+`vla/g05_protocol.py`负责MessagePack、四通道单步验证、raw_shape注册核验及按room/task管理连接；`studio_model_http`保留协议/错误证据，`studio_ros2_transport.model_error_message`透传模型失败正文。无缺字段补偿；仅本地测试，见[报告](../../reports/G05_REPAIR_20261023.md)。
+
+## 2026-10-22 顺序请求收件器
+
+vla/request_inbox.py供studio_vla_evaluate文件服务及studio_ros2_transport gateway使用；沿用FilePolicyClient新运行room/sequence连续编号，轮询成本按登记房间数，历史请求保留。仅新run合同，不提供崩溃续跑，见规范1.189与[验证](../../runs/repair_request_polling_20261022/validation.json)。
+
+## 2026-10-22 推理计时模块
+
+vla/inference_timing.py读取分层/历史日志并提供摘要和视频单层事件；studio_model_http及studio_vla_evaluate文件服务写模型层，studio_ros2_transport写HTTP往返层。评测报告和export_live_inference_video使用同一分层合同，不混合求均值或称为GPU kernel时间。仅本地验证，见[进度](../../reports/REPAIR_PROGRESS_20261022.md)。
+
+## 2026-10-22 推理退出生命周期
+
+isaac_policy_pickplace.FilePolicyClient新增本地关闭事件；AsyncChunkBuffer退出先取消文件等待再join，run_policy_room保留原失败与动作证据。vla.policy.Pi05Policy透传InterruptedError以保留用户停止状态。仅本地106项CPU验证，未部署；合同1.187，见[进度](../../reports/REPAIR_PROGRESS_20261022.md)。
+
+## 2026-10-22 准备诊断观测对齐（本地）
+
+`policy_start_diagnostic.py` v2合同保存来源完整episode初始反馈与Pick初始策略偏移；`isaac_policy_pickplace.py`使用对齐参考并保留后续真实漂移；`run_isaac_parallel_pickplace.py`保留准备房间夹爪开度并记录初始命令。76项通过/1跳过，未部署；见[报告](../../reports/REPAIR_PROGRESS_20261022.md)。
+
+## 2026-10-22 修复期训练执行门（本地）
+
+`apps/scene-agent/gpu/maintenance_policy.json`固定维护端策略；`studio_backend.py`拒绝新训练并阻断旧队列，`studio_job_runner.py`在直接入口/子进程启动前重验。缺失或无效策略禁止训练，不影响已有检查点诊断；不替代停止运行中旧进程。45项CPU验证通过，未部署。见[进度](../../reports/REPAIR_PROGRESS_20261022.md)。
+
+## 2026-10-22 Pick 初态诊断与原始动作可观测性
+
+`policy_start_diagnostic.py`校验冻结来源并生成显式prepared_pick_pose合同；`studio_vla_evaluate.py`连接维护诊断请求，`run_isaac_parallel_pickplace.py`仅在初始化应用姿态并落盘证据；`isaac_parallel_runtime.py`/`isaac_policy_pickplace.py`分别记录运行端限速前/后动作。无在线教师回退；诊断禁止计入完整任务成功或训练。前端无新入口，正式网站未切换。见[实施/验证边界](../../reports/REPAIR_PROGRESS_20261022.md)。
+
+## 2026-10-21 网页运行控制
+
+`ExecutionControls.tsx`/`execution-settings.ts`统一GPU与filter设置，`ErrorConsole.tsx`展示浏览器和作业错误；`gpu/execution_settings.py`验证物理GPU与队列可用性，`job_diagnostics.py`/`live_publication.py`保留脱敏错误和下载包。`api/live`、worker和runner贯通cancelled生命周期。filter v2增加500Hz float32量化余量。工作站v17、Sites v15，见[报告](../../reports/WEB_CONTROLS_20261021.md)。
+
+## 2026-10-21 强制机器人动作约束
+
+`r1pro_teleop/real2sim/robot_action_filter.py`统一limits校验、机械交集、有限值、float32边界和每帧限速/反馈门。`scripts/studio_model_http.py`、`studio_ros2_transport.py`、`studio_vla_evaluate.py`及`isaac_policy_pickplace.py`覆盖全部网站执行通道；service reuse核验合同。`apps/scene-agent`恢复服务器v13源码并实现请求/自动评测/UI强制filter；v15部署。合同见[统一规范](../SCENE_TASK_SPEC.md)，实测见[报告](../../reports/ROBOT_ACTION_FILTER_REVIEW_20261021.md)。
+
 ## 2026-10-19 离线与 ROS2
 
 `apps/scene-agent/offline/` 提供Node24/SQLite/本地artifact无登录服务与单实例监督器；`app/Help.tsx`、`BatchCatalog.tsx`、`ModelConfig.tsx`、`lib/reset.ts` 为界面入口。`scripts/studio_{configure_model,model_http,ros2_service,ros2_transport}.py` 提供路径登记、显式单位/时序适配与隔离ROS2图像/状态/动作通信；GR00T未提供权重不标实测。说明[WORKSTATION](../site/WORKSTATION.md)。
@@ -106,3 +142,6 @@ Scope DEC-WEB-013. User explicitly requested actual physics/synchronous-inferenc
 Actual paired benchmark Room000 / cp_d0c1ec449340c22c344ee87c /40frames/2simseconds: baseline3056577e-54e0-45fd-9b49-9c0533cccdf6 15.870699s rollout, physics9.136041s, wait3.648970s; optimized02237d37-2fe8-42fb-81f5-574e42b6d924 4.744614s rollout, physics1.940640s, wait0.522161s. Speedup3.34499x; realtime factor0.12602 to0.42153, still below real time. Both completed1000substeps, duration stop, successRate=null, no Pick/Place success claim. Protected command audit maxstep0.075rad, tracking0.06615/0.12846rad, measured movement0.71673/0.54230rad. Native media exit0. One short pair, CPU/GPU trajectories differ; no long-run stability or generalization claim.
 
 Evidence: runs/web_realtime_optimization_20261019/comparison.json, audit.json, check_v10.json. Server videos at runs/web_runtime_comparison_20261019_v1/{baseline,realtime}; website artifacts referenced by JSON. Wall-time videos retain inference waits; normal native videos use20Hz simulated timeline. Offline releasev11 adds comparison/video panel and Help; physics measured on identical backendv10. Cloud workerbridgev7 uses same backendv10 after oldv5 dispatcher unexpectedly grabbed first baseline with obsoletev4 code; failed85467e04 run preserved and excluded. Hosted Site frontend not republished this turn. Six CPU contract tests and offline build passed; spec1.181 sync current. Remaining: 1x real-time unachieved; GPU dynamics slower for this single-room case; G0.5 missing gripper and GR00T weights remain separate unresolved scopes.
+## 2026-10-21 GPT Site 检查点目录
+
+`apps/scene-agent/app/CheckpointCatalog.tsx`提供搜索和评测选中入口；`lib/checkpoint-catalog.ts`投影工作站快照白名单，`app/api/checkpoints/route.ts`提供不依赖私有bootstrap的只读目录。page与PolicyEvaluation传递选中ID；offline/server同步路由。线上8项验证与权限边界见[交付报告](../../reports/GPT_SITE_CHECKPOINTS_20261021.md)。

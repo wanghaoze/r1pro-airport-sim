@@ -1,0 +1,75 @@
+{
+  "schema": "robot_action_limits/1",
+  "max_step_rad": 0.1,
+  "max_velocity_rad_s": 1.5,
+  "max_tracking_error_rad": 0.25,
+  "max_observation_age_seconds": 0.5,
+  "gripper_range_m": [
+    0,
+    0.08
+  ],
+  "source": "runs/galaxea_robot_deploy_20261013_v3_reference/config_pi05_mixed_gripper80_lan_20261013.toml",
+  "source_sha256": "410080b8c6c9b74847b2a5ec59d832b9b42c87b6f8616f9483eb4b9777c3c68e",
+  "mechanical": {
+    "source": "/home/michelle/haoze/r1pro-airport-sim/runs/isaacsim_three_tray_workflow_20261015_v1/scene_mechanics_v2/asset/import_only.xml",
+    "sha256": "615990b092101fffebd387579842df9d21683a25a88da53c5b2e948d190677bb",
+    "ranges": {
+      "left_arm_joint1": [
+        -4.4506,
+        1.309
+      ],
+      "left_arm_joint2": [
+        -0.1745,
+        3.1416
+      ],
+      "left_arm_joint3": [
+        -2.3562,
+        2.3562
+      ],
+      "left_arm_joint4": [
+        -1.7453,
+        0.3491
+      ],
+      "left_arm_joint5": [
+        -2.3562,
+        2.3562
+      ],
+      "left_arm_joint6": [
+        -1.0472,
+        1.0472
+      ],
+      "left_arm_joint7": [
+        -1.5708,
+        1.5708
+      ],
+      "right_arm_joint1": [
+        -4.4506,
+        1.309
+      ],
+      "right_arm_joint2": [
+        -3.1416,
+        0.1745
+      ],
+      "right_arm_joint3": [
+        -2.3562,
+        2.3562
+      ],
+      "right_arm_joint4": [
+        -1.7453,
+        0.3491
+      ],
+      "right_arm_joint5": [
+        -2.3562,
+        2.3562
+      ],
+      "right_arm_joint6": [
+        -1.0472,
+        1.0472
+      ],
+      "right_arm_joint7": [
+        -1.5708,
+        1.5708
+      ]
+    }
+  }
+}

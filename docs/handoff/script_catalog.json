@@ -217,7 +217,7 @@
     {
       "path": "r1pro_teleop/airport_fsm/__main__.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "37b34283bafb308653e6ee7703f5c8ccb36db10a4f01f1dd3a2e964e0cb73229",
+      "sha256": "50dcd9c4d8126e3db9f5b178eea58f85cdd8d0a15ce028d9a17b54d27b9d1a57",
       "arguments": [
         {
           "names": [
@@ -475,7 +475,7 @@
     {
       "path": "r1pro_teleop/airport_scenes.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "ec6c183d8efb6bec1a0fbf856ff6429120fbd53b2165f88f93be692e3c565f05",
+      "sha256": "3b1e8d9deeeb9ec53d3fb5a281271eb960aa484b52a0dfe78f24336ef5a64abc",
       "arguments": [
         {
           "names": [
@@ -634,7 +634,7 @@
     {
       "path": "r1pro_teleop/dataset.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "912baa515dd4a740d092911311354914debde4261baa07395855385297c5ffec",
+      "sha256": "0c4339bac23c558e133ee7863db939e8af8e4315f5c56d0a944f1a631ded6a05",
       "arguments": [
         {
           "names": [
@@ -691,7 +691,7 @@
     {
       "path": "r1pro_teleop/experiments/__main__.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "d533a867db4332b94be1417b3b4633bae33b69d4e115b0d4cd5048315ae485ba",
+      "sha256": "7c9c1a41a4175f58a19bdc5aa3d51377d2f6a573f2d5339ae3bcaff4d2980273",
       "arguments": [
         {
           "names": [
@@ -1012,7 +1012,7 @@
     {
       "path": "r1pro_teleop/quest_bridge.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "2288fd3ee9008060833c7a9e513da2bd2aa3145ae9679e036ad636e78dab6cda",
+      "sha256": "40ba5b2ca564a21d26836462c8c1e3f758e2ca4b6e3ea41b53b531e470acbdb2",
       "arguments": [
         {
           "names": [
@@ -1139,7 +1139,7 @@
     {
       "path": "r1pro_teleop/replay.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "35e5be05da68d45f3497003ecf7f04c7a1799efd197c7486504f8a19f5bb6d41",
+      "sha256": "ea24c7f680baeceeeeadcc7cfb094dfa1a2bb7c81a3d588de2389fb872c7020b",
       "arguments": [
         {
           "names": [
@@ -1262,7 +1262,7 @@
     {
       "path": "r1pro_teleop/smoke.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "fa5be8b9c39138d7016dbf3dade2c7d5205390593585fe4296ce912a22d6e1d1",
+      "sha256": "dffaaebdb47fb6a99702806ac9d0aebdd2acf816b3117a825dc2496a45df7ea9",
       "arguments": [
         {
           "names": [
@@ -1303,7 +1303,7 @@
     {
       "path": "r1pro_teleop/vla/data_benchmark.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "3add77734f6236d701b77e4d0f7093f5ccf930181fd8001f68b151bbad956fcd",
+      "sha256": "cb2f121877d0a5aa311c0aefdab1fa876c93bc58f52213f97b1c57cfe2c0613f",
       "arguments": [
         {
           "names": [
@@ -1358,7 +1358,7 @@
     {
       "path": "r1pro_teleop/vla/data_lineage.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "d364ae96696943560dd4d34627cc7668a679380f22cf6d8bef37e0e40b9dfaf9",
+      "sha256": "f82f242fed6aafcb4772715701d82b3615b3621c14f410b437c244174084e52c",
       "arguments": [
         {
           "names": [
@@ -1396,7 +1396,7 @@
     {
       "path": "r1pro_teleop/vla/data_native_pipeline.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "07173daaf9c59dad8f7b342facaba4bb18e8ef04218aa1b5e8f1c57b4045b115",
+      "sha256": "8dc838adf4b80c786ad41d0899e22257d8677d4128d3d01d133af2ce21fd2bcb",
       "arguments": [
         {
           "names": [
@@ -1463,7 +1463,7 @@
     {
       "path": "r1pro_teleop/vla/data_quality_audit.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "c6a8a6dfb46087cde274d99085ea55213a31e9f9e2572903f40a556caf61230c",
+      "sha256": "895b0a1c0621d0860d1198151c7fd9b763aacfaea608df053344baa8f07191f9",
       "arguments": [
         {
           "names": [
@@ -1501,7 +1501,7 @@
     {
       "path": "r1pro_teleop/vla/data_skill_coverage.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "dd2eb050bda8ee51bc13e6c452f9d7744ba7898a8c72625a795bb08faf6af1a4",
+      "sha256": "462791faaca79e5b377e9d088ed73a2c8d9653c745a745aa53c6e25f6db87a93",
       "arguments": [
         {
           "names": [
@@ -1539,7 +1539,7 @@
     {
       "path": "r1pro_teleop/workspace_check.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "0889fd60282f650e5b0e7164c6a28686b7bbf20d905750e86c836e59dcb19c3e",
+      "sha256": "c95b2ec6f8949ae1a18373c132e39fc7c9546737135b8d7ecc8cf13dc206cd1d",
       "arguments": [
         {
           "names": [
@@ -1570,7 +1570,7 @@
     {
       "path": "scripts/analyze_contact_substeps.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "9775339a9175d0613852b436ee0d7f388692d48f52551e607a33f7c666e1135d",
+      "sha256": "6989495af1d0f28580f1882967ff25b379976439201ebb2dd6974a85b5e2edb0",
       "arguments": [
         {
           "names": [
@@ -1672,7 +1672,7 @@
     {
       "path": "scripts/analyze_retained_support_structure.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "aa12141ba0c560fa28e3a20430d0945867a62a5b2285758f9b2e9b051994919b",
+      "sha256": "e61270e7efc497f4e437d456b1b4c8e089a668ea39f2277809aa7e7552a765f2",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -1682,7 +1682,7 @@
     {
       "path": "scripts/analyze_support_forces.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "b429f013a5df5690071985e44772a10694792061b84ed76b7cb8af9095216f6d",
+      "sha256": "bc24ec0ac3b817777b36c3b9a6522097229113a1a531636d597a07e02f59b595",
       "arguments": [
         {
           "names": [
@@ -1742,7 +1742,7 @@
     {
       "path": "scripts/audit_case60_sources.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "1233779d72927bd9f27c7bab4b2855061b55cd3c4f49a182a84b61dbcf47e446",
+      "sha256": "de6405d631efd4cfeffc9a98c13bb905eef6fe0e2e2e1ccfa06469c70af38247",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -1752,7 +1752,7 @@
     {
       "path": "scripts/audit_case60_third_stage.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "483dbb638cfbcdda55f039b5711a406740539cde0479d8fcd4e03f62e07e38e5",
+      "sha256": "38d1adcaa371bae398f4b37e1d42e9c254335847f2f0a22284f361126e0964d1",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -1762,7 +1762,7 @@
     {
       "path": "scripts/audit_case60_v27_alignment.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "53282da37263ff932e1b178baf64af5586c72a18916fb35972fe92d231232427",
+      "sha256": "4cd3504eb846107f36dd5f36761b9f76a20969dd29bc16b24c466eb8606ac287",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -1772,7 +1772,7 @@
     {
       "path": "scripts/audit_environment_guards.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "2080e7ac9aa53a6482bdf3163a0fef657960dc77ec80e906e258c4b6c84cab6a",
+      "sha256": "977b7a726e3a82cd389a7fe06f409c58983b83fa0ade0795401aee8fafd393f1",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -1813,7 +1813,7 @@
     {
       "path": "scripts/audit_fixed_primitives.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "13202194cea37b63b59319cfd2f3359da73fbd127baa3143332a2e9dc2db0c26",
+      "sha256": "70239afbe4be22f8686697e2bd01376795934fe131ba588b202231cba8f9ebe1",
       "arguments": [
         {
           "names": [
@@ -1845,7 +1845,7 @@
     {
       "path": "scripts/audit_handoff_causes.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "5512e72a64b08b46ffff026d051c63d781f6b8f7cf92dfda824633a916b81a3b",
+      "sha256": "6acdfd82ed90b0a2d190a097133d2cb3f39415d239025182110d3660109ca90a",
       "arguments": [
         {
           "names": [
@@ -1876,7 +1876,7 @@
     {
       "path": "scripts/audit_historical_regression.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "4a7cda8e0a1c1a110044b83738cf26edf56882bc1aab26f60a50e31be041ddd4",
+      "sha256": "8d56261aead39944653cbe129b233199d3b38c79c85dba122d729085be634061",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -1886,7 +1886,7 @@
     {
       "path": "scripts/audit_isaacsim_fast_pickplace.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "dcf003b156548b29201dcdf0e1cc50c41480fa608452cef2c6404ff8d5ab494d",
+      "sha256": "bde568f005d00948da10ccb7ab1e101021ace5bc2c0ffb4f805e55fd1c205800",
       "arguments": [
         {
           "names": [
@@ -1917,7 +1917,7 @@
     {
       "path": "scripts/audit_isaacsim_three_tray_demo.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "653b835b7b2be4cb93199f6d1cbeb364929f3c8c84dcd949091e04aa62dbb0ca",
+      "sha256": "b4b496f11cfa0e9d89c9c1d7bb670a49002ea31ef59c3e3684315920f7352da0",
       "arguments": [
         {
           "names": [
@@ -1958,7 +1958,7 @@
     {
       "path": "scripts/audit_load_transfer.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "1716a24e2b30e530fb7641f0326b45d16942fa89975a13f08049624026de10de",
+      "sha256": "10b65d4190b21c48619b72ce3e941c379d2b1eb79acb5ee7b3cd944eac7234e7",
       "arguments": [
         {
           "names": [
@@ -2018,7 +2018,7 @@
     {
       "path": "scripts/audit_normalized_scene.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "470274b76c64c744d55800c57ebb7e47dcce07c88e0a209022d089cb93427f74",
+      "sha256": "347cc2c94234e1f03c9c8a8388f65e23f9113f0748bd325d5aadb604e6e758ac",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -2028,7 +2028,7 @@
     {
       "path": "scripts/audit_real2sim.py",
       "category": "真机示范离线回放与配准",
-      "sha256": "551711f43b1be67ac3236afff12f78fdb871e9d96befb0baa13e873593ec0ebf",
+      "sha256": "cf46a65fbc904a5136074076b0c35e0773784136ea244ff253ae7f03d8f9db57",
       "arguments": [
         {
           "names": [
@@ -2067,7 +2067,7 @@
     {
       "path": "scripts/audit_regression_first_divergence.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "71b7ff02ab77871a403134446dbeffd00746ad4e30f797de31ca54838eb0f648",
+      "sha256": "c2f0c04d41cd8a8e485f0ec6e6049ca0eb0b046a1e37cbd67af1092c8b3f5606",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -2077,7 +2077,7 @@
     {
       "path": "scripts/audit_yaw_feedback_scope.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "7600b19d992fff87b72e13abb1696b9027746dcee81c881e5c80e66d42d94423",
+      "sha256": "36e0ed17fc048ac3fd6d9700b32325880eea546cc82f489c10c2dbd65bb2541a",
       "arguments": [
         {
           "names": [
@@ -2108,7 +2108,7 @@
     {
       "path": "scripts/bootstrap_isaac_three_tray_demo.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "e2cdb5e649db992fa54cebf4a56bf7109a041b625afb8ac659d568eb0d92b1a2",
+      "sha256": "d757f2db78f22ea024ae8756f358c025a1345731f7217754c2047f205a217294",
       "arguments": [
         {
           "names": [
@@ -2129,7 +2129,7 @@
     {
       "path": "scripts/build_handoff_catalog.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "9169ef52c6d7671a824bced278b57f4511ab364cdfe5db9148535a2086142ef9",
+      "sha256": "9edea79779d8bd5ed886047441deebd5ad9cdc9387b6b4ca0ded1714d9a1897c",
       "arguments": [
         {
           "names": [
@@ -2158,7 +2158,7 @@
     {
       "path": "scripts/build_real2sim_finger_collision.py",
       "category": "真机示范离线回放与配准",
-      "sha256": "c24881087b78418d076f2e2c5b1934c977569f255ac4c934c7856cc53db5505c",
+      "sha256": "8b6980fd7a595427efa8f6c288e165cae4b810e2bf5e3546e7195527eb02306e",
       "arguments": [
         {
           "names": [
@@ -2178,7 +2178,7 @@
     {
       "path": "scripts/build_single_tray_lab_blender.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "a2c94fc8913ddbffab0ec7fcc0983033671585875f40325f8fb222d2a45095de",
+      "sha256": "276d4759a7167fb912be72ba2e78a10a282df765857622ef62acad7605e0e2f6",
       "arguments": [
         {
           "names": [
@@ -2217,7 +2217,7 @@
     {
       "path": "scripts/check_isaacsim_clip_seek.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "9125e88664d86ec488500dd474af03d4fffd886e79fa721e30ce43a0ef0ec5f1",
+      "sha256": "439f95387d39d4be606737a0ebfeaa5007292d2a97e1635632e8831e1b5d0293",
       "arguments": [
         {
           "names": [
@@ -2269,7 +2269,7 @@
     {
       "path": "scripts/check_r1pro_runtime.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "230f1ef6548e1d9be4ceebfa7b447168b66e5ff83f743ddc06e48b717799a005",
+      "sha256": "434a0e41e3a345dfd9929bcd5be88891fdec06cbe215f841ead58527671b4a53",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -2279,7 +2279,7 @@
     {
       "path": "scripts/close_pi05_comparison_media.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "937a06500e72f5664543532b48e0387b9a396282a710155e07241afedce093d2",
+      "sha256": "d8f842058b2f4053ca350af1f943f42ea3cfb16b4cc305b8a7259b3b2c7a16f8",
       "arguments": [
         {
           "names": [
@@ -2300,7 +2300,7 @@
     {
       "path": "scripts/collect_airport_batches.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "f32cdf5e5b1dadc29c2763cd732371e362c7e755b088fd0568fe665f1d636223",
+      "sha256": "f666e6d4cdc931e5af8147a9a8f9cbce702bd6c62118ec76c3fcc4c43a4f12df",
       "arguments": [
         {
           "names": [
@@ -2362,7 +2362,7 @@
     {
       "path": "scripts/collect_failure_videos.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "ddba6e624166747aefa0f2d8721dde02ded720dccb3556336ec5e6c24aa82e6d",
+      "sha256": "780bb1828519359dfc66db927580f08171ef831a66d92f5efa41edd81cd96a80",
       "arguments": [
         {
           "names": [
@@ -2541,7 +2541,7 @@
     {
       "path": "scripts/collect_isaac_fixed_pickplace.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "0c6ff7fa378dee83e4be71df46e3073551130fa72dba34514b36710027b1719e",
+      "sha256": "d40fa832935b9f7665dbf8c4e496a099e1eb287a1d61e1779a678139bad7b13c",
       "arguments": [
         {
           "names": [
@@ -2562,7 +2562,7 @@
     {
       "path": "scripts/collect_three_table_campaign.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "fff4676769e981f367d790279658553267d1999a5a11ccb0a7a701b6c98459ad",
+      "sha256": "92c007812068d4711635234b254cc29f008bf59e00af63aa44cab46ec1cd0c51",
       "arguments": [
         {
           "names": [
@@ -2755,7 +2755,7 @@
     {
       "path": "scripts/collect_vla_training_status.py",
       "category": "只读监测与索引（以脚本实际副作用为准）",
-      "sha256": "fc41e305476824d703ef19984d03b7cd89800bf255933643077e3fafa5c3ce66",
+      "sha256": "b840b6223e88d38f0df89bccd7bd4b7242a92cbe861a4de872f7100830beb2e9",
       "arguments": [
         {
           "names": [
@@ -2802,7 +2802,7 @@
     {
       "path": "scripts/compare_force_diagnostics.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "669b0cad08c1a9152ff626e15c7eb4c106f3d042d676d00308a60aa75a36b3d9",
+      "sha256": "f292e8f1be6f8ae0844459843161d7348413134a11655b8bd2e0dcf560d8e7c7",
       "arguments": [
         {
           "names": [
@@ -2833,7 +2833,7 @@
     {
       "path": "scripts/compare_pi05_closed_loop.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "3abc60e6fe05d2267b315bacccc043370cd3af6d4065fe28fd6df026aa7d0e34",
+      "sha256": "12ee9c3752b9a60356231aa335e5079f82e6d3eb653a9c41052b896edd15c179",
       "arguments": [
         {
           "names": [
@@ -2864,7 +2864,7 @@
     {
       "path": "scripts/compare_pi05_real_mixed_plots.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "98734336bb3d99613984908a9bce5a1b9570d53a493fee5aab7bd16ea69dd6a0",
+      "sha256": "a1f1aae0ac27b7df9bd9756807b4b524e903bcf38d589693e2b4eedd53f2d23b",
       "arguments": [
         {
           "names": [
@@ -2895,7 +2895,7 @@
     {
       "path": "scripts/compare_pickup120.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "51924b14f883ef947006021feb8396d851bf72a16eb74a2c72dd9fecede77ba9",
+      "sha256": "61e8d16a6a9100f45cae89130c96895418e10c12bbf349b98bc2634b6a2c501f",
       "arguments": [
         {
           "names": [
@@ -2924,7 +2924,7 @@
     {
       "path": "scripts/control_ablation.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "df11278418a6ea9075007c89f0850672462d576d32d994248a77cb3f21d092ec",
+      "sha256": "5b4471f809697579983db5528ffe7fef147ab0d51d729ce9be1792c41d5246f9",
       "arguments": [
         {
           "names": [
@@ -2994,7 +2994,7 @@
     {
       "path": "scripts/control_galaxea_servers.py",
       "category": "连接与真机部署",
-      "sha256": "2950ff29bb5f0c0db7358e3c796d99a2e4a742cf14c19f3de4f6c32b6211bfb1",
+      "sha256": "2c9e91a715de1c3a4995f8c05115a360e22a33497702582e7d6f7e7a519a3570",
       "arguments": [
         {
           "names": [
@@ -3024,7 +3024,7 @@
     {
       "path": "scripts/control_regression.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "7cb1aa8160652b586dcfeb83a410184f35dbd228a5e0722a16725342a3319b0d",
+      "sha256": "59e4d957ad2164a9260fa39117112ce51543c2fa85464702f75eba03be4a2aa9",
       "arguments": [
         {
           "names": [
@@ -3083,7 +3083,7 @@
     {
       "path": "scripts/convert_vla_lerobot.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "8e34b434f65280220a43805d04f03ee2dd1c1fa49149954810bccd5ea1989b01",
+      "sha256": "121d3b9413a4528c0bc692ff5e7303199a66106eca9dd4484b411fd7b6a53808",
       "arguments": [
         {
           "names": [
@@ -3139,7 +3139,7 @@
     {
       "path": "scripts/deploy_experiments.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "feefd463054a1789b920b48881c049888e3dfd05742f476384ba4f8778114f72",
+      "sha256": "5e7d160104f280b78c03b4d0640fdb6e8fefd84f7ebeea1b14f76509c9b02b85",
       "arguments": [
         {
           "names": [
@@ -4195,7 +4195,7 @@
     {
       "path": "scripts/diagnose_fresh_case60_shortcut.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "fbf81e808de4f8647e707b8097bda524cc4aafae44bd4a2c486acb648293cee4",
+      "sha256": "7a6592ea8798fa309f74b9d5b8eb174ce809509331d79ef0e1939538b9384c63",
       "arguments": [
         {
           "names": [
@@ -5437,7 +5437,7 @@
     {
       "path": "scripts/diagnose_push_duration.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "ecf25cad09d8328c6a8a467cf222cafd7d811f97caa51477e6f1c852435e3688",
+      "sha256": "0b8461fda2716280470842eebe7a02b688f9db26c2735a9fd07d59654bb3fe8f",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -5447,7 +5447,7 @@
     {
       "path": "scripts/diagnose_push_from_trace.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "91a5ecfd7f8230c3b384cc702bbac124b0e21f11eeac43160dc59a1b2e62639a",
+      "sha256": "6bb229ab558dc06fd1d06e213a531fee733037f1442ee1699d3502c0dc11f09c",
       "arguments": [
         {
           "names": [
@@ -5697,7 +5697,7 @@
     {
       "path": "scripts/diagnose_real2sim_held_pose.py",
       "category": "真机示范离线回放与配准",
-      "sha256": "9d10be163e0122971ceab45313bad9cde9d3938e41bd95c07347b27d001a4402",
+      "sha256": "f852c13d040f355b338574673d414e48f654ae982bd5a9ef9778aa1b4e414aac",
       "arguments": [
         {
           "names": [
@@ -5976,7 +5976,7 @@
     {
       "path": "scripts/diagnose_v19_camera_events.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "bc7d58ba2e66c060e13c40b25469d013061eb726f379617c22a4ae2576a18863",
+      "sha256": "46ee12967c768bc9188400c4eefa387bd4c91d1ceb9779b7e14d7b9658f6837c",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -6275,7 +6275,7 @@
     {
       "path": "scripts/diagnose_v28_preview_headroom_fresh.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "02347731f7c381966a12834efbb87c72c06d2ff82b8cce59e7313cc91a28c523",
+      "sha256": "b2de95b5085007e5c2da4537a66fbceff26ea133161bd0b97440db5cda713e18",
       "arguments": [
         {
           "names": [
@@ -6565,7 +6565,7 @@
     {
       "path": "scripts/diagnose_withdraw_merge.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "0ca3d99d330ec1c6df5cdfa9a8753c0e26f636397ad0ac050b094a18d0685400",
+      "sha256": "92e0914e189f8c65de5dc1e7f81168d29c3149a4a76138aa54d33f4aa6f20baa",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -6595,7 +6595,7 @@
     {
       "path": "scripts/diagnostic_additive_suffix.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "51163cbbcf704209c98c9a9efb0f1a18f0c39162b883f40f8a0ab1cc1c628f2d",
+      "sha256": "204aeee6af870108fafb6afd62bae5e882b86504228154e8ca9b10524ad96961",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -6605,7 +6605,7 @@
     {
       "path": "scripts/diagnostic_contact_kinematics.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "80ae377398e00b78e7c240c29ab334cd0eeba8d8d80afb00bd7adfb7d833de25",
+      "sha256": "982669f314f2b258355b10cfdf87384efc54ec9582d17824926409ae6366d78c",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -6615,7 +6615,7 @@
     {
       "path": "scripts/diagnostic_force_suffix.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "fc72ec8bc7ffb993a933f7d84de8e5bf3f851812f6b1ec257187ca5bceef386a",
+      "sha256": "419f0a9b413a8e8f87eb6e1c999a6539203ee608025336945112fb27947cf70a",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -6625,7 +6625,7 @@
     {
       "path": "scripts/diagnostic_reference_rotation.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "2c7ebaa1171b1412b5e77f92cd7b48f37edef0ddd916d5978c6210872fe63685",
+      "sha256": "cf8de5e8f2e178bc7033074270fec1aeba3c5943ff637eea418a74704a3658c7",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -6635,7 +6635,7 @@
     {
       "path": "scripts/diagnostic_suffix_reserve.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "66e2944420b7460296a8540abb418eedbc639145c82049935b48733285733cca",
+      "sha256": "7b9bdec5eba1ca1e2778cc67bd3b29a6857938f6a94d16803ba9e3b217430a6e",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -6665,7 +6665,7 @@
     {
       "path": "scripts/diagnostic_yaw_backtrack.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "9363bcdbb6fbc10af0ff22f4c423ddc80e154dc62ba719214ff91a8ccb5573fa",
+      "sha256": "d2b64bf4bce1ad8d72c3d0c3ce232ff6d2b821eccd973e463a17150fef26b465",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -6675,7 +6675,7 @@
     {
       "path": "scripts/diagnostic_yaw_suffix.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "096bf1b612b619e0ed4075f630738f68b4d87a3147acd52a11d853ef485a3021",
+      "sha256": "4b3493e2c2e607171e11ea29e270b0e292664363031d353b10c82ab583943c53",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -6745,7 +6745,7 @@
     {
       "path": "scripts/evaluate_action8_checkpoint_dual.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "5ac1152072f36a197dc6b688812a25741ee54b583590d3830676ddcf2f49106d",
+      "sha256": "56c1e5c0f7f6016fd3b5d24bef9e5e04a3856483ea8e376218671b3d413bb2d4",
       "arguments": [
         {
           "names": [
@@ -7117,7 +7117,7 @@
     {
       "path": "scripts/evaluate_single_tray_pi05.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "d2ffb1cff50c637ee873435446bdcb40f70ac0fd6d33ce891d697215496ffcf3",
+      "sha256": "788c018b4eb9a156bbc9123cbabd211bb38410d39d283e45c7fb3816b9d75b69",
       "arguments": [
         {
           "names": [
@@ -7217,7 +7217,7 @@
     {
       "path": "scripts/evaluate_single_tray_pi05_batch.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "19738ace1a594e595254f748e4db7b79cb6b829ad7481894a8575d42f55ad99a",
+      "sha256": "519050d46bd4cfac44a9680b713084dcc25c8e4edcfbe7aa3cd47b4e72f930af",
       "arguments": [
         {
           "names": [
@@ -7516,7 +7516,7 @@
     {
       "path": "scripts/expand_isaacsim_three_tray.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "9dee8aea7734c765ca5997adfa9f95e864bd4ca19b97d694c3b8e54b9c080bc5",
+      "sha256": "71d7ccd071b9a00edb1fd0792a0682bc03b5a71d11db7719aa88fcf52790e3d8",
       "arguments": [
         {
           "names": [
@@ -7537,7 +7537,7 @@
     {
       "path": "scripts/experiment_server_smoke.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "06b764011862c3cea982833850706210ad7f77829eb2484ea5af636d09978f35",
+      "sha256": "3868ebf3e09cb826736afa9e710d2704ba46d979b75b0af5df5ea824d2b4345f",
       "arguments": [
         {
           "names": [
@@ -7576,7 +7576,7 @@
     {
       "path": "scripts/export_isaac_episode_preview.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "954afdea318451366d8d466d365269d94c503640410367b71ec48badca139721",
+      "sha256": "c0743de7f52c78496f365dce16e5152f4fce85c4f82917df17fd2c1908b9916a",
       "arguments": [
         {
           "names": [
@@ -7656,9 +7656,30 @@
       "fixed_server_paths": false
     },
     {
+      "path": "scripts/export_live_inference_video.py",
+      "category": "安装、项目维护与旧多托盘基线",
+      "sha256": "0422046ade9df3ee9caa1e034febddb0eec15aaa2d29a51663021664e3c12220",
+      "arguments": [
+        {
+          "names": [
+            "'--run'"
+          ],
+          "settings": {
+            "type": "Path",
+            "required": "True"
+          },
+          "line": 52
+        }
+      ],
+      "subcommands": [],
+      "delegates": [],
+      "description": "Export an annotated wall-clock diagnostic from native frames; never hide waits.",
+      "fixed_server_paths": false
+    },
+    {
       "path": "scripts/export_project_interactions.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "e2f269bbf229213840c8c66cc9f2fb2408d53d92b32fe0ec14f35c479eef829f",
+      "sha256": "24bbb56460a4261d9efae66e5c512d535195fdbb09c7c275539ffe68a316a5b3",
       "arguments": [
         {
           "names": [
@@ -7694,9 +7715,19 @@
       "fixed_server_paths": false
     },
     {
+      "path": "scripts/export_scene_studio_offline.py",
+      "category": "安装、项目维护与旧多托盘基线",
+      "sha256": "bf8445c57ce138250267f9e51f0ce050139710153e9601bd54de0eae2564f97b",
+      "arguments": [],
+      "subcommands": [],
+      "delegates": [],
+      "description": "Reproducible source/runtime export, excluding credentials, data and weights.",
+      "fixed_server_paths": false
+    },
+    {
       "path": "scripts/export_single_tray_actions.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "8fd08d16b8f44eac4bbae88e2cc28292235c6fcbc5b492ecffece271cc49caf3",
+      "sha256": "dec62c8d3343f80e481ecb015083ffd0661af853fecf85e7cdb17c5122895888",
       "arguments": [
         {
           "names": [
@@ -7744,7 +7775,7 @@
     {
       "path": "scripts/export_three_table_single_tray_actions.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "e0a788dfd5f43e5f4d46c0942502dccb74f62df9caa65b7fbf897b3178b59298",
+      "sha256": "e96babc5df6c2f5d47ddf5695b7ec48504e92ac80894003801b499e9f0d5302b",
       "arguments": [
         {
           "names": [
@@ -7792,7 +7823,7 @@
     {
       "path": "scripts/finalize_isaac_fast_pickplace.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "e86a2c398b804a18712a30731ff60fc83f8045a640abdd1e5c2f92705c02a763",
+      "sha256": "63850f92e403271e0117e167605bfb49d8b7d4ca1bbd793ae1fc0a68d331b8fa",
       "arguments": [
         {
           "names": [
@@ -7813,7 +7844,7 @@
     {
       "path": "scripts/fit_real2sim_registration.py",
       "category": "真机示范离线回放与配准",
-      "sha256": "16ab3e03db101b735930e6c5818aaf8e62d45d61e65f0a76353d2cc8d7d37011",
+      "sha256": "6cea7a1f0be684dec2b124f15a73a877dd8cde9e02cf85f5960ea83f6d009c38",
       "arguments": [
         {
           "names": [
@@ -7863,7 +7894,7 @@
     {
       "path": "scripts/fit_real2sim_torso.py",
       "category": "真机示范离线回放与配准",
-      "sha256": "d8cbabef110ae640f28f2a9c4ed14c71a794c0b976e89afd8d694ccf1a7ae6a6",
+      "sha256": "255b0eed19644052db06648f2595e6341bfece446de32e27dd42372b3a6c5872",
       "arguments": [
         {
           "names": [
@@ -7883,7 +7914,7 @@
     {
       "path": "scripts/forward_galaxea_lan.py",
       "category": "连接与真机部署",
-      "sha256": "c8b10d33a872b0817c3bddd1b2a543f79e6a5a1a1d2b5094e1c1403a32d02082",
+      "sha256": "e5b9380e7e96bd2f78005c44f476ae0aa55111ffcadfaaa7ac962d312c6fd64c",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -7893,7 +7924,7 @@
     {
       "path": "scripts/galaxea_client_oneclick.sh",
       "category": "连接与真机部署",
-      "sha256": "4e11310056fc887172a8366ae1e8052f05db0fc68cf41cdcc144c5acc40cf571",
+      "sha256": "7f7ca2c08db1043010b324780f83f555b775ec90601503eaa6f94a3f728e7917",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -7915,7 +7946,7 @@
     {
       "path": "scripts/generate_pickup_lerobot.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "6f8cc620764ed3ee44dcbfd13c598e7eb6221a430413206283ad0cd7954259a2",
+      "sha256": "0e7a4193929a6a10302d3029432a17263e769ca6527e172d55628eac88b20489",
       "arguments": [
         {
           "names": [
@@ -8003,7 +8034,7 @@
     {
       "path": "scripts/generate_single_tray_lab.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "6e3961fb17fadf8b62bb6685fb9fc895f675ada4d5adad1bd139aaf8133b7ef7",
+      "sha256": "b520bd380a8f583a842487a46911ea6765721060eb70053c783fdab429d5590d",
       "arguments": [
         {
           "names": [
@@ -8094,7 +8125,7 @@
     {
       "path": "scripts/generate_three_table_single_tray.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "b513426e42960fa133faa218bfe4612f569af74f51f69634002c80c655a449e2",
+      "sha256": "93e367fc9b68028cc305789fd12e4bac1c5c038e18b58e3e7df5ff1da62d87e3",
       "arguments": [
         {
           "names": [
@@ -8205,7 +8236,7 @@
     {
       "path": "scripts/guard_isaacsim_expansion.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "6284733c0bb70904e82a73944c0092989f44f33c3c04d54a9b9235f817435521",
+      "sha256": "f82347578cffab56ff0928e992d2bbfda00c3e0a552e93b6cf08c7fbc7912e5e",
       "arguments": [
         {
           "names": [
@@ -8226,7 +8257,7 @@
     {
       "path": "scripts/guard_isaacsim_three_tray_task.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "54b08409d47a3bad06bc912cf21d5f091b108a5c5e7d34561162038ba1d7958d",
+      "sha256": "a1c0059d93a01f99ff3a051299316b469ddc93e995fffc0c437fd63b521301a5",
       "arguments": [
         {
           "names": [
@@ -8257,7 +8288,7 @@
     {
       "path": "scripts/guard_parallel_real_mix.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "e2f7350487c69bbfddff22bd379bb435d3298e9bb7e418a35698d5395cd8dcae",
+      "sha256": "4bf30cf8e4776d272e9c05b3fa1bcd4f358e768961f2dc70143459568b2b22b9",
       "arguments": [
         {
           "names": [
@@ -8278,7 +8309,7 @@
     {
       "path": "scripts/guard_three_table_workflow.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "1faed908c13b4c278ac5db505271442a46458139c4e0739e2508efc5d8120889",
+      "sha256": "1f604aa88c991bc611afa3ffcf6f1d3ebfa8177f54dbb24601c73466600671d0",
       "arguments": [
         {
           "names": [
@@ -8298,7 +8329,7 @@
     {
       "path": "scripts/inspect_fresh_case60_shortcut.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "b5ecc9222483e67c1884633dc7bcd5ba4112e428c4bbec9659a1bf33ab013c2a",
+      "sha256": "1e74aeab038ad0b8a0d1b08697f81196aed701e2b903073fae1ec18c40c59210",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -8308,7 +8339,7 @@
     {
       "path": "scripts/inspect_push_verification.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "3b067adb304e000cf4b755251e43719427cc0334518e1159ed1898aea623505a",
+      "sha256": "0f6c6c50985ba65e30ba5f1a1b4f033ba6513c98c0f150893f36eddd3e14682b",
       "arguments": [
         {
           "names": [
@@ -8349,7 +8380,7 @@
     {
       "path": "scripts/inspect_v14_grasp_failures.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "f5ddb301136b83c365065cc6504ce5735905ed0367c75c2b69ba133158808e2e",
+      "sha256": "36df4264cd36deae8b5a5a2c71f6c17ef5ffd01862d3795a2f4fbc8008983cbb",
       "arguments": [
         {
           "names": [
@@ -8380,7 +8411,7 @@
     {
       "path": "scripts/inspect_v21_case6_direct_geometry.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "26ef5ad736d4efdcbfbfb678f8c9fccf0c8d595a7f3ae25ea86cdd53e9486761",
+      "sha256": "ee6895b9434d69a15687418c0ee97095b4a6792f7c0d28982fb9d03c10aba297",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -8390,7 +8421,7 @@
     {
       "path": "scripts/inspect_v21_case6_release.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "86a7773792d78e32e9dc720ed7857a4652ae21c4ef5a3aeeef14f1e466485455",
+      "sha256": "cb24e3b6978da235b6ade7f5a2330908ea724e9e16393f9437f61c31e31d6661",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -8400,7 +8431,7 @@
     {
       "path": "scripts/inspect_v21_other_rims.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "3ac0f7fce32aa6fdf7453d5dabfc940386c1c8f5a194fdf643f0339b76e8cbd8",
+      "sha256": "923afc066a4dacc789b66685b093d0ce2b6ccd16d83c6366d75573fffc65cded",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -8410,7 +8441,7 @@
     {
       "path": "scripts/inspect_withdraw_geometry.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "eed5cfaeda40cc829628df4a4f02d72a826799296f286b21aea29dae6ad271f5",
+      "sha256": "f74b3d735214c857299cb04777045e14f8c15a1fa005171a0486fc927b77ca9c",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -8420,7 +8451,7 @@
     {
       "path": "scripts/isaac_mobile.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "3f7aeb4dd469494f66c57723e8ac3644ddc9ed2eb4898e28bfb029be24ce3e36",
+      "sha256": "afb36ecb21eff33941e0e77d73c2f3130396b2067eafa311e51f2f0f6e8a01e0",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -8430,7 +8461,7 @@
     {
       "path": "scripts/isaacsim_base_drives.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "96f6ee67451b06959e20f3582618dedc35b57a0e2b5029d780ff1fc9f7d3150c",
+      "sha256": "5e26a43a7c7432330ae1e95831add114e08955dccc3f04ffb13395969d63d4b7",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -8440,7 +8471,7 @@
     {
       "path": "scripts/isaacsim_control_preflight.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "0cac230f5f4d679dbaf469ae5c99c2aacd5a30cad8cd9d74a2ddc8e34904bea9",
+      "sha256": "17ff3fc02a55b52d2a1ddcef1059655c451ba29d74ac1a7d5b484576655febac",
       "arguments": [
         {
           "names": [
@@ -8519,7 +8550,7 @@
     {
       "path": "scripts/isaacsim_deformable_coat.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "f5f62f7ca2bb012c9b0bac1552ba73d0e9406024815281419bbb9817ffd4322f",
+      "sha256": "f8baafc356c70752f2ff33140d2db1639f38adfab881d1d40118efe89d04ebb6",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -8529,7 +8560,7 @@
     {
       "path": "scripts/isaacsim_kinematic_audit.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "03ef553d40cd7c0d6b1042ce7e173a21dec746157356810e24b08b8a519c931a",
+      "sha256": "5ad02b38d27706d3dffa46e6880a4a9a6ecfc70be42f552c5331f9a7e613da13",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -8539,7 +8570,7 @@
     {
       "path": "scripts/isaacsim_mass_properties.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "8190d0549df5184d58622837e5f29a9fd02c0101dfded002cf385d711d4b474e",
+      "sha256": "ff88d5634f6ebb7ecb3c646a9b0f4c92e4b832bcb86c549998351fcef42438c5",
       "arguments": [
         {
           "names": [
@@ -8580,7 +8611,7 @@
     {
       "path": "scripts/isaacsim_materials.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "19eaa72f0231ae0e81376f2c3c052be525f515e3e803ee34c965bbc20af54982",
+      "sha256": "e323dafb5411d73f41be5cca06cf3d23a32763cf0e57eb75ab7040d20fbcb8f6",
       "arguments": [
         {
           "names": [
@@ -8621,7 +8652,7 @@
     {
       "path": "scripts/isaacsim_reference_episode.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "6ea8886416cd21b43b2839e50e9bc1623de3ea600e65a14105be25d291a27c05",
+      "sha256": "8b785c8af143d4f309447ebd7f03b006cb29ac70bbd44b17470be51c7459dbed",
       "arguments": [
         {
           "names": [
@@ -8662,7 +8693,7 @@
     {
       "path": "scripts/isaacsim_scene_smoke.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "16a6a0ba2cc1d1567b6b117814eed2d9eb3280733d2e6969b9f2d1ab78cae216",
+      "sha256": "6c3702463f0de495dc529177c8f190e0e1977441f49682ff569eb6c29c9b3bb9",
       "arguments": [
         {
           "names": [
@@ -8723,7 +8754,7 @@
     {
       "path": "scripts/isaacsim_stage_runner.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "9516bd3e42fdb7f126f08af5d32b1ba299511978515712b0ba87e9b1ee69a703",
+      "sha256": "984d264b566c62bec96b62a148811810974c28d5754fa27e4700fec17eeb2c81",
       "arguments": [
         {
           "names": [
@@ -8744,7 +8775,7 @@
     {
       "path": "scripts/maintain_three_table_server_index.py",
       "category": "只读监测与索引（以脚本实际副作用为准）",
-      "sha256": "9193d0af1803121dd9dffd13692a000dd7bcae2d5eeadc7c8b62d94506ab143e",
+      "sha256": "db976ef2cd44bb0672ff74cb8483667e71c39d4ce9feaa59c78e32bfd58dfac4",
       "arguments": [
         {
           "names": [
@@ -8886,7 +8917,7 @@
     {
       "path": "scripts/materialize_complete_task_actions_parallel.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "820b771e47f157b8f5edc7f77a8d3eaf959f32f2b955cb5837a99a7709b4691e",
+      "sha256": "0cf576b7e48bae10e47787138fb4a3ac3932aaf9465f9483eef98f6a96c7a1a3",
       "arguments": [
         {
           "names": [
@@ -8994,7 +9025,7 @@
     {
       "path": "scripts/merge_vla_skill_dataset.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "a4e09c4245bb7d991920bee904f1e188af72d84dd8ca981b16b41d8421e95607",
+      "sha256": "08287154993ffa0783307d9e842bc79886ce85c2e6c2b1a6b0663125af935509",
       "arguments": [
         {
           "names": [
@@ -9051,7 +9082,7 @@
     {
       "path": "scripts/native32_expansion_pipeline.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "ee1703caee3d7423e2b25c8e012279af87d9bb591b5024306b0f77499a2ff3c9",
+      "sha256": "b4ac479550c6f48024c16cbd69656ba732446278bc8bea78e963ce53d5c0c8f2",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -9156,7 +9187,7 @@
     {
       "path": "scripts/plan_three_table_reachable_initial_poses.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "bc7f675e5969037555f7cce0e106af5652adc3152daa81d2cfd276de5875259e",
+      "sha256": "ab84c736ac6d762d017d2a22526feb4b86f81a04bd66603250fe0437c182807a",
       "arguments": [
         {
           "names": [
@@ -9176,7 +9207,7 @@
     {
       "path": "scripts/plot_pi05_existing_summary.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "8f3d823c831713deee7e5d7891d6ff3c0813ce8bd0bcdad40a212fb2abd444f5",
+      "sha256": "82c2faecf32fd4aab6c6e21cad1fc83f09aa3b71c6ffce28f8744e50d93b7ff4",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -9186,7 +9217,7 @@
     {
       "path": "scripts/prepare_action8_evaluation_protocol.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "6954534ae6b36ac3670335017f7e6628e1f0463f2dcd9695b0f48c39aa47a046",
+      "sha256": "c433480f7e0430435c94b0dc34923d977766187d7dea6d8c76cbf5668be164a2",
       "arguments": [
         {
           "names": [
@@ -9255,7 +9286,7 @@
     {
       "path": "scripts/prepare_isaac_reachable_pickplace.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "4e9c4dcbc2f0a1e986fd30ea99b08378f04103a10687550ffe9b2cac0f177348",
+      "sha256": "cb11dc4539d673c11bbff06ed26181f09bd313a3160a9ece9f0cc0edc926af4f",
       "arguments": [
         {
           "names": [
@@ -9350,7 +9381,7 @@
     {
       "path": "scripts/prepare_isaacsim_dataset.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "645fc29bad006a26746e7c5db95883af5baab19c8776a64242c866d62f921e81",
+      "sha256": "b211e4058a2c390ea9dc928fdd03d1cfa856a93b4a1d7cb45dc3a42b26f6d110",
       "arguments": [
         {
           "names": [
@@ -9410,7 +9441,7 @@
     {
       "path": "scripts/prepare_isaacsim_three_tray.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "acfd37b4a0deb582ad9a9b42f6f266e51efdba06e04288886d5f5d4b44f23cf7",
+      "sha256": "c90929d4529e9cd87fc7a00ab48c4f962b4b4540a84b069f8795d4c62851e105",
       "arguments": [
         {
           "names": [
@@ -9450,7 +9481,7 @@
     {
       "path": "scripts/prepare_single_tray_evaluation_protocol.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "29946ab5bd8347338efa8e3763626377291dbbd5119b3cbb50fdc23ec6c5c920",
+      "sha256": "1b27915387745285e224cbae43ccbddf149b42678c44782e8df123893ca687ef",
       "arguments": [
         {
           "names": [
@@ -9498,7 +9529,7 @@
     {
       "path": "scripts/prepare_vla_dataset.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "310ab7448b79a1229ea5cbf92f6787b37b48c0892dfd0d55ceb04eb06a7c26c1",
+      "sha256": "5ee9223693b2325a8a2a5c1cb3cd010cf83b799e0564f25d9ab68e67a0e29110",
       "arguments": [
         {
           "names": [
@@ -9557,7 +9588,7 @@
     {
       "path": "scripts/prepare_vla_skill_dataset.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "9bef94746a7a458fbafef8e852aea19731a4b42976844230e4ed2d4d575a8dd1",
+      "sha256": "7fd2b964c77cc35403ac614a79477aafab49d59532e0dd9eaebaab252edbb959",
       "arguments": [
         {
           "names": [
@@ -9642,7 +9673,7 @@
     {
       "path": "scripts/prestage_isaacsim_three_tray.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "8c6e7f9476fa0d4257dae95cadc633f3b486418367d721b4b9caf92e88002650",
+      "sha256": "ac8a8d2768f55fb70f0cb2b8e8a9db50669300d8bba203a90ba113afdf6bb7e7",
       "arguments": [
         {
           "names": [
@@ -9683,7 +9714,7 @@
     {
       "path": "scripts/preview_airport_success.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "d46fcaa5faa7f524d2dc72d3f4896fab57e14321f413475e72f359072f09586b",
+      "sha256": "8459b782e1037c52c9a7578d2ae5605b07f59b6580ab96c88c8620d75145b9df",
       "arguments": [
         {
           "names": [
@@ -9732,7 +9763,7 @@
     {
       "path": "scripts/probe_airport_motion.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "08c7e8a29f92f477ff7663f26f5305903e2251ac081ca0e14663c2f565a7cc91",
+      "sha256": "2db1dc8bb9ef6e3e3a29f89fdaddc295f26f751947273757f44f18694260c930",
       "arguments": [
         {
           "names": [
@@ -9782,7 +9813,7 @@
     {
       "path": "scripts/probe_alternate_rims.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "1ff0dcbf356332f977c05e165ac8a5b281cd050b8d55d065d7a684e1a7db33f0",
+      "sha256": "e4cf8275a9a4275375063d48a8e797567212a0c55a30140b6b4db6bc893741fe",
       "arguments": [
         {
           "names": [
@@ -9833,7 +9864,7 @@
     {
       "path": "scripts/probe_constant_push_height.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "5e4e769ffb19c38ea07c29dfeea399e942ff7a93160148d55a1d45ed48221927",
+      "sha256": "627711d06d7a57c5bf2c949e344aa5337154585c0a00033fafc9309c6174e941",
       "arguments": [
         {
           "names": [
@@ -9864,7 +9895,7 @@
     {
       "path": "scripts/probe_fixed_primitives.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "bd4666757e03156670e226de73ad11a080883afe54509484e815c1ef7000bb3f",
+      "sha256": "890d367a55925483ddff86946cdab7ffcb7aa0836f25998851eb2412c06ceeed",
       "arguments": [
         {
           "names": [
@@ -9945,7 +9976,7 @@
     {
       "path": "scripts/probe_isaac_parallel_collection.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "ac391ecc8d0d9693708dc5d76cc3367c3783171df9d42577c2c470a8a069ca3e",
+      "sha256": "e1ebeac105342ee411618c6f06ece7db060ff9dbfd1307a042f34f3f940456cb",
       "arguments": [
         {
           "names": [
@@ -9966,7 +9997,7 @@
     {
       "path": "scripts/probe_isaacsim_flush_path.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "ab403119c1a635f693d581794b80fe53c266ac6c4b068022dc2a20793a56236b",
+      "sha256": "7168c1b28ed0d147ee096e028c7681cce81fb09ad243f7e2216bb87be994e055",
       "arguments": [
         {
           "names": [
@@ -10056,7 +10087,7 @@
     {
       "path": "scripts/probe_isaacsim_pad_station.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "7899d11a641c771e51900b429bf890251d09b88232f7769d3bac9ccf71f119a3",
+      "sha256": "71aceba8400213badf0d638d2264425330414b9c44c53afb1939ebab8aacc3b3",
       "arguments": [
         {
           "names": [
@@ -10115,7 +10146,7 @@
     {
       "path": "scripts/probe_single_tray_front_workspace.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "fac972e854c95fadd8953cdd4216906037c607fb2aab4e809ea5e51012cf7407",
+      "sha256": "62ee6b14243f890b7d0434a4681fd60cd044ed55701ee650c7cc26ed5f9bac54",
       "arguments": [
         {
           "names": [
@@ -10190,7 +10221,7 @@
     {
       "path": "scripts/project.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "fdc97d51da26450406f1ef028b96217f8455478924eb1697684cbcd10c851f4f",
+      "sha256": "632de5948019fd9e159598038b02c91c002fe14c769a9bb5ac0f2d5e7bf140e9",
       "arguments": [
         {
           "names": [
@@ -10242,7 +10273,7 @@
     {
       "path": "scripts/refine_single_tray_lab_robot_visual.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "4b13d85cb36ac8352bf2599a0b97570e742a2d0f780636697395d9c51ef0d365",
+      "sha256": "c52cf2e34bad6dc9cd5254b7ca9f4c73d38d00d6d47621ce1ae626a5dc71b198",
       "arguments": [
         {
           "names": [
@@ -10271,7 +10302,7 @@
     {
       "path": "scripts/register_video_index_task.ps1",
       "category": "只读监测与索引（以脚本实际副作用为准）",
-      "sha256": "1cdc86eac9c5e274cab681a57e5772a4cb88537c65d319a7332efe8ca132ecf1",
+      "sha256": "51ac7d55d215fa46c1e973d51a0ced2e3ca13e81775241929e44cc625171300f",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -10281,7 +10312,7 @@
     {
       "path": "scripts/render_action8_evaluation.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "b33aaebbc27f881c834c0e64a7b476e29f46dd078c0ccb31e4b245cf8db29d8c",
+      "sha256": "596577a41d54745c735bd476acdaf21cf1dd9d25b203c01f8f5e075da36d38f7",
       "arguments": [
         {
           "names": [
@@ -10373,7 +10404,7 @@
     {
       "path": "scripts/render_task_complete_sources.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "4ff9f2e6bead4371ed1c334b0808936660a396c0dead145a3d161fbc776ecd24",
+      "sha256": "9ba3b66f0ca6345a456f5401ed6e84ed1da999d66465d3e46c56f9d129bbe959",
       "arguments": [
         {
           "names": [
@@ -10489,7 +10520,7 @@
     {
       "path": "scripts/render_three_table_free_run.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "680bf1ca7adbfad099ada1ea8b3652733b6e6dcecdc20118a7926372d1a2eab3",
+      "sha256": "c943e652ae8ccddd6f61d3a6225362125073c33ed6fdc06aba7dd1c70b3735a5",
       "arguments": [
         {
           "names": [
@@ -10565,7 +10596,7 @@
     {
       "path": "scripts/render_three_table_single_tray.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "06e42a5048ec08cad342d5553cf69185914829eb84fc720eeee3e382dba9713d",
+      "sha256": "a0df50dfed07a5bae57ef3b3823b5375640b242e873791c33d06536980ad01aa",
       "arguments": [],
       "subcommands": [],
       "delegates": [
@@ -10577,7 +10608,7 @@
     {
       "path": "scripts/render_vla_native_sources.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "0b0d7062aa402945657bcf7e9e976e0ba091552d03be3c46a32d203ddbb5e7de",
+      "sha256": "5054b48d8bc9e04dc256d6f56655749ad9c50e21cf29d9909ccf2fa713bb2e78",
       "arguments": [
         {
           "names": [
@@ -10615,7 +10646,7 @@
     {
       "path": "scripts/render_vla_rollout_videos.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "20bbd13b9d8655a53be1e5028f3b2249d412a8f50d9c3e6b0056148d54e8f0e2",
+      "sha256": "b7a19da6b350d49e3af0ae51790739dc9c363769c958ee87148f4626ff3ca2a6",
       "arguments": [
         {
           "names": [
@@ -10679,7 +10710,7 @@
     {
       "path": "scripts/repair_airport_initial_settle.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "ed80b3e007a88cc13121607f69c0d96dfcdd45e1eb238726a2674bc41cb7244f",
+      "sha256": "ba69afce6399b13b8ff526f547654565f1041c4ea982f285e1d62f4b7a245fc2",
       "arguments": [
         {
           "names": [
@@ -10746,7 +10777,7 @@
     {
       "path": "scripts/replay_real2sim.py",
       "category": "真机示范离线回放与配准",
-      "sha256": "c6b295d723d70b93155a7c80f6cc75ec2d1d18e2d8f61e05c1c5b9be95626f96",
+      "sha256": "9172a883b2975d8eece56d945da5e54acf6e5babd7fc26b423975270976235c8",
       "arguments": [
         {
           "names": [
@@ -10862,7 +10893,7 @@
     {
       "path": "scripts/rerender_pickup_camera_shells.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "d3cb6e3633ae9d993ff8047ba558679b74c39f8cd6c0e1eea051f5e9d7d700c5",
+      "sha256": "0ee62827ca21af2a2ce9dfe6032637a325bdc3bf0fe1418f137787dc6c7460f2",
       "arguments": [
         {
           "names": [
@@ -10920,7 +10951,7 @@
     {
       "path": "scripts/restore_bc_after_isaac_parallel_probe.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "80bed089b1f8c5b27afd5cc18308e9b46502fdbbafa902f9f67a3c6a18354fc8",
+      "sha256": "7d25889a0729ac90e6ca483cef493f33ac14cb56e50ebc7eea1dcf901ca113ae",
       "arguments": [
         {
           "names": [
@@ -10941,7 +10972,7 @@
     {
       "path": "scripts/resume_afford_pi05_comparison.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "0cf90bab3e2b08cb511cc3ccfc59d1129fe6f24e15b2f6d8e0b691a975cad9cd",
+      "sha256": "b2ae85a60733fa8d348ddc9d8fe6b71c3de580dbd6b35f375c85014947de1df9",
       "arguments": [
         {
           "names": [
@@ -10970,7 +11001,7 @@
     {
       "path": "scripts/resume_isaacsim_bc_after_video.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "a49f637599384e79c1ef09bf3265205273ae420b2e35134a3d01c5b2db3e47d4",
+      "sha256": "cb1e409c30f3be5b134058a59803a602dd5c1ef461dc60965a3a2532cf3d8578",
       "arguments": [
         {
           "names": [
@@ -10991,7 +11022,7 @@
     {
       "path": "scripts/run_galaxea_client_record_compat.py",
       "category": "连接与真机部署",
-      "sha256": "430b90986a9402368c1a49bfbfbbe30610ecdd0e58362610da879aa11a68670c",
+      "sha256": "2619538fff604cb45fa22d61b2ebdbf3fe3ea2e5536b560131e831f8988a6098",
       "arguments": [
         {
           "names": [
@@ -11012,7 +11043,7 @@
     {
       "path": "scripts/run_isaac_parallel_pickplace.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "a5500ec369e58df9051efad07ce36248198deb0a21f074323438635076dfa196",
+      "sha256": "1e5bf8b4e80b4b416329aa12879a257ef1452960721612ebe6a18cb3303d1659",
       "arguments": [
         {
           "names": [
@@ -11033,7 +11064,7 @@
     {
       "path": "scripts/run_isaacsim_fast_pickplace.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "6e1145d1b29650e23de33a88d64293e8e3ca5ed276f7eab8f06f1de3701622a6",
+      "sha256": "c4c524dc0cc689be33ce7d7a578c44bb5412d28d41e3e5a1b65faf435b96d7bc",
       "arguments": [
         {
           "names": [
@@ -11054,7 +11085,7 @@
     {
       "path": "scripts/run_isaacsim_three_tray_task.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "345c970c1868927fa508d65e1f4532908785d59ed4ebaee2aa988751457e6d5a",
+      "sha256": "1f2b746cfc1c4548ee9df05924cda5660c3293a142ecf561c2ae1000b11df361",
       "arguments": [
         {
           "names": [
@@ -11124,7 +11155,7 @@
     {
       "path": "scripts/run_pi05_real_only.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "263783d59fb72b937a4f875c7a144c398e40d486ff09dc8d1d59b501d27588b2",
+      "sha256": "7dd8bb1606fcc95629f44df74601254d9746233e13824b0cc79d2880f31ce875",
       "arguments": [
         {
           "names": [
@@ -11155,7 +11186,7 @@
     {
       "path": "scripts/run_r1pro_gpu.sh",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "1830942432f75c4a589d4b4ca4c5a78a64f8d238b4b8bff8d56fdbc20299648d",
+      "sha256": "9a155deefb751489a6f946746217bfa088d6be70314a3401da3ce546503e9d4f",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -11165,7 +11196,7 @@
     {
       "path": "scripts/run_real_sim_pickplace.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "b149b9493fbf673bda00b7fe1df1f7442bdc75baa5fed179ef4a4aaeea0012f4",
+      "sha256": "56b771e7de33e0e8daeefa9bc108d4f440c3be30a6249c5a6d60ea6995d24bb8",
       "arguments": [
         {
           "names": [
@@ -11204,7 +11235,7 @@
     {
       "path": "scripts/run_single_tray_lab.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "8743778996afb54eb35a455b823f3043c5a550d84ecbc7651313ec5717517e47",
+      "sha256": "ac747d635524d6c6a5e455d476c9bf1df142b0eb00f1e6fcddc849f0310a4bdd",
       "arguments": [
         {
           "names": [
@@ -11487,7 +11518,7 @@
     {
       "path": "scripts/run_single_tray_lab_campaign.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "2000d01e94f56e713382b3d9be916177d6a55002a87d4ec61f161a5bede1542a",
+      "sha256": "aed6cbd1175a131226e0c97e22b800a3cb7e8021897d6328f206ce215c958fe4",
       "arguments": [
         {
           "names": [
@@ -11528,7 +11559,7 @@
     {
       "path": "scripts/run_three_table_full_candidate.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "545e55e03b5639762a504532cbf4d76c30b24b0612db2a7b0afa8cfd38212297",
+      "sha256": "429a81dfb68bcf622a862474a3a77f478eca2dfaac98df076e5d6bfcee5554ea",
       "arguments": [
         {
           "names": [
@@ -11596,7 +11627,7 @@
     {
       "path": "scripts/run_three_table_owned_command.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "13a260e0fcc78bc40d4bbdc62188e6b2ab795c3a63ca76b7c8080ee51811ec5d",
+      "sha256": "2c218b006fff4074569ba7515f9a554a9a3e14e1a3f76fb0992f6c5cb6d8c355",
       "arguments": [
         {
           "names": [
@@ -11695,7 +11726,7 @@
     {
       "path": "scripts/run_three_table_single_tray.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "70b993bda023e3be85530d3af2501cb6ef3259d367faee1f398a6b1b9cc271a0",
+      "sha256": "43b36d665cfdd1dda9e88473df62432eaa6a6a2b09a041dbf32ddff29bb9ae47",
       "arguments": [
         {
           "names": [
@@ -11753,7 +11784,7 @@
     {
       "path": "scripts/run_vla_fixed_scene.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "874a08362e1e8dc16a99d9c655094821fd5320ffbc573ecf3ab2543a81afe70a",
+      "sha256": "24c3a8600b2366edcbcf47498e682b813ec8dbb6056a7c9ba4f65e6921b353bd",
       "arguments": [
         {
           "names": [
@@ -11862,7 +11893,7 @@
     {
       "path": "scripts/select_r1pro_gpu.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "8d4fb023a7cb9705d62133d967cd21bd00618dab92170ea7b5ca0bd3a5f1a66b",
+      "sha256": "1cdb9b2d799d2ec4509cc3f3b48d9ee3705895bba1d70ea3c9230e9d7699ea9b",
       "arguments": [
         {
           "names": [
@@ -11892,7 +11923,7 @@
     {
       "path": "scripts/serve_isaacsim_media.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "65743f9055baede316f806f1db629edf225818f6c4d975a55f515b69994240c2",
+      "sha256": "9cc41c542ea586df4e93d37edc3e00c990c111d389d12b3a8ce2bb50c79e80ef",
       "arguments": [
         {
           "names": [
@@ -12003,7 +12034,7 @@
     {
       "path": "scripts/serve_pi05_diagnostic.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "f00f5d19635529fbb7edaebf0496c0f52ada0e5545be13359d01981d07837935",
+      "sha256": "404745e78fd6bb3dba937e702bcf041d151fa954699a72d37797d888cf38e62b",
       "arguments": [
         {
           "names": [
@@ -12051,7 +12082,7 @@
     {
       "path": "scripts/serve_pi05_galaxea_robot.py",
       "category": "连接与真机部署",
-      "sha256": "307e4e43a3888c52fc70d4381e57a61b871e610aaa8ae3f888898895c86ab4f9",
+      "sha256": "07e5a13c044be6643a1d01a5289b2300fe2f468e0e95dd79514aab698b5c736f",
       "arguments": [
         {
           "names": [
@@ -12072,7 +12103,7 @@
     {
       "path": "scripts/setup_r1pro_server.sh",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "3b63fde07b046215efaf6bab955e9023a5e391786b7fc268263036c628f4fe34",
+      "sha256": "edd8001ff700d0ed85c3b1e4038c1f45f5db12e26bd7e28f93a863f26a85e362",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -12082,7 +12113,7 @@
     {
       "path": "scripts/smoke_fourcam_lerobot.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "932447d25275cc6b08863efb5bda022a694dbe40d20ae09c3ad2be003f90d49b",
+      "sha256": "e4da6fca3d9b3e7b8309a84fb53c7fad633c6c7f3ad971f035c982ee2bfa290d",
       "arguments": [
         {
           "names": [
@@ -12120,9 +12151,128 @@
       "fixed_server_paths": false
     },
     {
+      "path": "scripts/studio_configure_model.py",
+      "category": "安装、项目维护与旧多托盘基线",
+      "sha256": "5ee3887468538cd2491b42d7392e0c071d4b9c26b457a1c8981965757f52df2b",
+      "arguments": [],
+      "subcommands": [],
+      "delegates": [],
+      "description": "Local workstation model registration. Reads weights' metadata, never unpickles weights.",
+      "fixed_server_paths": false
+    },
+    {
+      "path": "scripts/studio_live_inference.py",
+      "category": "安装、项目维护与旧多托盘基线",
+      "sha256": "e18c1dcafebb72e814337ada0dbc94bae73d44a19db88658be3cf40fd36549bb",
+      "arguments": [
+        {
+          "names": [
+            "'--run'"
+          ],
+          "settings": {
+            "type": "Path",
+            "required": "True"
+          },
+          "line": 18
+        },
+        {
+          "names": [
+            "'--checkpoint-id'"
+          ],
+          "settings": {
+            "required": "True"
+          },
+          "line": 19
+        },
+        {
+          "names": [
+            "'--room'"
+          ],
+          "settings": {
+            "type": "int",
+            "default": "0"
+          },
+          "line": 20
+        },
+        {
+          "names": [
+            "'--frames'"
+          ],
+          "settings": {
+            "type": "int",
+            "default": "200"
+          },
+          "line": 21
+        },
+        {
+          "names": [
+            "'--gpu'"
+          ],
+          "settings": {
+            "default": "'0'"
+          },
+          "line": 22
+        },
+        {
+          "names": [
+            "'--keep-server'"
+          ],
+          "settings": {
+            "action": "'store_true'"
+          },
+          "line": 23
+        },
+        {
+          "names": [
+            "'--serve-only'"
+          ],
+          "settings": {
+            "action": "'store_true'",
+            "help": "'Load the checkpoint and keep its ROS2/model endpoint running'"
+          },
+          "line": 24
+        }
+      ],
+      "subcommands": [],
+      "delegates": [],
+      "description": "Run a checkpoint server and camera-driven Isaac diagnostic; simulation only.",
+      "fixed_server_paths": true
+    },
+    {
+      "path": "scripts/studio_model_http.py",
+      "category": "安装、项目维护与旧多托盘基线",
+      "sha256": "1718206b5588b1442cbee20b52adf98eb8ae59d0154da19acbc8df459a666b0d",
+      "arguments": [
+        {
+          "names": [
+            "'--run'"
+          ],
+          "settings": {
+            "type": "Path",
+            "required": "True"
+          },
+          "line": 62
+        },
+        {
+          "names": [
+            "'--port'"
+          ],
+          "settings": {
+            "type": "int",
+            "default": "0"
+          },
+          "line": 62
+        }
+      ],
+      "subcommands": [],
+      "delegates": [],
+      "description": "Loopback model process, separate from ROS's Python/ABI. NPZ, no pickle.",
+      "fixed_server_paths": false
+    },
+    {
       "path": "scripts/studio_mse.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "8a34a39863757d6e29330a8de9add55782a9f17dbf03ebd136fb496d51530c13",
+      "sha256": "85f0aa23d200ffa87550e6abb3c6c414d81d3cd14329f642f66399504999f785",
       "arguments": [
         {
           "names": [
@@ -12153,7 +12303,7 @@
     {
       "path": "scripts/studio_mse_plots.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "e929c758730ec5c1bc23a296c77bf57c8b349d5fde2f68ebcff947eb8345f891",
+      "sha256": "3ddfa82f9f72de25c733ce9ad03d3e5cab94230b9373fbe3d6836557ab0b482f",
       "arguments": [
         {
           "names": [
@@ -12203,9 +12353,29 @@
       "fixed_server_paths": false
     },
     {
-      "path": "scripts/studio_vla_evaluate.py",
-      "category": "数据、VLA 训练与模型评测",
-      "sha256": "dde9b681a65efb23482a2d511ff04add148ede63c1d1cb34480f67a24c7d874f",
+      "path": "scripts/studio_reuse_service.py",
+      "category": "安装、项目维护与旧多托盘基线",
+      "sha256": "554fe6af5af8a48c419be0c56f0d803db97751a8f5acb9b62184dc8cc2b85af9",
+      "arguments": [],
+      "subcommands": [],
+      "delegates": [],
+      "description": "Find an already-owned checkpoint service; never trust caller supplied URLs.",
+      "fixed_server_paths": false
+    },
+    {
+      "path": "scripts/studio_ros2_service.py",
+      "category": "安装、项目维护与旧多托盘基线",
+      "sha256": "31f180816c9576be002727e933b7a3161b6d83bcbc7f0af06d3e3eda603349f6",
+      "arguments": [],
+      "subcommands": [],
+      "delegates": [],
+      "description": "Launch only owned model/ROS children; native evaluator manages this service.",
+      "fixed_server_paths": true
+    },
+    {
+      "path": "scripts/studio_ros2_transport.py",
+      "category": "安装、项目维护与旧多托盘基线",
+      "sha256": "df3fecedb945eb3f2c8ac0ffa5c121a89ac61d28672eeed498deeea74748f527",
       "arguments": [
         {
           "names": [
@@ -12215,7 +12385,37 @@
             "type": "Path",
             "required": "True"
           },
-          "line": 125
+          "line": 24
+        },
+        {
+          "names": [
+            "'--external-policy'"
+          ],
+          "settings": {
+            "action": "'store_true'"
+          },
+          "line": 24
+        }
+      ],
+      "subcommands": [],
+      "delegates": [],
+      "description": "Real ROS 2 topic transport for simulation only; no hardware topic aliases.",
+      "fixed_server_paths": false
+    },
+    {
+      "path": "scripts/studio_vla_evaluate.py",
+      "category": "数据、VLA 训练与模型评测",
+      "sha256": "073dddae7a7a93d7ec42b29019daa354a41a8a1e7404ede9e2ebe1f2cd11ae9e",
+      "arguments": [
+        {
+          "names": [
+            "'--run'"
+          ],
+          "settings": {
+            "type": "Path",
+            "required": "True"
+          },
+          "line": 138
         },
         {
           "names": [
@@ -12224,14 +12424,14 @@
           "settings": {
             "action": "'store_true'"
           },
-          "line": 125
+          "line": 138
         },
         {
           "names": [
             "'--native-python'"
           ],
           "settings": {},
-          "line": 125
+          "line": 138
         }
       ],
       "subcommands": [],
@@ -12242,7 +12442,7 @@
     {
       "path": "scripts/summarize_command_ablation.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "e5ecfff152010dce90c8bede3253c0d10c09a399ae128a0a368ca9f05f082924",
+      "sha256": "91422b3bc9bafd4b6f182abeabd773f4e62bb324a090f07bed818e5268647bfb",
       "arguments": [
         {
           "names": [
@@ -12293,7 +12493,7 @@
     {
       "path": "scripts/summarize_single_tray_contact.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "4c7de1409c03354e1f7beb24a76ba93c5c1cfcd34b2a6b0579894ef757b5ee87",
+      "sha256": "2c91e8d1dfbec3ec2749c320ed107c9cabe7354bfd620af041a2771786b110a0",
       "arguments": [
         {
           "names": [
@@ -12325,7 +12525,7 @@
     {
       "path": "scripts/summarize_yaw_diagnostic.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "857365267e45a0f84cd29d36ccba0ff3aecf62d24d2dbbc02ff8b06f75005475",
+      "sha256": "050cc7b3bf4f71ef454c5a3ed7d466cebaa3b38a15bf15c360764d1f9e1dc900",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -12373,7 +12573,7 @@
     {
       "path": "scripts/supervise_isaac_parallel_pickplace.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "996f014e8845f02aa1106016b9277ebe0e7961335a66ff9e241c1a91ab29b059",
+      "sha256": "d5d9a849da2b7d4773fb9afcbb2ae9afffcbe8b7b3f349a4db685fc1b38a472f",
       "arguments": [
         {
           "names": [
@@ -12394,7 +12594,7 @@
     {
       "path": "scripts/supervise_isaac_parallel_probe.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "8f451c5dc524760a46ae1eaf195dc045cb56a0bc712d49b93cbd38f65556484c",
+      "sha256": "7f0b59762842d48fabe8ae1470d141646cf2f4b5bdb1150645fbe573db193313",
       "arguments": [
         {
           "names": [
@@ -12445,7 +12645,7 @@
     {
       "path": "scripts/supervise_isaacsim_fast_pickplace.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "a44130b071f95355e47112c54db5f2c2512ecf713d32ee9909ad1d9d2759b44b",
+      "sha256": "8eb2d59660953af8fd8243da60f93db250b52e4684a20b84933874751fc899a7",
       "arguments": [
         {
           "names": [
@@ -12466,7 +12666,7 @@
     {
       "path": "scripts/supervise_isaacsim_three_tray_assets.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "d776a83ca4eca7ec7a0bc862554e601caf4192ed37891419795b30fad32cd5c4",
+      "sha256": "6ec1f5c5f026ce0f30f95f66f0878437e39273b38c99d2404c52e9fc5fa6addd",
       "arguments": [
         {
           "names": [
@@ -12589,7 +12789,7 @@
     {
       "path": "scripts/supervise_single_tray_training.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "06b50699f6a91c7b3bef19dba0dbeb9ad501eb124867e1274c0697ebcbd7eb55",
+      "sha256": "009a9a44922a5f288a3bc595d7cc2419d325214fecec04499621cf5adbfbb33d",
       "arguments": [
         {
           "names": [
@@ -12618,7 +12818,7 @@
     {
       "path": "scripts/supervise_three_action_expansion.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "59c8c948f5eb215381c16b91cebe0a71eb1fb3bfe8e6d107b2f36448a6c62e4c",
+      "sha256": "61f41b895d2fd1e190bbbbbb88ec9ae788df8d9e2fcbc0ceb1fd40105dbfe377",
       "arguments": [
         {
           "names": [
@@ -12647,7 +12847,7 @@
     {
       "path": "scripts/supervise_three_table_free_run.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "60bd2db93a7413214b7494cae124a4c8a99619381311783fc0a6749d899bbebc",
+      "sha256": "481ac600d08f2019fe78f7fe9f9a0897a31fce9a6dabb3e38a5accd5f14a0543",
       "arguments": [
         {
           "names": [
@@ -12706,7 +12906,7 @@
     {
       "path": "scripts/supervise_three_table_workflow.py",
       "category": "单托盘场景、控制与数据",
-      "sha256": "f4c781eb588bc32e8044872dfbb6780a54fc46e8814a481ce8a2d0c4f51f1805",
+      "sha256": "7899544ec6d9ebeb9b74071743ca943bc91a4d50d774189da21f20012ce33656",
       "arguments": [
         {
           "names": [
@@ -12735,7 +12935,7 @@
     {
       "path": "scripts/supervise_verified_three_action_training.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "8667aaf3de444c35ac79acb440fb8abbca0a08984bac63160820663082bda73c",
+      "sha256": "84ea91559299c10a377109592cbee7abe7ea35ce685d56293fb21cf1c47f43c2",
       "arguments": [
         {
           "names": [
@@ -12812,7 +13012,7 @@
     {
       "path": "scripts/test_diagnostic_additive_suffix.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "a74b0c33bde55a2081887d24f861912393a1441b615e2f8b8eb5e75e7e3786e8",
+      "sha256": "29b1b8db5c499103dd22f280ae53d55f9bac0f5621f2e1ac8efbeeef78b29526",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -12822,7 +13022,7 @@
     {
       "path": "scripts/test_diagnostic_contact_kinematics.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "6a4c61abde101eee3af59b721d6da698f30d0b92b949bd0723a11bcf3de1ace4",
+      "sha256": "8436adbf6007e4ce0420d493b3e8cc4d7fe086dceef8e1837024db3844381752",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -12832,7 +13032,7 @@
     {
       "path": "scripts/test_diagnostic_force_suffix.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "ea55d7d46231ca2793601f6a439d9e0418fe41c2b4d5989d0f48482bbe3a7e08",
+      "sha256": "462e86ee7ff58ebda4d714fb969c1d29659b992aaff3aedf2fd3617f3ba7bcd3",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -12842,7 +13042,7 @@
     {
       "path": "scripts/test_diagnostic_yaw_backtrack.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "17b512488c75b2fcb093015ae6ad6ba2daf5136c9ec67243851e53be6b09a289",
+      "sha256": "890bb54b287b73e181cc48d03dbc7faef50a5a66ad309c0f0bef6c7186d6a2b2",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -12852,7 +13052,7 @@
     {
       "path": "scripts/test_diagnostic_yaw_suffix.py",
       "category": "历史控制实验、诊断与审计",
-      "sha256": "03a3ce17eda54b36ad42540677e0149dbbe9c7048110ec08959c324e4a57c193",
+      "sha256": "ee568ed8bf1ab5b46ac676a0cbac7885ddc9717f5dd7409b7d0054e626fc8258",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -12927,7 +13127,7 @@
     {
       "path": "scripts/train_pi05_airport.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "12f47ce6342009ff0fd91358fbff8740466c341fef0fec64df2cb68fc8653231",
+      "sha256": "105b425af6a1a0d5eba2d290444c1b53c5a10e1562153e60f60a3b20614ef075",
       "arguments": [
         {
           "names": [
@@ -12984,7 +13184,7 @@
     {
       "path": "scripts/train_pi05_isaac_three_tray.py",
       "category": "Isaac 原生仿真、数据与训练",
-      "sha256": "f0267dd475a337de4795d25f4fa0be8bd0cfd5d0151234c36f68eb154659e729",
+      "sha256": "3e03e4a381298f7db3a33000fb542ab61d520974b66e004b3afa91d02614b540",
       "arguments": [
         {
           "names": [
@@ -13067,7 +13267,7 @@
     {
       "path": "scripts/train_pi05_real_sim50.py",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "415ddef7cb9184514529926d60024f71edd898ec03570b29e712b10944b0153c",
+      "sha256": "c7be8354c811cebb529d24c681523a61878372bd756983b2b7b1c3f3f2b4ca92",
       "arguments": [
         {
           "names": [
@@ -13127,7 +13327,7 @@
     {
       "path": "scripts/translate_scene_studio_en.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "83fe761be3034653781240e0b525ec8c7521838a2fb009731b1817771078bc66",
+      "sha256": "0723703f3298e07ffaf7861bf9ee60acfe0fd6b983e1612497b1d4a91680e884",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -13137,7 +13337,7 @@
     {
       "path": "scripts/upgrade_airport_fourcam.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "ecca8b1d01f5833919477a090b57de4f144e858a1f4dc28bbf293f7e0b14e85c",
+      "sha256": "ca2ad727d9aa7587253aba5a8180028fe8121dfa33d2d747192123e7609f2513",
       "arguments": [
         {
           "names": [
@@ -13178,7 +13378,7 @@
     {
       "path": "scripts/validate_fourcam_scene.py",
       "category": "安装、项目维护与旧多托盘基线",
-      "sha256": "613c47f0e08757c48291b1de66fda82887c9fcf2bae59163da45ee00b8de0695",
+      "sha256": "ffa38c07ddd7d6e7f3fe50eaba96642c24980744ab779120dead5f6100679cc0",
       "arguments": [
         {
           "names": [
@@ -13219,7 +13419,7 @@
     {
       "path": "scripts/validate_real2sim.py",
       "category": "真机示范离线回放与配准",
-      "sha256": "f02d5fa0d4da5c396f3ec17a90fe4618dc7110d62a442d1189a8f080b37776e6",
+      "sha256": "987ce60c9dd9135ad58afd7ebccdff4c831c9b2181ac79b06cf516a40f06e22b",
       "arguments": [
         {
           "names": [
@@ -13246,7 +13446,7 @@
     {
       "path": "scripts/vla_fixed_scene_commands.sh",
       "category": "数据、VLA 训练与模型评测",
-      "sha256": "035ecdfe4f58b399e30d347c8ecacbda3f6bf8a6091ccb820f24a4cc135e59dd",
+      "sha256": "907aacf5b71afba874bdd0b5fcff64952301daa73817f1653fdd560bdfe60b3c",
       "arguments": [],
       "subcommands": [],
       "delegates": [],
@@ -13256,7 +13456,7 @@
     {
       "path": "scripts/watch_isaac_parallel_collection.py",
       "category": "只读监测与索引（以脚本实际副作用为准）",
-      "sha256": "ef289b37c7e0b1ebb3d6f56951d7db39c9d9b7a1ffbc518e633e814196a8af70",
+      "sha256": "e44bf585d18667739fca4a1720dea3885a5659526f2586b275fe32b6ea9a724f",
       "arguments": [
         {
           "names": [
@@ -13296,7 +13496,7 @@
     {
       "path": "scripts/watch_isaacsim_episode_preview.py",
       "category": "只读监测与索引（以脚本实际副作用为准）",
-      "sha256": "956a700343dcb63bd7f22be3035990204a28f420676b903a500338a6847e8c0e",
+      "sha256": "fc1d91fb18b65c1349799d1e8d7dd670d87bcdc2ef0cf06cc8689a86a3dbf353",
       "arguments": [
         {
           "names": [
@@ -13317,7 +13517,7 @@
     {
       "path": "scripts/watch_pi05_mix50.py",
       "category": "只读监测与索引（以脚本实际副作用为准）",
-      "sha256": "7677c760dfc6b0177db85fe3360f27fd2ebc20ec16642abbb0d23bde1c49c070",
+      "sha256": "dd2ad89d1206707a0832987028cb3324b6649304c791449c278e6886c38fdd35",
       "arguments": [
         {
           "names": [
@@ -13348,7 +13548,7 @@
     {
       "path": "scripts/watch_pi05_real_only.py",
       "category": "只读监测与索引（以脚本实际副作用为准）",
-      "sha256": "c05e11302f36b86ac9856fd014d1ec2d82418f6692312564a7f03185fd0b3990",
+      "sha256": "87c0ed04c2c4d1bb3c3c2d4503b0a00d78f5b4aa0974f935efd809d253c59561",
       "arguments": [
         {
           "names": [
@@ -13379,7 +13579,7 @@
     {
       "path": "scripts/watch_pickplace300_mix.py",
       "category": "只读监测与索引（以脚本实际副作用为准）",
-      "sha256": "07ac4b39f5df527ec5bd75d3a25a18acc97b381d43d292164ffabe18a9b8aa44",
+      "sha256": "cc55df8d8ba37ba8ce34b35bc33280d33afa650e2d338727e79a6a8833ef8a79",
       "arguments": [
         {
           "names": [
@@ -13410,7 +13610,7 @@
     {
       "path": "scripts/watch_real_sim_transfer.py",
       "category": "只读监测与索引（以脚本实际副作用为准）",
-      "sha256": "f93733a27ef59013185b39b7499ad3f534ffe8508ce2d8fc2e6a1143eace61e0",
+      "sha256": "e8a3b3bebe65d94cf54251d3c4ea6f64bc5318d40a259d792ec98a5444cd91b8",
       "arguments": [
         {
           "names": [
@@ -13478,7 +13678,7 @@
     {
       "path": "scripts/watch_vla_comparison.py",
       "category": "只读监测与索引（以脚本实际副作用为准）",
-      "sha256": "393713809a9601d1d259f09c1e44de71db1e13ca79f0ea5c8cd788bd4ed65cb1",
+      "sha256": "10cbcfa6587a8b246badb80437e2c4efc8553a8183e93e5b8b04f7be0f9051f7",
       "arguments": [
         {
           "names": [
@@ -13766,11 +13966,11 @@
     },
     {
       "path": "configs/airport_completion_stage_supported_combined_screen_retry3.json",
-      "sha256": "574686d157fdcba68b5ce95d15e7edc39f92945f25e3f86a80a6aeb80a15e94e"
+      "sha256": "3dd0462193dc71e6c8d294ba36ffc60f79a6628f642e92922d4d83c36c6f9f44"
     },
     {
       "path": "configs/airport_completion_stage_supported_staging_retry3.json",
-      "sha256": "180e0e71aec94ebb7d643ab4bb1a16b454ec7331f44cf42e29ead8d6d14ae8b3"
+      "sha256": "1e8b8c658ef89fef7beb552f45abd54ebcf9cf246047b1210401571b1fff0177"
     },
     {
       "path": "configs/airport_completion_task_retry3.json",
@@ -13982,15 +14182,15 @@
     },
     {
       "path": "configs/experiment_candidates.json",
-      "sha256": "55a50b2e5d4e4c989fc232d50354a9a1df69c6648556178d0c37583aa2a9cee4"
+      "sha256": "d0e2fc4515431c73a981f917610f29cca8cd03e97b242e5c9004fc308cfcf820"
     },
     {
       "path": "configs/experiment_search_space.json",
-      "sha256": "6f34cafec6540fdea0fa1f1ca5f39592710f843e505d9e933d44ac87309be1e8"
+      "sha256": "2d8c8f12956a38b6ffff27447ed47eb887d937b79bf188f83c9d8b085ff08425"
     },
     {
       "path": "configs/r1pro_verified_limits_TEMPLATE.json",
-      "sha256": "b16f846d34e668021f56bf2ca5d5a74eaae2d812f2aa58af64e9f28365b8cb7b"
+      "sha256": "d25df7d1fa43c450ef04c290077cb0a22f7e130240da2ab527cb55e2dc650e66"
     },
     {
       "path": "configs/vla_pi05_action8_accelerated_v1.json",
@@ -14002,11 +14202,11 @@
     },
     {
       "path": "configs/vla_pi05_airport_bootstrap4_lora_v2.json",
-      "sha256": "31786527493b94a8d8d05ff3b000010aa30bfbd1a0746c38e1e09d614cbc26d8"
+      "sha256": "efb695081afb43b24367553aeb0799bfd6ae1e68f39b2ae4ea4409ef89b0db0a"
     },
     {
       "path": "configs/vla_pi05_airport_native16_v3_lora.json",
-      "sha256": "a35dd4b081349611aa83159249c38d57dfe9a21bbec62a59b4bdcb01e7b48c3a"
+      "sha256": "95151d88c23c1b85455c612cbe4fb7c3095f30095c94917e7fed36f79680622b"
     },
     {
       "path": "configs/vla_pi05_airport_native32_skill_only6_dualgpu_20261005.json",
@@ -14014,11 +14214,11 @@
     },
     {
       "path": "configs/vla_pi05_airport_native32_skillmerged_dualgpu_dp_20261005.json",
-      "sha256": "fb4ae809bbe1afb17a7fdd3d8c93bc45ab7838f8ae75eba2de30bb130991e1be"
+      "sha256": "658c31d0b9053cebf59e34ec765e7e88ccb93f5e3e02a8ece05f9646761c80db"
     },
     {
       "path": "configs/vla_pi05_airport_native32_skillmerged_dualgpu_warmstart_20261005.json",
-      "sha256": "fb4ae809bbe1afb17a7fdd3d8c93bc45ab7838f8ae75eba2de30bb130991e1be"
+      "sha256": "658c31d0b9053cebf59e34ec765e7e88ccb93f5e3e02a8ece05f9646761c80db"
     },
     {
       "path": "configs/vla_pi05_airport_native32_v2_warmstart_lora.json",
@@ -14042,7 +14242,7 @@
     },
     {
       "path": "configs/vr_teleoperation_whole_body_launch.py",
-      "sha256": "2da5aeb841606850b59f15b63d8628c4955e030c68a4d7b53b736291a77b11ac"
+      "sha256": "b96099f80d6e6af9a99aeb8c3b213925a304f428772669dfc336759b439f4d79"
     }
   ]
 }

@@ -1,0 +1,10 @@
+import {test} from "node:test";
+import assert from "node:assert/strict";
+import {applyEdits,parseBasicIntent,trainingPlan,validateEdits} from "../lib/core.ts";
+const rooms=Array.from({length:32},(_,id)=>({id,name:`room_${id}`,robot_base_pose:[0,0,Math.PI/2],tray_pose:[1,0,.8,0],robot_color:"#B5BCC3",tray_color:"#7B8795",parent_scene_id:"parent",split:"train",seed:id}));
+test("Chinese color affects only selected room and preserves source",()=>{const result=parseBasicIntent("托盘改成蓝色",rooms,[3],{});const next=applyEdits(rooms,result.edits);assert.equal(next[3].tray_color,"#3B82F6");assert.equal(next[2].tray_color,rooms[2].tray_color);assert.equal(rooms[3].tray_color,"#7B8795");});
+test("relative left uses robot yaw and centimeters",()=>{const r=parseBasicIntent("机器人向左移动10厘米",rooms,[0],{}).edits[0].changes.robot_base_pose!;assert.ok(Math.abs(r[0]+.1)<1e-10);assert.ok(Math.abs(r[1])<1e-10);});
+test("room scope and degree conversion",()=>{const r=parseBasicIntent("room_03机器人旋转15度",rooms,[0],{}).edits[0];assert.equal(r.room,3);assert.ok(Math.abs(r.changes.robot_base_pose![2]-Math.PI*7/12)<1e-10);});
+test("reject nonfinite vectors, repeated rooms, and physics edits",()=>{for(const value of [[{room:0,changes:{mass:3}}],[{room:0,changes:{tray_pose:[0,0,NaN,0]}}],[{room:32,changes:{tray_color:"#000000"}}],[{room:0,changes:{tray_color:"#000000"}},{room:0,changes:{tray_color:"#ffffff"}}]])assert.throws(()=>validateEdits(value));});
+test("unknown request never executes",()=>{const r=parseBasicIntent("删除所有数据并运行shell",rooms,[0],{});assert.equal(r.edits.length,0);});
+test("training waits for new300 and alternative selection stays blocked",()=>{const r=trainingPlan(["isaac300_20261017","real_pickplace_v2"],{production:{qualified_pairs:32}});assert.equal(r.ready,false);assert.equal(r.trainingStarted,false);assert.equal(r.status,"waiting_for_data");assert.equal(trainingPlan(["isaac32_wide_20261016"],{}).status,"blocked");assert.throws(()=>trainingPlan(["anything"],{}));});

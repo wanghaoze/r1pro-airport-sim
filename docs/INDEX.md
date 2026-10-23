@@ -1,5 +1,19 @@
 # 文档导航
 
+- [G0.5接入修复（2026-10-23）](../reports/G05_REPAIR_20261023.md)：本地协议/任务缓存/错误传递修复，缺夹爪模型原因与工作站闭环待核验，无训练。
+
+- [Web-to-workstation network architecture](site/NETWORK_ARCHITECTURE.md)：网页、云端队列、工作站出站轮询、私网9080与本地预览；含结果返回路径和时序图。
+
+- [Pick 持续修复进度（2026-10-22）](../reports/REPAIR_PROGRESS_20261022.md)：初态诊断、过滤前后记录、300来源准备段审计；服务器等待GPU，无新成功结论。
+
+- [MuJoCo 90/10 与 Isaac mix 的 MSE / 闭环 / 性能诊断（2026-10-22）](../reports/MSE_ROOTCAUSE_20261022.md)：用户确认旧模型真机Pick成功；新模型MSE退化、准备段缺失、joint4合同冲突与运行计时的服务器审计。
+
+- [网页六项运行控制与实测报告（2026-10-21）](../reports/WEB_CONTROLS_20261021.md)：Sites v15/工作站v17，10000s、停止、错误、GPU选择、可调全模型filter及float32子步实测。
+
+- [网站策略约束与强制 filter 报告（2026-10-21）](../reports/ROBOT_ACTION_FILTER_REVIEW_20261021.md)：v15已部署，200帧/5000子步下发审计；模型Pick失败、夹爪超调及真机现行配置核验边界。
+
+- [Scene Studio 网站项目分析报告（2026-10-21）](../reports/SCENE_STUDIO_REVIEW_20261021.md)：源码/发布完整性、场景到训练流程、状态与保存风险、在线取样和验证边界；未修改业务或部署。
+
 - [英文网站完整操作手册](site/USER_GUIDE_EN.md)：已接入 Help，15章、章节导航、搜索、英文下载；中文原稿仍保留。
 
 - [Updated English technical PPT v3 (27 slides)](../output/r1pro_work_presentation_20261019_v3/R1Pro_Real2Sim_VLA_Technical_Report_v3.pptx) · [Complete ZIP](../output/R1Pro_English_Presentation_Package_20261019_v3.zip) · [Evidence and verification](../runs/presentation_20261019_v3/DELIVERY.md). Current recommended deck, including completed automatic evaluation and measured runtime comparison.

@@ -15,6 +15,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from r1pro_teleop.real2sim.isaac_parallel_collection import (
     CAMERAS, BoundedVideoWriter, batched_joint_targets, room_origins, write_json)
+from r1pro_teleop.real2sim.robot_action_filter import interpolate_commands
 
 
 def main():
@@ -41,7 +42,8 @@ def main():
     status['file_descriptor_limit']=dict(before_soft=soft,hard=hard,after_soft=resource.getrlimit(resource.RLIMIT_NOFILE)[0])
     report('initializing')
     from isaacsim import SimulationApp
-    app = SimulationApp(dict(headless=True, active_gpu=0, physics_gpu=0,
+    selected_gpu=int(cfg.get('simulation_gpu',0))
+    app = SimulationApp(dict(headless=True, active_gpu=selected_gpu, physics_gpu=selected_gpu,
                              multi_gpu=not policy_mode, max_gpu_count=1 if policy_mode else 2, fast_shutdown=True))
     writers = {}; closure = {}; error = None; rc = 1; runtimes=[]; threads=[]; overview=None
     try:
@@ -58,7 +60,7 @@ def main():
         from r1pro_teleop.real2sim.isaac_rubber_contacts import restore_soft_finger_contacts
         from r1pro_teleop.real2sim.isaac_mobile import d6_targets, mobile_targets
         def cpu(x): return x.detach().cpu().numpy() if hasattr(x, 'detach') else np.asarray(x)
-        device = 'cpu' if policy_mode and cfg.get('runtime_profile')=='realtime' else 'cuda:0'
+        device = 'cpu' if policy_mode and cfg.get('runtime_profile')=='realtime' else f'cuda:{selected_gpu}'
         def gpu(x, index=False):
             return torch.as_tensor(x, dtype=torch.int64 if index else torch.float32, device=device)
         root = Path(cfg['scene_root'])
@@ -167,7 +169,7 @@ def main():
         world.get_physics_context().enable_gpu_dynamics(device!='cpu')
         if policy_mode and cfg.get('runtime_profile')=='realtime':world.get_physics_context().enable_fabric(True)
         import carb
-        write_json(out/'physics_runtime_settings.json',dict(physics_device=device,profile=cfg.get('runtime_profile','baseline'),fabric=SimulationManager.is_fabric_enabled(),updateToUsd=carb.settings.get_settings().get('/physics/updateToUsd'),physics_dt=.002,substeps=25))
+        write_json(out/'physics_runtime_settings.json',dict(engine='NVIDIA Isaac Sim',physics_engine='PhysX',simulation_gpu=selected_gpu,render_gpu=selected_gpu,cuda_visible_devices=os.environ.get('CUDA_VISIBLE_DEVICES'),physics_device=device,profile=cfg.get('runtime_profile','baseline'),fabric=SimulationManager.is_fabric_enabled(),updateToUsd=carb.settings.get_settings().get('/physics/updateToUsd'),physics_dt=.002,substeps=25))
         physics_scene = world.get_physics_context().prim_path
         cloner.filter_collisions(physics_scene, '/World/collision_groups', paths, [])
         robots = Articulation(prim_paths_expr=robot_paths, name='parallel_robots', reset_xform_properties=False)
@@ -204,16 +206,30 @@ def main():
         if len(cases)!=n:raise ValueError('one_registered_case_per_room_required')
         from r1pro_teleop.real2sim.isaac_parallel_collection import validate_sources
         validate_sources(cases)
+        prepared={}
+        for i,c in enumerate(cases):
+            if 'prepared_pick_start' in c:
+                if not policy_mode:raise ValueError('prepared_start_policy_diagnostic_only')
+                from r1pro_teleop.real2sim.policy_start_diagnostic import validate_prepared_start
+                prepared[i]=validate_prepared_start(c['prepared_pick_start'],c['policy']['robot_action_limits'])
+        if prepared:
+            initial_rows=np.repeat(initial[None],n,axis=0)
+            for i,(state,_,_) in prepared.items():
+                initial_rows[i]=batched_joint_targets(np.r_[state,[0.,0.,0.]][None])[0]
+            robots.set_joint_positions(gpu(initial_rows),joint_indices=indices)
+            robots.set_joint_velocities(gpu(np.zeros((n,18))),joint_indices=indices)
         if len({tuple(c['tray_pose']) for c in cases})!=n:raise ValueError('duplicate_room_initial_poses')
         base_pos,base_quat=[cpu(x).copy() for x in robots.get_world_poses()]
         base_origins=np.array([np.r_[p[:2]-o[:2],np.arctan2(2*(q[0]*q[3]+q[1]*q[2]),1-2*(q[2]**2+q[3]**2))] for p,q,o in zip(base_pos,base_quat,origins)])
         for i,c in enumerate(cases):
             station=np.asarray(c['initial_base_world'])
             if not np.array_equal(station,c['fixed_base_world']):raise ValueError('fixed_station_mismatch')
+            if i in prepared:station=prepared[i][2]
             base_pos[i,:2]=station[:2]+origins[i,:2]
             base_quat[i]=[np.cos(station[2]/2),0,0,np.sin(station[2]/2)]
         robots.set_world_poses(gpu(base_pos),gpu(base_quat))
         poses=np.asarray([c['tray_pose'] for c in cases])
+        for i,(_,tray,_) in prepared.items():poses[i]=tray
         trays.set_world_poses(gpu(poses[:,:3]+origins),gpu(poses[:,3:]))
         trays.set_velocities(gpu(np.zeros((n,6))))
         readers=[RoomContacts(v,sensor_names,filter_owners,origins[i],size,tables,footprint_report['body_local_vertices_m']) for i,v in enumerate(contact_views)]
@@ -256,7 +272,8 @@ def main():
             states=np.c_[q[:,:7],q[:,7]+q[:,8],q[:,9:16],q[:,16]+q[:,17],pos[:,:2]-base_origins[:,:2],np.arctan2(np.sin(yaw-base_origins[:,2]),np.cos(yaw-base_origins[:,2]))]
             return states,q,np.c_[pos,quat]
         states,joints,base_poses=read_states()
-        commands=states.copy();commands[:,[7,15]]=.08
+        from r1pro_teleop.real2sim.policy_start_diagnostic import initial_commands
+        commands=initial_commands(states,prepared)
         fixed_base=commands[:,16:].copy()
         base_targets=np.asarray([d6_targets(a,mapping['native_d6_world_rotation']) for a in fixed_base])
         for group,values in zip(drives,base_targets):
@@ -284,12 +301,17 @@ def main():
             if policy_mode:obs['policy_images']=policy_images(i)
             runtime=ParallelRoomRuntime(i,d,root/'asset/import_only.xml',parent,size[None],base_origins[i],source_base_q,obs,commands[i],boundary_footprints={'tray_0':np.asarray(footprint_report['body_local_vertices_m'])},initial_time=float(world.current_time))
             runtimes.append(runtime)
-            runtime.write('initial_base_station.json',dict(requested_world=c['initial_base_world'],original_drive_origin=base_origins[i].tolist(),fixed_command=fixed_base[i].tolist(),initialization_only_before_first_step=True))
-            runtime.write('initialization.json',dict(seed=c['seed'],parent_scene_id=c['parent_scene_id'],parent_split=c['parent_split'],tray_pose=c['tray_pose'],room_origin=origins[i].tolist(),initialization_only_before_first_step=True))
+            runtime.write('initial_base_station.json',dict(requested_world=prepared[i][2].tolist() if i in prepared else c['initial_base_world'],registered_world=c['initial_base_world'],original_drive_origin=base_origins[i].tolist(),fixed_command=fixed_base[i].tolist(),initialization_only_before_first_step=True))
+            runtime.write('initialization.json',dict(seed=c['seed'],parent_scene_id=c['parent_scene_id'],parent_split=c['parent_split'],tray_pose=poses[i].tolist(),registered_tray_pose=c['tray_pose'],diagnostic_start='prepared_pick_pose' if i in prepared else 'native_initial',room_origin=origins[i].tolist(),initialization_only_before_first_step=True))
+            if i in prepared:
+                runtime.write('prepared_pick_initialization.json',dict(**c['prepared_pick_start'],
+                    measured_state=states[i].tolist(),measured_joint_position=joints[i].tolist(),
+                    initial_command=commands[i].tolist(),
+                    applied_tray_pose=poses[i].tolist(),applied_base_world=prepared[i][2].tolist()))
             runtime.write('tray_0_collision_footprint.json',footprint_report)
             runtime.write('visual_translation.json',visual_report)
             runtime.write('native_mapping.json',dict(sensor_paths=list(contact_views[i].prim_paths),filter_paths=[relocated(i,p) for p in filter_original],filter_owner=filter_owners,scene_sha256=receipt['scene_sha256'],task_tables=tables,room_origin=origins[i].tolist(),coordinate_frame='room_local',source_planner='private_mj_kinematics_no_mj_step',live_pose_resets_after_initialization=False))
-        write_json(out/'identity.json',dict(source_scene=str(source),source_sha256=receipt['scene_sha256'],rooms=n,origins=origins.tolist(),robot_paths=robot_paths,tray_paths=tray_paths,requested_render_gpus=1 if policy_mode else 2,physics_gpu=0,physics_dt=.002,record_hz=20,global_substeps_per_frame=25,physics_scenes=physics_scenes,initial_simulation_time=float(world.current_time),source_type='learned_policy_native_physx' if policy_mode else 'independent_feedback_expert_native_physx',model_executed=False,model_execution_requested=policy_mode,room_cases=cases,training_eligible=False))
+        write_json(out/'identity.json',dict(source_scene=str(source),source_sha256=receipt['scene_sha256'],rooms=n,origins=origins.tolist(),robot_paths=robot_paths,tray_paths=tray_paths,requested_render_gpus=1 if policy_mode else 2,physics_gpu=selected_gpu,physics_dt=.002,record_hz=20,global_substeps_per_frame=25,physics_scenes=physics_scenes,initial_simulation_time=float(world.current_time),source_type='learned_policy_native_physx' if policy_mode else 'independent_feedback_expert_native_physx',model_executed=False,model_execution_requested=policy_mode,room_cases=cases,training_eligible=False))
         live_started=time.monotonic()
         def publish_live(frame):
             if cfg.get('live_evaluation'):
@@ -338,7 +360,7 @@ def main():
                 with (out/'wall_clock_frames.jsonl').open('a') as clock_log:clock_log.write(json.dumps(dict(frame=frame,unix=time.time(),wall_seconds=time.monotonic()-start,simulation_seconds=frame/20))+chr(10))
             t=time.monotonic();records={i:dict(completed_real_substeps=25,submitted_control=[],finger_contact_force=[],table_force=[],payload_rigid_support=[],penetration=[]) for i in active}
             for sub in range(1,26):
-                batch=previous+(commands-previous)*(sub/25.)
+                batch=interpolate_commands(previous,commands,sub)
                 target=batched_joint_targets(batch)
                 robots.set_joint_position_targets(gpu(target),joint_indices=indices)
                 step_started=time.monotonic();world.step(render=False);timings['physics_step']+=time.monotonic()-step_started
@@ -398,7 +420,7 @@ def main():
             media_good=len(encoders)==4 and all(e.get('returncode')==0 and e.get('frames')==runtime.frames for e in encoders.values())
             result.update(case=cfg['cases'][i],native_encoders=encoders,video_demo_complete=bool(result.get('passed') and media_good),motion={},frames=runtime.frames,raw_fps=20,model_executed=result.get('model_executed',False) if policy_mode else False,training_eligible=False,scope='training_scene_native_closed_loop_diagnostic' if policy_mode else 'parallel_fixed_base_pickplace_candidate',shared_engine_receipt=str(out.parent/'native.exit.json'))
             runtime.write('result.json',result)
-        report('parallel_batch_closed' if rc==0 else 'failed',error=error,actual_native_exit_intent=rc)
+        report('parallel_batch_closed' if rc==0 else 'failed',error=error,actual_native_exit_intent=rc,model_executed=bool(policy_mode and any(r.frames for r in runtimes)))
         app.close(wait_for_replicator=False,skip_cleanup=True,exit_code=rc)
 
 

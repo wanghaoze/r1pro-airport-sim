@@ -1,3 +1,91 @@
+## 2026-10-23 GitHub代码交付
+
+用户要求上传代码，范围为本线程相关修复及尚未入库的网站依赖源码；目标现有仓库独立分支codex/g05-simulator-repair-20261023。168项相关CPU测试通过，未训练/部署/执行Isaac。上传范围与验证边界见[交付记录](../reports/GITHUB_UPLOAD_20261023.md)，实际远程提交回读见本机runs/github_upload_20261023/push_verification.json，不以本条文字代替push成功证据。
+
+## 2026-10-23 G0.5本地修复
+
+用户“修复G05的代码”：新增严格单步协议客户端，修复任务切换缓存沿用、张量展平误接受、注册raw_shape维度、失败连接残留及HTTP原因被ROS吞掉的问题。保存原始动作/握手和结构化错误，保持缺夹爪拒绝与强制filter。78项CPU协议/HTTP/过滤/轮询测试通过；无训练/服务器连接/部署/物理验收。公开上游会省略未预测字段，但工作站版本及模型缺夹爪原因仍待实核，不能称已跑通。报告：[G05修复](../reports/G05_REPAIR_20261023.md)。规范1.190；目标训练实际退出仍未核验。
+
+## 2026-10-23 两模型可用性核查
+
+用户询问simulator现在能否跑G0.5和pi0.5。本轮读取本地接入代码及历史运行证据：pi0.5已有Isaac实际闭环执行，但Pick成功未验收；G0.5有注册/适配/启动路径，最后记录为缺少夹爪输出导致HTTP500、零执行帧，另有端口占用初始化失败历史，不能称已跑通。当前工作站未连接，在线可用性未复测，10月22日本地修复仍未部署。证据：[运行记录](../docs/site/POLICY_EVALUATION.md)、[边界](../reports/WEB_CONTROLS_20261021.md)。无训练、启动仿真或远程操作。
+
+## 2026-10-22 长运行请求轮询本地优化
+
+文件服务/ROS gateway按登记房间下一连续序号查找，替代每20ms枚举排序全部历史请求；订阅未就绪等待，失败写错误后推进，无自动重试、无删除证据。64项CPU测试通过，规范1.189同步通过。本机5000条synthetic历史请求局部扫描26.57ms→0.112ms，不能代表服务器整体加速。无训练/远程连接/部署，训练目标实际退出仍未核验。见[进度](../reports/REPAIR_PROGRESS_20261022.md)、[证据](../runs/repair_request_polling_20261022/validation.json)。
+
+## 2026-10-22 推理分层计时本地修复
+
+model_adapter与http_roundtrip分文件/分层记录，file服务也有模型计时；评测摘要增加各层均值/P50/P95、错误/无效/缺测说明。视频导出只取一个层级，避免一次推理计两次回复。71项CPU测试通过（含本机真实HTTP+假模型），规范1.188同步通过；不是GPU性能验收。无训练、远程连接或部署，目标训练实际退出仍未核验。见[进度](../reports/REPAIR_PROGRESS_20261022.md)、[证据](../runs/repair_inference_timing_20261022/validation.json)。
+
+## 2026-10-22 推理速度追问与计时口径修正
+
+用户询问速度可否优化及inference慢的主要原因。本轮核查历史计时与当前源码：baseline物理58.25%、等待23.71%，先优化整体物理/推理重叠；发现旧0.445s均值混合模型服务和通信层记录（125块/250条），不是纯GPU前向时延。未查明模型内部算子瓶颈，不能声称采样步数、编译或GPU竞争已经确诊。历史同房间短对照realtime加速3.345倍，当前负载/部署未复测。无训练或远程连接，已授权训练停止仍未核验。见[分析](../reports/INFERENCE_SPEED_ANALYSIS_20261022.md)。
+
+## 2026-10-22 本地异步推理退出修复，尚未部署
+
+修复realtime房间退出仍等预取推理默认300s超时的路径：先取消本房间文件等待再join，不删除请求或停止共享服务，保留预算/物理失败和实际帧数。推理期间用户停止不再被包装成基础设施失败。106项CPU测试通过，规范1.187同步通过；无训练、远程连接、部署或新物理结果。服务器目标训练停止仍无实际退出证据；恢复合规连接后优先处理，不按历史PID直接操作。证据见[进度](../reports/REPAIR_PROGRESS_20261022.md)、[验证](../runs/repair_policy_shutdown_20261022/validation.json)。
+
+## 2026-10-22 本地准备姿态诊断修正，服务器仍未更新
+
+准备诊断升级prepared_pick_pose_diagnostic/2：保留来源Pick帧相对完整episode首帧的底盘观测偏移，避免重新归零；准备房间初始夹爪命令保持测量开度，不再统一全开。普通初态不变，在线过滤/固定底盘/来源SHA门不变。76项CPU测试通过、1项fcntl跳过，规范1.186同步通过。无训练/远程连接/部署/物理episode；这是修正新诊断工具，不是证明旧模型失败根因。服务器repair_pick_20261022_v2仍引用旧隔离release v1，恢复连接后须核对身份/状态，旧合同运行不能冒充新合同验证，不覆盖旧现场。停止已授权训练仍优先且尚未核验。见[进度](../reports/REPAIR_PROGRESS_20261022.md)、[收据](../runs/repair_prepared_observation_20261022/validation.json)。
+
+## 2026-10-22 本地训练禁止门完成，未部署
+
+持续修复跟进已实现服务端maintenance_policy默认禁止训练，缺失/无效配置失败关闭；新请求入队、旧排队调度、runner训练入口与子阶段启动前均拦截，不接受payload覆盖；旧等待训练变为blocked，不重试，不阻断已有检查点评测。45项CPU测试通过，规范1.185与sync通过；无训练/远程连接/部署。仍没有已有训练实际退出证据，恢复合规连接后优先核验并停止已授权目标。见[进度更新](../reports/REPAIR_PROGRESS_20261022.md)、[本地收据](../runs/repair_training_gate_20261022/validation.json)。
+
+## 2026-10-22 网页到工作站网络架构图
+
+用户要求绘制完整网页到工作站链路，随后要求删除指定的运维跳板相关内容；已按要求仅展示应用数据流。交付[网络架构图与时序说明](../docs/site/NETWORK_ARCHITECTURE.md)。源码核验：云端队列由工作站出站HTTPS轮询领取，私网9080具有独立数据库/本地bridge，浏览器5173的转发未验证。本轮无服务器连接/训练，也没有新的停止训练回执。
+
+## 2026-10-22 禁止训练；现有训练停止已授权但未送达
+
+用户最新要求“修复过程不要训练，刚刚的训练也停止”（DEC-NO-TRAIN-REPAIR-20261022）。禁止修复期间启动/恢复/重试训练；可继续现有检查点推理、MSE、仿真诊断与代码修复。**停止 d6ce3be9-d74f-48fc-8061-03fbcdebab60 已获授权，不再等确认。** 本轮严格禁用EC2，直连100.104.0.108 SSH22/2222均banner超时，HTTP9080零字节超时，停止指令未送达，实际退出未核验。已请求直连地址/网络；恢复合规连接后的第一优先级为核验当前训练身份、停止该作业、保留检查点/日志并验证退出，不能按旧PID盲停。自动跟进r1pro已同步。下方“停止尚未批准”均为被本条替代的历史快照。证据：[本轮状态](../runs/stop_training_no_ec2_20261022/status.json)。
+
+## 2026-10-22 连接限制：禁止 EC2 跳板
+
+用户最新要求“现在开始不要使用ec跳板机连接服务器”（DEC-NO-EC2-20261022）。立即禁止 EC2 ProxyCommand/ProxyJump、已有跳板隧道及依赖它的辅助脚本；包括只读状态查询。每小时自动跟进 r1pro 已同步该限制。在确认获授权且可用的不经 EC2 连接前仅做本地工作，不刷新远程状态。下方服务器状态都是历史采样；本轮没有远程连接，没有停止服务器作业，不能声称它们已停。
+
+## 2026-10-22 Pick 持续修复进行中
+
+Scope DEC-PICK-REPAIR-20261022。已实现显式 prepared_pick_pose 初态诊断及限速前后动作分离记录，规范1.184；本地72通过/1跳过，服务器CPU59通过。300来源只读审计表明准备阶段可从既有记录补齐（18000→37638候选Pick帧，命令位置/速度越界来源0），未导出新训练版、未放宽机械限制。服务器隔离release policy_start_repair_20261022_v1；**当前诊断运行 runs/repair_pick_20261022_v2**（本机证据目录仍v1）。11:14:26+08核验 supervisor2097520/start_ticks85163995，waiting_gpu；禁止未核验重复启动。既有训练d6ce3be9为177/10000步，占用GPU锁；停止该训练的问题已问，尚未批准，不能自行停止。尚无新物理/MSE结果，不称模型修复成功。已设每小时线程跟进automation r1pro，仿真诊断监督器等待上限6小时；后续先查心跳、身份、退出收据。见[修复报告](../reports/REPAIR_PROGRESS_20261022.md)、[状态](../runs/repair_pick_20261022_v1/current_status.json)。
+
+## 2026-10-22 Pick MSE 与仿真慢根因审计
+
+Scope DEC-MSE-ROOTCAUSE-20261022，只读服务器数值审计。用户确认旧 real_sim_pickplace 90/10 真机 Pick 成功（用户报告，试验分母与部署参数待补）。新 Isaac Pick 历史同 stride5 MSE 比旧手臂 +13.28%、第一步 +25.81%，尚无旧新共同噪声配对。更关键的已证实错配：300 个 Isaac Pick 片段全部省略准备 59–70 帧，网页却从准备前原生状态启动；真机 Pick Train 4984/13431 帧至少一个 joint4 低于当前 -1.7453rad 登记范围，最低 -2.0944rad，不能据标签直接放宽机械范围。最新 baseline 31.25s 仿真/236.53s 原生墙钟，物理137.79s、推理等待56.09s；确认Isaac/PhysX GPU1。报告包含真实过滤事件统计和三个运行无双侧抓持证据；无新训练、物理episode或部署，无根因修复成功结论。证据：[分析报告](../reports/MSE_ROOTCAUSE_20261022.md)、[数值结果](../runs/mse_rootcause_20261022/detail.json)。
+
+## 2026-10-21 六项网页运行控制已上线
+
+Scope DEC-WEB-CONTROLS-20261021。GPT Site v15/工作站v17：错误面板与完整日志下载、10000s/总墙钟guard0、停止按钮、Isaac身份、全模型可调filter、仿真/推理/训练GPU选择。v17 GPU1实测22帧/550子步，float32速度最大0.39999746≤0.4rad/s，范围/速度越界0，停止3.03s，两个子进程exit0。70本地+70服务器Python、14Node、UI回归及两种构建通过。训练仅设备探针，无新梯度；未跑满10000s；现行真机参数、反馈超调和模型任务成功仍未解决。替代v16中间结果及旧固定网页预算，不改历史数据。证据：[交付报告](../reports/WEB_CONTROLS_20261021.md)。
+
+## 2026-10-21 GPT Site 检查点目录已上线
+
+Scope DEC-WEB-CHECKPOINTS-20261021。原GPT Site v13发布成功，线上8项：7个π0.5检查点和1个G0.5登记项；可搜索并选中进入评测。模型权重留工作站；公开只读白名单元数据，私有bootstrap未登录401，Start禁用。同步此前filter前端，旧“云端前端发布未解决”在本轮已完成；真机参数一致性、夹爪超调和模型成功仍未解决。12项Node、UI回归、build通过，线上目录200且8项/live=true，浏览器选择正确；未启动GPU任务。工作站v15未重部署。证据：[交付报告](../reports/GPT_SITE_CHECKPOINTS_20261021.md)。
+
+## 2026-10-21 网站强制机器人 filter 已部署
+
+Scope DEC-WEB-FILTER-20261021。用户要求所有策略输出不超过真机约束。服务器v15工作站网页与云端worker已切换、health/首页/bootstrap正常，两个worker均polling（核验截点见deployment/post_deployment.json，不是持续监控）。原归档范围+场景机械交集、20Hz每帧双臂≤0.075rad、夹爪0..80mm、跟踪0.25rad、反馈0.5s；所有新执行路径强制，旧strict不能绕过。
+
+服务器52项Python、4项请求测试、UI静态回归和build通过。Room000最新50/50 π0.5原生200帧/5000子步下发值零越界，54帧最终过滤，Pick预算耗尽0/1、Place未执行，不计纯模型成功、不进训练。实际手臂未越限，夹爪反馈最大超限0.43756mm。原始真机TOML缺失，仅验证归档参数与机械XML；现行真机一致性、云端前端发布、夹爪超调和模型成功未解决。旧模型服务/数据/历史报告未改；前三次失败现场保留。
+
+证据：[报告](../reports/ROBOT_ACTION_FILTER_REVIEW_20261021.md)、[下发审计](../runs/mandatory_robot_filter_20261021/command_audit.json)、[部署](../runs/mandatory_robot_filter_20261021/evidence/deployment.json)。
+
+## 2026-10-21 Workstation 源码实取
+
+Scope DEC-WEB-SOURCE-PULL-20261021。已通过既有 EC2 跳板 SSH 连到 xinmatrix（严格主机校验）；11:40 Asia/Shanghai 的 v13 web/worker 进程身份与当前 release 路径已核对，另有 v10 worker 引用，未认定重复故障。551 个源码/构建文本文件（19,892,521 字节）拉回新目录并逐文件校验通过。排除依赖、敏感配置和视频/模型二进制；不是完整可运行发行包。实际绑定 100.104.0.108:9080 health=200/ok=true。证据 [拉取说明](../runs/workstation_source_pull_20261021/README.md)、[校验](../runs/workstation_source_pull_20261021/verification.json)。
+
+[网站分析报告](../reports/SCENE_STUDIO_REVIEW_20261021.md) 已补充 v13 实取结果：帧预算、初始预览、worker 请求限制、bridge 故障隔离修复可见；page/bootstrap 与 v5 一致，保存竞态、过期状态、分页限制仍为源码风险，未浏览器复现。没有部署或执行 GPU 作业；替代下段“未连接服务器”的状态边界。云端 v12 源码未取得。
+
+---
+
+## 2026-10-21 Scene Studio 项目审阅
+
+Scope DEC-WEB-REVIEW-20261021。用户要求阅读网站项目、识别问题并提交分析报告。已交付 [报告](../reports/SCENE_STUDIO_REVIEW_20261021.md)。当前 checkout 缺少 apps/scene-agent；审阅 v5 导出，标准 npm build 因入口脚本缺失失败，预构建服务本地独立数据库 health/bootstrap/首页 200。Node 合同10项、Python worker UTF-8模式4项通过；未重跑物理/模型。117处所查文档本地链接18处目标缺失。
+
+2026-10-21 11:24:58 Asia/Shanghai 云端D1 gpu行有新更新；Sites最新v12。当前机器直连工作站9080超时，不能推断服务器停止。断网状态和保存竞态为v5源码风险，未验证当前云端仍存在；模型0/32与0.422实时因子仅引述10月19日记录。未修改业务、部署或控制合同，未启动GPU任务。证据 runs/site_audit_20261021/{audit_evidence,cloud_evidence,direct_probe}.json。本轮会话使用显式本项目线程导出至独立快照，保留原档案。
+
+---
+
 2026-10-19 verification addendum: offlinev13 deployed. Browser G0.5 submission7eae1d05 accepted with1s/20frames; then service initialization rejected occupied G0.5 port (not frame budget), zero nativeframes. Separate blocker remains. Reset preview visibly restores original room / Ready to start and clears selected history. Evidence runs/web_frame_budget_fix_20261019/verification.json and service_failure.json.
 
 
@@ -644,3 +732,6 @@ code_v18恢复旧持盘增量IK配置，增加桌前x/y/yaw候选与完整右推
 
 
 本轮只同步JSON/TXT；已发布75度失败原生诊断http://100.104.0.108:8776/diverse_pickplace_20261016_v1/index.html（失败、专家、非训练），保留四原视角与展示、原轨迹。源读取器按实际span end−start导出，可变Pick包含预调整，不硬裁60帧。交互已显式3线程刷新1264条/6源；不是常驻，最终回复下轮收录。
+
+
+2026-10-21本轮归档截点：[manifest](../runs/mandatory_robot_filter_20261021/interactions/manifest.json)。显式保留原6线程ID并加入本线程，本机实际只有本线程1份源/27条可用消息；旧memory/interactions保留，未声称补齐其他线程。当前最终回复待下轮收录。

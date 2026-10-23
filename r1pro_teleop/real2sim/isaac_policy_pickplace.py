@@ -1,35 +1,48 @@
 """Pure learned-policy room controller and measured Pick/Place observer.
 
 Privileged tray/contact state is used only for task gates, never policy inputs.
-No IK, inverse dynamics, teacher or pose reset. Explicit clipping diagnostic is opt-in and excluded from pure model success.
+No IK, inverse dynamics, teacher or pose reset. The robot filter is mandatory and these runs are excluded from pure model success.
 """
 import json
 import os
 from pathlib import Path
 import time
 import traceback
+from threading import Event
 import numpy as np
 from .isaac_mobile import mobile_targets
+from .robot_action_filter import load_limits, contract_id, bound_actions, filter_command
 
 
 class FilePolicyClient:
     def __init__(self,directory,room_id,checkpoint_id,horizon=20,timeout_seconds=300,wall_deadline=None):
         self.directory=Path(directory);self.room=room_id;self.sequence=0;self.timeout_seconds=timeout_seconds;self.wall_deadline=wall_deadline
+        self.closed=Event()
         metadata=json.loads((self.directory/'ready.json').read_text())
         if metadata.get('checkpoint_id')!=checkpoint_id or metadata.get('horizon')!=horizon:raise ValueError('policy_checkpoint_identity_mismatch')
 
+    def close(self):
+        # Cancel this room's file wait only; preserve requests and service ownership.
+        self.closed.set()
+
+    def check_cancelled(self):
+        if (self.directory.parent/'stop_requested').exists():raise InterruptedError('policy_stopped_by_user')
+        if self.closed.is_set():raise InterruptedError('policy_client_closed')
+
     def infer(self,sample):
+        self.check_cancelled()
         if set(sample)!= {'state','prompt','image/head_left','image/left_wrist','image/right_wrist'}:raise ValueError('privileged_policy_input_rejected')
         stem=f'room{self.room:03d}_{self.sequence:06d}';self.sequence+=1
         request=self.directory/(stem+'.request.npz');temporary=request.with_suffix('.tmp')
         with temporary.open('wb') as stream:np.savez(stream,**sample)
         temporary.replace(request);reply=self.directory/(stem+'.reply.npz');error=self.directory/(stem+'.error.json');deadline=time.monotonic()+self.timeout_seconds
         while not reply.exists():
-            if (self.directory.parent/'stop_requested').exists():raise TimeoutError('evaluation_wall_time_limit')
+            self.check_cancelled()
             if self.wall_deadline and time.time()>=self.wall_deadline:raise TimeoutError('evaluation_wall_time_limit')
             if error.exists():raise RuntimeError(json.loads(error.read_text())['error'])
             if time.monotonic()>deadline:raise TimeoutError('policy_inference_response_timeout')
-            time.sleep(.01)
+            self.closed.wait(.01)
+        self.check_cancelled()
         with np.load(reply,allow_pickle=False) as values:return {'actions':values['actions'].copy()}
 
 
@@ -82,10 +95,11 @@ def clip_diagnostic_actions(actions,model,horizon=20):
 
 class AsyncChunkBuffer:
     """One outstanding request; consume only time-aligned, unexpired predictions."""
-    def __init__(self,policy,horizon):
+    def __init__(self,policy,horizon,cancel_pending=None):
         from concurrent.futures import ThreadPoolExecutor
         self.policy=policy;self.horizon=horizon;self.pool=ThreadPoolExecutor(max_workers=1)
         self.pending=None;self.current=None;self.origin=0;self.prompt=None;self.request_frame=0
+        self.cancel_pending=cancel_pending
     def get(self,images,state,prompt,frame):
         if self.prompt!=prompt:
             if self.pending is not None:self.pending.result();self.pending=None
@@ -99,20 +113,13 @@ class AsyncChunkBuffer:
             self.pending=self.pool.submit(self.policy.infer,{k:v.copy() for k,v in images.items()},state.copy(),prompt)
         return self.current.copy(),frame-self.origin,self.origin
     def close(self):
+        if self.cancel_pending:self.cancel_pending()
         self.pool.shutdown(wait=True,cancel_futures=True)
 
 
 def robot_limit_command(command,previous,measured,model,limits,observation_age):
-    if observation_age>limits['max_observation_age_seconds']:raise ValueError('robot_filter_stale_feedback')
-    arms=np.r_[0:7,8:15]
-    if np.max(np.abs(measured[arms]-previous[arms]))>limits['max_tracking_error_rad']:raise ValueError('robot_filter_tracking_error')
-    applied,changes=clip_diagnostic_actions(np.asarray(command)[None],model,1);applied=applied[0]
-    step=min(limits['max_step_rad'],limits['max_velocity_rad_s']/20.)
-    applied[arms]=np.clip(applied[arms],previous[arms]-step,previous[arms]+step)
-    applied[[7,15]]=np.clip(applied[[7,15]],*limits['gripper_range_m'])
-    # Recheck all mechanical bounds after rate limiting; never submit invalid targets.
-    validate_actions(applied[None],model,1)
-    return applied
+    return filter_command(command,previous,measured,model,limits,observation_age)
+
 
 
 def run_policy_room(runtime,case):
@@ -121,21 +128,29 @@ def run_policy_room(runtime,case):
     try:
         horizon=cfg.get('action_horizon',20)
         if type(horizon)!=int or not 1<=horizon<=40:raise ValueError('invalid_registered_policy_horizon')
-        policy=Pi05Policy(FilePolicyClient(cfg['directory'],case.get('original_room_id',r.room_id),cfg['checkpoint_id'],horizon,cfg.get('inference_timeout_seconds',300),cfg.get('wall_deadline')),PolicyContract(cfg['checkpoint_id'],action_horizon=horizon))
-        pipeline=AsyncChunkBuffer(policy,horizon) if cfg.get('runtime_profile')=='realtime' else None
-        limits=cfg.get('robot_action_limits');previous_command=r.observation()['state'].astype(float).copy()
-        first=r.observation();base_reference=first['state'][16:].copy();bottom=float(first['tray_pose'][0,2])
+        client=FilePolicyClient(cfg['directory'],case.get('original_room_id',r.room_id),cfg['checkpoint_id'],horizon,cfg.get('inference_timeout_seconds',300),cfg.get('wall_deadline'))
+        policy=Pi05Policy(client,PolicyContract(cfg['checkpoint_id'],action_horizon=horizon))
+        pipeline=AsyncChunkBuffer(policy,horizon,cancel_pending=client.close) if cfg.get('runtime_profile')=='realtime' else None
+        limits=cfg.get('robot_action_limits') or load_limits();filter_id=contract_id(limits)
+        previous_command=np.asarray(r.command,dtype=float).copy();previous_command[16:]=r.fixed_episode_base_command
+        from .policy_start_diagnostic import policy_base_reference
+        first=r.observation();base_reference=policy_base_reference(first['state'],case.get('prepared_pick_start'),limits);bottom=float(first['tray_pose'][0,2])
         table=min(r.tables,key=lambda t:np.linalg.norm(np.asarray(t['center_world'])[:2]-first['tray_pose'][0,:2]))
         r.context=table;r.manipulating=True
         if not r.observation()['front_region_ok']:raise ValueError('policy_initial_station_not_table_front')
         r.write('policy_contract.json',dict(checkpoint_id=cfg['checkpoint_id'],base_reference=base_reference.tolist(),
-            base_reference_source='episode_initial_measured_feedback',model_action_mask=[True]*16+[False]*3,
+            diagnostic_start='prepared_pick_pose' if 'prepared_pick_start' in case else 'native_initial',
+            full_task_success_eligible=False,raw_action_semantics='pre_rate_filter_after_service_bounds',
+            base_reference_source='source_episode_initial_feedback_aligned_to_runtime' if 'prepared_pick_start' in case else 'episode_initial_measured_feedback',
+            policy_initial_base_state=(first['state'][16:]-base_reference).tolist(),model_action_mask=[True]*16+[False]*3,
             fixed_base_command=r.fixed_episode_base_command.tolist(),teacher_fallback=False,policy_inputs=['state19','3_native_rgb','prompt'],
+            action_filter_contract=filter_id,action_safety_mode='robot_limits',requested_action_safety_mode=cfg.get('action_safety_mode'),
             policy_horizon=horizon,execution_horizon=min(5,horizon),frames_per_action=cfg['frames_per_action'],parent_split=case['parent_split'],held_out_generalization=False,task_table=table))
         for prompt in ('Pick up the tray','Place the tray'):
             start=r.frames;gate=PlaceObserver(r.observation(),table) if prompt=='Place the tray' else None;passed=False
             if gate:r.write('place_initial_state.json',dict(frame=r.frames,state=r.observation()['state'].tolist(),source='preceding_model_pick_physical_continuation',reset_between_pick_and_place=False,model_executed=True))
             while r.frames-start<cfg['frames_per_action']:
+                if (Path(cfg['directory']).parent/'stop_requested').exists():raise InterruptedError('policy_stopped_by_user')
                 if cfg.get('max_simulation_frames') is not None and r.frames>=cfg['max_simulation_frames']:raise ValueError('simulation_time_budget_reached')
                 if cfg.get('wall_deadline') and time.time()>=cfg['wall_deadline']:raise TimeoutError('evaluation_wall_time_limit')
                 obs=r.observation();state=obs['state'].copy();state[16:]-=base_reference
@@ -143,31 +158,34 @@ def run_policy_room(runtime,case):
                 if pipeline:actions,offset,origin=pipeline.get(obs['policy_images'],state,prompt,r.frames)
                 else:actions=policy.infer(obs['policy_images'],state,prompt)
                 raw_chunks.append(actions.copy())
-                if cfg.get('action_safety_mode') in ('clip_diagnostic','robot_limits'):
-                    actions,corrections=clip_diagnostic_actions(actions,r.model,horizon)
-                    r.event('explicit_limit_diagnostic',chunk_index=len(raw_chunks)-1,corrections=corrections,pure_model_success_eligible=False)
-                validate_actions(actions,r.model,horizon)
+                actions=bound_actions(actions,limits,horizon)
+                actions,corrections=clip_diagnostic_actions(actions,r.model,horizon)
+                r.event('explicit_limit_diagnostic',chunk_index=len(raw_chunks)-1,corrections=corrections,pure_model_success_eligible=False)
                 r.event('model_chunk',prompt=prompt,chunk_index=len(raw_chunks)-1,raw_action=raw_chunks[-1].tolist(),applied_chunk=actions.tolist(),policy_input_frame=origin,consumed_chunk_offset=offset)
-                for raw in actions[offset:offset+min(5,cfg['frames_per_action']-(r.frames-start),max(0,(cfg.get('max_simulation_frames') or 100000)-r.frames))]:
+                for raw in actions[offset:offset+min(5,cfg['frames_per_action']-(r.frames-start),max(0,(cfg.get('max_simulation_frames') or 200000)-r.frames))]:
+                    if (Path(cfg['directory']).parent/'stop_requested').exists():raise InterruptedError('policy_stopped_by_user')
                     command=raw.astype(float).copy();command[16:]=r.fixed_episode_base_command
-                    if cfg.get('action_safety_mode')=='robot_limits':
-                        feedback=r.observation()
-                        filtered=robot_limit_command(command,previous_command,feedback['state'],r.model,limits,max(0,time.time()-feedback.get('measured_wall_time',time.time())))
-                        r.event('robot_action_filter',raw=command.tolist(),applied=filtered.tolist(),feedback=feedback['state'].tolist(),limits=limits)
-                        command=filtered
-                    previous_command=command.copy()
-                    submitted.append(command.copy());obs=r.tick(command);executed+=1
+                    feedback=r.observation()
+                    measured_at=feedback.get('measured_wall_time',float('nan'))
+                    age=time.time()-measured_at
+                    filtered=robot_limit_command(command,previous_command,feedback['state'],r.model,limits,age)
+                    validate_actions(filtered[None],r.model,1)
+                    r.event('robot_action_filter',raw=command.tolist(),applied=filtered.tolist(),feedback=feedback['state'].tolist(),limits=limits,contract=filter_id,observation_age=age)
+                    previous_command=filtered.copy()
+                    submitted.append(filtered.copy());obs=r.tick(filtered,raw_command=command);executed+=1
                     passed=measured_pick(obs,bottom) if gate is None else gate.update(obs)
                     if passed:break
                 r.write('policy_progress.json',dict(stage='native_policy',action=prompt,completed=r.frames-start,total=cfg['frames_per_action'],heartbeat_unix=time.time(),executed_model_frames=executed))
                 if passed:break
             spans.append(dict(prompt=prompt,start=start,end=r.frames,frames=r.frames-start,passed=passed,stable_support_frames=gate.stable if gate else None,release_gap_m=gate.release_gap if gate else None))
             if not passed:
+                if (Path(cfg['directory']).parent/'stop_requested').exists():raise InterruptedError('policy_stopped_by_user')
                 if cfg.get('max_simulation_frames') is not None and r.frames>=cfg['max_simulation_frames']:raise ValueError('simulation_time_budget_reached')
                 raise ValueError('policy_action_budget_exhausted:'+prompt)
     except BaseException as exc:
         error=dict(type=type(exc).__name__,message=str(exc),traceback=traceback.format_exc())
         if isinstance(exc,(TimeoutError,FileNotFoundError,ConnectionError)) or 'inference_failed' in str(exc):source='infrastructure_failure'
+        if isinstance(exc,InterruptedError):source='user_cancelled'
         r.write('failure.json',error)
     finally:
         if pipeline:pipeline.close()
@@ -176,7 +194,7 @@ def run_policy_room(runtime,case):
         executed=r.frames
         np.savez_compressed(r.output/'model_actions.npz',raw_chunks=np.asarray(raw_chunks),submitted=np.asarray(submitted),executed_frames=executed)
         r.worker_result=dict(schema='isaac_policy_room/1',scope='training_scene_native_closed_loop_diagnostic',model_executed=executed>0,
-            action_safety_mode=cfg.get('action_safety_mode','strict'),pure_model_success_eligible=cfg.get('action_safety_mode','strict')=='strict',teacher_collection=False,teacher_fallback=False,training_eligible=False,passed=error is None and len(spans)==2,
+            action_safety_mode='robot_limits',pure_model_success_eligible=False,teacher_collection=False,teacher_fallback=False,training_eligible=False,passed=error is None and len(spans)==2,
             actions=spans,error=error,failure_category=source if error else None,frames=r.frames,executed_model_frames=executed,room_id=r.room_id,
             original_room_id=case.get('original_room_id',r.room_id),parent_split=case['parent_split'],worker_completed=True)
         r.write('worker_result.json',r.worker_result);r.worker_done()

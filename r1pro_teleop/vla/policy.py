@@ -109,6 +109,9 @@ class Pi05Policy:
             observation[f'image/{name}'] = image.copy()
         try:
             reply = self.client.infer(observation)
+        except InterruptedError:
+            # Preserve explicit cancellation so the runtime can report user_cancelled.
+            raise
         except Exception as exc:
             raise PolicyError('vla_inference_failed') from exc
         if not isinstance(reply, dict) or 'actions' not in reply:

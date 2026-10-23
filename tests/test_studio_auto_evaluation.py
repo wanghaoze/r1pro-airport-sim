@@ -81,7 +81,10 @@ def test_preserve_zero_success_and_independent_mse_failure(setup):
     auto.reconcile(b);assert len(list(jobs.glob('*/request.json')))==3
 
 
-def test_new_training_opt_in_and_opt_out(setup):
+def test_new_training_opt_in_and_opt_out(setup,monkeypatch):
+    # Preserve the historical auto-evaluation contract in an enabled fixture;
+    # no training subprocess runs, and repair-mode denial has separate tests.
+    monkeypatch.setattr(b,'training_block_reason',lambda:None)
     _,jobs,_=setup
     for identifier,enabled in [('train_enabled',True),('train_disabled',False)]:
         b.enqueue(dict(id=identifier,kind='training.create',payload=dict(datasets=['real_pickplace_v2'],realPercent=100,steps=500,rewardEnabled=False,autoEvaluate=enabled)))

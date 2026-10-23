@@ -2,7 +2,7 @@
 
 由 `scripts/build_handoff_catalog.py` 静态读取源码生成；不会 import 脚本、调用 `--help` 或启动任务。
 
-共 **252 个入口/辅助脚本**、**132 个 configs 配置文件**。机器可读参数/默认值/来源 SHA 见 [script_catalog.json](script_catalog.json)。
+共 **260 个入口/辅助脚本**、**132 个 configs 配置文件**。机器可读参数/默认值/来源 SHA 见 [script_catalog.json](script_catalog.json)。
 
 操作顺序见 [交接 README](README.md)。本索引包含历史诊断；有文件不等于支持当前任务，也不等于已实测成功。
 
@@ -213,7 +213,9 @@
 | [scripts/control_regression.py](../../scripts/control_regression.py) | Fresh server control evaluation on the unchanged 400-scene source and split. | 参数：--output, --config, --workers, --all, --indices |
 | [scripts/deploy_experiments.py](../../scripts/deploy_experiments.py) | Server-side fresh release deployment; invoke with a non-base Conda Python. | 参数：--archive, --asset-release, --destination |
 | [scripts/experiment_server_smoke.py](../../scripts/experiment_server_smoke.py) | Bounded server smoke: core tests precede this script; always writes status/evidence. | 参数：--source, --output, --workers |
+| [scripts/export_live_inference_video.py](../../scripts/export_live_inference_video.py) | Export an annotated wall-clock diagnostic from native frames; never hide waits. | 参数：--run |
 | [scripts/export_project_interactions.py](../../scripts/export_project_interactions.py) | Export project conversation messages from local logs, never model reasoning/tools. | 参数：--source-root, --destination, --thread |
+| [scripts/export_scene_studio_offline.py](../../scripts/export_scene_studio_offline.py) | Reproducible source/runtime export, excluding credentials, data and weights. | 无静态 argparse；先读源码 |
 | [scripts/generate_airport_scenes.py](../../scripts/generate_airport_scenes.py) | 未提供模块说明；按文件名分类，运行前阅读源码。 | 委托：r1pro_teleop.airport_scenes |
 | [scripts/guard_parallel_real_mix.py](../../scripts/guard_parallel_real_mix.py) | Bounded supervisor recovery with independent actual wait and single instance. | 参数：--config |
 | [scripts/native32_expansion_pipeline.py](../../scripts/native32_expansion_pipeline.py) | Two independent native replay workers, immutable source/reuse, no training. | 无静态 argparse；先读源码；含服务器固定路径 |
@@ -225,8 +227,14 @@
 | [scripts/select_r1pro_gpu.py](../../scripts/select_r1pro_gpu.py) | Map nvidia-smi's physical GPU index to EGL's independent device enumeration. | 参数：--gpu, --fields |
 | [scripts/setup_r1pro_server.sh](../../scripts/setup_r1pro_server.sh) | Shell/PowerShell 入口；参数和副作用见源码。 | 无静态 argparse；先读源码 |
 | [scripts/smoke_fourcam_lerobot.py](../../scripts/smoke_fourcam_lerobot.py) | Stationary camera/loader integration fixture, never a task demonstration. | 参数：--root, --scene-id, --output |
+| [scripts/studio_configure_model.py](../../scripts/studio_configure_model.py) | Local workstation model registration. Reads weights' metadata, never unpickles weights. | 无静态 argparse；先读源码 |
+| [scripts/studio_live_inference.py](../../scripts/studio_live_inference.py) | Run a checkpoint server and camera-driven Isaac diagnostic; simulation only. | 参数：--run, --checkpoint-id, --room, --frames, --gpu, --keep-server, --serve-only；含服务器固定路径 |
+| [scripts/studio_model_http.py](../../scripts/studio_model_http.py) | Loopback model process, separate from ROS's Python/ABI. NPZ, no pickle. | 参数：--run, --port |
 | [scripts/studio_mse.py](../../scripts/studio_mse.py) | Paired all-frame fixed real Val/Test inference on registered checkpoints. | 参数：--run, --index；含服务器固定路径 |
 | [scripts/studio_mse_plots.py](../../scripts/studio_mse_plots.py) | Render immutable MSE figures from saved inference arrays; never runs a policy. | 参数：--run, --output |
+| [scripts/studio_reuse_service.py](../../scripts/studio_reuse_service.py) | Find an already-owned checkpoint service; never trust caller supplied URLs. | 无静态 argparse；先读源码 |
+| [scripts/studio_ros2_service.py](../../scripts/studio_ros2_service.py) | Launch only owned model/ROS children; native evaluator manages this service. | 无静态 argparse；先读源码；含服务器固定路径 |
+| [scripts/studio_ros2_transport.py](../../scripts/studio_ros2_transport.py) | Real ROS 2 topic transport for simulation only; no hardware topic aliases. | 参数：--run, --external-policy |
 | [scripts/supervise_parallel_real_mix.py](../../scripts/supervise_parallel_real_mix.py) | Independent, single-instance conditional BC startup after 300 frozen pairs. | 参数：--config, --mode |
 | [scripts/sync_task_spec.py](../../scripts/sync_task_spec.py) | Refresh/check the implementation appendix inside the single task specification. | 参数：--write, --check |
 | [scripts/translate_scene_studio_en.py](../../scripts/translate_scene_studio_en.py) | One-time source migration to the English Scene Studio interface. | 无静态 argparse；先读源码 |

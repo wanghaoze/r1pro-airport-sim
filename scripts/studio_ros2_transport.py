@@ -12,10 +12,27 @@ import os
 from pathlib import Path
 import time
 import urllib.request
+import urllib.error
 import numpy as np
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from r1pro_teleop.real2sim.robot_action_filter import load_limits, bound_actions
+from r1pro_teleop.vla.request_inbox import RequestInbox
 
 CAMERAS=('head_left','left_wrist','right_wrist')
 NAMES=[*(f'left_joint_{i}' for i in range(1,8)),'left_gripper_m',*(f'right_joint_{i}' for i in range(1,8)),'right_gripper_m','base_dx_m','base_dy_m','base_dyaw_rad']
+
+def model_error_message(exc):
+    """Keep the model's failure reason through ROS/file/status to the web UI."""
+    message='model_inference_failed:'+repr(exc)
+    if isinstance(exc,urllib.error.HTTPError):
+        try:
+            with exc:body=json.loads(exc.read(65536).decode('utf8'))
+            if isinstance(body,dict) and isinstance(body.get('error'),str):
+                message+=': '+body['error']
+                if body.get('details') is not None:message+='; details='+json.dumps(body['details'],ensure_ascii=False)
+        except Exception:pass  # Error-body failures must not hide the original failure.
+    return message
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);p.add_argument('--external-policy',action='store_true');a=p.parse_args()
@@ -28,6 +45,7 @@ def main():
     from rclpy.qos import QoSProfile,ReliabilityPolicy,DurabilityPolicy
     run=a.run.resolve();directory=run/'policy';directory.mkdir(exist_ok=True)
     entry=json.loads((run/'checkpoints.json').read_text())[0];h=entry.get('modelConfig',{}).get('horizon',20)
+    limits=load_limits()
     request_config=json.loads((run/'request.json').read_text())['payload'];ids=request_config['roomIds'];timeout=request_config.get('inferenceTimeoutSeconds',150)
     def status(data):
         tmp=run/'inference_status.tmp';tmp.write_text(json.dumps(data));tmp.replace(run/'inference_status.json')
@@ -39,10 +57,11 @@ def main():
             if not ctx or key in received or d.get('roomId')!=ctx['roomId'] or d.get('checkpointId')!=entry['id']:return
             if time.monotonic()-ctx['sentAt']>timeout:raise ValueError('stale_policy_action')
             if d.get('error'):raise ValueError(d['error'])
-            actions=np.asarray(d['actions'],dtype=np.float32)
+            raw=np.asarray(d['actions'],dtype=np.float64)
+            actions=bound_actions(raw,limits,h)
             if actions.shape!=(h,19) or not np.isfinite(actions).all():raise ValueError('invalid_ros2_action_chunk')
             target=directory/(key+'.reply.npz');tmp=target.with_suffix('.tmp')
-            with tmp.open('wb') as f:np.savez(f,actions=actions)
+            with tmp.open('wb') as f:np.savez(f,actions=actions,raw_actions=raw)
             tmp.replace(target);received.add(key);pending.pop(key,None)
         except Exception as exc:
             if 'key' in locals() and key in pending:(directory/(key+'.error.json')).write_text(json.dumps({'error':str(exc)}));pending.pop(key,None)
@@ -59,15 +78,15 @@ def main():
             active.add(key);req=requests.pop(key);obs=cache.pop(key)
             def infer():
                 result=dict(requestId=key,roomId=req['roomId'],checkpointId=entry['id'])
-                began=time.time();status(dict(stage='inferring',requestId=key,startedAt=began,roomId=req['roomId'],checkpointId=entry['id']))
+                began=time.time();monotonic_began=time.monotonic();status(dict(stage='inferring',requestId=key,startedAt=began,roomId=req['roomId'],checkpointId=entry['id']))
                 try:
                     buf=io.BytesIO();np.savez(buf,state=obs['state'],prompt=req['prompt'],_room=run.name+':'+str(req['roomId']),**{'image/'+cam:obs[cam] for cam in CAMERAS})
-                    request=urllib.request.Request(f'http://127.0.0.1:{port}/infer',data=buf.getvalue(),method='POST')
+                    request=urllib.request.Request(f'http://127.0.0.1:{port}/infer',data=buf.getvalue(),method='POST',headers={'X-Inference-Request-Id':run.name+':'+key})
                     with urllib.request.urlopen(request,timeout=timeout) as response:
                         with np.load(io.BytesIO(response.read()),allow_pickle=False) as d:result['actions']=d['actions'].tolist()
-                except Exception as exc:result['error']='model_inference_failed:'+repr(exc)
-                status(dict(stage='error' if 'error' in result else 'reply_received',requestId=key,startedAt=began,finishedAt=time.time(),latencySeconds=time.time()-began,error=result.get('error'),roomId=req['roomId'],checkpointId=entry['id']))
-                with (run/'inference_events.jsonl').open('a') as log:log.write(json.dumps(dict(unix=time.time(),latency_seconds=time.time()-began,requestId=key,error=result.get('error')))+'\n')
+                except Exception as exc:result['error']=model_error_message(exc)
+                status(dict(stage='error' if 'error' in result else 'reply_received',requestId=key,startedAt=began,finishedAt=time.time(),latencySeconds=time.monotonic()-monotonic_began,error=result.get('error'),roomId=req['roomId'],checkpointId=entry['id']))
+                with (run/'inference_events.jsonl').open('a') as log:log.write(json.dumps(dict(schema='inference_timing_event/1',stage='http_roundtrip',unix=time.time(),latency_seconds=time.monotonic()-monotonic_began,requestId=run.name+':'+key,error=result.get('error')))+'\n')
                 msg=String();msg.data=json.dumps(result);outputs[req['roomId']].publish(msg)
             pool.submit(infer)
         def state(msg):
@@ -86,6 +105,7 @@ def main():
             adapter.create_subscription(JointState,base+'/joint_states',state,qos)
             adapter.create_subscription(String,base+'/request',request,qos)
             for cam in CAMERAS:adapter.create_subscription(Image,base+'/camera/'+cam+'/image_raw',lambda msg,c=cam:image(msg,c),qos)
+    inbox=RequestInbox(directory,ids)
     def scan():
         nonlocal last_heartbeat
         if time.monotonic()-last_heartbeat>2:
@@ -93,11 +113,8 @@ def main():
         for key,ctx in list(pending.items()):
             if time.monotonic()-ctx['sentAt']>timeout:
                 (directory/(key+'.error.json')).write_text(json.dumps({'error':'ROS2 action timeout; no fallback'}));pending.pop(key)
-        for path in sorted(directory.glob('*.request.npz')):
+        for room,path in inbox.ready():
             key=path.name.removesuffix('.request.npz')
-            if key in sent:continue
-            room=int(key.split('_')[0].removeprefix('room'))
-            if room not in pubs:continue
             # Wait for subscribers so first observation cannot disappear during DDS discovery.
             if not all(pub.get_subscription_count() for pub in pubs[room].values()):continue
             with np.load(path,allow_pickle=False) as d:sample={k:d[k].copy() for k in d.files}
@@ -106,6 +123,7 @@ def main():
                 arr=sample['image/'+cam];im=Image();im.header.stamp=stamp;im.header.frame_id=key;im.height=arr.shape[0];im.width=arr.shape[1];im.encoding='rgb8';im.step=im.width*3;im.data=arr.tobytes();pubs[room][cam].publish(im)
             msg=String();msg.data=json.dumps(dict(requestId=key,roomId=room,checkpointId=entry['id'],prompt=str(sample['prompt']),horizon=h,actionSpace='mobile19_absolute_v1',baseActuatorMask='fixed_episode_base'))
             pending[key]={'roomId':room,'sentAt':time.monotonic()};sent.add(key);pubs[room]['request'].publish(msg)
+            inbox.acknowledge(room,path)
     node.create_timer(.02,scan);executor=MultiThreadedExecutor(num_threads=2);executor.add_node(node)
     if adapter:executor.add_node(adapter)
     (directory/'ready.json').write_text(json.dumps(dict(checkpoint_id=entry['id'],horizon=h,transport='ros2',namespace=prefix,domain=86)))

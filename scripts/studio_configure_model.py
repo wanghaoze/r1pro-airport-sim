@@ -23,13 +23,13 @@ def configure(data):
     base=dict(id=name,family=family,label=f'{"Galaxea G0.5" if family=="g05" else "GR00T"} · {path.parent.name}/{path.name}',checkpointPath=str(path),enabled=False,host='127.0.0.1',port=9085 if family=='g05' else 5555)
     if family=='g05':
         import yaml
+        sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+        from r1pro_teleop.vla.g05_protocol import validate_shape_meta
         directory=path.parent if (path.parent/'.hydra/config.yaml').exists() else path.parent.parent
         required=[directory/'.hydra/config.yaml',directory/'dataset_stats.json',directory/'action_tokenizer.pt',directory/'hf_processor']
         if not all(p.exists() for p in required):raise ValueError('G0.5 requires neighboring .hydra/config.yaml, dataset_stats.json, action_tokenizer.pt and hf_processor')
         config=yaml.safe_load(required[0].read_text());shape=config['data']['processors']['galaxea_r1pro']['shape_meta']
-        for section in ('action','state'):
-            parts={p['key']:p['shape'] for p in shape[section]}
-            if parts!={'left_arm':7,'left_gripper':1,'right_arm':7,'right_gripper':1}:raise ValueError('G0.5 checkpoint is not the R1 Pro 7+1+7+1 joint contract')
+        validate_shape_meta(shape)
         code=next((p/'code' for p in directory.parents if (p/'code/scripts/serve_policy_mem.py').exists()),None)
         base.update(horizon=1,actionSpace='joint_absolute',gripperUnit=data.get('gripperUnit','unconfirmed'),modelCode=str(code) if code else None,
             modelPython=data.get('modelPython') or str(code/'.venv/bin/python') if code else None,

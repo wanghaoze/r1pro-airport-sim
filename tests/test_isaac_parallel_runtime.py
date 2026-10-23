@@ -57,7 +57,8 @@ def test_two_rooms_cannot_consume_each_others_feedback():
     assert results[0]=={'room':0}
 
 
-def test_tick_records_actual_feedback_and_terminal_state(tmp_path):
+@pytest.mark.parametrize('raw_delta',[None,.2])
+def test_tick_records_actual_feedback_and_terminal_state(tmp_path,raw_delta):
     # No simulated robot here: test the thread/record boundary with explicit
     # synthetic unit-test inputs, never claim a physical case passed.
     room=ParallelRoomRuntime.__new__(ParallelRoomRuntime)
@@ -69,7 +70,8 @@ def test_tick_records_actual_feedback_and_terminal_state(tmp_path):
     room._actual=dict(state=np.zeros(19),robot_position=np.zeros(3),tray_pose=np.array([[.8,0,.8,1,0,0,0]]))
     result=[]
     def worker():
-        result.append(room.tick());room.worker_done()
+        raw=None if raw_delta is None else np.r_[raw_delta,np.zeros(18)]
+        result.append(room.tick(raw_command=raw));room.worker_done()
     w=threading.Thread(target=worker);w.start();wait_pending(room.exchange)
     actual=dict(room._actual,state=np.r_[.123,np.zeros(18)])
     record=dict(completed_real_substeps=25,submitted_control=np.zeros((25,18)),
@@ -78,7 +80,8 @@ def test_tick_records_actual_feedback_and_terminal_state(tmp_path):
     room.close_trace()
     with np.load(tmp_path/'native_trace.npz') as trace:
         assert trace['state'].shape==(2,19) and trace['raw_action'].shape==(1,19)
-        assert trace['state'][1,0]==.123 and trace['raw_action'][0,0]==0
+        assert trace['state'][1,0]==.123 and trace['raw_action'][0,0]==(raw_delta or 0)
+        assert trace['action'][0,0]==0
         assert trace['submitted_control'].shape==(1,25,18)
 
 

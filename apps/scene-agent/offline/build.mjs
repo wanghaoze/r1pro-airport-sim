@@ -1,0 +1,10 @@
+import {build} from 'vite';
+import react from '@vitejs/plugin-react';
+import {build as bundle} from 'esbuild';
+import {resolve} from 'node:path';
+import {mkdir,copyFile} from 'node:fs/promises';
+const root=process.cwd();
+await build({configFile:false,root:resolve(root,'offline'),publicDir:resolve(root,'public'),plugins:[react()],resolve:{alias:{'@':root}},build:{outDir:resolve(root,'offline-dist/public'),emptyOutDir:true}});
+await bundle({entryPoints:['offline/server.ts'],bundle:true,platform:'node',format:'esm',target:'node24',outfile:'offline-dist/server.mjs',alias:{'cloudflare:workers':resolve(root,'offline/env.ts'),'@':root}});
+await mkdir('offline-dist',{recursive:true});
+await copyFile('drizzle/0000_fresh_miss_america.sql','offline-dist/schema.sql');

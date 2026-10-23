@@ -1,6 +1,88 @@
 # 场景生成与托盘整理统一规范
 
-规范版本：1.181；人工核对日期：2026-10-19；历史控制基线：primitives3_v50_20260923；当前实验流程见9.1节；新增控制候选须经独立服务器完整物理回归。
+规范版本：1.190；人工核对日期：2026-10-23；历史控制基线：primitives3_v50_20260923；当前实验流程见9.1节；新增控制候选须经独立服务器完整物理回归。
+
+### 2026-10-23 G0.5协议与任务上下文修复（1.190）
+
+G0.5维持单步horizon=1、20Hz诊断、登记的夹爪单位与统一filter。注册优先核验shape_meta的raw_shape；只有未声明raw_shape的旧配置才用shape，重复/缺失通道或非7+1+7+1拒绝。处理后特征维度不再当作线上原始维度，不能据此隐式接受EEF或更换模型动作空间。
+
+每个room使用独立WebSocket上下文；同room任务文本改变时关闭旧连接并新建，使上游单连接缓存动作和MEM观测历史重置。同任务连续调用保留缓存。连接为直连，不使用环境代理；握手/收包/解析异常关闭该room连接并原样失败，无自动重试。只接受四个完整数值动作字段，形状为[D]或[1,D]，不将转置/多步/高维张量展平，不复制成更长horizon；NaN/Inf/非数值拒绝。字段不全报告g05_missing_action_parts及missing/available，不补零、保持夹爪或复制其他关节。未知单位和非单步配置拒绝。
+
+服务记录g05_protocol_events.jsonl：关联requestId/checkpoint/room/task、握手元信息、单位转换前原始action字段与need_obs/error；不记录相机二进制或上游推理文本。数组保留shape/dtype，最多1024元素/字段保存数值，超出只存形状且不允许以此绕过动作形状门。model_error_events.jsonl持久化异常类型/结构化详情；HTTP500保留错误正文，ROS/file/status传递具体模型原因，不再仅显示HTTP500。失败不产生执行动作或limit成功记录；成功的原始mobile19与bounded仍走已有审计链路。过滤层与任务成功门保持。
+
+此修订为本地协议测试，不能将公开上游的缺字段行为当作服务器已确认根因，也不能称G0.5任务已成功；不改权重、不训练、不启动真机。见[修复报告](../reports/G05_REPAIR_20261023.md)。
+
+### 2026-10-22 长运行请求轮询（1.189）
+
+FilePolicyClient在新run中按原始room_id从sequence=0连续编号并原子发布request.npz。文件服务和ROS gateway改用RequestInbox逐房间检查下一序号文件；每次轮询只检查登记房间数个路径，不重复枚举/排序全部历史请求。请求、回复、错误文件全部保留，不清理冻结或历史产物。
+
+ROS订阅尚未就绪时不推进游标，发布请求成功后推进；文件服务在写回复或错误后推进，错误不自动重试。某房间下一序号缺失时等待，不能越过缺口消费未来请求；其他房间独立推进。未登记房间和临时文件不消费。此优化适用于现有连续序号的新运行，不提供崩溃恢复/跳号协议，不授权重启旧作业。超时、停止和真实错误门不变，不增加模型观测或修改控制步长/滤波。
+
+本地synthetic空文件轮询只能验证目录扫描开销，不代表服务器ROS、模型推理或Isaac总耗时改善；物理与闭环验收仍待实测。
+
+### 2026-10-22 推理分层计时与统计（1.188）
+
+model_adapter记录主机单调时钟下的模型适配器调用及输出转numpy完成耗时，写入独立inference_model_events.jsonl；不是GPU kernel时间。ROS适配器的http_roundtrip仍写inference_events.jsonl，改用单调时钟记录NPZ序列化、本机HTTP排队/模型服务及返回解码，包含model_adapter且不含前序ROS/file等待。两层不得相加或混合求平均。HTTP头携带run+request关联标识，不改变模型观测字段；file直连服务同样记录model_adapter及请求标识。模型计时只记录已返回调用，服务异常仍保留原错误路径，不伪造零耗时。
+
+评测报告增加inference_timing_summary/1，分别给出各层记录数、有效无错误样本均值/P50/P95、错误数及无效时长数；未知层/损坏行单列，缺测为null。历史无stage日志仅在原writer特征明确时推断层级，无法识别则保留unknown，不修改旧日志。报告为可见日志截点，不冒充唯一请求总数或已完成全部后台计算。共享服务的模型日志若不在本run中不补造；通信层仍可独立报告。
+
+视频导出只选一层有效完成记录：优先模型层，其次通信层，画面和receipt注明层级，不再把两层都计作model replies；原始墙钟等待仍保留。所有计时字段是诊断证据，不改变输入/输出、采样、关节filter、500Hz物理或任务成功门。仅CPU测试不代表GPU性能改善。
+
+### 2026-10-22 异步推理退出与停止状态（1.187）
+
+realtime房间退出时先设置本房间FilePolicyClient关闭事件，再等待预取线程结束，避免预算耗尽或物理失败后继续等待默认300s文件推理超时才写结果。关闭仅中断本地文件等待，不删除请求/回复证据、不写全局停止标记、不终止共享模型服务；已提交的模型计算仍由既有服务生命周期管理。关闭异常不消费为新的执行结果，原预算/物理失败原因与实际执行帧数保留。
+
+文件推理在请求提交前、等待期间及读取已到达回复前检查用户停止与本地关闭；Pi05Policy保留InterruptedError，不包装为vla_inference_failed，使推理等待中的用户停止仍报告user_cancelled。没有新的动作补偿/教师回退，不改变20Hz、动作过滤、机械边界或任务门。退出仍保存model_actions、worker_result并通知worker_done。本地CPU测试不是服务器停止时延或物理性能验收。
+
+### 2026-10-22 准备姿态诊断的观测与夹爪保持（1.186）
+
+修复1.184维护诊断中的两个初始化偏差，不改变native_initial的原有行为。准备姿态合同升级prepared_pick_pose_diagnostic/2：从同一已校验SHA的完整来源轨迹读取第0帧底盘反馈；policy_initial_base_state严格按既有缓存float32公式state[pick_start,16:19]-state[0,16:19]计算。策略基准为运行初始测量减去该来源偏移，使第一帧模型输入保持训练缓存语义，后续真实底盘漂移仍进入观测；底盘动作继续固定，禁止控制回放。记录来源起点、偏移和实际策略基准；非有限/形状错误/不一致偏移或旧v1合同拒绝，不静默按零处理。
+
+准备姿态房间的初始命令保留测量夹爪开度，不再被通用全开0.08m覆盖；普通房间仍保持原全开规则。初始下发向量追加到prepared_pick_initialization.json以供实测核对。速度仍置零、手指仍对称拆分，依然不是完整动力学回放；全部运行端filter和机械边界不变。
+
+仅本地实现和CPU验证；现有服务器隔离v1尚未更新，使用旧初始化的运行必须单独标记，不能作为本修订验收。没有新训练、数据改写或物理成功结论。
+
+### 2026-10-22 修复期间禁止训练（1.185）
+
+用户明确要求修复期间不要训练，并停止刚刚那次训练。该要求替代此前修复流程中可继续训练的假设；只允许已有检查点推理、MSE、仿真诊断和代码测试。现有训练的停止已获授权，但必须核验当前进程身份和实际退出；没有服务器退出收据不能声明已停止。
+
+服务器代码随附gpu/maintenance_policy.json，schema=studio_maintenance_policy/1、trainingAllowed=false。仅维护端文件可决定此门，不接受网页payload覆盖；缺失、不可读、无效schema或非布尔true均禁止training.create。enqueue在创建目录/冻结训练输入前拒绝；调度器将已有waiting_gpu训练变为blocked并保存training_disabled_during_repair原因，不自动重试；runner直接调用train及每次训练子阶段启动前再次验证，阻止排队时与启动时规则不一致。该门不终止已在运行的旧进程，不将blocked写成cancelled或实际停止；已有日志/检查点保留。推理/MSE/仿真评测仍遵守原注册校验、GPU锁与任务合同。
+
+修订只在本地实现和测试，服务器旧release尚未部署此门。训练恢复必须有用户后续明确指令，不因文件恢复、GPU空闲或旧排队记录而自行重新授权。场景、关节限制、相机、物理成功门和训练数据均未更改。
+
+### 2026-10-22 持续修复：准备姿态诊断与原始动作证据（1.184）
+
+用户在MSE根因报告后要求持续修复，授权独立新运行目录中的代码修复、针对性检查与既有仿真诊断；保留机械范围、真机控制禁令、冻结数据及成功模型。无新增训练配方决定。默认网页和批量入口仍从native_initial开始，不改变完整任务定义。
+
+新增维护者显式diagnosticStart=prepared_pick_pose：固定登记batch_001来源，核验冻结manifest中对应Pick片段、完整轨迹/result SHA、成功实际退出回执，以及seed/parent/split/原始托盘与站位一致性。只在第一个控制步之前设置来源Pick起点的有界关节姿态、托盘姿态和实测底盘位置，速度置零、夹爪手指按总开口对称拆分；因此这是准备姿态对照，不是完整动力学恢复。初始化裁剪差、source frame、来源哈希、实际初始化反馈落盘。未知模式、来源缺失/重复、哈希变化、未闭合失败来源、case不一致、非有限姿态或越界初始化均拒绝；禁止教师采集使用该入口。
+
+初始化之后仍只由已登记模型根据三相机/state19/prompt输出动作，全部经过现行filter；禁止运行中姿态回放、IK、教师或自动纠正。prepared_pose_policy_diagnostic不计完整流程成功、不进训练，fullTaskSuccessEligible=false；终态保持实际物理失败/用户停止/基础设施错误分类。native_initial对照使用同模型、房间、运行模式与预算，分别报告。
+
+原生raw_action现记录服务端位置裁剪后、执行端速率过滤前的命令，action/submitted_control记录实际过滤后端点/子步；policy_contract明确raw_action_semantics。真正网络原始预测继续保存在服务回包/日志中。旧轨迹的raw_action曾等于action，不回写历史文件或标签，不以旧字段差为零推断无filter干预。
+
+性能诊断保留500Hz物理与全部接触门，优先复测既有realtime路径，不借改变控制频率或加长开环执行块掩盖模型误差。本修订不确认根因已解决，结论须由服务器新回执支持。
+
+### 2026-10-21 网页错误、长运行、停止、设备与可调filter（1.183）
+
+新要求替代1.179的120秒单策略上限和固定GPU0：新单策略默认10000秒（20Hz=200000帧，有限上限），maxWallSeconds默认0表示不设总墙钟截止；初始化与单次推理超时仍生效。成功、物理门、错误和用户停止可提前结束，不保证每次跑满10000秒。批量任务预算不扩大。
+
+运行步骤：网页选择登记检查点、room、仿真/渲染GPU及推理GPU→按服务器nvidia-smi清单验证物理编号→冻结请求→调度等待所选GPU资源→启动Isaac Sim/PhysX原生进程→返回实际physics_runtime_settings和子进程退出回执。realtime是CPU PhysX+所选GPU渲染，baseline是所选GPU PhysX+渲染；网页Three.js只显示预览/测量姿态。训练可选择一张或多张现存GPU，数量须整除既有batch_size=8；不改训练算法/数据配比，不停止他人进程。模型服务复用必须同时匹配检查点、过滤合同与推理GPU。
+
+所有模型统一使用1.182过滤层。网页允许在既有登记上界内调整maxStepRad、maxVelocityRadS、maxTrackingErrorRad、maxObservationAgeSeconds，按run冻结并进入合同哈希；不能提高机械/夹爪硬边界或绕过过滤。每个20Hz目标在25个500Hz子步之间作凸线性插值；上界由min(maxStepRad,maxVelocityRadS*0.05)及机械交集共同约束。mandatory_robot_filter/2另对每个物理子步预留由float32 ULP推导的舍入空间，避免插值量化产生微小超速；不增加物理容差。无效值、NaN/Inf、未知GPU、重复GPU、超登记上界均拒绝。该实现约束目标指令，不代表实测关节速度/力矩/碰撞的真机认证。
+
+状态字典：stop_requested为网页已请求、等待工作站确认；cancelled为队列取消或执行器已结束用户停止，不能直接用按钮点击作为停止完成证据。网页只允许操作自己的policy作业，worker先接收停止再调度；运行中写本run停止标记，策略推理等待/每帧检查，子进程收尾记录实际wait退出码。超过收尾宽限只终止该作业自有进程，可能留下未闭合录像并显示错误。用户停止分类user_cancelled，不计模型失败或成功。历史结果不改。
+
+错误展示：浏览器异常、未处理promise、API失败响应、作业结构化异常和traceback可展开；原生/服务日志尾部及全文件错误摘录可查看，终态提供脱敏完整diagnostics.zip。日志尾部截断必须明确标注，完整原件留工作站；超过上传上限显式报错，不伪称完整发布。训练结构化错误同样随作业回执显示。此变更不授权真机控制。
+
+### 2026-10-21 网站策略强制机器人 filter（1.182）
+
+用户要求所有网站策略模拟的执行输出不得超过真机约束，统一增加 filter。对本次新运行替代1.180的可选裁剪与1.181的可选strict：单策略、批量和自动VLA，以及HTTP/ROS2与文件通道均强制robot_limits，旧请求中的strict/clip_diagnostic不能绕过执行门。MSE仍计算原始预测，历史报告/成功标签不改；不涉及真机控制或修改模型权重。
+
+步骤：模型适配完成单位/19通道映射→先检查形状与所有值有限→保存raw→服务端机械/夹爪限幅与底盘mask→仿真执行每一帧重新交叉校验当前模型与登记限位→按上一条已提交目标限制步长和速度→验证反馈年龄/跟踪偏差→提交真实物理步。沿用归档参数：max_step=0.1rad、max_velocity=1.5rad/s（20Hz每帧≤0.075rad）、tracking≤0.25rad、feedback_age≤0.5s、gripper=0..0.08m；关节范围使用gpu/robot_action_limits.json与当前场景XML交集，不新设容差。限速基准为真实已提交指令（初帧用runtime.command），不可用含物理超调的测量值冒充；float32边界向合法区间内舍入。底盘为episode原固定指令。服务复用必须匹配过滤合同哈希，旧服务不可假称已过滤。
+
+失败规则：非有限/缺失通道、未知或非法限制、空机械交集、非有限/缺失/未来/过期反馈、超跟踪偏差、上一提交目标不合法，均拒绝本帧并保留失败证据，不补夹爪、不IK、不教师修正。新增错误robot_filter_invalid_limits / limits_missing / invalid_mechanical_limits / empty_limit_intersection / invalid_vector / invalid_action_chunk / stale_feedback / invalid_control_period / tracking_error / previous_outside_limits / no_valid_command。状态回执action_safety_mode=robot_limits，记录action_filter_contract、原值/执行值、反馈与年龄；pure_model_success_eligible=false、training_eligible=false，独立diagnosticPassedPairs，successRate=null。completed仍仅表示流程结束。
+
+机械XML源SHA已服务器核验；登记的真机TOML原路径目前缺失，参数来自已归档配置，不能称本轮真机驱动实测。该filter约束命令位置和指令变化速度，不证明实际关节动力学、加速度、力矩或碰撞安全。核心合同通过后须做服务器原生完整episode检查；结果与有限帧诊断分报。变更证据位于runs/mandatory_robot_filter_20261021。
 
 ### 2026-10-19 真实步进与异步推理优化（1.181）
 
@@ -1800,7 +1882,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `base_command_changed_including_preparation` | `scripts/export_isaac_parallel_pickplace.py:47` → `输入/实验拒绝；不自动重试` |
 | `base_command_moved_during_actions` | `scripts/collect_isaac_fixed_pickplace.py:24` → `输入/实验拒绝；不自动重试` |
 | `base_tracking_error` | `r1pro_teleop/airport_fsm/runtime.py:1858` → `True` |
-| `baseline_config_missing` | `apps/scene-agent/gpu/worker.py:118` → `输入/实验拒绝；不自动重试` |
+| `baseline_config_missing` | `apps/scene-agent/gpu/worker.py:124` → `输入/实验拒绝；不自动重试` |
 | `batch_cancelled` | `r1pro_teleop/airport_fsm/batch.py:192` → `False` |
 | `batch_lock_requires_posix` | `r1pro_teleop/airport_fsm/__main__.py:24` → `False` |
 | `bc_requires_fresh_forward_axis_plan` | `r1pro_teleop/vla/data_three_table_single_tray.py:349` → `输入/实验拒绝；不自动重试` |
@@ -1882,7 +1964,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `certified_source_split_changed` | `r1pro_teleop/vla/three_table_single_tray_pipeline.py:19` → `输入/实验拒绝；不自动重试` |
 | `changed_training_admission_requires_recorded_evidence` | `r1pro_teleop/vla/three_table_recovery.py:120` → `输入/实验拒绝；不自动重试` |
 | `checkpoint10_is_reused_not_retrained` | `r1pro_teleop/vla/three_table_training_resume.py:27` → `输入/实验拒绝；不自动重试` |
-| `checkpoint_assets_or_optimizer_not_closed` | `apps/scene-agent/gpu/studio_backend.py:148` → `输入/实验拒绝；不自动重试` |
+| `checkpoint_assets_or_optimizer_not_closed` | `apps/scene-agent/gpu/studio_backend.py:176` → `输入/实验拒绝；不自动重试` |
 | `checkpoint_cannot_be_full_episode` | `r1pro_teleop/experiments/worker.py:66` → `输入/实验拒绝；不自动重试` |
 | `checkpoint_completion_speed_clock_invalid` | `r1pro_teleop/experiments/checkpoint_tree.py:71` → `输入/实验拒绝；不自动重试` |
 | `checkpoint_completion_strict_flag_invalid` | `r1pro_teleop/experiments/checkpoint_tree.py:73` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/experiments/checkpoint_tree.py:78` → `输入/实验拒绝；不自动重试` |
@@ -1892,7 +1974,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `checkpoint_identity_mismatch` | `r1pro_teleop/experiments/checkpoint_tree.py:173` → `输入/实验拒绝；不自动重试` |
 | `checkpoint_inside_physical_preview` | `r1pro_teleop/experiments/checkpoint_tree.py:128` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/experiments/checkpoint_tree.py:205` → `输入/实验拒绝；不自动重试` |
 | `checkpoint_inside_primitive` | `r1pro_teleop/experiments/checkpoint_tree.py:139` → `输入/实验拒绝；不自动重试` |
-| `checkpoint_not_closed_or_registered` | `apps/scene-agent/gpu/studio_backend.py:123` → `输入/实验拒绝；不自动重试` |
+| `checkpoint_not_closed_or_registered` | `apps/scene-agent/gpu/studio_backend.py:144` → `输入/实验拒绝；不自动重试` |
 | `checkpoint_not_settled` | `r1pro_teleop/experiments/checkpoint_tree.py:141` → `输入/实验拒绝；不自动重试` |
 | `checkpoint_outside_development_group` | `r1pro_teleop/experiments/campaign.py:117` → `输入/实验拒绝；不自动重试` |
 | `checkpoint_parent_missing` | `r1pro_teleop/experiments/checkpoint_tree.py:124` → `输入/实验拒绝；不自动重试` |
@@ -2039,6 +2121,14 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `diagnostic_cache_cannot_train_production_model` | `r1pro_teleop/vla/training_accelerated.py:78` → `输入/实验拒绝；不自动重试` |
 | `diagnostic_child_identity_changed_no_signal` | `scripts/supervise_three_table_free_run.py:47` → `输入/实验拒绝；不自动重试` |
 | `diagnostic_frame_out_of_range` | `r1pro_teleop/experiments/scene_view.py:24` → `输入/实验拒绝；不自动重试` |
+| `diagnostic_start_base_reference_mismatch` | `r1pro_teleop/real2sim/policy_start_diagnostic.py:92` → `输入/实验拒绝；不自动重试` |
+| `diagnostic_start_invalid_pick_span` | `r1pro_teleop/real2sim/policy_start_diagnostic.py:41` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/real2sim/policy_start_diagnostic.py:44` → `输入/实验拒绝；不自动重试` |
+| `diagnostic_start_nonfinite_or_invalid_state` | `r1pro_teleop/real2sim/policy_start_diagnostic.py:100` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/real2sim/policy_start_diagnostic.py:51` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/real2sim/policy_start_diagnostic.py:85` → `输入/实验拒绝；不自动重试` |
+| `diagnostic_start_outside_registered_bounds` | `r1pro_teleop/real2sim/policy_start_diagnostic.py:88` → `输入/实验拒绝；不自动重试` |
+| `diagnostic_start_requires_frozen_manifest` | `r1pro_teleop/real2sim/policy_start_diagnostic.py:23` → `输入/实验拒绝；不自动重试` |
+| `diagnostic_start_source_hash_changed` | `r1pro_teleop/real2sim/policy_start_diagnostic.py:31` → `输入/实验拒绝；不自动重试` |
+| `diagnostic_start_source_not_successfully_closed` | `r1pro_teleop/real2sim/policy_start_diagnostic.py:35` → `输入/实验拒绝；不自动重试` |
+| `diagnostic_start_source_not_unique` | `r1pro_teleop/real2sim/policy_start_diagnostic.py:27` → `输入/实验拒绝；不自动重试` |
 | `different_registered_source_target_tables_required` | `r1pro_teleop/single_tray_lab/three_table_scene.py:94` → `输入/实验拒绝；不自动重试` |
 | `different_test_manifests` | `scripts/compare_pi05_real_mixed_plots.py:26` → `输入/实验拒绝；不自动重试` |
 | `direct_grasp_closure_blocked` | `r1pro_teleop/airport_fsm/machine.py:251` → `True`<br>`r1pro_teleop/airport_fsm/reachability_planner.py:120` → `True` |
@@ -2057,7 +2147,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `duplicate_qualification` | `r1pro_teleop/vla/data.py:171` → `输入/实验拒绝；不自动重试` |
 | `duplicate_real_episode` | `scripts/run_real_sim_pickplace.py:36` → `输入/实验拒绝；不自动重试` |
 | `duplicate_retained_native_reference` | `r1pro_teleop/vla/native_reference_router.py:20` → `输入/实验拒绝；不自动重试` |
-| `duplicate_room_initial_poses` | `scripts/run_isaac_parallel_pickplace.py:207` → `输入/实验拒绝；不自动重试` |
+| `duplicate_room_initial_poses` | `scripts/run_isaac_parallel_pickplace.py:221` → `输入/实验拒绝；不自动重试` |
 | `duplicate_scene_action` | `scripts/supervise_three_action_expansion.py:247` → `输入/实验拒绝；不自动重试` |
 | `duplicate_scene_selection` | `scripts/render_task_complete_sources.py:28` → `输入/实验拒绝；不自动重试` |
 | `duplicate_single_tray_scene_source` | `r1pro_teleop/vla/data_single_tray.py:128` → `输入/实验拒绝；不自动重试` |
@@ -2162,7 +2252,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `export_task_revalidation_failed` | `r1pro_teleop/airport_fsm/exporter.py:75` → `False` |
 | `exported_train_source_target_not_met` | `scripts/supervise_three_action_expansion.py:288` → `输入/实验拒绝；不自动重试` |
 | `failed_task_cannot_be_source_export` | `r1pro_teleop/vla/single_tray_pipeline.py:42` → `输入/实验拒绝；不自动重试` |
-| `final_checkpoint_not_closed` | `apps/scene-agent/gpu/studio_job_runner.py:50` → `输入/实验拒绝；不自动重试` |
+| `final_checkpoint_not_closed` | `apps/scene-agent/gpu/studio_job_runner.py:57` → `输入/实验拒绝；不自动重试` |
 | `final_native_support_or_boundary_not_closed` | `scripts/audit_isaacsim_three_tray_demo.py:53` → `输入/实验拒绝；不自动重试` |
 | `final_physical_acceptance_failed` | `r1pro_teleop/airport_fsm/machine.py:1164` → `False`<br>`r1pro_teleop/vla/machine.py:267` → `False` |
 | `final_release_not_closed` | `scripts/audit_isaacsim_three_tray_demo.py:54` → `输入/实验拒绝；不自动重试` |
@@ -2203,7 +2293,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `fixed_scene_verified_initial_action_span_required` | `scripts/run_vla_fixed_scene.py:89` → `输入/实验拒绝；不自动重试` |
 | `fixed_scene_xml_identity_mismatch` | `scripts/run_vla_fixed_scene.py:205` → `输入/实验拒绝；不自动重试` |
 | `fixed_station_identity_mismatch` | `scripts/export_isaac_parallel_pickplace.py:53` → `输入/实验拒绝；不自动重试` |
-| `fixed_station_mismatch` | `scripts/run_isaac_parallel_pickplace.py:212` → `输入/实验拒绝；不自动重试` |
+| `fixed_station_mismatch` | `scripts/run_isaac_parallel_pickplace.py:226` → `输入/实验拒绝；不自动重试` |
 | `fixed_three_tasks_changed` | `r1pro_teleop/vla/data_single_tray.py:206` → `输入/实验拒绝；不自动重试` |
 | `forbidden_experiment_parameter` | `r1pro_teleop/experiments/common.py:48` → `输入/实验拒绝；不自动重试` |
 | `forbidden_real_mix_teacher_inverse_fallback` | `scripts/run_real_sim_pickplace.py:183` → `输入/实验拒绝；不自动重试` |
@@ -2334,6 +2424,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `incomplete_scene_materialization` | `r1pro_teleop/airport_fsm/registry.py:148` → `False` |
 | `incomplete_segment_partition` | `r1pro_teleop/vla/data.py:293` → `输入/实验拒绝；不自动重试` |
 | `incomplete_urdf_limits` | `r1pro_teleop/airport_fsm/runtime.py:170` → `False` |
+| `inconsistent_live_frame_budget` | `apps/scene-agent/gpu/studio_backend.py:159` → `输入/实验拒绝；不自动重试` |
 | `incremental_native_publication_required` | `scripts/materialize_complete_task_actions.py:20` → `输入/实验拒绝；不自动重试` |
 | `independent_certified_source_catalog_required` | `r1pro_teleop/single_tray_3table/workflow.py:173` → `输入/实验拒绝；不自动重试` |
 | `independent_data_only_watcher_required` | `r1pro_teleop/single_tray_3table/workflow.py:198` → `输入/实验拒绝；不自动重试` |
@@ -2354,7 +2445,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `initial_tray_has_no_support` | `r1pro_teleop/airport_fsm/batch.py:130` → `False` |
 | `initialization_cannot_overwrite_previous_optimizer` | `r1pro_teleop/vla/training_accelerated.py:79` → `输入/实验拒绝；不自动重试` |
 | `initialization_only_before_first_step` | `exports/web_scene_agent_v1/isaac_adapter.py:63` → `输入/实验拒绝；不自动重试` |
-| `initialized_station_must_match_fixed_action_station` | `r1pro_teleop/real2sim/isaac_parallel_runtime.py:244` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaacsim_fast_pickplace.py:66` → `输入/实验拒绝；不自动重试` |
+| `initialized_station_must_match_fixed_action_station` | `r1pro_teleop/real2sim/isaac_parallel_runtime.py:246` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaacsim_fast_pickplace.py:66` → `输入/实验拒绝；不自动重试` |
 | `initializer_model_semantics_changed` | `r1pro_teleop/vla/training_accelerated.py:106` → `输入/实验拒绝；不自动重试` |
 | `initializer_params_do_not_match_verified_parent` | `r1pro_teleop/vla/training_accelerated.py:105` → `输入/实验拒绝；不自动重试` |
 | `injected_geometry_spec_identity_mismatch` | `r1pro_teleop/airport_fsm/runtime.py:35` → `False` |
@@ -2363,22 +2454,23 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `insufficient_space_for_new_cache_and_checkpoint` | `scripts/studio_prepare_training.py:40` → `输入/实验拒绝；不自动重试` |
 | `interrupted` | `r1pro_teleop/airport_fsm/machine.py:1300` → `False` |
 | `invalid_action_interval` | `scripts/export_isaac_parallel_pickplace.py:37` → `输入/实验拒绝；不自动重试` |
-| `invalid_action_safety_mode` | `apps/scene-agent/gpu/studio_backend.py:134` → `输入/实验拒绝；不自动重试` |
+| `invalid_action_safety_mode` | `apps/scene-agent/gpu/studio_backend.py:155` → `输入/实验拒绝；不自动重试` |
 | `invalid_action_target` | `r1pro_teleop/airport_fsm/runtime.py:1271` → `False` |
 | `invalid_actual_action_halfopen_interval` | `r1pro_teleop/vla/data_single_tray.py:82` → `输入/实验拒绝；不自动重试` |
 | `invalid_actual_update_duration` | `r1pro_teleop/vla/training_accelerated.py:58` → `输入/实验拒绝；不自动重试` |
 | `invalid_aligned_mse_arrays` | `r1pro_teleop/vla/real_sim_data.py:131` → `输入/实验拒绝；不自动重试` |
 | `invalid_assessment_outcome` | `r1pro_teleop/experiments/assessment.py:13` → `输入/实验拒绝；不自动重试` |
-| `invalid_automatic_evaluation_contract` | `apps/scene-agent/gpu/studio_backend.py:108` → `输入/实验拒绝；不自动重试` |
-| `invalid_automatic_evaluation_option` | `apps/scene-agent/gpu/studio_backend.py:113` → `输入/实验拒绝；不自动重试` |
-| `invalid_automatic_training_id` | `apps/scene-agent/gpu/studio_backend.py:110` → `输入/实验拒绝；不自动重试` |
+| `invalid_automatic_evaluation_contract` | `apps/scene-agent/gpu/studio_backend.py:129` → `输入/实验拒绝；不自动重试` |
+| `invalid_automatic_evaluation_option` | `apps/scene-agent/gpu/studio_backend.py:134` → `输入/实验拒绝；不自动重试` |
+| `invalid_automatic_training_id` | `apps/scene-agent/gpu/studio_backend.py:131` → `输入/实验拒绝；不自动重试` |
 | `invalid_background_command` | `r1pro_teleop/experiments/__main__.py:57` → `输入/实验拒绝；不自动重试` |
 | `invalid_balanced_dagger_mixture` | `r1pro_teleop/vla/skill_sampling.py:40` → `输入/实验拒绝；不自动重试` |
 | `invalid_batched_mobile19` | `r1pro_teleop/real2sim/isaac_parallel_collection.py:30` → `输入/实验拒绝；不自动重试` |
 | `invalid_belt_rotation` | `r1pro_teleop/airport_fsm/geometry.py:184` → `False` |
 | `invalid_bounded_native_worker_cap` | `scripts/render_task_complete_sources.py:14` → `输入/实验拒绝；不自动重试` |
 | `invalid_brightness_prediction` | `scripts/run_pi05_real_only.py:252` → `输入/实验拒绝；不自动重试` |
-| `invalid_color` | `apps/scene-agent/gpu/worker.py:108` → `输入/实验拒绝；不自动重试` |
+| `invalid_cancel_job_id` | `apps/scene-agent/gpu/studio_backend.py:194` → `输入/实验拒绝；不自动重试` |
+| `invalid_color` | `apps/scene-agent/gpu/worker.py:114` → `输入/实验拒绝；不自动重试` |
 | `invalid_completed_updates` | `r1pro_teleop/vla/training_accelerated.py:12` → `输入/实验拒绝；不自动重试` |
 | `invalid_concat_path` | `r1pro_teleop/vla/data_skill_merge.py:252` → `输入/实验拒绝；不自动重试` |
 | `invalid_control_journal` | `r1pro_teleop/single_tray_lab/replay.py:78` → `输入/实验拒绝；不自动重试` |
@@ -2393,7 +2485,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `invalid_explicit_place_recipe_budget` | `r1pro_teleop/single_tray_lab/placement_recipe.py:32` → `输入/实验拒绝；不自动重试` |
 | `invalid_explicit_place_recipe_geometry_or_rate` | `r1pro_teleop/single_tray_lab/placement_recipe.py:30` → `输入/实验拒绝；不自动重试` |
 | `invalid_explicit_source_scene_subset` | `r1pro_teleop/vla/data_skill_merge.py:301` → `输入/实验拒绝；不自动重试` |
-| `invalid_finite_vector` | `apps/scene-agent/gpu/worker.py:105` → `输入/实验拒绝；不自动重试` |
+| `invalid_finite_vector` | `apps/scene-agent/gpu/worker.py:111` → `输入/实验拒绝；不自动重试` |
 | `invalid_fixed_base_19_arrays` | `r1pro_teleop/vla/data_single_tray.py:197` → `输入/实验拒绝；不自动重试` |
 | `invalid_fixed_base_pose` | `r1pro_teleop/real2sim/isaac_fast_pickplace.py:106` → `输入/实验拒绝；不自动重试` |
 | `invalid_free_run_terminal_error_must_be_unavailable` | `r1pro_teleop/single_tray_3table/free_run_native.py:139` → `输入/实验拒绝；不自动重试` |
@@ -2404,34 +2496,38 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `invalid_hardware_limits` | `r1pro_teleop/airport_fsm/runtime.py:187` → `False` |
 | `invalid_initial_base_world` | `r1pro_teleop/real2sim/isaac_three_tray_runtime.py:128` → `输入/实验拒绝；不自动重试` |
 | `invalid_initial_room_command` | `r1pro_teleop/real2sim/isaac_parallel_runtime.py:97` → `输入/实验拒绝；不自动重试` |
+| `invalid_initial_room_states` | `r1pro_teleop/real2sim/policy_start_diagnostic.py:110` → `输入/实验拒绝；不自动重试` |
 | `invalid_interval_statistics` | `r1pro_teleop/vla/data_task_lerobot.py:162` → `输入/实验拒绝；不自动重试` |
-| `invalid_job_id` | `apps/scene-agent/gpu/studio_backend.py:104` → `输入/实验拒绝；不自动重试` |
+| `invalid_job_id` | `apps/scene-agent/gpu/studio_backend.py:122` → `输入/实验拒绝；不自动重试` |
 | `invalid_linux_exit_status` | `r1pro_teleop/vla/native_reference_router.py:38` → `输入/实验拒绝；不自动重试` |
 | `invalid_local_qualification` | `r1pro_teleop/vla/data.py:248` → `输入/实验拒绝；不自动重试` |
 | `invalid_max_scenes` | `r1pro_teleop/vla/data_lerobot.py:169` → `输入/实验拒绝；不自动重试` |
 | `invalid_milestone_budget` | `r1pro_teleop/vla/training_accelerated.py:81` → `输入/实验拒绝；不自动重试` |
 | `invalid_mixture_schedule` | `r1pro_teleop/vla/parallel_pickplace_training.py:151` → `输入/实验拒绝；不自动重试` |
 | `invalid_mobile_19_arrays` | `r1pro_teleop/vla/data_three_table_lerobot.py:112` → `输入/实验拒绝；不自动重试` |
-| `invalid_model_output` | `scripts/compare_pi05_real_mixed_plots.py:64` → `输入/实验拒绝；不自动重试`<br>`scripts/studio_model_http.py:89` → `输入/实验拒绝；不自动重试`<br>`scripts/studio_mse.py:74` → `输入/实验拒绝；不自动重试` |
+| `invalid_model_output` | `scripts/compare_pi05_real_mixed_plots.py:64` → `输入/实验拒绝；不自动重试`<br>`scripts/studio_mse.py:74` → `输入/实验拒绝；不自动重试` |
 | `invalid_model_prediction` | `scripts/run_pi05_real_only.py:223` → `输入/实验拒绝；不自动重试` |
 | `invalid_model_service_startup_contract` | `r1pro_teleop/single_tray_3table/evaluation_batch.py:204` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/single_tray_lab/evaluation_batch.py:154` → `输入/实验拒绝；不自动重试` |
 | `invalid_native_body_quaternion` | `scripts/isaacsim_kinematic_audit.py:12` → `输入/实验拒绝；不自动重试` |
 | `invalid_native_command_interpolation_shape` | `r1pro_teleop/real2sim/isaac_command_timing.py:9` → `输入/实验拒绝；不自动重试` |
-| `invalid_native_model_chunk` | `scripts/studio_vla_evaluate.py:33` → `输入/实验拒绝；不自动重试` |
-| `invalid_native_policy_contract` | `apps/scene-agent/gpu/studio_backend.py:131` → `输入/实验拒绝；不自动重试` |
-| `invalid_observation_fields` | `scripts/studio_model_http.py:79` → `输入/实验拒绝；不自动重试` |
-| `invalid_observation_size` | `scripts/studio_model_http.py:76` → `输入/实验拒绝；不自动重试` |
+| `invalid_native_model_chunk` | `scripts/studio_vla_evaluate.py:38` → `输入/实验拒绝；不自动重试` |
+| `invalid_native_policy_contract` | `apps/scene-agent/gpu/studio_backend.py:152` → `输入/实验拒绝；不自动重试` |
+| `invalid_observation_fields` | `scripts/studio_model_http.py:78` → `输入/实验拒绝；不自动重试` |
+| `invalid_observation_size` | `scripts/studio_model_http.py:75` → `输入/实验拒绝；不自动重试` |
 | `invalid_or_duplicate_shard_repo_id` | `r1pro_teleop/airport_fsm/loading.py:27` → `False` |
 | `invalid_or_nonfinite_model_chunk` | `r1pro_teleop/single_tray_3table/free_run.py:75` → `输入/实验拒绝；不自动重试` |
-| `invalid_parallel_execution_mode` | `scripts/run_isaac_parallel_pickplace.py:31` → `输入/实验拒绝；不自动重试` |
+| `invalid_parallel_execution_mode` | `scripts/run_isaac_parallel_pickplace.py:32` → `输入/实验拒绝；不自动重试` |
 | `invalid_parent_split` | `r1pro_teleop/real2sim/isaac_parallel_collection.py:42` → `输入/实验拒绝；不自动重试` |
 | `invalid_payload_physics_evidence` | `r1pro_teleop/vla/data_single_tray.py:70` → `输入/实验拒绝；不自动重试` |
 | `invalid_pipeline_tag` | `r1pro_teleop/vla/data_native_pipeline.py:24` → `输入/实验拒绝；不自动重试` |
 | `invalid_plot_artifact_path` | `apps/scene-agent/gpu/mse_artifacts.py:20` → `输入/实验拒绝；不自动重试` |
-| `invalid_policy_action_chunk` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:58` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/real2sim/isaac_policy_pickplace.py:69` → `输入/实验拒绝；不自动重试` |
-| `invalid_policy_input_fields` | `scripts/studio_vla_evaluate.py:31` → `输入/实验拒绝；不自动重试` |
-| `invalid_policy_room_count` | `scripts/run_isaac_parallel_pickplace.py:28` → `输入/实验拒绝；不自动重试` |
-| `invalid_policy_transport` | `apps/scene-agent/gpu/studio_backend.py:127` → `输入/实验拒绝；不自动重试` |
+| `invalid_policy_action_chunk` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:71` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/real2sim/isaac_policy_pickplace.py:82` → `输入/实验拒绝；不自动重试` |
+| `invalid_policy_inbox_rooms` | `r1pro_teleop/vla/request_inbox.py:13` → `输入/实验拒绝；不自动重试` |
+| `invalid_policy_input_fields` | `scripts/studio_vla_evaluate.py:35` → `输入/实验拒绝；不自动重试` |
+| `invalid_policy_room_count` | `scripts/run_isaac_parallel_pickplace.py:29` → `输入/实验拒绝；不自动重试` |
+| `invalid_policy_transport` | `apps/scene-agent/gpu/studio_backend.py:148` → `输入/实验拒绝；不自动重试` |
+| `invalid_prepared_pose_diagnostic_contract` | `r1pro_teleop/real2sim/policy_start_diagnostic.py:77` → `输入/实验拒绝；不自动重试` |
+| `invalid_prepared_room_index` | `r1pro_teleop/real2sim/policy_start_diagnostic.py:113` → `输入/实验拒绝；不自动重试` |
 | `invalid_private_escape_bounds` | `r1pro_teleop/vla/contact_escape.py:84` → `输入/实验拒绝；不自动重试` |
 | `invalid_private_escape_evidence` | `r1pro_teleop/vla/contact_escape.py:79` → `输入/实验拒绝；不自动重试` |
 | `invalid_private_escape_geometry` | `r1pro_teleop/vla/contact_escape.py:39` → `输入/实验拒绝；不自动重试` |
@@ -2439,17 +2535,17 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `invalid_real_cache` | `scripts/run_pi05_real_only.py:93` → `输入/实验拒绝；不自动重试` |
 | `invalid_real_fraction` | `scripts/train_pi05_parallel_real_mix.py:42` → `输入/实验拒绝；不自动重试` |
 | `invalid_real_timestamps` | `r1pro_teleop/vla/real_sim_data.py:34` → `输入/实验拒绝；不自动重试` |
-| `invalid_registered_policy_horizon` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:123` → `输入/实验拒绝；不自动重试` |
+| `invalid_registered_policy_horizon` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:130` → `输入/实验拒绝；不自动重试` |
 | `invalid_registered_room_grid` | `r1pro_teleop/real2sim/isaac_parallel_collection.py:21` → `输入/实验拒绝；不自动重试` |
-| `invalid_registered_scene_selection` | `apps/scene-agent/gpu/studio_backend.py:130` → `输入/实验拒绝；不自动重试` |
-| `invalid_request_id` | `apps/scene-agent/gpu/worker.py:164` → `输入/实验拒绝；不自动重试` |
+| `invalid_registered_scene_selection` | `apps/scene-agent/gpu/studio_backend.py:151` → `输入/实验拒绝；不自动重试` |
+| `invalid_request_id` | `apps/scene-agent/gpu/worker.py:170` → `输入/实验拒绝；不自动重试` |
 | `invalid_retained_push_contact` | `r1pro_teleop/airport_fsm/machine.py:776` → `False` |
-| `invalid_room_selection` | `apps/scene-agent/gpu/worker.py:100` → `输入/实验拒绝；不自动重试` |
-| `invalid_ros2_action_chunk` | `scripts/studio_ros2_transport.py:43` → `输入/实验拒绝；不自动重试` |
-| `invalid_runtime_profile` | `apps/scene-agent/gpu/studio_backend.py:133` → `输入/实验拒绝；不自动重试` |
+| `invalid_room_selection` | `apps/scene-agent/gpu/worker.py:106` → `输入/实验拒绝；不自动重试` |
+| `invalid_ros2_action_chunk` | `scripts/studio_ros2_transport.py:62` → `输入/实验拒绝；不自动重试` |
+| `invalid_runtime_profile` | `apps/scene-agent/gpu/studio_backend.py:154` → `输入/实验拒绝；不自动重试` |
 | `invalid_sampler_shape_or_steps` | `r1pro_teleop/vla/flowdagger_single_tray.py:47` → `输入/实验拒绝；不自动重试` |
 | `invalid_sampling_weights` | `r1pro_teleop/vla/parallel_pickplace_training.py:162` → `输入/实验拒绝；不自动重试` |
-| `invalid_scene_profile` | `apps/scene-agent/gpu/worker.py:115` → `输入/实验拒绝；不自动重试` |
+| `invalid_scene_profile` | `apps/scene-agent/gpu/worker.py:121` → `输入/实验拒绝；不自动重试` |
 | `invalid_scene_split` | `r1pro_teleop/vla/data.py:177` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/vla/data.py:426` → `输入/实验拒绝；不自动重试` |
 | `invalid_schedule_budget` | `r1pro_teleop/vla/training_cache.py:45` → `输入/实验拒绝；不自动重试` |
 | `invalid_search_budget` | `r1pro_teleop/experiments/parameter_search.py:26` → `输入/实验拒绝；不自动重试` |
@@ -2464,7 +2560,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `invalid_substep_targets` | `r1pro_teleop/airport_fsm/runtime.py:522` → `False` |
 | `invalid_task_dataset_max_scenes` | `r1pro_teleop/vla/data_task_lerobot.py:227` → `输入/实验拒绝；不自动重试` |
 | `invalid_task_dataset_split` | `r1pro_teleop/vla/data_task_lerobot.py:216` → `输入/实验拒绝；不自动重试` |
-| `invalid_training_config` | `apps/scene-agent/gpu/studio_backend.py:117` → `输入/实验拒绝；不自动重试` |
+| `invalid_training_config` | `apps/scene-agent/gpu/studio_backend.py:138` → `输入/实验拒绝；不自动重试` |
 | `invalid_vla_prompt` | `r1pro_teleop/vla/prompts.py:39` → `输入/实验拒绝；不自动重试` |
 | `invalid_whole_action_source_interval` | `r1pro_teleop/vla/data_task_lerobot.py:48` → `输入/实验拒绝；不自动重试` |
 | `invalid_whole_action_vocabulary` | `r1pro_teleop/vla/data_task_lerobot.py:35` → `输入/实验拒绝；不自动重试` |
@@ -2524,7 +2620,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `isaac_unsupported_base_actuator_translation` | `scripts/isaacsim_base_drives.py:15` → `输入/实验拒绝；不自动重试` |
 | `isaac_whole_native_task_qualification_required` | `r1pro_teleop/vla/isaac_dataset.py:117` → `输入/实验拒绝；不自动重试` |
 | `isaac_world_d6_position_drives_missing` | `r1pro_teleop/real2sim/isaac_mobile.py:79` → `输入/实验拒绝；不自动重试`<br>`scripts/isaac_mobile.py:79` → `输入/实验拒绝；不自动重试` |
-| `job_request_conflict` | `apps/scene-agent/gpu/studio_backend.py:152` → `输入/实验拒绝；不自动重试` |
+| `job_request_conflict` | `apps/scene-agent/gpu/studio_backend.py:180` → `输入/实验拒绝；不自动重试` |
 | `joining_arm_path_unavailable` | `r1pro_teleop/airport_fsm/machine.py:287` → `False` |
 | `joint_or_gripper_limit` | `r1pro_teleop/airport_fsm/runtime.py:1276` → `False` |
 | `joint_path_collision_or_wrist` | `r1pro_teleop/airport_fsm/runtime.py:1288` → `True` |
@@ -2548,7 +2644,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `lift_requires_approach_checkpoint` | `r1pro_teleop/experiments/worker.py:33` → `输入/实验拒绝；不自动重试` |
 | `live_process_identity_could_not_be_verified` | `r1pro_teleop/vla/training_pipeline.py:77` → `输入/实验拒绝；不自动重试` |
 | `live_raw2_trace_required` | `r1pro_teleop/single_tray_3table/observer.py:44` → `输入/实验拒绝；不自动重试` |
-| `live_single_room_ros2_required` | `apps/scene-agent/gpu/studio_backend.py:135` → `输入/实验拒绝；不自动重试` |
+| `live_single_room_ros2_required` | `apps/scene-agent/gpu/studio_backend.py:156` → `输入/实验拒绝；不自动重试` |
 | `live_view_requires_one_room` | `r1pro_teleop/real2sim/studio_live_view.py:15` → `输入/实验拒绝；不自动重试` |
 | `loaded_push_payload_or_final_guard_invalid` | `r1pro_teleop/vla/data_single_tray.py:88` → `输入/实验拒绝；不自动重试` |
 | `loader_action_shape` | `r1pro_teleop/airport_fsm/exporter.py:278` → `False` |
@@ -2625,15 +2721,15 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `native_full_source_has_extra_frames` | `r1pro_teleop/vla/data_task_lerobot.py:414` → `输入/实验拒绝；不自动重试` |
 | `native_metadata_reuse_video_bytes_changed` | `r1pro_teleop/vla/data_task_lerobot.py:515` → `输入/实验拒绝；不自动重试` |
 | `native_override_source_trace_mismatch` | `r1pro_teleop/vla/data_task_lerobot.py:247` → `输入/实验拒绝；不自动重试` |
-| `native_policy_actual_substeps` | `scripts/studio_vla_evaluate.py:48` → `输入/实验拒绝；不自动重试` |
-| `native_policy_physics_gate` | `scripts/studio_vla_evaluate.py:49` → `输入/实验拒绝；不自动重试` |
-| `native_policy_trace_shape` | `scripts/studio_vla_evaluate.py:47` → `输入/实验拒绝；不自动重试` |
+| `native_policy_actual_substeps` | `scripts/studio_vla_evaluate.py:55` → `输入/实验拒绝；不自动重试` |
+| `native_policy_physics_gate` | `scripts/studio_vla_evaluate.py:56` → `输入/实验拒绝；不自动重试` |
+| `native_policy_trace_shape` | `scripts/studio_vla_evaluate.py:54` → `输入/实验拒绝；不自动重试` |
 | `native_producer_not_closed_and_verified` | `r1pro_teleop/vla/training_pipeline.py:42` → `输入/实验拒绝；不自动重试` |
 | `native_publication_is_not_full_source` | `r1pro_teleop/vla/data_task_lerobot.py:494` → `输入/实验拒绝；不自动重试` |
 | `native_reference_coverage_mismatch` | `r1pro_teleop/vla/data_native_pipeline.py:56` → `输入/实验拒绝；不自动重试` |
 | `native_reference_list_not_complete` | `r1pro_teleop/vla/training_pipeline.py:46` → `输入/实验拒绝；不自动重试` |
 | `native_replay_state_errors` | `r1pro_teleop/vla/data_task_lerobot.py:503` → `输入/实验拒绝；不自动重试` |
-| `native_report_missing` | `apps/scene-agent/gpu/studio_job_runner.py:69` → `输入/实验拒绝；不自动重试` |
+| `native_report_missing` | `apps/scene-agent/gpu/studio_job_runner.py:76` → `输入/实验拒绝；不自动重试` |
 | `native_rgb_frame_invalid` | `r1pro_teleop/vla/data_task_lerobot.py:137` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/vla/data_task_lerobot.py:416` → `输入/实验拒绝；不自动重试` |
 | `native_robot_visuals_not_found` | `r1pro_teleop/real2sim/isaac_lab_visuals.py:89` → `输入/实验拒绝；不自动重试` |
 | `native_shared_clock_time_invalid` | `scripts/export_isaac_parallel_pickplace.py:32` → `输入/实验拒绝；不自动重试` |
@@ -2758,7 +2854,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `old_or_hidden_goal_scope_rejected` | `r1pro_teleop/single_tray_3table/evaluation_batch.py:43` → `输入/实验拒绝；不自动重试` |
 | `old_or_loaded_scope_cannot_be_new_evaluation` | `r1pro_teleop/single_tray_lab/evaluation_batch.py:37` → `输入/实验拒绝；不自动重试` |
 | `one_complete_place_withdrawal_endpoint_required` | `r1pro_teleop/vla/single_tray_pipeline.py:64` → `输入/实验拒绝；不自动重试` |
-| `one_registered_case_per_room_required` | `scripts/run_isaac_parallel_pickplace.py:204` → `输入/实验拒绝；不自动重试` |
+| `one_registered_case_per_room_required` | `scripts/run_isaac_parallel_pickplace.py:206` → `输入/实验拒绝；不自动重试` |
 | `one_registered_train_asset_candidate_required` | `scripts/supervise_isaacsim_three_tray_assets.py:61` → `输入/实验拒绝；不自动重试` |
 | `one_reserved_gpu_required` | `scripts/run_pi05_real_only.py:175` → `输入/实验拒绝；不自动重试` |
 | `online_push_brake_timeout` | `r1pro_teleop/airport_fsm/online_push.py:116` → `False` |
@@ -2771,6 +2867,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `only_complete_train_norm` | `r1pro_teleop/vla/training_cache.py:258` → `输入/实验拒绝；不自动重试` |
 | `only_exact_prior_diagnostic_model_can_be_adopted` | `scripts/supervise_three_table_free_run.py:114` → `输入/实验拒绝；不自动重试` |
 | `only_one_version2_data_launcher_allowed` | `r1pro_teleop/single_tray_3table/workflow.py:192` → `输入/实验拒绝；不自动重试` |
+| `only_policy_jobs_can_be_stopped` | `apps/scene-agent/gpu/studio_backend.py:196` → `输入/实验拒绝；不自动重试` |
 | `only_recorded_command_annotation_failure_can_be_requalified` | `r1pro_teleop/vla/data_three_table_lerobot.py:44` → `输入/实验拒绝；不自动重试` |
 | `only_registered_source_children_may_be_adopted` | `r1pro_teleop/single_tray_3table/workflow.py:156` → `输入/实验拒绝；不自动重试` |
 | `only_registered_source_continuation_adoption_allowed` | `r1pro_teleop/single_tray_3table/workflow.py:62` → `输入/实验拒绝；不自动重试` |
@@ -2814,22 +2911,22 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `owned_gpu_context_not_released` | `r1pro_teleop/single_tray_3table/evaluation_batch.py:297` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/single_tray_lab/evaluation_batch.py:223` → `输入/实验拒绝；不自动重试` |
 | `owned_process_identity_changed_no_signal_or_duplicate` | `r1pro_teleop/single_tray_3table/workflow.py:131` → `输入/实验拒绝；不自动重试` |
 | `pair_source_identity_mismatch` | `r1pro_teleop/vla/parallel_pickplace_training.py:26` → `输入/实验拒绝；不自动重试` |
-| `parallel_actor_count_mismatch` | `scripts/probe_isaac_parallel_collection.py:155` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaac_parallel_pickplace.py:197` → `输入/实验拒绝；不自动重试` |
+| `parallel_actor_count_mismatch` | `scripts/probe_isaac_parallel_collection.py:155` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaac_parallel_pickplace.py:199` → `输入/实验拒绝；不自动重试` |
 | `parallel_cache_binding_invalid` | `scripts/train_pi05_parallel_real_mix.py:46` → `输入/实验拒绝；不自动重试` |
 | `parallel_camera_frame_mismatch` | `r1pro_teleop/real2sim/isaac_parallel_collection.py:131` → `输入/实验拒绝；不自动重试` |
 | `parallel_contact_sensor_identity` | `r1pro_teleop/real2sim/isaac_parallel_contacts.py:21` → `输入/实验拒绝；不自动重试` |
-| `parallel_fixed_base_command_changed` | `scripts/run_isaac_parallel_pickplace.py:323` → `输入/实验拒绝；不自动重试` |
+| `parallel_fixed_base_command_changed` | `scripts/run_isaac_parallel_pickplace.py:345` → `输入/实验拒绝；不自动重试` |
 | `parallel_native_four_camera_contract_required` | `r1pro_teleop/vla/data_task_lerobot.py:454` → `输入/实验拒绝；不自动重试` |
 | `parallel_native_output_paths_overlap` | `r1pro_teleop/vla/data_task_lerobot.py:456` → `输入/实验拒绝；不自动重试` |
 | `parallel_nonfinite_contact` | `r1pro_teleop/real2sim/isaac_parallel_contacts.py:57` → `输入/实验拒绝；不自动重试` |
 | `parallel_nonfinite_physics` | `scripts/probe_isaac_parallel_collection.py:237` → `输入/实验拒绝；不自动重试` |
 | `parallel_parent_split_leakage` | `r1pro_teleop/real2sim/isaac_parallel_collection.py:44` → `输入/实验拒绝；不自动重试` |
-| `parallel_requires_one_actual_physics_scene` | `scripts/probe_isaac_parallel_collection.py:152` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaac_parallel_pickplace.py:191` → `输入/实验拒绝；不自动重试` |
+| `parallel_requires_one_actual_physics_scene` | `scripts/probe_isaac_parallel_collection.py:152` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaac_parallel_pickplace.py:193` → `输入/实验拒绝；不自动重试` |
 | `parallel_room_real_substeps_must_equal_25` | `r1pro_teleop/real2sim/isaac_parallel_runtime.py:157` → `输入/实验拒绝；不自动重试` |
-| `parallel_source_identity_changed` | `scripts/probe_isaac_parallel_collection.py:66` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaac_parallel_pickplace.py:70` → `输入/实验拒绝；不自动重试` |
-| `parallel_source_stage_open_failed` | `scripts/probe_isaac_parallel_collection.py:69` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaac_parallel_pickplace.py:73` → `输入/实验拒绝；不自动重试` |
+| `parallel_source_identity_changed` | `scripts/probe_isaac_parallel_collection.py:66` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaac_parallel_pickplace.py:72` → `输入/实验拒绝；不自动重试` |
+| `parallel_source_stage_open_failed` | `scripts/probe_isaac_parallel_collection.py:69` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaac_parallel_pickplace.py:75` → `输入/实验拒绝；不自动重试` |
 | `parallel_table_filters_missing` | `r1pro_teleop/real2sim/isaac_parallel_contacts.py:31` → `输入/实验拒绝；不自动重试` |
-| `parallel_visual_relocation_missing` | `scripts/probe_isaac_parallel_collection.py:114` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaac_parallel_pickplace.py:137` → `输入/实验拒绝；不自动重试` |
+| `parallel_visual_relocation_missing` | `scripts/probe_isaac_parallel_collection.py:114` → `输入/实验拒绝；不自动重试`<br>`scripts/run_isaac_parallel_pickplace.py:139` → `输入/实验拒绝；不自动重试` |
 | `parent_changed` | `r1pro_teleop/single_tray_3table/campaign_recovery.py:44` → `输入/实验拒绝；不自动重试` |
 | `parent_changed_after_campaign_plan` | `r1pro_teleop/single_tray_3table/campaign.py:181` → `输入/实验拒绝；不自动重试` |
 | `parent_checkpoint_identity_mismatch` | `scripts/train_pi05_parallel_real_mix.py:61` → `输入/实验拒绝；不自动重试` |
@@ -2894,9 +2991,10 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `plot_protocol_mismatch` | `scripts/studio_mse_plots.py:45` → `输入/实验拒绝；不自动重试` |
 | `plot_source_hash_mismatch` | `scripts/studio_mse_plots.py:43` → `输入/实验拒绝；不自动重试` |
 | `plot_upload_not_confirmed` | `apps/scene-agent/gpu/mse_artifacts.py:28` → `输入/实验拒绝；不自动重试` |
-| `policy_checkpoint_identity_mismatch` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:19` → `输入/实验拒绝；不自动重试` |
-| `policy_initial_station_not_table_front` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:130` → `输入/实验拒绝；不自动重试` |
-| `policy_release_above_authorized_2cm` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:50` → `输入/实验拒绝；不自动重试` |
+| `policy_checkpoint_identity_mismatch` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:22` → `输入/实验拒绝；不自动重试` |
+| `policy_inbox_sequence_mismatch` | `r1pro_teleop/vla/request_inbox.py:27` → `输入/实验拒绝；不自动重试` |
+| `policy_initial_station_not_table_front` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:140` → `输入/实验拒绝；不自动重试` |
+| `policy_release_above_authorized_2cm` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:63` → `输入/实验拒绝；不自动重试` |
 | `positive_explicit_new_task_evaluation_budget_required` | `r1pro_teleop/vla/single_tray_pipeline.py:84` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/vla/three_table_single_tray_pipeline.py:51` → `输入/实验拒绝；不自动重试` |
 | `positive_explicit_training_vram_admission_required` | `r1pro_teleop/vla/three_table_recovery.py:117` → `输入/实验拒绝；不自动重试` |
 | `positive_motor_gain_and_lift_required` | `r1pro_teleop/single_tray_lab/scene.py:58` → `输入/实验拒绝；不自动重试` |
@@ -2911,6 +3009,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `preflight_scene_identity_mismatch` | `r1pro_teleop/airport_fsm/registry.py:119` → `False` |
 | `preflight_selection_binding_changed` | `scripts/supervise_three_action_expansion.py:188` → `输入/实验拒绝；不自动重试` |
 | `preload_outside_existing_gripper_range` | `r1pro_teleop/real2sim/isaac_fast_pickplace.py:193` → `输入/实验拒绝；不自动重试` |
+| `prepared_start_policy_diagnostic_only` | `scripts/run_isaac_parallel_pickplace.py:212` → `输入/实验拒绝；不自动重试` |
 | `preplace_bilateral_contact_missing` | `r1pro_teleop/airport_fsm/machine.py:490` → `True`<br>`r1pro_teleop/airport_fsm/machine.py:538` → `True` |
 | `preplace_clearance_not_restored` | `r1pro_teleop/airport_fsm/machine.py:583` → `True` |
 | `presentation_aspect_changed` | `scripts/run_isaacsim_fast_pickplace.py:43` → `输入/实验拒绝；不自动重试` |
@@ -2954,7 +3053,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `private_prediction_requires_distinct_data` | `r1pro_teleop/single_tray_3table/axis_feedback.py:72` → `输入/实验拒绝；不自动重试` |
 | `private_preflight_mutated_live_initial_state` | `r1pro_teleop/single_tray_3table/initial_pose_preflight.py:45` → `输入/实验拒绝；不自动重试` |
 | `private_short_rim_cannot_qualify_source` | `scripts/supervise_three_action_expansion.py:214` → `输入/实验拒绝；不自动重试` |
-| `privileged_policy_input_rejected` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:22` → `输入/实验拒绝；不自动重试` |
+| `privileged_policy_input_rejected` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:34` → `输入/实验拒绝；不自动重试` |
 | `production_photo_scene_assets_not_present` | `r1pro_teleop/vla/single_tray_pipeline.py:43` → `输入/实验拒绝；不自动重试` |
 | `proposal_scene_identity_changed` | `r1pro_teleop/single_tray_3table/initial_pose_preflight.py:99` → `输入/实验拒绝；不自动重试` |
 | `protocol_changed_during_evaluation` | `r1pro_teleop/single_tray_3table/evaluation_batch.py:292` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/single_tray_lab/evaluation_batch.py:218` → `输入/实验拒绝；不自动重试` |
@@ -3048,7 +3147,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `real2sim_unexpected_missing_arm_joint` | `r1pro_teleop/real2sim/model.py:128` → `输入/实验拒绝；不自动重试` |
 | `real2sim_unscaled_source_finger_required` | `scripts/build_real2sim_finger_collision.py:43` → `输入/实验拒绝；不自动重试` |
 | `real_arm_gripper_order_not_7_1_7_1` | `r1pro_teleop/vla/real_sim_data.py:46` → `输入/实验拒绝；不自动重试` |
-| `real_data_required` | `apps/scene-agent/gpu/studio_backend.py:118` → `输入/实验拒绝；不自动重试` |
+| `real_data_required` | `apps/scene-agent/gpu/studio_backend.py:139` → `输入/实验拒绝；不自动重试` |
 | `real_episode_count_changed` | `scripts/run_real_sim_pickplace.py:31` → `输入/实验拒绝；不自动重试` |
 | `real_episode_split_leak` | `scripts/train_pi05_parallel_real_mix.py:53` → `输入/实验拒绝；不自动重试` |
 | `real_gripper_command_outside_documented_mm_range` | `r1pro_teleop/vla/real_sim_data.py:51` → `输入/实验拒绝；不自动重试` |
@@ -3113,7 +3212,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `replay_scene_hash_mismatch` | `r1pro_teleop/airport_fsm/exporter.py:111` → `False` |
 | `replay_source_identity_changed` | `r1pro_teleop/single_tray_3table/evaluation_batch.py:113` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/single_tray_lab/evaluation_batch.py:81` → `输入/实验拒绝；不自动重试` |
 | `replay_time_mismatch` | `r1pro_teleop/airport_fsm/exporter.py:130` → `False` |
-| `request_id_conflict` | `apps/scene-agent/gpu/worker.py:171` → `输入/实验拒绝；不自动重试` |
+| `request_id_conflict` | `apps/scene-agent/gpu/worker.py:177` → `输入/实验拒绝；不自动重试` |
 | `required_continuous_contact_projection_not_closed_yet` | `r1pro_teleop/vla/data_three_table_lerobot.py:90` → `输入/实验拒绝；不自动重试` |
 | `restored_completed_checkpoint_not_fully_saved` | `r1pro_teleop/vla/training_accelerated.py:134` → `输入/实验拒绝；不自动重试` |
 | `result_raw_guarded_substep_count_mismatch` | `r1pro_teleop/single_tray_lab/contact_summary.py:41` → `输入/实验拒绝；不自动重试` |
@@ -3137,8 +3236,20 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `reviewed_training_budget_or_model_changed` | `r1pro_teleop/vla/training_pipeline.py:214` → `输入/实验拒绝；不自动重试` |
 | `reward_method_not_implemented_or_approved` | `scripts/train_pi05_parallel_real_mix.py:40` → `输入/实验拒绝；不自动重试` |
 | `right_release_command_absent` | `scripts/audit_isaacsim_three_tray_demo.py:39` → `输入/实验拒绝；不自动重试` |
-| `robot_filter_stale_feedback` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:106` → `输入/实验拒绝；不自动重试` |
-| `robot_filter_tracking_error` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:108` → `输入/实验拒绝；不自动重试` |
+| `robot_filter_empty_limit_intersection` | `r1pro_teleop/real2sim/robot_action_filter.py:97` → `输入/实验拒绝；不自动重试` |
+| `robot_filter_invalid_action_chunk` | `r1pro_teleop/real2sim/robot_action_filter.py:128` → `输入/实验拒绝；不自动重试` |
+| `robot_filter_invalid_control_period` | `r1pro_teleop/real2sim/robot_action_filter.py:144` → `输入/实验拒绝；不自动重试` |
+| `robot_filter_invalid_interpolation` | `r1pro_teleop/real2sim/robot_action_filter.py:78` → `输入/实验拒绝；不自动重试` |
+| `robot_filter_invalid_limits` | `r1pro_teleop/real2sim/robot_action_filter.py:36` → `输入/实验拒绝；不自动重试` |
+| `robot_filter_invalid_mechanical_limits` | `r1pro_teleop/real2sim/robot_action_filter.py:94` → `输入/实验拒绝；不自动重试` |
+| `robot_filter_invalid_substep` | `r1pro_teleop/real2sim/robot_action_filter.py:75` → `输入/实验拒绝；不自动重试` |
+| `robot_filter_invalid_vector` | `r1pro_teleop/real2sim/robot_action_filter.py:105` → `输入/实验拒绝；不自动重试` |
+| `robot_filter_limits_missing` | `r1pro_teleop/real2sim/robot_action_filter.py:45` → `输入/实验拒绝；不自动重试` |
+| `robot_filter_no_valid_command` | `r1pro_teleop/real2sim/robot_action_filter.py:120` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/real2sim/robot_action_filter.py:163` → `输入/实验拒绝；不自动重试` |
+| `robot_filter_previous_outside_limits` | `r1pro_teleop/real2sim/robot_action_filter.py:148` → `输入/实验拒绝；不自动重试` |
+| `robot_filter_stale_feedback` | `r1pro_teleop/real2sim/robot_action_filter.py:142` → `输入/实验拒绝；不自动重试` |
+| `robot_filter_tracking_error` | `r1pro_teleop/real2sim/robot_action_filter.py:146` → `输入/实验拒绝；不自动重试` |
+| `robot_filter_unknown_setting` | `r1pro_teleop/real2sim/robot_action_filter.py:63` → `输入/实验拒绝；不自动重试` |
 | `robot_initial_collision` | `r1pro_teleop/airport_scenes.py:185` → `生成器捕获ValueError时重采样` |
 | `robot_partition_face_union_mismatch` | `r1pro_teleop/real2sim/isaac_lab_visuals.py:82` → `输入/实验拒绝；不自动重试` |
 | `runtime_core_not_verified` | `r1pro_teleop/vla/training_pipeline.py:63` → `输入/实验拒绝；不自动重试` |
@@ -3158,7 +3269,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `scene_preflight_missing` | `r1pro_teleop/airport_fsm/batch.py:304` → `False`<br>`r1pro_teleop/airport_fsm/batch.py:307` → `False` |
 | `scene_registry_authority_changed` | `r1pro_teleop/single_tray_3table/evaluation_batch.py:49` → `输入/实验拒绝；不自动重试` |
 | `scene_result_inventory_identity_mismatch` | `scripts/plan_complete_task_actions.py:46` → `输入/实验拒绝；不自动重试` |
-| `scene_specific_native_preflight_not_closed` | `scripts/run_isaac_parallel_pickplace.py:67` → `输入/实验拒绝；不自动重试` |
+| `scene_specific_native_preflight_not_closed` | `scripts/run_isaac_parallel_pickplace.py:69` → `输入/实验拒绝；不自动重试` |
 | `scene_split_leak` | `r1pro_teleop/airport_fsm/loading.py:25` → `False`<br>`r1pro_teleop/airport_fsm/registry.py:183` → `False` |
 | `scene_split_leakage` | `r1pro_teleop/vla/training_pipeline.py:38` → `输入/实验拒绝；不自动重试` |
 | `schema_version` | `r1pro_teleop/airport_scenes.py:54` → `生成器捕获ValueError时重采样` |
@@ -3175,11 +3286,11 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `settled_stage_requires_fresh_origin` | `r1pro_teleop/experiments/worker.py:17` → `输入/实验拒绝；不自动重试` |
 | `shared_engine_actual_wait_zero_required` | `scripts/export_isaac_parallel_pickplace.py:179` → `输入/实验拒绝；不自动重试` |
 | `short_or_ambiguous_rim_contact` | `r1pro_teleop/vla/data_three_table_single_tray.py:79` → `输入/实验拒绝；不自动重试` |
-| `simulation_data_required` | `apps/scene-agent/gpu/studio_backend.py:119` → `输入/实验拒绝；不自动重试` |
+| `simulation_data_required` | `apps/scene-agent/gpu/studio_backend.py:140` → `输入/实验拒绝；不自动重试` |
 | `simulation_holdout_leak` | `scripts/train_pi05_parallel_real_mix.py:55` → `输入/实验拒绝；不自动重试` |
 | `simulation_parent_split_conflict` | `scripts/studio_prepare_training.py:36` → `输入/实验拒绝；不自动重试` |
 | `simulation_source_not_verified_ready` | `scripts/run_real_sim_pickplace.py:44` → `输入/实验拒绝；不自动重试` |
-| `simulation_time_budget_reached` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:139` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/real2sim/isaac_policy_pickplace.py:166` → `输入/实验拒绝；不自动重试` |
+| `simulation_time_budget_reached` | `r1pro_teleop/real2sim/isaac_policy_pickplace.py:154` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/real2sim/isaac_policy_pickplace.py:183` → `输入/实验拒绝；不自动重试` |
 | `simulation_time_grid_mismatch` | `r1pro_teleop/airport_fsm/exporter.py:69` → `False` |
 | `single_arm_release_path_unavailable` | `r1pro_teleop/airport_fsm/machine.py:691` → `False` |
 | `single_tray_blender_assets_missing` | `r1pro_teleop/single_tray_lab/scene.py:150` → `输入/实验拒绝；不自动重试` |
@@ -3308,7 +3419,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `stage_duration_must_be_whole_20hz_frames` | `r1pro_teleop/single_tray_3table/free_run.py:14` → `输入/实验拒绝；不自动重试` |
 | `stage_output_not_closed` | `scripts/run_pi05_real_only.py:285` → `输入/实验拒绝；不自动重试` |
 | `stale_handoff_tray` | `r1pro_teleop/airport_fsm/machine.py:273` → `False` |
-| `stale_policy_action` | `scripts/studio_ros2_transport.py:40` → `输入/实验拒绝；不自动重试` |
+| `stale_policy_action` | `scripts/studio_ros2_transport.py:58` → `输入/实验拒绝；不自动重试` |
 | `state_projection_scene_xml_hash_mismatch` | `r1pro_teleop/vla/data.py:390` → `输入/实验拒绝；不自动重试` |
 | `strict_zero_margin_footprint_not_actual_corners` | `r1pro_teleop/vla/data_three_table_single_tray.py:149` → `输入/实验拒绝；不自动重试` |
 | `submitted_command_changed_from_raw_model_action` | `r1pro_teleop/single_tray_3table/free_run.py:46` → `输入/实验拒绝；不自动重试` |
@@ -3357,6 +3468,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `train_norm_provenance_certificate_changed` | `r1pro_teleop/vla/training_cache.py:228` → `输入/实验拒绝；不自动重试` |
 | `train_norm_source_changed_during_computation` | `r1pro_teleop/vla/training_cache.py:275` → `输入/实验拒绝；不自动重试` |
 | `train_norm_source_or_configuration_changed` | `r1pro_teleop/vla/training_cache.py:231` → `输入/实验拒绝；不自动重试` |
+| `training_batch_must_divide_selected_device_count` | `scripts/train_pi05_parallel_real_mix.py:131` → `输入/实验拒绝；不自动重试` |
 | `training_cache_not_complete_train` | `r1pro_teleop/vla/training_cache.py:56` → `输入/实验拒绝；不自动重试` |
 | `training_cache_resource_changed` | `r1pro_teleop/vla/training_cache.py:60` → `输入/实验拒绝；不自动重试` |
 | `training_cache_shape_or_dtype_changed` | `r1pro_teleop/vla/training_cache.py:62` → `输入/实验拒绝；不自动重试` |
@@ -3384,8 +3496,8 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `two_actions_required_in_each_used_domain` | `r1pro_teleop/vla/parallel_pickplace_training.py:157` → `输入/实验拒绝；不自动重试` |
 | `two_device_dp_mesh_required` | `r1pro_teleop/vla/training_accelerated.py:95` → `输入/实验拒绝；不自动重试` |
 | `two_source_pad_collision_centers_required` | `r1pro_teleop/real2sim/isaac_fast_pickplace.py:73` → `输入/实验拒绝；不自动重试` |
-| `two_visible_training_devices_required` | `scripts/train_pi05_isaac_three_tray.py:91` → `输入/实验拒绝；不自动重试`<br>`scripts/train_pi05_parallel_real_mix.py:131` → `输入/实验拒绝；不自动重试` |
-| `unapproved_training_recipe` | `apps/scene-agent/gpu/worker.py:144` → `输入/实验拒绝；不自动重试` |
+| `two_visible_training_devices_required` | `scripts/train_pi05_isaac_three_tray.py:91` → `输入/实验拒绝；不自动重试` |
+| `unapproved_training_recipe` | `apps/scene-agent/gpu/worker.py:150` → `输入/实验拒绝；不自动重试` |
 | `unchanged_explicit_workflow_recovery_required` | `r1pro_teleop/single_tray_3table/workflow.py:265` → `输入/实验拒绝；不自动重试` |
 | `unchanged_guardian_recovery_options_required` | `r1pro_teleop/single_tray_3table/guardian.py:133` → `输入/实验拒绝；不自动重试` |
 | `undeclared_checkpoint_stage` | `r1pro_teleop/experiments/checkpoint_tree.py:120` → `输入/实验拒绝；不自动重试` |
@@ -3406,6 +3518,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `unknown_full_native_camera` | `r1pro_teleop/vla/data_task_lerobot.py:84` → `输入/实验拒绝；不自动重试` |
 | `unknown_new_task_action` | `r1pro_teleop/vla/data_single_tray.py:75` → `输入/实验拒绝；不自动重试`<br>`r1pro_teleop/vla/data_three_table_single_tray.py:281` → `输入/实验拒绝；不自动重试` |
 | `unknown_or_duplicate_passenger_item` | `r1pro_teleop/single_tray_lab/scene.py:55` → `输入/实验拒绝；不自动重试` |
+| `unknown_policy_diagnostic_start` | `scripts/studio_vla_evaluate.py:79` → `输入/实验拒绝；不自动重试` |
 | `unknown_single_tray_three_action_prompt` | `r1pro_teleop/vla/prompts.py:45` → `输入/实验拒绝；不自动重试` |
 | `unknown_skill_only_prompt_skill` | `r1pro_teleop/vla/prompts.py:32` → `输入/实验拒绝；不自动重试` |
 | `unknown_skill_only_source_prompt` | `r1pro_teleop/vla/prompts.py:70` → `输入/实验拒绝；不自动重试` |
@@ -3418,9 +3531,9 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `unrecognized_environment_journal` | `r1pro_teleop/single_tray_3table/replay.py:24` → `False` |
 | `unrecognized_native_replay_schema` | `r1pro_teleop/vla/data_task_lerobot.py:507` → `输入/实验拒绝；不自动重试` |
 | `unrecognized_source_payload_identity` | `r1pro_teleop/single_tray_lab/replay.py:44` → `输入/实验拒绝；不自动重试` |
-| `unregistered_dataset` | `apps/scene-agent/gpu/studio_backend.py:115` → `输入/实验拒绝；不自动重试` |
+| `unregistered_dataset` | `apps/scene-agent/gpu/studio_backend.py:136` → `输入/实验拒绝；不自动重试` |
 | `unregistered_integration_staircase` | `scripts/supervise_isaac_parallel_probe.py:45` → `输入/实验拒绝；不自动重试` |
-| `unregistered_job_directory` | `apps/scene-agent/gpu/studio_job_runner.py:75` → `输入/实验拒绝；不自动重试` |
+| `unregistered_job_directory` | `apps/scene-agent/gpu/studio_job_runner.py:82` → `输入/实验拒绝；不自动重试` |
 | `unregistered_operation_table` | `r1pro_teleop/single_tray_3table/observer.py:69` → `输入/实验拒绝；不自动重试` |
 | `unregistered_scene_requested` | `r1pro_teleop/airport_fsm/__main__.py:72` → `False`<br>`r1pro_teleop/airport_fsm/registry.py:106` → `False` |
 | `unsafe_or_duplicate_scene_id` | `r1pro_teleop/airport_fsm/registry.py:32` → `False` |
@@ -3433,11 +3546,11 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `unsupported_environment_mutation` | `r1pro_teleop/single_tray_lab/replay.py:40` → `输入/实验拒绝；不自动重试` |
 | `unsupported_environment_source` | `r1pro_teleop/vla/data.py:201` → `输入/实验拒绝；不自动重试` |
 | `unsupported_evaluation_mode` | `r1pro_teleop/vla/training_pipeline.py:56` → `输入/实验拒绝；不自动重试` |
-| `unsupported_job_kind` | `apps/scene-agent/gpu/studio_backend.py:139` → `输入/实验拒绝；不自动重试` |
+| `unsupported_job_kind` | `apps/scene-agent/gpu/studio_backend.py:163` → `输入/实验拒绝；不自动重试` |
 | `unsupported_manifest_schema` | `r1pro_teleop/vla/data.py:431` → `输入/实验拒绝；不自动重试` |
-| `unsupported_model_family` | `scripts/studio_model_http.py:23` → `输入/实验拒绝；不自动重试` |
+| `unsupported_model_family` | `scripts/studio_model_http.py:29` → `输入/实验拒绝；不自动重试` |
 | `unsupported_nonunit_joint_transmission` | `r1pro_teleop/airport_fsm/runtime.py:200` → `False` |
-| `unsupported_operation` | `apps/scene-agent/gpu/worker.py:184` → `输入/实验拒绝；不自动重试` |
+| `unsupported_operation` | `apps/scene-agent/gpu/worker.py:190` → `输入/实验拒绝；不自动重试` |
 | `unsupported_original_raw_schema` | `r1pro_teleop/vla/data_task_native.py:103` → `输入/实验拒绝；不自动重试` |
 | `unsupported_raw_schema` | `scripts/plan_complete_task_actions.py:59` → `输入/实验拒绝；不自动重试` |
 | `unsupported_separation_path` | `r1pro_teleop/airport_fsm/machine.py:731` → `True` |
@@ -3500,7 +3613,7 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
 | `whole_task_unaccounted_original_frames` | `r1pro_teleop/vla/data_task_lerobot.py:204` → `输入/实验拒绝；不自动重试` |
 | `whole_task_unaccounted_original_tail` | `r1pro_teleop/vla/data_task_lerobot.py:206` → `输入/实验拒绝；不自动重试` |
 | `withdraw_planning_state_changed` | `r1pro_teleop/airport_fsm/withdraw_merge.py:41` → `False` |
-| `worker_config_permissions` | `apps/scene-agent/gpu/worker.py:211` → `输入/实验拒绝；不自动重试` |
+| `worker_config_permissions` | `apps/scene-agent/gpu/worker.py:217` → `输入/实验拒绝；不自动重试` |
 | `worker_resource_cap_required` | `r1pro_teleop/single_tray_3table/campaign_recovery.py:12` → `输入/实验拒绝；不自动重试` |
 | `workflow_paths_required` | `r1pro_teleop/single_tray_3table/workflow.py:159` → `输入/实验拒绝；不自动重试` |
 | `wrist_camera_front_guard` | `r1pro_teleop/airport_fsm/runtime.py:467` → `False` |
@@ -3728,58 +3841,67 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
   "apps/scene-agent/app/api/artifacts/route.ts": "1b0f2219049682479418ddb8c01ddff90469fe0cea853219338e98a22d1b6900",
   "apps/scene-agent/app/api/bootstrap/route.ts": "ea4f132622856b51ec686135327516ee07bc3233ae1862054b7cdc0190a2bccb",
   "apps/scene-agent/app/api/chat/route.ts": "42bc8ef7187e3d9425f2f12313faa04b119a4fa735875f0abd1be6b18e33be05",
+  "apps/scene-agent/app/api/checkpoints/route.ts": "166b1c1b25e26ec122b1db982641d6d3d46a4f2aa0a01c1bd89c3f323cb60af2",
   "apps/scene-agent/app/api/jobs/route.ts": "739934c9a421dd1e7f21a5cac0af6bbb8fcbbdc52bf5fddec92fbf4a395e0a71",
-  "apps/scene-agent/app/api/live/route.ts": "f8eba4ede73a98ed5b21868330a751aa75fb123e9fb9275103f87fa4c00ae03f",
+  "apps/scene-agent/app/api/live/route.ts": "d58d7af9dd1dfe7cdb1da49a3a358aad5927a427d6a3411a1d6ff57afaa4d623",
   "apps/scene-agent/app/api/scene/route.ts": "2df7a6fdf4030557b0e648b3326e1c532461ed41104b18c44bf477d135296512",
-  "apps/scene-agent/app/api/worker/route.ts": "f57f6e9e83c52ab5498652b82ae54646613301eebe0a589346b2fdc3a4772c52",
-  "apps/scene-agent/app/AutoEvaluations.tsx": "415df5b6e7e7a860d6d4470d548b8af7f0bd52609af4cd0d5a6a9aaaa0c0ef9e",
+  "apps/scene-agent/app/api/worker/route.ts": "63b088f26b0107cb9433912c21f246ccad85714968ff224ea672ff78aa05cfb2",
+  "apps/scene-agent/app/AutoEvaluations.tsx": "f8662e9ad9b8ebc926a29df48b57e115637fcf62b79eca54ded1292d0a467c54",
   "apps/scene-agent/app/BatchCatalog.tsx": "7e0567bb31b6f3a8a8c156080a6a1240070756faef7d5495bba349a8cda557ae",
   "apps/scene-agent/app/chatgpt-auth.ts": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
+  "apps/scene-agent/app/CheckpointCatalog.tsx": "07246265f909609da7b95310f4c89f0076e97a940beabfaf009458c7bc872425",
   "apps/scene-agent/app/EnglishGuide.tsx": "ad9df6f81a20c0ac6d421a38fedb292ce2c15327c756b313014a9861ae80ab54",
+  "apps/scene-agent/app/ErrorConsole.tsx": "38f41efe695fac98a7810d72a141cf8ede7727aae00dc19590490fa8832aaee7",
+  "apps/scene-agent/app/ExecutionControls.tsx": "b8c40e604f61cff03b0bfc74815f7fed0b072598cd5081c5c69f30a9c90d01d0",
   "apps/scene-agent/app/Help.tsx": "779cd9c1509347d405e317bb4b20d57aceaf78183547ee4f0a3f17fa8a05ef9f",
   "apps/scene-agent/app/layout.tsx": "1280fe8a82de2bd771a10d5c12912a97b11b6f2aec0529486b3209b2c1e9e65a",
   "apps/scene-agent/app/LiveDownloads.tsx": "92252c54365fba033e36f27786740a491ce48396f287e58b23c3737023a49152",
   "apps/scene-agent/app/ModelConfig.tsx": "57f8da1befd71c18c98142523cde07c4edd4cc30cda5f14c61ff2c2180131fdc",
   "apps/scene-agent/app/MseFigures.tsx": "b542d2af6e25e161e78a37767bfe98fb98500bbb7ce3ae4d606ad80a244cca34",
-  "apps/scene-agent/app/page.tsx": "b3adc2ea28e31f9cd3f45d345000aea2b61fd1d29f5099aa38becc9e545917c5",
+  "apps/scene-agent/app/page.tsx": "69000e980072fb4072c6af0d86bdc064cf4ba15efae842552b1a55c841a584ed",
   "apps/scene-agent/app/PanelBoundary.tsx": "d5e95b98b8b88ac9b2551ec0c6facecd0a3dd7cb4e3220f979987fdf1818a6db",
-  "apps/scene-agent/app/PolicyEvaluation.tsx": "48f24793223162e187043b050b566064def4c7f796836e322eae8e1ac10047c6",
+  "apps/scene-agent/app/PolicyEvaluation.tsx": "b25c7316fb7f266b2bf459284a8e19202adf72d8327d2e8d463338effe199e16",
   "apps/scene-agent/app/SceneViewport.tsx": "2e489db2198aa29f9609a79c16d0a31e0a3d3a7b183d32d6942b157c613f4e5f",
-  "apps/scene-agent/app/TrainingPanel.tsx": "f58d0e344b5d857597e41f56f781268ee1de0c92771bf73f3eb35855b6824184",
-  "apps/scene-agent/db/index.ts": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
-  "apps/scene-agent/db/schema.ts": "529abd7f605e1597de66f333186fe37489eca30053d156e22a060cc23e49b027",
+  "apps/scene-agent/app/TrainingPanel.tsx": "e45fbe6b3c2d230380f6784e8ac632817200ae06b5f0a93c1d571e2f8feb8cf9",
   "apps/scene-agent/drizzle/0000_fresh_miss_america.sql": "b6b4f57cfa6c635e479d7d72bbc9920f96256ae2e48eac3a518a1d02e87466d3",
   "apps/scene-agent/drizzle/meta/0000_snapshot.json": "3dc74a56d226aa353b96ac1dd3162d093ed97dc23cf4e71af388fe16aca73546",
   "apps/scene-agent/drizzle/meta/_journal.json": "9afd1551bcc56110db8f1f3443018599c34f4c02c973547bfa6ae0d464b0e799",
-  "apps/scene-agent/gpu/auto_evaluation.py": "a8f6e1edeaf2bb05b280832da37a425777d095fc8ed035e3105685d07015f85e",
+  "apps/scene-agent/gpu/auto_evaluation.py": "feb172e1f943180e6985245c9f9f032b72fd54ee4cb6f45ede3689e2603d6219",
   "apps/scene-agent/gpu/batch_catalog.py": "904640aa595e8327bf44002cda987b4bff3cb90c830ee16ca9a91b3a4f8fa765",
   "apps/scene-agent/gpu/dataset_registry.json": "e879813eb7392b76df6538993984c02ff93d00bec962135f024922f3067d6fff",
-  "apps/scene-agent/gpu/live_publication.py": "5e97797a515abd474cb2388a1f83021d51c57c5f29cbc1c1eaefac10c2928c32",
+  "apps/scene-agent/gpu/execution_settings.py": "ee416374c7a01c8ff59ca317913b24921d4aa4d62fc7174cf7d292e97f70576f",
+  "apps/scene-agent/gpu/initial-snapshot.json": "aaea74731abbb2c0476cc22b9d7dab7bf1bfdb3ced8cbca1e63eaf595a4b6f8a",
+  "apps/scene-agent/gpu/job_diagnostics.py": "cf4ba92152f912060bbe3d2c33a5712bcf58e29b7f51e698357a4e8655c9863a",
+  "apps/scene-agent/gpu/live_publication.py": "33e8e94e0962bb34cba1dc1c04accff780450576c2dc9c9a1f5a0de193268f3a",
+  "apps/scene-agent/gpu/maintenance_policy.json": "6dc14ef341cb4e370c4f74dd10cb69e340ff34b7ed963708da89f164c09b5a80",
   "apps/scene-agent/gpu/model_registry.py": "235fae7b906e279bda9ea8c40199c07c4cc7746fd7cbf46790367d1beccde1fa",
   "apps/scene-agent/gpu/mse_artifacts.py": "9df5d701fc5c8d7029ed4d959d991263b49fdb3f7f185fccd2ffcf0d21235471",
   "apps/scene-agent/gpu/plot_runner.py": "f0f87f25a52545d924b62272bb06cbfc660c022481445ca588d884b07935bc23",
   "apps/scene-agent/gpu/robot_action_limits.json": "49bac9524fb2747f26b6f5b478ccbed153096efca3ebe3bfbce8985d0d8157c1",
   "apps/scene-agent/gpu/ros2_models.json": "a7a2858c51353954de68ec7ad7060242dbbb2aeec4d301bc201739bfc4047465",
-  "apps/scene-agent/gpu/studio_backend.py": "4197a034ecffabf941b7780bd2b54c5b2062e7028df13e0f70a6aeee6c5a5d1a",
-  "apps/scene-agent/gpu/studio_job_runner.py": "e22917e30662dd0b54762d6aa770eb8630c025f3854a465acd4bddebf1524381",
+  "apps/scene-agent/gpu/studio_backend.py": "9cbaba0b6d7970cd55da22a70659a1f19eb0a9c57b57197f9647cafb63ffef85",
+  "apps/scene-agent/gpu/studio_job_runner.py": "41cc9d3e9afb8c6228ddb2d2fabdd76ffad5d73253205a58051bc57c8633c62f",
   "apps/scene-agent/gpu/test_worker.py": "c079ffda7e2ab59f1e2f008ceb0d4744ae101ba8a2f9c87d45d05b4b56a46d8b",
-  "apps/scene-agent/gpu/worker.py": "071f987ad9d75bac787c06503d6fc6681cd62f65465ff99c24a1d691f7e543b3",
+  "apps/scene-agent/gpu/worker.py": "7bfe25ce63ff5f0b0ca8e4644dea85896a0f30cc36f19af8e66d335b1d120e9c",
+  "apps/scene-agent/lib/checkpoint-catalog.ts": "4dd6755145d04c83d427ff02e2aa52ab6257f5443b6446083555dca079b9fd41",
   "apps/scene-agent/lib/connector-context.ts": "bbddff68689cb0f6926fecd4b8b96f12f2054277c296e97b0df07d4ad5ece24e",
   "apps/scene-agent/lib/connector-preview.d.ts": "abd69a94f7f61f1359063bb557574faae35e8ff5a028cc4c04b9ee248ef52642",
   "apps/scene-agent/lib/connectors.ts": "1c93d747e384c8e17e3e3dd5361b24412babf5eba2a11d2ae7a75f4e0924112c",
   "apps/scene-agent/lib/core.ts": "c8b25142645e42b80b6453242b367ce339f034ae2ba44d94f00c113890fca9a9",
   "apps/scene-agent/lib/display.ts": "3069ac05405484423032642a1aa709e98e86f873ad1180f79f13e86d43c8138e",
-  "apps/scene-agent/lib/english-guide.json": "80526cdf79ff75017ed8aa2d2285774c2e913869cdcc00719342d56ab71da644",
+  "apps/scene-agent/lib/english-guide.json": "dbca5468fc770776ee06489ff8ac3841af8d3d4e9cfaf2e94a43ef3db3011af2",
+  "apps/scene-agent/lib/execution-settings.ts": "d8e607e6350b193e8cd9f509e5bc3f837f79750aec9f04c8a1568a985d77c949",
   "apps/scene-agent/lib/help-content.json": "32df14084423cfa2b46bb4a330fab1299adab1d547d9421893e86c5796cfa8e7",
   "apps/scene-agent/lib/initial-snapshot.json": "aaea74731abbb2c0476cc22b9d7dab7bf1bfdb3ced8cbca1e63eaf595a4b6f8a",
   "apps/scene-agent/lib/request-id.ts": "0e1698cfcf93daa19ac11c9b97cc4219a6980b8b3374f6d8820cea1852e5701c",
   "apps/scene-agent/lib/reset.ts": "7e585aa4dace15fb2144d4bafb75441c7089c7a48040873cba4cb4964213e8ce",
   "apps/scene-agent/lib/server.ts": "3e5bf9722462696800ec8683553525751b3d942e243922bb8394cf4f845d3243",
-  "apps/scene-agent/lib/training.ts": "4fc0ffd94770961072f1fd8fbb28254873bae2445b15c76c89d559823fdf3b5f",
+  "apps/scene-agent/lib/training.ts": "e525033bf3b30b41f5d7b0046361b7bd13e9d255e68358cfea4646bff1afc1bd",
   "apps/scene-agent/lib/utils.ts": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
+  "apps/scene-agent/tests/checkpoint-catalog.test.ts": "28606036c8f1c04a0d9868699659d60072eac28f1f5a41268f333beef81295c1",
   "apps/scene-agent/tests/core.test.ts": "b0a8b47cc4c5bdeef6a8ea9e124a7ceb92d1bcb6d0cab6e17d4a57b3ed1cf82b",
-  "apps/scene-agent/tests/training.test.ts": "6056e3f0f4d68bf0e9950c00156b204bfe479354450483276b9708ea64db56b9",
-  "apps/scene-agent/tests/ui-regression.tsx": "ed2312646e1a6ad8809134064156ea6f637d6da1bd80699b4a8cddca6178f69e",
+  "apps/scene-agent/tests/training.test.ts": "4f5c49510236009a9a48ac41cae7b94cd88a8d775d7308b1f25f8f46068ba884",
+  "apps/scene-agent/tests/ui-regression.tsx": "6c21a386796dda697e75eccfe7b665538a86927e55afce070a8f3b6feea13da4",
   "configs/airport_ablation_alternate.json": "39764323b8716d39eb30778d7c6100333ea1ee3ccf958fb8a4e771fde57ca732",
   "configs/airport_ablation_baseline.json": "e621cdaa98e2273ad93391e7ed737e0b774be583e72745c06d68faa5aa641957",
   "configs/airport_ablation_payload.json": "404f16d08fc62c9723352db8e685978114a109bbbcf92d1cfa2aa0fe8deaf821",
@@ -3842,8 +3964,8 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
   "configs/airport_completion_stage_refit_retry3.json": "d43b7d036576e8e1418891486e2f11b53dee06ca8072450bf8641c6b80bad07d",
   "configs/airport_completion_stage_refit_subdivision_retry3.json": "4e5a0a017e2417da8bb1cb9521e39293b76b9a4e761fd32fa076819eef8f3282",
   "configs/airport_completion_stage_subdivision_retry3.json": "5d649479299af36b56b41450436c2744608b7d346a0735a4723e45a940a3d70a",
-  "configs/airport_completion_stage_supported_combined_screen_retry3.json": "574686d157fdcba68b5ce95d15e7edc39f92945f25e3f86a80a6aeb80a15e94e",
-  "configs/airport_completion_stage_supported_staging_retry3.json": "180e0e71aec94ebb7d643ab4bb1a16b454ec7331f44cf42e29ead8d6d14ae8b3",
+  "configs/airport_completion_stage_supported_combined_screen_retry3.json": "3dd0462193dc71e6c8d294ba36ffc60f79a6628f642e92922d4d83c36c6f9f44",
+  "configs/airport_completion_stage_supported_staging_retry3.json": "1e8b8c658ef89fef7beb552f45abd54ebcf9cf246047b1210401571b1fff0177",
   "configs/airport_completion_task_retry3.json": "6e975e838a7cb39d7412b48b48f5822c608df4bc858a43a08ee8c0d368cc0845",
   "configs/airport_destination_combined.json": "83dea38c15a00b6d91ca39f5d9a4959bac1d22a63b73fcc6d0fa3bb58c518484",
   "configs/airport_destination_push_command.json": "7880050be4a176908336fb65f411de9b90fe2bc9ec800d934011a01ca9a22b03",
@@ -3896,16 +4018,16 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
   "configs/airport_target_geometry.json": "cf5ea883f1202de69a910a736976f83deffe82748b11556301427e0200c3c01d",
   "configs/airport_target_geometry_feedback.json": "81d29bd7ac8337e0ed73ecd5ec46ec1a1bd3214c950c99dd77cf71d3ae05bc5c",
   "configs/airport_target_geometry_reference.json": "b7a374ac56cf4e50ad224ee7575187aa49c67c2154649b284b9591f3c0ee668f",
-  "configs/experiment_candidates.json": "55a50b2e5d4e4c989fc232d50354a9a1df69c6648556178d0c37583aa2a9cee4",
-  "configs/experiment_search_space.json": "6f34cafec6540fdea0fa1f1ca5f39592710f843e505d9e933d44ac87309be1e8",
-  "configs/r1pro_verified_limits_TEMPLATE.json": "b16f846d34e668021f56bf2ca5d5a74eaae2d812f2aa58af64e9f28365b8cb7b",
+  "configs/experiment_candidates.json": "d0e2fc4515431c73a981f917610f29cca8cd03e97b242e5c9004fc308cfcf820",
+  "configs/experiment_search_space.json": "2d8c8f12956a38b6ffff27447ed47eb887d937b79bf188f83c9d8b085ff08425",
+  "configs/r1pro_verified_limits_TEMPLATE.json": "d25df7d1fa43c450ef04c290077cb0a22f7e130240da2ab527cb55e2dc650e66",
   "configs/vla_pi05_action8_accelerated_v1.json": "a997b3915d26e31fc62c7e179d5cffdc3c815fa493cfa60fa81288f4d1ed4035",
   "configs/vla_pi05_airport_bootstrap4_lora.json": "a7e1209b51e259dfc0fb35e132fb6c2cfb33a43e1ecb0a5174cdbf7aa3fc9fba",
-  "configs/vla_pi05_airport_bootstrap4_lora_v2.json": "31786527493b94a8d8d05ff3b000010aa30bfbd1a0746c38e1e09d614cbc26d8",
-  "configs/vla_pi05_airport_native16_v3_lora.json": "a35dd4b081349611aa83159249c38d57dfe9a21bbec62a59b4bdcb01e7b48c3a",
+  "configs/vla_pi05_airport_bootstrap4_lora_v2.json": "efb695081afb43b24367553aeb0799bfd6ae1e68f39b2ae4ea4409ef89b0db0a",
+  "configs/vla_pi05_airport_native16_v3_lora.json": "95151d88c23c1b85455c612cbe4fb7c3095f30095c94917e7fed36f79680622b",
   "configs/vla_pi05_airport_native32_skill_only6_dualgpu_20261005.json": "ffad8c5886a818d6a5cce78dceb4118cb848fb3fa325f633553257d5147423bf",
-  "configs/vla_pi05_airport_native32_skillmerged_dualgpu_dp_20261005.json": "fb4ae809bbe1afb17a7fdd3d8c93bc45ab7838f8ae75eba2de30bb130991e1be",
-  "configs/vla_pi05_airport_native32_skillmerged_dualgpu_warmstart_20261005.json": "fb4ae809bbe1afb17a7fdd3d8c93bc45ab7838f8ae75eba2de30bb130991e1be",
+  "configs/vla_pi05_airport_native32_skillmerged_dualgpu_dp_20261005.json": "658c31d0b9053cebf59e34ec765e7e88ccb93f5e3e02a8ece05f9646761c80db",
+  "configs/vla_pi05_airport_native32_skillmerged_dualgpu_warmstart_20261005.json": "658c31d0b9053cebf59e34ec765e7e88ccb93f5e3e02a8ece05f9646761c80db",
   "configs/vla_pi05_airport_native32_v2_warmstart_lora.json": "1b212bfea7f6be1f64f08f21c2b14c8d7b30ce6e2f13a3ecaf9d694b5390f9aa",
   "configs/vla_pi05_airport_native32_v3_warmstart_lora.json": "8512aca5fcb3d68bebe8cc59f67d1e87a408015a3921923da5976d98966cf9d3",
   "configs/vla_pi05_airport_native32_v4_skillmerged_warmstart_lora.json": "7d50824af7977de2f74630e40cd0f43d502b9747a9b07e095464096a5e878fc9",
@@ -3916,184 +4038,189 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
   "exports/web_scene_agent_v1/examples/edit_room.json": "d127f5063fcae209890148206363fbd60261d1bab02f780a2e274e3cdaa109bd",
   "exports/web_scene_agent_v1/examples/list_datasets.json": "5954a41eb406a096ba89103bcde8acab1423dbfe36f15772c1e1d27a8b856113",
   "exports/web_scene_agent_v1/examples/plan_training.json": "3b9e07bcc8b5b4d8c080f28acb233e3fb514d228e865b5ce5be1079a5d4df50c",
-  "exports/web_scene_agent_v1/executor.py": "63bd709f6c18cc2d3b125a40f6b1dd7fefd8bc906046dfbb31e6f9f3f8e1ea36",
-  "exports/web_scene_agent_v1/isaac_adapter.py": "dd90cb5c431e7f8acc8dbc5fe0cb839b16ff1ef9bec9d4ecd2b1da789fd80b25",
-  "exports/web_scene_agent_v1/prompts/build_web_app.zh.md": "044d28d979f99c902443b8eee9b1b3db82d01324da7c1859ac73f71f9f3e2222",
-  "exports/web_scene_agent_v1/prompts/runtime_system.zh.md": "40433cb4f92d871476f660406a9410e2b7938959f1ee5493e078597acb102cb8",
-  "exports/web_scene_agent_v1/prompts/turn_templates.zh.md": "cf47d84dbeaeb599afdf3cab3d34a15fc57ea36e413c9a8b23222f788278fc5d",
-  "exports/web_scene_agent_v1/README.md": "26ceb13dfbd1a00cbb477b70b86b4fed06504c7a4080b5dd4648e72f13f62c3e",
-  "exports/web_scene_agent_v1/run_examples.ps1": "fa55361d435ef1035fe629a26f9766f4cd43b6302f34c70874f963e04aeccec5",
-  "exports/web_scene_agent_v1/run_examples.sh": "7ed0fad6f3a99e42536fab1948720c52112895b129ec52a3b14f0d5c65f2f36e",
+  "exports/web_scene_agent_v1/executor.py": "b4f37725f9b96dc5857d428faead1e3d69413f6b0e17e3f1b2e880b4e069e127",
+  "exports/web_scene_agent_v1/isaac_adapter.py": "176fc9369e50d4dea67ed5642f517150a287c70d6ab26e8237ed6a9d08ee5f68",
+  "exports/web_scene_agent_v1/prompts/build_web_app.zh.md": "5aee0fe5f57e459dec36ff09d92e1781b986ea6e1ceddd2b04d8ddadb7721d14",
+  "exports/web_scene_agent_v1/prompts/runtime_system.zh.md": "306a6fd43838f3c471e56561aa199f77141a0bfc4cb4185395a3f9aa3a0e29f9",
+  "exports/web_scene_agent_v1/prompts/turn_templates.zh.md": "fe98a1e64d1f9f4ef2a98e0f08f371b920d318424ddf10403fb7fadb53b3c86f",
+  "exports/web_scene_agent_v1/README.md": "6fef6eb946300f07d8945e617a3de125e03d5fcb39d6a1d48b0a5c424ea10948",
+  "exports/web_scene_agent_v1/run_examples.ps1": "304143043153f32a53b4ff09b9a2274247fab762f538960ce8ac947977928929",
+  "exports/web_scene_agent_v1/run_examples.sh": "9a681229ba9cd48609eab75890b52b37b032b65166ba37c47edf66bea242bfdb",
   "prompts/airport_experiments/contract.md": "edc8b9180b8f3ac0b11628332932745a8550f1422a2fb2e2fae60a994d1037cf",
   "prompts/airport_experiments/tool_router.md": "9ad4e392084c97e90ae97eca53aca1f7416e8369e392455d7be8bfab9ad72890",
   "prompts/airport_experiments/tools.md": "91db1c1e8843d3199f478bde25c6b4eadc705b168fad080f8ee8e8e3a0bc8cba",
-  "r1pro_teleop/__init__.py": "41ebb66cb9a19e9373a46fbe6075bb25a937c8b2775252c5ac61e6876c820fc6",
+  "r1pro_teleop/__init__.py": "3c54841a234338187ef1b3d18d9a6fa7905119f12440d758401989f78895d153",
   "r1pro_teleop/airport_agent.py": "07ae2365527b4b59b3485bc2fb89982aaa77569e938e972b5e23e234bff6ab8d",
   "r1pro_teleop/airport_annotations.py": "e579cf1b64f0edc0219daa6e87b79d97b8a22c7a6efe6654c7d28e577aae5e95",
   "r1pro_teleop/airport_arrange.py": "9fc3d1b9095cd7fcd60e9274c3c1d629db898fb593de371f0c49db9cc1c23e2a",
-  "r1pro_teleop/airport_fsm/__init__.py": "72192a03385ce8ff1970c1f924c1a5e415f638ed76a79eb3ec8fa510ab4ae4ea",
-  "r1pro_teleop/airport_fsm/__main__.py": "37b34283bafb308653e6ee7703f5c8ccb36db10a4f01f1dd3a2e964e0cb73229",
+  "r1pro_teleop/airport_fsm/__init__.py": "e4fcbfe8e50dbed48ebe17cbc6bcbad53d706305c9bd7882fc91d72457897034",
+  "r1pro_teleop/airport_fsm/__main__.py": "50dcd9c4d8126e3db9f5b178eea58f85cdd8d0a15ce028d9a17b54d27b9d1a57",
   "r1pro_teleop/airport_fsm/acceptance_profile.py": "8f952ea8efc5dfbeb73cdf61b22f4e2f1b7066fc2dff9a499a0d3c11a8b52329",
   "r1pro_teleop/airport_fsm/additive_yaw.py": "23895a35b2aa04ad1fc184e26779b4f2f3ae841395332b55bc5c5960328c1e46",
-  "r1pro_teleop/airport_fsm/alignment_feedforward.py": "e9c6ee79b9fdd5eef3d6ea03d7c49ed9b090ca97d8d6283321de6af3179379fb",
-  "r1pro_teleop/airport_fsm/arrival_replanning.py": "eaadd35d2eb31129b568221b4114adbe51acfd4b6eacf82eafdcad60efe76ef5",
-  "r1pro_teleop/airport_fsm/attempt_policy.py": "f5b8d3bd461a859c0b0690f7255a691cd5ed88a87f0992abb985b8ae5c3f2579",
+  "r1pro_teleop/airport_fsm/alignment_feedforward.py": "82d1a5a988824e3cd4d9862ef4d51e687bf5f2e0370ad5efde7e848edcf72cdf",
+  "r1pro_teleop/airport_fsm/arrival_replanning.py": "04af4b542a57d226a69dcbe2d5223961dd49e3c8462f8ca79409504754a7a1cc",
+  "r1pro_teleop/airport_fsm/attempt_policy.py": "56d9ea9dc18c3b4ff7b5446d5b92a4aa63213531776bcf2008ee609d7a15b4d2",
   "r1pro_teleop/airport_fsm/batch.py": "20647019d7e625642e30e0c453f9c4ff9810804634ec75f2026cdbe46190dcee",
-  "r1pro_teleop/airport_fsm/buffer_serviceability.py": "41770c958c799839734a144681696399d613d507102d2d1d2f3ed1aeb18c5160",
-  "r1pro_teleop/airport_fsm/camera_guard.py": "987a37c93996f6650c7b68aafa1921b8fc15c96e6c76844ebce7a94ee65641f0",
-  "r1pro_teleop/airport_fsm/completion.py": "4d23f8dd3a60ef84f086d6db7b32d8dfe9fc7a4dfb9189439c75a49a1eeed0e2",
+  "r1pro_teleop/airport_fsm/buffer_serviceability.py": "2d16e682423c74d631b6abc343bb58a8a6acc412295e3ab0ff6c9ff6ff7d24a6",
+  "r1pro_teleop/airport_fsm/camera_guard.py": "08669a9ae280178c5f514ddd256bd07046f19663f84670bf0aa1cfde65d37a2f",
+  "r1pro_teleop/airport_fsm/completion.py": "c939a945e5814d17ea32973e66095a56b1925eb39259e3a5c016a5dd779e1001",
   "r1pro_teleop/airport_fsm/contracts.py": "57ca014a87f3b6118edd85abd63a9ace6fb04965479ee47d0d3a256e969081c0",
   "r1pro_teleop/airport_fsm/exporter.py": "d089f90f4b0da74d067be3f01bbcdd3ec3a2205d2ed9d5a917ce13281b7a7202",
-  "r1pro_teleop/airport_fsm/general_buffer.py": "820504ef7a0283a7f0c8071d3e41db358285ad243f3af06d81286a08ce322030",
+  "r1pro_teleop/airport_fsm/general_buffer.py": "7167f6e6dc5a68403d063f5761e3044db36c59ffd903a60477d35818398a5ad0",
   "r1pro_teleop/airport_fsm/geometry.py": "b4c30104d2342e55264e98cb96a0fbf5a774fcc1ff2ad5302407dad068139ab6",
-  "r1pro_teleop/airport_fsm/handoff_clearance.py": "cdeac8db3df173b52fc0b0cce84aae9d3deed4f278102660549f58300f47331c",
-  "r1pro_teleop/airport_fsm/loading.py": "8fe4851d2a2c2baa7cb202a237f716d9f55661fb59f6de7c927264473f95c5b1",
+  "r1pro_teleop/airport_fsm/handoff_clearance.py": "f892f8eccd38a69acae95d14def2849c8f70829dbfcafd4adc05a216d2556d01",
+  "r1pro_teleop/airport_fsm/loading.py": "fe2e0c78591d1ca6e9b9151efd8757a9a608a73deabcdcde710bf3617b429c05",
   "r1pro_teleop/airport_fsm/machine.py": "03648702663e13a9184bae5259b24f1d4ba2e2d92ddbba457b533aa5d699c50e",
-  "r1pro_teleop/airport_fsm/online_push.py": "c9fef3c635d889f376ff929ef2591c5d0ed3af428474b3dcbf39247632ed0d43",
+  "r1pro_teleop/airport_fsm/online_push.py": "d8344cdd18aaad7133a57a10eff0a68bfa9338b7d28ac69da594ef97e9921abd",
   "r1pro_teleop/airport_fsm/physical_preview.py": "b2bb13e4de58742fb7e73796bc4dcbad9ac2c812fb744cd8b7c987f83ea4314d",
-  "r1pro_teleop/airport_fsm/placement_planner.py": "d811347542ab541deaf7d3ab034e58de15695b8406dd4f2379db9a504b4cf569",
+  "r1pro_teleop/airport_fsm/placement_planner.py": "3e0cec8773794432a2399ff2a5223eb016c603983e111ef9b1253885b2fb4f1d",
   "r1pro_teleop/airport_fsm/placement_reachability.py": "7c13a56afda395288dbc022cb5232a463b4d08bcd7527dfabda906c109691ccd",
   "r1pro_teleop/airport_fsm/primitives.py": "1dfddf5f52fc8cfca887ece6dff0dac80690e932a562e2ab2ac295a77aed8d77",
-  "r1pro_teleop/airport_fsm/reach_pull.py": "50f6e6d841e3c821f12dfbc2b56b1f5e8a01a0fae48a0acc98320539db731b9d",
-  "r1pro_teleop/airport_fsm/reachability_planner.py": "5187e3db48c67cf447164f8be78512c166fc739270e688750d044901e016a2e4",
-  "r1pro_teleop/airport_fsm/reference_candidates.py": "0fc15583a28de9aed47fe5f7c34d61a813cf2b90e928f978ce51eedc4f6d34e0",
-  "r1pro_teleop/airport_fsm/registry.py": "2f6f1ce3dba3b687b09d3990a81d075a4a7da206bbd190efa7224e66288f7e1c",
-  "r1pro_teleop/airport_fsm/reservation_plan.py": "7100cfd1e899a577c2f175cca4ebd557581948a240b6bec30d00340d79732649",
-  "r1pro_teleop/airport_fsm/retreat_planner.py": "116c5438fdbfd61f4b89cb2523daa4efda337a96fba37360b3ce08b74f930bd9",
-  "r1pro_teleop/airport_fsm/rim_affordances.py": "8b8bfefb8469b8b66b4c76609ad16f6926aea1bca5ea8b42e079bb0c13dd8bf8",
+  "r1pro_teleop/airport_fsm/reach_pull.py": "73ea6aacf6a9dcfd7f4adf01603e05158d4577d1dae111b83010d69b5b45df55",
+  "r1pro_teleop/airport_fsm/reachability_planner.py": "b74e7c7650bf98bd4c5e6304f7e2307eca8c272c253697ce2a70deb98891292d",
+  "r1pro_teleop/airport_fsm/reference_candidates.py": "dba5429876cf3a55638f35fbde6cbeb0f3ac137c6f0fd17c0d70846fe33ee563",
+  "r1pro_teleop/airport_fsm/registry.py": "053e0f77edded94fe34042862b398eeeb089c175fec521a6e320016b7eff4ae2",
+  "r1pro_teleop/airport_fsm/reservation_plan.py": "8d0f2e6dbdb5223c356506615e17504a45fa6363cf2aa9471b06fdd6b5569d8e",
+  "r1pro_teleop/airport_fsm/retreat_planner.py": "09178efb7b3d0b916a3f17d46cf640dba26015f6c39e173fbc3b8e496bcc9e32",
+  "r1pro_teleop/airport_fsm/rim_affordances.py": "fecd0429b3f00d04b88e006cb05a8f2a484c51b5363c83c2fa280cf764632f7b",
   "r1pro_teleop/airport_fsm/runtime.py": "c6ddef8b08367f7fc7d05948a7918b2ccd58655acee67ad4736ce67ad656a7f2",
   "r1pro_teleop/airport_fsm/scheduler.py": "04d9b20ca212eb593e57d9313365eacfe950ecdcb969f760dd2d00c381cbc8c8",
-  "r1pro_teleop/airport_fsm/substep_control.py": "815ca32125e701e2ecf72e837e13c2c62c358d02220882edcd4846eb153970bf",
-  "r1pro_teleop/airport_fsm/support_feedback.py": "6f3fe01697a93c528e1d8951aa091f486b1341c6a3e4dc583a4e13dfed282a7f",
-  "r1pro_teleop/airport_fsm/supported_staging.py": "731b753bed24b4b01dd50c7598460cb8d6d317ea086ee877883d1d757bc85663",
-  "r1pro_teleop/airport_fsm/task_dag.py": "50061d1ee96674979f33f28d07822899712cb89e0096e8b440b450877f8a41a2",
+  "r1pro_teleop/airport_fsm/substep_control.py": "3ece1b50515cd95bf64401709196c43093531a93a81c2c39c84018e6ed290827",
+  "r1pro_teleop/airport_fsm/support_feedback.py": "f343127c204ea09e6453dc9f44c4bffed5edfdd2485852fa5b6a3829820ec029",
+  "r1pro_teleop/airport_fsm/supported_staging.py": "1e5ac653bd0f8866ce887e0bc77d91927483802af224076024dc944d6cc38436",
+  "r1pro_teleop/airport_fsm/task_dag.py": "c7ece5a0238216e23af7b4236aa030079ba29326d52fe9e59aaf9162bbebb88d",
   "r1pro_teleop/airport_fsm/trace.py": "2b78045149241e7e1fc2d56649f3a702d77ba1ab3949d113cc51ee5e38378443",
-  "r1pro_teleop/airport_fsm/trajectory.py": "2fe4747e031428d8becd37fac7137ac69ff1fff2aa886681c3045bf0ae892279",
+  "r1pro_teleop/airport_fsm/trajectory.py": "148c782cf1a79b3b1af4f9885ca28d6aa18e98ed656cf403c3f8e2f9d475d6f0",
   "r1pro_teleop/airport_fsm/withdraw_merge.py": "c949ddc6f338b806ff993d40e76b9b0beb18964a58f4eba670ce07019b68fc41",
   "r1pro_teleop/airport_fsm/yaw_feedback.py": "5bd929e3af2b8d476a239c268324e6c17d1e360095b974e77e20674cb2cfd80a",
   "r1pro_teleop/airport_mobile.py": "1059024b0ffe940518261ec933b0190d10965856b0ef26fc7b500e513578b5cc",
   "r1pro_teleop/airport_pipeline.py": "12b968bba247953b2cbc093aac8df4e453d7bfbcf749113d33e58ce6e0696875",
   "r1pro_teleop/airport_recording.py": "520d76b855c0aa0787852d30e0ce4f9cd5c68bc92d161b1a2dc0068fd34038b6",
-  "r1pro_teleop/airport_scenes.py": "ec6c183d8efb6bec1a0fbf856ff6429120fbd53b2165f88f93be692e3c565f05",
+  "r1pro_teleop/airport_scenes.py": "3b1e8d9deeeb9ec53d3fb5a281271eb960aa484b52a0dfe78f24336ef5a64abc",
   "r1pro_teleop/airport_service.py": "2d174106f961da25484386a19a463e79caca5480d8df7e77f5c247e409791c49",
   "r1pro_teleop/build_assets.py": "edf4962bb6833441cec9627b8e5ecebf1b94bb461a31832ea712920cf2b9c110",
   "r1pro_teleop/core.py": "80ffbda1521934b15f3fefe9e560c482a4e7f26445f4f4d6581d5e169ef79e73",
-  "r1pro_teleop/dataset.py": "912baa515dd4a740d092911311354914debde4261baa07395855385297c5ffec",
-  "r1pro_teleop/experiments/__init__.py": "f64cf1f661c8001261e2a64608261e1e93b960915afa36e079bd767f5de5a55e",
-  "r1pro_teleop/experiments/__main__.py": "d533a867db4332b94be1417b3b4633bae33b69d4e115b0d4cd5048315ae485ba",
-  "r1pro_teleop/experiments/adapter.py": "5ea1f56b5df45659c61995cb959a1e6888911feea747e494001b864d1b3e4ef1",
-  "r1pro_teleop/experiments/assessment.py": "fafb38a0f51e40a3dc11ee1c48e46930c8dbe48b65cadde679a6afab3fccb1fe",
-  "r1pro_teleop/experiments/campaign.py": "ad40f976e77e40d053ff6ee8150547d1eccf407476bd04809288e3a25a91f705",
+  "r1pro_teleop/dataset.py": "0c4339bac23c558e133ee7863db939e8af8e4315f5c56d0a944f1a631ded6a05",
+  "r1pro_teleop/experiments/__init__.py": "8f939c645a017ab775d20b5859d714b5f8964eab5720bf7785b5d8c4be40cadd",
+  "r1pro_teleop/experiments/__main__.py": "7c9c1a41a4175f58a19bdc5aa3d51377d2f6a573f2d5339ae3bcaff4d2980273",
+  "r1pro_teleop/experiments/adapter.py": "386529ade4a36fb4bfe8c90948d96bc6acd8a2820a896cae3f7275bd6aba1c85",
+  "r1pro_teleop/experiments/assessment.py": "c7c81f23d60b1fcb98e80dd8f6a03eb190792bd8f3bb6e4fd97122a7dac4e085",
+  "r1pro_teleop/experiments/campaign.py": "7956cee99cc927a077b4ad7164823265c7e470cda5c80b5919e0353941a0b913",
   "r1pro_teleop/experiments/checkpoint_tree.py": "b4f1019ecfb0aa3610d7c621c91217c2237b740db654f3f1bf9e6ba23b032ac0",
-  "r1pro_teleop/experiments/common.py": "a3b7724e4b4a77a6e386cac9393226724c938a954bb55fc4e5aeadd69d65376d",
-  "r1pro_teleop/experiments/parameter_search.py": "9b923e7d912271020d7c77488ead26dae9b949862eab1ab6adc7261048cffc7f",
-  "r1pro_teleop/experiments/scene_view.py": "d9b063e7e926604e9bedebc18f29f1afdd6627eca7a0cd119defef77e4a6db8d",
-  "r1pro_teleop/experiments/tools.py": "010747fa2145f5bf2ff7f0a97fd0184bfc625771e6c8d5961b00af43b89657a4",
-  "r1pro_teleop/experiments/worker.py": "64c9cf17c183b66c9c808a72098cf3523965433485dd4b6fc8923260b2771618",
+  "r1pro_teleop/experiments/common.py": "879c45eb474f16f2d49ae4b8ac42179c982719b2f57ec9a4d393b69574b595ea",
+  "r1pro_teleop/experiments/parameter_search.py": "1c51ce7908087f7f27beb71ab7a69742179dbc68a4cca98ef492b6d0fe60eaef",
+  "r1pro_teleop/experiments/scene_view.py": "3e09c1954d5e1482cad407129692515d521f4eb08add6f909c2bb6a9ac6558f3",
+  "r1pro_teleop/experiments/tools.py": "7b825e2fb0def1f0c8337e2bdb1c8d4fc94d6b6c6db32e08bf4e4110587c3d25",
+  "r1pro_teleop/experiments/worker.py": "4d7d8b42c394b9628b5f3890db4544ddbcd49da67ab81cec603acae6870f96d4",
   "r1pro_teleop/quality.py": "1f1ac509818da7475e43dea49987b9e93fb2943a58b9208ea4a8f5641d7397d2",
-  "r1pro_teleop/quest_bridge.py": "2288fd3ee9008060833c7a9e513da2bd2aa3145ae9679e036ad636e78dab6cda",
+  "r1pro_teleop/quest_bridge.py": "40ba5b2ca564a21d26836462c8c1e3f758e2ca4b6e3ea41b53b531e470acbdb2",
   "r1pro_teleop/quest_relay.py": "43413964aca895a21e5b564ef2b51315a0a374caaa0305304dc0855679ad9882",
-  "r1pro_teleop/real2sim/__init__.py": "ed7e3a4ca892320bb8e995bad038b3737fcdfc320e8c5d2e384e5eebb6159796",
-  "r1pro_teleop/real2sim/backends.py": "4849f684823d08aa393ec7149edc4eaebcfd6eddc190565ee825404930e06e0e",
-  "r1pro_teleop/real2sim/collision.py": "a374c56db6b3629fe6920bf672fb119ac52c65658e78a6360c0089c89ca17260",
-  "r1pro_teleop/real2sim/isaac_collision_footprint.py": "57a8e7e7b99a45d1f4f3d1bd050c079d01b6ac5e82badecace91dd26c2d15ec2",
-  "r1pro_teleop/real2sim/isaac_command_timing.py": "bc0a0e5a2dd138067772cb13d22487461be45f40661b706a3bc183f2501e8e8d",
-  "r1pro_teleop/real2sim/isaac_diverse_pickplace.py": "21d1ba8dfc867cf83d805419a8481c0c0ebaec5f43b7d494606da21b916d72f6",
+  "r1pro_teleop/real2sim/__init__.py": "9c2847532f216a4b210ae763972ecb03803c8826a5348d7affa4ab30a26d438e",
+  "r1pro_teleop/real2sim/backends.py": "f9859530b5f051b2484b165e965f9f93d0a4a7a14957a59a856bde8c298e908f",
+  "r1pro_teleop/real2sim/collision.py": "ec2c16df22356f50f30761432333ca05185e66415a3b9c8de87ad9ec3770606e",
+  "r1pro_teleop/real2sim/isaac_collision_footprint.py": "e1e0581fb965c5447d4094f1eac2f28a3223eed9f543857c7ec9ec9adc6f168d",
+  "r1pro_teleop/real2sim/isaac_command_timing.py": "9f6ca7bceba89c81fbf8a5420f1e91580d02b1eab8ec046d1f8b25b608999fe7",
+  "r1pro_teleop/real2sim/isaac_diverse_pickplace.py": "d9a546db5ef561f805424fa86e3bb40eb2e41531b85292ac0ccb4a6f7e13dde8",
   "r1pro_teleop/real2sim/isaac_fast_pickplace.py": "62b491eb9db357106dea7569e9f14bed26392b28e70a874810ab04c33b3ba794",
-  "r1pro_teleop/real2sim/isaac_front_drift.py": "d3d839b2ae4b2e974b7ed5bc81ebcd699032432da22411d0927807d188946877",
-  "r1pro_teleop/real2sim/isaac_lab_visuals.py": "465011e3b91eabb92f010d80317a82212d399e24b0e9dd79ec770f949ce693ae",
-  "r1pro_teleop/real2sim/isaac_mobile.py": "3f7aeb4dd469494f66c57723e8ac3644ddc9ed2eb4898e28bfb029be24ce3e36",
-  "r1pro_teleop/real2sim/isaac_parallel_collection.py": "b1749f4e51c9bd14c04bb9d087b985f41ba5151fedc15635394ee43fc77f01f3",
+  "r1pro_teleop/real2sim/isaac_front_drift.py": "42f9a910aed6ca244b9cbbc70b172d11be59a572d70b2c8bc59a34ca09716ade",
+  "r1pro_teleop/real2sim/isaac_lab_visuals.py": "9a5bd2ea59e5784dc0ec725cc20af50bc302dea19c36a4fde6ea5afc4888256b",
+  "r1pro_teleop/real2sim/isaac_mobile.py": "afb36ecb21eff33941e0e77d73c2f3130396b2067eafa311e51f2f0f6e8a01e0",
+  "r1pro_teleop/real2sim/isaac_parallel_collection.py": "903399cb62d25fa645b897b5feb0b07a90ea64545a68212ae7f90f18c268b871",
   "r1pro_teleop/real2sim/isaac_parallel_contacts.py": "5c52efc20321ec17486038a7a40fd78cb8396ad962d57d373f1d78429907a97d",
-  "r1pro_teleop/real2sim/isaac_parallel_runtime.py": "1be977dd4426b4a49bfe1037cb8dcbe4152e799804a61cef774aade3b1bb3d53",
-  "r1pro_teleop/real2sim/isaac_path_stability.py": "83680c8295d405235cacdb1426c38f33cf8f52b3ab9a931d19066cfa9815ebb3",
-  "r1pro_teleop/real2sim/isaac_policy_pickplace.py": "d05daabeca6cdeeb2008450c72c3aebc3a78b6be50a00d1cd278155a46f655dd",
-  "r1pro_teleop/real2sim/isaac_rubber_contacts.py": "b04da45a3b97b97fb6d6dc8237ff983b79f0cc69f95347a67811e8cdcc419cdf",
-  "r1pro_teleop/real2sim/isaac_three_tray_observer.py": "1830b3ec76cb5fd1530c7bbc77655ef826ceaeabf4475b00978e17dd43458839",
-  "r1pro_teleop/real2sim/isaac_three_tray_runtime.py": "378d88400f8d859608bae78bec32a5cfb9ed1290236905a90bd3fb700948e9b5",
+  "r1pro_teleop/real2sim/isaac_parallel_runtime.py": "aa1bd9f11528ce974288c28cde44022060ad061499d8cd550c9e89f83ae5b82f",
+  "r1pro_teleop/real2sim/isaac_path_stability.py": "1c9727e04e3604e70585fb129afcc4b3cff25a57fc3d8c679fda702283a62c0e",
+  "r1pro_teleop/real2sim/isaac_policy_pickplace.py": "254cf4b1c1c78cd98414d1af6a45cd92746526458a9e7db07ef1019b6c66269b",
+  "r1pro_teleop/real2sim/isaac_rubber_contacts.py": "11054ae1fb79f8c930489ee491d4ba8bbe5829d891445df1e697b40d3afb4699",
+  "r1pro_teleop/real2sim/isaac_three_tray_observer.py": "3e9f7668f17fcb05cad96a9b98ca97b2217d4346db4f4bdfc9c8d59e809e6b99",
+  "r1pro_teleop/real2sim/isaac_three_tray_runtime.py": "48be8f8f6bd9094ca73529a675f5d2481589c1a5230fcfeacf431b6c026db392",
   "r1pro_teleop/real2sim/isaac_three_tray_teacher.py": "745e254d61efa4eaa6744bf82a84e43a1b8ef5a5f887d104d2e50151e11f1377",
-  "r1pro_teleop/real2sim/mapping.py": "90ca10b16fc1eca20761bd504327ee91397a2da02fdf3aec74cf66690f8e85ff",
-  "r1pro_teleop/real2sim/model.py": "96af4a3bcb4ddb32cae79fcf287c63b3d67037c260ab8c042ba076da1d3a0d12",
-  "r1pro_teleop/real2sim/mujoco_registration.py": "7e0509d11a815e4868e3a22ca869a898d1c234528713fb91c9e9be036c8b46d9",
-  "r1pro_teleop/real2sim/registration.py": "5a7c2ebe8451d55f0dbd52a0f3438a9e5c505610412bc766baa1947fd75e931c",
-  "r1pro_teleop/real2sim/runner.py": "1e5d021fcf5456aa3f4ef53a91bd21243d1ba7258d31271114380ecb5af3afc7",
-  "r1pro_teleop/real2sim/studio_live_view.py": "6b62ec9eeaaafedd85ff3168e0c07b324f1fd4ae157173a469fb4bd71e8591ae",
-  "r1pro_teleop/real2sim/three_tray_migration.py": "09759c5ce9a5fdb2ee70eda2cb0a83f044c2b2b52121d2e1cdaf8e2f78a10f3a",
-  "r1pro_teleop/real2sim/trajectory.py": "f596f94c149e89f11235fa66f6e520145de61cc7f4867d52aa051c5682da6858",
-  "r1pro_teleop/real_calibration.py": "b617e6a6b1d9962b5845986c5f994325d54fb8bcdf04e3bd798edfcb972f6de0",
-  "r1pro_teleop/replay.py": "35e5be05da68d45f3497003ecf7f04c7a1799efd197c7486504f8a19f5bb6d41",
+  "r1pro_teleop/real2sim/mapping.py": "3a3b36925416f008e67cb34ccb62856da0c9b83626785d1042583a8a746ce913",
+  "r1pro_teleop/real2sim/model.py": "e01ef8fe493d190b34488a0d5cccf5e96e65181d55c1d831380b352d8e9c864d",
+  "r1pro_teleop/real2sim/mujoco_registration.py": "942852ec9a4608ad9e86856c9f4793aa653c5409ed9fa9e7563bd45c72dbda58",
+  "r1pro_teleop/real2sim/policy_start_diagnostic.py": "0cc70ae58ed987e553e302e3b6a264b1f81a323e59e221fec52216aeea4af598",
+  "r1pro_teleop/real2sim/registration.py": "328e6ea333096a9cc7bd3b3b7349114513697232b96989f7eb3bf31db76f2d3a",
+  "r1pro_teleop/real2sim/robot_action_filter.py": "6b77ec5dd5fc89483ed9f8ccf3ada106b4cf02bdd99c2c02ae4e8e8a6e3f4a86",
+  "r1pro_teleop/real2sim/runner.py": "35b9b93e7f60cb65990a338761be6f93056506900b3c3da24bc39d27b2867fad",
+  "r1pro_teleop/real2sim/studio_live_view.py": "8491ee238d2d50e36b50f37f703d6b02f3cb13dc80338a3c9e8fd1adf4d037b5",
+  "r1pro_teleop/real2sim/three_tray_migration.py": "81f122525d787b28920d1a2a092cb650f50fa92ed35cb01eb6fb0e565dfa3de1",
+  "r1pro_teleop/real2sim/trajectory.py": "7db3bafbcccca247c0b0c51ba4d0dc373d57f3994ee36012f9ff6fbc1c9628f4",
+  "r1pro_teleop/real_calibration.py": "a1e7f3a2be15d1f1ef43c9eb2c15a474d1e1eef943d55a3d08603067647a236d",
+  "r1pro_teleop/replay.py": "ea24c7f680baeceeeeadcc7cfb094dfa1a2bb7c81a3d588de2389fb872c7020b",
   "r1pro_teleop/server.py": "88e8e7117bb4e894722cf853689b411426e01daf098357dc3d7917c7c05c6f5d",
-  "r1pro_teleop/single_tray_3table/__init__.py": "139d9c7fc3c8ece770cce537f9b275a7065be8286251472faf3fbdc7537d0120",
-  "r1pro_teleop/single_tray_3table/axis_feedback.py": "0739fc3880de9e84730c97faabfcec2243e247a3b1eeb9b118cddf0b8a726d2e",
-  "r1pro_teleop/single_tray_3table/campaign.py": "1658cb45228c068fdbfd16243fc96b86d0a58293be165fb2938ecbbdb17bb43d",
-  "r1pro_teleop/single_tray_3table/campaign_recovery.py": "7d49493936bfaf7a5e213facdee47de7cbbca9796694e1f3fd5a783247248c76",
+  "r1pro_teleop/single_tray_3table/__init__.py": "8d0f87a331af22f3e7ac4dcc7a308937f3cd29ec470cb8426bccfec42f92b9c3",
+  "r1pro_teleop/single_tray_3table/axis_feedback.py": "a07a9e755f451f4c6463b13772521c4b22558f6757faf2b9ce82caac229ad4e1",
+  "r1pro_teleop/single_tray_3table/campaign.py": "83a5182c725453ee8bfe7acf9b8500f9e4eb9cad993a5c7f6f8ec8a1d9461c76",
+  "r1pro_teleop/single_tray_3table/campaign_recovery.py": "d45f73985c186798285ff0afc9fc6354c637a5ecdfa17f5cf6e489b593be6bb2",
   "r1pro_teleop/single_tray_3table/collect.py": "deeb4e93ba29bd1d36f760a71381bb416ab2d96bcc40eb590b0e20e42bbaba41",
   "r1pro_teleop/single_tray_3table/control.py": "5510d8a2a6e463e14fadd9e60186c301cbae3130da31f5da96f0b38c40fb4fc4",
   "r1pro_teleop/single_tray_3table/evaluation_batch.py": "0a1b8e2767552d6091aa5849e70a21a900eaf9067652fa52864804cf42c4b5eb",
-  "r1pro_teleop/single_tray_3table/evaluation_protocol.py": "313dee27b09710ef0973cae53da6c7be25244af9d6c146bc650a4107b9605918",
+  "r1pro_teleop/single_tray_3table/evaluation_protocol.py": "5457d0db4f51af2276dcf04114f79d2af2b0614ec0c58903cab6f45ae62c6f52",
   "r1pro_teleop/single_tray_3table/free_run.py": "9722c0195eb45eb232ce02bf185e10a616d3a88f5d89cc48407d43da07b0327c",
-  "r1pro_teleop/single_tray_3table/free_run_native.py": "9faa241b4da71c2ee505e7d8455dbfcee6b6528b15a119525ca91e6440a3c2f8",
-  "r1pro_teleop/single_tray_3table/free_run_runtime.py": "52d0d2fa48b5d533276b0dd57a7c537e4fa5c3c8a381d6d0c2b522874fa2200e",
-  "r1pro_teleop/single_tray_3table/guardian.py": "fad653448e68333d2f631f3e99edab298e7ee58cf57b5603c1e28e9985dbd386",
-  "r1pro_teleop/single_tray_3table/initial_pose_preflight.py": "f58e8f61a816f3f79771bd45648a393334f273e50b8d4d683b65b25883385b4a",
+  "r1pro_teleop/single_tray_3table/free_run_native.py": "a7e0cf7918cb873bea76ed7cc0a0e88cdad461290f41238c26fe9839eea9a628",
+  "r1pro_teleop/single_tray_3table/free_run_runtime.py": "0e9caef706c0c82ed909242f818d95761a3d1cebf4c35a59ca5afa94e9a3ff08",
+  "r1pro_teleop/single_tray_3table/guardian.py": "97e6561664965b20e596833dbd722a92bea7d30e23533d3877f58e1cf006cc6a",
+  "r1pro_teleop/single_tray_3table/initial_pose_preflight.py": "7a290bea90375d75d88eb8d14ea67a5c3a45d954cf7851af239bc548b56fc626",
   "r1pro_teleop/single_tray_3table/learned.py": "d3ca2cd724633f22fcb88adac64993cffb2363192e830377b48f2db32f098f23",
   "r1pro_teleop/single_tray_3table/loaded_bridge.py": "4eab858604a8e0a5abfeceb1e07292d0d90aaccbb5fd815aaf081d8143ddfffc",
   "r1pro_teleop/single_tray_3table/observer.py": "16670d84605b6be8a87e3fb03cbb9cd5a8ca6e83ba566b16a5303c44dd13a218",
-  "r1pro_teleop/single_tray_3table/owned_command.py": "29e17aab79d827f6d184d77641e3b63ff34cb1989a78e4e5ea0f468cc9806e03",
-  "r1pro_teleop/single_tray_3table/placement_scope.py": "f806d7aed985de5de1b0b327de418d0c8d7eb3a3b4620e906a1eab5f0c3aa93b",
-  "r1pro_teleop/single_tray_3table/replay.py": "9e2ac6eb9d7e8ac2885cff994f63b74d349323334fa09ba0eaafbefa0df0f0c7",
-  "r1pro_teleop/single_tray_3table/workflow.py": "b4437c5d7d23cd742a5ae693599585a3c36d639561a3686697efd238e5d1bf37",
-  "r1pro_teleop/single_tray_lab/__init__.py": "c19fcb2775d125d0d5248e5ec78214bca4e397a76119bc47ac4ba418fb10bfc7",
-  "r1pro_teleop/single_tray_lab/camera_visuals.py": "8635ba4530e7ab3d95a75785b719e74622e85a8c575358a15c2d3ffadb0c6ad6",
+  "r1pro_teleop/single_tray_3table/owned_command.py": "b0137825ccd3309c79ac27e91fdc46dcfdee1205aab660808fa144c8ebdcd8e9",
+  "r1pro_teleop/single_tray_3table/placement_scope.py": "7c6f634faa9c6a0da707d8655cd02a908963a20c654609c6d62e8d37e453f87c",
+  "r1pro_teleop/single_tray_3table/replay.py": "c03985413b2ae18eda749239e418b3842ba807b907a875a7baf418eb25020e0e",
+  "r1pro_teleop/single_tray_3table/workflow.py": "eeb68ad9fd2ebdda3b0ac11665fde0ccab87964b96941df9874e81958b8c7592",
+  "r1pro_teleop/single_tray_lab/__init__.py": "c9e4821aa43dc11a203671998189aa0c34c5813cf653edfb8f53e26fc262035a",
+  "r1pro_teleop/single_tray_lab/camera_visuals.py": "acda8a0b58f886c386ae947692be51654ecb2e0601a62724645dd68ef39f258c",
   "r1pro_teleop/single_tray_lab/contact_summary.py": "cc5d0348a2a0e0ca264498bfe5c807268f525784352018116186ad2a658d3312",
-  "r1pro_teleop/single_tray_lab/control.py": "7a83c58c4f3ec979540dd514d9dfbbcdb7ed572c1b4dc32543dfd0e460aeaaef",
-  "r1pro_teleop/single_tray_lab/evaluation_batch.py": "e02d67b3acdaf16496cad78c0e1364ce942465b62b0430644cd1748d936a888c",
-  "r1pro_teleop/single_tray_lab/evaluation_population.py": "b6854a1759b2d7f69d3555723fa40348870490149b1388637dd6e9a4dd4fe292",
-  "r1pro_teleop/single_tray_lab/grasp_contract.py": "4ef0c3dee97e11b6f354af29ed37c053a6bbaf74f6cc1467d01b0b7102f66c8c",
-  "r1pro_teleop/single_tray_lab/learned.py": "c15eedb1b76e230778874caaabe746cef1d314e3dcc459143fcad8b97892adda",
-  "r1pro_teleop/single_tray_lab/placement_clearance.py": "58c22f5ef763aebf46f42dfd79de60ce47d55f50ced51ef27fb2b53c25cf1b41",
-  "r1pro_teleop/single_tray_lab/placement_recipe.py": "eaa032e27442f1a217c7660c33d8e57009eb9f11e7212b21e2fd98611fccb45e",
+  "r1pro_teleop/single_tray_lab/control.py": "3ade3c0b956980cff48535f6b0dcb724edf7a922c7c284b0f0affd20b17a0de3",
+  "r1pro_teleop/single_tray_lab/evaluation_batch.py": "147a9eb6926bc97b1935a6494a275b3a4c1de3cf242a8752fca8a6c2daef82ce",
+  "r1pro_teleop/single_tray_lab/evaluation_population.py": "9e7c9de1b2494ef0d515869159d856dc8fa34cc20392d3486910db55867e5cb0",
+  "r1pro_teleop/single_tray_lab/grasp_contract.py": "f0b859cb0cb2181170ca8cf877959b2bdeccdeb1dd3ca1301603d0c4d83f9dfc",
+  "r1pro_teleop/single_tray_lab/learned.py": "849130769750ac5ccda4531c8412d391ddaa0e2ba0d3b2e90c1b72e645992ffb",
+  "r1pro_teleop/single_tray_lab/placement_clearance.py": "09d20d16b40e5e83a6587d6a6878884fd9f5881416b8d3a83edb9a32165f49f7",
+  "r1pro_teleop/single_tray_lab/placement_recipe.py": "d79269a4edc3e3ab717b56be075a340635f5137e1bdc869e0e4fb5d0e1ccd086",
   "r1pro_teleop/single_tray_lab/replay.py": "db5634dfd1a4c264251bc33ac6ca921a26c4d90661e3c6d7b6823159ca042d1b",
-  "r1pro_teleop/single_tray_lab/scene.py": "4311f931c1db81663dded158d45ea7543a3927f8c4144a3499bb5276eec1a8bc",
+  "r1pro_teleop/single_tray_lab/scene.py": "ef57f4e6f1227103dc8478d37c682bdaba1f7724cd2df17f35d542a7411bd7e5",
   "r1pro_teleop/single_tray_lab/three_table_scene.py": "ae13dc53854be6ae24bc5c6cf313ab0865689435a21051f4a8666d4c179edee7",
-  "r1pro_teleop/single_tray_lab/withdrawal_audit.py": "465a397714775b25dc0bd122d6098476dfbe65fbdfd48b539a49042ce8388786",
-  "r1pro_teleop/smoke.py": "fa5be8b9c39138d7016dbf3dade2c7d5205390593585fe4296ce912a22d6e1d1",
-  "r1pro_teleop/vla/action_event_projection.py": "6d4fae9f77d72ec0ce73bd020ab51f66f6cdfdb211cbbd93c6c84bfcf211877f",
-  "r1pro_teleop/vla/completed_dataset_import.py": "67c28eddea75031fa78123fee366a54725c99860ef0c8ab418025b803e1d7728",
+  "r1pro_teleop/single_tray_lab/withdrawal_audit.py": "30db360aad4c7fc690961d71c2c41519a33e7d2fd03ec60b507f57f93a6b53d0",
+  "r1pro_teleop/smoke.py": "dffaaebdb47fb6a99702806ac9d0aebdd2acf816b3117a825dc2496a45df7ea9",
+  "r1pro_teleop/vla/action_event_projection.py": "12e98c9c03904acf51f5057105302ae2a0f5c93a041491efb8bf137d9b43f38c",
+  "r1pro_teleop/vla/completed_dataset_import.py": "71cb9de78ea432d53158aa01a0dfd0912a9033d074b82fda48a01ed9d503026f",
   "r1pro_teleop/vla/contact_escape.py": "625026f0bd684541e12617efccfe64b092bf358601b559f5d4cc97dbf45188a4",
-  "r1pro_teleop/vla/dagger.py": "7fa660000986d09a58f2c34bdd15317135ba7b83a8ed578ad53e4d603e73db88",
-  "r1pro_teleop/vla/dagger_dataset.py": "f183168b73777c4fb3d74abf27e58d13049a363373fbd9aee7b62b28a9e5eed6",
+  "r1pro_teleop/vla/dagger.py": "2dd42a3621fb6bc9c1d3ce708d70bdc4c46fc5b5bad9cbd27d134072528e5edf",
+  "r1pro_teleop/vla/dagger_dataset.py": "cb57bab5b633174b7bdd3c2ff35b1907a7cbed2ec4b4de553085d54462de2aec",
   "r1pro_teleop/vla/data.py": "57af9033966091b802f1a76a34b4eea5ba6ad171fc4c66be3df6a67eea612f9a",
-  "r1pro_teleop/vla/data_benchmark.py": "3add77734f6236d701b77e4d0f7093f5ccf930181fd8001f68b151bbad956fcd",
+  "r1pro_teleop/vla/data_benchmark.py": "cb2f121877d0a5aa311c0aefdab1fa876c93bc58f52213f97b1c57cfe2c0613f",
   "r1pro_teleop/vla/data_lerobot.py": "cdf84535c47dc46550b2b2502cb496915a5e53a5606b0e23dc5edf2a64ccf9f9",
-  "r1pro_teleop/vla/data_lineage.py": "d364ae96696943560dd4d34627cc7668a679380f22cf6d8bef37e0e40b9dfaf9",
-  "r1pro_teleop/vla/data_native_pipeline.py": "07173daaf9c59dad8f7b342facaba4bb18e8ef04218aa1b5e8f1c57b4045b115",
-  "r1pro_teleop/vla/data_quality_audit.py": "c6a8a6dfb46087cde274d99085ea55213a31e9f9e2572903f40a556caf61230c",
+  "r1pro_teleop/vla/data_lineage.py": "f82f242fed6aafcb4772715701d82b3615b3621c14f410b437c244174084e52c",
+  "r1pro_teleop/vla/data_native_pipeline.py": "8dc838adf4b80c786ad41d0899e22257d8677d4128d3d01d133af2ce21fd2bcb",
+  "r1pro_teleop/vla/data_quality_audit.py": "895b0a1c0621d0860d1198151c7fd9b763aacfaea608df053344baa8f07191f9",
   "r1pro_teleop/vla/data_single_tray.py": "3357301f225668ec0913bbe407b7ced5b038acc1f484796ef2af4b03d590f0e6",
-  "r1pro_teleop/vla/data_skill_coverage.py": "dd2eb050bda8ee51bc13e6c452f9d7744ba7898a8c72625a795bb08faf6af1a4",
-  "r1pro_teleop/vla/data_skill_merge.py": "3a56bab8ba8ea33e31f945fd96789a7b5f5b40d4fa4427f8756e293e418e7460",
-  "r1pro_teleop/vla/data_task_labels.py": "dda509a523f265ad97d766d8bff41380a57a8cf2e6c2748106bd9710d16a4fe1",
+  "r1pro_teleop/vla/data_skill_coverage.py": "462791faaca79e5b377e9d088ed73a2c8d9653c745a745aa53c6e25f6db87a93",
+  "r1pro_teleop/vla/data_skill_merge.py": "27171b2cb88f5832afd3233d0630eaedc152a376854e05fde98122ba6ac18d3d",
+  "r1pro_teleop/vla/data_task_labels.py": "7dfa23fa9c9d34859a52dba80f083895c2db21e019d9167bfcb148d68e439198",
   "r1pro_teleop/vla/data_task_lerobot.py": "1fc09d650fa8e479f03b5efa99fa6902d69bdc66ab0847d643747a8d2d408733",
-  "r1pro_teleop/vla/data_task_native.py": "6644272fe5a65d628692279e0b346789e7308c68245fa1869d25d7d61c82a9a3",
+  "r1pro_teleop/vla/data_task_native.py": "300ee8b8dee7ce4ee8d682cee8e2453f33668c5e6a86f0ec9ea5673f1254a21a",
   "r1pro_teleop/vla/data_task_segments.py": "cdfc3aa973ef062f238c6994a86cf71d01b96ce218f142618bd6381d24cf0e77",
   "r1pro_teleop/vla/data_three_table_lerobot.py": "042c6a909816a72a1385e2d90829c9e99212d4aa2a2906fb2a0c82899bc6b1c4",
-  "r1pro_teleop/vla/data_three_table_single_tray.py": "b35e59cc6a347080efb3d8f20342835b166c68aa3936fdef52f83515e362940c",
+  "r1pro_teleop/vla/data_three_table_single_tray.py": "b65697160c0c1519a950b9adc43ff3201a1c6f5d9a5ca56b8204e86e76003309",
   "r1pro_teleop/vla/evaluation_protocol.py": "daf36eb821d578a1c1c659fe0bcf5e79ba1767a5d6d210d7dddcb187aeea5924",
-  "r1pro_teleop/vla/executor.py": "5c18078d0cf239480e4f5b88d6071db15a3fa9c6edd97b91de032e65c47974b2",
+  "r1pro_teleop/vla/executor.py": "dcac2390af9eec13353a30ab26443d4b8535c350a980a68b63189b4812785d50",
   "r1pro_teleop/vla/flowdagger_single_tray.py": "7934cc82d5a5c2ebc40d9c753be9305a89da7605d9f6fb760d6b9af049230224",
-  "r1pro_teleop/vla/galaxea_robot_adapter.py": "23412a1ff9510d321207acf423cc7cd45c8c8a20956864481d41353565b0ce79",
-  "r1pro_teleop/vla/gripper_command_evidence.py": "f92b0b7a270f94548b200e3d2be99b2519a0461adadd34d521ed47e5af91c4de",
-  "r1pro_teleop/vla/isaac_dataset.py": "2b3132f060218557c819c13e90e21fd3199dffdcb3c0129fb78a44639877810e",
+  "r1pro_teleop/vla/g05_protocol.py": "335732c54ddbc0536a630f89f2ed9d8d37aa132f4cb5baeeb429ac0e9624ef4c",
+  "r1pro_teleop/vla/galaxea_robot_adapter.py": "45148b7bd6030d1c5d8ad31a61311ae6b1eaf6140a309381fa8a65e5aed9e866",
+  "r1pro_teleop/vla/gripper_command_evidence.py": "415d858f027dd52adb72792f9ea847a87ef8291d7524a485a108cf76723f875d",
+  "r1pro_teleop/vla/inference_timing.py": "dbdd5659ca66c4346561443a33388cbc842eedb27628e12523f743569552c6aa",
+  "r1pro_teleop/vla/isaac_dataset.py": "980c860ea587b3fc2f330880b995e7752e727c87cc08039cad00d2223eecc589",
   "r1pro_teleop/vla/machine.py": "047cc8f0b99711fcc2e878f7b2558d59950f7168a0720e19cdb7f7aa8e7760ab",
-  "r1pro_teleop/vla/native_reference_router.py": "136b007e4eff1000671170954c72308d28a2b43d8f31741cd54a930e93a6dd54",
-  "r1pro_teleop/vla/observations.py": "60bdd26772cabffcc9e1554956e67e41b9738b4e213de340a60506a93f9c765f",
-  "r1pro_teleop/vla/parallel_pickplace_training.py": "d58851029de4705ab220bdb596b01bfd91b036a0321071ab4898aaaf59a04657",
-  "r1pro_teleop/vla/policy.py": "30f3349fead9d21a6fe36330146ee5b6e5d71aea1738ed93ba373d39d293c7bc",
+  "r1pro_teleop/vla/native_reference_router.py": "79cdb73734fbbd975c0ec8c141e10993dfc9a8b0d011371d4e24eb0501e421fd",
+  "r1pro_teleop/vla/observations.py": "aae65e0db998ecd6f313d78526d32cbd5152971eea2429cb0322d82b9e10cf81",
+  "r1pro_teleop/vla/parallel_pickplace_training.py": "906d003f924e97bc1c7790462f289ce962879dab87fe6f49ad515fba83394387",
+  "r1pro_teleop/vla/policy.py": "e4e310e4e80c4124d0130672c432a5599a602e7f6214b9956a6f82ba7277ff6e",
   "r1pro_teleop/vla/prompts.py": "d6a50dcb55b00e360fad61a103bd011e49c12b9ee8ca6cef31690d418878305b",
-  "r1pro_teleop/vla/real_sim_data.py": "632983c9b5547cd8e60aa58ba46c2ab8b01cbefc8e2ad764cfc0757515aabde3",
+  "r1pro_teleop/vla/real_sim_data.py": "b892546dedb9c363edb307cb97609256bcb5e24568b30881e694187cbc75c821",
+  "r1pro_teleop/vla/request_inbox.py": "e59e3273d59e0818aa87379cc8fc2d7417023b8ad9f2893f3171fe62d2af51b3",
   "r1pro_teleop/vla/rollout.py": "9a46d480377567e9b437aa451c5a637073100c8656a7b455fd4000b11b9dfdfb",
-  "r1pro_teleop/vla/single_tray_pipeline.py": "affcf8d2ea3fcbb2fd8f8634d27111e8c07e494204877b356d3966a4b1880b2b",
-  "r1pro_teleop/vla/skill_sampling.py": "47ef0396f6517d910b0a94fccebb29780a432abc513aedab4600902bc49517fb",
+  "r1pro_teleop/vla/single_tray_pipeline.py": "2817391514a413636ec8d2965a34ce4a5c865f686f6b631219c07bae82ea6a14",
+  "r1pro_teleop/vla/skill_sampling.py": "2cf86814353e380e6a212e18653b82c66af5817cf2f4e848a743f78f5d540581",
   "r1pro_teleop/vla/table_contact_projection.py": "021e932a083c4c2f1c3370c22ef6f7fc24ef9809a2886ed5e7e3e30bedc17e97",
   "r1pro_teleop/vla/teacher.py": "2da604264df8798b9dd32031cb90b9ee6b1eabe478b69102171289ed5200e130",
   "r1pro_teleop/vla/three_table_recovery.py": "cd8c194a069c2457a9890003cacc98ee5b57a45d27a680e2014627afe8876f75",
@@ -4104,165 +4231,165 @@ completed_dataset_run支路必须核数据监督真实exit及其SHA/原command o
   "r1pro_teleop/vla/training_cache.py": "1002122b598050d36673121a725599bc2d0e463c0f3665e18339a051e347ce8f",
   "r1pro_teleop/vla/training_pipeline.py": "a361ff62d479bec8ed056102eb7c847e9c98a61233f586f38309d3737941e3b9",
   "r1pro_teleop/vla/training_preview.py": "66abb2f2716ac3950cdbc4c5a28b1bbec212882548f82791d7841c606357107c",
-  "r1pro_teleop/vla/video_probe_cache.py": "afe064ed6734ed044a58c69d8180be54072a21d4c46692061d6923ff9d06436e",
-  "r1pro_teleop/workspace_check.py": "0889fd60282f650e5b0e7164c6a28686b7bbf20d905750e86c836e59dcb19c3e",
+  "r1pro_teleop/vla/video_probe_cache.py": "e0100c7104501c9f1fcc4f83c75382a363e24f2da1ab9d6d61ff9622ef0d604f",
+  "r1pro_teleop/workspace_check.py": "c95b2ec6f8949ae1a18373c132e39fc7c9546737135b8d7ecc8cf13dc206cd1d",
   "runs/failure_videos/update_scene_video_index.py": "c487295f9c4be926d809762bc10f430c381e1bb66bafe7aaffc7db6429ecd653",
   "schemas/airport_scene_v1.schema.json": "9c13f5c0a83749e441b5af2a5ce879a1bf9a6b1ba8fbc6adf58de16d80dc991b",
-  "schemas/airport_scene_v1_1.schema.json": "6981a89f401e4fbf7d647e635e42c0638775e7e6971fbf432f77be3369e6f641",
-  "scripts/audit_isaacsim_fast_pickplace.py": "dcf003b156548b29201dcdf0e1cc50c41480fa608452cef2c6404ff8d5ab494d",
-  "scripts/audit_isaacsim_three_tray_demo.py": "653b835b7b2be4cb93199f6d1cbeb364929f3c8c84dcd949091e04aa62dbb0ca",
-  "scripts/audit_real2sim.py": "551711f43b1be67ac3236afff12f78fdb871e9d96befb0baa13e873593ec0ebf",
-  "scripts/bootstrap_isaac_three_tray_demo.py": "e2cdb5e649db992fa54cebf4a56bf7109a041b625afb8ac659d568eb0d92b1a2",
-  "scripts/build_real2sim_finger_collision.py": "c24881087b78418d076f2e2c5b1934c977569f255ac4c934c7856cc53db5505c",
-  "scripts/build_single_tray_lab_blender.py": "a2c94fc8913ddbffab0ec7fcc0983033671585875f40325f8fb222d2a45095de",
-  "scripts/check_isaacsim_clip_seek.py": "9125e88664d86ec488500dd474af03d4fffd886e79fa721e30ce43a0ef0ec5f1",
-  "scripts/close_pi05_comparison_media.py": "937a06500e72f5664543532b48e0387b9a396282a710155e07241afedce093d2",
-  "scripts/collect_airport_batches.py": "f32cdf5e5b1dadc29c2763cd732371e362c7e755b088fd0568fe665f1d636223",
-  "scripts/collect_failure_videos.py": "ddba6e624166747aefa0f2d8721dde02ded720dccb3556336ec5e6c24aa82e6d",
-  "scripts/collect_isaac_fixed_pickplace.py": "0c6ff7fa378dee83e4be71df46e3073551130fa72dba34514b36710027b1719e",
-  "scripts/collect_three_table_campaign.py": "fff4676769e981f367d790279658553267d1999a5a11ccb0a7a701b6c98459ad",
+  "schemas/airport_scene_v1_1.schema.json": "e74f1eb2b108ae0ca0b1da78d0da86bd41bf0382bd4058b4ba2eb7bb695b5e17",
+  "scripts/audit_isaacsim_fast_pickplace.py": "bde568f005d00948da10ccb7ab1e101021ace5bc2c0ffb4f805e55fd1c205800",
+  "scripts/audit_isaacsim_three_tray_demo.py": "b4b496f11cfa0e9d89c9c1d7bb670a49002ea31ef59c3e3684315920f7352da0",
+  "scripts/audit_real2sim.py": "cf46a65fbc904a5136074076b0c35e0773784136ea244ff253ae7f03d8f9db57",
+  "scripts/bootstrap_isaac_three_tray_demo.py": "d757f2db78f22ea024ae8756f358c025a1345731f7217754c2047f205a217294",
+  "scripts/build_real2sim_finger_collision.py": "8b6980fd7a595427efa8f6c288e165cae4b810e2bf5e3546e7195527eb02306e",
+  "scripts/build_single_tray_lab_blender.py": "276d4759a7167fb912be72ba2e78a10a282df765857622ef62acad7605e0e2f6",
+  "scripts/check_isaacsim_clip_seek.py": "439f95387d39d4be606737a0ebfeaa5007292d2a97e1635632e8831e1b5d0293",
+  "scripts/close_pi05_comparison_media.py": "d8f842058b2f4053ca350af1f943f42ea3cfb16b4cc305b8a7259b3b2c7a16f8",
+  "scripts/collect_airport_batches.py": "f666e6d4cdc931e5af8147a9a8f9cbce702bd6c62118ec76c3fcc4c43a4f12df",
+  "scripts/collect_failure_videos.py": "780bb1828519359dfc66db927580f08171ef831a66d92f5efa41edd81cd96a80",
+  "scripts/collect_isaac_fixed_pickplace.py": "d40fa832935b9f7665dbf8c4e496a099e1eb287a1d61e1779a678139bad7b13c",
+  "scripts/collect_three_table_campaign.py": "92c007812068d4711635234b254cc29f008bf59e00af63aa44cab46ec1cd0c51",
   "scripts/collect_three_table_full_source.py": "3061fb4e411a2c26400541dae6af57dfeba2ed43038344060e69def887771fb0",
-  "scripts/collect_vla_training_status.py": "fc41e305476824d703ef19984d03b7cd89800bf255933643077e3fafa5c3ce66",
-  "scripts/compare_pi05_closed_loop.py": "3abc60e6fe05d2267b315bacccc043370cd3af6d4065fe28fd6df026aa7d0e34",
-  "scripts/compare_pi05_real_mixed_plots.py": "98734336bb3d99613984908a9bce5a1b9570d53a493fee5aab7bd16ea69dd6a0",
-  "scripts/compare_pickup120.py": "51924b14f883ef947006021feb8396d851bf72a16eb74a2c72dd9fecede77ba9",
-  "scripts/control_ablation.py": "df11278418a6ea9075007c89f0850672462d576d32d994248a77cb3f21d092ec",
-  "scripts/control_galaxea_servers.py": "2950ff29bb5f0c0db7358e3c796d99a2e4a742cf14c19f3de4f6c32b6211bfb1",
-  "scripts/control_regression.py": "7cb1aa8160652b586dcfeb83a410184f35dbd228a5e0722a16725342a3319b0d",
-  "scripts/convert_vla_lerobot.py": "8e34b434f65280220a43805d04f03ee2dd1c1fa49149954810bccd5ea1989b01",
-  "scripts/deploy_experiments.py": "feefd463054a1789b920b48881c049888e3dfd05742f476384ba4f8778114f72",
+  "scripts/collect_vla_training_status.py": "b840b6223e88d38f0df89bccd7bd4b7242a92cbe861a4de872f7100830beb2e9",
+  "scripts/compare_pi05_closed_loop.py": "12ee9c3752b9a60356231aa335e5079f82e6d3eb653a9c41052b896edd15c179",
+  "scripts/compare_pi05_real_mixed_plots.py": "a1f1aae0ac27b7df9bd9756807b4b524e903bcf38d589693e2b4eedd53f2d23b",
+  "scripts/compare_pickup120.py": "61e8d16a6a9100f45cae89130c96895418e10c12bbf349b98bc2634b6a2c501f",
+  "scripts/control_ablation.py": "5b4471f809697579983db5528ffe7fef147ab0d51d729ce9be1792c41d5246f9",
+  "scripts/control_galaxea_servers.py": "2c9e91a715de1c3a4995f8c05115a360e22a33497702582e7d6f7e7a519a3570",
+  "scripts/control_regression.py": "59e4d957ad2164a9260fa39117112ce51543c2fa85464702f75eba03be4a2aa9",
+  "scripts/convert_vla_lerobot.py": "121d3b9413a4528c0bc692ff5e7303199a66106eca9dd4484b411fd7b6a53808",
+  "scripts/deploy_experiments.py": "5e7d160104f280b78c03b4d0640fdb6e8fefd84f7ebeea1b14f76509c9b02b85",
   "scripts/diagnose_pi05_skills.py": "4682778070a05d09ba65525f973bc64a6828c60325461b90f76662f6c775c7ee",
-  "scripts/diagnose_real2sim_held_pose.py": "9d10be163e0122971ceab45313bad9cde9d3938e41bd95c07347b27d001a4402",
+  "scripts/diagnose_real2sim_held_pose.py": "f852c13d040f355b338574673d414e48f654ae982bd5a9ef9778aa1b4e414aac",
   "scripts/evaluate_action8_checkpoint.py": "3f444b4b9089bda4ede2cc5a6262d7edd103e9f163d611a8b4d642701d796324",
-  "scripts/evaluate_action8_checkpoint_dual.py": "5ac1152072f36a197dc6b688812a25741ee54b583590d3830676ddcf2f49106d",
+  "scripts/evaluate_action8_checkpoint_dual.py": "56c1e5c0f7f6016fd3b5d24bef9e5e04a3856483ea8e376218671b3d413bb2d4",
   "scripts/evaluate_pi05_airport.py": "370cb2ad5ea4c8ca6f9c3d44179aad286987f0218e23a77a7531f3446d2d7422",
-  "scripts/evaluate_single_tray_pi05.py": "d2ffb1cff50c637ee873435446bdcb40f70ac0fd6d33ce891d697215496ffcf3",
-  "scripts/evaluate_single_tray_pi05_batch.py": "19738ace1a594e595254f748e4db7b79cb6b829ad7481894a8575d42f55ad99a",
+  "scripts/evaluate_single_tray_pi05.py": "788c018b4eb9a156bbc9123cbabd211bb38410d39d283e45c7fb3816b9d75b69",
+  "scripts/evaluate_single_tray_pi05_batch.py": "519050d46bd4cfac44a9680b713084dcc25c8e4edcfbe7aa3cd47b4e72f930af",
   "scripts/evaluate_three_table_single_tray_pi05.py": "c795ceb8d883e981b8ec0e9a7fbd19c14f7bf2329f3dca1223baf03734af8f90",
   "scripts/evaluate_three_table_single_tray_pi05_batch.py": "d7e6d9836cd9f159b035675ab2bd6a3e75a71367bfd019773387c5cc0e2e6fa2",
-  "scripts/expand_isaacsim_three_tray.py": "9dee8aea7734c765ca5997adfa9f95e864bd4ca19b97d694c3b8e54b9c080bc5",
-  "scripts/experiment_server_smoke.py": "06b764011862c3cea982833850706210ad7f77829eb2484ea5af636d09978f35",
-  "scripts/export_isaac_episode_preview.py": "954afdea318451366d8d466d365269d94c503640410367b71ec48badca139721",
+  "scripts/expand_isaacsim_three_tray.py": "71d7ccd071b9a00edb1fd0792a0682bc03b5a71d11db7719aa88fcf52790e3d8",
+  "scripts/experiment_server_smoke.py": "3868ebf3e09cb826736afa9e710d2704ba46d979b75b0af5df5ea824d2b4345f",
+  "scripts/export_isaac_episode_preview.py": "c0743de7f52c78496f365dce16e5152f4fce85c4f82917df17fd2c1908b9916a",
   "scripts/export_isaac_parallel_pickplace.py": "fec881dcc686afe947503647528c4e148ed922aa8fe35979c96036c7b6859dec",
-  "scripts/export_project_interactions.py": "e2f269bbf229213840c8c66cc9f2fb2408d53d92b32fe0ec14f35c479eef829f",
-  "scripts/export_single_tray_actions.py": "8fd08d16b8f44eac4bbae88e2cc28292235c6fcbc5b492ecffece271cc49caf3",
-  "scripts/export_three_table_single_tray_actions.py": "e0a788dfd5f43e5f4d46c0942502dccb74f62df9caa65b7fbf897b3178b59298",
-  "scripts/finalize_isaac_fast_pickplace.py": "e86a2c398b804a18712a30731ff60fc83f8045a640abdd1e5c2f92705c02a763",
-  "scripts/fit_real2sim_registration.py": "16ab3e03db101b735930e6c5818aaf8e62d45d61e65f0a76353d2cc8d7d37011",
-  "scripts/fit_real2sim_torso.py": "d8cbabef110ae640f28f2a9c4ed14c71a794c0b976e89afd8d694ccf1a7ae6a6",
-  "scripts/galaxea_client_oneclick.sh": "4e11310056fc887172a8366ae1e8052f05db0fc68cf41cdcc144c5acc40cf571",
+  "scripts/export_project_interactions.py": "24bbb56460a4261d9efae66e5c512d535195fdbb09c7c275539ffe68a316a5b3",
+  "scripts/export_single_tray_actions.py": "dec62c8d3343f80e481ecb015083ffd0661af853fecf85e7cdb17c5122895888",
+  "scripts/export_three_table_single_tray_actions.py": "e96babc5df6c2f5d47ddf5695b7ec48504e92ac80894003801b499e9f0d5302b",
+  "scripts/finalize_isaac_fast_pickplace.py": "63850f92e403271e0117e167605bfb49d8b7d4ca1bbd793ae1fc0a68d331b8fa",
+  "scripts/fit_real2sim_registration.py": "6cea7a1f0be684dec2b124f15a73a877dd8cde9e02cf85f5960ea83f6d009c38",
+  "scripts/fit_real2sim_torso.py": "255b0eed19644052db06648f2595e6341bfece446de32e27dd42372b3a6c5872",
+  "scripts/galaxea_client_oneclick.sh": "7f7ca2c08db1043010b324780f83f555b775ec90601503eaa6f94a3f728e7917",
   "scripts/generate_airport_scenes.py": "5bc9b26ad3b9ff765f90e0b09cce71839947bb20b864e6f0fee5f13d2884585e",
-  "scripts/generate_pickup_lerobot.py": "6f8cc620764ed3ee44dcbfd13c598e7eb6221a430413206283ad0cd7954259a2",
-  "scripts/generate_single_tray_lab.py": "6e3961fb17fadf8b62bb6685fb9fc895f675ada4d5adad1bd139aaf8133b7ef7",
-  "scripts/generate_three_table_single_tray.py": "b513426e42960fa133faa218bfe4612f569af74f51f69634002c80c655a449e2",
-  "scripts/guard_isaacsim_expansion.py": "6284733c0bb70904e82a73944c0092989f44f33c3c04d54a9b9235f817435521",
-  "scripts/guard_isaacsim_three_tray_task.py": "54b08409d47a3bad06bc912cf21d5f091b108a5c5e7d34561162038ba1d7958d",
-  "scripts/guard_three_table_workflow.py": "1faed908c13b4c278ac5db505271442a46458139c4e0739e2508efc5d8120889",
-  "scripts/isaac_mobile.py": "3f7aeb4dd469494f66c57723e8ac3644ddc9ed2eb4898e28bfb029be24ce3e36",
-  "scripts/isaacsim_base_drives.py": "96f6ee67451b06959e20f3582618dedc35b57a0e2b5029d780ff1fc9f7d3150c",
-  "scripts/isaacsim_control_preflight.py": "0cac230f5f4d679dbaf469ae5c99c2aacd5a30cad8cd9d74a2ddc8e34904bea9",
-  "scripts/isaacsim_deformable_coat.py": "f5f62f7ca2bb012c9b0bac1552ba73d0e9406024815281419bbb9817ffd4322f",
-  "scripts/isaacsim_kinematic_audit.py": "03ef553d40cd7c0d6b1042ce7e173a21dec746157356810e24b08b8a519c931a",
-  "scripts/isaacsim_mass_properties.py": "8190d0549df5184d58622837e5f29a9fd02c0101dfded002cf385d711d4b474e",
-  "scripts/isaacsim_materials.py": "19eaa72f0231ae0e81376f2c3c052be525f515e3e803ee34c965bbc20af54982",
-  "scripts/isaacsim_reference_episode.py": "6ea8886416cd21b43b2839e50e9bc1623de3ea600e65a14105be25d291a27c05",
-  "scripts/isaacsim_scene_smoke.py": "16a6a0ba2cc1d1567b6b117814eed2d9eb3280733d2e6969b9f2d1ab78cae216",
-  "scripts/isaacsim_stage_runner.py": "9516bd3e42fdb7f126f08af5d32b1ba299511978515712b0ba87e9b1ee69a703",
-  "scripts/maintain_three_table_server_index.py": "9193d0af1803121dd9dffd13692a000dd7bcae2d5eeadc7c8b62d94506ab143e",
+  "scripts/generate_pickup_lerobot.py": "0e7a4193929a6a10302d3029432a17263e769ca6527e172d55628eac88b20489",
+  "scripts/generate_single_tray_lab.py": "b520bd380a8f583a842487a46911ea6765721060eb70053c783fdab429d5590d",
+  "scripts/generate_three_table_single_tray.py": "93e367fc9b68028cc305789fd12e4bac1c5c038e18b58e3e7df5ff1da62d87e3",
+  "scripts/guard_isaacsim_expansion.py": "f82347578cffab56ff0928e992d2bbfda00c3e0a552e93b6cf08c7fbc7912e5e",
+  "scripts/guard_isaacsim_three_tray_task.py": "a1c0059d93a01f99ff3a051299316b469ddc93e995fffc0c437fd63b521301a5",
+  "scripts/guard_three_table_workflow.py": "1f604aa88c991bc611afa3ffcf6f1d3ebfa8177f54dbb24601c73466600671d0",
+  "scripts/isaac_mobile.py": "afb36ecb21eff33941e0e77d73c2f3130396b2067eafa311e51f2f0f6e8a01e0",
+  "scripts/isaacsim_base_drives.py": "5e26a43a7c7432330ae1e95831add114e08955dccc3f04ffb13395969d63d4b7",
+  "scripts/isaacsim_control_preflight.py": "17ff3fc02a55b52d2a1ddcef1059655c451ba29d74ac1a7d5b484576655febac",
+  "scripts/isaacsim_deformable_coat.py": "f8baafc356c70752f2ff33140d2db1639f38adfab881d1d40118efe89d04ebb6",
+  "scripts/isaacsim_kinematic_audit.py": "5ad02b38d27706d3dffa46e6880a4a9a6ecfc70be42f552c5331f9a7e613da13",
+  "scripts/isaacsim_mass_properties.py": "ff88d5634f6ebb7ecb3c646a9b0f4c92e4b832bcb86c549998351fcef42438c5",
+  "scripts/isaacsim_materials.py": "e323dafb5411d73f41be5cca06cf3d23a32763cf0e57eb75ab7040d20fbcb8f6",
+  "scripts/isaacsim_reference_episode.py": "8b785c8af143d4f309447ebd7f03b006cb29ac70bbd44b17470be51c7459dbed",
+  "scripts/isaacsim_scene_smoke.py": "6c3702463f0de495dc529177c8f190e0e1977441f49682ff569eb6c29c9b3bb9",
+  "scripts/isaacsim_stage_runner.py": "984d264b566c62bec96b62a148811810974c28d5754fa27e4700fec17eeb2c81",
+  "scripts/maintain_three_table_server_index.py": "db976ef2cd44bb0672ff74cb8483667e71c39d4ce9feaa59c78e32bfd58dfac4",
   "scripts/materialize_complete_task_actions.py": "5ae24bbf9f1ac0db77db8587d0c4e1bd59f34915b67aa3372ed7e42c5b0a0149",
-  "scripts/materialize_complete_task_actions_parallel.py": "820b771e47f157b8f5edc7f77a8d3eaf959f32f2b955cb5837a99a7709b4691e",
-  "scripts/merge_vla_skill_dataset.py": "a4e09c4245bb7d991920bee904f1e188af72d84dd8ca981b16b41d8421e95607",
+  "scripts/materialize_complete_task_actions_parallel.py": "0cf576b7e48bae10e47787138fb4a3ac3932aaf9465f9483eef98f6a96c7a1a3",
+  "scripts/merge_vla_skill_dataset.py": "08287154993ffa0783307d9e842bc79886ce85c2e6c2b1a6b0663125af935509",
   "scripts/observe_task_complete_sources_parallel.py": "f38b0a9a461804fb0185dbc6e0f782b28803352efecdabef90ac765b36e1d0a7",
   "scripts/plan_complete_task_actions.py": "592fc50c962aaa2d14153103f1ecf62b731e11ce46443ce297b3aaaa16358881",
-  "scripts/plan_three_table_reachable_initial_poses.py": "bc7f675e5969037555f7cce0e106af5652adc3152daa81d2cfd276de5875259e",
-  "scripts/plot_pi05_existing_summary.py": "8f3d823c831713deee7e5d7891d6ff3c0813ce8bd0bcdad40a212fb2abd444f5",
-  "scripts/prepare_action8_evaluation_protocol.py": "6954534ae6b36ac3670335017f7e6628e1f0463f2dcd9695b0f48c39aa47a046",
+  "scripts/plan_three_table_reachable_initial_poses.py": "ab84c736ac6d762d017d2a22526feb4b86f81a04bd66603250fe0437c182807a",
+  "scripts/plot_pi05_existing_summary.py": "82c2faecf32fd4aab6c6e21cad1fc83f09aa3b71c6ffce28f8744e50d93b7ff4",
+  "scripts/prepare_action8_evaluation_protocol.py": "c433480f7e0430435c94b0dc34923d977766187d7dea6d8c76cbf5668be164a2",
   "scripts/prepare_isaac_parallel_candidates.py": "06ccbdadc5235f1726975ff4bc0c28a1dd1ccd38f48ef76386b548eba02359c4",
-  "scripts/prepare_isaac_reachable_pickplace.py": "4e9c4dcbc2f0a1e986fd30ea99b08378f04103a10687550ffe9b2cac0f177348",
-  "scripts/prepare_isaacsim_dataset.py": "645fc29bad006a26746e7c5db95883af5baab19c8776a64242c866d62f921e81",
-  "scripts/prepare_isaacsim_three_tray.py": "acfd37b4a0deb582ad9a9b42f6f266e51efdba06e04288886d5f5d4b44f23cf7",
-  "scripts/prepare_single_tray_evaluation_protocol.py": "29946ab5bd8347338efa8e3763626377291dbbd5119b3cbb50fdc23ec6c5c920",
-  "scripts/prepare_vla_dataset.py": "310ab7448b79a1229ea5cbf92f6787b37b48c0892dfd0d55ceb04eb06a7c26c1",
-  "scripts/prepare_vla_skill_dataset.py": "9bef94746a7a458fbafef8e852aea19731a4b42976844230e4ed2d4d575a8dd1",
-  "scripts/prestage_isaacsim_three_tray.py": "8c6e7f9476fa0d4257dae95cadc633f3b486418367d721b4b9caf92e88002650",
-  "scripts/probe_isaac_parallel_collection.py": "ac391ecc8d0d9693708dc5d76cc3367c3783171df9d42577c2c470a8a069ca3e",
-  "scripts/probe_isaacsim_flush_path.py": "ab403119c1a635f693d581794b80fe53c266ac6c4b068022dc2a20793a56236b",
-  "scripts/probe_isaacsim_pad_station.py": "7899d11a641c771e51900b429bf890251d09b88232f7769d3bac9ccf71f119a3",
-  "scripts/probe_single_tray_front_workspace.py": "fac972e854c95fadd8953cdd4216906037c607fb2aab4e809ea5e51012cf7407",
-  "scripts/project.py": "fdc97d51da26450406f1ef028b96217f8455478924eb1697684cbcd10c851f4f",
-  "scripts/refine_single_tray_lab_robot_visual.py": "4b13d85cb36ac8352bf2599a0b97570e742a2d0f780636697395d9c51ef0d365",
-  "scripts/render_action8_evaluation.py": "b33aaebbc27f881c834c0e64a7b476e29f46dd078c0ccb31e4b245cf8db29d8c",
+  "scripts/prepare_isaac_reachable_pickplace.py": "cb11dc4539d673c11bbff06ed26181f09bd313a3160a9ece9f0cc0edc926af4f",
+  "scripts/prepare_isaacsim_dataset.py": "b211e4058a2c390ea9dc928fdd03d1cfa856a93b4a1d7cb45dc3a42b26f6d110",
+  "scripts/prepare_isaacsim_three_tray.py": "c90929d4529e9cd87fc7a00ab48c4f962b4b4540a84b069f8795d4c62851e105",
+  "scripts/prepare_single_tray_evaluation_protocol.py": "1b27915387745285e224cbae43ccbddf149b42678c44782e8df123893ca687ef",
+  "scripts/prepare_vla_dataset.py": "5ee9223693b2325a8a2a5c1cb3cd010cf83b799e0564f25d9ab68e67a0e29110",
+  "scripts/prepare_vla_skill_dataset.py": "7fd2b964c77cc35403ac614a79477aafab49d59532e0dd9eaebaab252edbb959",
+  "scripts/prestage_isaacsim_three_tray.py": "ac8a8d2768f55fb70f0cb2b8e8a9db50669300d8bba203a90ba113afdf6bb7e7",
+  "scripts/probe_isaac_parallel_collection.py": "e1ebeac105342ee411618c6f06ece7db060ff9dbfd1307a042f34f3f940456cb",
+  "scripts/probe_isaacsim_flush_path.py": "7168c1b28ed0d147ee096e028c7681cce81fb09ad243f7e2216bb87be994e055",
+  "scripts/probe_isaacsim_pad_station.py": "71aceba8400213badf0d638d2264425330414b9c44c53afb1939ebab8aacc3b3",
+  "scripts/probe_single_tray_front_workspace.py": "62ee6b14243f890b7d0434a4681fd60cd044ed55701ee650c7cc26ed5f9bac54",
+  "scripts/project.py": "632de5948019fd9e159598038b02c91c002fe14c769a9bb5ac0f2d5e7bf140e9",
+  "scripts/refine_single_tray_lab_robot_visual.py": "c52cf2e34bad6dc9cd5254b7ca9f4c73d38d00d6d47621ce1ae626a5dc71b198",
+  "scripts/render_action8_evaluation.py": "596577a41d54745c735bd476acdaf21cf1dd9d25b203c01f8f5e075da36d38f7",
   "scripts/render_single_tray_lab.py": "3aa95f5645571df06d5191b298decab5e63bdaa14b3814f44dfd1385e0ce9fda",
-  "scripts/render_task_complete_sources.py": "4ff9f2e6bead4371ed1c334b0808936660a396c0dead145a3d161fbc776ecd24",
-  "scripts/render_three_table_free_run.py": "680bf1ca7adbfad099ada1ea8b3652733b6e6dcecdc20118a7926372d1a2eab3",
+  "scripts/render_task_complete_sources.py": "9ba3b66f0ca6345a456f5401ed6e84ed1da999d66465d3e46c56f9d129bbe959",
+  "scripts/render_three_table_free_run.py": "c943e652ae8ccddd6f61d3a6225362125073c33ed6fdc06aba7dd1c70b3735a5",
   "scripts/render_three_table_original_trace.py": "36f0a337fc98f3fd1315895d21771bace625ace419f49920e903df6ac02a6671",
-  "scripts/render_three_table_single_tray.py": "06e42a5048ec08cad342d5553cf69185914829eb84fc720eeee3e382dba9713d",
-  "scripts/render_vla_native_sources.py": "0b0d7062aa402945657bcf7e9e976e0ba091552d03be3c46a32d203ddbb5e7de",
-  "scripts/render_vla_rollout_videos.py": "20bbd13b9d8655a53be1e5028f3b2249d412a8f50d9c3e6b0056148d54e8f0e2",
-  "scripts/repair_airport_initial_settle.py": "ed80b3e007a88cc13121607f69c0d96dfcdd45e1eb238726a2674bc41cb7244f",
+  "scripts/render_three_table_single_tray.py": "a0df50dfed07a5bae57ef3b3823b5375640b242e873791c33d06536980ad01aa",
+  "scripts/render_vla_native_sources.py": "5054b48d8bc9e04dc256d6f56655749ad9c50e21cf29d9909ccf2fa713bb2e78",
+  "scripts/render_vla_rollout_videos.py": "b7a19da6b350d49e3af0ae51790739dc9c363769c958ee87148f4626ff3ca2a6",
+  "scripts/repair_airport_initial_settle.py": "ba69afce6399b13b8ff526f547654565f1041c4ea982f285e1d62f4b7a245fc2",
   "scripts/repair_three_table_source_qualification.py": "472d90bb0007c96e088ee10d6b6237552460bf0f9acd9e03d8450865fdb266af",
-  "scripts/replay_real2sim.py": "c6b295d723d70b93155a7c80f6cc75ec2d1d18e2d8f61e05c1c5b9be95626f96",
-  "scripts/rerender_pickup_camera_shells.py": "d3cb6e3633ae9d993ff8047ba558679b74c39f8cd6c0e1eea051f5e9d7d700c5",
-  "scripts/restore_bc_after_isaac_parallel_probe.py": "80bed089b1f8c5b27afd5cc18308e9b46502fdbbafa902f9f67a3c6a18354fc8",
-  "scripts/resume_afford_pi05_comparison.py": "0cf90bab3e2b08cb511cc3ccfc59d1129fe6f24e15b2f6d8e0b691a975cad9cd",
-  "scripts/resume_isaacsim_bc_after_video.py": "a49f637599384e79c1ef09bf3265205273ae420b2e35134a3d01c5b2db3e47d4",
-  "scripts/run_galaxea_client_record_compat.py": "430b90986a9402368c1a49bfbfbbe30610ecdd0e58362610da879aa11a68670c",
-  "scripts/run_isaac_parallel_pickplace.py": "1e5bf8b4e80b4b416329aa12879a257ef1452960721612ebe6a18cb3303d1659",
-  "scripts/run_isaacsim_fast_pickplace.py": "6e1145d1b29650e23de33a88d64293e8e3ca5ed276f7eab8f06f1de3701622a6",
-  "scripts/run_isaacsim_three_tray_task.py": "345c970c1868927fa508d65e1f4532908785d59ed4ebaee2aa988751457e6d5a",
-  "scripts/run_pi05_real_only.py": "263783d59fb72b937a4f875c7a144c398e40d486ff09dc8d1d59b501d27588b2",
-  "scripts/run_real_sim_pickplace.py": "b149b9493fbf673bda00b7fe1df1f7442bdc75baa5fed179ef4a4aaeea0012f4",
-  "scripts/run_single_tray_lab.py": "8743778996afb54eb35a455b823f3043c5a550d84ecbc7651313ec5717517e47",
-  "scripts/run_single_tray_lab_campaign.py": "2000d01e94f56e713382b3d9be916177d6a55002a87d4ec61f161a5bede1542a",
-  "scripts/run_three_table_full_candidate.py": "545e55e03b5639762a504532cbf4d76c30b24b0612db2a7b0afa8cfd38212297",
-  "scripts/run_three_table_owned_command.py": "13a260e0fcc78bc40d4bbdc62188e6b2ab795c3a63ca76b7c8080ee51811ec5d",
+  "scripts/replay_real2sim.py": "9172a883b2975d8eece56d945da5e54acf6e5babd7fc26b423975270976235c8",
+  "scripts/rerender_pickup_camera_shells.py": "0ee62827ca21af2a2ce9dfe6032637a325bdc3bf0fe1418f137787dc6c7460f2",
+  "scripts/restore_bc_after_isaac_parallel_probe.py": "7d25889a0729ac90e6ca483cef493f33ac14cb56e50ebc7eea1dcf901ca113ae",
+  "scripts/resume_afford_pi05_comparison.py": "b2ae85a60733fa8d348ddc9d8fe6b71c3de580dbd6b35f375c85014947de1df9",
+  "scripts/resume_isaacsim_bc_after_video.py": "cb1e409c30f3be5b134058a59803a602dd5c1ef461dc60965a3a2532cf3d8578",
+  "scripts/run_galaxea_client_record_compat.py": "2619538fff604cb45fa22d61b2ebdbf3fe3ea2e5536b560131e831f8988a6098",
+  "scripts/run_isaac_parallel_pickplace.py": "07ea5d30ed7d110615a553ebffb9b25aa6a2ff3edb5512a9c89a2e6fb38308ae",
+  "scripts/run_isaacsim_fast_pickplace.py": "c4c524dc0cc689be33ce7d7a578c44bb5412d28d41e3e5a1b65faf435b96d7bc",
+  "scripts/run_isaacsim_three_tray_task.py": "1f2b746cfc1c4548ee9df05924cda5660c3293a142ecf561c2ae1000b11df361",
+  "scripts/run_pi05_real_only.py": "7dd8bb1606fcc95629f44df74601254d9746233e13824b0cc79d2880f31ce875",
+  "scripts/run_real_sim_pickplace.py": "56b771e7de33e0e8daeefa9bc108d4f440c3be30a6249c5a6d60ea6995d24bb8",
+  "scripts/run_single_tray_lab.py": "ac747d635524d6c6a5e455d476c9bf1df142b0eb00f1e6fcddc849f0310a4bdd",
+  "scripts/run_single_tray_lab_campaign.py": "aed6cbd1175a131226e0c97e22b800a3cb7e8021897d6328f206ce215c958fe4",
+  "scripts/run_three_table_full_candidate.py": "429a81dfb68bcf622a862474a3a77f478eca2dfaac98df076e5d6bfcee5554ea",
+  "scripts/run_three_table_owned_command.py": "2c218b006fff4074569ba7515f9a554a9a3e14e1a3f76fb0992f6c5cb6d8c355",
   "scripts/run_three_table_pi05_free_run.py": "c8a4515eb7f5b5e0fe1978549926c30cf6ecf41119f6832a54450331a11a4692",
-  "scripts/run_three_table_single_tray.py": "70b993bda023e3be85530d3af2501cb6ef3259d367faee1f398a6b1b9cc271a0",
-  "scripts/run_vla_fixed_scene.py": "874a08362e1e8dc16a99d9c655094821fd5320ffbc573ecf3ab2543a81afe70a",
-  "scripts/serve_isaacsim_media.py": "65743f9055baede316f806f1db629edf225818f6c4d975a55f515b69994240c2",
+  "scripts/run_three_table_single_tray.py": "43b36d665cfdd1dda9e88473df62432eaa6a6a2b09a041dbf32ddff29bb9ae47",
+  "scripts/run_vla_fixed_scene.py": "24c3a8600b2366edcbcf47498e682b813ec8dbb6056a7c9ba4f65e6921b353bd",
+  "scripts/serve_isaacsim_media.py": "9cc41c542ea586df4e93d37edc3e00c990c111d389d12b3a8ce2bb50c79e80ef",
   "scripts/serve_pi05_airport.py": "4df101549c845476b085ed38e99d12f466f8e88f7ed8b3e65e0c7c24c9737fe8",
-  "scripts/serve_pi05_diagnostic.py": "f00f5d19635529fbb7edaebf0496c0f52ada0e5545be13359d01981d07837935",
-  "scripts/serve_pi05_galaxea_robot.py": "307e4e43a3888c52fc70d4381e57a61b871e610aaa8ae3f888898895c86ab4f9",
-  "scripts/studio_configure_model.py": "5ee3887468538cd2491b42d7392e0c071d4b9c26b457a1c8981965757f52df2b",
-  "scripts/studio_live_inference.py": "d7a4b7d0c4c0d6fcf61b777e743bc87b5cf12b84aef3a74cf716a570c2cf65f1",
-  "scripts/studio_model_http.py": "783dca352249f4cc401f23046d01abb748343e6181f519dd2ca983c15ee5eb66",
-  "scripts/studio_mse.py": "8a34a39863757d6e29330a8de9add55782a9f17dbf03ebd136fb496d51530c13",
-  "scripts/studio_mse_plots.py": "e929c758730ec5c1bc23a296c77bf57c8b349d5fde2f68ebcff947eb8345f891",
+  "scripts/serve_pi05_diagnostic.py": "404745e78fd6bb3dba937e702bcf041d151fa954699a72d37797d888cf38e62b",
+  "scripts/serve_pi05_galaxea_robot.py": "07e5a13c044be6643a1d01a5289b2300fe2f468e0e95dd79514aab698b5c736f",
+  "scripts/studio_configure_model.py": "4c975fc1d3668361b2a8a45ed225602bde96f3173e332153575b86669e03aac1",
+  "scripts/studio_live_inference.py": "e18c1dcafebb72e814337ada0dbc94bae73d44a19db88658be3cf40fd36549bb",
+  "scripts/studio_model_http.py": "fd2792b79e77c912f79b82cb930161b48429eedd64bd8359d46ba1bb671ee5b1",
+  "scripts/studio_mse.py": "85f0aa23d200ffa87550e6abb3c6c414d81d3cd14329f642f66399504999f785",
+  "scripts/studio_mse_plots.py": "3ddfa82f9f72de25c733ce9ad03d3e5cab94230b9373fbe3d6836557ab0b482f",
   "scripts/studio_prepare_training.py": "e46fd64ee9fd0fc0c8e1154c79129c0e7d201de83d69120eea2c78a19a674aa2",
-  "scripts/studio_reuse_service.py": "76809842062440b8a442411200c52a2893a1370755c947af78588f895d85af84",
-  "scripts/studio_ros2_service.py": "8a2ada29ea87dff9ba8525194f146d1acb9335efe49ce78c9f70e0cc806d0920",
-  "scripts/studio_ros2_transport.py": "a6fae655b0e53dcf7b6d45dd79b1bff5c57c5ee09745756c7e8be5e34599cfaa",
-  "scripts/studio_vla_evaluate.py": "282e60f6d643e5ce498b3ff8ee929298609b0e712f5ca4be6e8ee0cfd9947f70",
-  "scripts/summarize_single_tray_contact.py": "4c7de1409c03354e1f7beb24a76ba93c5c1cfcd34b2a6b0579894ef757b5ee87",
+  "scripts/studio_reuse_service.py": "554fe6af5af8a48c419be0c56f0d803db97751a8f5acb9b62184dc8cc2b85af9",
+  "scripts/studio_ros2_service.py": "ebfd9ac527a979c964baabac3959bfc41a2bdc07fc4926876d2110297597eb94",
+  "scripts/studio_ros2_transport.py": "450d920675e522de99f7a8e5e038d4518a57c774f03a7c4437937238e8cb156f",
+  "scripts/studio_vla_evaluate.py": "5e2d79d79d9603c712285a2fa140f8598c79783f578b04cf1d20bbc78fb5dee2",
+  "scripts/summarize_single_tray_contact.py": "2c91e8d1dfbec3ec2749c320ed107c9cabe7354bfd620af041a2771786b110a0",
   "scripts/supervise_action8_training.py": "d22dd67e549f43ae31c7753977ce342292e2bf4c144b18ba7908f5a5b6b171fb",
-  "scripts/supervise_isaac_parallel_pickplace.py": "996f014e8845f02aa1106016b9277ebe0e7961335a66ff9e241c1a91ab29b059",
-  "scripts/supervise_isaac_parallel_probe.py": "8f451c5dc524760a46ae1eaf195dc045cb56a0bc712d49b93cbd38f65556484c",
+  "scripts/supervise_isaac_parallel_pickplace.py": "d5d9a849da2b7d4773fb9afcbb2ae9afffcbe8b7b3f349a4db685fc1b38a472f",
+  "scripts/supervise_isaac_parallel_probe.py": "7f0b59762842d48fabe8ae1470d141646cf2f4b5bdb1150645fbe573db193313",
   "scripts/supervise_isaac_pickplace300.py": "aa26aa03a60d08291c3f592b281b1ae0b7f2be0a323a4d9a0c867811664a05d0",
-  "scripts/supervise_isaacsim_fast_pickplace.py": "a44130b071f95355e47112c54db5f2c2512ecf713d32ee9909ad1d9d2759b44b",
-  "scripts/supervise_isaacsim_three_tray_assets.py": "d776a83ca4eca7ec7a0bc862554e601caf4192ed37891419795b30fad32cd5c4",
+  "scripts/supervise_isaacsim_fast_pickplace.py": "8eb2d59660953af8fd8243da60f93db250b52e4684a20b84933874751fc899a7",
+  "scripts/supervise_isaacsim_three_tray_assets.py": "6ec1f5c5f026ce0f30f95f66f0878437e39273b38c99d2404c52e9fc5fa6addd",
   "scripts/supervise_isaacsim_three_tray_task.py": "8d317998b3ef2b2986343598fbbaf34a20d31b6c3c7cfcf84e8e80ad3370e819",
-  "scripts/supervise_single_tray_training.py": "06b50699f6a91c7b3bef19dba0dbeb9ad501eb124867e1274c0697ebcbd7eb55",
-  "scripts/supervise_three_action_expansion.py": "59c8c948f5eb215381c16b91cebe0a71eb1fb3bfe8e6d107b2f36448a6c62e4c",
-  "scripts/supervise_three_table_free_run.py": "60bd2db93a7413214b7494cae124a4c8a99619381311783fc0a6749d899bbebc",
+  "scripts/supervise_single_tray_training.py": "009a9a44922a5f288a3bc595d7cc2419d325214fecec04499621cf5adbfbb33d",
+  "scripts/supervise_three_action_expansion.py": "61f41b895d2fd1e190bbbbbb88ec9ae788df8d9e2fcbc0ceb1fd40105dbfe377",
+  "scripts/supervise_three_table_free_run.py": "481ac600d08f2019fe78f7fe9f9a0897a31fce9a6dabb3e38a5accd5f14a0543",
   "scripts/supervise_three_table_single_tray_training.py": "493f24cfdf11152a33fee58ef8bc5b6c5f86cf0df07dfb8a139ada8972fbdc25",
-  "scripts/supervise_three_table_workflow.py": "f4c781eb588bc32e8044872dfbb6780a54fc46e8814a481ce8a2d0c4f51f1805",
-  "scripts/supervise_verified_three_action_training.py": "8667aaf3de444c35ac79acb440fb8abbca0a08984bac63160820663082bda73c",
+  "scripts/supervise_three_table_workflow.py": "7899544ec6d9ebeb9b74071743ca943bc91a4d50d774189da21f20012ce33656",
+  "scripts/supervise_verified_three_action_training.py": "84ea91559299c10a377109592cbee7abe7ea35ce685d56293fb21cf1c47f43c2",
   "scripts/sync_task_spec.py": "69e2833ec0a11abeff0bfc59ae7c8961fb4d6521f98419470af298b9ef88e3e4",
   "scripts/train_pi05_accelerated.py": "d805269611f71d82717a56c250c82e7f92bc3d85b8fa6be44e649aed1053081e",
-  "scripts/train_pi05_airport.py": "12f47ce6342009ff0fd91358fbff8740466c341fef0fec64df2cb68fc8653231",
-  "scripts/train_pi05_isaac_three_tray.py": "f0267dd475a337de4795d25f4fa0be8bd0cfd5d0151234c36f68eb154659e729",
-  "scripts/train_pi05_parallel_real_mix.py": "82d952ef31d2c92b4284ae3ef4258de78b615ac1ae7c6bb85842449b9ab37880",
-  "scripts/train_pi05_real_sim50.py": "415ddef7cb9184514529926d60024f71edd898ec03570b29e712b10944b0153c",
+  "scripts/train_pi05_airport.py": "105b425af6a1a0d5eba2d290444c1b53c5a10e1562153e60f60a3b20614ef075",
+  "scripts/train_pi05_isaac_three_tray.py": "3e03e4a381298f7db3a33000fb542ab61d520974b66e004b3afa91d02614b540",
+  "scripts/train_pi05_parallel_real_mix.py": "b92d13f77bd8897298878b3ffc97005effa8537239bae2ce307116a5ebad9283",
+  "scripts/train_pi05_real_sim50.py": "c7be8354c811cebb529d24c681523a61878372bd756983b2b7b1c3f3f2b4ca92",
   "scripts/transition_task_complete_sources_parallel.py": "3c3157616e28ae8cd5d1249c020cabca8ef3791d4c411d41098455d101cc6473",
-  "scripts/upgrade_airport_fourcam.py": "ecca8b1d01f5833919477a090b57de4f144e858a1f4dc28bbf293f7e0b14e85c",
-  "scripts/validate_real2sim.py": "f02d5fa0d4da5c396f3ec17a90fe4618dc7110d62a442d1189a8f080b37776e6",
-  "scripts/watch_isaac_parallel_collection.py": "ef289b37c7e0b1ebb3d6f56951d7db39c9d9b7a1ffbc518e633e814196a8af70",
-  "scripts/watch_isaacsim_episode_preview.py": "956a700343dcb63bd7f22be3035990204a28f420676b903a500338a6847e8c0e",
-  "scripts/watch_pi05_mix50.py": "7677c760dfc6b0177db85fe3360f27fd2ebc20ec16642abbb0d23bde1c49c070",
-  "scripts/watch_pi05_real_only.py": "c05e11302f36b86ac9856fd014d1ec2d82418f6692312564a7f03185fd0b3990",
-  "scripts/watch_real_sim_transfer.py": "f93733a27ef59013185b39b7499ad3f534ffe8508ce2d8fc2e6a1143eace61e0",
+  "scripts/upgrade_airport_fourcam.py": "ca2ad727d9aa7587253aba5a8180028fe8121dfa33d2d747192123e7609f2513",
+  "scripts/validate_real2sim.py": "987ce60c9dd9135ad58afd7ebccdff4c831c9b2181ac79b06cf516a40f06e22b",
+  "scripts/watch_isaac_parallel_collection.py": "e44bf585d18667739fca4a1720dea3885a5659526f2586b275fe32b6ea9a724f",
+  "scripts/watch_isaacsim_episode_preview.py": "fc1d91fb18b65c1349799d1e8d7dd670d87bcdc2ef0cf06cc8689a86a3dbf353",
+  "scripts/watch_pi05_mix50.py": "dd2ad89d1206707a0832987028cb3324b6649304c791449c278e6886c38fdd35",
+  "scripts/watch_pi05_real_only.py": "87c0ed04c2c4d1bb3c3c2d4503b0a00d78f5b4aa0974f935efd809d253c59561",
+  "scripts/watch_real_sim_transfer.py": "e8a3b3bebe65d94cf54251d3c4ea6f64bc5318d40a259d792ec98a5444cd91b8",
   "scripts/watch_three_table_data_version2.py": "4be09e9331165b83686f227eef0a7ce5718bdbf03d8576a494e3cbffa4249e43",
-  "scripts/watch_vla_comparison.py": "393713809a9601d1d259f09c1e44de71db1e13ca79f0ea5c8cd788bd4ed65cb1"
+  "scripts/watch_vla_comparison.py": "10cbcfa6587a8b246badb80437e2c4efc8553a8183e93e5b8b04f7be0f9051f7"
 }
 ```
 <!-- GENERATED-CONTRACT:END -->

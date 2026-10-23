@@ -1,0 +1,6 @@
+{
+  "schema": "studio_maintenance_policy/1",
+  "trainingAllowed": false,
+  "reason": "User instruction: no training during repair. Existing checkpoint diagnostics only.",
+  "decision": "DEC-NO-TRAIN-REPAIR-20261022"
+}

@@ -163,9 +163,11 @@ class ParallelRoomRuntime:
             raise NativeTaskFault('nonfinite_native_physics')
         self.exchange.complete(dict(observation=observation,sim_time=float(sim_time),record=frame_record))
 
-    def tick(self,command=None):
+    def tick(self,command=None,*,raw_command=None):
         command=self.command if command is None else np.asarray(command,float)
         if command.shape!=(19,) or not np.isfinite(command).all():raise NativeTaskFault('nonfinite_or_invalid_native_command')
+        raw=command if raw_command is None else np.asarray(raw_command,float)
+        if raw.shape!=(19,) or not np.isfinite(raw).all():raise NativeTaskFault('nonfinite_or_invalid_native_raw_command')
         if not np.array_equal(command[16:],self.fixed_episode_base_command):raise NativeTaskFault('episode_fixed_base_command_changed')
         self.command=command.copy();before=self.observation();before_time=self.world.current_time
         result=self.exchange.submit(command);record=result['record']
@@ -174,7 +176,7 @@ class ParallelRoomRuntime:
         if not np.isclose(self.world.current_time-before_time,.05,atol=2e-5,rtol=0):
             raise ValueError(f'parallel_room_actual_control_time_mismatch:{before_time}->{self.world.current_time}')
         frame=dict(time=before_time,state=before['state'],tray_pose=before['tray_pose'],
-                   raw_action=command.copy(),action=command.copy())
+                   raw_action=raw.copy(),action=command.copy())
         for key in ('rigid_pose','long_edge_sign','payload_speed','payload_on_tray','boundary_ok',
                     'axis_error_rad','front_region_ok',*FRONT_FIELDS):
             if key in before:frame[key]=before[key]
@@ -185,7 +187,7 @@ class ParallelRoomRuntime:
         for key,value in frame.items():self.raw_arrays.setdefault(key,[]).append(np.asarray(value).copy())
         with (self.output/'native_steps.jsonl').open('a') as stream:
             stream.write(json.dumps(dict(frame=self.frames,completed_real_substeps=25,
-                raw_action=command.tolist(),sim_time=self.world.current_time,
+                raw_action=raw.tolist(),applied_action=command.tolist(),sim_time=self.world.current_time,
                 measured_state=np.asarray(before['state']).tolist(),
                 submitted_control=np.asarray(record['submitted_control'])[-1].tolist()))+'\n')
         self.frames+=1;after=self.observation()

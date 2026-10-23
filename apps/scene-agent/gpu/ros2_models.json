@@ -1,0 +1,7 @@
+{
+  "schema": "studio_policy_adapters/1",
+  "models": [
+    {"id":"galaxea_g05_r1pro","family":"g05","label":"Galaxea AI G0.5 · R1 Pro","enabled":false,"host":"127.0.0.1","port":9085,"gripperUnit":"mm","actionSpace":"joint_absolute","horizon":1,"status":"Configure a verified checkpoint endpoint and gripper unit before enabling"},
+    {"id":"groot_r1pro_joint","family":"groot","label":"NVIDIA GR00T · joint-space checkpoint","enabled":false,"host":"127.0.0.1","port":5555,"gripperUnit":"m","actionSpace":"joint_absolute","horizon":20,"cameraKeys":{"head_left":"head_left","left_wrist":"left_wrist","right_wrist":"right_wrist"},"stateKeys":{"left_arm":"left_arm","left_gripper":"left_gripper","right_arm":"right_arm","right_gripper":"right_gripper"},"status":"Requires compatible joint-space fine-tuned weights; EEF pretrained output is rejected"}
+  ]
+}

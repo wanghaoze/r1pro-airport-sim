@@ -1,0 +1,37 @@
+{
+  "recordedAt": "2026-10-23T02:45:51.264053+00:00",
+  "scope": "local CPU synthetic upstream; real HTTP/WebSocket transport",
+  "tests": {
+    "tests": "78",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "time": "0.850"
+  },
+  "checks": {
+    "taskSpecVersion": "1.190",
+    "taskSpecCheck": "passed",
+    "gitDiffCheck": "passed"
+  },
+  "python": "C:\\Users\\whzgo\\.conda\\envs\\python312\\python.exe",
+  "dependencies": {
+    "msgpack": "1.2.3",
+    "websockets": "15.0.1"
+  },
+  "trainingStarted": false,
+  "weightsLoaded": false,
+  "remoteConnectionAttempted": false,
+  "deployed": false,
+  "isaacExecuted": false,
+  "g05MissingGripperModelRootCauseVerified": false,
+  "existingTrainingExitVerified": false,
+  "sourceSha256": {
+    "r1pro_teleop/vla/g05_protocol.py": "335732c54ddbc0536a630f89f2ed9d8d37aa132f4cb5baeeb429ac0e9624ef4c",
+    "scripts/studio_model_http.py": "fd2792b79e77c912f79b82cb930161b48429eedd64bd8359d46ba1bb671ee5b1",
+    "scripts/studio_configure_model.py": "4c975fc1d3668361b2a8a45ed225602bde96f3173e332153575b86669e03aac1",
+    "scripts/studio_ros2_transport.py": "450d920675e522de99f7a8e5e038d4518a57c774f03a7c4437937238e8cb156f",
+    "tests/test_g05_protocol.py": "4a6c52fe8830127c5d1c7588a16fe6709208b712701f925beee85a3e029f774b",
+    "docs/SCENE_TASK_SPEC.md": "6898dbefa28e98693e5826575197b9e27ed0eabc1d7ceaab992d72d72ce54e0c"
+  },
+  "officialReference": "https://github.com/OpenGalaxea/GalaxeaVLA/blob/main/scripts/serve_policy_mem.py"
+}

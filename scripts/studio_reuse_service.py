@@ -20,6 +20,7 @@ def find_service(root,entry):
         try:
             with urllib.request.urlopen(f"http://127.0.0.1:{int(ready['port'])}/health",timeout=2) as r:health=json.load(r)
             if health.get('checkpointId')!=entry['id'] or health.get('ready') is not True:continue
+            if health.get('actionFilterContract')!=ready.get('actionFilterContract'):continue
         except Exception:
             if entry.get('family')!='g05':continue
             found=False

@@ -1,0 +1,2339 @@
+{
+  "schema": "web_scene_visual_source_manifest/1",
+  "scope": "static_visual_preview_not_native_simulation",
+  "source_domain": "simulation/program_generated",
+  "training_eligible": false,
+  "current_server_scene_verified": false,
+  "physics_executed": false,
+  "geometry_source": "resources/scenes/formal/ordinary/airport_0004_20270920/scene.xml",
+  "geometry_source_sha256": "01ded3ce66150ac985fdc4fbbf5229743038b8046266f0d0419efb6cb2643d88",
+  "initial_pose_source": "runs/web_scene_agent_deploy_20261017/server_config.json",
+  "initial_case_id": "wide_station_2026102700_000",
+  "initial_pose_scope": "server_20261017_batch_001_room_000_registered_initial_configuration_not_live_state",
+  "initial_pose_snapshot_captured_unix": 1792218839.5353463,
+  "initial_robot_base_pose": [
+    0.29326670133643506,
+    0.1212746114042831,
+    0.0664985550387608
+  ],
+  "initial_tray_pose": [
+    0.8464173173882247,
+    0.12654236199036395,
+    0.801,
+    0.04176901218799127
+  ],
+  "source_coordinates": {
+    "units": "metres",
+    "x": "forward",
+    "y": "left",
+    "z": "up",
+    "quaternion": "wxyz"
+  },
+  "gltf_coordinates": {
+    "units": "metres",
+    "x": "source_x",
+    "y": "source_z",
+    "z": "negative_source_y",
+    "conversion": "[x,y,z] -> [x,z,-y]; yaw about source Z -> glTF Y"
+  },
+  "robot_pose": "source teleop_home static joint configuration, normalized to base group",
+  "editable_nodes": {
+    "robot": "robot_base_pose; x, -z, rotation.y map to source x, y, yaw",
+    "tray": "tray_pose; x, -z, y, rotation.y map to source x, y, z, yaw"
+  },
+  "recolor_policy": "Only mesh extras.editableColor robot/tray; robot targets original silver shell surfaces. Clone materials before per-room edits.",
+  "protected_appearance": [
+    "zed_link",
+    "left_gripper_link",
+    "left_gripper_finger_link1",
+    "left_gripper_finger_link2",
+    "right_gripper_link",
+    "right_gripper_finger_link1",
+    "right_gripper_finger_link2"
+  ],
+  "removed_visuals": [
+    {
+      "body": "left_realsense_link",
+      "geom": "robot_geom_42",
+      "reason": "existing_authorized_pure_visual_wrist_camera_housing"
+    },
+    {
+      "body": "right_realsense_link",
+      "geom": "robot_geom_66",
+      "reason": "existing_authorized_pure_visual_wrist_camera_housing"
+    }
+  ],
+  "room_fidelity": "Photo-inspired approximate arrangement; no measured room survey or exact reconstruction claim",
+  "limitations": [
+    "Exact current server scene_mechanics_v2 USD/XML was not present locally; this is source-parent geometry and current batch registered initial pose. Live articulation state is not streamed.",
+    "Browser preview has no physical contacts, dynamics, camera sensor output, task success or training qualification.",
+    "Source room is photo-inspired, not a measured reconstruction; background includes decorative office desks distinct from the three physical task tables.",
+    "Floor procedural grain texture and engine lighting are not reproduced; geometry and base material colors are preserved.",
+    "32 rooms may reuse shared geometry but need separate materials for per-room recoloring; all current registered room poses are available in the backend snapshot."
+  ],
+  "glb": {
+    "path": "assets/r1pro-scene.glb",
+    "bytes": 5223720,
+    "sha256": "d792e8e2365b0b66e3d63c598c53af0a60d1d6fcd46ff6d17df3f31d2e3ffac7",
+    "total_asset_bytes": 36460992,
+    "external_buffer_files": [
+      {
+        "path": "assets/r1pro-scene-buffer-1.bin",
+        "bytes": 8372136,
+        "sha256": "6686527d86bdde77a359bda675e31113c8ad8c21ff9d409b0cf7cca473deef15"
+      },
+      {
+        "path": "assets/r1pro-scene-buffer-2.bin",
+        "bytes": 8288868,
+        "sha256": "e9c4305fb39b9276a783f733e42b7ab5f6e1371a6ee559a13e01a5f0d1084723"
+      },
+      {
+        "path": "assets/r1pro-scene-buffer-3.bin",
+        "bytes": 8070672,
+        "sha256": "6723802f49a12cd90d81c398341ab6877e1ed8b65af2d88e9231fe43c789669e"
+      },
+      {
+        "path": "assets/r1pro-scene-buffer-4.bin",
+        "bytes": 6505596,
+        "sha256": "5e08d2beabf97640efb1f14a2dfe6061829b0c68eedb72d8d62e0040130a1957"
+      }
+    ],
+    "meshes": 97,
+    "vertices": 1225907,
+    "triangles": 577455
+  },
+  "sources": {
+    "resources/scenes/formal/ordinary/airport_0004_20270920/scene.xml": {
+      "sha256": "01ded3ce66150ac985fdc4fbbf5229743038b8046266f0d0419efb6cb2643d88",
+      "bytes": 200590
+    },
+    "resources/single_tray_lab_v1/manifest.json": {
+      "sha256": "ea033e0a6cd44cd09fb945e4f350ce396bf3bcc96d586f5e13416689b38b584f",
+      "bytes": 87489
+    },
+    "resources/single_tray_lab_v1/robot_appearance.json": {
+      "sha256": "388885b9adc3f45a4400ccc45cf05fe9da906ee09811475c7bfe8571aca0e84c",
+      "bytes": 1708
+    },
+    "runs/web_scene_agent_deploy_20261017/server_config.json": {
+      "sha256": "003114eb5ec3ec4da194a2396c1452a7f92443835a96a6341b16e2e27df64ac1",
+      "bytes": 97965
+    },
+    "r1pro_teleop/real2sim/isaac_lab_visuals.py": {
+      "sha256": "465011e3b91eabb92f010d80317a82212d399e24b0e9dd79ec770f949ce693ae",
+      "bytes": 10367
+    },
+    "r1pro_teleop/single_tray_lab/camera_visuals.py": {
+      "sha256": "8635ba4530e7ab3d95a75785b719e74622e85a8c575358a15c2d3ffadb0c6ad6",
+      "bytes": 1716
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/base_link.obj": {
+      "sha256": "fc9ad103045fca8354530cbfa35ef91bac39a4eaaa2ad0080d0eb4910be219ad",
+      "bytes": 17489223
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/steer_motor_link1.obj": {
+      "sha256": "d129e80d996a92c3e330a623b1836b652907a00111476801506251fe2e71d779",
+      "bytes": 1586391
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/wheel_motor_link1.obj": {
+      "sha256": "eef711f9b5566c800eb9dc47740b2673b6cc8a79410d883a041928abeae869a9",
+      "bytes": 13971
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/steer_motor_link2.obj": {
+      "sha256": "99d047d713ffc1047dac0dc7a5305561e0febef7d711bc1fb22209fc2727edc1",
+      "bytes": 1374864
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/wheel_motor_link2.obj": {
+      "sha256": "59110686ce6958834cbab01e2f0197d1dad65c10fb042bbe2de8a713b32ffba6",
+      "bytes": 13435
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/steer_motor_link3.obj": {
+      "sha256": "831f29f90dce3ac287e4bfba2b2199131c209a67a4403660574e1838d699e958",
+      "bytes": 1360134
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/wheel_motor_link3.obj": {
+      "sha256": "ebb81fdc472820fc6177cbada09b983e899c9174c3fdba0632ae065228ecf339",
+      "bytes": 14734
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link1.obj": {
+      "sha256": "256664d53b696a46099f90ddecbefae8ec398b869f12f9121a5c23c04a34009e",
+      "bytes": 2686268
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link2.obj": {
+      "sha256": "00b0244dbd788e03151700171abe4320de98b38e1556238c3f5d1dd612289938",
+      "bytes": 1117202
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link3.obj": {
+      "sha256": "3238da5be681bb8105e5d814b1d6b84c321318a158ad7022b2f1bc70ecf99d20",
+      "bytes": 937279
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/torso_link4.obj": {
+      "sha256": "6b61f7b72c706c4f719e6e4110464fa340c5b2322a735f4ad894e53896156a46",
+      "bytes": 6505227
+    },
+    "resources/single_tray_lab_v1/meshes/torso_link4_robot_silver.obj": {
+      "sha256": "a4c44e1a207df4a7c15c3dc55a9744f6e68eee82f121e57f078e165ab192befd",
+      "bytes": 347785
+    },
+    "resources/single_tray_lab_v1/meshes/torso_link4_robot_black.obj": {
+      "sha256": "d8a602f8eb81a6e9045a12f052ef2fdbc718cc416c08d19ce1c20c00df340651",
+      "bytes": 2538984
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/zed_link.obj": {
+      "sha256": "3c0e435bc0203ffe73f141b2d76f47a687a1a51076d8a7f83c1891a424049dd0",
+      "bytes": 625825
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_base_link.obj": {
+      "sha256": "739c993f51f712984290899949de260203c3b31d269f5e0119afd7e4fe55cea5",
+      "bytes": 73675
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link1.obj": {
+      "sha256": "8bfb3b0889cbee563fe76a7db750c63a36f336050d71441f3bd7621c0bd3abf2",
+      "bytes": 136098
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link2.obj": {
+      "sha256": "6306333168268b06fd6cf2c3da50ea833c1fff1714ce463d68c38120e04811fb",
+      "bytes": 1029460
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link3.obj": {
+      "sha256": "b5413a49b8cb0dce1cd7c2c659735aae47a0e61b2e4f193f9316d67d3df8d657",
+      "bytes": 949061
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link4.obj": {
+      "sha256": "925da7f12b69e1f70219d8fdbc749c40d608ff8ebc75c1d8fe5e3536d674b961",
+      "bytes": 1160516
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link5.obj": {
+      "sha256": "70faa087318b239bb0e50bdbcca46b7ee9100ce63bfafb0fd9baa9c9e21030ab",
+      "bytes": 1787503
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link6.obj": {
+      "sha256": "4d1939e8624861bf83ed78858d6698a227977e593dec517d8164636d62403123",
+      "bytes": 597936
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_arm_link7.obj": {
+      "sha256": "735c4c476ea69cd8769118a5301f9e62f8267da40d07fa379f6cea0285a5c572",
+      "bytes": 681525
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_gripper_link.obj": {
+      "sha256": "d99c6d995239c376633c53c58bd317c629d4c0e27cc9cc9581a1a056fad65ce5",
+      "bytes": 249286
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_gripper_finger_link1.obj": {
+      "sha256": "ddf9e2e7d3096886a4673ca877bb7db1512bfe5659e96f7798f4c2acead4a60f",
+      "bytes": 493870
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/left_gripper_finger_link2.obj": {
+      "sha256": "c36a15d2d158b95e2fce94867352ff69687018b23ee17e55beb6ffa97f9838e9",
+      "bytes": 408897
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_base_link.obj": {
+      "sha256": "60aef6fce4cd99fd532ecfc667939e66b5fd256ab08f1e340272f88d5470cfaf",
+      "bytes": 99206
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link1.obj": {
+      "sha256": "67c26a7794548268cf4c394701700ce43e26951639cd0ef389d60bf4a6656e3f",
+      "bytes": 132878
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link2.obj": {
+      "sha256": "ed4ba6a9ea43c7f009456c92935a7e09e7a2020d1c410230f93e9d4b36422af9",
+      "bytes": 1040058
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link3.obj": {
+      "sha256": "882f4d24432bb2fba5463bf1a4b865f8e98e32b79286d0abbd0e923bcda431bc",
+      "bytes": 950359
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link4.obj": {
+      "sha256": "75aa528be6cde481c5ff17c30b7277fda7c490b1344db4fb8b7ee18c4570b6ee",
+      "bytes": 1174738
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link5.obj": {
+      "sha256": "4a5b2846756b4ad2ef98388d3e3a8e5d0199b5d82f02d3c8ce0200dcc41d28a8",
+      "bytes": 1793895
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link6.obj": {
+      "sha256": "07afd7aac595027f8b9366d9c9d188af21241fc70e1480e46e4e83f631943415",
+      "bytes": 583883
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_arm_link7.obj": {
+      "sha256": "43b163d9bb0f99328698ff1e57a70c9361a29f37da68ac5a5c0a840e587e9e7d",
+      "bytes": 597493
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_gripper_link.obj": {
+      "sha256": "a91b54ab69054ebcf71ddf969abfa4eff7e3d11fb724ce7e731a69adb8d905fa",
+      "bytes": 232836
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_gripper_finger_link1.obj": {
+      "sha256": "e5433ac273e71a31f0a5b2925c5af176c3e23549e7de55731f5e453a31aad373",
+      "bytes": 398256
+    },
+    "outputs/r1pro_tray_scene/assets/r1_pro/meshes/right_gripper_finger_link2.obj": {
+      "sha256": "ee559bd1a3012250da93779e22cafd38066483f64166ac5b40679a16dcfbbfd7",
+      "bytes": 495209
+    },
+    "outputs/r1pro_tray_scene/assets/table/table_0.obj": {
+      "sha256": "f3684670db2c8b1213d7a20b04825db563ed64dcffd83fbb367f6eeddc3a1349",
+      "bytes": 9330
+    },
+    "outputs/r1pro_tray_scene/assets/table/table_1.obj": {
+      "sha256": "15170dbc448c86050b3057759f276b493e53de3dab3947081a127ab3b4df2f4f",
+      "bytes": 23851
+    },
+    "outputs/r1pro_tray_scene/assets/table/table_2.obj": {
+      "sha256": "2b158e8687fe7bb1d88a96cbca9782046a8e9e34833a01fc6fbbb9ff96033f8e",
+      "bytes": 201857
+    },
+    "outputs/r1pro_tray_scene/assets/table/table_3.obj": {
+      "sha256": "9ac50eef51a3a2aa843c589d24a9805d28c37ec2cc80a410f2c982d4333eed8a",
+      "bytes": 414957
+    },
+    "outputs/r1pro_tray_scene/assets/table/table_4.obj": {
+      "sha256": "671fe9bb8cfe6848df957f217c3e819c098d5a68cf3b7dd6242593e0dae269b1",
+      "bytes": 70538
+    },
+    "outputs/r1pro_tray_scene/assets/tray/tray_0.obj": {
+      "sha256": "ac0f9be6dd6904a15611ec3b78c1429bcca9dedaf2b9be42f4ad44ee1c91a3d9",
+      "bytes": 605271
+    },
+    "outputs/r1pro_tray_scene/assets/tray/tray_1.obj": {
+      "sha256": "bcec568e608141bf6348c0a2bd42d2ff8e399f6d7b2aa7d89096fbaecd65d13f",
+      "bytes": 615436
+    },
+    "resources/single_tray_lab_v1/meshes/floor_0.obj": {
+      "sha256": "3388737e5b1b6c4db47a2a4ba54b1b5f6dee40231b62051e99bae1988d0c527e",
+      "bytes": 367
+    },
+    "resources/single_tray_lab_v1/meshes/back_wall_0.obj": {
+      "sha256": "e9e640e665d7677afcd376cacc93841281a06c109325b44a55eb520c91898f18",
+      "bytes": 420
+    },
+    "resources/single_tray_lab_v1/meshes/wall_slats_0.obj": {
+      "sha256": "9a603e829ec3005134b3b675df8e48fb125631951aaeee8468b4aeef7673ed86",
+      "bytes": 35487
+    },
+    "resources/single_tray_lab_v1/meshes/side_wall_0.obj": {
+      "sha256": "acd84676018df5509ea69328d0cc6f7bd035ed5906f9fb872cae262b4ef4d09f",
+      "bytes": 436
+    },
+    "resources/single_tray_lab_v1/meshes/wall_display_0.obj": {
+      "sha256": "a3d32108fc93fd8f49c099a320c882153a3dc7ea5e87baa56731d87e23ae2ef5",
+      "bytes": 6319
+    },
+    "resources/single_tray_lab_v1/meshes/wall_display_1.obj": {
+      "sha256": "f72c557c174f287ae473326c3833f978890f004bd33217e6abfee44287b78920",
+      "bytes": 6195
+    },
+    "resources/single_tray_lab_v1/meshes/wood_door_0.obj": {
+      "sha256": "02508d9cb0a4bdcdadad3c78d7b37ed796057b79de7a7092ab9cbda0c7b08a42",
+      "bytes": 6201
+    },
+    "resources/single_tray_lab_v1/meshes/wood_door_1.obj": {
+      "sha256": "8c4f1386f9fbaddaaef85004b88924a70084f7459b69cb5ff173656f0e3ec46c",
+      "bytes": 862
+    },
+    "resources/single_tray_lab_v1/meshes/exit_sign_0.obj": {
+      "sha256": "199d2d7e2126510183fd127ce69007d8e7ef028366632febd309675a73b6e532",
+      "bytes": 6391
+    },
+    "resources/single_tray_lab_v1/meshes/wood_cabinets_0.obj": {
+      "sha256": "5d96b2f777ba0efb3833267dc2f9cde954d763b15b6ae69f4dffd12dcb5b6bb4",
+      "bytes": 39098
+    },
+    "resources/single_tray_lab_v1/meshes/wood_cabinets_1.obj": {
+      "sha256": "be04ca6827239ab17c0dbef85e2e54db1c889f8449bfd9621c82b99274e0be75",
+      "bytes": 19177
+    },
+    "resources/single_tray_lab_v1/meshes/glass_partition_0.obj": {
+      "sha256": "2eef17f2a3804378d196598fac71011e46bc665b0a98f1fd3fe758043353e5eb",
+      "bytes": 503
+    },
+    "resources/single_tray_lab_v1/meshes/glass_frame_0.obj": {
+      "sha256": "bab4064ba993da3afcf28ab75c242d960ae7a1e637c6cca770f9d1c88a080dac",
+      "bytes": 2070
+    },
+    "resources/single_tray_lab_v1/meshes/glass_dots_0.obj": {
+      "sha256": "55e0d968bccb9d6774469344dbc45289b3ba523f62e9ca6a5893c6810effff8c",
+      "bytes": 988785
+    },
+    "resources/single_tray_lab_v1/meshes/ceiling_rafts_0.obj": {
+      "sha256": "58e44d0b2195b3b686c679600548db9f98ac6016c694211bd756ca96c9edf3ce",
+      "bytes": 26032
+    },
+    "resources/single_tray_lab_v1/meshes/ceiling_lights_0.obj": {
+      "sha256": "e097029fb47ab100efc627944d1835473338829d3a9c0f794755dc56731323a6",
+      "bytes": 12818
+    },
+    "resources/single_tray_lab_v1/meshes/ceiling_vents_0.obj": {
+      "sha256": "7f9991f70a7f89201e05a93b2dcc2d29cbd635c58492f137701082bb86313b71",
+      "bytes": 12774
+    },
+    "resources/single_tray_lab_v1/meshes/ceiling_pipes_0.obj": {
+      "sha256": "5ee0e6b2628dc3a06b15b511bb332e6509fe2359b8440bde128fd1e19ef6a5ee",
+      "bytes": 5386
+    },
+    "resources/single_tray_lab_v1/meshes/ceiling_beams_0.obj": {
+      "sha256": "bb3a445386cb70f0ce9ef94a96eb0dc004533a6fb868169aba5c848748fc0553",
+      "bytes": 1444
+    },
+    "resources/single_tray_lab_v1/meshes/desk_0_0.obj": {
+      "sha256": "a74649dbc2b410dd9b3b43ed5e940ce485cf4c1d8c613a8a7ab2c7696e2dbefb",
+      "bytes": 6096
+    },
+    "resources/single_tray_lab_v1/meshes/desk_0_1.obj": {
+      "sha256": "2bb8609fdd13d600589d7ba04f6b0dcae4bdb29e8a4864e3d4faa44f307c2e12",
+      "bytes": 13795
+    },
+    "resources/single_tray_lab_v1/meshes/desk_0_2.obj": {
+      "sha256": "c528a9ee8a97565d50afc19f12233f4355fb577ba63e656e260148dc65d486c2",
+      "bytes": 545
+    },
+    "resources/single_tray_lab_v1/meshes/desk_1_0.obj": {
+      "sha256": "4be036382fef5618d85953e92efe370c65bb95a0feb995de5536d5c984747d85",
+      "bytes": 6096
+    },
+    "resources/single_tray_lab_v1/meshes/desk_1_1.obj": {
+      "sha256": "0625cbf6ab15b21b2190198bc25652e9003557f7974b975c6016b8ce1fddb87d",
+      "bytes": 13795
+    },
+    "resources/single_tray_lab_v1/meshes/desk_1_2.obj": {
+      "sha256": "e6bdde31ad468d6391fd6ff2017629eab5b6eefffa7e2a0af2f71a6745e3a148",
+      "bytes": 545
+    },
+    "resources/single_tray_lab_v1/meshes/desk_2_0.obj": {
+      "sha256": "b5c47da4b616f3c35d2751fd391ed35d2162b9ef396c3a6cd56f717c90d44b26",
+      "bytes": 6096
+    },
+    "resources/single_tray_lab_v1/meshes/desk_2_1.obj": {
+      "sha256": "aeedf3b01489535841c5ac6033d93c7efd341233b6361b3760c5722548e67484",
+      "bytes": 13763
+    },
+    "resources/single_tray_lab_v1/meshes/desk_2_2.obj": {
+      "sha256": "3ee7d9a44c319a44b53be9b4c9a651fd674fe28c003f61208d180dd467142907",
+      "bytes": 541
+    },
+    "resources/single_tray_lab_v1/meshes/office_chair_0_0.obj": {
+      "sha256": "6950d6153c23cc9bbc82c7cc3350fb7b335767d0b7771680105eeb1b6917a23c",
+      "bytes": 12681
+    },
+    "resources/single_tray_lab_v1/meshes/office_chair_0_1.obj": {
+      "sha256": "7cd5d6ca49e65d4838891d514eb99a178a10ef274409e6d9bd7aebe46543af56",
+      "bytes": 27266
+    },
+    "resources/single_tray_lab_v1/meshes/office_chair_1_0.obj": {
+      "sha256": "208e168bd1ab8c6034edd2caadacbafef83dc587362e64e33a2bfcb673358f5b",
+      "bytes": 12661
+    },
+    "resources/single_tray_lab_v1/meshes/office_chair_1_1.obj": {
+      "sha256": "84a7f169d273ec4311add31e736080e3fb65393b1172bb4c9c634bb2c8245a63",
+      "bytes": 27171
+    },
+    "resources/single_tray_lab_v1/meshes/green_chair_0_0.obj": {
+      "sha256": "3876427bb4bd4064d14f1a7a97f4dc9d4906546e4eee425091a9e72a05354426",
+      "bytes": 12656
+    },
+    "resources/single_tray_lab_v1/meshes/green_chair_0_1.obj": {
+      "sha256": "cf2b98173fcf02c3aaab4867201cedda061cc5a15716011df0cc27840255c766",
+      "bytes": 10409
+    },
+    "resources/single_tray_lab_v1/meshes/green_chair_0_2.obj": {
+      "sha256": "e1068de37cf25d57776ee7759ef84f230c008cb92c8008ecd1c173002eb7a706",
+      "bytes": 16371
+    },
+    "resources/single_tray_lab_v1/meshes/green_chair_1_0.obj": {
+      "sha256": "d3c1bade809cd63a2dc7a68851f6ec3562c0cc58d2c052f56356ba0141d918fd",
+      "bytes": 12660
+    },
+    "resources/single_tray_lab_v1/meshes/green_chair_1_1.obj": {
+      "sha256": "bf872b28d426690376402f7c0edc8b3a16db5d78a8ee3b250435c2205e126c67",
+      "bytes": 10406
+    },
+    "resources/single_tray_lab_v1/meshes/green_chair_1_2.obj": {
+      "sha256": "70dc426e1d863f8596cbff82e91364b44058aa01e2db605493945c7ab3f31654",
+      "bytes": 16347
+    },
+    "resources/single_tray_lab_v1/meshes/green_chair_2_0.obj": {
+      "sha256": "81687b8eb6348426715662433fcefc191f307542bbe200a2dfe58e41fab7c88c",
+      "bytes": 12660
+    },
+    "resources/single_tray_lab_v1/meshes/green_chair_2_1.obj": {
+      "sha256": "3929aa7500706b245e4112498da9d9d301013e2eb1a6324bc4df2260313a1771",
+      "bytes": 10410
+    },
+    "resources/single_tray_lab_v1/meshes/green_chair_2_2.obj": {
+      "sha256": "6a29b1d9386de61c31d06b7cbf3069200f6b6c8967b17a8500d76e7083c46bec",
+      "bytes": 16347
+    },
+    "resources/single_tray_lab_v1/meshes/equipment_case_0_0.obj": {
+      "sha256": "8c616074603209986f799051d7c4b040205e544c6e8fff5d72bb222d7a7d0987",
+      "bytes": 6167
+    },
+    "resources/single_tray_lab_v1/meshes/equipment_case_0_1.obj": {
+      "sha256": "8b1e18f21ab8f6ed0e3879b722b317a3ff75fcc0d41c9bbc99863f2a8df4e511",
+      "bytes": 8269
+    },
+    "resources/single_tray_lab_v1/meshes/equipment_case_1_0.obj": {
+      "sha256": "3c670a2f5e2ce43a598d96cc5d872da5a78d989e4e98167943df0ee27d9a7e73",
+      "bytes": 6175
+    },
+    "resources/single_tray_lab_v1/meshes/equipment_case_1_1.obj": {
+      "sha256": "8ab609b91e71bd0b0d0f996c492d865c6f20757d19e58caccc7ac6807dbb0462",
+      "bytes": 8253
+    }
+  },
+  "geometry": [
+    {
+      "name": "base_link",
+      "vertices": 426163,
+      "triangles": 156655,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.39232598509049793,
+          0.04164999458415474,
+          -0.33747599134188555
+        ],
+        [
+          0.2348370104875841,
+          0.40514999595727025,
+          0.3374769853521362
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "steer_motor_link1",
+      "vertices": 33980,
+      "triangles": 16676,
+      "bounds_gltf_y_up_m": [
+        [
+          0.12152000025509002,
+          0.02254999027169571,
+          -0.32000000094441117
+        ],
+        [
+          0.21641999828696498,
+          0.18165000392135225,
+          -0.23999999902726774
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "wheel_motor_link1",
+      "vertices": 272,
+      "triangles": 172,
+      "bounds_gltf_y_up_m": [
+        [
+          0.09896999747003057,
+          -2.980233282379174e-10,
+          -0.307699999511242
+        ],
+        [
+          0.23896999806607722,
+          0.14000000029802329,
+          -0.252300000488758
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "steer_motor_link2",
+      "vertices": 29508,
+      "triangles": 14314,
+      "bounds_gltf_y_up_m": [
+        [
+          0.1215199999148172,
+          0.02254999148747709,
+          0.23999999904154692
+        ],
+        [
+          0.21641999916538784,
+          0.18165000387754845,
+          0.32000000097950804
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "wheel_motor_link2",
+      "vertices": 268,
+      "triangles": 172,
+      "bounds_gltf_y_up_m": [
+        [
+          0.09896999747003056,
+          -2.980233282379174e-10,
+          0.2523000004887581
+        ],
+        [
+          0.23896999806607722,
+          0.14000000029802329,
+          0.3076999995112421
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "steer_motor_link3",
+      "vertices": 29735,
+      "triangles": 14566,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.37447999899560014,
+          0.022549990458958804,
+          -0.04000000095621819
+        ],
+        [
+          -0.2795800022023576,
+          0.1816500039252092,
+          0.04000000087709184
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "wheel_motor_link3",
+      "vertices": 272,
+      "triangles": 172,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.39703000252996945,
+          -2.980233282379174e-10,
+          -0.02769999951124195
+        ],
+        [
+          -0.25703000193392284,
+          0.14000000029802329,
+          0.027699999511241954
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "torso_link1",
+      "vertices": 61773,
+      "triangles": 26442,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.14151827011942555,
+          0.2801639624569064,
+          -0.08850000417843326
+        ],
+        [
+          0.0629110519680035,
+          0.7971313118061718,
+          0.0885000042741276
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "torso_link2",
+      "vertices": 35150,
+      "triangles": 14599,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.1506743273565617,
+          0.6721763663455244,
+          -0.09150100120349935
+        ],
+        [
+          0.06293600679459446,
+          1.0837315839971735,
+          0.09150100119282682
+        ]
+      ],
+      "editable_color": "robot",
+      "protected_appearance": false
+    },
+    {
+      "name": "torso_link3",
+      "vertices": 30377,
+      "triangles": 13352,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.1506205656474694,
+          0.9587775143472769,
+          -0.0630005002917869
+        ],
+        [
+          0.01956423798941584,
+          1.160370079326104,
+          0.0707995035019089
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "torso_link4_robot_silver",
+      "vertices": 3932,
+      "triangles": 7262,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.02612653707158846,
+          1.05585986271052,
+          -0.17421034999999985
+        ],
+        [
+          0.16224231714190201,
+          1.3388427195175026,
+          0.1742096499999998
+        ]
+      ],
+      "editable_color": "robot",
+      "protected_appearance": false
+    },
+    {
+      "name": "torso_link4_robot_black",
+      "vertices": 26158,
+      "triangles": 51834,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.10675469009698987,
+          1.1077447892078383,
+          -0.17421034999999988
+        ],
+        [
+          0.17743707082256235,
+          1.5077770726117414,
+          0.17420964999999983
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "zed_link",
+      "vertices": 23067,
+      "triangles": 8108,
+      "bounds_gltf_y_up_m": [
+        [
+          0.06127885589647426,
+          1.4514321921723197,
+          -0.10049880456860616
+        ],
+        [
+          0.24058356421925933,
+          1.637340421274855,
+          0.10049852701359044
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": true
+    },
+    {
+      "name": "left_arm_base_link",
+      "vertices": 2209,
+      "triangles": 1232,
+      "bounds_gltf_y_up_m": [
+        [
+          0.0018570216816690386,
+          1.3153623717075562,
+          -0.17073435181669777
+        ],
+        [
+          0.14927599512709525,
+          1.462901218622528,
+          -0.09723434811179836
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "left_arm_link1",
+      "vertices": 4566,
+      "triangles": 1740,
+      "bounds_gltf_y_up_m": [
+        [
+          0.034135839544997035,
+          1.335330863071588,
+          -0.30239935786106525
+        ],
+        [
+          0.11784024265945615,
+          1.443732269851048,
+          -0.17073434657011943
+        ]
+      ],
+      "editable_color": "robot",
+      "protected_appearance": false
+    },
+    {
+      "name": "left_arm_link2",
+      "vertices": 36212,
+      "triangles": 12988,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.00440159878495109,
+          1.2852679545687538,
+          -0.3098223482544602
+        ],
+        [
+          0.1321021930432352,
+          1.4493274337559308,
+          -0.19497934979302772
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "left_arm_link3",
+      "vertices": 24360,
+      "triangles": 9040,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.08847625137349127,
+          1.0684765455986258,
+          -0.29823135015439217
+        ],
+        [
+          0.07922613213567314,
+          1.3222478936626147,
+          -0.20578134782857369
+        ]
+      ],
+      "editable_color": "robot",
+      "protected_appearance": false
+    },
+    {
+      "name": "left_arm_link4",
+      "vertices": 30808,
+      "triangles": 11472,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.08688719596200495,
+          1.0265612050016524,
+          -0.29684435178591023
+        ],
+        [
+          0.07059366957686775,
+          1.1420411938434207,
+          -0.20715634977749423
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "left_arm_link5",
+      "vertices": 59247,
+      "triangles": 22523,
+      "bounds_gltf_y_up_m": [
+        [
+          0.0006342703965248529,
+          0.9890584810962972,
+          -0.29277834914054013
+        ],
+        [
+          0.2131203800915766,
+          1.1058121047066314,
+          -0.21020234724970846
+        ]
+      ],
+      "editable_color": "robot",
+      "protected_appearance": false
+    },
+    {
+      "name": "left_arm_link6",
+      "vertices": 15377,
+      "triangles": 6122,
+      "bounds_gltf_y_up_m": [
+        [
+          0.15306926269790302,
+          0.9788620500389639,
+          -0.2800003510267855
+        ],
+        [
+          0.2265457067705614,
+          1.049836776883042,
+          -0.21649934836254067
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "left_arm_link7",
+      "vertices": 15980,
+      "triangles": 6720,
+      "bounds_gltf_y_up_m": [
+        [
+          0.18061044234320578,
+          0.9555567997154828,
+          -0.2819993502048991
+        ],
+        [
+          0.28149984601250383,
+          1.0567792917079704,
+          -0.2219993498753839
+        ]
+      ],
+      "editable_color": "robot",
+      "protected_appearance": false
+    },
+    {
+      "name": "left_gripper_link",
+      "vertices": 6436,
+      "triangles": 2650,
+      "bounds_gltf_y_up_m": [
+        [
+          0.25780341126818856,
+          0.9305854439744952,
+          -0.30615735009575434
+        ],
+        [
+          0.34837126181344474,
+          1.0090310859325977,
+          -0.19784135133587452
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": true
+    },
+    {
+      "name": "left_gripper_finger_link1",
+      "vertices": 12830,
+      "triangles": 5210,
+      "bounds_gltf_y_up_m": [
+        [
+          0.33167447157466845,
+          0.9210875182414714,
+          -0.32022783333682997
+        ],
+        [
+          0.4134165326419129,
+          0.9805195351649744,
+          -0.25053183059609424
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": true
+    },
+    {
+      "name": "left_gripper_finger_link2",
+      "vertices": 13946,
+      "triangles": 5210,
+      "bounds_gltf_y_up_m": [
+        [
+          0.31852613469820684,
+          0.921803987294523,
+          -0.2534658636286857
+        ],
+        [
+          0.41367306318654395,
+          0.9651528795862133,
+          -0.18377086661448125
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": true
+    },
+    {
+      "name": "right_arm_base_link",
+      "vertices": 2068,
+      "triangles": 1232,
+      "bounds_gltf_y_up_m": [
+        [
+          0.0017560294684059246,
+          1.315343046250862,
+          0.09723564814123933
+        ],
+        [
+          0.14917500273249842,
+          1.462881894290567,
+          0.17073565151268943
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "right_arm_link1",
+      "vertices": 4581,
+      "triangles": 1752,
+      "bounds_gltf_y_up_m": [
+        [
+          0.03321910020244761,
+          1.3345795635787607,
+          0.17073564640798491
+        ],
+        [
+          0.11690556181797558,
+          1.444075445965217,
+          0.3024006560550629
+        ]
+      ],
+      "editable_color": "robot",
+      "protected_appearance": false
+    },
+    {
+      "name": "right_arm_link2",
+      "vertices": 35884,
+      "triangles": 12894,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.004401482708778918,
+          1.285267907822696,
+          0.19498064925382214
+        ],
+        [
+          0.1321004741769588,
+          1.449327791641537,
+          0.30982364889809216
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "right_arm_link3",
+      "vertices": 24412,
+      "triangles": 9062,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.0884770586203386,
+          1.0684769048976401,
+          0.20577564913500954
+        ],
+        [
+          0.0792253275137705,
+          1.3222482515570955,
+          0.2982246517552687
+        ]
+      ],
+      "editable_color": "robot",
+      "protected_appearance": false
+    },
+    {
+      "name": "right_arm_link4",
+      "vertices": 31107,
+      "triangles": 11609,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.08688799917625588,
+          1.026561560983378,
+          0.20715664872029338
+        ],
+        [
+          0.07059286618944247,
+          1.1420415512533941,
+          0.29684465171970814
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "right_arm_link5",
+      "vertices": 59034,
+      "triangles": 22340,
+      "bounds_gltf_y_up_m": [
+        [
+          0.030044072010539095,
+          0.9890585009235566,
+          0.21020364735405023
+        ],
+        [
+          0.21311993058496737,
+          1.1024033934780588,
+          0.2927796483754259
+        ]
+      ],
+      "editable_color": "robot",
+      "protected_appearance": false
+    },
+    {
+      "name": "right_arm_link6",
+      "vertices": 14881,
+      "triangles": 6070,
+      "bounds_gltf_y_up_m": [
+        [
+          0.15306845806025132,
+          0.978862199511726,
+          0.2164996483342253
+        ],
+        [
+          0.22654526489430982,
+          1.0498371349723719,
+          0.28000065103064176
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "right_arm_link7",
+      "vertices": 14098,
+      "triangles": 5928,
+      "bounds_gltf_y_up_m": [
+        [
+          0.18060964105521815,
+          0.9555571604028444,
+          0.22204264971199889
+        ],
+        [
+          0.2814990420527612,
+          1.0567796459551368,
+          0.28190565047275673
+        ]
+      ],
+      "editable_color": "robot",
+      "protected_appearance": false
+    },
+    {
+      "name": "right_gripper_link",
+      "vertices": 5841,
+      "triangles": 2650,
+      "bounds_gltf_y_up_m": [
+        [
+          0.25780260774992103,
+          0.9305858028036937,
+          0.19784264990424538
+        ],
+        [
+          0.34837045829517715,
+          1.0090314447617963,
+          0.3061586486641252
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": true
+    },
+    {
+      "name": "right_gripper_finger_link1",
+      "vertices": 13965,
+      "triangles": 5210,
+      "bounds_gltf_y_up_m": [
+        [
+          0.33167366805640097,
+          0.92108787707067,
+          0.18377216666316967
+        ],
+        [
+          0.41341572912364544,
+          0.9805198939941729,
+          0.25346816940390543
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": true
+    },
+    {
+      "name": "right_gripper_finger_link2",
+      "vertices": 12854,
+      "triangles": 5210,
+      "bounds_gltf_y_up_m": [
+        [
+          0.3185253311799393,
+          0.9218043461237215,
+          0.25053413637131405
+        ],
+        [
+          0.4136722596682764,
+          0.9651532384154119,
+          0.3202291333855185
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": true
+    },
+    {
+      "name": "front_left__table_0_visual",
+      "vertices": 208,
+      "triangles": 176,
+      "bounds_gltf_y_up_m": [
+        [
+          0.6789999961853022,
+          0.7360000014305101,
+          -0.4410000145435349
+        ],
+        [
+          1.0210000038146978,
+          0.7409999966621386,
+          0.4410000145435349
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "front_left__table_1_visual",
+      "vertices": 826,
+      "triangles": 416,
+      "bounds_gltf_y_up_m": [
+        [
+          0.54999998807907,
+          0.7749999762222683,
+          -0.60000002384186
+        ],
+        [
+          1.15000001192093,
+          0.8000000119850552,
+          0.60000002384186
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "front_left__table_2_visual",
+      "vertices": 3559,
+      "triangles": 3140,
+      "bounds_gltf_y_up_m": [
+        [
+          0.5775849777868964,
+          0.006436991436108208,
+          -0.5025000226211712
+        ],
+        [
+          1.1224150121791954,
+          0.7735000380791148,
+          0.5300000008181687
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "front_left__table_3_visual",
+      "vertices": 7366,
+      "triangles": 6104,
+      "bounds_gltf_y_up_m": [
+        [
+          0.573580978604976,
+          -1.3582813374046765e-08,
+          -0.4800000074401736
+        ],
+        [
+          1.1385000126568576,
+          0.7724999911836243,
+          0.5400000362777801
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "front_left__table_4_visual",
+      "vertices": 796,
+      "triangles": 1136,
+      "bounds_gltf_y_up_m": [
+        [
+          0.8135000005364417,
+          0.4740000079992046,
+          -0.47150000929832564
+        ],
+        [
+          0.8864999994635583,
+          0.7469999801042315,
+          0.47150000929832586
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "front_right__table_0_visual",
+      "vertices": 208,
+      "triangles": 176,
+      "bounds_gltf_y_up_m": [
+        [
+          0.6789999961853022,
+          0.7360000014305101,
+          0.7589999854564651
+        ],
+        [
+          1.0210000038146978,
+          0.7409999966621386,
+          1.6410000145435348
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "front_right__table_1_visual",
+      "vertices": 826,
+      "triangles": 416,
+      "bounds_gltf_y_up_m": [
+        [
+          0.54999998807907,
+          0.7749999762222683,
+          0.5999999761581399
+        ],
+        [
+          1.15000001192093,
+          0.8000000119850552,
+          1.8000000238418599
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "front_right__table_2_visual",
+      "vertices": 3559,
+      "triangles": 3140,
+      "bounds_gltf_y_up_m": [
+        [
+          0.5775849777868964,
+          0.006436991436108208,
+          0.6974999773788289
+        ],
+        [
+          1.1224150121791954,
+          0.7735000380791148,
+          1.7300000008181686
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "front_right__table_3_visual",
+      "vertices": 7366,
+      "triangles": 6104,
+      "bounds_gltf_y_up_m": [
+        [
+          0.573580978604976,
+          -1.3582813374046765e-08,
+          0.7199999925598263
+        ],
+        [
+          1.1385000126568576,
+          0.7724999911836243,
+          1.74000003627778
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "front_right__table_4_visual",
+      "vertices": 796,
+      "triangles": 1136,
+      "bounds_gltf_y_up_m": [
+        [
+          0.8135000005364417,
+          0.4740000079992046,
+          0.7284999907016743
+        ],
+        [
+          0.8864999994635583,
+          0.7469999801042315,
+          1.6715000092983257
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "rear__table_0_visual",
+      "vertices": 208,
+      "triangles": 176,
+      "bounds_gltf_y_up_m": [
+        [
+          -1.253068451384698,
+          0.7360000014305101,
+          -0.4410000145435349
+        ],
+        [
+          -0.911068443755302,
+          0.7409999966621386,
+          0.4410000145435349
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "rear__table_1_visual",
+      "vertices": 826,
+      "triangles": 416,
+      "bounds_gltf_y_up_m": [
+        [
+          -1.38206845949093,
+          0.7749999762222683,
+          -0.60000002384186
+        ],
+        [
+          -0.7820684356490699,
+          0.8000000119850552,
+          0.60000002384186
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "rear__table_2_visual",
+      "vertices": 3559,
+      "triangles": 3140,
+      "bounds_gltf_y_up_m": [
+        [
+          -1.3544834697831034,
+          0.006436991436108208,
+          -0.5025000226211712
+        ],
+        [
+          -0.8096534353908046,
+          0.7735000380791148,
+          0.5300000008181687
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "rear__table_3_visual",
+      "vertices": 7366,
+      "triangles": 6104,
+      "bounds_gltf_y_up_m": [
+        [
+          -1.358487468965024,
+          -1.3582813374046765e-08,
+          -0.4800000074401736
+        ],
+        [
+          -0.7935684349131423,
+          0.7724999911836243,
+          0.5400000362777801
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "rear__table_4_visual",
+      "vertices": 796,
+      "triangles": 1136,
+      "bounds_gltf_y_up_m": [
+        [
+          -1.1185684470335582,
+          0.4740000079992046,
+          -0.47150000929832564
+        ],
+        [
+          -1.0455684481064418,
+          0.7469999801042315,
+          0.47150000929832586
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "tray_0__tray_0_visual",
+      "vertices": 13319,
+      "triangles": 8632,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.23692300230355126,
+          0.010227999445456715,
+          -0.1755650080441256
+        ],
+        [
+          0.23561399643984135,
+          0.06935299928231875,
+          0.20700601358436763
+        ]
+      ],
+      "editable_color": "tray",
+      "protected_appearance": false
+    },
+    {
+      "name": "tray_0__tray_1_visual",
+      "vertices": 12604,
+      "triangles": 5487,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.280000015237145,
+          -1.796171100743038e-09,
+          -0.21500001096601828
+        ],
+        [
+          0.2800000150491155,
+          0.10499999860747822,
+          0.2150000081176137
+        ]
+      ],
+      "editable_color": "tray",
+      "protected_appearance": false
+    },
+    {
+      "name": "floor_0",
+      "vertices": 8,
+      "triangles": 12,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.6999999284744263,
+          -0.03500000014901161,
+          -3.0
+        ],
+        [
+          4.300000071525574,
+          -4.9011614211558197e-11,
+          3.0
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "back_wall_0",
+      "vertices": 8,
+      "triangles": 12,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.8000000007,
+          0.0,
+          -3.0
+        ],
+        [
+          -2.6999999993,
+          3.04999995,
+          3.0
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "wall_slats_0",
+      "vertices": 616,
+      "triangles": 924,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.696999963370376,
+          0.0,
+          -2.927500130899353
+        ],
+        [
+          -2.678999964150376,
+          2.95000005,
+          2.995500209100647
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "side_wall_0",
+      "vertices": 8,
+      "triangles": 12,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.6999999284744263,
+          0.0,
+          2.9600000009
+        ],
+        [
+          4.300000071525574,
+          3.04999995,
+          3.0399999991
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "wall_display_0",
+      "vertices": 96,
+      "triangles": 188,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.680000223241858,
+          1.3500000536441803,
+          -1.4799999894972076
+        ],
+        [
+          -2.600000225041858,
+          2.310000061841858,
+          0.1999999585027924
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "wall_display_1",
+      "vertices": 96,
+      "triangles": 188,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.5955001041418577,
+          1.4000000357418578,
+          -1.4350000324972076
+        ],
+        [
+          -2.582500107541858,
+          2.260000049841858,
+          0.15500000150279236
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "wood_door_0",
+      "vertices": 96,
+      "triangles": 188,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.6775001064281008,
+          0.0,
+          -2.6550000011525574
+        ],
+        [
+          -2.602500103428101,
+          2.3499999,
+          -1.7050000131525573
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "wood_door_1",
+      "vertices": 16,
+      "triangles": 16,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.5820000171281006,
+          0.930000007,
+          -1.8419999481525573
+        ],
+        [
+          -2.5579998493281004,
+          1.5,
+          -1.8180000181525573
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "exit_sign_0",
+      "vertices": 96,
+      "triangles": 188,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.5929999240060546,
+          2.459999941289425,
+          -2.3950000111525576
+        ],
+        [
+          -2.5669999234060548,
+          2.6599999371469725,
+          -1.9650000031525574
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "wood_cabinets_0",
+      "vertices": 576,
+      "triangles": 1128,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.6900001767683714,
+          0.0,
+          0.9300000668530274
+        ],
+        [
+          -2.2100001717683715,
+          2.56999993,
+          2.6499998568530274
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "wood_cabinets_1",
+      "vertices": 288,
+      "triangles": 564,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.1850001807683714,
+          0.349999994,
+          1.0009999868530275
+        ],
+        [
+          -2.1750001907683716,
+          0.610000014,
+          2.1790000798530276
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "glass_partition_0",
+      "vertices": 8,
+      "triangles": 12,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.1699998332427977,
+          0.0,
+          -2.970000037926973
+        ],
+        [
+          3.529999966757202,
+          2.70000005,
+          -2.9500000383669724
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "glass_frame_0",
+      "vertices": 40,
+      "triangles": 60,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.193500037683716,
+          0.0,
+          -2.9924999047325684
+        ],
+        [
+          3.5434999423162843,
+          2.75,
+          -2.9574999045325683
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "glass_dots_0",
+      "vertices": 13104,
+      "triangles": 24024,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.099000098583069,
+          0.23100000058909176,
+          -2.943500079040294
+        ],
+        [
+          3.3920000814169313,
+          2.189000186198883,
+          -2.942500077362294
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "ceiling_rafts_0",
+      "vertices": 384,
+      "triangles": 752,
+      "bounds_gltf_y_up_m": [
+        [
+          -1.9499999315255736,
+          2.8575001135468483,
+          -0.999999999841858
+        ],
+        [
+          3.349999788474426,
+          2.9025001152939454,
+          0.7999999521581421
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "ceiling_lights_0",
+      "vertices": 192,
+      "triangles": 368,
+      "bounds_gltf_y_up_m": [
+        [
+          -1.6550000915255736,
+          2.8149999137967825,
+          1.0449999573162843
+        ],
+        [
+          3.054999948474426,
+          2.86499991270188,
+          1.554999947316284
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "ceiling_vents_0",
+      "vertices": 192,
+      "triangles": 368,
+      "bounds_gltf_y_up_m": [
+        [
+          -1.599999961920929,
+          2.8409999050199986,
+          -1.7499999553162842
+        ],
+        [
+          2.999999938079071,
+          2.8589999042900636,
+          -1.3499999493162842
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "ceiling_pipes_0",
+      "vertices": 96,
+      "triangles": 184,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.649999976158142,
+          2.92499984750718,
+          -2.4249998347683714
+        ],
+        [
+          3.850000023841858,
+          3.095000133316284,
+          2.4349998252316283
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "ceiling_beams_0",
+      "vertices": 24,
+      "triangles": 36,
+      "bounds_gltf_y_up_m": [
+        [
+          -1.675000014237213,
+          2.9699999541044235,
+          -2.9000001
+        ],
+        [
+          2.7250000857627867,
+          3.1299999506102294,
+          2.9000001
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "desk_0_0",
+      "vertices": 96,
+      "triangles": 188,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.240000069220459,
+          0.730000019,
+          1.4999999701581421
+        ],
+        [
+          -1.140000045220459,
+          0.769999981,
+          2.299999982158142
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "desk_0_1",
+      "vertices": 208,
+      "triangles": 400,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.147500127220459,
+          0.0,
+          1.574999988158142
+        ],
+        [
+          -1.272499949220459,
+          1.15999997,
+          2.224999964158142
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "desk_0_2",
+      "vertices": 8,
+      "triangles": 12,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.152500123220459,
+          0.735000014,
+          1.877499975258142
+        ],
+        [
+          -2.107500106220459,
+          0.904999971,
+          1.9224999770581421
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "desk_1_0",
+      "vertices": 96,
+      "triangles": 188,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.240000069220459,
+          0.730000019,
+          0.6499999463162842
+        ],
+        [
+          -1.140000045220459,
+          0.769999981,
+          1.4499999583162841
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "desk_1_1",
+      "vertices": 208,
+      "triangles": 400,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.147500127220459,
+          0.0,
+          0.7249999643162841
+        ],
+        [
+          -1.272499949220459,
+          1.15999997,
+          1.3749999403162843
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "desk_1_2",
+      "vertices": 8,
+      "triangles": 12,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.152500123220459,
+          0.735000014,
+          1.0274999514162841
+        ],
+        [
+          -2.107500106220459,
+          0.904999971,
+          1.0724999532162842
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "desk_2_0",
+      "vertices": 96,
+      "triangles": 188,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.240000069220459,
+          0.730000019,
+          -0.20000002556918717
+        ],
+        [
+          -1.140000045220459,
+          0.769999981,
+          0.5999999864308128
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "desk_2_1",
+      "vertices": 208,
+      "triangles": 400,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.147500127220459,
+          0.0,
+          -0.12499997756918718
+        ],
+        [
+          -1.272499949220459,
+          1.15999997,
+          0.5249999984308129
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "desk_2_2",
+      "vertices": 8,
+      "triangles": 12,
+      "bounds_gltf_y_up_m": [
+        [
+          -2.152500123220459,
+          0.735000014,
+          0.17749999463081284
+        ],
+        [
+          -2.107500106220459,
+          0.904999971,
+          0.22249999643081284
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "office_chair_0_0",
+      "vertices": 192,
+      "triangles": 376,
+      "bounds_gltf_y_up_m": [
+        [
+          -1.0099999758395615,
+          0.43500000549125745,
+          1.7200000434744263
+        ],
+        [
+          -0.5499999518395615,
+          0.9800000224912574,
+          2.180000051474426
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "office_chair_0_1",
+      "vertices": 416,
+      "triangles": 696,
+      "bounds_gltf_y_up_m": [
+        [
+          -1.0417452008395616,
+          0.004999997857442317,
+          1.6478385924744263
+        ],
+        [
+          -0.46699996283956147,
+          0.6530000004912574,
+          2.2521613834744265
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "office_chair_1_0",
+      "vertices": 192,
+      "triangles": 376,
+      "bounds_gltf_y_up_m": [
+        [
+          -1.0099999758395615,
+          0.43500000549125745,
+          0.6700000019604645
+        ],
+        [
+          -0.5499999518395615,
+          0.9800000224912574,
+          1.1300000099604646
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "office_chair_1_1",
+      "vertices": 416,
+      "triangles": 696,
+      "bounds_gltf_y_up_m": [
+        [
+          -1.0417452008395616,
+          0.004999997857442317,
+          0.5978386099604645
+        ],
+        [
+          -0.46699996283956147,
+          0.6530000004912574,
+          1.2021614609604645
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "green_chair_0_0",
+      "vertices": 192,
+      "triangles": 376,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.029999992156332977,
+          0.43500000549125745,
+          -2.4799998847907103
+        ],
+        [
+          0.43000000184366705,
+          0.9800000224912574,
+          -2.0199998767907106
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "green_chair_0_1",
+      "vertices": 176,
+      "triangles": 236,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.02960251815633297,
+          0.05160805539125743,
+          -2.5329998727907106
+        ],
+        [
+          0.47476827584366704,
+          0.6530000004912574,
+          -1.9669998887907105
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "green_chair_0_2",
+      "vertices": 240,
+      "triangles": 460,
+      "bounds_gltf_y_up_m": [
+        [
+          -0.061745217156332965,
+          0.004999997857442317,
+          -2.5521612167907106
+        ],
+        [
+          0.5129999908436671,
+          0.09100000139125743,
+          -1.9478384257907104
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "green_chair_1_0",
+      "vertices": 192,
+      "triangles": 376,
+      "bounds_gltf_y_up_m": [
+        [
+          0.7699999806490478,
+          0.43500000549125745,
+          -2.4799998847907103
+        ],
+        [
+          1.2300000046490478,
+          0.9800000224912574,
+          -2.0199998767907106
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "green_chair_1_1",
+      "vertices": 176,
+      "triangles": 236,
+      "bounds_gltf_y_up_m": [
+        [
+          0.7703974846490478,
+          0.05160805539125743,
+          -2.5329998727907106
+        ],
+        [
+          1.2747682336490478,
+          0.6530000004912574,
+          -1.9669998887907105
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "green_chair_1_2",
+      "vertices": 240,
+      "triangles": 460,
+      "bounds_gltf_y_up_m": [
+        [
+          0.7382548156490478,
+          0.004999997857442317,
+          -2.5521612167907106
+        ],
+        [
+          1.312999993649048,
+          0.09100000139125743,
+          -1.9478384257907104
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "green_chair_2_0",
+      "vertices": 192,
+      "triangles": 376,
+      "bounds_gltf_y_up_m": [
+        [
+          1.569999932965332,
+          0.43500000549125745,
+          -2.4799998847907103
+        ],
+        [
+          2.029999956965332,
+          0.9800000224912574,
+          -2.0199998767907106
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "green_chair_2_1",
+      "vertices": 176,
+      "triangles": 236,
+      "bounds_gltf_y_up_m": [
+        [
+          1.570397495965332,
+          0.05160805539125743,
+          -2.5329998727907106
+        ],
+        [
+          2.074768304965332,
+          0.6530000004912574,
+          -1.9669998887907105
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "green_chair_2_2",
+      "vertices": 240,
+      "triangles": 460,
+      "bounds_gltf_y_up_m": [
+        [
+          1.538254767965332,
+          0.004999997857442317,
+          -2.5521612167907106
+        ],
+        [
+          2.112999945965332,
+          0.09100000139125743,
+          -1.9478384257907104
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "equipment_case_0_0",
+      "vertices": 96,
+      "triangles": 188,
+      "bounds_gltf_y_up_m": [
+        [
+          1.7800000309832458,
+          0.02000001072883606,
+          2.0900000336837157
+        ],
+        [
+          2.5200000409832457,
+          0.700000017728836,
+          2.810000061683716
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "equipment_case_0_1",
+      "vertices": 128,
+      "triangles": 236,
+      "bounds_gltf_y_up_m": [
+        [
+          1.770000040983246,
+          0.03500002622883606,
+          2.082500040683716
+        ],
+        [
+          2.534999906983246,
+          0.709499984728836,
+          2.8175000546837157
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "equipment_case_1_0",
+      "vertices": 96,
+      "triangles": 188,
+      "bounds_gltf_y_up_m": [
+        [
+          2.6799998287460327,
+          0.02000001072883606,
+          2.0900000336837157
+        ],
+        [
+          3.419999837746033,
+          0.700000017728836,
+          2.810000061683716
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    },
+    {
+      "name": "equipment_case_1_1",
+      "vertices": 128,
+      "triangles": 236,
+      "bounds_gltf_y_up_m": [
+        [
+          2.669999837746033,
+          0.03500002622883606,
+          2.082500040683716
+        ],
+        [
+          3.4349999427460327,
+          0.709499984728836,
+          2.8175000546837157
+        ]
+      ],
+      "editable_color": null,
+      "protected_appearance": false
+    }
+  ],
+  "validation": {
+    "glb_header_verified": true,
+    "buffers_and_accessor_lengths_verified": true,
+    "finite_vertices": true,
+    "indices_in_range": true,
+    "protected_meshes_verified": 7,
+    "actual_task_tables": 3,
+    "actual_trays": 1,
+    "physics_step_count": 0,
+    "current_native_scene_equivalence_verified": false
+  }
+}

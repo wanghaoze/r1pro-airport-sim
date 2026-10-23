@@ -83,7 +83,10 @@ def test_eta_targets_total_not_checkpoint_and_expires(tmp_path):
 def test_job_freeze_and_no_unregistered_checkpoint(tmp_path):
     registry=tmp_path/'registry.json';backend.write(registry,{'real_pickplace_v2':{'domain':'real_world'}})
     job=dict(id='test_training_100',kind='training.create',payload=dict(datasets=['real_pickplace_v2'],realPercent=100,steps=500,rewardEnabled=False))
-    with patch.object(backend,'JOBS',tmp_path/'jobs'),patch.object(backend,'REGISTRY',registry):
+    sys.path.insert(0,str(backend_path.parent))
+    # This tests historical request freezing with an explicitly enabled fixture;
+    # the shipped maintenance policy and scheduler prohibition are tested separately.
+    with patch.object(backend,'training_block_reason',return_value=None),patch.object(backend,'JOBS',tmp_path/'jobs'),patch.object(backend,'REGISTRY',registry),patch('execution_settings.gpu_inventory',return_value={'devices':[{'index':0},{'index':1}]}):
         first=backend.enqueue(job);assert first==backend.enqueue(job)
         job['payload']['steps']=501
         with pytest.raises(ValueError,match='conflict'):backend.enqueue(job)
